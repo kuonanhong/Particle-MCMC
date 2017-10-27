@@ -1,0 +1,271 @@
+\hypertarget{classJacEtAlAPF}{}\section{Jac\+Et\+Al\+A\+PF Class Reference}
+\label{classJacEtAlAPF}\index{Jac\+Et\+Al\+A\+PF@{Jac\+Et\+Al\+A\+PF}}
+
+
+An A\+PF implementation of the multivariate stochastic volatility model of Jacquier et al.  
+
+
+
+
+{\ttfamily \#include $<$jacquier\+\_\+et\+\_\+al\+\_\+apf.\+h$>$}
+
+
+
+Inheritance diagram for Jac\+Et\+Al\+A\+PF\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=151pt]{classJacEtAlAPF__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Jac\+Et\+Al\+A\+PF\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=151pt]{classJacEtAlAPF__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classJacEtAlAPF_ac410fda3eb39aea5703740ca75276938}{Jac\+Et\+Al\+A\+PF} (int num\+Parts, const Mat \&beta, const Vec \&R\+\_\+sigmas\+\_\+as\+\_\+vec, const Vec \&mus, const Vec \&phis, const Vec \&sigmas, A\+P\+F\+Resamp\+Style resamp\+Technique, int path\+Length=0)
+\begin{DoxyCompactList}\small\item\em The constructor. \end{DoxyCompactList}\item 
+\hyperlink{classJacEtAlAPF_ae601f6fd2c95012e54fabfc4072c91dd}{$\sim$\+Jac\+Et\+Al\+A\+PF} ()\hypertarget{classJacEtAlAPF_ae601f6fd2c95012e54fabfc4072c91dd}{}\label{classJacEtAlAPF_ae601f6fd2c95012e54fabfc4072c91dd}
+
+\begin{DoxyCompactList}\small\item\em The destructor. \end{DoxyCompactList}\item 
+Mat \hyperlink{classJacEtAlAPF_a568748b544f75aad1cf779216affc229}{get\+Predictive\+Var} () const 
+\begin{DoxyCompactList}\small\item\em Get the prediction covariance matrix after resampling has been performed. \end{DoxyCompactList}\item 
+double \hyperlink{classJacEtAlAPF_a36e56af90cafe323fc42d8eaf75402f9}{log\+Q1\+Ev} (const Vec \&x1, const Vec \&y1)
+\begin{DoxyCompactList}\small\item\em Evaluate the log of q1. \end{DoxyCompactList}\item 
+double \hyperlink{classJacEtAlAPF_ac61d6bcb7a63bc95fda6e138255c2535}{log\+Mu\+Ev} (const Vec \&x1)
+\begin{DoxyCompactList}\small\item\em Evaluate the log of mu. \end{DoxyCompactList}\item 
+double \hyperlink{classJacEtAlAPF_a0cd22a37063906eddf47f8b4887919eb}{log\+G\+Ev} (const Vec \&yt, const Vec \&xt)
+\begin{DoxyCompactList}\small\item\em Evaluate the log of g. \end{DoxyCompactList}\item 
+Vec \hyperlink{classJacEtAlAPF_a3066fe2bd0b399a85eaf51ecdb1c3660}{prop\+Mu} (const Vec \&xtm1)
+\begin{DoxyCompactList}\small\item\em Evaluate the mode of the state transition distribution. \end{DoxyCompactList}\item 
+Vec \hyperlink{classJacEtAlAPF_abb98b3c8dcb28b43bebf54c15e0f8616}{f\+Samp} (const Vec \&xtm1)
+\begin{DoxyCompactList}\small\item\em Samples from f. \end{DoxyCompactList}\item 
+Vec \hyperlink{classJacEtAlAPF_afdd084c634e7ad591499a6c8c90ee9d0}{q1\+Samp} (const Vec \&y1)
+\begin{DoxyCompactList}\small\item\em Samples from q1. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An A\+PF implementation of the multivariate stochastic volatility model of Jacquier et al. 
+
+\begin{DoxyAuthor}{Author}
+taylor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+09/09/17 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Jac\+Et\+Al\+A\+PF@{Jac\+Et\+Al\+A\+PF}!Jac\+Et\+Al\+A\+PF@{Jac\+Et\+Al\+A\+PF}}
+\index{Jac\+Et\+Al\+A\+PF@{Jac\+Et\+Al\+A\+PF}!Jac\+Et\+Al\+A\+PF@{Jac\+Et\+Al\+A\+PF}}
+\subsubsection[{\texorpdfstring{Jac\+Et\+Al\+A\+P\+F(int num\+Parts, const Mat \&beta, const Vec \&\+R\+\_\+sigmas\+\_\+as\+\_\+vec, const Vec \&mus, const Vec \&phis, const Vec \&sigmas, A\+P\+F\+Resamp\+Style resamp\+Technique, int path\+Length=0)}{JacEtAlAPF(int numParts, const Mat &beta, const Vec &R_sigmas_as_vec, const Vec &mus, const Vec &phis, const Vec &sigmas, APFResampStyle resampTechnique, int pathLength=0)}}]{\setlength{\rightskip}{0pt plus 5cm}Jac\+Et\+Al\+A\+P\+F\+::\+Jac\+Et\+Al\+A\+PF (
+\begin{DoxyParamCaption}
+\item[{int}]{num\+Parts, }
+\item[{const Mat \&}]{beta, }
+\item[{const Vec \&}]{R\+\_\+sigmas\+\_\+as\+\_\+vec, }
+\item[{const Vec \&}]{mus, }
+\item[{const Vec \&}]{phis, }
+\item[{const Vec \&}]{sigmas, }
+\item[{A\+P\+F\+Resamp\+Style}]{resamp\+Technique, }
+\item[{int}]{path\+Length = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\hypertarget{classJacEtAlAPF_ac410fda3eb39aea5703740ca75276938}{}\label{classJacEtAlAPF_ac410fda3eb39aea5703740ca75276938}
+
+
+The constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+Parts} & the number of particles you want (as an int). \\
+\hline
+{\em beta} & a Mat representing the factor loadings matrix. \\
+\hline
+{\em R\+\_\+sigmas\+\_\+as\+\_\+vec} & a Vec representing the square root of the diagonals of the observation covariance matrix R. \\
+\hline
+{\em mus} & a Vec representing the mean of the log-\/volatility process. \\
+\hline
+{\em phis} & a Vec representing the AR parameters of the log-\/volatility processes. \\
+\hline
+{\em sigmas} & a Vec representing the standard deviation of the log-\/volatility processes. \\
+\hline
+{\em resamp\+Technique} & an enum class representing the type of resampling you want to do. \\
+\hline
+{\em path\+Length} & set to 0 if filtering. Otherwise, if entire path samples are desired, set to the time-\/length of your data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\index{Jac\+Et\+Al\+A\+PF@{Jac\+Et\+Al\+A\+PF}!f\+Samp@{f\+Samp}}
+\index{f\+Samp@{f\+Samp}!Jac\+Et\+Al\+A\+PF@{Jac\+Et\+Al\+A\+PF}}
+\subsubsection[{\texorpdfstring{f\+Samp(const Vec \&xtm1)}{fSamp(const Vec &xtm1)}}]{\setlength{\rightskip}{0pt plus 5cm}Vec Jac\+Et\+Al\+A\+P\+F\+::f\+Samp (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{xtm1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classJacEtAlAPF_abb98b3c8dcb28b43bebf54c15e0f8616}{}\label{classJacEtAlAPF_abb98b3c8dcb28b43bebf54c15e0f8616}
+
+
+Samples from f. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xtm1} & the previous time\textquotesingle{}s state. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a Vec sample of the current time\textquotesingle{}s state. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classAPFFilter_a367c77209129a84f3d64ff3bcaaac513}{A\+P\+F\+Filter}.
+
+\index{Jac\+Et\+Al\+A\+PF@{Jac\+Et\+Al\+A\+PF}!get\+Predictive\+Var@{get\+Predictive\+Var}}
+\index{get\+Predictive\+Var@{get\+Predictive\+Var}!Jac\+Et\+Al\+A\+PF@{Jac\+Et\+Al\+A\+PF}}
+\subsubsection[{\texorpdfstring{get\+Predictive\+Var() const }{getPredictiveVar() const }}]{\setlength{\rightskip}{0pt plus 5cm}Mat Jac\+Et\+Al\+A\+P\+F\+::get\+Predictive\+Var (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classJacEtAlAPF_a568748b544f75aad1cf779216affc229}{}\label{classJacEtAlAPF_a568748b544f75aad1cf779216affc229}
+
+
+Get the prediction covariance matrix after resampling has been performed. 
+
+\begin{DoxyReturn}{Returns}
+a Mat representing the covariance matrix of interest. 
+\end{DoxyReturn}
+\index{Jac\+Et\+Al\+A\+PF@{Jac\+Et\+Al\+A\+PF}!log\+G\+Ev@{log\+G\+Ev}}
+\index{log\+G\+Ev@{log\+G\+Ev}!Jac\+Et\+Al\+A\+PF@{Jac\+Et\+Al\+A\+PF}}
+\subsubsection[{\texorpdfstring{log\+G\+Ev(const Vec \&yt, const Vec \&xt)}{logGEv(const Vec &yt, const Vec &xt)}}]{\setlength{\rightskip}{0pt plus 5cm}double Jac\+Et\+Al\+A\+P\+F\+::log\+G\+Ev (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{yt, }
+\item[{const Vec \&}]{xt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classJacEtAlAPF_a0cd22a37063906eddf47f8b4887919eb}{}\label{classJacEtAlAPF_a0cd22a37063906eddf47f8b4887919eb}
+
+
+Evaluate the log of g. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em yt} & a Vec representing time t\textquotesingle{}s data observation. \\
+\hline
+{\em xt} & a Vec representing time t\textquotesingle{}s state. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a double evaluation. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classAPFFilter_ac2d0b5329d7ae123ae4de5dddefb5591}{A\+P\+F\+Filter}.
+
+\index{Jac\+Et\+Al\+A\+PF@{Jac\+Et\+Al\+A\+PF}!log\+Mu\+Ev@{log\+Mu\+Ev}}
+\index{log\+Mu\+Ev@{log\+Mu\+Ev}!Jac\+Et\+Al\+A\+PF@{Jac\+Et\+Al\+A\+PF}}
+\subsubsection[{\texorpdfstring{log\+Mu\+Ev(const Vec \&x1)}{logMuEv(const Vec &x1)}}]{\setlength{\rightskip}{0pt plus 5cm}double Jac\+Et\+Al\+A\+P\+F\+::log\+Mu\+Ev (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{x1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classJacEtAlAPF_ac61d6bcb7a63bc95fda6e138255c2535}{}\label{classJacEtAlAPF_ac61d6bcb7a63bc95fda6e138255c2535}
+
+
+Evaluate the log of mu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x1} & a Vec representing the first time\textquotesingle{}s state. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a double evalution. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classAPFFilter_af3d1501c147477ce1128b221f7b608fd}{A\+P\+F\+Filter}.
+
+\index{Jac\+Et\+Al\+A\+PF@{Jac\+Et\+Al\+A\+PF}!log\+Q1\+Ev@{log\+Q1\+Ev}}
+\index{log\+Q1\+Ev@{log\+Q1\+Ev}!Jac\+Et\+Al\+A\+PF@{Jac\+Et\+Al\+A\+PF}}
+\subsubsection[{\texorpdfstring{log\+Q1\+Ev(const Vec \&x1, const Vec \&y1)}{logQ1Ev(const Vec &x1, const Vec &y1)}}]{\setlength{\rightskip}{0pt plus 5cm}double Jac\+Et\+Al\+A\+P\+F\+::log\+Q1\+Ev (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{x1, }
+\item[{const Vec \&}]{y1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classJacEtAlAPF_a36e56af90cafe323fc42d8eaf75402f9}{}\label{classJacEtAlAPF_a36e56af90cafe323fc42d8eaf75402f9}
+
+
+Evaluate the log of q1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x1} & a Vec representing the first time\textquotesingle{}s state. \\
+\hline
+{\em y1} & a Vec representing the first time\textquotesingle{}s data observation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a double evaluation. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classAPFFilter_a18ba363183c0c92e6c58d6f3faccbea7}{A\+P\+F\+Filter}.
+
+\index{Jac\+Et\+Al\+A\+PF@{Jac\+Et\+Al\+A\+PF}!prop\+Mu@{prop\+Mu}}
+\index{prop\+Mu@{prop\+Mu}!Jac\+Et\+Al\+A\+PF@{Jac\+Et\+Al\+A\+PF}}
+\subsubsection[{\texorpdfstring{prop\+Mu(const Vec \&xtm1)}{propMu(const Vec &xtm1)}}]{\setlength{\rightskip}{0pt plus 5cm}Vec Jac\+Et\+Al\+A\+P\+F\+::prop\+Mu (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{xtm1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classJacEtAlAPF_a3066fe2bd0b399a85eaf51ecdb1c3660}{}\label{classJacEtAlAPF_a3066fe2bd0b399a85eaf51ecdb1c3660}
+
+
+Evaluate the mode of the state transition distribution. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xtm1} & a Vec representing the previous time\textquotesingle{}s state. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a Vec representing the mode. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classAPFFilter_a2c136104f4d96e6481406ef1397ead51}{A\+P\+F\+Filter}.
+
+\index{Jac\+Et\+Al\+A\+PF@{Jac\+Et\+Al\+A\+PF}!q1\+Samp@{q1\+Samp}}
+\index{q1\+Samp@{q1\+Samp}!Jac\+Et\+Al\+A\+PF@{Jac\+Et\+Al\+A\+PF}}
+\subsubsection[{\texorpdfstring{q1\+Samp(const Vec \&y1)}{q1Samp(const Vec &y1)}}]{\setlength{\rightskip}{0pt plus 5cm}Vec Jac\+Et\+Al\+A\+P\+F\+::q1\+Samp (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{y1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classJacEtAlAPF_afdd084c634e7ad591499a6c8c90ee9d0}{}\label{classJacEtAlAPF_afdd084c634e7ad591499a6c8c90ee9d0}
+
+
+Samples from q1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em y1} & a Vec representing time 1\textquotesingle{}s data observation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a Vec sample for the first time\textquotesingle{}s state. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classAPFFilter_a017be49a493263156ae60ccc424f7daa}{A\+P\+F\+Filter}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{jacquier__et__al__apf_8h}{jacquier\+\_\+et\+\_\+al\+\_\+apf.\+h}\end{DoxyCompactItemize}

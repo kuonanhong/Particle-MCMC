@@ -1,0 +1,5 @@
+<map id="APFFilter" name="APFFilter">
+<area shape="rect" id="node2" href="$classJacEtAlAPF.html" title="An APF implementation of the multivariate stochastic volatility model of Jacquier et al..." alt="" coords="5,80,100,107"/>
+<area shape="rect" id="node3" href="$classNAr1APFFilter.html" title="An APF implementation of a AR(1) + Noise Model. " alt="" coords="125,80,231,107"/>
+<area shape="rect" id="node4" href="$classSVolAPFFilter.html" title="An APF implementation of the basic stochastic volatility model of Taylor. " alt="" coords="256,80,361,107"/>
+</map>

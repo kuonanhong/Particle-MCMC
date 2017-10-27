@@ -38,7 +38,7 @@ Thumbs.db
 
 # other stuff #
 ###############
-./include2
-./src/examples2
-./src/mcmc_algos2
-./src/mcmc_bases2
+include2/
+src/examples2/
+src/mcmc_algos2/
+src/mcmc_bases2/

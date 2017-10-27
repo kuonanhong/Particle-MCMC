@@ -1,0 +1,126 @@
+\hypertarget{classMultinomResamp}{}\section{Multinom\+Resamp Class Reference}
+\label{classMultinomResamp}\index{Multinom\+Resamp@{Multinom\+Resamp}}
+
+
+A class for Multinomial Resampling.  
+
+
+
+
+{\ttfamily \#include $<$multinomial\+\_\+resampler.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMultinomResamp_a3134e22c0b7e0215045eb783bdc44669}{Multinom\+Resamp} ()\hypertarget{classMultinomResamp_a3134e22c0b7e0215045eb783bdc44669}{}\label{classMultinomResamp_a3134e22c0b7e0215045eb783bdc44669}
+
+\begin{DoxyCompactList}\small\item\em The default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classMultinomResamp_a590495e677a522fa7863e3885631f777}{$\sim$\+Multinom\+Resamp} ()\hypertarget{classMultinomResamp_a590495e677a522fa7863e3885631f777}{}\label{classMultinomResamp_a590495e677a522fa7863e3885631f777}
+
+\begin{DoxyCompactList}\small\item\em The default destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classMultinomResamp_a0c24d6d59254855421b8ae13b2ebbcd9}{resamp} (std\+::vector$<$ std\+::vector$<$ Vec $>$ $>$ \&old\+Parts, std\+::vector$<$ double $>$ \&old\+Weights)
+\begin{DoxyCompactList}\small\item\em Function to resample in place from weights {\itshape not} in log-\/space. \end{DoxyCompactList}\item 
+void \hyperlink{classMultinomResamp_a0ea6269180faf0b0613072d9bc8a7b53}{resamp\+Log\+Wts} (std\+::vector$<$ std\+::vector$<$ Vec $>$ $>$ \&old\+Parts, std\+::vector$<$ double $>$ \&old\+Log\+Un\+Norm\+Wts)
+\begin{DoxyCompactList}\small\item\em Function to resample in place from S\+I\+S\+Rs or A\+P\+FS with weights in log-\/space. \end{DoxyCompactList}\item 
+void \hyperlink{classMultinomResamp_ad39c4f5d5460e3e4a2c56370c8dab39f}{ressamp\+K\+R\+B\+PF} (std\+::vector$<$ \hyperlink{classLgssm}{Lgssm} $>$ \&old\+Mods, std\+::vector$<$ Vec $>$ \&old\+Samps, std\+::vector$<$ double $>$ \&old\+Wts)
+\begin{DoxyCompactList}\small\item\em Function to resample R\+B\+P\+Fs--recall you have to resample the samples A\+ND models. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \hyperlink{classMultinomResamp_ad29946389803294445cb27e74d949cd5}{k\+Gen} (const std\+::vector$<$ double $>$ \&log\+First\+Stage\+Weights)
+\begin{DoxyCompactList}\small\item\em Function to sample random indices. Used inside A\+P\+Fs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class for Multinomial Resampling. 
+
+\begin{DoxyAuthor}{Author}
+taylor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+07/09/17 
+\end{DoxyDate}
+
+
+\subsection{Member Function Documentation}
+\index{Multinom\+Resamp@{Multinom\+Resamp}!k\+Gen@{k\+Gen}}
+\index{k\+Gen@{k\+Gen}!Multinom\+Resamp@{Multinom\+Resamp}}
+\subsubsection[{\texorpdfstring{k\+Gen(const std\+::vector$<$ double $>$ \&log\+First\+Stage\+Weights)}{kGen(const std::vector< double > &logFirstStageWeights)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$int$>$ Multinom\+Resamp\+::k\+Gen (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ double $>$ \&}]{log\+First\+Stage\+Weights}
+\end{DoxyParamCaption}
+)}\hypertarget{classMultinomResamp_ad29946389803294445cb27e74d949cd5}{}\label{classMultinomResamp_ad29946389803294445cb27e74d949cd5}
+
+
+Function to sample random indices. Used inside A\+P\+Fs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em first\+Stage\+Weights} & first-\/stage weights for first stage of proposal distribution in A\+PF \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A std\+::vector of integer indices. 
+\end{DoxyReturn}
+\index{Multinom\+Resamp@{Multinom\+Resamp}!resamp@{resamp}}
+\index{resamp@{resamp}!Multinom\+Resamp@{Multinom\+Resamp}}
+\subsubsection[{\texorpdfstring{resamp(std\+::vector$<$ std\+::vector$<$ Vec $>$ $>$ \&old\+Parts, std\+::vector$<$ double $>$ \&old\+Weights)}{resamp(std::vector< std::vector< Vec > > &oldParts, std::vector< double > &oldWeights)}}]{\setlength{\rightskip}{0pt plus 5cm}void Multinom\+Resamp\+::resamp (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ std\+::vector$<$ Vec $>$ $>$ \&}]{old\+Parts, }
+\item[{std\+::vector$<$ double $>$ \&}]{old\+Weights}
+\end{DoxyParamCaption}
+)}\hypertarget{classMultinomResamp_a0c24d6d59254855421b8ae13b2ebbcd9}{}\label{classMultinomResamp_a0c24d6d59254855421b8ae13b2ebbcd9}
+
+
+Function to resample in place from weights {\itshape not} in log-\/space. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em old\+Parts} & the old particles in form std\+::vector$<$std\+::vector$<$\+Eigen\+::\+Vector\+Xd$>$ $>$. \\
+\hline
+{\em old\+Weights} & the soon-\/to-\/be outdated std\+::vector of un-\/normalized weights. \\
+\hline
+\end{DoxyParams}
+\index{Multinom\+Resamp@{Multinom\+Resamp}!resamp\+Log\+Wts@{resamp\+Log\+Wts}}
+\index{resamp\+Log\+Wts@{resamp\+Log\+Wts}!Multinom\+Resamp@{Multinom\+Resamp}}
+\subsubsection[{\texorpdfstring{resamp\+Log\+Wts(std\+::vector$<$ std\+::vector$<$ Vec $>$ $>$ \&old\+Parts, std\+::vector$<$ double $>$ \&old\+Log\+Un\+Norm\+Wts)}{resampLogWts(std::vector< std::vector< Vec > > &oldParts, std::vector< double > &oldLogUnNormWts)}}]{\setlength{\rightskip}{0pt plus 5cm}void Multinom\+Resamp\+::resamp\+Log\+Wts (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ std\+::vector$<$ Vec $>$ $>$ \&}]{old\+Parts, }
+\item[{std\+::vector$<$ double $>$ \&}]{old\+Log\+Un\+Norm\+Wts}
+\end{DoxyParamCaption}
+)}\hypertarget{classMultinomResamp_a0ea6269180faf0b0613072d9bc8a7b53}{}\label{classMultinomResamp_a0ea6269180faf0b0613072d9bc8a7b53}
+
+
+Function to resample in place from S\+I\+S\+Rs or A\+P\+FS with weights in log-\/space. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em old\+Parts} & the old particles in form std\+::vector$<$std\+::vector$<$\+Eigen\+::\+Vector\+Xd$>$ $>$. \\
+\hline
+{\em old\+Log\+Un\+Norm\+Wts} & the std\+::vector$<$double$>$ of log-\/un-\/normalized weights. \\
+\hline
+\end{DoxyParams}
+\index{Multinom\+Resamp@{Multinom\+Resamp}!ressamp\+K\+R\+B\+PF@{ressamp\+K\+R\+B\+PF}}
+\index{ressamp\+K\+R\+B\+PF@{ressamp\+K\+R\+B\+PF}!Multinom\+Resamp@{Multinom\+Resamp}}
+\subsubsection[{\texorpdfstring{ressamp\+K\+R\+B\+P\+F(std\+::vector$<$ Lgssm $>$ \&old\+Mods, std\+::vector$<$ Vec $>$ \&old\+Samps, std\+::vector$<$ double $>$ \&old\+Wts)}{ressampKRBPF(std::vector< Lgssm > &oldMods, std::vector< Vec > &oldSamps, std::vector< double > &oldWts)}}]{\setlength{\rightskip}{0pt plus 5cm}void Multinom\+Resamp\+::ressamp\+K\+R\+B\+PF (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ {\bf Lgssm} $>$ \&}]{old\+Mods, }
+\item[{std\+::vector$<$ Vec $>$ \&}]{old\+Samps, }
+\item[{std\+::vector$<$ double $>$ \&}]{old\+Wts}
+\end{DoxyParamCaption}
+)}\hypertarget{classMultinomResamp_ad39c4f5d5460e3e4a2c56370c8dab39f}{}\label{classMultinomResamp_ad39c4f5d5460e3e4a2c56370c8dab39f}
+
+
+Function to resample R\+B\+P\+Fs--recall you have to resample the samples A\+ND models. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em old\+Mods} & embedded kalman filter objects. \\
+\hline
+{\em old\+Samps} & samples of each particle. \\
+\hline
+{\em old\+Wts} & un-\/normalized weights of each particle. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/multinomial\+\_\+resampler.\+h\end{DoxyCompactItemize}

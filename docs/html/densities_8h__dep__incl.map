@@ -1,0 +1,11 @@
+<map id="include/densities.h" name="include/densities.h">
+<area shape="rect" id="node2" href="$jacquier__et__al_8h.html" title="A class that performs filtering for the multivariate stochastic volatility model of &quot;Stochastic Volat..." alt="" coords="5,87,164,114"/>
+<area shape="rect" id="node3" href="$jacquier__et__al__apf_8h.html" title="An APF implementation of the multivariate stochastic volatility model from &quot;Stochastic Volatility: Un..." alt="" coords="189,80,319,121"/>
+<area shape="rect" id="node4" href="$msvol__sisr_8h.html" title="Implements the multivariate stochastic volatility model from Pitt and Shephard 1999. " alt="" coords="343,87,485,114"/>
+<area shape="rect" id="node5" href="$pmcmc__msvol__pitt__shephard_8h_source.html" title="include/pmcmc_msvol\l_pitt_shephard.h" alt="" coords="391,169,543,211"/>
+<area shape="rect" id="node6" href="$noisy__ar1__apf__filter_8h_source.html" title="include/noisy_ar1_apf\l_filter.h" alt="" coords="560,80,708,121"/>
+<area shape="rect" id="node7" href="$noisy__ar1__filter_8h_source.html" title="include/noisy_ar1_filter.h" alt="" coords="732,87,899,114"/>
+<area shape="rect" id="node8" href="$pmcmc__trial_8h_source.html" title="include/pmcmc_trial.h" alt="" coords="923,87,1073,114"/>
+<area shape="rect" id="node9" href="$svol__apf__filter_8h_source.html" title="include/svol_apf_filter.h" alt="" coords="1097,87,1256,114"/>
+<area shape="rect" id="node10" href="$svol__filter_8h_source.html" title="include/svol_filter.h" alt="" coords="1280,87,1415,114"/>
+</map>

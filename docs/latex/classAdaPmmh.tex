@@ -1,0 +1,241 @@
+\hypertarget{classAdaPmmh}{}\section{Ada\+Pmmh Class Reference}
+\label{classAdaPmmh}\index{Ada\+Pmmh@{Ada\+Pmmh}}
+
+
+A base-\/class for adaptive particle marginal Metropolis-\/\+Hastings.  
+
+
+
+
+{\ttfamily \#include $<$ada\+\_\+pmmh.\+h$>$}
+
+
+
+Inheritance diagram for Ada\+Pmmh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=173pt]{classAdaPmmh__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classAdaPmmh_a247d3febff7dec788e4cc15039fcfa54}{Ada\+Pmmh} (std\+::vector$<$ double $>$ start\+Theta, unsigned int num\+M\+C\+M\+C\+Iters, const std\+::string \&data\+File, unsigned int num\+Cols, const unsigned \&t\+\_\+zero, const double \&eps, const Mat \&C0)
+\begin{DoxyCompactList}\small\item\em The constructor. \end{DoxyCompactList}\item 
+\hyperlink{classAdaPmmh_a9442ce68b296f98fd4bc6e36133057c9}{$\sim$\+Ada\+Pmmh} ()\hypertarget{classAdaPmmh_a9442ce68b296f98fd4bc6e36133057c9}{}\label{classAdaPmmh_a9442ce68b296f98fd4bc6e36133057c9}
+
+\begin{DoxyCompactList}\small\item\em The destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classAdaPmmh_ab21f3892ad24a401b4a1e0614189196d}{commence\+Sampling} (std\+::string samples\+File\+File, std\+::string messages\+File)
+\begin{DoxyCompactList}\small\item\em Call this to begin sampling. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classAdaPmmh_a81671891053303ff63138a75f7017482}{q\+Sample} (const std\+::vector$<$ double $>$ \&old\+Params, std\+::vector$<$ double $>$ \&new\+Params, const Mat \&Ct)=0
+\begin{DoxyCompactList}\small\item\em The function that proposes new parameters. Tip\+: Make sure to declare your static R\+NG inside the implementation of this. \end{DoxyCompactList}\item 
+virtual double \hyperlink{classAdaPmmh_aa404dfc89421ac020316b34bc19de7da}{log\+Prior\+Evaluate} (const std\+::vector$<$ double $>$ \&theta)=0
+\begin{DoxyCompactList}\small\item\em Evaluates the log of the model\textquotesingle{}s prior distribution. \end{DoxyCompactList}\item 
+virtual double \hyperlink{classAdaPmmh_a74b93e24341c204c65dc49fe5950aa13}{log\+Like\+Evaluate} (const std\+::vector$<$ double $>$ \&theta, const std\+::vector$<$ Vec $>$ \&data, std\+::atomic\+\_\+bool \&cancelled)=0
+\begin{DoxyCompactList}\small\item\em Evaluates (approximates) the log-\/likelihood with a particle filter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries log\+Params} (const std\+::vector$<$ double $>$ \&thetas, std\+::ofstream \&ofs)\hypertarget{classAdaPmmh_a13e064d67c713f77dfd3b03ffab7176f}{}\label{classAdaPmmh_a13e064d67c713f77dfd3b03ffab7176f}
+
+\item 
+void {\bfseries read\+In\+Data} (const std\+::string \&file\+Loc, unsigned int num\+Cols)\hypertarget{classAdaPmmh_a53a380577a20ac1b71e05679bb92372e}{}\label{classAdaPmmh_a53a380577a20ac1b71e05679bb92372e}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ Vec $>$ {\bfseries m\+\_\+data}\hypertarget{classAdaPmmh_aaf7dd94d1bf397f04b22f87030f6b3a7}{}\label{classAdaPmmh_aaf7dd94d1bf397f04b22f87030f6b3a7}
+
+\item 
+std\+::vector$<$ double $>$ {\bfseries m\+\_\+current\+Theta}\hypertarget{classAdaPmmh_ad45ed183d55cb6f2386c952e05af5e63}{}\label{classAdaPmmh_ad45ed183d55cb6f2386c952e05af5e63}
+
+\item 
+std\+::ofstream {\bfseries m\+\_\+samples\+File\+Stream}\hypertarget{classAdaPmmh_aea69a3e3a84c15384e5732e84d6aaa66}{}\label{classAdaPmmh_aea69a3e3a84c15384e5732e84d6aaa66}
+
+\item 
+std\+::ofstream {\bfseries m\+\_\+message\+Stream}\hypertarget{classAdaPmmh_a48294a6d030acc57f9517a9eed2290f5}{}\label{classAdaPmmh_a48294a6d030acc57f9517a9eed2290f5}
+
+\item 
+unsigned int {\bfseries m\+\_\+dim\+Theta}\hypertarget{classAdaPmmh_abd585eb5f5bb3422792fa40373725fd0}{}\label{classAdaPmmh_abd585eb5f5bb3422792fa40373725fd0}
+
+\item 
+unsigned int {\bfseries m\+\_\+num\+M\+C\+M\+C\+Iters}\hypertarget{classAdaPmmh_ad9e07b36878459a79528e806f9b65ac5}{}\label{classAdaPmmh_ad9e07b36878459a79528e806f9b65ac5}
+
+\item 
+unsigned int {\bfseries m\+\_\+num\+Extra\+Threads}\hypertarget{classAdaPmmh_ac6e644d0c3bfc6ff1b00f09e2311589a}{}\label{classAdaPmmh_ac6e644d0c3bfc6ff1b00f09e2311589a}
+
+\item 
+std\+::mutex {\bfseries m\+\_\+out\+File\+Mutex}\hypertarget{classAdaPmmh_aab9ca862f81dd85b369f7d48a20f67a0}{}\label{classAdaPmmh_aab9ca862f81dd85b369f7d48a20f67a0}
+
+\item 
+unsigned int {\bfseries m\+\_\+t\+\_\+zero}\hypertarget{classAdaPmmh_a45f9fa266c4aef52ae376179a7501a5f}{}\label{classAdaPmmh_a45f9fa266c4aef52ae376179a7501a5f}
+
+\item 
+double {\bfseries m\+\_\+s\+\_\+sub\+\_\+d}\hypertarget{classAdaPmmh_aecc16750ad3d8339db10d56b274f5d1f}{}\label{classAdaPmmh_aecc16750ad3d8339db10d56b274f5d1f}
+
+\item 
+double {\bfseries m\+\_\+epsilon}\hypertarget{classAdaPmmh_a71a7745c2656bd9b3ad19703aca0062b}{}\label{classAdaPmmh_a71a7745c2656bd9b3ad19703aca0062b}
+
+\item 
+Mat {\bfseries m\+\_\+\+Ct}\hypertarget{classAdaPmmh_abc9a4d695081d382afcd5998ac45a600}{}\label{classAdaPmmh_abc9a4d695081d382afcd5998ac45a600}
+
+\item 
+Vec {\bfseries m\+\_\+thetabar}\hypertarget{classAdaPmmh_a873b3a10749957843f08d0789002157a}{}\label{classAdaPmmh_a873b3a10749957843f08d0789002157a}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A base-\/class for adaptive particle marginal Metropolis-\/\+Hastings. 
+
+\begin{DoxyAuthor}{Author}
+taylor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+10/14/17 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Ada\+Pmmh@{Ada\+Pmmh}!Ada\+Pmmh@{Ada\+Pmmh}}
+\index{Ada\+Pmmh@{Ada\+Pmmh}!Ada\+Pmmh@{Ada\+Pmmh}}
+\subsubsection[{\texorpdfstring{Ada\+Pmmh(std\+::vector$<$ double $>$ start\+Theta, unsigned int num\+M\+C\+M\+C\+Iters, const std\+::string \&data\+File, unsigned int num\+Cols, const unsigned \&t\+\_\+zero, const double \&eps, const Mat \&\+C0)}{AdaPmmh(std::vector< double > startTheta, unsigned int numMCMCIters, const std::string &dataFile, unsigned int numCols, const unsigned &t_zero, const double &eps, const Mat &C0)}}]{\setlength{\rightskip}{0pt plus 5cm}Ada\+Pmmh\+::\+Ada\+Pmmh (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ double $>$}]{start\+Theta, }
+\item[{unsigned int}]{num\+M\+C\+M\+C\+Iters, }
+\item[{const std\+::string \&}]{data\+File, }
+\item[{unsigned int}]{num\+Cols, }
+\item[{const unsigned \&}]{t\+\_\+zero, }
+\item[{const double \&}]{eps, }
+\item[{const Mat \&}]{C0}
+\end{DoxyParamCaption}
+)}\hypertarget{classAdaPmmh_a247d3febff7dec788e4cc15039fcfa54}{}\label{classAdaPmmh_a247d3febff7dec788e4cc15039fcfa54}
+
+
+The constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Theta} & the initial parameters you want to start sampling from. \\
+\hline
+{\em num\+M\+C\+M\+C\+Iters} & the number of M\+C\+MC iterations you want to do. \\
+\hline
+{\em data\+File} & the location of the observed time series data. \\
+\hline
+{\em num\+Cols} & the dimension of your observable data. \\
+\hline
+{\em t\+\_\+zero} & t\+\_\+zero+1 is the minimum amount of samples you need before starting to sample from adaptive Ct \\
+\hline
+{\em eps} & tuning parameter that prevents singularity of Ct \\
+\hline
+{\em C0} & starting covariance matrix of proposal distribution \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Ada\+Pmmh@{Ada\+Pmmh}!commence\+Sampling@{commence\+Sampling}}
+\index{commence\+Sampling@{commence\+Sampling}!Ada\+Pmmh@{Ada\+Pmmh}}
+\subsubsection[{\texorpdfstring{commence\+Sampling(std\+::string samples\+File\+File, std\+::string messages\+File)}{commenceSampling(std::string samplesFileFile, std::string messagesFile)}}]{\setlength{\rightskip}{0pt plus 5cm}void Ada\+Pmmh\+::commence\+Sampling (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{samples\+File\+File, }
+\item[{std\+::string}]{messages\+File}
+\end{DoxyParamCaption}
+)}\hypertarget{classAdaPmmh_ab21f3892ad24a401b4a1e0614189196d}{}\label{classAdaPmmh_ab21f3892ad24a401b4a1e0614189196d}
+
+
+Call this to begin sampling. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em samples\+File\+File} & where to store the csv of parameter samples. \\
+\hline
+{\em messages\+File} & where to store the logged messages. \\
+\hline
+\end{DoxyParams}
+\index{Ada\+Pmmh@{Ada\+Pmmh}!log\+Like\+Evaluate@{log\+Like\+Evaluate}}
+\index{log\+Like\+Evaluate@{log\+Like\+Evaluate}!Ada\+Pmmh@{Ada\+Pmmh}}
+\subsubsection[{\texorpdfstring{log\+Like\+Evaluate(const std\+::vector$<$ double $>$ \&theta, const std\+::vector$<$ Vec $>$ \&data, std\+::atomic\+\_\+bool \&cancelled)=0}{logLikeEvaluate(const std::vector< double > &theta, const std::vector< Vec > &data, std::atomic_bool &cancelled)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual double Ada\+Pmmh\+::log\+Like\+Evaluate (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ double $>$ \&}]{theta, }
+\item[{const std\+::vector$<$ Vec $>$ \&}]{data, }
+\item[{std\+::atomic\+\_\+bool \&}]{cancelled}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classAdaPmmh_a74b93e24341c204c65dc49fe5950aa13}{}\label{classAdaPmmh_a74b93e24341c204c65dc49fe5950aa13}
+
+
+Evaluates (approximates) the log-\/likelihood with a particle filter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em theta} & the parameters with which to run the particle filter. \\
+\hline
+{\em data} & the observed data with which to run the particle filter. \\
+\hline
+{\em out} & the double to write out to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the evaluation (as a double) of the log likelihood approximation. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classAdaPmmhJacApf_aaf13b2e2140668a537b964ba87a81c26}{Ada\+Pmmh\+Jac\+Apf}.
+
+\index{Ada\+Pmmh@{Ada\+Pmmh}!log\+Prior\+Evaluate@{log\+Prior\+Evaluate}}
+\index{log\+Prior\+Evaluate@{log\+Prior\+Evaluate}!Ada\+Pmmh@{Ada\+Pmmh}}
+\subsubsection[{\texorpdfstring{log\+Prior\+Evaluate(const std\+::vector$<$ double $>$ \&theta)=0}{logPriorEvaluate(const std::vector< double > &theta)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual double Ada\+Pmmh\+::log\+Prior\+Evaluate (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ double $>$ \&}]{theta}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classAdaPmmh_aa404dfc89421ac020316b34bc19de7da}{}\label{classAdaPmmh_aa404dfc89421ac020316b34bc19de7da}
+
+
+Evaluates the log of the model\textquotesingle{}s prior distribution. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em theta} & the parameters argument. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the log of the prior density. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classAdaPmmhJacApf_aa1f2e89ec6eca819fbb07b6e1624a01a}{Ada\+Pmmh\+Jac\+Apf}.
+
+\index{Ada\+Pmmh@{Ada\+Pmmh}!q\+Sample@{q\+Sample}}
+\index{q\+Sample@{q\+Sample}!Ada\+Pmmh@{Ada\+Pmmh}}
+\subsubsection[{\texorpdfstring{q\+Sample(const std\+::vector$<$ double $>$ \&old\+Params, std\+::vector$<$ double $>$ \&new\+Params, const Mat \&\+Ct)=0}{qSample(const std::vector< double > &oldParams, std::vector< double > &newParams, const Mat &Ct)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Ada\+Pmmh\+::q\+Sample (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ double $>$ \&}]{old\+Params, }
+\item[{std\+::vector$<$ double $>$ \&}]{new\+Params, }
+\item[{const Mat \&}]{Ct}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classAdaPmmh_a81671891053303ff63138a75f7017482}{}\label{classAdaPmmh_a81671891053303ff63138a75f7017482}
+
+
+The function that proposes new parameters. Tip\+: Make sure to declare your static R\+NG inside the implementation of this. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em old\+Params} & \\
+\hline
+{\em new\+Params} & \\
+\hline
+{\em Ct} & the covariance matrix of the random walk \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classAdaPmmhJacApf_a2795564d301ca962546d346ded5a6de3}{Ada\+Pmmh\+Jac\+Apf}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include2/\hyperlink{ada__pmmh_8h}{ada\+\_\+pmmh.\+h}\end{DoxyCompactItemize}

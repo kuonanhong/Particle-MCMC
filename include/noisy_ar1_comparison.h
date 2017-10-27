@@ -1,0 +1,6 @@
+#ifndef NOISYAR1COMPARISON_H
+#define NOISYAR1COMPARISON_H
+
+void noisyAr1Comparison();
+
+#endif //NOISYAR1COMPARISON_H

@@ -1,0 +1,313 @@
+\hypertarget{classAPFFilter}{}\section{A\+P\+F\+Filter Class Reference}
+\label{classAPFFilter}\index{A\+P\+F\+Filter@{A\+P\+F\+Filter}}
+
+
+A base-\/class for Auxiliary Particle Filtering.  
+
+
+
+
+{\ttfamily \#include $<$apf\+\_\+filter.\+h$>$}
+
+
+
+Inheritance diagram for A\+P\+F\+Filter\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{classAPFFilter__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classAPFFilter_acda2f47653ceda4bfd3d9a25d18790c7}{A\+P\+F\+Filter} (int num\+Parts, A\+P\+F\+Resamp\+Style resamp\+Technique=A\+P\+F\+Resamp\+Style\+::everytime\+\_\+multinomial, unsigned int path\+Length=0)
+\begin{DoxyCompactList}\small\item\em The constructor. \end{DoxyCompactList}\item 
+\hyperlink{classAPFFilter_ac2f814288c00c8b4f149cb4887d11f92}{$\sim$\+A\+P\+F\+Filter} ()\hypertarget{classAPFFilter_ac2f814288c00c8b4f149cb4887d11f92}{}\label{classAPFFilter_ac2f814288c00c8b4f149cb4887d11f92}
+
+\begin{DoxyCompactList}\small\item\em The destructor. \end{DoxyCompactList}\item 
+double \hyperlink{classAPFFilter_af9a5210f2927616dd6c82705d203b012}{get\+Log\+Cond\+Like} () const 
+\begin{DoxyCompactList}\small\item\em Get the latest log conditional likelihood. \end{DoxyCompactList}\item 
+const std\+::vector$<$ std\+::vector$<$ Vec $>$ $>$ \& \hyperlink{classAPFFilter_aa2ec5f04285cd1821f21ee85dcf50e3f}{get\+Full\+Parts} () const 
+\begin{DoxyCompactList}\small\item\em Get the full set of particle paths. Only works if path\+Length $>$ 0 in constructor. \end{DoxyCompactList}\item 
+const std\+::vector$<$ Mat $>$ \& \hyperlink{classAPFFilter_a84281845b2986f246fc132d13fd33e3d}{get\+Expectations} () const 
+\begin{DoxyCompactList}\small\item\em return all stored expectations (taken with respect to \$p(x\+\_\+t$\vert$y\+\_\+\{1\+:t\})\$ \end{DoxyCompactList}\item 
+const std\+::vector$<$ double $>$ \& \hyperlink{classAPFFilter_a5e552b59cc1e2adc56b06ea7925df51f}{get\+Weights} () const 
+\begin{DoxyCompactList}\small\item\em Get the latest log un-\/normalized weights. \end{DoxyCompactList}\item 
+void \hyperlink{classAPFFilter_adc7ee7fed78dd93309784378523e0399}{filter\+Or\+Smooth} (const Vec \&dataconst, const std\+::vector$<$ std\+::function$<$ const Mat(const Vec \&)$>$ $>$ \&fs=std\+::vector$<$ std\+::function$<$ const Mat(const Vec \&)$>$ $>$())
+\begin{DoxyCompactList}\small\item\em Use a new datapoint to update the filtering distribution (or smoothing if path\+Length $>$ 0). \end{DoxyCompactList}\item 
+virtual double \hyperlink{classAPFFilter_af3d1501c147477ce1128b221f7b608fd}{log\+Mu\+Ev} (const Vec \&x1)=0
+\begin{DoxyCompactList}\small\item\em Evaluates the log of mu. \end{DoxyCompactList}\item 
+virtual Vec \hyperlink{classAPFFilter_a2c136104f4d96e6481406ef1397ead51}{prop\+Mu} (const Vec \&xtm1)=0
+\begin{DoxyCompactList}\small\item\em Evaluates the proposal distribution taking a Vec from the previous time\textquotesingle{}s state, and returning a state for the current time. \end{DoxyCompactList}\item 
+virtual Vec \hyperlink{classAPFFilter_a017be49a493263156ae60ccc424f7daa}{q1\+Samp} (const Vec \&y1)=0
+\begin{DoxyCompactList}\small\item\em Samples from q1. \end{DoxyCompactList}\item 
+virtual Vec \hyperlink{classAPFFilter_a367c77209129a84f3d64ff3bcaaac513}{f\+Samp} (const Vec \&xtm1)=0
+\begin{DoxyCompactList}\small\item\em Samples from f. \end{DoxyCompactList}\item 
+virtual double \hyperlink{classAPFFilter_a18ba363183c0c92e6c58d6f3faccbea7}{log\+Q1\+Ev} (const Vec \&x1, const Vec \&y1)=0
+\begin{DoxyCompactList}\small\item\em Evaluates the log of q1. \end{DoxyCompactList}\item 
+virtual double \hyperlink{classAPFFilter_ac2d0b5329d7ae123ae4de5dddefb5591}{log\+G\+Ev} (const Vec \&yt, const Vec \&xt)=0
+\begin{DoxyCompactList}\small\item\em Evaluates the log of g. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A base-\/class for Auxiliary Particle Filtering. 
+
+\begin{DoxyAuthor}{Author}
+taylor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+09/09/17 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{A\+P\+F\+Filter@{A\+P\+F\+Filter}!A\+P\+F\+Filter@{A\+P\+F\+Filter}}
+\index{A\+P\+F\+Filter@{A\+P\+F\+Filter}!A\+P\+F\+Filter@{A\+P\+F\+Filter}}
+\subsubsection[{\texorpdfstring{A\+P\+F\+Filter(int num\+Parts, A\+P\+F\+Resamp\+Style resamp\+Technique=\+A\+P\+F\+Resamp\+Style\+::everytime\+\_\+multinomial, unsigned int path\+Length=0)}{APFFilter(int numParts, APFResampStyle resampTechnique=APFResampStyle::everytime_multinomial, unsigned int pathLength=0)}}]{\setlength{\rightskip}{0pt plus 5cm}A\+P\+F\+Filter\+::\+A\+P\+F\+Filter (
+\begin{DoxyParamCaption}
+\item[{int}]{num\+Parts, }
+\item[{A\+P\+F\+Resamp\+Style}]{resamp\+Technique = {\ttfamily APFResampStyle\+:\+:everytime\+\_\+multinomial}, }
+\item[{unsigned int}]{path\+Length = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\hypertarget{classAPFFilter_acda2f47653ceda4bfd3d9a25d18790c7}{}\label{classAPFFilter_acda2f47653ceda4bfd3d9a25d18790c7}
+
+
+The constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+Parts} & the number of particles you want to use. \\
+\hline
+{\em resamp\+Technique} & the resampling style. \\
+\hline
+{\em path\+Length} & set to 0 if you are filtering. Otherwise, if you wish to retain samples of the entire path, set to time length of data. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{A\+P\+F\+Filter@{A\+P\+F\+Filter}!filter\+Or\+Smooth@{filter\+Or\+Smooth}}
+\index{filter\+Or\+Smooth@{filter\+Or\+Smooth}!A\+P\+F\+Filter@{A\+P\+F\+Filter}}
+\subsubsection[{\texorpdfstring{filter\+Or\+Smooth(const Vec \&dataconst, const std\+::vector$<$ std\+::function$<$ const Mat(const Vec \&)$>$ $>$ \&fs=std\+::vector$<$ std\+::function$<$ const Mat(const Vec \&)$>$ $>$())}{filterOrSmooth(const Vec &dataconst, const std::vector< std::function< const Mat(const Vec &)> > &fs=std::vector< std::function< const Mat(const Vec &)> >())}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+P\+F\+Filter\+::filter\+Or\+Smooth (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{dataconst, }
+\item[{const std\+::vector$<$ std\+::function$<$ const Mat(const Vec \&)$>$ $>$ \&}]{fs = {\ttfamily std\+:\+:vector$<$~std\+:\+:function$<$~const~Mat(const~Vec~\&)$>$~$>$()}}
+\end{DoxyParamCaption}
+)}\hypertarget{classAPFFilter_adc7ee7fed78dd93309784378523e0399}{}\label{classAPFFilter_adc7ee7fed78dd93309784378523e0399}
+
+
+Use a new datapoint to update the filtering distribution (or smoothing if path\+Length $>$ 0). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Vec representing the data \\
+\hline
+{\em a} & std\+::vector of callback functions that are used to calculate expectations with respect to the filtering distribution. \\
+\hline
+\end{DoxyParams}
+\index{A\+P\+F\+Filter@{A\+P\+F\+Filter}!f\+Samp@{f\+Samp}}
+\index{f\+Samp@{f\+Samp}!A\+P\+F\+Filter@{A\+P\+F\+Filter}}
+\subsubsection[{\texorpdfstring{f\+Samp(const Vec \&xtm1)=0}{fSamp(const Vec &xtm1)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual Vec A\+P\+F\+Filter\+::f\+Samp (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{xtm1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classAPFFilter_a367c77209129a84f3d64ff3bcaaac513}{}\label{classAPFFilter_a367c77209129a84f3d64ff3bcaaac513}
+
+
+Samples from f. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xtm1} & a Vec representing the previous time\textquotesingle{}s state. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a Vec state sample for the current time. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classJacEtAlAPF_abb98b3c8dcb28b43bebf54c15e0f8616}{Jac\+Et\+Al\+A\+PF}, \hyperlink{classSVolAPFFilter_a3e24042d1c2763c80fe56ab9a5359aac}{S\+Vol\+A\+P\+F\+Filter}, and \hyperlink{classNAr1APFFilter_a7490ba7d06d2d82930afce64100cce99}{N\+Ar1\+A\+P\+F\+Filter}.
+
+\index{A\+P\+F\+Filter@{A\+P\+F\+Filter}!get\+Expectations@{get\+Expectations}}
+\index{get\+Expectations@{get\+Expectations}!A\+P\+F\+Filter@{A\+P\+F\+Filter}}
+\subsubsection[{\texorpdfstring{get\+Expectations() const }{getExpectations() const }}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::vector$<$Mat$>$\& A\+P\+F\+Filter\+::get\+Expectations (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classAPFFilter_a84281845b2986f246fc132d13fd33e3d}{}\label{classAPFFilter_a84281845b2986f246fc132d13fd33e3d}
+
+
+return all stored expectations (taken with respect to \$p(x\+\_\+t$\vert$y\+\_\+\{1\+:t\})\$ 
+
+\begin{DoxyReturn}{Returns}
+return a std\+::vector$<$\+Mat$>$ of expectations. How many depends on how many callbacks you gave to 
+\end{DoxyReturn}
+\index{A\+P\+F\+Filter@{A\+P\+F\+Filter}!get\+Full\+Parts@{get\+Full\+Parts}}
+\index{get\+Full\+Parts@{get\+Full\+Parts}!A\+P\+F\+Filter@{A\+P\+F\+Filter}}
+\subsubsection[{\texorpdfstring{get\+Full\+Parts() const }{getFullParts() const }}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::vector$<$std\+::vector$<$Vec$>$ $>$\& A\+P\+F\+Filter\+::get\+Full\+Parts (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classAPFFilter_aa2ec5f04285cd1821f21ee85dcf50e3f}{}\label{classAPFFilter_aa2ec5f04285cd1821f21ee85dcf50e3f}
+
+
+Get the full set of particle paths. Only works if path\+Length $>$ 0 in constructor. 
+
+\begin{DoxyReturn}{Returns}
+The full set of particle paths as std\+::vector$<$std\+::vector$<$\+Vec$>$ $>$. 
+\end{DoxyReturn}
+\index{A\+P\+F\+Filter@{A\+P\+F\+Filter}!get\+Log\+Cond\+Like@{get\+Log\+Cond\+Like}}
+\index{get\+Log\+Cond\+Like@{get\+Log\+Cond\+Like}!A\+P\+F\+Filter@{A\+P\+F\+Filter}}
+\subsubsection[{\texorpdfstring{get\+Log\+Cond\+Like() const }{getLogCondLike() const }}]{\setlength{\rightskip}{0pt plus 5cm}double A\+P\+F\+Filter\+::get\+Log\+Cond\+Like (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classAPFFilter_af9a5210f2927616dd6c82705d203b012}{}\label{classAPFFilter_af9a5210f2927616dd6c82705d203b012}
+
+
+Get the latest log conditional likelihood. 
+
+\begin{DoxyReturn}{Returns}
+a double of the most recent conditional likelihood. 
+\end{DoxyReturn}
+\index{A\+P\+F\+Filter@{A\+P\+F\+Filter}!get\+Weights@{get\+Weights}}
+\index{get\+Weights@{get\+Weights}!A\+P\+F\+Filter@{A\+P\+F\+Filter}}
+\subsubsection[{\texorpdfstring{get\+Weights() const }{getWeights() const }}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::vector$<$double$>$\& A\+P\+F\+Filter\+::get\+Weights (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classAPFFilter_a5e552b59cc1e2adc56b06ea7925df51f}{}\label{classAPFFilter_a5e552b59cc1e2adc56b06ea7925df51f}
+
+
+Get the latest log un-\/normalized weights. 
+
+\begin{DoxyReturn}{Returns}
+a std\+::vector$<$double$>$ of the log un norm weights. 
+\end{DoxyReturn}
+\index{A\+P\+F\+Filter@{A\+P\+F\+Filter}!log\+G\+Ev@{log\+G\+Ev}}
+\index{log\+G\+Ev@{log\+G\+Ev}!A\+P\+F\+Filter@{A\+P\+F\+Filter}}
+\subsubsection[{\texorpdfstring{log\+G\+Ev(const Vec \&yt, const Vec \&xt)=0}{logGEv(const Vec &yt, const Vec &xt)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual double A\+P\+F\+Filter\+::log\+G\+Ev (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{yt, }
+\item[{const Vec \&}]{xt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classAPFFilter_ac2d0b5329d7ae123ae4de5dddefb5591}{}\label{classAPFFilter_ac2d0b5329d7ae123ae4de5dddefb5591}
+
+
+Evaluates the log of g. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em yt} & a Vec representing time t\textquotesingle{}s data observation. \\
+\hline
+{\em xt} & a Vec representing time t\textquotesingle{}s state. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a double evaluation. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classJacEtAlAPF_a0cd22a37063906eddf47f8b4887919eb}{Jac\+Et\+Al\+A\+PF}, \hyperlink{classNAr1APFFilter_afabcd7acb729a62955856c9737e76059}{N\+Ar1\+A\+P\+F\+Filter}, and \hyperlink{classSVolAPFFilter_ac0b9ba8b7fcb918c011bb662f3306d19}{S\+Vol\+A\+P\+F\+Filter}.
+
+\index{A\+P\+F\+Filter@{A\+P\+F\+Filter}!log\+Mu\+Ev@{log\+Mu\+Ev}}
+\index{log\+Mu\+Ev@{log\+Mu\+Ev}!A\+P\+F\+Filter@{A\+P\+F\+Filter}}
+\subsubsection[{\texorpdfstring{log\+Mu\+Ev(const Vec \&x1)=0}{logMuEv(const Vec &x1)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual double A\+P\+F\+Filter\+::log\+Mu\+Ev (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{x1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classAPFFilter_af3d1501c147477ce1128b221f7b608fd}{}\label{classAPFFilter_af3d1501c147477ce1128b221f7b608fd}
+
+
+Evaluates the log of mu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x1} & a Vec representing time 1\textquotesingle{}s state. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a double evaluation. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classJacEtAlAPF_ac61d6bcb7a63bc95fda6e138255c2535}{Jac\+Et\+Al\+A\+PF}, \hyperlink{classNAr1APFFilter_ad85b9a81c93f86ebcc8e837bb2ca010f}{N\+Ar1\+A\+P\+F\+Filter}, and \hyperlink{classSVolAPFFilter_ac019751d65847aabfb4a5b4cdcfbcf4c}{S\+Vol\+A\+P\+F\+Filter}.
+
+\index{A\+P\+F\+Filter@{A\+P\+F\+Filter}!log\+Q1\+Ev@{log\+Q1\+Ev}}
+\index{log\+Q1\+Ev@{log\+Q1\+Ev}!A\+P\+F\+Filter@{A\+P\+F\+Filter}}
+\subsubsection[{\texorpdfstring{log\+Q1\+Ev(const Vec \&x1, const Vec \&y1)=0}{logQ1Ev(const Vec &x1, const Vec &y1)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual double A\+P\+F\+Filter\+::log\+Q1\+Ev (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{x1, }
+\item[{const Vec \&}]{y1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classAPFFilter_a18ba363183c0c92e6c58d6f3faccbea7}{}\label{classAPFFilter_a18ba363183c0c92e6c58d6f3faccbea7}
+
+
+Evaluates the log of q1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x1} & a Vec representing time 1\textquotesingle{}s state. \\
+\hline
+{\em y1} & a Vec representing time 1\textquotesingle{}s data observation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a double evaluation. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classJacEtAlAPF_a36e56af90cafe323fc42d8eaf75402f9}{Jac\+Et\+Al\+A\+PF}, \hyperlink{classNAr1APFFilter_a0839d99fe62312b8a2c5c781b879fa79}{N\+Ar1\+A\+P\+F\+Filter}, and \hyperlink{classSVolAPFFilter_ade59e30d3d1517a0c64fc44bc027d53c}{S\+Vol\+A\+P\+F\+Filter}.
+
+\index{A\+P\+F\+Filter@{A\+P\+F\+Filter}!prop\+Mu@{prop\+Mu}}
+\index{prop\+Mu@{prop\+Mu}!A\+P\+F\+Filter@{A\+P\+F\+Filter}}
+\subsubsection[{\texorpdfstring{prop\+Mu(const Vec \&xtm1)=0}{propMu(const Vec &xtm1)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual Vec A\+P\+F\+Filter\+::prop\+Mu (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{xtm1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classAPFFilter_a2c136104f4d96e6481406ef1397ead51}{}\label{classAPFFilter_a2c136104f4d96e6481406ef1397ead51}
+
+
+Evaluates the proposal distribution taking a Vec from the previous time\textquotesingle{}s state, and returning a state for the current time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xtm1} & a Vec representing the previous time\textquotesingle{}s state. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a Vec representing a likely current time state, to be used by the observation density. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classJacEtAlAPF_a3066fe2bd0b399a85eaf51ecdb1c3660}{Jac\+Et\+Al\+A\+PF}, \hyperlink{classNAr1APFFilter_a92a000138b5440613ab85c3811eb5525}{N\+Ar1\+A\+P\+F\+Filter}, and \hyperlink{classSVolAPFFilter_a5a5d8ac387f71cb64d8da66c38bbff71}{S\+Vol\+A\+P\+F\+Filter}.
+
+\index{A\+P\+F\+Filter@{A\+P\+F\+Filter}!q1\+Samp@{q1\+Samp}}
+\index{q1\+Samp@{q1\+Samp}!A\+P\+F\+Filter@{A\+P\+F\+Filter}}
+\subsubsection[{\texorpdfstring{q1\+Samp(const Vec \&y1)=0}{q1Samp(const Vec &y1)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual Vec A\+P\+F\+Filter\+::q1\+Samp (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{y1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classAPFFilter_a017be49a493263156ae60ccc424f7daa}{}\label{classAPFFilter_a017be49a493263156ae60ccc424f7daa}
+
+
+Samples from q1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em y1} & a Vec representing time 1\textquotesingle{}s data point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a Vec sample for time 1\textquotesingle{}s state. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classJacEtAlAPF_afdd084c634e7ad591499a6c8c90ee9d0}{Jac\+Et\+Al\+A\+PF}, \hyperlink{classNAr1APFFilter_a294a2044c95ba6e013758fa62f3ef979}{N\+Ar1\+A\+P\+F\+Filter}, and \hyperlink{classSVolAPFFilter_a9da55ac2cfbc51ce0bc65a335942b1b6}{S\+Vol\+A\+P\+F\+Filter}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/apf\+\_\+filter.\+h\end{DoxyCompactItemize}

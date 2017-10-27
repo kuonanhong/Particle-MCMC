@@ -1,0 +1,301 @@
+\hypertarget{classPmmh__jac__apf}{}\section{Pmmh\+\_\+jac\+\_\+apf Class Reference}
+\label{classPmmh__jac__apf}\index{Pmmh\+\_\+jac\+\_\+apf@{Pmmh\+\_\+jac\+\_\+apf}}
+
+
+Estimates the model of Jacquier et al. with a particle marginal Metropolis-\/\+Hastings algorithm.  
+
+
+
+
+{\ttfamily \#include $<$pmmh\+\_\+jac\+\_\+apf.\+h$>$}
+
+
+
+Inheritance diagram for Pmmh\+\_\+jac\+\_\+apf\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=162pt]{classPmmh__jac__apf__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Pmmh\+\_\+jac\+\_\+apf\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=162pt]{classPmmh__jac__apf__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPmmh__jac__apf_a3efb1ce126a1e5ca5a4b56fa453fd40b}{Pmmh\+\_\+jac\+\_\+apf} (unsigned int num\+Parts, std\+::vector$<$ double $>$ start\+Theta, unsigned int num\+M\+C\+M\+C\+Iters, const std\+::string \&data\+File, unsigned int num\+Cols)
+\begin{DoxyCompactList}\small\item\em The constructor. \end{DoxyCompactList}\item 
+\hyperlink{classPmmh__jac__apf_afbe2594fe7e40914ac4edc36580ebc33}{$\sim$\+Pmmh\+\_\+jac\+\_\+apf} ()\hypertarget{classPmmh__jac__apf_afbe2594fe7e40914ac4edc36580ebc33}{}\label{classPmmh__jac__apf_afbe2594fe7e40914ac4edc36580ebc33}
+
+\begin{DoxyCompactList}\small\item\em The destructor. \end{DoxyCompactList}\item 
+double \hyperlink{classPmmh__jac__apf_ab4e3f02111c1232c54dbcc814e5778af}{twice\+Fisher} (const double \&phi)
+\begin{DoxyCompactList}\small\item\em Convenience function that maps (-\/1,1) to the reals. \end{DoxyCompactList}\item 
+double \hyperlink{classPmmh__jac__apf_ae96bbb73b47bab903061dcc1e0e5e14c}{inv\+Twice\+Fisher} (const double \&psi)
+\begin{DoxyCompactList}\small\item\em Convenience function that maps the reals to (-\/1,1) \end{DoxyCompactList}\item 
+void \hyperlink{classPmmh__jac__apf_a9f3f949aa9017178936878fe87c4fd79}{flatten\+Params} (std\+::vector$<$ double $>$ \&flat\+Ones, const Mat \&beta, const Vec \&phis, const Vec \&mus, const Vec \&sigmas, const Vec \&Rstd\+Devs)
+\begin{DoxyCompactList}\small\item\em Convenience function that. \end{DoxyCompactList}\item 
+void \hyperlink{classPmmh__jac__apf_a5d6152e013c3aba4a70d1a874364ae3b}{un\+Flatten\+Params} (Mat \&beta, Vec \&phi, Vec \&mu, Vec \&sigma, Vec \&Rstd\+Devs, const std\+::vector$<$ double $>$ \&flat\+Ones)
+\item 
+void \hyperlink{classPmmh__jac__apf_a863fc68aa67907e531c4da13afc74914}{q\+Sample} (const std\+::vector$<$ double $>$ \&old\+Params, std\+::vector$<$ double $>$ \&new\+Params)
+\begin{DoxyCompactList}\small\item\em Samples new proposal parameters from old parameters. \end{DoxyCompactList}\item 
+double \hyperlink{classPmmh__jac__apf_a49126fee9cb4daea00333c45f52945ee}{log\+Q\+Evaluate} (const std\+::vector$<$ double $>$ \&old\+Params, const std\+::vector$<$ double $>$ \&new\+Params)
+\begin{DoxyCompactList}\small\item\em Evaluates the logarithm of the parameter proposal distribution. \end{DoxyCompactList}\item 
+double \hyperlink{classPmmh__jac__apf_ade139b7e8122a9cc37d4aae22e6ec752}{log\+Prior\+Evaluate} (const std\+::vector$<$ double $>$ \&theta)
+\begin{DoxyCompactList}\small\item\em Evaluates the log of the prior. \end{DoxyCompactList}\item 
+double \hyperlink{classPmmh__jac__apf_a34973f896a5fe11b04f93cc80ee54474}{log\+Like\+Evaluate} (const std\+::vector$<$ double $>$ \&theta, const std\+::vector$<$ Vec $>$ \&data, std\+::atomic\+\_\+bool \&cancelled)
+\begin{DoxyCompactList}\small\item\em Approximates the log-\/likelihood with a particle filter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Estimates the model of Jacquier et al. with a particle marginal Metropolis-\/\+Hastings algorithm. 
+
+\begin{DoxyAuthor}{Author}
+taylor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+14/10/17 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Pmmh\+\_\+jac\+\_\+apf@{Pmmh\+\_\+jac\+\_\+apf}!Pmmh\+\_\+jac\+\_\+apf@{Pmmh\+\_\+jac\+\_\+apf}}
+\index{Pmmh\+\_\+jac\+\_\+apf@{Pmmh\+\_\+jac\+\_\+apf}!Pmmh\+\_\+jac\+\_\+apf@{Pmmh\+\_\+jac\+\_\+apf}}
+\subsubsection[{\texorpdfstring{Pmmh\+\_\+jac\+\_\+apf(unsigned int num\+Parts, std\+::vector$<$ double $>$ start\+Theta, unsigned int num\+M\+C\+M\+C\+Iters, const std\+::string \&data\+File, unsigned int num\+Cols)}{Pmmh_jac_apf(unsigned int numParts, std::vector< double > startTheta, unsigned int numMCMCIters, const std::string &dataFile, unsigned int numCols)}}]{\setlength{\rightskip}{0pt plus 5cm}Pmmh\+\_\+jac\+\_\+apf\+::\+Pmmh\+\_\+jac\+\_\+apf (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{num\+Parts, }
+\item[{std\+::vector$<$ double $>$}]{start\+Theta, }
+\item[{unsigned int}]{num\+M\+C\+M\+C\+Iters, }
+\item[{const std\+::string \&}]{data\+File, }
+\item[{unsigned int}]{num\+Cols}
+\end{DoxyParamCaption}
+)}\hypertarget{classPmmh__jac__apf_a3efb1ce126a1e5ca5a4b56fa453fd40b}{}\label{classPmmh__jac__apf_a3efb1ce126a1e5ca5a4b56fa453fd40b}
+
+
+The constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+Parts} & the number of particles you want. \\
+\hline
+{\em start\+Theta} & the starting point parameters. \\
+\hline
+{\em num\+M\+C\+M\+C\+Iters} & the number of M\+C\+MC iterations you want. \\
+\hline
+{\em data\+File} & the location of the observed time series data. \\
+\hline
+{\em num\+Cols} & the dimension of your observable time series data. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Pmmh\+\_\+jac\+\_\+apf@{Pmmh\+\_\+jac\+\_\+apf}!flatten\+Params@{flatten\+Params}}
+\index{flatten\+Params@{flatten\+Params}!Pmmh\+\_\+jac\+\_\+apf@{Pmmh\+\_\+jac\+\_\+apf}}
+\subsubsection[{\texorpdfstring{flatten\+Params(std\+::vector$<$ double $>$ \&flat\+Ones, const Mat \&beta, const Vec \&phis, const Vec \&mus, const Vec \&sigmas, const Vec \&\+Rstd\+Devs)}{flattenParams(std::vector< double > &flatOnes, const Mat &beta, const Vec &phis, const Vec &mus, const Vec &sigmas, const Vec &RstdDevs)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pmmh\+\_\+jac\+\_\+apf\+::flatten\+Params (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ double $>$ \&}]{flat\+Ones, }
+\item[{const Mat \&}]{beta, }
+\item[{const Vec \&}]{phis, }
+\item[{const Vec \&}]{mus, }
+\item[{const Vec \&}]{sigmas, }
+\item[{const Vec \&}]{Rstd\+Devs}
+\end{DoxyParamCaption}
+)}\hypertarget{classPmmh__jac__apf_a9f3f949aa9017178936878fe87c4fd79}{}\label{classPmmh__jac__apf_a9f3f949aa9017178936878fe87c4fd79}
+
+
+Convenience function that. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flat\+Ones} & the parameters in a std\+::vector$<$double$>$ container. \\
+\hline
+{\em beta} & \\
+\hline
+{\em phis} & \\
+\hline
+{\em mus} & \\
+\hline
+{\em sigmas} & \\
+\hline
+{\em Rstd\+Devs} & \\
+\hline
+\end{DoxyParams}
+\index{Pmmh\+\_\+jac\+\_\+apf@{Pmmh\+\_\+jac\+\_\+apf}!inv\+Twice\+Fisher@{inv\+Twice\+Fisher}}
+\index{inv\+Twice\+Fisher@{inv\+Twice\+Fisher}!Pmmh\+\_\+jac\+\_\+apf@{Pmmh\+\_\+jac\+\_\+apf}}
+\subsubsection[{\texorpdfstring{inv\+Twice\+Fisher(const double \&psi)}{invTwiceFisher(const double &psi)}}]{\setlength{\rightskip}{0pt plus 5cm}double Pmmh\+\_\+jac\+\_\+apf\+::inv\+Twice\+Fisher (
+\begin{DoxyParamCaption}
+\item[{const double \&}]{psi}
+\end{DoxyParamCaption}
+)}\hypertarget{classPmmh__jac__apf_ae96bbb73b47bab903061dcc1e0e5e14c}{}\label{classPmmh__jac__apf_ae96bbb73b47bab903061dcc1e0e5e14c}
+
+
+Convenience function that maps the reals to (-\/1,1) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em psi} & an unbounded real number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+phi which is between -\/1 and 1 
+\end{DoxyReturn}
+\index{Pmmh\+\_\+jac\+\_\+apf@{Pmmh\+\_\+jac\+\_\+apf}!log\+Like\+Evaluate@{log\+Like\+Evaluate}}
+\index{log\+Like\+Evaluate@{log\+Like\+Evaluate}!Pmmh\+\_\+jac\+\_\+apf@{Pmmh\+\_\+jac\+\_\+apf}}
+\subsubsection[{\texorpdfstring{log\+Like\+Evaluate(const std\+::vector$<$ double $>$ \&theta, const std\+::vector$<$ Vec $>$ \&data, std\+::atomic\+\_\+bool \&cancelled)}{logLikeEvaluate(const std::vector< double > &theta, const std::vector< Vec > &data, std::atomic_bool &cancelled)}}]{\setlength{\rightskip}{0pt plus 5cm}double Pmmh\+\_\+jac\+\_\+apf\+::log\+Like\+Evaluate (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ double $>$ \&}]{theta, }
+\item[{const std\+::vector$<$ Vec $>$ \&}]{data, }
+\item[{std\+::atomic\+\_\+bool \&}]{cancelled}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classPmmh__jac__apf_a34973f896a5fe11b04f93cc80ee54474}{}\label{classPmmh__jac__apf_a34973f896a5fe11b04f93cc80ee54474}
+
+
+Approximates the log-\/likelihood with a particle filter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em theta} & the parameters. \\
+\hline
+{\em data} & the observable data. \\
+\hline
+{\em out} & the double to write out to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the evaluation (as a double) of the log likelihood approximation. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classPmmh_a4a66167bea425f5d271ef7931f4a3e5f}{Pmmh}.
+
+\index{Pmmh\+\_\+jac\+\_\+apf@{Pmmh\+\_\+jac\+\_\+apf}!log\+Prior\+Evaluate@{log\+Prior\+Evaluate}}
+\index{log\+Prior\+Evaluate@{log\+Prior\+Evaluate}!Pmmh\+\_\+jac\+\_\+apf@{Pmmh\+\_\+jac\+\_\+apf}}
+\subsubsection[{\texorpdfstring{log\+Prior\+Evaluate(const std\+::vector$<$ double $>$ \&theta)}{logPriorEvaluate(const std::vector< double > &theta)}}]{\setlength{\rightskip}{0pt plus 5cm}double Pmmh\+\_\+jac\+\_\+apf\+::log\+Prior\+Evaluate (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ double $>$ \&}]{theta}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classPmmh__jac__apf_ade139b7e8122a9cc37d4aae22e6ec752}{}\label{classPmmh__jac__apf_ade139b7e8122a9cc37d4aae22e6ec752}
+
+
+Evaluates the log of the prior. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em theta} & the parameter inputs. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the logarithm of the prior evaluation. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classPmmh_ada5cc8317bd91ca129909abe0ec2cd1b}{Pmmh}.
+
+\index{Pmmh\+\_\+jac\+\_\+apf@{Pmmh\+\_\+jac\+\_\+apf}!log\+Q\+Evaluate@{log\+Q\+Evaluate}}
+\index{log\+Q\+Evaluate@{log\+Q\+Evaluate}!Pmmh\+\_\+jac\+\_\+apf@{Pmmh\+\_\+jac\+\_\+apf}}
+\subsubsection[{\texorpdfstring{log\+Q\+Evaluate(const std\+::vector$<$ double $>$ \&old\+Params, const std\+::vector$<$ double $>$ \&new\+Params)}{logQEvaluate(const std::vector< double > &oldParams, const std::vector< double > &newParams)}}]{\setlength{\rightskip}{0pt plus 5cm}double Pmmh\+\_\+jac\+\_\+apf\+::log\+Q\+Evaluate (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ double $>$ \&}]{old\+Params, }
+\item[{const std\+::vector$<$ double $>$ \&}]{new\+Params}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classPmmh__jac__apf_a49126fee9cb4daea00333c45f52945ee}{}\label{classPmmh__jac__apf_a49126fee9cb4daea00333c45f52945ee}
+
+
+Evaluates the logarithm of the parameter proposal distribution. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em old\+Params} & \\
+\hline
+{\em new\+Params} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the logarithm of the density evaluation. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classPmmh_a9948772ed9f9e1024302c524641d9915}{Pmmh}.
+
+\index{Pmmh\+\_\+jac\+\_\+apf@{Pmmh\+\_\+jac\+\_\+apf}!q\+Sample@{q\+Sample}}
+\index{q\+Sample@{q\+Sample}!Pmmh\+\_\+jac\+\_\+apf@{Pmmh\+\_\+jac\+\_\+apf}}
+\subsubsection[{\texorpdfstring{q\+Sample(const std\+::vector$<$ double $>$ \&old\+Params, std\+::vector$<$ double $>$ \&new\+Params)}{qSample(const std::vector< double > &oldParams, std::vector< double > &newParams)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pmmh\+\_\+jac\+\_\+apf\+::q\+Sample (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ double $>$ \&}]{old\+Params, }
+\item[{std\+::vector$<$ double $>$ \&}]{new\+Params}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classPmmh__jac__apf_a863fc68aa67907e531c4da13afc74914}{}\label{classPmmh__jac__apf_a863fc68aa67907e531c4da13afc74914}
+
+
+Samples new proposal parameters from old parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em old\+Params} & \\
+\hline
+{\em new\+Params} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classPmmh_ab8527fd052ddaa434b8b4ab9715d503f}{Pmmh}.
+
+\index{Pmmh\+\_\+jac\+\_\+apf@{Pmmh\+\_\+jac\+\_\+apf}!twice\+Fisher@{twice\+Fisher}}
+\index{twice\+Fisher@{twice\+Fisher}!Pmmh\+\_\+jac\+\_\+apf@{Pmmh\+\_\+jac\+\_\+apf}}
+\subsubsection[{\texorpdfstring{twice\+Fisher(const double \&phi)}{twiceFisher(const double &phi)}}]{\setlength{\rightskip}{0pt plus 5cm}double Pmmh\+\_\+jac\+\_\+apf\+::twice\+Fisher (
+\begin{DoxyParamCaption}
+\item[{const double \&}]{phi}
+\end{DoxyParamCaption}
+)}\hypertarget{classPmmh__jac__apf_ab4e3f02111c1232c54dbcc814e5778af}{}\label{classPmmh__jac__apf_ab4e3f02111c1232c54dbcc814e5778af}
+
+
+Convenience function that maps (-\/1,1) to the reals. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em phi} & the parameter that needs to stay between -\/1 and 1 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the evaluation of this function. 
+\end{DoxyReturn}
+\index{Pmmh\+\_\+jac\+\_\+apf@{Pmmh\+\_\+jac\+\_\+apf}!un\+Flatten\+Params@{un\+Flatten\+Params}}
+\index{un\+Flatten\+Params@{un\+Flatten\+Params}!Pmmh\+\_\+jac\+\_\+apf@{Pmmh\+\_\+jac\+\_\+apf}}
+\subsubsection[{\texorpdfstring{un\+Flatten\+Params(\+Mat \&beta, Vec \&phi, Vec \&mu, Vec \&sigma, Vec \&\+Rstd\+Devs, const std\+::vector$<$ double $>$ \&flat\+Ones)}{unFlattenParams(Mat &beta, Vec &phi, Vec &mu, Vec &sigma, Vec &RstdDevs, const std::vector< double > &flatOnes)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pmmh\+\_\+jac\+\_\+apf\+::un\+Flatten\+Params (
+\begin{DoxyParamCaption}
+\item[{Mat \&}]{beta, }
+\item[{Vec \&}]{phi, }
+\item[{Vec \&}]{mu, }
+\item[{Vec \&}]{sigma, }
+\item[{Vec \&}]{Rstd\+Devs, }
+\item[{const std\+::vector$<$ double $>$ \&}]{flat\+Ones}
+\end{DoxyParamCaption}
+)}\hypertarget{classPmmh__jac__apf_a5d6152e013c3aba4a70d1a874364ae3b}{}\label{classPmmh__jac__apf_a5d6152e013c3aba4a70d1a874364ae3b}
+
+\begin{DoxyParams}{Parameters}
+{\em beta} & \\
+\hline
+{\em phi} & \\
+\hline
+{\em mu} & \\
+\hline
+{\em sigma} & \\
+\hline
+{\em Rstd\+Devs} & \\
+\hline
+{\em flat\+Ones} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/pmmh\+\_\+jac\+\_\+apf.\+h\end{DoxyCompactItemize}

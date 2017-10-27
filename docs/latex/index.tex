@@ -1,0 +1,21 @@
+There are two main purposes for this code. One is to provide base classes for different filters (e.\+g. the Kalman Filter, Sequential Importance Sampling with Resampling (S\+I\+SR), the Auxiliary Particle Filter (A\+PF), etc.). The other is to provide base classes for particle Markov chain Monte Carlo algorithms. This second category of base classes make use of the first category. Please see the different examples for demonstrations.
+
+\subsection*{Installation}
+
+You have to build this yourself. Make sure to compile with C++11 enabled ({\ttfamily -\/std=c++11}), and to include the {\ttfamily include} directory. Note, also, that this code all makes use of the \href{http://eigen.tuxfamily.org/}{\tt Eigen library}.
+
+\subsection*{Organization of {\ttfamily src}}
+
+
+\begin{DoxyEnumerate}
+\item {\ttfamily distributions} is all the code related to evaluating densities, mass functions, or pseudo-\/random number generation.
+\item {\ttfamily examples} are all of the self-\/contained examples that implement specific models and algorithms.
+\item {\ttfamily mcmc\+\_\+algos} are classes performing M\+C\+MC techniques for specific models. These classes inherit from the classes in {\ttfamily mcmc\+\_\+bases}.
+\item {\ttfamily mcmc\+\_\+bases} are all of the base classes for certain types of M\+C\+MC algorithms. Inheriting from these allows the user to skip writing a bunch of code.
+\item {\ttfamily models} are particle filtering classes for specific state space models.
+\item {\ttfamily filter\+\_\+bases} are Kalman filtering and particle filtering base classes. Inheriting from these abstracts away all of the details of how this is performed.
+\end{DoxyEnumerate}
+
+\subsection*{Documentation}
+
+\href{https://tbrown122387.github.io/ssm/}{\tt More details on everything can be found here.} 

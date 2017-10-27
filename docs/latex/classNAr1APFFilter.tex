@@ -1,0 +1,246 @@
+\hypertarget{classNAr1APFFilter}{}\section{N\+Ar1\+A\+P\+F\+Filter Class Reference}
+\label{classNAr1APFFilter}\index{N\+Ar1\+A\+P\+F\+Filter@{N\+Ar1\+A\+P\+F\+Filter}}
+
+
+An A\+PF implementation of a A\+R(1) + Noise Model.  
+
+
+
+
+{\ttfamily \#include $<$noisy\+\_\+ar1\+\_\+apf\+\_\+filter.\+h$>$}
+
+
+
+Inheritance diagram for N\+Ar1\+A\+P\+F\+Filter\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{classNAr1APFFilter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for N\+Ar1\+A\+P\+F\+Filter\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{classNAr1APFFilter__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classNAr1APFFilter_aa13a3fea25c159bb9939726288062809}{N\+Ar1\+A\+P\+F\+Filter} (int num\+Parts, double osd, double ssd, double a, A\+P\+F\+Resamp\+Style resamp\+Technique=A\+P\+F\+Resamp\+Style\+::everytime\+\_\+multinomial, int path\+Length=0)
+\begin{DoxyCompactList}\small\item\em The constructor. \end{DoxyCompactList}\item 
+\hyperlink{classNAr1APFFilter_ace56d42e3c625ded273809f9e8cb6d3f}{$\sim$\+N\+Ar1\+A\+P\+F\+Filter} ()\hypertarget{classNAr1APFFilter_ace56d42e3c625ded273809f9e8cb6d3f}{}\label{classNAr1APFFilter_ace56d42e3c625ded273809f9e8cb6d3f}
+
+\begin{DoxyCompactList}\small\item\em The destructor. \end{DoxyCompactList}\item 
+double \hyperlink{classNAr1APFFilter_a0839d99fe62312b8a2c5c781b879fa79}{log\+Q1\+Ev} (const Vec \&x1, const Vec \&y1)
+\begin{DoxyCompactList}\small\item\em Evaluates the log of q1. \end{DoxyCompactList}\item 
+double \hyperlink{classNAr1APFFilter_ad85b9a81c93f86ebcc8e837bb2ca010f}{log\+Mu\+Ev} (const Vec \&x1)
+\begin{DoxyCompactList}\small\item\em Evaluates the log of mu. \end{DoxyCompactList}\item 
+double \hyperlink{classNAr1APFFilter_afabcd7acb729a62955856c9737e76059}{log\+G\+Ev} (const Vec \&yt, const Vec \&xt)
+\begin{DoxyCompactList}\small\item\em Evaluats the log of G. \end{DoxyCompactList}\item 
+Vec \hyperlink{classNAr1APFFilter_a92a000138b5440613ab85c3811eb5525}{prop\+Mu} (const Vec \&xtm1)
+\begin{DoxyCompactList}\small\item\em Evaluates the mode of the state transition density. \end{DoxyCompactList}\item 
+Vec \hyperlink{classNAr1APFFilter_a7490ba7d06d2d82930afce64100cce99}{f\+Samp} (const Vec \&xtm1)
+\begin{DoxyCompactList}\small\item\em Samples from the state transition density. \end{DoxyCompactList}\item 
+Vec \hyperlink{classNAr1APFFilter_a294a2044c95ba6e013758fa62f3ef979}{q1\+Samp} (const Vec \&y1)
+\begin{DoxyCompactList}\small\item\em Samples from q1. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An A\+PF implementation of a A\+R(1) + Noise Model. 
+
+\begin{DoxyAuthor}{Author}
+taylor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+10/09/17 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{N\+Ar1\+A\+P\+F\+Filter@{N\+Ar1\+A\+P\+F\+Filter}!N\+Ar1\+A\+P\+F\+Filter@{N\+Ar1\+A\+P\+F\+Filter}}
+\index{N\+Ar1\+A\+P\+F\+Filter@{N\+Ar1\+A\+P\+F\+Filter}!N\+Ar1\+A\+P\+F\+Filter@{N\+Ar1\+A\+P\+F\+Filter}}
+\subsubsection[{\texorpdfstring{N\+Ar1\+A\+P\+F\+Filter(int num\+Parts, double osd, double ssd, double a, A\+P\+F\+Resamp\+Style resamp\+Technique=\+A\+P\+F\+Resamp\+Style\+::everytime\+\_\+multinomial, int path\+Length=0)}{NAr1APFFilter(int numParts, double osd, double ssd, double a, APFResampStyle resampTechnique=APFResampStyle::everytime_multinomial, int pathLength=0)}}]{\setlength{\rightskip}{0pt plus 5cm}N\+Ar1\+A\+P\+F\+Filter\+::\+N\+Ar1\+A\+P\+F\+Filter (
+\begin{DoxyParamCaption}
+\item[{int}]{num\+Parts, }
+\item[{double}]{osd, }
+\item[{double}]{ssd, }
+\item[{double}]{a, }
+\item[{A\+P\+F\+Resamp\+Style}]{resamp\+Technique = {\ttfamily APFResampStyle\+:\+:everytime\+\_\+multinomial}, }
+\item[{int}]{path\+Length = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\hypertarget{classNAr1APFFilter_aa13a3fea25c159bb9939726288062809}{}\label{classNAr1APFFilter_aa13a3fea25c159bb9939726288062809}
+
+
+The constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+Parts} & the number of particles. \\
+\hline
+{\em osd} & the observational standard deviation. \\
+\hline
+{\em ssd} & the state transition standard deviation. \\
+\hline
+{\em a} & the state autoregressive parameter. \\
+\hline
+{\em resamp\+Technique} & the resampling style to be used. \\
+\hline
+{\em path\+Length} & set to 0 if filtering. Otherwise, if you want to retain entire path samples, set to time length of data. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{N\+Ar1\+A\+P\+F\+Filter@{N\+Ar1\+A\+P\+F\+Filter}!f\+Samp@{f\+Samp}}
+\index{f\+Samp@{f\+Samp}!N\+Ar1\+A\+P\+F\+Filter@{N\+Ar1\+A\+P\+F\+Filter}}
+\subsubsection[{\texorpdfstring{f\+Samp(const Vec \&xtm1)}{fSamp(const Vec &xtm1)}}]{\setlength{\rightskip}{0pt plus 5cm}Vec N\+Ar1\+A\+P\+F\+Filter\+::f\+Samp (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{xtm1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classNAr1APFFilter_a7490ba7d06d2d82930afce64100cce99}{}\label{classNAr1APFFilter_a7490ba7d06d2d82930afce64100cce99}
+
+
+Samples from the state transition density. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xtm1} & the previous time\textquotesingle{}s state. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a Vec sample of the current time\textquotesingle{}s state. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classAPFFilter_a367c77209129a84f3d64ff3bcaaac513}{A\+P\+F\+Filter}.
+
+\index{N\+Ar1\+A\+P\+F\+Filter@{N\+Ar1\+A\+P\+F\+Filter}!log\+G\+Ev@{log\+G\+Ev}}
+\index{log\+G\+Ev@{log\+G\+Ev}!N\+Ar1\+A\+P\+F\+Filter@{N\+Ar1\+A\+P\+F\+Filter}}
+\subsubsection[{\texorpdfstring{log\+G\+Ev(const Vec \&yt, const Vec \&xt)}{logGEv(const Vec &yt, const Vec &xt)}}]{\setlength{\rightskip}{0pt plus 5cm}double N\+Ar1\+A\+P\+F\+Filter\+::log\+G\+Ev (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{yt, }
+\item[{const Vec \&}]{xt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classNAr1APFFilter_afabcd7acb729a62955856c9737e76059}{}\label{classNAr1APFFilter_afabcd7acb729a62955856c9737e76059}
+
+
+Evaluats the log of G. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em yt} & the current time\textquotesingle{}s data observation. \\
+\hline
+{\em xt} & the current time\textquotesingle{}s state. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a double evaluation. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classAPFFilter_ac2d0b5329d7ae123ae4de5dddefb5591}{A\+P\+F\+Filter}.
+
+\index{N\+Ar1\+A\+P\+F\+Filter@{N\+Ar1\+A\+P\+F\+Filter}!log\+Mu\+Ev@{log\+Mu\+Ev}}
+\index{log\+Mu\+Ev@{log\+Mu\+Ev}!N\+Ar1\+A\+P\+F\+Filter@{N\+Ar1\+A\+P\+F\+Filter}}
+\subsubsection[{\texorpdfstring{log\+Mu\+Ev(const Vec \&x1)}{logMuEv(const Vec &x1)}}]{\setlength{\rightskip}{0pt plus 5cm}double N\+Ar1\+A\+P\+F\+Filter\+::log\+Mu\+Ev (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{x1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classNAr1APFFilter_ad85b9a81c93f86ebcc8e837bb2ca010f}{}\label{classNAr1APFFilter_ad85b9a81c93f86ebcc8e837bb2ca010f}
+
+
+Evaluates the log of mu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x1} & time 1\textquotesingle{}s state. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a double evaluation. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classAPFFilter_af3d1501c147477ce1128b221f7b608fd}{A\+P\+F\+Filter}.
+
+\index{N\+Ar1\+A\+P\+F\+Filter@{N\+Ar1\+A\+P\+F\+Filter}!log\+Q1\+Ev@{log\+Q1\+Ev}}
+\index{log\+Q1\+Ev@{log\+Q1\+Ev}!N\+Ar1\+A\+P\+F\+Filter@{N\+Ar1\+A\+P\+F\+Filter}}
+\subsubsection[{\texorpdfstring{log\+Q1\+Ev(const Vec \&x1, const Vec \&y1)}{logQ1Ev(const Vec &x1, const Vec &y1)}}]{\setlength{\rightskip}{0pt plus 5cm}double N\+Ar1\+A\+P\+F\+Filter\+::log\+Q1\+Ev (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{x1, }
+\item[{const Vec \&}]{y1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classNAr1APFFilter_a0839d99fe62312b8a2c5c781b879fa79}{}\label{classNAr1APFFilter_a0839d99fe62312b8a2c5c781b879fa79}
+
+
+Evaluates the log of q1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x1} & time 1\textquotesingle{}s state. \\
+\hline
+{\em y1} & time 1\textquotesingle{}s data observation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a double evaluation. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classAPFFilter_a18ba363183c0c92e6c58d6f3faccbea7}{A\+P\+F\+Filter}.
+
+\index{N\+Ar1\+A\+P\+F\+Filter@{N\+Ar1\+A\+P\+F\+Filter}!prop\+Mu@{prop\+Mu}}
+\index{prop\+Mu@{prop\+Mu}!N\+Ar1\+A\+P\+F\+Filter@{N\+Ar1\+A\+P\+F\+Filter}}
+\subsubsection[{\texorpdfstring{prop\+Mu(const Vec \&xtm1)}{propMu(const Vec &xtm1)}}]{\setlength{\rightskip}{0pt plus 5cm}Vec N\+Ar1\+A\+P\+F\+Filter\+::prop\+Mu (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{xtm1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classNAr1APFFilter_a92a000138b5440613ab85c3811eb5525}{}\label{classNAr1APFFilter_a92a000138b5440613ab85c3811eb5525}
+
+
+Evaluates the mode of the state transition density. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xtm1} & the previous time\textquotesingle{}s state. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the mode. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classAPFFilter_a2c136104f4d96e6481406ef1397ead51}{A\+P\+F\+Filter}.
+
+\index{N\+Ar1\+A\+P\+F\+Filter@{N\+Ar1\+A\+P\+F\+Filter}!q1\+Samp@{q1\+Samp}}
+\index{q1\+Samp@{q1\+Samp}!N\+Ar1\+A\+P\+F\+Filter@{N\+Ar1\+A\+P\+F\+Filter}}
+\subsubsection[{\texorpdfstring{q1\+Samp(const Vec \&y1)}{q1Samp(const Vec &y1)}}]{\setlength{\rightskip}{0pt plus 5cm}Vec N\+Ar1\+A\+P\+F\+Filter\+::q1\+Samp (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{y1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classNAr1APFFilter_a294a2044c95ba6e013758fa62f3ef979}{}\label{classNAr1APFFilter_a294a2044c95ba6e013758fa62f3ef979}
+
+
+Samples from q1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em y1} & time 1\textquotesingle{}s data observation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a Vec sample for time 1\textquotesingle{}s state. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classAPFFilter_a017be49a493263156ae60ccc424f7daa}{A\+P\+F\+Filter}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/noisy\+\_\+ar1\+\_\+apf\+\_\+filter.\+h\end{DoxyCompactItemize}

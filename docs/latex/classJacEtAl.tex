@@ -1,0 +1,289 @@
+\hypertarget{classJacEtAl}{}\section{Jac\+Et\+Al Class Reference}
+\label{classJacEtAl}\index{Jac\+Et\+Al@{Jac\+Et\+Al}}
+
+
+A S\+I\+SR implementation of the multivariate stochastic volatility model of Jacquier et al.  
+
+
+
+
+{\ttfamily \#include $<$jacquier\+\_\+et\+\_\+al.\+h$>$}
+
+
+
+Inheritance diagram for Jac\+Et\+Al\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=142pt]{classJacEtAl__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Jac\+Et\+Al\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=142pt]{classJacEtAl__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classJacEtAl_a356023f0edf2c58601e47f8cc0fe4ae0}{Jac\+Et\+Al} (int num\+Parts, const Mat \&beta, const Vec \&R\+As\+Vec, const Vec \&mus, const Vec \&phis, const Vec \&sigmas, S\+I\+S\+R\+Resamp\+Style resamp\+Technique, int path\+Length=0, double perc\+Ess=1.\+0)
+\begin{DoxyCompactList}\small\item\em The constructor. \end{DoxyCompactList}\item 
+Vec \hyperlink{classJacEtAl_a154ca22da5c981f2d0c9515dc89a472c}{q1\+Samp} (const Vec \&y1)
+\begin{DoxyCompactList}\small\item\em Samples from q1. \end{DoxyCompactList}\item 
+double \hyperlink{classJacEtAl_a96f970a2b0e7f0583a5fe567b6353ffe}{log\+Mu\+Ev} (const Vec \&x1)
+\begin{DoxyCompactList}\small\item\em Evaluates the log of mu. \end{DoxyCompactList}\item 
+double \hyperlink{classJacEtAl_aec5fff50e30a9df174b04f2ab53c73d0}{log\+Q1\+Ev} (const Vec \&x1, const Vec \&y1)
+\begin{DoxyCompactList}\small\item\em Evaluates the log of q1. \end{DoxyCompactList}\item 
+double \hyperlink{classJacEtAl_aa37b7701fac288d76b72640b2c98f253}{log\+G\+Ev} (const Vec \&yt, const Vec \&xt)
+\begin{DoxyCompactList}\small\item\em Evaluates the log of g. \end{DoxyCompactList}\item 
+double \hyperlink{classJacEtAl_a73a94bbb16389102b20def8c0bdf96d8}{log\+Q\+Ev} (const Vec \&xt, const Vec \&xtm1, const Vec \&yt)
+\begin{DoxyCompactList}\small\item\em Evaluates the log of q (assumed to be constant for all time). \end{DoxyCompactList}\item 
+double \hyperlink{classJacEtAl_a7742c736cf4136968dcf8629c4a3914e}{log\+F\+Ev} (const Vec \&xt, const Vec \&xtm1)
+\begin{DoxyCompactList}\small\item\em Evalutes the log of f. \end{DoxyCompactList}\item 
+Vec \hyperlink{classJacEtAl_a2b2696527c89fdf462639e55dfbc67ce}{q\+Samp} (const Vec \&xtm1, const Vec \&yt)
+\begin{DoxyCompactList}\small\item\em Samples from q (assumed to be constant for all time). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A S\+I\+SR implementation of the multivariate stochastic volatility model of Jacquier et al. 
+
+\begin{DoxyAuthor}{Author}
+taylor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+08/09/17 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Jac\+Et\+Al@{Jac\+Et\+Al}!Jac\+Et\+Al@{Jac\+Et\+Al}}
+\index{Jac\+Et\+Al@{Jac\+Et\+Al}!Jac\+Et\+Al@{Jac\+Et\+Al}}
+\subsubsection[{\texorpdfstring{Jac\+Et\+Al(int num\+Parts, const Mat \&beta, const Vec \&\+R\+As\+Vec, const Vec \&mus, const Vec \&phis, const Vec \&sigmas, S\+I\+S\+R\+Resamp\+Style resamp\+Technique, int path\+Length=0, double perc\+Ess=1.\+0)}{JacEtAl(int numParts, const Mat &beta, const Vec &RAsVec, const Vec &mus, const Vec &phis, const Vec &sigmas, SISRResampStyle resampTechnique, int pathLength=0, double percEss=1.0)}}]{\setlength{\rightskip}{0pt plus 5cm}Jac\+Et\+Al\+::\+Jac\+Et\+Al (
+\begin{DoxyParamCaption}
+\item[{int}]{num\+Parts, }
+\item[{const Mat \&}]{beta, }
+\item[{const Vec \&}]{R\+As\+Vec, }
+\item[{const Vec \&}]{mus, }
+\item[{const Vec \&}]{phis, }
+\item[{const Vec \&}]{sigmas, }
+\item[{S\+I\+S\+R\+Resamp\+Style}]{resamp\+Technique, }
+\item[{int}]{path\+Length = {\ttfamily 0}, }
+\item[{double}]{perc\+Ess = {\ttfamily 1.0}}
+\end{DoxyParamCaption}
+)}\hypertarget{classJacEtAl_a356023f0edf2c58601e47f8cc0fe4ae0}{}\label{classJacEtAl_a356023f0edf2c58601e47f8cc0fe4ae0}
+
+
+The constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+Parts,an} & integer representing the number of particles. \\
+\hline
+{\em beta,a} & Mat representing the factor loadings matrix. \\
+\hline
+{\em R\+As\+Vec,a} & Vec representing the diagonal elements of the observational covariance matrix. \\
+\hline
+{\em mus,a} & Vec representing the mean of the log-\/volatility processes. \\
+\hline
+{\em phis,a} & Vec representing the AR parameters of the log-\/volatility processes. \\
+\hline
+{\em sigmas,a} & Vec representing the standard deviations of the log-\/volatility processes. \\
+\hline
+{\em resamp\+Technique,an} & enum class representing the type of resampling to be performed. \\
+\hline
+{\em path\+Length,set} & to the length of your time series data if you want to store entire paths. Otherwise set to 0. \\
+\hline
+{\em perc\+Ess,the} & percent of the maximum effective sample size threshold for resampling. Not important for several resamp\+Techniques. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Jac\+Et\+Al@{Jac\+Et\+Al}!log\+F\+Ev@{log\+F\+Ev}}
+\index{log\+F\+Ev@{log\+F\+Ev}!Jac\+Et\+Al@{Jac\+Et\+Al}}
+\subsubsection[{\texorpdfstring{log\+F\+Ev(const Vec \&xt, const Vec \&xtm1)}{logFEv(const Vec &xt, const Vec &xtm1)}}]{\setlength{\rightskip}{0pt plus 5cm}double Jac\+Et\+Al\+::log\+F\+Ev (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{xt, }
+\item[{const Vec \&}]{xtm1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classJacEtAl_a7742c736cf4136968dcf8629c4a3914e}{}\label{classJacEtAl_a7742c736cf4136968dcf8629c4a3914e}
+
+
+Evalutes the log of f. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xt} & \\
+\hline
+{\em xtm1} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a double evaluation. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classSISRFilter_ab91474fc79efb84ed1dafbc8c542f59e}{S\+I\+S\+R\+Filter}.
+
+\index{Jac\+Et\+Al@{Jac\+Et\+Al}!log\+G\+Ev@{log\+G\+Ev}}
+\index{log\+G\+Ev@{log\+G\+Ev}!Jac\+Et\+Al@{Jac\+Et\+Al}}
+\subsubsection[{\texorpdfstring{log\+G\+Ev(const Vec \&yt, const Vec \&xt)}{logGEv(const Vec &yt, const Vec &xt)}}]{\setlength{\rightskip}{0pt plus 5cm}double Jac\+Et\+Al\+::log\+G\+Ev (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{yt, }
+\item[{const Vec \&}]{xt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classJacEtAl_aa37b7701fac288d76b72640b2c98f253}{}\label{classJacEtAl_aa37b7701fac288d76b72640b2c98f253}
+
+
+Evaluates the log of g. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em yt} & \\
+\hline
+{\em xt} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a double evaluation. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classSISRFilter_aac59b077648fa74d2a5db970e3d7ffac}{S\+I\+S\+R\+Filter}.
+
+\index{Jac\+Et\+Al@{Jac\+Et\+Al}!log\+Mu\+Ev@{log\+Mu\+Ev}}
+\index{log\+Mu\+Ev@{log\+Mu\+Ev}!Jac\+Et\+Al@{Jac\+Et\+Al}}
+\subsubsection[{\texorpdfstring{log\+Mu\+Ev(const Vec \&x1)}{logMuEv(const Vec &x1)}}]{\setlength{\rightskip}{0pt plus 5cm}double Jac\+Et\+Al\+::log\+Mu\+Ev (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{x1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classJacEtAl_a96f970a2b0e7f0583a5fe567b6353ffe}{}\label{classJacEtAl_a96f970a2b0e7f0583a5fe567b6353ffe}
+
+
+Evaluates the log of mu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x1} & a sample for the first time\textquotesingle{}s state. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a double evaluation. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classSISRFilter_ab6ffa8e1cdee34f1afb825e35462afaa}{S\+I\+S\+R\+Filter}.
+
+\index{Jac\+Et\+Al@{Jac\+Et\+Al}!log\+Q1\+Ev@{log\+Q1\+Ev}}
+\index{log\+Q1\+Ev@{log\+Q1\+Ev}!Jac\+Et\+Al@{Jac\+Et\+Al}}
+\subsubsection[{\texorpdfstring{log\+Q1\+Ev(const Vec \&x1, const Vec \&y1)}{logQ1Ev(const Vec &x1, const Vec &y1)}}]{\setlength{\rightskip}{0pt plus 5cm}double Jac\+Et\+Al\+::log\+Q1\+Ev (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{x1, }
+\item[{const Vec \&}]{y1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classJacEtAl_aec5fff50e30a9df174b04f2ab53c73d0}{}\label{classJacEtAl_aec5fff50e30a9df174b04f2ab53c73d0}
+
+
+Evaluates the log of q1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x1} & \\
+\hline
+{\em y1} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a double evaluation. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classSISRFilter_a61a1971bd8208abbe3ccbacd66d35c23}{S\+I\+S\+R\+Filter}.
+
+\index{Jac\+Et\+Al@{Jac\+Et\+Al}!log\+Q\+Ev@{log\+Q\+Ev}}
+\index{log\+Q\+Ev@{log\+Q\+Ev}!Jac\+Et\+Al@{Jac\+Et\+Al}}
+\subsubsection[{\texorpdfstring{log\+Q\+Ev(const Vec \&xt, const Vec \&xtm1, const Vec \&yt)}{logQEv(const Vec &xt, const Vec &xtm1, const Vec &yt)}}]{\setlength{\rightskip}{0pt plus 5cm}double Jac\+Et\+Al\+::log\+Q\+Ev (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{xt, }
+\item[{const Vec \&}]{xtm1, }
+\item[{const Vec \&}]{yt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classJacEtAl_a73a94bbb16389102b20def8c0bdf96d8}{}\label{classJacEtAl_a73a94bbb16389102b20def8c0bdf96d8}
+
+
+Evaluates the log of q (assumed to be constant for all time). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xt} & \\
+\hline
+{\em xtm1} & \\
+\hline
+{\em yt} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a double evaluation. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classSISRFilter_af289db59b008a0ab795fc3b8e9887043}{S\+I\+S\+R\+Filter}.
+
+\index{Jac\+Et\+Al@{Jac\+Et\+Al}!q1\+Samp@{q1\+Samp}}
+\index{q1\+Samp@{q1\+Samp}!Jac\+Et\+Al@{Jac\+Et\+Al}}
+\subsubsection[{\texorpdfstring{q1\+Samp(const Vec \&y1)}{q1Samp(const Vec &y1)}}]{\setlength{\rightskip}{0pt plus 5cm}Vec Jac\+Et\+Al\+::q1\+Samp (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{y1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classJacEtAl_a154ca22da5c981f2d0c9515dc89a472c}{}\label{classJacEtAl_a154ca22da5c981f2d0c9515dc89a472c}
+
+
+Samples from q1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em y1} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a Vec sample for x1 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classSISRFilter_a5a57cd67535e31bb1ab20fb42499f911}{S\+I\+S\+R\+Filter}.
+
+\index{Jac\+Et\+Al@{Jac\+Et\+Al}!q\+Samp@{q\+Samp}}
+\index{q\+Samp@{q\+Samp}!Jac\+Et\+Al@{Jac\+Et\+Al}}
+\subsubsection[{\texorpdfstring{q\+Samp(const Vec \&xtm1, const Vec \&yt)}{qSamp(const Vec &xtm1, const Vec &yt)}}]{\setlength{\rightskip}{0pt plus 5cm}Vec Jac\+Et\+Al\+::q\+Samp (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{xtm1, }
+\item[{const Vec \&}]{yt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classJacEtAl_a2b2696527c89fdf462639e55dfbc67ce}{}\label{classJacEtAl_a2b2696527c89fdf462639e55dfbc67ce}
+
+
+Samples from q (assumed to be constant for all time). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xtm1} & \\
+\hline
+{\em yt} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a Vec sample. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classSISRFilter_a2c480a10cac8b52a36ab1309cf9ea1a4}{S\+I\+S\+R\+Filter}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{jacquier__et__al_8h}{jacquier\+\_\+et\+\_\+al.\+h}\end{DoxyCompactItemize}

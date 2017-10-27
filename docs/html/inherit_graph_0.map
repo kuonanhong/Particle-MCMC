@@ -1,0 +1,6 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classAPFFilter.html" title="A base&#45;class for Auxiliary Particle Filtering. " alt="" coords="5,56,83,83"/>
+<area shape="rect" id="node2" href="$classJacEtAlAPF.html" title="An APF implementation of the multivariate stochastic volatility model of Jacquier et al..." alt="" coords="137,5,231,32"/>
+<area shape="rect" id="node3" href="$classNAr1APFFilter.html" title="An APF implementation of a AR(1) + Noise Model. " alt="" coords="131,56,237,83"/>
+<area shape="rect" id="node4" href="$classSVolAPFFilter.html" title="An APF implementation of the basic stochastic volatility model of Taylor. " alt="" coords="131,107,237,133"/>
+</map>

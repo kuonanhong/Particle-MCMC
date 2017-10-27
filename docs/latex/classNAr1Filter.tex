@@ -1,0 +1,295 @@
+\hypertarget{classNAr1Filter}{}\section{N\+Ar1\+Filter Class Reference}
+\label{classNAr1Filter}\index{N\+Ar1\+Filter@{N\+Ar1\+Filter}}
+
+
+A S\+I\+SR implementation of an A\+R(1) + Noise model.  
+
+
+
+
+{\ttfamily \#include $<$noisy\+\_\+ar1\+\_\+filter.\+h$>$}
+
+
+
+Inheritance diagram for N\+Ar1\+Filter\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=142pt]{classNAr1Filter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for N\+Ar1\+Filter\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=142pt]{classNAr1Filter__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classNAr1Filter_a98b2a069363ceb684abd8ae5c9d2b814}{N\+Ar1\+Filter} (int num\+Parts, double osd, double ssd, double a, S\+I\+S\+R\+Resamp\+Style resamp\+Technique, int path\+Length)
+\begin{DoxyCompactList}\small\item\em The constructor. \end{DoxyCompactList}\item 
+\hyperlink{classNAr1Filter_aee6f04f3144fb87edd42e641b134856b}{$\sim$\+N\+Ar1\+Filter} ()\hypertarget{classNAr1Filter_aee6f04f3144fb87edd42e641b134856b}{}\label{classNAr1Filter_aee6f04f3144fb87edd42e641b134856b}
+
+\begin{DoxyCompactList}\small\item\em The destructor. \end{DoxyCompactList}\item 
+bool \hyperlink{classNAr1Filter_aee9f60c01d44bb0e54092a04be1fbb1a}{is\+Sd\+Neg} ()
+\begin{DoxyCompactList}\small\item\em Are either of the standard deviation parameters negative? \end{DoxyCompactList}\item 
+Vec \hyperlink{classNAr1Filter_a6ae702c69b4f3e7b2109f99e2fd5d8b7}{q1\+Samp} (const Vec \&y1)
+\begin{DoxyCompactList}\small\item\em Samples from q1. \end{DoxyCompactList}\item 
+double \hyperlink{classNAr1Filter_ac97b366af3d4def2b45d394fb85865f0}{log\+Mu\+Ev} (const Vec \&x1)
+\begin{DoxyCompactList}\small\item\em Evaluates the log of mu. \end{DoxyCompactList}\item 
+double \hyperlink{classNAr1Filter_af8eb2b66ff1806dd0d4c4ac1f7129a51}{log\+Q1\+Ev} (const Vec \&x1, const Vec \&y1)
+\begin{DoxyCompactList}\small\item\em Evaluates the log of q1. \end{DoxyCompactList}\item 
+double \hyperlink{classNAr1Filter_aed4a7fb8160aabe9a7dc702826ccae60}{log\+G\+Ev} (const Vec \&yt, const Vec \&xt)
+\begin{DoxyCompactList}\small\item\em Evaluates the log of g. \end{DoxyCompactList}\item 
+double \hyperlink{classNAr1Filter_ae42e9ccf333b8590bd79831be8083dcd}{log\+Q\+Ev} (const Vec \&xt, const Vec \&xtm1, const Vec \&yt)
+\begin{DoxyCompactList}\small\item\em Evaluates the log of q (assumed constant). \end{DoxyCompactList}\item 
+double \hyperlink{classNAr1Filter_adff7d17aa5271b8df4c77d752a6fd773}{log\+F\+Ev} (const Vec \&xt, const Vec \&xtm1)
+\begin{DoxyCompactList}\small\item\em Evaluates the log of f. \end{DoxyCompactList}\item 
+Vec \hyperlink{classNAr1Filter_af4f7f8b643e5750dc83e27ea7bf05f18}{q\+Samp} (const Vec \&xtm1, const Vec \&yt)
+\begin{DoxyCompactList}\small\item\em Samples from q (assumed constant for all time). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A S\+I\+SR implementation of an A\+R(1) + Noise model. 
+
+\begin{DoxyAuthor}{Author}
+taylor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+08/09/17 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{N\+Ar1\+Filter@{N\+Ar1\+Filter}!N\+Ar1\+Filter@{N\+Ar1\+Filter}}
+\index{N\+Ar1\+Filter@{N\+Ar1\+Filter}!N\+Ar1\+Filter@{N\+Ar1\+Filter}}
+\subsubsection[{\texorpdfstring{N\+Ar1\+Filter(int num\+Parts, double osd, double ssd, double a, S\+I\+S\+R\+Resamp\+Style resamp\+Technique, int path\+Length)}{NAr1Filter(int numParts, double osd, double ssd, double a, SISRResampStyle resampTechnique, int pathLength)}}]{\setlength{\rightskip}{0pt plus 5cm}N\+Ar1\+Filter\+::\+N\+Ar1\+Filter (
+\begin{DoxyParamCaption}
+\item[{int}]{num\+Parts, }
+\item[{double}]{osd, }
+\item[{double}]{ssd, }
+\item[{double}]{a, }
+\item[{S\+I\+S\+R\+Resamp\+Style}]{resamp\+Technique, }
+\item[{int}]{path\+Length}
+\end{DoxyParamCaption}
+)}\hypertarget{classNAr1Filter_a98b2a069363ceb684abd8ae5c9d2b814}{}\label{classNAr1Filter_a98b2a069363ceb684abd8ae5c9d2b814}
+
+
+The constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+Parts} & an int determining the number of particles to be used. \\
+\hline
+{\em osd} & a double for the observation standard deviation. \\
+\hline
+{\em ssd} & a double for the state process standard deviation. \\
+\hline
+{\em a} & a double for the state ar(1) parameter. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{N\+Ar1\+Filter@{N\+Ar1\+Filter}!is\+Sd\+Neg@{is\+Sd\+Neg}}
+\index{is\+Sd\+Neg@{is\+Sd\+Neg}!N\+Ar1\+Filter@{N\+Ar1\+Filter}}
+\subsubsection[{\texorpdfstring{is\+Sd\+Neg()}{isSdNeg()}}]{\setlength{\rightskip}{0pt plus 5cm}bool N\+Ar1\+Filter\+::is\+Sd\+Neg (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classNAr1Filter_aee9f60c01d44bb0e54092a04be1fbb1a}{}\label{classNAr1Filter_aee9f60c01d44bb0e54092a04be1fbb1a}
+
+
+Are either of the standard deviation parameters negative? 
+
+\begin{DoxyReturn}{Returns}
+true if either standard deviation is negative (which is bad). Otherwise false. 
+\end{DoxyReturn}
+\index{N\+Ar1\+Filter@{N\+Ar1\+Filter}!log\+F\+Ev@{log\+F\+Ev}}
+\index{log\+F\+Ev@{log\+F\+Ev}!N\+Ar1\+Filter@{N\+Ar1\+Filter}}
+\subsubsection[{\texorpdfstring{log\+F\+Ev(const Vec \&xt, const Vec \&xtm1)}{logFEv(const Vec &xt, const Vec &xtm1)}}]{\setlength{\rightskip}{0pt plus 5cm}double N\+Ar1\+Filter\+::log\+F\+Ev (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{xt, }
+\item[{const Vec \&}]{xtm1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classNAr1Filter_adff7d17aa5271b8df4c77d752a6fd773}{}\label{classNAr1Filter_adff7d17aa5271b8df4c77d752a6fd773}
+
+
+Evaluates the log of f. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xt} & a Vec for time t\textquotesingle{}s state. \\
+\hline
+{\em xtm1} & a Vec for time (t-\/1)\textquotesingle{}s state. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a double evaluation. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classSISRFilter_ab91474fc79efb84ed1dafbc8c542f59e}{S\+I\+S\+R\+Filter}.
+
+\index{N\+Ar1\+Filter@{N\+Ar1\+Filter}!log\+G\+Ev@{log\+G\+Ev}}
+\index{log\+G\+Ev@{log\+G\+Ev}!N\+Ar1\+Filter@{N\+Ar1\+Filter}}
+\subsubsection[{\texorpdfstring{log\+G\+Ev(const Vec \&yt, const Vec \&xt)}{logGEv(const Vec &yt, const Vec &xt)}}]{\setlength{\rightskip}{0pt plus 5cm}double N\+Ar1\+Filter\+::log\+G\+Ev (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{yt, }
+\item[{const Vec \&}]{xt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classNAr1Filter_aed4a7fb8160aabe9a7dc702826ccae60}{}\label{classNAr1Filter_aed4a7fb8160aabe9a7dc702826ccae60}
+
+
+Evaluates the log of g. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em yt} & a Vec of time t\textquotesingle{}s data. \\
+\hline
+{\em xt} & a Vec of time t\textquotesingle{}s state. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a double evaluation. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classSISRFilter_aac59b077648fa74d2a5db970e3d7ffac}{S\+I\+S\+R\+Filter}.
+
+\index{N\+Ar1\+Filter@{N\+Ar1\+Filter}!log\+Mu\+Ev@{log\+Mu\+Ev}}
+\index{log\+Mu\+Ev@{log\+Mu\+Ev}!N\+Ar1\+Filter@{N\+Ar1\+Filter}}
+\subsubsection[{\texorpdfstring{log\+Mu\+Ev(const Vec \&x1)}{logMuEv(const Vec &x1)}}]{\setlength{\rightskip}{0pt plus 5cm}double N\+Ar1\+Filter\+::log\+Mu\+Ev (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{x1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classNAr1Filter_ac97b366af3d4def2b45d394fb85865f0}{}\label{classNAr1Filter_ac97b366af3d4def2b45d394fb85865f0}
+
+
+Evaluates the log of mu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x1} & a Vec of time 1\textquotesingle{}s state. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a double evaluation. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classSISRFilter_ab6ffa8e1cdee34f1afb825e35462afaa}{S\+I\+S\+R\+Filter}.
+
+\index{N\+Ar1\+Filter@{N\+Ar1\+Filter}!log\+Q1\+Ev@{log\+Q1\+Ev}}
+\index{log\+Q1\+Ev@{log\+Q1\+Ev}!N\+Ar1\+Filter@{N\+Ar1\+Filter}}
+\subsubsection[{\texorpdfstring{log\+Q1\+Ev(const Vec \&x1, const Vec \&y1)}{logQ1Ev(const Vec &x1, const Vec &y1)}}]{\setlength{\rightskip}{0pt plus 5cm}double N\+Ar1\+Filter\+::log\+Q1\+Ev (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{x1, }
+\item[{const Vec \&}]{y1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classNAr1Filter_af8eb2b66ff1806dd0d4c4ac1f7129a51}{}\label{classNAr1Filter_af8eb2b66ff1806dd0d4c4ac1f7129a51}
+
+
+Evaluates the log of q1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x1} & a Vec of time 1\textquotesingle{}s state. \\
+\hline
+{\em y1} & a Vec of time 1\textquotesingle{}s data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a double evaluation. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classSISRFilter_a61a1971bd8208abbe3ccbacd66d35c23}{S\+I\+S\+R\+Filter}.
+
+\index{N\+Ar1\+Filter@{N\+Ar1\+Filter}!log\+Q\+Ev@{log\+Q\+Ev}}
+\index{log\+Q\+Ev@{log\+Q\+Ev}!N\+Ar1\+Filter@{N\+Ar1\+Filter}}
+\subsubsection[{\texorpdfstring{log\+Q\+Ev(const Vec \&xt, const Vec \&xtm1, const Vec \&yt)}{logQEv(const Vec &xt, const Vec &xtm1, const Vec &yt)}}]{\setlength{\rightskip}{0pt plus 5cm}double N\+Ar1\+Filter\+::log\+Q\+Ev (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{xt, }
+\item[{const Vec \&}]{xtm1, }
+\item[{const Vec \&}]{yt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classNAr1Filter_ae42e9ccf333b8590bd79831be8083dcd}{}\label{classNAr1Filter_ae42e9ccf333b8590bd79831be8083dcd}
+
+
+Evaluates the log of q (assumed constant). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xt} & a Vec of time t\textquotesingle{}s state. \\
+\hline
+{\em xtm1} & a Vec of time (t-\/1)\textquotesingle{}s state. \\
+\hline
+{\em yt} & a Vec of time t\textquotesingle{}s data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a double evaluation. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classSISRFilter_af289db59b008a0ab795fc3b8e9887043}{S\+I\+S\+R\+Filter}.
+
+\index{N\+Ar1\+Filter@{N\+Ar1\+Filter}!q1\+Samp@{q1\+Samp}}
+\index{q1\+Samp@{q1\+Samp}!N\+Ar1\+Filter@{N\+Ar1\+Filter}}
+\subsubsection[{\texorpdfstring{q1\+Samp(const Vec \&y1)}{q1Samp(const Vec &y1)}}]{\setlength{\rightskip}{0pt plus 5cm}Vec N\+Ar1\+Filter\+::q1\+Samp (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{y1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classNAr1Filter_a6ae702c69b4f3e7b2109f99e2fd5d8b7}{}\label{classNAr1Filter_a6ae702c69b4f3e7b2109f99e2fd5d8b7}
+
+
+Samples from q1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em y1} & a Vec of time 1\textquotesingle{}s data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a Vec sample of x1. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classSISRFilter_a5a57cd67535e31bb1ab20fb42499f911}{S\+I\+S\+R\+Filter}.
+
+\index{N\+Ar1\+Filter@{N\+Ar1\+Filter}!q\+Samp@{q\+Samp}}
+\index{q\+Samp@{q\+Samp}!N\+Ar1\+Filter@{N\+Ar1\+Filter}}
+\subsubsection[{\texorpdfstring{q\+Samp(const Vec \&xtm1, const Vec \&yt)}{qSamp(const Vec &xtm1, const Vec &yt)}}]{\setlength{\rightskip}{0pt plus 5cm}Vec N\+Ar1\+Filter\+::q\+Samp (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{xtm1, }
+\item[{const Vec \&}]{yt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classNAr1Filter_af4f7f8b643e5750dc83e27ea7bf05f18}{}\label{classNAr1Filter_af4f7f8b643e5750dc83e27ea7bf05f18}
+
+
+Samples from q (assumed constant for all time). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xtm1} & a Vec for the previous time\textquotesingle{}s state. \\
+\hline
+{\em yt} & a Vec for the most recent data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a Vec sample of xt. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classSISRFilter_a2c480a10cac8b52a36ab1309cf9ea1a4}{S\+I\+S\+R\+Filter}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/noisy\+\_\+ar1\+\_\+filter.\+h\end{DoxyCompactItemize}

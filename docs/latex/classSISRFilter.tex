@@ -1,0 +1,369 @@
+\hypertarget{classSISRFilter}{}\section{S\+I\+S\+R\+Filter Class Reference}
+\label{classSISRFilter}\index{S\+I\+S\+R\+Filter@{S\+I\+S\+R\+Filter}}
+
+
+A base-\/class for Sequential Importance Sampling with Resampling.  
+
+
+
+
+{\ttfamily \#include $<$sisr\+\_\+filter.\+h$>$}
+
+
+
+Inheritance diagram for S\+I\+S\+R\+Filter\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSISRFilter__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSISRFilter_a3105536db67f9aef8a08c32866a81a38}{S\+I\+S\+R\+Filter} (int num\+Parts, S\+I\+S\+R\+Resamp\+Style resamp\+Technique=S\+I\+S\+R\+Resamp\+Style\+::everytime\+\_\+multinomial, unsigned int path\+Length=0, double ess\+Perc=1.\+0)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classSISRFilter_a6953590c7317c8dbf2341640dea71af8}{$\sim$\+S\+I\+S\+R\+Filter} ()\hypertarget{classSISRFilter_a6953590c7317c8dbf2341640dea71af8}{}\label{classSISRFilter_a6953590c7317c8dbf2341640dea71af8}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+double \hyperlink{classSISRFilter_a9bec319e692266cacdd7e6cd9b60e77d}{get\+Log\+Cond\+Like} () const 
+\begin{DoxyCompactList}\small\item\em get \$ p(y\+\_\+t$\vert$y\+\_\+\{1\+:t-\/1\})\$ or \$ p(y\+\_\+1)\$. \end{DoxyCompactList}\item 
+double \hyperlink{classSISRFilter_aab226ed51d07c493151a6788e6f90b86}{get\+E\+SS} () const 
+\begin{DoxyCompactList}\small\item\em get effective sample size. \end{DoxyCompactList}\item 
+const std\+::vector$<$ std\+::vector$<$ Vec $>$ $>$ \& \hyperlink{classSISRFilter_abf2a3eb798a56e83a5a87db40b2594c4}{get\+Full\+Parts} () const 
+\begin{DoxyCompactList}\small\item\em get \$p(x\+\_\+\{1\+:t\}$\vert$y\+\_\+\{1\+:t\})\$ \end{DoxyCompactList}\item 
+const std\+::vector$<$ Mat $>$ \& \hyperlink{classSISRFilter_af21ae70333a86a3796b3bc5a83a985a3}{get\+Expectations} () const 
+\begin{DoxyCompactList}\small\item\em get all stored expectations. With respect to \$p(x\+\_\+t$\vert$y\+\_\+\{1\+:t\})\$ \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \hyperlink{classSISRFilter_aa87ac349cbc21f70fb51c24fcbbc521a}{get\+Log\+U\+Weights} () const 
+\begin{DoxyCompactList}\small\item\em Get log-\/un-\/normalized weights. \end{DoxyCompactList}\item 
+void \hyperlink{classSISRFilter_a8c22a038dc47490b5532f2ec6c21a548}{filter\+Or\+Smooth} (const Vec \&data, const std\+::vector$<$ std\+::function$<$ const Mat(const Vec \&)$>$ $>$ \&fs=std\+::vector$<$ std\+::function$<$ const Mat(const Vec \&)$>$ $>$())
+\begin{DoxyCompactList}\small\item\em If storing whole paths, performs smoothing. If not storing whole paths, performs filtering. \end{DoxyCompactList}\item 
+virtual double \hyperlink{classSISRFilter_ab6ffa8e1cdee34f1afb825e35462afaa}{log\+Mu\+Ev} (const Vec \&x1)=0
+\begin{DoxyCompactList}\small\item\em Calculate mu\+Ev or logmu\+Ev. \end{DoxyCompactList}\item 
+virtual Vec \hyperlink{classSISRFilter_a5a57cd67535e31bb1ab20fb42499f911}{q1\+Samp} (const Vec \&y1)=0
+\begin{DoxyCompactList}\small\item\em Samples from time 1 proposal. \end{DoxyCompactList}\item 
+virtual double \hyperlink{classSISRFilter_a61a1971bd8208abbe3ccbacd66d35c23}{log\+Q1\+Ev} (const Vec \&x1, const Vec \&y1)=0
+\begin{DoxyCompactList}\small\item\em Calculate q1\+Ev or log q1\+Ev. \end{DoxyCompactList}\item 
+virtual double \hyperlink{classSISRFilter_aac59b077648fa74d2a5db970e3d7ffac}{log\+G\+Ev} (const Vec \&yt, const Vec \&xt)=0
+\begin{DoxyCompactList}\small\item\em Calculate g\+Ev or log\+G\+Ev. \end{DoxyCompactList}\item 
+virtual double \hyperlink{classSISRFilter_ab91474fc79efb84ed1dafbc8c542f59e}{log\+F\+Ev} (const Vec \&xt, const Vec \&xtm1)=0
+\begin{DoxyCompactList}\small\item\em Calculate f\+Ev or log\+F\+Ev. \end{DoxyCompactList}\item 
+virtual Vec \hyperlink{classSISRFilter_a2c480a10cac8b52a36ab1309cf9ea1a4}{q\+Samp} (const Vec \&xtm1, const Vec \&yt)=0
+\begin{DoxyCompactList}\small\item\em Sample from the proposal distribution. \end{DoxyCompactList}\item 
+virtual double \hyperlink{classSISRFilter_af289db59b008a0ab795fc3b8e9887043}{log\+Q\+Ev} (const Vec \&xt, const Vec \&xtm1, const Vec \&yt)=0
+\begin{DoxyCompactList}\small\item\em Calculate q\+Ev or log\+Q\+Ev. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A base-\/class for Sequential Importance Sampling with Resampling. 
+
+\begin{DoxyAuthor}{Author}
+taylor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+07/09/17 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{S\+I\+S\+R\+Filter@{S\+I\+S\+R\+Filter}!S\+I\+S\+R\+Filter@{S\+I\+S\+R\+Filter}}
+\index{S\+I\+S\+R\+Filter@{S\+I\+S\+R\+Filter}!S\+I\+S\+R\+Filter@{S\+I\+S\+R\+Filter}}
+\subsubsection[{\texorpdfstring{S\+I\+S\+R\+Filter(int num\+Parts, S\+I\+S\+R\+Resamp\+Style resamp\+Technique=\+S\+I\+S\+R\+Resamp\+Style\+::everytime\+\_\+multinomial, unsigned int path\+Length=0, double ess\+Perc=1.\+0)}{SISRFilter(int numParts, SISRResampStyle resampTechnique=SISRResampStyle::everytime_multinomial, unsigned int pathLength=0, double essPerc=1.0)}}]{\setlength{\rightskip}{0pt plus 5cm}S\+I\+S\+R\+Filter\+::\+S\+I\+S\+R\+Filter (
+\begin{DoxyParamCaption}
+\item[{int}]{num\+Parts, }
+\item[{S\+I\+S\+R\+Resamp\+Style}]{resamp\+Technique = {\ttfamily SISRResampStyle\+:\+:everytime\+\_\+multinomial}, }
+\item[{unsigned int}]{path\+Length = {\ttfamily 0}, }
+\item[{double}]{ess\+Perc = {\ttfamily 1.0}}
+\end{DoxyParamCaption}
+)}\hypertarget{classSISRFilter_a3105536db67f9aef8a08c32866a81a38}{}\label{classSISRFilter_a3105536db67f9aef8a08c32866a81a38}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+Parts} & number of particles \\
+\hline
+{\em resamp\+Technique} & which resampling strategy? \\
+\hline
+{\em path\+Length.} & Set to 0 if you don\textquotesingle{}t want save entire paths. Otherwise, enter time length. \\
+\hline
+{\em ess\+Perc} & ignored unless S\+I\+S\+R\+Resamp\+Style is \char`\"{}ess.\char`\"{} What percent of E\+SS is the threshold for resampling. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{S\+I\+S\+R\+Filter@{S\+I\+S\+R\+Filter}!filter\+Or\+Smooth@{filter\+Or\+Smooth}}
+\index{filter\+Or\+Smooth@{filter\+Or\+Smooth}!S\+I\+S\+R\+Filter@{S\+I\+S\+R\+Filter}}
+\subsubsection[{\texorpdfstring{filter\+Or\+Smooth(const Vec \&data, const std\+::vector$<$ std\+::function$<$ const Mat(const Vec \&)$>$ $>$ \&fs=std\+::vector$<$ std\+::function$<$ const Mat(const Vec \&)$>$ $>$())}{filterOrSmooth(const Vec &data, const std::vector< std::function< const Mat(const Vec &)> > &fs=std::vector< std::function< const Mat(const Vec &)> >())}}]{\setlength{\rightskip}{0pt plus 5cm}void S\+I\+S\+R\+Filter\+::filter\+Or\+Smooth (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{data, }
+\item[{const std\+::vector$<$ std\+::function$<$ const Mat(const Vec \&)$>$ $>$ \&}]{fs = {\ttfamily std\+:\+:vector$<$~std\+:\+:function$<$~const~Mat(const~Vec~\&)$>$~$>$()}}
+\end{DoxyParamCaption}
+)}\hypertarget{classSISRFilter_a8c22a038dc47490b5532f2ec6c21a548}{}\label{classSISRFilter_a8c22a038dc47490b5532f2ec6c21a548}
+
+
+If storing whole paths, performs smoothing. If not storing whole paths, performs filtering. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & is a const Vec\& representing the current observed value of the time series. \\
+\hline
+{\em fs} & is a vector of functions that operate on each particle Vec. They are used to store empirical expectations (taken with respect to the filtering distribution). \\
+\hline
+\end{DoxyParams}
+\index{S\+I\+S\+R\+Filter@{S\+I\+S\+R\+Filter}!get\+E\+SS@{get\+E\+SS}}
+\index{get\+E\+SS@{get\+E\+SS}!S\+I\+S\+R\+Filter@{S\+I\+S\+R\+Filter}}
+\subsubsection[{\texorpdfstring{get\+E\+S\+S() const }{getESS() const }}]{\setlength{\rightskip}{0pt plus 5cm}double S\+I\+S\+R\+Filter\+::get\+E\+SS (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classSISRFilter_aab226ed51d07c493151a6788e6f90b86}{}\label{classSISRFilter_aab226ed51d07c493151a6788e6f90b86}
+
+
+get effective sample size. 
+
+\begin{DoxyReturn}{Returns}
+The current estimate for the effective sample size. 
+\end{DoxyReturn}
+\index{S\+I\+S\+R\+Filter@{S\+I\+S\+R\+Filter}!get\+Expectations@{get\+Expectations}}
+\index{get\+Expectations@{get\+Expectations}!S\+I\+S\+R\+Filter@{S\+I\+S\+R\+Filter}}
+\subsubsection[{\texorpdfstring{get\+Expectations() const }{getExpectations() const }}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::vector$<$Mat$>$\& S\+I\+S\+R\+Filter\+::get\+Expectations (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classSISRFilter_af21ae70333a86a3796b3bc5a83a985a3}{}\label{classSISRFilter_af21ae70333a86a3796b3bc5a83a985a3}
+
+
+get all stored expectations. With respect to \$p(x\+\_\+t$\vert$y\+\_\+\{1\+:t\})\$ 
+
+\begin{DoxyReturn}{Returns}
+returns a std\+::vector$<$\+Mat$>$ of all of the approximated expectations. 
+\end{DoxyReturn}
+\index{S\+I\+S\+R\+Filter@{S\+I\+S\+R\+Filter}!get\+Full\+Parts@{get\+Full\+Parts}}
+\index{get\+Full\+Parts@{get\+Full\+Parts}!S\+I\+S\+R\+Filter@{S\+I\+S\+R\+Filter}}
+\subsubsection[{\texorpdfstring{get\+Full\+Parts() const }{getFullParts() const }}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::vector$<$std\+::vector$<$Vec$>$ $>$\& S\+I\+S\+R\+Filter\+::get\+Full\+Parts (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classSISRFilter_abf2a3eb798a56e83a5a87db40b2594c4}{}\label{classSISRFilter_abf2a3eb798a56e83a5a87db40b2594c4}
+
+
+get \$p(x\+\_\+\{1\+:t\}$\vert$y\+\_\+\{1\+:t\})\$ 
+
+\begin{DoxyReturn}{Returns}
+The up-\/to-\/date set of path samples for the joint smoothing distribution. 
+\end{DoxyReturn}
+\index{S\+I\+S\+R\+Filter@{S\+I\+S\+R\+Filter}!get\+Log\+Cond\+Like@{get\+Log\+Cond\+Like}}
+\index{get\+Log\+Cond\+Like@{get\+Log\+Cond\+Like}!S\+I\+S\+R\+Filter@{S\+I\+S\+R\+Filter}}
+\subsubsection[{\texorpdfstring{get\+Log\+Cond\+Like() const }{getLogCondLike() const }}]{\setlength{\rightskip}{0pt plus 5cm}double S\+I\+S\+R\+Filter\+::get\+Log\+Cond\+Like (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classSISRFilter_a9bec319e692266cacdd7e6cd9b60e77d}{}\label{classSISRFilter_a9bec319e692266cacdd7e6cd9b60e77d}
+
+
+get \$ p(y\+\_\+t$\vert$y\+\_\+\{1\+:t-\/1\})\$ or \$ p(y\+\_\+1)\$. 
+
+\begin{DoxyReturn}{Returns}
+The estimate of the most recent log conditional likelihood. 
+\end{DoxyReturn}
+\index{S\+I\+S\+R\+Filter@{S\+I\+S\+R\+Filter}!get\+Log\+U\+Weights@{get\+Log\+U\+Weights}}
+\index{get\+Log\+U\+Weights@{get\+Log\+U\+Weights}!S\+I\+S\+R\+Filter@{S\+I\+S\+R\+Filter}}
+\subsubsection[{\texorpdfstring{get\+Log\+U\+Weights() const }{getLogUWeights() const }}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$double$>$ S\+I\+S\+R\+Filter\+::get\+Log\+U\+Weights (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classSISRFilter_aa87ac349cbc21f70fb51c24fcbbc521a}{}\label{classSISRFilter_aa87ac349cbc21f70fb51c24fcbbc521a}
+
+
+Get log-\/un-\/normalized weights. 
+
+\begin{DoxyReturn}{Returns}
+The most recent std\+::vector of log-\/un-\/normalized weights. 
+\end{DoxyReturn}
+\index{S\+I\+S\+R\+Filter@{S\+I\+S\+R\+Filter}!log\+F\+Ev@{log\+F\+Ev}}
+\index{log\+F\+Ev@{log\+F\+Ev}!S\+I\+S\+R\+Filter@{S\+I\+S\+R\+Filter}}
+\subsubsection[{\texorpdfstring{log\+F\+Ev(const Vec \&xt, const Vec \&xtm1)=0}{logFEv(const Vec &xt, const Vec &xtm1)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual double S\+I\+S\+R\+Filter\+::log\+F\+Ev (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{xt, }
+\item[{const Vec \&}]{xtm1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classSISRFilter_ab91474fc79efb84ed1dafbc8c542f59e}{}\label{classSISRFilter_ab91474fc79efb84ed1dafbc8c542f59e}
+
+
+Calculate f\+Ev or log\+F\+Ev. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xt} & is a const Vec\& describing the time t state \\
+\hline
+{\em xtm1} & is a const Vec\& describing the time t-\/1 state \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the density or log-\/denity evaluation as a double 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classNAr1Filter_adff7d17aa5271b8df4c77d752a6fd773}{N\+Ar1\+Filter}, \hyperlink{classJacEtAl_a7742c736cf4136968dcf8629c4a3914e}{Jac\+Et\+Al}, \hyperlink{classMSVolSISR_acd51af2d17300973b8fa4748e5729f3c}{M\+S\+Vol\+S\+I\+SR}, and \hyperlink{classSVolFilter_a506d813662f0d888e48607962bfefbbd}{S\+Vol\+Filter}.
+
+\index{S\+I\+S\+R\+Filter@{S\+I\+S\+R\+Filter}!log\+G\+Ev@{log\+G\+Ev}}
+\index{log\+G\+Ev@{log\+G\+Ev}!S\+I\+S\+R\+Filter@{S\+I\+S\+R\+Filter}}
+\subsubsection[{\texorpdfstring{log\+G\+Ev(const Vec \&yt, const Vec \&xt)=0}{logGEv(const Vec &yt, const Vec &xt)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual double S\+I\+S\+R\+Filter\+::log\+G\+Ev (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{yt, }
+\item[{const Vec \&}]{xt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classSISRFilter_aac59b077648fa74d2a5db970e3d7ffac}{}\label{classSISRFilter_aac59b077648fa74d2a5db970e3d7ffac}
+
+
+Calculate g\+Ev or log\+G\+Ev. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em yt} & is a const Vec\& describing the time t datum \\
+\hline
+{\em xt} & is a const Vec\& describing the time t state \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the density or log-\/density evaluation as a double 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classNAr1Filter_aed4a7fb8160aabe9a7dc702826ccae60}{N\+Ar1\+Filter}, \hyperlink{classJacEtAl_aa37b7701fac288d76b72640b2c98f253}{Jac\+Et\+Al}, \hyperlink{classMSVolSISR_a1e7efc4dd05351872764983a99a0c5ed}{M\+S\+Vol\+S\+I\+SR}, and \hyperlink{classSVolFilter_a81a8e2857ddb699738461b5e2beab1c0}{S\+Vol\+Filter}.
+
+\index{S\+I\+S\+R\+Filter@{S\+I\+S\+R\+Filter}!log\+Mu\+Ev@{log\+Mu\+Ev}}
+\index{log\+Mu\+Ev@{log\+Mu\+Ev}!S\+I\+S\+R\+Filter@{S\+I\+S\+R\+Filter}}
+\subsubsection[{\texorpdfstring{log\+Mu\+Ev(const Vec \&x1)=0}{logMuEv(const Vec &x1)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual double S\+I\+S\+R\+Filter\+::log\+Mu\+Ev (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{x1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classSISRFilter_ab6ffa8e1cdee34f1afb825e35462afaa}{}\label{classSISRFilter_ab6ffa8e1cdee34f1afb825e35462afaa}
+
+
+Calculate mu\+Ev or logmu\+Ev. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x1} & is a const Vec\& describing the state sample \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the density or log-\/density evaluation as a double 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classNAr1Filter_ac97b366af3d4def2b45d394fb85865f0}{N\+Ar1\+Filter}, \hyperlink{classJacEtAl_a96f970a2b0e7f0583a5fe567b6353ffe}{Jac\+Et\+Al}, \hyperlink{classMSVolSISR_a2af842b09bada27765bf8e7e60c59183}{M\+S\+Vol\+S\+I\+SR}, and \hyperlink{classSVolFilter_ab052dcfa9ce2100ffb02350ccf0b6d17}{S\+Vol\+Filter}.
+
+\index{S\+I\+S\+R\+Filter@{S\+I\+S\+R\+Filter}!log\+Q1\+Ev@{log\+Q1\+Ev}}
+\index{log\+Q1\+Ev@{log\+Q1\+Ev}!S\+I\+S\+R\+Filter@{S\+I\+S\+R\+Filter}}
+\subsubsection[{\texorpdfstring{log\+Q1\+Ev(const Vec \&x1, const Vec \&y1)=0}{logQ1Ev(const Vec &x1, const Vec &y1)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual double S\+I\+S\+R\+Filter\+::log\+Q1\+Ev (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{x1, }
+\item[{const Vec \&}]{y1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classSISRFilter_a61a1971bd8208abbe3ccbacd66d35c23}{}\label{classSISRFilter_a61a1971bd8208abbe3ccbacd66d35c23}
+
+
+Calculate q1\+Ev or log q1\+Ev. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x1} & is a const Vec\& describing the time 1 state sample \\
+\hline
+{\em y1} & is a const Vec\& describing the time 1 datum \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the density or log-\/density evaluation as a double 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classNAr1Filter_af8eb2b66ff1806dd0d4c4ac1f7129a51}{N\+Ar1\+Filter}, \hyperlink{classJacEtAl_aec5fff50e30a9df174b04f2ab53c73d0}{Jac\+Et\+Al}, \hyperlink{classMSVolSISR_a9c776bfbf157ff4f0dc3cbe1c4212142}{M\+S\+Vol\+S\+I\+SR}, and \hyperlink{classSVolFilter_a9adc1eb288e46a2e05fa89d1b8d9f1ef}{S\+Vol\+Filter}.
+
+\index{S\+I\+S\+R\+Filter@{S\+I\+S\+R\+Filter}!log\+Q\+Ev@{log\+Q\+Ev}}
+\index{log\+Q\+Ev@{log\+Q\+Ev}!S\+I\+S\+R\+Filter@{S\+I\+S\+R\+Filter}}
+\subsubsection[{\texorpdfstring{log\+Q\+Ev(const Vec \&xt, const Vec \&xtm1, const Vec \&yt)=0}{logQEv(const Vec &xt, const Vec &xtm1, const Vec &yt)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual double S\+I\+S\+R\+Filter\+::log\+Q\+Ev (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{xt, }
+\item[{const Vec \&}]{xtm1, }
+\item[{const Vec \&}]{yt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classSISRFilter_af289db59b008a0ab795fc3b8e9887043}{}\label{classSISRFilter_af289db59b008a0ab795fc3b8e9887043}
+
+
+Calculate q\+Ev or log\+Q\+Ev. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xt} & is a const Vec\& describing the time t state \\
+\hline
+{\em xtm1} & is a const Vec\& describing the time t-\/1 state \\
+\hline
+{\em yt} & is a const Vec\& describing the time t datum \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the density or log-\/density evaluation as a double 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classNAr1Filter_ae42e9ccf333b8590bd79831be8083dcd}{N\+Ar1\+Filter}, \hyperlink{classJacEtAl_a73a94bbb16389102b20def8c0bdf96d8}{Jac\+Et\+Al}, \hyperlink{classMSVolSISR_af5ef1c3d5499bc9f2693a3f918def613}{M\+S\+Vol\+S\+I\+SR}, and \hyperlink{classSVolFilter_af2bbbe9c2d3bddb3e85b9ed5a14a24cb}{S\+Vol\+Filter}.
+
+\index{S\+I\+S\+R\+Filter@{S\+I\+S\+R\+Filter}!q1\+Samp@{q1\+Samp}}
+\index{q1\+Samp@{q1\+Samp}!S\+I\+S\+R\+Filter@{S\+I\+S\+R\+Filter}}
+\subsubsection[{\texorpdfstring{q1\+Samp(const Vec \&y1)=0}{q1Samp(const Vec &y1)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual Vec S\+I\+S\+R\+Filter\+::q1\+Samp (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{y1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classSISRFilter_a5a57cd67535e31bb1ab20fb42499f911}{}\label{classSISRFilter_a5a57cd67535e31bb1ab20fb42499f911}
+
+
+Samples from time 1 proposal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em y1} & is a const Vec\& representing the first observed datum \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the sample as a Vec 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classSVolFilter_aaea1d4b59cdd3053f060d5013e338162}{S\+Vol\+Filter}, \hyperlink{classNAr1Filter_a6ae702c69b4f3e7b2109f99e2fd5d8b7}{N\+Ar1\+Filter}, \hyperlink{classJacEtAl_a154ca22da5c981f2d0c9515dc89a472c}{Jac\+Et\+Al}, and \hyperlink{classMSVolSISR_ac828fdce8a00f9ac3adbe0fa019fe49d}{M\+S\+Vol\+S\+I\+SR}.
+
+\index{S\+I\+S\+R\+Filter@{S\+I\+S\+R\+Filter}!q\+Samp@{q\+Samp}}
+\index{q\+Samp@{q\+Samp}!S\+I\+S\+R\+Filter@{S\+I\+S\+R\+Filter}}
+\subsubsection[{\texorpdfstring{q\+Samp(const Vec \&xtm1, const Vec \&yt)=0}{qSamp(const Vec &xtm1, const Vec &yt)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual Vec S\+I\+S\+R\+Filter\+::q\+Samp (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{xtm1, }
+\item[{const Vec \&}]{yt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classSISRFilter_a2c480a10cac8b52a36ab1309cf9ea1a4}{}\label{classSISRFilter_a2c480a10cac8b52a36ab1309cf9ea1a4}
+
+
+Sample from the proposal distribution. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xtm1} & is a const Vec\& describing the time t-\/1 state \\
+\hline
+{\em yt} & is a const Vec\& describing the time t datum \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the sample as a Vec 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classNAr1Filter_af4f7f8b643e5750dc83e27ea7bf05f18}{N\+Ar1\+Filter}, \hyperlink{classJacEtAl_a2b2696527c89fdf462639e55dfbc67ce}{Jac\+Et\+Al}, \hyperlink{classMSVolSISR_a4f2f68902ba97f6dee582f1f01d1f5d7}{M\+S\+Vol\+S\+I\+SR}, and \hyperlink{classSVolFilter_a754e3c40b1db7798a48f3f4ad636b07c}{S\+Vol\+Filter}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/sisr\+\_\+filter.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,60 @@
+\hypertarget{pmfs_8h}{}\section{include/pmfs.h File Reference}
+\label{pmfs_8h}\index{include/pmfs.\+h@{include/pmfs.\+h}}
+{\ttfamily \#include $<$random$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$chrono$>$}\\*
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\\*
+Include dependency graph for pmfs.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{pmfs_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classpmfs_1_1DiscreteUnifSampler}{pmfs\+::\+Discrete\+Unif\+Sampler}
+\begin{DoxyCompactList}\small\item\em A class that performs sampling from a discrete uniform distribution. \end{DoxyCompactList}\item 
+class \hyperlink{classpmfs_1_1DiscreteCustomSampler}{pmfs\+::\+Discrete\+Custom\+Sampler}
+\begin{DoxyCompactList}\small\item\em A class that performs sampling from a discrete custom distribution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef Eigen\+::\+Matrix$<$ double, Eigen\+::\+Dynamic, 1 $>$ {\bfseries Vec}\hypertarget{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{}\label{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}
+
+\item 
+typedef Eigen\+::\+Matrix$<$ double, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ {\bfseries Mat}\hypertarget{pmfs_8h_ae601f56a556993079f730483c574356f}{}\label{pmfs_8h_ae601f56a556993079f730483c574356f}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{pmfs_8h_a21666e2a5112aa29a78053d23803f1b0}{pmfs\+::eval\+Discrete\+Unif} (const int \&x, const int \&k, bool log=false)
+\begin{DoxyCompactList}\small\item\em Evaluates discrete uniform pmf. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{pmfs.\+h@{pmfs.\+h}!eval\+Discrete\+Unif@{eval\+Discrete\+Unif}}
+\index{eval\+Discrete\+Unif@{eval\+Discrete\+Unif}!pmfs.\+h@{pmfs.\+h}}
+\subsubsection[{\texorpdfstring{eval\+Discrete\+Unif(const int \&x, const int \&k, bool log=false)}{evalDiscreteUnif(const int &x, const int &k, bool log=false)}}]{\setlength{\rightskip}{0pt plus 5cm}double pmfs\+::eval\+Discrete\+Unif (
+\begin{DoxyParamCaption}
+\item[{const int \&}]{x, }
+\item[{const int \&}]{k, }
+\item[{bool}]{log = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\hypertarget{pmfs_8h_file_a21666e2a5112aa29a78053d23803f1b0}{}\label{pmfs_8h_file_a21666e2a5112aa29a78053d23803f1b0}
+
+
+Evaluates discrete uniform pmf. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the hypothetical value of a rv \\
+\hline
+{\em k} & the size of the support i.\+e. (1,2,...k) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+P(X=x) probability that X equals x 
+\end{DoxyReturn}

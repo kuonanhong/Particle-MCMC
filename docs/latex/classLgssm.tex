@@ -1,0 +1,171 @@
+\hypertarget{classLgssm}{}\section{Lgssm Class Reference}
+\label{classLgssm}\index{Lgssm@{Lgssm}}
+
+
+A base-\/class for Kalman Filtering.  
+
+
+
+
+{\ttfamily \#include $<$lgssm.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries update\+Prior} (const Mat \&state\+Trans\+Mat, const Mat \&chol\+State\+Var, const Mat \&state\+Inpt\+Affector, const Vec \&input\+Data)\hypertarget{classLgssm_ab6df7f45d20a18f1f6b330ae30507f4d}{}\label{classLgssm_ab6df7f45d20a18f1f6b330ae30507f4d}
+
+\item 
+void {\bfseries update\+Posterior} (const Vec \&yt, const Mat \&obs\+Mat, const Mat \&obs\+Inpt\+Affector, const Vec \&input\+Data, const Mat \&chol\+Obs\+Var)\hypertarget{classLgssm_a83bccb6907e9d672c6a7d634e9e569f2}{}\label{classLgssm_a83bccb6907e9d672c6a7d634e9e569f2}
+
+\item 
+\hyperlink{classLgssm_a8c729ab27738f29225847777b740877e}{Lgssm} ()\hypertarget{classLgssm_a8c729ab27738f29225847777b740877e}{}\label{classLgssm_a8c729ab27738f29225847777b740877e}
+
+\begin{DoxyCompactList}\small\item\em Default Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classLgssm_a779def860490023f436b4efe071789fd}{Lgssm} (const Vec \&init\+State\+Mean, const Mat \&init\+State\+Var)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classLgssm_afdb5db740e12453879d8b985180426a4}{$\sim$\+Lgssm} ()\hypertarget{classLgssm_afdb5db740e12453879d8b985180426a4}{}\label{classLgssm_afdb5db740e12453879d8b985180426a4}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+double \hyperlink{classLgssm_abf04a9c7501ab5fa91246963b57721c4}{get\+Log\+Cond\+Like} () const 
+\begin{DoxyCompactList}\small\item\em Get the latest conditional likelihood. \end{DoxyCompactList}\item 
+Vec \hyperlink{classLgssm_aed914f9b681c5788dc11a49f2e31b74f}{get\+Filt\+Mean} () const 
+\begin{DoxyCompactList}\small\item\em Get the latest filtering mean. \end{DoxyCompactList}\item 
+Mat \hyperlink{classLgssm_a03c6188372603269f0497a66f41d0563}{get\+Filt\+Var} () const 
+\begin{DoxyCompactList}\small\item\em Get the latest filtering covariance matrix. \end{DoxyCompactList}\item 
+void \hyperlink{classLgssm_a1f21af488dde504b4c01ccd53ef60e2f}{update} (const Vec \&yt, const Mat \&state\+Trans, const Mat \&chol\+State\+Var, const Mat \&state\+Inpt\+Affector, const Vec \&input\+Data, const Mat \&obs\+Mat, const Mat \&obs\+Inpt\+Affector, const Mat \&chol\+Obs\+Var)
+\begin{DoxyCompactList}\small\item\em Perform a Kalman filter predict-\/and-\/update. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Vec {\bfseries m\+\_\+pred\+Mean}\hypertarget{classLgssm_a6908a30e4e690acf6a96568d4e13fd8c}{}\label{classLgssm_a6908a30e4e690acf6a96568d4e13fd8c}
+
+\item 
+Vec {\bfseries m\+\_\+filt\+Mean}\hypertarget{classLgssm_a3f44ee61a7a1e3362a0ee13ac8b713b8}{}\label{classLgssm_a3f44ee61a7a1e3362a0ee13ac8b713b8}
+
+\item 
+Mat {\bfseries m\+\_\+pred\+Var}\hypertarget{classLgssm_a8a8ebf052c4a4ec9267b63b5a9403f6a}{}\label{classLgssm_a8a8ebf052c4a4ec9267b63b5a9403f6a}
+
+\item 
+Mat {\bfseries m\+\_\+filt\+Var}\hypertarget{classLgssm_ac4c2e07197371f0f3ac3bb28e1d769e7}{}\label{classLgssm_ac4c2e07197371f0f3ac3bb28e1d769e7}
+
+\item 
+double {\bfseries m\+\_\+last\+Log\+Cond\+Like}\hypertarget{classLgssm_a799033d988b8a3e48506740027390c62}{}\label{classLgssm_a799033d988b8a3e48506740027390c62}
+
+\item 
+bool {\bfseries m\+\_\+fresh}\hypertarget{classLgssm_a183e2a9c30a456e897025a17dbeec3d8}{}\label{classLgssm_a183e2a9c30a456e897025a17dbeec3d8}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A base-\/class for Kalman Filtering. 
+
+Inherit from this if your model is a linear-\/gaussian state space model. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Lgssm@{Lgssm}!Lgssm@{Lgssm}}
+\index{Lgssm@{Lgssm}!Lgssm@{Lgssm}}
+\subsubsection[{\texorpdfstring{Lgssm(const Vec \&init\+State\+Mean, const Mat \&init\+State\+Var)}{Lgssm(const Vec &initStateMean, const Mat &initStateVar)}}]{\setlength{\rightskip}{0pt plus 5cm}Lgssm\+::\+Lgssm (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{init\+State\+Mean, }
+\item[{const Mat \&}]{init\+State\+Var}
+\end{DoxyParamCaption}
+)}\hypertarget{classLgssm_a779def860490023f436b4efe071789fd}{}\label{classLgssm_a779def860490023f436b4efe071789fd}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em init\+State\+Mean} & first time state prior distribution\textquotesingle{}s mean vector. \\
+\hline
+{\em init\+State\+Var} & first time state prior distribution\textquotesingle{}s covariance matrix. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Lgssm@{Lgssm}!get\+Filt\+Mean@{get\+Filt\+Mean}}
+\index{get\+Filt\+Mean@{get\+Filt\+Mean}!Lgssm@{Lgssm}}
+\subsubsection[{\texorpdfstring{get\+Filt\+Mean() const }{getFiltMean() const }}]{\setlength{\rightskip}{0pt plus 5cm}Vec Lgssm\+::get\+Filt\+Mean (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classLgssm_aed914f9b681c5788dc11a49f2e31b74f}{}\label{classLgssm_aed914f9b681c5788dc11a49f2e31b74f}
+
+
+Get the latest filtering mean. 
+
+\begin{DoxyReturn}{Returns}
+the mean of the filtering distribution. 
+\end{DoxyReturn}
+\index{Lgssm@{Lgssm}!get\+Filt\+Var@{get\+Filt\+Var}}
+\index{get\+Filt\+Var@{get\+Filt\+Var}!Lgssm@{Lgssm}}
+\subsubsection[{\texorpdfstring{get\+Filt\+Var() const }{getFiltVar() const }}]{\setlength{\rightskip}{0pt plus 5cm}Mat Lgssm\+::get\+Filt\+Var (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classLgssm_a03c6188372603269f0497a66f41d0563}{}\label{classLgssm_a03c6188372603269f0497a66f41d0563}
+
+
+Get the latest filtering covariance matrix. 
+
+\begin{DoxyReturn}{Returns}
+the covariance matrix of the filtering distribution. 
+\end{DoxyReturn}
+\index{Lgssm@{Lgssm}!get\+Log\+Cond\+Like@{get\+Log\+Cond\+Like}}
+\index{get\+Log\+Cond\+Like@{get\+Log\+Cond\+Like}!Lgssm@{Lgssm}}
+\subsubsection[{\texorpdfstring{get\+Log\+Cond\+Like() const }{getLogCondLike() const }}]{\setlength{\rightskip}{0pt plus 5cm}double Lgssm\+::get\+Log\+Cond\+Like (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classLgssm_abf04a9c7501ab5fa91246963b57721c4}{}\label{classLgssm_abf04a9c7501ab5fa91246963b57721c4}
+
+
+Get the latest conditional likelihood. 
+
+\begin{DoxyReturn}{Returns}
+the latest conditional likelihood. 
+\end{DoxyReturn}
+\index{Lgssm@{Lgssm}!update@{update}}
+\index{update@{update}!Lgssm@{Lgssm}}
+\subsubsection[{\texorpdfstring{update(const Vec \&yt, const Mat \&state\+Trans, const Mat \&chol\+State\+Var, const Mat \&state\+Inpt\+Affector, const Vec \&input\+Data, const Mat \&obs\+Mat, const Mat \&obs\+Inpt\+Affector, const Mat \&chol\+Obs\+Var)}{update(const Vec &yt, const Mat &stateTrans, const Mat &cholStateVar, const Mat &stateInptAffector, const Vec &inputData, const Mat &obsMat, const Mat &obsInptAffector, const Mat &cholObsVar)}}]{\setlength{\rightskip}{0pt plus 5cm}void Lgssm\+::update (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{yt, }
+\item[{const Mat \&}]{state\+Trans, }
+\item[{const Mat \&}]{chol\+State\+Var, }
+\item[{const Mat \&}]{state\+Inpt\+Affector, }
+\item[{const Vec \&}]{input\+Data, }
+\item[{const Mat \&}]{obs\+Mat, }
+\item[{const Mat \&}]{obs\+Inpt\+Affector, }
+\item[{const Mat \&}]{chol\+Obs\+Var}
+\end{DoxyParamCaption}
+)}\hypertarget{classLgssm_a1f21af488dde504b4c01ccd53ef60e2f}{}\label{classLgssm_a1f21af488dde504b4c01ccd53ef60e2f}
+
+
+Perform a Kalman filter predict-\/and-\/update. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em yt} & the new data point. \\
+\hline
+{\em state\+Trans\+Mat} & the transition matrix of the state \\
+\hline
+{\em chol\+State\+Var} & the Cholesky Decomposition of the state noise covariance matrix. \\
+\hline
+{\em state\+Inpt\+Affector} & the matrix affecting how input data affects state transition. \\
+\hline
+{\em input\+Data} & exogenous input data \\
+\hline
+{\em obs\+Mat} & the observation/emission matrix of the observation\textquotesingle{}s conditional (on the state) distn. \\
+\hline
+{\em obs\+Inpt\+Affector} & the matrix affecting how input data affects the observational distribution. \\
+\hline
+{\em chol\+Obs\+Var} & the Cholesky Decomposition of the observatio noise covariance matrix. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/lgssm.\+h\end{DoxyCompactItemize}

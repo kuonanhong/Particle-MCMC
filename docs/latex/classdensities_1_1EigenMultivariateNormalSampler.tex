@@ -1,0 +1,112 @@
+\hypertarget{classdensities_1_1EigenMultivariateNormalSampler}{}\section{densities\+:\+:Eigen\+Multivariate\+Normal\+Sampler Class Reference}
+\label{classdensities_1_1EigenMultivariateNormalSampler}\index{densities\+::\+Eigen\+Multivariate\+Normal\+Sampler@{densities\+::\+Eigen\+Multivariate\+Normal\+Sampler}}
+
+
+A class that performs sampling from a multivariate normal distribution.  
+
+
+
+
+{\ttfamily \#include $<$densities.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classdensities_1_1EigenMultivariateNormalSampler_afb0b000a64346ba806b3700de9b8afea}{Eigen\+Multivariate\+Normal\+Sampler} ()\hypertarget{classdensities_1_1EigenMultivariateNormalSampler_afb0b000a64346ba806b3700de9b8afea}{}\label{classdensities_1_1EigenMultivariateNormalSampler_afb0b000a64346ba806b3700de9b8afea}
+
+\begin{DoxyCompactList}\small\item\em The default constructor. Sets mean to 0 and variance to 1. \end{DoxyCompactList}\item 
+\hyperlink{classdensities_1_1EigenMultivariateNormalSampler_a88ccb69ae36d08f0e02edc3d1f6eed9a}{Eigen\+Multivariate\+Normal\+Sampler} (const Vec \&mean\+Vec, const Mat \&cov\+Mat)
+\begin{DoxyCompactList}\small\item\em The constructor. \end{DoxyCompactList}\item 
+void \hyperlink{classdensities_1_1EigenMultivariateNormalSampler_a427e1c188728a79b09c830a6ebb68806}{set\+Covar} (const Mat \&cov\+Mat)
+\begin{DoxyCompactList}\small\item\em Set the covariance matrix for the P\+R\+NG. \end{DoxyCompactList}\item 
+void \hyperlink{classdensities_1_1EigenMultivariateNormalSampler_ac16661e6277bafea22edb63b72bc81ba}{set\+Mean} (const Vec \&mean\+Vec)
+\begin{DoxyCompactList}\small\item\em Set the mean for the P\+R\+NG. \end{DoxyCompactList}\item 
+Vec \hyperlink{classdensities_1_1EigenMultivariateNormalSampler_a70a1102dae2f055ebe78657395d11271}{sample} ()
+\begin{DoxyCompactList}\small\item\em Draws a random vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class that performs sampling from a multivariate normal distribution. 
+
+\begin{DoxyAuthor}{Author}
+taylor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+05/09/16 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{densities\+::\+Eigen\+Multivariate\+Normal\+Sampler@{densities\+::\+Eigen\+Multivariate\+Normal\+Sampler}!Eigen\+Multivariate\+Normal\+Sampler@{Eigen\+Multivariate\+Normal\+Sampler}}
+\index{Eigen\+Multivariate\+Normal\+Sampler@{Eigen\+Multivariate\+Normal\+Sampler}!densities\+::\+Eigen\+Multivariate\+Normal\+Sampler@{densities\+::\+Eigen\+Multivariate\+Normal\+Sampler}}
+\subsubsection[{\texorpdfstring{Eigen\+Multivariate\+Normal\+Sampler(const Vec \&mean\+Vec, const Mat \&cov\+Mat)}{EigenMultivariateNormalSampler(const Vec &meanVec, const Mat &covMat)}}]{\setlength{\rightskip}{0pt plus 5cm}densities\+::\+Eigen\+Multivariate\+Normal\+Sampler\+::\+Eigen\+Multivariate\+Normal\+Sampler (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{mean\+Vec, }
+\item[{const Mat \&}]{cov\+Mat}
+\end{DoxyParamCaption}
+)}\hypertarget{classdensities_1_1EigenMultivariateNormalSampler_a88ccb69ae36d08f0e02edc3d1f6eed9a}{}\label{classdensities_1_1EigenMultivariateNormalSampler_a88ccb69ae36d08f0e02edc3d1f6eed9a}
+
+
+The constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mean\+Vec} & a Vec for the mean vector of the sampling distribution. \\
+\hline
+{\em cov\+Mat} & a Mat representing the covariance matrix of the samples. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{densities\+::\+Eigen\+Multivariate\+Normal\+Sampler@{densities\+::\+Eigen\+Multivariate\+Normal\+Sampler}!sample@{sample}}
+\index{sample@{sample}!densities\+::\+Eigen\+Multivariate\+Normal\+Sampler@{densities\+::\+Eigen\+Multivariate\+Normal\+Sampler}}
+\subsubsection[{\texorpdfstring{sample()}{sample()}}]{\setlength{\rightskip}{0pt plus 5cm}Vec densities\+::\+Eigen\+Multivariate\+Normal\+Sampler\+::sample (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classdensities_1_1EigenMultivariateNormalSampler_a70a1102dae2f055ebe78657395d11271}{}\label{classdensities_1_1EigenMultivariateNormalSampler_a70a1102dae2f055ebe78657395d11271}
+
+
+Draws a random vector. 
+
+\begin{DoxyReturn}{Returns}
+a Vec random sample. 
+\end{DoxyReturn}
+\index{densities\+::\+Eigen\+Multivariate\+Normal\+Sampler@{densities\+::\+Eigen\+Multivariate\+Normal\+Sampler}!set\+Covar@{set\+Covar}}
+\index{set\+Covar@{set\+Covar}!densities\+::\+Eigen\+Multivariate\+Normal\+Sampler@{densities\+::\+Eigen\+Multivariate\+Normal\+Sampler}}
+\subsubsection[{\texorpdfstring{set\+Covar(const Mat \&cov\+Mat)}{setCovar(const Mat &covMat)}}]{\setlength{\rightskip}{0pt plus 5cm}void densities\+::\+Eigen\+Multivariate\+Normal\+Sampler\+::set\+Covar (
+\begin{DoxyParamCaption}
+\item[{const Mat \&}]{cov\+Mat}
+\end{DoxyParamCaption}
+)}\hypertarget{classdensities_1_1EigenMultivariateNormalSampler_a427e1c188728a79b09c830a6ebb68806}{}\label{classdensities_1_1EigenMultivariateNormalSampler_a427e1c188728a79b09c830a6ebb68806}
+
+
+Set the covariance matrix for the P\+R\+NG. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cov\+Mat} & the Mat representing the covariance matrix of the P\+R\+NG. \\
+\hline
+\end{DoxyParams}
+\index{densities\+::\+Eigen\+Multivariate\+Normal\+Sampler@{densities\+::\+Eigen\+Multivariate\+Normal\+Sampler}!set\+Mean@{set\+Mean}}
+\index{set\+Mean@{set\+Mean}!densities\+::\+Eigen\+Multivariate\+Normal\+Sampler@{densities\+::\+Eigen\+Multivariate\+Normal\+Sampler}}
+\subsubsection[{\texorpdfstring{set\+Mean(const Vec \&mean\+Vec)}{setMean(const Vec &meanVec)}}]{\setlength{\rightskip}{0pt plus 5cm}void densities\+::\+Eigen\+Multivariate\+Normal\+Sampler\+::set\+Mean (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{mean\+Vec}
+\end{DoxyParamCaption}
+)}\hypertarget{classdensities_1_1EigenMultivariateNormalSampler_ac16661e6277bafea22edb63b72bc81ba}{}\label{classdensities_1_1EigenMultivariateNormalSampler_ac16661e6277bafea22edb63b72bc81ba}
+
+
+Set the mean for the P\+R\+NG. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mean\+Vec} & the Vec representing the P\+R\+NG\textquotesingle{}s mean. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{densities_8h}{densities.\+h}\end{DoxyCompactItemize}

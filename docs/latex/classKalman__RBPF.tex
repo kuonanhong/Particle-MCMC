@@ -1,0 +1,134 @@
+\hypertarget{classKalman__RBPF}{}\section{Kalman\+\_\+\+R\+B\+PF Class Reference}
+\label{classKalman__RBPF}\index{Kalman\+\_\+\+R\+B\+PF@{Kalman\+\_\+\+R\+B\+PF}}
+
+
+A base-\/class for Kalman Rao-\/\+Blackwellized Particle Filtering.  
+
+
+
+
+{\ttfamily \#include $<$kalman\+\_\+rbpf.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classKalman__RBPF_aa7130565819b45f993100dbf7f048c37}{Kalman\+\_\+\+R\+B\+PF} (int num\+Parts, R\+B\+P\+F\+Resamp\+Style resamp\+Technique=R\+B\+P\+F\+Resamp\+Style\+::everytime\+\_\+multinomial)
+\begin{DoxyCompactList}\small\item\em The constructor. \end{DoxyCompactList}\item 
+\hyperlink{classKalman__RBPF_a454f1736e8889904f755ca904f6eebc0}{$\sim$\+Kalman\+\_\+\+R\+B\+PF} ()\hypertarget{classKalman__RBPF_a454f1736e8889904f755ca904f6eebc0}{}\label{classKalman__RBPF_a454f1736e8889904f755ca904f6eebc0}
+
+\begin{DoxyCompactList}\small\item\em The desuctor. \end{DoxyCompactList}\item 
+void \hyperlink{classKalman__RBPF_a72d5ed61d0289a6977bf178145f5b969}{filter} (const Vec \&data)
+\begin{DoxyCompactList}\small\item\em Filter! \end{DoxyCompactList}\item 
+double \hyperlink{classKalman__RBPF_a2d65ffce3d115ecaf1c8e97b9222cdde}{get\+Cond\+Like} () const 
+\begin{DoxyCompactList}\small\item\em Get the latest conditional likelihood. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \hyperlink{classKalman__RBPF_a8d411f1992b9a09ac3ee70f48ed34c7c}{get\+Weights} () const 
+\begin{DoxyCompactList}\small\item\em Get the up-\/to-\/date un-\/normalized weights. \end{DoxyCompactList}\item 
+virtual double {\bfseries mu\+Ev} (const Vec \&x21)=0\hypertarget{classKalman__RBPF_a25e8682d13a04eb1075a4d30dfa6825a}{}\label{classKalman__RBPF_a25e8682d13a04eb1075a4d30dfa6825a}
+
+\item 
+virtual Vec {\bfseries q1\+Samp} (const Vec \&y1)=0\hypertarget{classKalman__RBPF_a71e394c093f606f80a92a3fc4fe087a3}{}\label{classKalman__RBPF_a71e394c093f606f80a92a3fc4fe087a3}
+
+\item 
+virtual Vec {\bfseries init\+Kalman\+Mean} (const Vec \&x21)=0\hypertarget{classKalman__RBPF_a870a53fc149adf8042fa12eb5d9a8d30}{}\label{classKalman__RBPF_a870a53fc149adf8042fa12eb5d9a8d30}
+
+\item 
+virtual Mat {\bfseries init\+Kalman\+Var} (const Vec \&x21)=0\hypertarget{classKalman__RBPF_a4f7f37a90d9382ca2ad7dfef4acf1bc0}{}\label{classKalman__RBPF_a4f7f37a90d9382ca2ad7dfef4acf1bc0}
+
+\item 
+virtual Vec {\bfseries q\+Samp} (const Vec \&x2tm1, const Vec \&yt)=0\hypertarget{classKalman__RBPF_ad3ee89a06a18a287445e366230a6bd65}{}\label{classKalman__RBPF_ad3ee89a06a18a287445e366230a6bd65}
+
+\item 
+virtual double {\bfseries q1\+Ev} (const Vec \&x1, const Vec \&y1)=0\hypertarget{classKalman__RBPF_abc3a0c0214699593426db94db29298d6}{}\label{classKalman__RBPF_abc3a0c0214699593426db94db29298d6}
+
+\item 
+virtual double {\bfseries f\+Ev} (const Vec \&x2t, const Vec \&x2tm1)=0\hypertarget{classKalman__RBPF_a03bfc2e7f32a86ab4fe653958d2f7dd4}{}\label{classKalman__RBPF_a03bfc2e7f32a86ab4fe653958d2f7dd4}
+
+\item 
+virtual double {\bfseries q\+Ev} (const Vec \&x2t, const Vec \&x2tm1, const Vec \&yt)=0\hypertarget{classKalman__RBPF_ad5b8e717c5d4c838b0d246b496971d16}{}\label{classKalman__RBPF_ad5b8e717c5d4c838b0d246b496971d16}
+
+\item 
+virtual void {\bfseries update\+Kalman} (\hyperlink{classLgssm}{Lgssm} \&a\+Model, const Vec \&yt, const Vec \&x2t)=0\hypertarget{classKalman__RBPF_a67abffa6fe0510147037ed102aa30ed0}{}\label{classKalman__RBPF_a67abffa6fe0510147037ed102aa30ed0}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A base-\/class for Kalman Rao-\/\+Blackwellized Particle Filtering. 
+
+\begin{DoxyAuthor}{Author}
+taylor 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Kalman\+\_\+\+R\+B\+PF@{Kalman\+\_\+\+R\+B\+PF}!Kalman\+\_\+\+R\+B\+PF@{Kalman\+\_\+\+R\+B\+PF}}
+\index{Kalman\+\_\+\+R\+B\+PF@{Kalman\+\_\+\+R\+B\+PF}!Kalman\+\_\+\+R\+B\+PF@{Kalman\+\_\+\+R\+B\+PF}}
+\subsubsection[{\texorpdfstring{Kalman\+\_\+\+R\+B\+P\+F(int num\+Parts, R\+B\+P\+F\+Resamp\+Style resamp\+Technique=\+R\+B\+P\+F\+Resamp\+Style\+::everytime\+\_\+multinomial)}{Kalman_RBPF(int numParts, RBPFResampStyle resampTechnique=RBPFResampStyle::everytime_multinomial)}}]{\setlength{\rightskip}{0pt plus 5cm}Kalman\+\_\+\+R\+B\+P\+F\+::\+Kalman\+\_\+\+R\+B\+PF (
+\begin{DoxyParamCaption}
+\item[{int}]{num\+Parts, }
+\item[{R\+B\+P\+F\+Resamp\+Style}]{resamp\+Technique = {\ttfamily RBPFResampStyle\+:\+:everytime\+\_\+multinomial}}
+\end{DoxyParamCaption}
+)}\hypertarget{classKalman__RBPF_aa7130565819b45f993100dbf7f048c37}{}\label{classKalman__RBPF_aa7130565819b45f993100dbf7f048c37}
+
+
+The constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+Parts} & the number of particles. \\
+\hline
+{\em resamp\+Technique} & the type of resampling you want to do. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Kalman\+\_\+\+R\+B\+PF@{Kalman\+\_\+\+R\+B\+PF}!filter@{filter}}
+\index{filter@{filter}!Kalman\+\_\+\+R\+B\+PF@{Kalman\+\_\+\+R\+B\+PF}}
+\subsubsection[{\texorpdfstring{filter(const Vec \&data)}{filter(const Vec &data)}}]{\setlength{\rightskip}{0pt plus 5cm}void Kalman\+\_\+\+R\+B\+P\+F\+::filter (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{classKalman__RBPF_a72d5ed61d0289a6977bf178145f5b969}{}\label{classKalman__RBPF_a72d5ed61d0289a6977bf178145f5b969}
+
+
+Filter! 
+
+The workhorse function 
+\begin{DoxyParams}{Parameters}
+{\em data} & the most recent observable portion of the time series. \\
+\hline
+\end{DoxyParams}
+\index{Kalman\+\_\+\+R\+B\+PF@{Kalman\+\_\+\+R\+B\+PF}!get\+Cond\+Like@{get\+Cond\+Like}}
+\index{get\+Cond\+Like@{get\+Cond\+Like}!Kalman\+\_\+\+R\+B\+PF@{Kalman\+\_\+\+R\+B\+PF}}
+\subsubsection[{\texorpdfstring{get\+Cond\+Like() const }{getCondLike() const }}]{\setlength{\rightskip}{0pt plus 5cm}double Kalman\+\_\+\+R\+B\+P\+F\+::get\+Cond\+Like (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classKalman__RBPF_a2d65ffce3d115ecaf1c8e97b9222cdde}{}\label{classKalman__RBPF_a2d65ffce3d115ecaf1c8e97b9222cdde}
+
+
+Get the latest conditional likelihood. 
+
+\begin{DoxyReturn}{Returns}
+the latest conditional likelihood. 
+\end{DoxyReturn}
+\index{Kalman\+\_\+\+R\+B\+PF@{Kalman\+\_\+\+R\+B\+PF}!get\+Weights@{get\+Weights}}
+\index{get\+Weights@{get\+Weights}!Kalman\+\_\+\+R\+B\+PF@{Kalman\+\_\+\+R\+B\+PF}}
+\subsubsection[{\texorpdfstring{get\+Weights() const }{getWeights() const }}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$double$>$ Kalman\+\_\+\+R\+B\+P\+F\+::get\+Weights (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classKalman__RBPF_a8d411f1992b9a09ac3ee70f48ed34c7c}{}\label{classKalman__RBPF_a8d411f1992b9a09ac3ee70f48ed34c7c}
+
+
+Get the up-\/to-\/date un-\/normalized weights. 
+
+\begin{DoxyReturn}{Returns}
+the un-\/normalized weights of right now. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/kalman\+\_\+rbpf.\+h\end{DoxyCompactItemize}
