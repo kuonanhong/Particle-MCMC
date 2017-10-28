@@ -16,8 +16,8 @@
 class JacEtAlAPF : public APFFilter
 {
 private:
-    densities::EigenMultivariateNormalSampler m_timeOneSampler;
-    densities::EigenMultivariateNormalSampler m_transJumpSampler;
+    densities::MVNSampler m_timeOneSampler;
+    densities::MVNSampler m_transJumpSampler;
     
     const Mat m_beta;   // factor loadings
     const Vec m_R_sigmas;      // observatonal covariance matrix in vector form (std. devs though)

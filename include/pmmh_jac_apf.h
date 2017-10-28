@@ -33,8 +33,9 @@ public:
      * @param numMCMCIters the number of MCMC iterations you want.
      * @param dataFile the location of the observed time series data.
      * @param numCols the dimension of your observable time series data.
+     * @param mc true if you want to evaluate likelihood functions in parallel.
      */
-    Pmmh_jac_apf(unsigned int numParts, std::vector<double> startTheta, unsigned int numMCMCIters, const std::string& dataFile, unsigned int numCols);
+    Pmmh_jac_apf(unsigned int numParts, std::vector<double> startTheta, unsigned int numMCMCIters, const std::string& dataFile, unsigned int numCols, bool mc);
     
     
     /**
@@ -113,7 +114,7 @@ public:
      * @brief Approximates the log-likelihood with a particle filter. 
      * @param theta the parameters.
      * @param data the observable data.
-     * @param out the double to write out to.
+     * @param cancelled function will terminate when this is set to true by the class. Must implement mc is true.
      * @return the evaluation (as a double) of the log likelihood approximation.
      */
     double logLikeEvaluate (const std::vector<double>& theta, const std::vector<Vec>& data, std::atomic_bool& cancelled);

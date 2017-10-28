@@ -15,7 +15,7 @@
 class SVolAPFFilter : public APFFilter
 {
 private:
-    densities::EigenMultivariateNormalSampler m_stdNormSampler; // for sampling 
+    densities::MVNSampler m_stdNormSampler; // for sampling 
 public:
 
     /**

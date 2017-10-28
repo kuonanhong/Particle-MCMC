@@ -6,7 +6,12 @@
 #include "jacquier_et_al_apf.h"
 
 
-Pmmh_jac_apf::Pmmh_jac_apf(unsigned int numParts, std::vector<double> startTheta, unsigned int numMCMCIters, const std::string& dataFile, unsigned int numCols) : 
+Pmmh_jac_apf::Pmmh_jac_apf(unsigned int numParts, 
+                            std::vector<double> startTheta, 
+                            unsigned int numMCMCIters, 
+                            const std::string& dataFile, 
+                            unsigned int numCols,
+                            bool mc) : 
     m_numParts(numParts),
     m_d(21),//m_d(21),
     m_betaVar(.005),
@@ -14,7 +19,7 @@ Pmmh_jac_apf::Pmmh_jac_apf(unsigned int numParts, std::vector<double> startTheta
     m_muVar(.0005),
     m_logSigmaVar(.037),
     m_logRStdDevVar(.006),
-    Pmmh(startTheta, numMCMCIters, dataFile, numCols)
+    Pmmh(startTheta, numMCMCIters, dataFile, numCols, mc)
 {
     m_qSigmaVec = { 999.99, // doesn't matter
                     std::sqrt(m_betaVar*pow(2.4,2)/m_d), 
@@ -134,7 +139,7 @@ void Pmmh_jac_apf::qSample(const std::vector<double> &oldParams, std::vector<dou
 
     // ordering is: betas(9-1), phis(1),  mus(1), sigma(1), R_std_dev_vec(9)
 
-    static densities::EigenMultivariateNormalSampler s;
+    static densities::MVNSampler s;
     
     // start counter
     int c = 0; 

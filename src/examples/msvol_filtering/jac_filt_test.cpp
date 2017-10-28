@@ -50,6 +50,12 @@ void jac_filt_test()
     ////////////////////////////////////////
     // now run through the data and filter /
     ////////////////////////////////////////
+    // lambdas that help get the filter mean
+    std::vector<std::function<const Mat(const Vec&)> > fs;
+    auto idtyLambda = [](const Vec& x) { return Eigen::Map<const Mat>(x.data(), x.size(), 1); };
+    fs.push_back(idtyLambda);
+
+    
     std::string filePath("/home/taylor/ssm/data/some_csvs/jacq_y_data.csv");
     std::ifstream inFile(filePath);
     std::string dataLine;
@@ -73,9 +79,9 @@ void jac_filt_test()
         }
 
         // update
-        myMod.filterOrSmooth(yt);
-        //std::cout << myMod.getFilterMean() << "\n";
-        std::cout << myMod.getLogCondLike() << "\n";
+        myMod.filterOrSmooth(yt, fs);
+        std::cout << myMod.getExpectations()[0].transpose() << "\n";
+        //std::cout << myMod.getLogCondLike() << "\n";
         
         
         // increment time

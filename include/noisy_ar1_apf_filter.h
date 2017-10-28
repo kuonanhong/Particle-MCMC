@@ -16,7 +16,7 @@
 class NAr1APFFilter : public APFFilter
 {
 private:
-    densities::EigenMultivariateNormalSampler m_stdNormSampler; 
+    densities::MVNSampler m_stdNormSampler; 
     // parameters
     double m_alpha;
     double m_stateSd;

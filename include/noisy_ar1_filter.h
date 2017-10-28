@@ -16,7 +16,7 @@
 class NAr1Filter : public SISRFilter
 {
 private:
-    densities::EigenMultivariateNormalSampler m_stdNormSampler; // for sampling 
+    densities::MVNSampler m_stdNormSampler; // for sampling 
     
     //parameters
     double m_obsSd;

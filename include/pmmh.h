@@ -23,7 +23,7 @@ typedef Eigen::Matrix< double, Eigen::Dynamic, Eigen::Dynamic > Mat;
   */
 class Pmmh{
     
-protected:    
+private:    
     std::vector<Vec>    m_data;
     std::vector<double> m_currentTheta; 
     std::ofstream       m_samplesFileStream;
@@ -32,11 +32,15 @@ protected:
     unsigned int        m_numMCMCIters;
     unsigned int        m_numExtraThreads;
     std::mutex          m_outFileMutex;
+    bool                m_multicore;
 
     
     void logParams(const std::vector<double> &thetas, std::ofstream &ofs);
     void readInData(const std::string& fileLoc, unsigned int numCols);
+    void commence_sampling_mc(std::string samplesFile, std::string messagesFile);
+    void commence_sampling_sc(std::string samplesFile, std::string messagesFile);
 
+    
 public:
 
     /**
@@ -45,8 +49,9 @@ public:
      * @param numMCMCIters the number of MCMC iterations you want to do.
      * @param dataFile the location of the observed time series data.
      * @param numCols the dimension of your observable data.
+     * @param mc stands for multicore. true or false if you want to use extra cores.
      */
-    Pmmh(std::vector<double> startTheta, unsigned int numMCMCIters, const std::string& dataFile, unsigned int numCols);
+    Pmmh(std::vector<double> startTheta, unsigned int numMCMCIters, const std::string& dataFile, unsigned int numCols, bool mc);
 
 
     /**
@@ -60,8 +65,7 @@ public:
      * @param samplesFileFile where to store the csv of parameter samples.
      * @param messagesFile where to store the logged messages.
      */
-    void commenceSampling(std::string samplesFileFile, 
-                          std::string messagesFile);
+    void commenceSampling(std::string samplesFile, std::string messagesFile);
 
     
     /**
@@ -94,7 +98,7 @@ public:
      * @brief Evaluates (approximates) the log-likelihood with a particle filter.
      * @param theta the parameters with which to run the particle filter.
      * @param data the observed data with which to run the particle filter.
-     * @param out the double to write out to.
+     * @param cancelled is a token you need to provide if doing multithreaded likelihood evals. This allows the function to terminate prematurely.
      * @return the evaluation (as a double) of the log likelihood approximation.
      */
     virtual double logLikeEvaluate (const std::vector<double>& theta, const std::vector<Vec>& data, std::atomic_bool& cancelled) = 0;

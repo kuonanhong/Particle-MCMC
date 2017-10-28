@@ -94,11 +94,10 @@ double densities::evalUnivHalfNorm(const double &x, const double &sigmaSqd, bool
 /////////           samplers           /////////
 ////////////////////////////////////////////////
 
-/////////////// EigenMultivariateNormalSampler
 
-densities::EigenMultivariateNormalSampler::EigenMultivariateNormalSampler() :
-        m_rng{static_cast<std::uint32_t>(std::chrono::high_resolution_clock::now().time_since_epoch().count())}, 
-        m_z_gen(0.0, 1.0)
+densities::MVNSampler::MVNSampler()
+        : m_rng{static_cast<std::uint32_t>(std::chrono::high_resolution_clock::now().time_since_epoch().count())}, 
+          m_z_gen(0.0, 1.0)
 {
     Vec zero(1);
     zero(0) = 0.0;
@@ -106,12 +105,11 @@ densities::EigenMultivariateNormalSampler::EigenMultivariateNormalSampler() :
     
     Mat one(1,1);
     one(0,0) = 1.0;
-    setCovar(one);
-    
+    setCovar(one);  
 }
 
 
-densities::EigenMultivariateNormalSampler::EigenMultivariateNormalSampler(const Vec &meanVec, const Mat &covMat)
+densities::MVNSampler::MVNSampler(const Vec &meanVec, const Mat &covMat)
         : m_rng{static_cast<std::uint32_t>(std::chrono::high_resolution_clock::now().time_since_epoch().count())}, 
           m_z_gen(0.0, 1.0)
 {
@@ -120,28 +118,27 @@ densities::EigenMultivariateNormalSampler::EigenMultivariateNormalSampler(const 
 }
 
 
-void densities::EigenMultivariateNormalSampler::setCovar(const Mat &covMat)
+void densities::MVNSampler::setCovar(const Mat &covMat)
 {
     Eigen::SelfAdjointEigenSolver<Mat> eigenSolver(covMat);
     m_scale_mat = eigenSolver.eigenvectors() * eigenSolver.eigenvalues().cwiseMax(0).cwiseSqrt().asDiagonal();
 }
 
 
-void densities::EigenMultivariateNormalSampler::setMean(const Vec &meanVec)
+void densities::MVNSampler::setMean(const Vec &meanVec)
 {
     m_mean = meanVec;
 }
 
 
-Vec densities::EigenMultivariateNormalSampler::sample()
+Vec densities::MVNSampler::sample()
 {
-    const int rows = m_mean.rows();
-    Vec sampleVec(rows);
-    for (int jj=0; jj< rows; ++jj) 
+    Vec Z(m_mean.rows());
+    for (int jj=0; jj< m_mean.rows(); ++jj) 
     {
-        sampleVec(jj) = m_z_gen(m_rng);
+        Z(jj) = m_z_gen(m_rng);
     }
-    return m_mean + m_scale_mat * sampleVec;
+    return m_mean + m_scale_mat * Z;
 }
 
 

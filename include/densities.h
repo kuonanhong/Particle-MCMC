@@ -70,46 +70,46 @@ double evalUnivHalfNorm(const double &x, const double &sigmaSqd, bool log = fals
 
 //! A class that performs sampling from a multivariate normal distribution.
 /**
-* @class EigenMultivariateNormalSampler
+* @class MVNSampler
 * @author taylor
 * @date 05/09/16
 * @file densities.h
-* @brief 
+* @brief Can sample from a distribution with fixed mean and covariance, fixed mean only, fixed covariance only, or nothing fixed.
 */
-class EigenMultivariateNormalSampler
+class MVNSampler
 {
 private:
     std::mt19937 m_rng;    // mt engine
     std::normal_distribution<> m_z_gen;
     Mat m_scale_mat;
     Vec m_mean;
+    
 public:
-
     /**
-     * @brief The default constructor. Sets mean to 0 and variance to 1.
+     * @brief Default-constructor sets up for univariate standard Normal random variate generation.
      */
-    EigenMultivariateNormalSampler();
+     MVNSampler();
 
 
      /**
-      * @brief The constructor.
+      * @brief The user must supply both mean and covariance matrix.
       * @param meanVec a Vec for the mean vector of the sampling distribution.
       * @param covMat a Mat representing the covariance matrix of the samples.
       */
-    EigenMultivariateNormalSampler(const Vec &meanVec, const Mat &covMat);
-    
+    MVNSampler(const Vec &meanVec, const Mat &covMat);
 
-     /**
-      * @brief Set the covariance matrix for the PRNG.
-      * @param covMat the Mat representing the covariance matrix of the PRNG.
-      */
+
+    /**
+     * @brief sets the covariance matrix of the sampler.
+     * @param covMat the desired covariance matrix.
+     */
     void setCovar(const Mat &covMat);
     
-
-     /**
-      * @brief Set the mean for the PRNG.
-      * @param meanVec the Vec representing the PRNG's mean.
-      */
+    
+    /**
+     * @brief sets the mean vector of the sampler.
+     * @param meanVec the desired mean vector.
+     */
     void setMean(const Vec &meanVec);
     
         

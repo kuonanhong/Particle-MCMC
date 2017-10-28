@@ -17,7 +17,7 @@
 class MSVolSISR : public SISRFilter
 {
 private:
-    densities::EigenMultivariateNormalSampler m_stdNormSampler; // for sampling 
+    densities::MVNSampler m_stdNormSampler; // for sampling 
     
     const Mat m_beta;
     const Vec m_phis; //ordered, factors first before obs
