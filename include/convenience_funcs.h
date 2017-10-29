@@ -17,6 +17,13 @@ namespace convenience_funcs{
      */
     void logParams(const std::vector<double> &vec, std::ofstream &ofs);
     
+    /**
+     * @brief writes a vec to a row of an ofstream.
+     * @param vec the Eigen::VectorXd to be written.
+     * @param ofs the target ofstream.
+     */
+    void logParams(const Vec &vec, std::ofstream &ofs);
+
     
     /**
      * @brief reads in data in a csv file with no header and separates by commas. 

@@ -15,6 +15,18 @@ void convenience_funcs::logParams(const std::vector<double> &vec, std::ofstream 
 }
 
 
+void convenience_funcs::logParams(const Vec &vec, std::ofstream &ofs)
+{
+    for(unsigned i = 0; i < vec.rows(); ++i){
+        if( i == 0){
+            ofs << vec(i);
+        } else {
+            ofs << "," << vec(i);                                        
+        }
+    }
+    ofs << "\n";
+}
+
 std::vector<Vec> convenience_funcs::readInData(const std::string& fileLoc, unsigned int numCols)
 {
     // return this at end

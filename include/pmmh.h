@@ -25,7 +25,7 @@ class Pmmh{
     
 private:    
     std::vector<Vec>    m_data;
-    std::vector<double> m_currentTheta; 
+    std::vector<double> m_currentTheta;  // todo: make this Vec
     std::ofstream       m_samplesFileStream;
     std::ofstream       m_messageStream;
     unsigned int        m_dimTheta;
