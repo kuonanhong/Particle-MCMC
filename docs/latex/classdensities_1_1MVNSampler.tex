@@ -1,0 +1,112 @@
+\hypertarget{classdensities_1_1MVNSampler}{}\section{densities\+:\+:M\+V\+N\+Sampler Class Reference}
+\label{classdensities_1_1MVNSampler}\index{densities\+::\+M\+V\+N\+Sampler@{densities\+::\+M\+V\+N\+Sampler}}
+
+
+A class that performs sampling from a multivariate normal distribution.  
+
+
+
+
+{\ttfamily \#include $<$densities.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classdensities_1_1MVNSampler_abb1cac251d106e802ac99d70ae8a08fe}{M\+V\+N\+Sampler} ()\hypertarget{classdensities_1_1MVNSampler_abb1cac251d106e802ac99d70ae8a08fe}{}\label{classdensities_1_1MVNSampler_abb1cac251d106e802ac99d70ae8a08fe}
+
+\begin{DoxyCompactList}\small\item\em Default-\/constructor sets up for univariate standard Normal random variate generation. \end{DoxyCompactList}\item 
+\hyperlink{classdensities_1_1MVNSampler_ad4892d5a5018163f4b69974c4b80b4ea}{M\+V\+N\+Sampler} (const Vec \&mean\+Vec, const Mat \&cov\+Mat)
+\begin{DoxyCompactList}\small\item\em The user must supply both mean and covariance matrix. \end{DoxyCompactList}\item 
+void \hyperlink{classdensities_1_1MVNSampler_a914d6a896a1b7946085732a5758c16bb}{set\+Covar} (const Mat \&cov\+Mat)
+\begin{DoxyCompactList}\small\item\em sets the covariance matrix of the sampler. \end{DoxyCompactList}\item 
+void \hyperlink{classdensities_1_1MVNSampler_a456f1e8ed39efc34ee3a7667dfb2011c}{set\+Mean} (const Vec \&mean\+Vec)
+\begin{DoxyCompactList}\small\item\em sets the mean vector of the sampler. \end{DoxyCompactList}\item 
+Vec \hyperlink{classdensities_1_1MVNSampler_a6be29ab6518db1f6457e95469e6970a4}{sample} ()
+\begin{DoxyCompactList}\small\item\em Draws a random vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class that performs sampling from a multivariate normal distribution. 
+
+\begin{DoxyAuthor}{Author}
+taylor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+05/09/16 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{densities\+::\+M\+V\+N\+Sampler@{densities\+::\+M\+V\+N\+Sampler}!M\+V\+N\+Sampler@{M\+V\+N\+Sampler}}
+\index{M\+V\+N\+Sampler@{M\+V\+N\+Sampler}!densities\+::\+M\+V\+N\+Sampler@{densities\+::\+M\+V\+N\+Sampler}}
+\subsubsection[{\texorpdfstring{M\+V\+N\+Sampler(const Vec \&mean\+Vec, const Mat \&cov\+Mat)}{MVNSampler(const Vec &meanVec, const Mat &covMat)}}]{\setlength{\rightskip}{0pt plus 5cm}densities\+::\+M\+V\+N\+Sampler\+::\+M\+V\+N\+Sampler (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{mean\+Vec, }
+\item[{const Mat \&}]{cov\+Mat}
+\end{DoxyParamCaption}
+)}\hypertarget{classdensities_1_1MVNSampler_ad4892d5a5018163f4b69974c4b80b4ea}{}\label{classdensities_1_1MVNSampler_ad4892d5a5018163f4b69974c4b80b4ea}
+
+
+The user must supply both mean and covariance matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mean\+Vec} & a Vec for the mean vector of the sampling distribution. \\
+\hline
+{\em cov\+Mat} & a Mat representing the covariance matrix of the samples. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{densities\+::\+M\+V\+N\+Sampler@{densities\+::\+M\+V\+N\+Sampler}!sample@{sample}}
+\index{sample@{sample}!densities\+::\+M\+V\+N\+Sampler@{densities\+::\+M\+V\+N\+Sampler}}
+\subsubsection[{\texorpdfstring{sample()}{sample()}}]{\setlength{\rightskip}{0pt plus 5cm}Vec densities\+::\+M\+V\+N\+Sampler\+::sample (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classdensities_1_1MVNSampler_a6be29ab6518db1f6457e95469e6970a4}{}\label{classdensities_1_1MVNSampler_a6be29ab6518db1f6457e95469e6970a4}
+
+
+Draws a random vector. 
+
+\begin{DoxyReturn}{Returns}
+a Vec random sample. 
+\end{DoxyReturn}
+\index{densities\+::\+M\+V\+N\+Sampler@{densities\+::\+M\+V\+N\+Sampler}!set\+Covar@{set\+Covar}}
+\index{set\+Covar@{set\+Covar}!densities\+::\+M\+V\+N\+Sampler@{densities\+::\+M\+V\+N\+Sampler}}
+\subsubsection[{\texorpdfstring{set\+Covar(const Mat \&cov\+Mat)}{setCovar(const Mat &covMat)}}]{\setlength{\rightskip}{0pt plus 5cm}void densities\+::\+M\+V\+N\+Sampler\+::set\+Covar (
+\begin{DoxyParamCaption}
+\item[{const Mat \&}]{cov\+Mat}
+\end{DoxyParamCaption}
+)}\hypertarget{classdensities_1_1MVNSampler_a914d6a896a1b7946085732a5758c16bb}{}\label{classdensities_1_1MVNSampler_a914d6a896a1b7946085732a5758c16bb}
+
+
+sets the covariance matrix of the sampler. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cov\+Mat} & the desired covariance matrix. \\
+\hline
+\end{DoxyParams}
+\index{densities\+::\+M\+V\+N\+Sampler@{densities\+::\+M\+V\+N\+Sampler}!set\+Mean@{set\+Mean}}
+\index{set\+Mean@{set\+Mean}!densities\+::\+M\+V\+N\+Sampler@{densities\+::\+M\+V\+N\+Sampler}}
+\subsubsection[{\texorpdfstring{set\+Mean(const Vec \&mean\+Vec)}{setMean(const Vec &meanVec)}}]{\setlength{\rightskip}{0pt plus 5cm}void densities\+::\+M\+V\+N\+Sampler\+::set\+Mean (
+\begin{DoxyParamCaption}
+\item[{const Vec \&}]{mean\+Vec}
+\end{DoxyParamCaption}
+)}\hypertarget{classdensities_1_1MVNSampler_a456f1e8ed39efc34ee3a7667dfb2011c}{}\label{classdensities_1_1MVNSampler_a456f1e8ed39efc34ee3a7667dfb2011c}
+
+
+sets the mean vector of the sampler. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mean\+Vec} & the desired mean vector. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{densities_8h}{densities.\+h}\end{DoxyCompactItemize}

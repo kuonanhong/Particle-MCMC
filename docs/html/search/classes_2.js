@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['eigenmultivariatenormalsampler',['EigenMultivariateNormalSampler',['../classdensities_1_1EigenMultivariateNormalSampler.html',1,'densities']]]
+  ['jacetal',['JacEtAl',['../classJacEtAl.html',1,'']]],
+  ['jacetalapf',['JacEtAlAPF',['../classJacEtAlAPF.html',1,'']]]
 ];

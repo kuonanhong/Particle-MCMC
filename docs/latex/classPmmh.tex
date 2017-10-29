@@ -21,12 +21,12 @@ Inheritance diagram for Pmmh\+:\nopagebreak
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classPmmh_ad44ef54e134729330d0415461e002cfd}{Pmmh} (std\+::vector$<$ double $>$ start\+Theta, unsigned int num\+M\+C\+M\+C\+Iters, const std\+::string \&data\+File, unsigned int num\+Cols)
+\hyperlink{classPmmh_abb524fcd7cf848e9a4f519a59218a63c}{Pmmh} (std\+::vector$<$ double $>$ start\+Theta, unsigned int num\+M\+C\+M\+C\+Iters, const std\+::string \&data\+File, unsigned int num\+Cols, bool mc)
 \begin{DoxyCompactList}\small\item\em The constructor. \end{DoxyCompactList}\item 
 \hyperlink{classPmmh_a52b058761ac6ede77eb3d8c0099e0d93}{$\sim$\+Pmmh} ()\hypertarget{classPmmh_a52b058761ac6ede77eb3d8c0099e0d93}{}\label{classPmmh_a52b058761ac6ede77eb3d8c0099e0d93}
 
 \begin{DoxyCompactList}\small\item\em The destructor. \end{DoxyCompactList}\item 
-void \hyperlink{classPmmh_a83177100969ff29bc522b6d149ee2392}{commence\+Sampling} (std\+::string samples\+File\+File, std\+::string messages\+File)
+void \hyperlink{classPmmh_ac035560cb209fb5cade23e431b5e1fd3}{commence\+Sampling} (std\+::string samples\+File, std\+::string messages\+File)
 \begin{DoxyCompactList}\small\item\em Call this to begin sampling. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classPmmh_ab8527fd052ddaa434b8b4ab9715d503f}{q\+Sample} (const std\+::vector$<$ double $>$ \&old\+Params, std\+::vector$<$ double $>$ \&new\+Params)=0
 \begin{DoxyCompactList}\small\item\em The function that proposes new parameters. Tip\+: Make sure to declare your static R\+NG inside the implementation of this. \end{DoxyCompactList}\item 
@@ -36,42 +36,6 @@ virtual double \hyperlink{classPmmh_ada5cc8317bd91ca129909abe0ec2cd1b}{log\+Prio
 \begin{DoxyCompactList}\small\item\em Evaluates the log of the model\textquotesingle{}s prior distribution. \end{DoxyCompactList}\item 
 virtual double \hyperlink{classPmmh_a4a66167bea425f5d271ef7931f4a3e5f}{log\+Like\+Evaluate} (const std\+::vector$<$ double $>$ \&theta, const std\+::vector$<$ Vec $>$ \&data, std\+::atomic\+\_\+bool \&cancelled)=0
 \begin{DoxyCompactList}\small\item\em Evaluates (approximates) the log-\/likelihood with a particle filter. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Protected Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-void {\bfseries log\+Params} (const std\+::vector$<$ double $>$ \&thetas, std\+::ofstream \&ofs)\hypertarget{classPmmh_a1195a1095728bcee90b592799ba42ed1}{}\label{classPmmh_a1195a1095728bcee90b592799ba42ed1}
-
-\item 
-void {\bfseries read\+In\+Data} (const std\+::string \&file\+Loc, unsigned int num\+Cols)\hypertarget{classPmmh_a98d155a1848aa0aa2990f197966f233b}{}\label{classPmmh_a98d155a1848aa0aa2990f197966f233b}
-
-\end{DoxyCompactItemize}
-\subsection*{Protected Attributes}
-\begin{DoxyCompactItemize}
-\item 
-std\+::vector$<$ Vec $>$ {\bfseries m\+\_\+data}\hypertarget{classPmmh_a68acca23cb8cec5c44d6f5fdcb73a784}{}\label{classPmmh_a68acca23cb8cec5c44d6f5fdcb73a784}
-
-\item 
-std\+::vector$<$ double $>$ {\bfseries m\+\_\+current\+Theta}\hypertarget{classPmmh_af5511e01b3ebafb7568a3cf854a304d3}{}\label{classPmmh_af5511e01b3ebafb7568a3cf854a304d3}
-
-\item 
-std\+::ofstream {\bfseries m\+\_\+samples\+File\+Stream}\hypertarget{classPmmh_aab12bdaa49c1658cf12679b26206ee1d}{}\label{classPmmh_aab12bdaa49c1658cf12679b26206ee1d}
-
-\item 
-std\+::ofstream {\bfseries m\+\_\+message\+Stream}\hypertarget{classPmmh_a65cc02f35308e13affb46dd2d9354d97}{}\label{classPmmh_a65cc02f35308e13affb46dd2d9354d97}
-
-\item 
-unsigned int {\bfseries m\+\_\+dim\+Theta}\hypertarget{classPmmh_a260f9feda937e6cdc4a0fa35ac2632c1}{}\label{classPmmh_a260f9feda937e6cdc4a0fa35ac2632c1}
-
-\item 
-unsigned int {\bfseries m\+\_\+num\+M\+C\+M\+C\+Iters}\hypertarget{classPmmh_a04451fcb2526be1280b62d4dd793a2c6}{}\label{classPmmh_a04451fcb2526be1280b62d4dd793a2c6}
-
-\item 
-unsigned int {\bfseries m\+\_\+num\+Extra\+Threads}\hypertarget{classPmmh_a0f0e380bb9ebff32b1b471bce12af5ee}{}\label{classPmmh_a0f0e380bb9ebff32b1b471bce12af5ee}
-
-\item 
-std\+::mutex {\bfseries m\+\_\+out\+File\+Mutex}\hypertarget{classPmmh_a35559f0c971442c735a5488335121e31}{}\label{classPmmh_a35559f0c971442c735a5488335121e31}
-
-\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -88,14 +52,15 @@ taylor
 \subsection{Constructor \& Destructor Documentation}
 \index{Pmmh@{Pmmh}!Pmmh@{Pmmh}}
 \index{Pmmh@{Pmmh}!Pmmh@{Pmmh}}
-\subsubsection[{\texorpdfstring{Pmmh(std\+::vector$<$ double $>$ start\+Theta, unsigned int num\+M\+C\+M\+C\+Iters, const std\+::string \&data\+File, unsigned int num\+Cols)}{Pmmh(std::vector< double > startTheta, unsigned int numMCMCIters, const std::string &dataFile, unsigned int numCols)}}]{\setlength{\rightskip}{0pt plus 5cm}Pmmh\+::\+Pmmh (
+\subsubsection[{\texorpdfstring{Pmmh(std\+::vector$<$ double $>$ start\+Theta, unsigned int num\+M\+C\+M\+C\+Iters, const std\+::string \&data\+File, unsigned int num\+Cols, bool mc)}{Pmmh(std::vector< double > startTheta, unsigned int numMCMCIters, const std::string &dataFile, unsigned int numCols, bool mc)}}]{\setlength{\rightskip}{0pt plus 5cm}Pmmh\+::\+Pmmh (
 \begin{DoxyParamCaption}
 \item[{std\+::vector$<$ double $>$}]{start\+Theta, }
 \item[{unsigned int}]{num\+M\+C\+M\+C\+Iters, }
 \item[{const std\+::string \&}]{data\+File, }
-\item[{unsigned int}]{num\+Cols}
+\item[{unsigned int}]{num\+Cols, }
+\item[{bool}]{mc}
 \end{DoxyParamCaption}
-)}\hypertarget{classPmmh_ad44ef54e134729330d0415461e002cfd}{}\label{classPmmh_ad44ef54e134729330d0415461e002cfd}
+)}\hypertarget{classPmmh_abb524fcd7cf848e9a4f519a59218a63c}{}\label{classPmmh_abb524fcd7cf848e9a4f519a59218a63c}
 
 
 The constructor. 
@@ -110,18 +75,20 @@ The constructor.
 \hline
 {\em num\+Cols} & the dimension of your observable data. \\
 \hline
+{\em mc} & stands for multicore. true or false if you want to use extra cores. \\
+\hline
 \end{DoxyParams}
 
 
 \subsection{Member Function Documentation}
 \index{Pmmh@{Pmmh}!commence\+Sampling@{commence\+Sampling}}
 \index{commence\+Sampling@{commence\+Sampling}!Pmmh@{Pmmh}}
-\subsubsection[{\texorpdfstring{commence\+Sampling(std\+::string samples\+File\+File, std\+::string messages\+File)}{commenceSampling(std::string samplesFileFile, std::string messagesFile)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pmmh\+::commence\+Sampling (
+\subsubsection[{\texorpdfstring{commence\+Sampling(std\+::string samples\+File, std\+::string messages\+File)}{commenceSampling(std::string samplesFile, std::string messagesFile)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pmmh\+::commence\+Sampling (
 \begin{DoxyParamCaption}
-\item[{std\+::string}]{samples\+File\+File, }
+\item[{std\+::string}]{samples\+File, }
 \item[{std\+::string}]{messages\+File}
 \end{DoxyParamCaption}
-)}\hypertarget{classPmmh_a83177100969ff29bc522b6d149ee2392}{}\label{classPmmh_a83177100969ff29bc522b6d149ee2392}
+)}\hypertarget{classPmmh_ac035560cb209fb5cade23e431b5e1fd3}{}\label{classPmmh_ac035560cb209fb5cade23e431b5e1fd3}
 
 
 Call this to begin sampling. 
@@ -152,7 +119,7 @@ Evaluates (approximates) the log-\/likelihood with a particle filter.
 \hline
 {\em data} & the observed data with which to run the particle filter. \\
 \hline
-{\em out} & the double to write out to. \\
+{\em cancelled} & is a token you need to provide if doing multithreaded likelihood evals. This allows the function to terminate prematurely. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

@@ -2,7 +2,7 @@ There are two main purposes for this code. One is to provide base classes for di
 
 \subsection*{Installation}
 
-You have to build this yourself. Make sure to compile with C++11 enabled ({\ttfamily -\/std=c++11}), and to include the {\ttfamily include} directory. Note, also, that this code all makes use of the \href{http://eigen.tuxfamily.org/}{\tt Eigen library}.
+You have to build this yourself. Make sure to compile with C++11 enabled ({\ttfamily -\/std=c++11}), to include the linker option {\ttfamily -\/lpthread}, and to include the {\ttfamily include} directory. Note, also, that this code all makes use of the \href{http://eigen.tuxfamily.org/}{\tt Eigen library}.
 
 \subsection*{Organization of {\ttfamily src}}
 
@@ -14,6 +14,7 @@ You have to build this yourself. Make sure to compile with C++11 enabled ({\ttfa
 \item {\ttfamily mcmc\+\_\+bases} are all of the base classes for certain types of M\+C\+MC algorithms. Inheriting from these allows the user to skip writing a bunch of code.
 \item {\ttfamily models} are particle filtering classes for specific state space models.
 \item {\ttfamily filter\+\_\+bases} are Kalman filtering and particle filtering base classes. Inheriting from these abstracts away all of the details of how this is performed.
+\item {\ttfamily utilities} functions that might be useful.
 \end{DoxyEnumerate}
 
 \subsection*{Documentation}

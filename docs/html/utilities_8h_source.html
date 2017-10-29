@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>ssm: include/msvol_sisr.h File Reference</title>
+<title>ssm: include/utilities.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -83,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('msvol__sisr_8h.html','');});
+$(document).ready(function(){initNavTree('utilities_8h_source.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -101,46 +101,17 @@ $(document).ready(function(){initNavTree('msvol__sisr_8h.html','');});
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
   <div class="headertitle">
-<div class="title">msvol_sisr.h File Reference</div>  </div>
+<div class="title">utilities.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>Implements the multivariate stochastic volatility model from Pitt and Shephard 1999.  
-<a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;vector&gt;</code><br />
-<code>#include &quot;sisr_filter.h&quot;</code><br />
-<code>#include &quot;<a class="el" href="densities_8h_source.html">densities.h</a>&quot;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for msvol_sisr.h:</div>
-<div class="dyncontent">
-<div class="center"><img src="msvol__sisr_8h__incl.png" border="0" usemap="#include_2msvol__sisr_8h" alt=""/></div>
-<map name="include_2msvol__sisr_8h" id="include_2msvol__sisr_8h">
-<area shape="rect" id="node3" href="sisr__filter_8h_source.html" title="sisr_filter.h" alt="" coords="169,80,255,107"/>
-<area shape="rect" id="node10" href="densities_8h.html" title="Can sample from a distribution with fixed mean and covariance, fixed mean only, fixed covariance only..." alt="" coords="305,155,391,181"/>
-<area shape="rect" id="node5" href="multinomial__resampler_8h_source.html" title="multinomial_resampler.h" alt="" coords="116,155,279,181"/>
-<area shape="rect" id="node8" href="lgssm_8h_source.html" title="lgssm.h" alt="" coords="89,229,157,256"/>
-</map>
-</div>
-</div>
-<p><a href="msvol__sisr_8h_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMSVolSISR.html">MSVolSISR</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A SISR implementation of the multivariate stochastic volatility model of Pitt and Shephard 1999.  <a href="classMSVolSISR.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Implements the multivariate stochastic volatility model from Pitt and Shephard 1999. </p>
-</div></div><!-- contents -->
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef UTILITIES_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define UTILITIES_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceutilities.html">utilities</a>{</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keywordtype">void</span> logParams(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;vec, std::ofstream &amp;ofs);</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    </div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;} <span class="comment">// namespace utilities</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#endif //UTILITIES_H</span></div><div class="ttc" id="namespaceutilities_html"><div class="ttname"><a href="namespaceutilities.html">utilities</a></div><div class="ttdef"><b>Definition:</b> utilities.h:7</div></div>
+</div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="msvol__sisr_8h.html">msvol_sisr.h</a></li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><b>utilities.h</b></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>

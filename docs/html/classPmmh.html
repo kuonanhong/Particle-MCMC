@@ -106,8 +106,6 @@ $(document).ready(function(){initNavTree('classPmmh.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-methods">Protected Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classPmmh-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Pmmh Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
@@ -129,16 +127,16 @@ Inheritance diagram for Pmmh:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad44ef54e134729330d0415461e002cfd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh.html#ad44ef54e134729330d0415461e002cfd">Pmmh</a> (std::vector&lt; double &gt; startTheta, unsigned int numMCMCIters, const std::string &amp;dataFile, unsigned int numCols)</td></tr>
-<tr class="memdesc:ad44ef54e134729330d0415461e002cfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The constructor.  <a href="#ad44ef54e134729330d0415461e002cfd">More...</a><br /></td></tr>
-<tr class="separator:ad44ef54e134729330d0415461e002cfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb524fcd7cf848e9a4f519a59218a63c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh.html#abb524fcd7cf848e9a4f519a59218a63c">Pmmh</a> (std::vector&lt; double &gt; startTheta, unsigned int numMCMCIters, const std::string &amp;dataFile, unsigned int numCols, bool mc)</td></tr>
+<tr class="memdesc:abb524fcd7cf848e9a4f519a59218a63c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The constructor.  <a href="#abb524fcd7cf848e9a4f519a59218a63c">More...</a><br /></td></tr>
+<tr class="separator:abb524fcd7cf848e9a4f519a59218a63c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52b058761ac6ede77eb3d8c0099e0d93"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a52b058761ac6ede77eb3d8c0099e0d93"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh.html#a52b058761ac6ede77eb3d8c0099e0d93">~Pmmh</a> ()</td></tr>
 <tr class="memdesc:a52b058761ac6ede77eb3d8c0099e0d93"><td class="mdescLeft">&#160;</td><td class="mdescRight">The destructor. <br /></td></tr>
 <tr class="separator:a52b058761ac6ede77eb3d8c0099e0d93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83177100969ff29bc522b6d149ee2392"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh.html#a83177100969ff29bc522b6d149ee2392">commenceSampling</a> (std::string samplesFileFile, std::string messagesFile)</td></tr>
-<tr class="memdesc:a83177100969ff29bc522b6d149ee2392"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call this to begin sampling.  <a href="#a83177100969ff29bc522b6d149ee2392">More...</a><br /></td></tr>
-<tr class="separator:a83177100969ff29bc522b6d149ee2392"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac035560cb209fb5cade23e431b5e1fd3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh.html#ac035560cb209fb5cade23e431b5e1fd3">commenceSampling</a> (std::string samplesFile, std::string messagesFile)</td></tr>
+<tr class="memdesc:ac035560cb209fb5cade23e431b5e1fd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call this to begin sampling.  <a href="#ac035560cb209fb5cade23e431b5e1fd3">More...</a><br /></td></tr>
+<tr class="separator:ac035560cb209fb5cade23e431b5e1fd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8527fd052ddaa434b8b4ab9715d503f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh.html#ab8527fd052ddaa434b8b4ab9715d503f">qSample</a> (const std::vector&lt; double &gt; &amp;oldParams, std::vector&lt; double &gt; &amp;newParams)=0</td></tr>
 <tr class="memdesc:ab8527fd052ddaa434b8b4ab9715d503f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function that proposes new parameters. Tip: Make sure to declare your static RNG inside the implementation of this.  <a href="#ab8527fd052ddaa434b8b4ab9715d503f">More...</a><br /></td></tr>
 <tr class="separator:ab8527fd052ddaa434b8b4ab9715d503f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -151,49 +149,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4a66167bea425f5d271ef7931f4a3e5f"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh.html#a4a66167bea425f5d271ef7931f4a3e5f">logLikeEvaluate</a> (const std::vector&lt; double &gt; &amp;theta, const std::vector&lt; Vec &gt; &amp;data, std::atomic_bool &amp;cancelled)=0</td></tr>
 <tr class="memdesc:a4a66167bea425f5d271ef7931f4a3e5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates (approximates) the log-likelihood with a particle filter.  <a href="#a4a66167bea425f5d271ef7931f4a3e5f">More...</a><br /></td></tr>
 <tr class="separator:a4a66167bea425f5d271ef7931f4a3e5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
-Protected Member Functions</h2></td></tr>
-<tr class="memitem:a1195a1095728bcee90b592799ba42ed1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1195a1095728bcee90b592799ba42ed1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>logParams</b> (const std::vector&lt; double &gt; &amp;thetas, std::ofstream &amp;ofs)</td></tr>
-<tr class="separator:a1195a1095728bcee90b592799ba42ed1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98d155a1848aa0aa2990f197966f233b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a98d155a1848aa0aa2990f197966f233b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>readInData</b> (const std::string &amp;fileLoc, unsigned int numCols)</td></tr>
-<tr class="separator:a98d155a1848aa0aa2990f197966f233b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:a68acca23cb8cec5c44d6f5fdcb73a784"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a68acca23cb8cec5c44d6f5fdcb73a784"></a>
-std::vector&lt; Vec &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_data</b></td></tr>
-<tr class="separator:a68acca23cb8cec5c44d6f5fdcb73a784"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5511e01b3ebafb7568a3cf854a304d3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af5511e01b3ebafb7568a3cf854a304d3"></a>
-std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_currentTheta</b></td></tr>
-<tr class="separator:af5511e01b3ebafb7568a3cf854a304d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab12bdaa49c1658cf12679b26206ee1d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aab12bdaa49c1658cf12679b26206ee1d"></a>
-std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>m_samplesFileStream</b></td></tr>
-<tr class="separator:aab12bdaa49c1658cf12679b26206ee1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65cc02f35308e13affb46dd2d9354d97"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a65cc02f35308e13affb46dd2d9354d97"></a>
-std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>m_messageStream</b></td></tr>
-<tr class="separator:a65cc02f35308e13affb46dd2d9354d97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a260f9feda937e6cdc4a0fa35ac2632c1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a260f9feda937e6cdc4a0fa35ac2632c1"></a>
-unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>m_dimTheta</b></td></tr>
-<tr class="separator:a260f9feda937e6cdc4a0fa35ac2632c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04451fcb2526be1280b62d4dd793a2c6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a04451fcb2526be1280b62d4dd793a2c6"></a>
-unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>m_numMCMCIters</b></td></tr>
-<tr class="separator:a04451fcb2526be1280b62d4dd793a2c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f0e380bb9ebff32b1b471bce12af5ee"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0f0e380bb9ebff32b1b471bce12af5ee"></a>
-unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>m_numExtraThreads</b></td></tr>
-<tr class="separator:a0f0e380bb9ebff32b1b471bce12af5ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35559f0c971442c735a5488335121e31"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a35559f0c971442c735a5488335121e31"></a>
-std::mutex&#160;</td><td class="memItemRight" valign="bottom"><b>m_outFileMutex</b></td></tr>
-<tr class="separator:a35559f0c971442c735a5488335121e31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A base-class for particle marginal Metropolis-Hastings. </p>
 <dl class="section author"><dt>Author</dt><dd>taylor </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>10/14/17 </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ad44ef54e134729330d0415461e002cfd"></a>
+<a class="anchor" id="abb524fcd7cf848e9a4f519a59218a63c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -219,7 +181,13 @@ std::mutex&#160;</td><td class="memItemRight" valign="bottom"><b>m_outFileMutex<
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>numCols</em>&#160;</td>
+          <td class="paramname"><em>numCols</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>mc</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -236,6 +204,7 @@ std::mutex&#160;</td><td class="memItemRight" valign="bottom"><b>m_outFileMutex<
     <tr><td class="paramname">numMCMCIters</td><td>the number of MCMC iterations you want to do. </td></tr>
     <tr><td class="paramname">dataFile</td><td>the location of the observed time series data. </td></tr>
     <tr><td class="paramname">numCols</td><td>the dimension of your observable data. </td></tr>
+    <tr><td class="paramname">mc</td><td>stands for multicore. true or false if you want to use extra cores. </td></tr>
   </table>
   </dd>
 </dl>
@@ -243,7 +212,7 @@ std::mutex&#160;</td><td class="memItemRight" valign="bottom"><b>m_outFileMutex<
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a83177100969ff29bc522b6d149ee2392"></a>
+<a class="anchor" id="ac035560cb209fb5cade23e431b5e1fd3"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -251,7 +220,7 @@ std::mutex&#160;</td><td class="memItemRight" valign="bottom"><b>m_outFileMutex<
           <td class="memname">void Pmmh::commenceSampling </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>samplesFileFile</em>, </td>
+          <td class="paramname"><em>samplesFile</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -321,7 +290,7 @@ std::mutex&#160;</td><td class="memItemRight" valign="bottom"><b>m_outFileMutex<
   <table class="params">
     <tr><td class="paramname">theta</td><td>the parameters with which to run the particle filter. </td></tr>
     <tr><td class="paramname">data</td><td>the observed data with which to run the particle filter. </td></tr>
-    <tr><td class="paramname">out</td><td>the double to write out to. </td></tr>
+    <tr><td class="paramname">cancelled</td><td>is a token you need to provide if doing multithreaded likelihood evals. This allows the function to terminate prematurely. </td></tr>
   </table>
   </dd>
 </dl>

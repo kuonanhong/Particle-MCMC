@@ -1,6 +1,6 @@
 var classPmmh__jac__apf =
 [
-    [ "Pmmh_jac_apf", "classPmmh__jac__apf.html#a3efb1ce126a1e5ca5a4b56fa453fd40b", null ],
+    [ "Pmmh_jac_apf", "classPmmh__jac__apf.html#a10d1ff1b6f508a1b9a9492e6bf8a563b", null ],
     [ "~Pmmh_jac_apf", "classPmmh__jac__apf.html#afbe2594fe7e40914ac4edc36580ebc33", null ],
     [ "flattenParams", "classPmmh__jac__apf.html#a9f3f949aa9017178936878fe87c4fd79", null ],
     [ "invTwiceFisher", "classPmmh__jac__apf.html#ae96bbb73b47bab903061dcc1e0e5e14c", null ],

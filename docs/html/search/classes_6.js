@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['msvolsisr',['MSVolSISR',['../classMSVolSISR.html',1,'']]],
-  ['multinomresamp',['MultinomResamp',['../classMultinomResamp.html',1,'']]]
+  ['nar1apffilter',['NAr1APFFilter',['../classNAr1APFFilter.html',1,'']]],
+  ['nar1filter',['NAr1Filter',['../classNAr1Filter.html',1,'']]]
 ];

@@ -1,6 +1,6 @@
 <map id="include/msvol_sisr.h" name="include/msvol_sisr.h">
 <area shape="rect" id="node3" href="$sisr__filter_8h_source.html" title="sisr_filter.h" alt="" coords="169,80,255,107"/>
-<area shape="rect" id="node10" href="$densities_8h.html" title="densities.h" alt="" coords="305,155,391,181"/>
+<area shape="rect" id="node10" href="$densities_8h.html" title="Can sample from a distribution with fixed mean and covariance, fixed mean only, fixed covariance only..." alt="" coords="305,155,391,181"/>
 <area shape="rect" id="node5" href="$multinomial__resampler_8h_source.html" title="multinomial_resampler.h" alt="" coords="116,155,279,181"/>
 <area shape="rect" id="node8" href="$lgssm_8h_source.html" title="lgssm.h" alt="" coords="89,229,157,256"/>
 </map>

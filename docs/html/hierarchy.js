@@ -7,10 +7,10 @@ var hierarchy =
     ] ],
     [ "pmfs::DiscreteCustomSampler", "classpmfs_1_1DiscreteCustomSampler.html", null ],
     [ "pmfs::DiscreteUnifSampler", "classpmfs_1_1DiscreteUnifSampler.html", null ],
-    [ "densities::EigenMultivariateNormalSampler", "classdensities_1_1EigenMultivariateNormalSampler.html", null ],
     [ "Kalman_RBPF", "classKalman__RBPF.html", null ],
     [ "Lgssm", "classLgssm.html", null ],
     [ "MultinomResamp", "classMultinomResamp.html", null ],
+    [ "densities::MVNSampler", "classdensities_1_1MVNSampler.html", null ],
     [ "Pmmh", "classPmmh.html", [
       [ "Pmmh_jac_apf", "classPmmh__jac__apf.html", null ]
     ] ],

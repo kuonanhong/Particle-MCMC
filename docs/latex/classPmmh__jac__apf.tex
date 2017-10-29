@@ -30,7 +30,7 @@ Collaboration diagram for Pmmh\+\_\+jac\+\_\+apf\+:\nopagebreak
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classPmmh__jac__apf_a3efb1ce126a1e5ca5a4b56fa453fd40b}{Pmmh\+\_\+jac\+\_\+apf} (unsigned int num\+Parts, std\+::vector$<$ double $>$ start\+Theta, unsigned int num\+M\+C\+M\+C\+Iters, const std\+::string \&data\+File, unsigned int num\+Cols)
+\hyperlink{classPmmh__jac__apf_a10d1ff1b6f508a1b9a9492e6bf8a563b}{Pmmh\+\_\+jac\+\_\+apf} (unsigned int num\+Parts, std\+::vector$<$ double $>$ start\+Theta, unsigned int num\+M\+C\+M\+C\+Iters, const std\+::string \&data\+File, unsigned int num\+Cols, bool mc)
 \begin{DoxyCompactList}\small\item\em The constructor. \end{DoxyCompactList}\item 
 \hyperlink{classPmmh__jac__apf_afbe2594fe7e40914ac4edc36580ebc33}{$\sim$\+Pmmh\+\_\+jac\+\_\+apf} ()\hypertarget{classPmmh__jac__apf_afbe2594fe7e40914ac4edc36580ebc33}{}\label{classPmmh__jac__apf_afbe2594fe7e40914ac4edc36580ebc33}
 
@@ -51,7 +51,6 @@ double \hyperlink{classPmmh__jac__apf_ade139b7e8122a9cc37d4aae22e6ec752}{log\+Pr
 \begin{DoxyCompactList}\small\item\em Evaluates the log of the prior. \end{DoxyCompactList}\item 
 double \hyperlink{classPmmh__jac__apf_a34973f896a5fe11b04f93cc80ee54474}{log\+Like\+Evaluate} (const std\+::vector$<$ double $>$ \&theta, const std\+::vector$<$ Vec $>$ \&data, std\+::atomic\+\_\+bool \&cancelled)
 \begin{DoxyCompactList}\small\item\em Approximates the log-\/likelihood with a particle filter. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Additional Inherited Members}
 
 
 \subsection{Detailed Description}
@@ -68,15 +67,16 @@ taylor
 \subsection{Constructor \& Destructor Documentation}
 \index{Pmmh\+\_\+jac\+\_\+apf@{Pmmh\+\_\+jac\+\_\+apf}!Pmmh\+\_\+jac\+\_\+apf@{Pmmh\+\_\+jac\+\_\+apf}}
 \index{Pmmh\+\_\+jac\+\_\+apf@{Pmmh\+\_\+jac\+\_\+apf}!Pmmh\+\_\+jac\+\_\+apf@{Pmmh\+\_\+jac\+\_\+apf}}
-\subsubsection[{\texorpdfstring{Pmmh\+\_\+jac\+\_\+apf(unsigned int num\+Parts, std\+::vector$<$ double $>$ start\+Theta, unsigned int num\+M\+C\+M\+C\+Iters, const std\+::string \&data\+File, unsigned int num\+Cols)}{Pmmh_jac_apf(unsigned int numParts, std::vector< double > startTheta, unsigned int numMCMCIters, const std::string &dataFile, unsigned int numCols)}}]{\setlength{\rightskip}{0pt plus 5cm}Pmmh\+\_\+jac\+\_\+apf\+::\+Pmmh\+\_\+jac\+\_\+apf (
+\subsubsection[{\texorpdfstring{Pmmh\+\_\+jac\+\_\+apf(unsigned int num\+Parts, std\+::vector$<$ double $>$ start\+Theta, unsigned int num\+M\+C\+M\+C\+Iters, const std\+::string \&data\+File, unsigned int num\+Cols, bool mc)}{Pmmh_jac_apf(unsigned int numParts, std::vector< double > startTheta, unsigned int numMCMCIters, const std::string &dataFile, unsigned int numCols, bool mc)}}]{\setlength{\rightskip}{0pt plus 5cm}Pmmh\+\_\+jac\+\_\+apf\+::\+Pmmh\+\_\+jac\+\_\+apf (
 \begin{DoxyParamCaption}
 \item[{unsigned int}]{num\+Parts, }
 \item[{std\+::vector$<$ double $>$}]{start\+Theta, }
 \item[{unsigned int}]{num\+M\+C\+M\+C\+Iters, }
 \item[{const std\+::string \&}]{data\+File, }
-\item[{unsigned int}]{num\+Cols}
+\item[{unsigned int}]{num\+Cols, }
+\item[{bool}]{mc}
 \end{DoxyParamCaption}
-)}\hypertarget{classPmmh__jac__apf_a3efb1ce126a1e5ca5a4b56fa453fd40b}{}\label{classPmmh__jac__apf_a3efb1ce126a1e5ca5a4b56fa453fd40b}
+)}\hypertarget{classPmmh__jac__apf_a10d1ff1b6f508a1b9a9492e6bf8a563b}{}\label{classPmmh__jac__apf_a10d1ff1b6f508a1b9a9492e6bf8a563b}
 
 
 The constructor. 
@@ -92,6 +92,8 @@ The constructor.
 {\em data\+File} & the location of the observed time series data. \\
 \hline
 {\em num\+Cols} & the dimension of your observable time series data. \\
+\hline
+{\em mc} & true if you want to evaluate likelihood functions in parallel. \\
 \hline
 \end{DoxyParams}
 
@@ -166,7 +168,7 @@ Approximates the log-\/likelihood with a particle filter.
 \hline
 {\em data} & the observable data. \\
 \hline
-{\em out} & the double to write out to. \\
+{\em cancelled} & function will terminate when this is set to true by the class. Must implement mc is true. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

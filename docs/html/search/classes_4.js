@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['kalman_5frbpf',['Kalman_RBPF',['../classKalman__RBPF.html',1,'']]]
+  ['lgssm',['Lgssm',['../classLgssm.html',1,'']]]
 ];

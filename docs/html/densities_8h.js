@@ -1,6 +1,6 @@
 var densities_8h =
 [
-    [ "EigenMultivariateNormalSampler", "classdensities_1_1EigenMultivariateNormalSampler.html", "classdensities_1_1EigenMultivariateNormalSampler" ],
+    [ "MVNSampler", "classdensities_1_1MVNSampler.html", "classdensities_1_1MVNSampler" ],
     [ "UniformSampler", "classdensities_1_1UniformSampler.html", "classdensities_1_1UniformSampler" ],
     [ "Mat", "densities_8h.html#ae601f56a556993079f730483c574356f", null ],
     [ "Vec", "densities_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152", null ],
