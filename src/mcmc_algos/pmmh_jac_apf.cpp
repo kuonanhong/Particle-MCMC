@@ -3,7 +3,9 @@
 #include <iostream>
 
 #include "densities.h"
+#include "transformations.h"
 #include "jacquier_et_al_apf.h"
+
 
 
 Pmmh_jac_apf::Pmmh_jac_apf(unsigned int numParts, 
@@ -48,24 +50,6 @@ Pmmh_jac_apf::Pmmh_jac_apf(unsigned int numParts,
 Pmmh_jac_apf::~Pmmh_jac_apf(){}
     
     
-double Pmmh_jac_apf::twiceFisher(const double &phi)
-{
-    if ( (phi <= -1.0) || (phi >= 1.0) )
-        throw std::invalid_argument( "inappropriate range for argument" );
-    else
-        return std::log(1.0 + phi) - std::log(1.0 - phi);
-}
-
-
-double Pmmh_jac_apf::invTwiceFisher(const double &psi)
-{
-    double ans = (1.0 - std::exp(psi)) / ( -1.0 - std::exp(psi) );
-    if ( (ans <= -1.0) || (ans >= 1.0) )
-        std::cerr << "ERROR\n";
-    return ans;    
-}
-
-
 void Pmmh_jac_apf::flattenParams(std::vector<double> &flatOnes, const Mat &beta, const Vec &phis, const Vec &mus, const Vec &sigmas, const Vec &RstdDevs)
 {
     
@@ -138,7 +122,6 @@ void Pmmh_jac_apf::qSample(const std::vector<double> &oldParams, std::vector<dou
 {
 
     // ordering is: betas(9-1), phis(1),  mus(1), sigma(1), R_std_dev_vec(9)
-
     static densities::MVNSampler s;
     
     // start counter
@@ -154,7 +137,7 @@ void Pmmh_jac_apf::qSample(const std::vector<double> &oldParams, std::vector<dou
     }
     
     // only one phi to handle in this case
-    newParams[c] = invTwiceFisher( twiceFisher(oldParams[c]) + m_qSigmaVec[c] * s.sample()[0] );
+    newParams[c] = transformations::invTwiceFisher( transformations::twiceFisher(oldParams[c]) + m_qSigmaVec[c] * s.sample()[0] );
     c++;
 
     // only one mu to handle
@@ -196,8 +179,8 @@ double Pmmh_jac_apf::logQEvaluate  (const std::vector<double> &oldParams, const 
     Vec phisX(1);
     Vec phisMean(1);
     Mat phisCov = Mat::Identity(1, 1);
-    phisX(0) = twiceFisher( newParams[c] );
-    phisMean(0) = twiceFisher( oldParams[c] );
+    phisX(0) = transformations::twiceFisher( newParams[c] );
+    phisMean(0) = transformations::twiceFisher( oldParams[c] );
     phisCov(0,0) = pow(m_qSigmaVec[c],2);
     c++;
     ans += densities::evalMultivNorm(phisX, phisMean, phisCov, true);    

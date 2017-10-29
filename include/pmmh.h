@@ -1,10 +1,10 @@
 #ifndef PMMH_H
 #define PMMH_H
 
+#include <fstream>
 #include <vector>
 #include <mutex>
 #include <future>
-#include <fstream> //ifstream, ofstream
 #include <Eigen/Dense> // linear algebra stuff
 
 typedef Eigen::Matrix< double, Eigen::Dynamic, 1              > Vec;

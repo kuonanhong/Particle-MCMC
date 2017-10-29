@@ -4,6 +4,7 @@
 #include <future>
 
 #include "densities.h"
+#include "convenience_funcs.h"
 
 
 Pmmh::Pmmh(std::vector<double> startTheta, unsigned int numMCMCIters, const std::string& dataFile, unsigned int numCols, bool mc) : 
@@ -11,57 +12,13 @@ Pmmh::Pmmh(std::vector<double> startTheta, unsigned int numMCMCIters, const std:
 {
     m_currentTheta = startTheta;
     m_dimTheta = startTheta.size();
-    readInData(dataFile, numCols);
+    m_data = convenience_funcs::readInData(dataFile, numCols);
     m_numExtraThreads = std::thread::hardware_concurrency() - 1;
 }
 
 
 Pmmh::~Pmmh()
 {
-}
-
-
-void Pmmh::logParams(const std::vector<double> &thetas, std::ofstream &ofs)
-{
-    // write thetas
-    for(unsigned int i = 0; i < thetas.size(); ++i){
-        if( i == 0){
-            ofs << thetas[i];
-        } else {
-            ofs << "," << thetas[i];                                        
-        }
-    }
-    ofs << "\n";
-
-}
-
-
-void Pmmh::readInData(const std::string& fileLoc, unsigned int numCols)
-{
-    std::string line;
-    std::ifstream inFile(fileLoc);
-    std::string oneNumberOnOneLine;
-    unsigned int elemNum;  // temporary variable numbering the column of data we'r ereading 
-    
-    // iterate over every line
-    while ( std::getline(inFile, line) ){ 
-    
-        Vec dataRow(numCols);
-        elemNum = 0;
-        try{
-            std::istringstream buff(line);
-            while(std::getline(buff, oneNumberOnOneLine, ',')){ // read the line until you get a ','
-                dataRow(elemNum) = std::stod(oneNumberOnOneLine);
-                elemNum++;
-            }
-        } catch (const std::invalid_argument& ia){
-            std::cerr << "Invalid Argument: " << ia.what() << "\n";
-            continue;
-        }   
-        
-        // now append this Vec to your collection
-        m_data.push_back(dataRow);
-    }
 }
 
 
@@ -98,7 +55,7 @@ void Pmmh::commence_sampling_mc(std::string samplesFile, std::string messagesFil
             std::cout << "***Iter number: " << 1 << " out of " << m_numMCMCIters << "\n";        
         
             // write accepted parameters to file (initial guesses are always "accepted")
-            logParams(m_currentTheta, m_samplesFileStream);
+            convenience_funcs::logParams(m_currentTheta, m_samplesFileStream);
             
             // get logLike
             std::atomic_bool cancel_token(false);
@@ -233,7 +190,7 @@ void Pmmh::commence_sampling_mc(std::string samplesFile, std::string messagesFil
                 
                 // log the theta which may have changedor not
                 m_outFileMutex.lock();
-                logParams(m_currentTheta, m_samplesFileStream);
+                convenience_funcs::logParams(m_currentTheta, m_samplesFileStream);
                 m_outFileMutex.unlock();
                 
             }  // end iteration over threads
@@ -270,7 +227,7 @@ void Pmmh::commence_sampling_sc(std::string samplesFile, std::string messagesFil
             std::cout << "***Iter number: " << 1 << " out of " << m_numMCMCIters << "\n";        
         
             // write accepted parameters to file (initial guesses are always "accepted")
-            logParams(m_currentTheta, m_samplesFileStream);
+            convenience_funcs::logParams(m_currentTheta, m_samplesFileStream);
             
             // get logLike (we use cancel token but it never change
             std::atomic_bool cancel_token(false);
@@ -377,7 +334,7 @@ void Pmmh::commence_sampling_sc(std::string samplesFile, std::string messagesFil
             }
                 
             // log the theta which may have changedor not
-            logParams(m_currentTheta, m_samplesFileStream);
+            convenience_funcs::logParams(m_currentTheta, m_samplesFileStream);
                 
         } // else{
     } //while(iter < m_numMCMCIters)
