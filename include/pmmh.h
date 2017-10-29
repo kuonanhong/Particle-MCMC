@@ -34,9 +34,6 @@ private:
     std::mutex          m_outFileMutex;
     bool                m_multicore;
 
-    
-    void logParams(const std::vector<double> &thetas, std::ofstream &ofs);
-    void readInData(const std::string& fileLoc, unsigned int numCols);
     void commence_sampling_mc(std::string samplesFile, std::string messagesFile);
     void commence_sampling_sc(std::string samplesFile, std::string messagesFile);
 
