@@ -25,7 +25,7 @@ class Pmmh{
     
 private:    
     std::vector<Vec>    m_data;
-    std::vector<double> m_currentTheta;  // todo: make this Vec
+    std::vector<Vec>    m_currentTheta;  
     std::ofstream       m_samplesFileStream;
     std::ofstream       m_messageStream;
     unsigned int        m_dimTheta;
@@ -48,7 +48,7 @@ public:
      * @param numCols the dimension of your observable data.
      * @param mc stands for multicore. true or false if you want to use extra cores.
      */
-    Pmmh(std::vector<double> startTheta, unsigned int numMCMCIters, const std::string& dataFile, unsigned int numCols, bool mc);
+    Pmmh(std::vector<Vec> startTheta, unsigned numMCMCIters, const std::string& dataFile, unsigned int numCols, bool mc);
 
 
     /**
@@ -71,7 +71,7 @@ public:
      * @param oldParams 
      * @param newParams
      */
-    virtual void qSample(const std::vector<double> &oldParams,  std::vector<double> &newParams) = 0;
+    virtual void qSample(const std::vector<Vec> &oldParams, std::vector<Vec> &newParams) = 0;
 
 
     /**
@@ -80,7 +80,7 @@ public:
      * @param newParams the new parameters. 
      * @return the log of the proposal density.
      */
-    virtual double logQEvaluate (const std::vector<double> &oldParams, const std::vector<double> &newParams) = 0;
+    virtual double logQEvaluate (const std::vector<Vec> &oldParams, const std::vector<Vec> &newParams) = 0;
 
 
     /**
@@ -88,7 +88,7 @@ public:
      * @param theta the parameters argument.
      * @return the log of the prior density.
      */
-    virtual double logPriorEvaluate(const std::vector<double> &theta) = 0;
+    virtual double logPriorEvaluate(const std::vector<Vec> &theta) = 0;
 
 
     /**
@@ -98,7 +98,7 @@ public:
      * @param cancelled is a token you need to provide if doing multithreaded likelihood evals. This allows the function to terminate prematurely.
      * @return the evaluation (as a double) of the log likelihood approximation.
      */
-    virtual double logLikeEvaluate (const std::vector<double>& theta, const std::vector<Vec>& data, std::atomic_bool& cancelled) = 0;
+    virtual double logLikeEvaluate (const std::vector<Vec> &theta, const std::vector<Vec>& data, std::atomic_bool& cancelled) = 0;
   
 };
 

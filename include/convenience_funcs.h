@@ -9,20 +9,27 @@ typedef Eigen::Matrix< double, Eigen::Dynamic, 1> Vec;
 
 namespace convenience_funcs{
 
+    /**
+     * @brief writes a Eigen::VectorXd to a row of an ostream.
+     * @param vec the Eigen::VectorXd.
+     * @param ofs the target ofstream.
+     */
+    void logParams(const Vec &vec, std::ofstream &ofs);
+
     
     /**
-     * @brief writes a vec to a row of an ofstream.
-     * @param vec the std::vector to be written.
+     * @brief writes a std::vector<double> to a row of an ofstream.
+     * @param vec the std::vector<double> to be written.
      * @param ofs the target ofstream.
      */
     void logParams(const std::vector<double> &vec, std::ofstream &ofs);
     
     /**
-     * @brief writes a vec to a row of an ofstream.
-     * @param vec the Eigen::VectorXd to be written.
+     * @brief writes a std::vector<Eigen::VectorXd> to a row of an ofstream.
+     * @param vec the std::vector<Eigen::VectorXd> to be written.
      * @param ofs the target ofstream.
      */
-    void logParams(const Vec &vec, std::ofstream &ofs);
+    void logParams(const std::vector<Vec> &vecOfParams, std::ofstream &ofs);
 
     
     /**

@@ -7,13 +7,13 @@
 #include "convenience_funcs.h"
 
 
-Pmmh::Pmmh(std::vector<double> startTheta, unsigned int numMCMCIters, const std::string& dataFile, unsigned int numCols, bool mc) : 
-        m_numMCMCIters(numMCMCIters), m_multicore(mc)
+Pmmh::Pmmh(std::vector<Vec> startTheta, unsigned numMCMCIters, const std::string& dataFile, unsigned int numCols, bool mc) : 
+        m_numMCMCIters(numMCMCIters), m_multicore(mc), m_dimTheta(0), m_currentTheta(startTheta)
 {
-    m_currentTheta = startTheta;
-    m_dimTheta = startTheta.size();
     m_data = convenience_funcs::readInData(dataFile, numCols);
     m_numExtraThreads = std::thread::hardware_concurrency() - 1;
+    for(int i = 0; i < startTheta.size(); ++i)
+        m_dimTheta += startTheta[i].rows();
 }
 
 
@@ -75,7 +75,7 @@ void Pmmh::commence_sampling_mc(std::string samplesFile, std::string messagesFil
             std::vector<double> newLogPriors (m_numExtraThreads, 0.0);
         
             // propose several new thetas 
-            std::vector<std::vector<double> > proposedThetas (m_numExtraThreads, std::vector<double> (m_dimTheta));
+            std::vector<std::vector<Vec> > proposedThetas (m_numExtraThreads, std::vector<Vec>(m_dimTheta));
             for(unsigned int i = 0; i < m_numExtraThreads; ++i)
                 qSample(m_currentTheta, proposedThetas[i]);
             
@@ -243,7 +243,7 @@ void Pmmh::commence_sampling_sc(std::string samplesFile, std::string messagesFil
         
                 
             // propose several new thetas 
-            std::vector<double> proposedTheta(m_dimTheta);
+            std::vector<Vec> proposedTheta(m_dimTheta);
             qSample(m_currentTheta, proposedTheta);
             
             // store the proposed logLike and logPrior

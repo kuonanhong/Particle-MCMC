@@ -2,7 +2,7 @@
 There are two main purposes for this code. One is to provide base classes for different filters (e.g. the Kalman Filter, Sequential Importance Sampling with Resampling (SISR), the Auxiliary Particle Filter (APF), etc.). The other is to provide base classes for particle Markov chain Monte Carlo algorithms. This second category of base classes make use of the first category. Please see the different examples for demonstrations.
 
 ## Installation
-You have to build this yourself. Make sure to compile with C++11 enabled (`-std=c++11`), to include the linker option `\-lpthread`, and to include the `include` directory. Note, also, that this code all makes use of the [Eigen library](http://eigen.tuxfamily.org/).
+You have to build this yourself. Make sure to compile with C++11 enabled (`-std=c++11`), to include the linker option `-lpthread`, and to include the `include` directory. Note, also, that this code all makes use of the [Eigen library](http://eigen.tuxfamily.org/).
 
 ## Organization of `src`
 1. `distributions` is all the code related to evaluating densities, mass functions, or pseudo-random number generation.
