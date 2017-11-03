@@ -9,8 +9,8 @@ void sVolTest()
 {
     
     // instantiate model
-    SVolFilter myMod(5000);
-    SVolAPFFilter myMod2(5000);
+    SVolFilter myMod(500, .5, .91, 1.0); // true parameters from simulated data
+    SVolAPFFilter myMod2(500);
         
     // stream in data
     std::string filePath("/home/taylor/ssm/data/some_csvs/svol_y_data.csv");

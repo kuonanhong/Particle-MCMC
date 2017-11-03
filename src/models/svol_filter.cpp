@@ -1,24 +1,30 @@
 #include "svol_filter.h"
 
-SVolFilter::SVolFilter(int numParts) 
-    : SISRFilter(numParts)
+#include <cmath>
+
+
+SVolFilter::SVolFilter(int numParts, double beta, double phi, double sigma) 
+    : m_beta(beta), m_phi(phi), m_sigma(sigma), SISRFilter(numParts)
 {
 }
+
 
 SVolFilter::~SVolFilter()
 {
 }
 
+
 Vec SVolFilter::q1Samp(const Vec &y1)
 {
     Vec x1samp = m_stdNormSampler.sample();
-    return x1samp * sqrt(1./(1-.91*.91)); // variance is sigma^2/(1-alpha^2)
+    return x1samp * m_sigma / std::sqrt(1.-m_phi*m_phi); // variance is sigma^2/(1-phi^2)
 }
+
 
 Vec SVolFilter::qSamp(const Vec &xtm1, const Vec &yt)
 {
     Vec xtsamp = m_stdNormSampler.sample();
-    xtsamp(0) += .91 * xtm1(0); //add the mean
+    xtsamp(0) += m_phi * xtm1(0); //add the mean
     return xtsamp;
 }
 
@@ -27,33 +33,37 @@ double SVolFilter::logGEv(const Vec &yt, const Vec &xt)
 {
     Vec mu(1);
     mu(0) = 0;
-    Mat sigma(1,1);
-    sigma(0,0) = .25 * exp(xt(0)); //beta^2 * e^{xt}
-    return densities::evalMultivNorm(yt, mu, sigma, true);
+    Mat varMat(1,1);
+    varMat(0,0) = m_beta * m_beta * std::exp(xt(0)); //beta^2 * e^{xt}
+    return densities::evalMultivNorm(yt, mu, varMat, true);
 }
+
 
 double SVolFilter::logFEv(const Vec &xt, const Vec &xtm1)
 {
     Vec mu(1);
-    mu(0) = .91 * xtm1(0); //alpha * xmt1
-    Mat sigma(1,1);
-    sigma(0,0) = 1.0; //sigma^2
-    return densities::evalMultivNorm(xt, mu, sigma, true);
+    mu(0) = m_phi * xtm1(0); //phi * xmt1
+    Mat covMat(1,1);
+    covMat(0,0) = m_sigma * m_sigma; //sigma^2
+    return densities::evalMultivNorm(xt, mu, covMat, true);
 }
+
 
 double SVolFilter::logMuEv(const Vec &x1)
 {
     Vec mu(1);
     mu(0) = 0;
-    Mat sigma(1,1);
-    sigma(0,0) = 1./(1-.91*.91); //sigma^2/(1-alpha^2)
-    return densities::evalMultivNorm(x1, mu, sigma, true);
+    Mat covMat(1,1);
+    covMat(0,0) = m_sigma* m_sigma/(1.-m_phi*m_phi); //sigma^2/(1-phi^2)
+    return densities::evalMultivNorm(x1, mu, covMat, true);
 }
+
 
 double SVolFilter::logQ1Ev(const Vec &x1samp, const Vec &y1)
 {
     return logMuEv(x1samp);
 }
+
 
 double SVolFilter::logQEv(const Vec &xt, const Vec &xtm1, const Vec &yt)
 {

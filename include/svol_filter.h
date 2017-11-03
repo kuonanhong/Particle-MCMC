@@ -9,21 +9,25 @@
  * @class SVolFilter
  * @author taylor
  * @date 08/09/17
- * @file SVolFilter.h
- * @brief A class implementing the classic stochastic volatility model of Taylor (1982-ish?)
+ * @file svol_filter.h
+ * @brief Centered parametrization. A class implementing the classic stochastic volatility model of Taylor
  */
 class SVolFilter: public SISRFilter
 {
 private:
     densities::MVNSampler m_stdNormSampler; // for sampling 
+    
+    // parameters
+    double m_phi;
+    double m_beta;
+    double m_sigma;
 public:
 
     /**
      * @brief The constructor.
      * @param numParts the number of particles you want.
      */
-    SVolFilter(int numParts);
-    
+    SVolFilter(int numParts, double beta, double phi, double sigma);
     
     /**
      * @brief The destructor.
