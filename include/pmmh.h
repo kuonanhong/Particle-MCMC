@@ -48,7 +48,7 @@ public:
      * @param numCols the dimension of your observable data.
      * @param mc stands for multicore. true or false if you want to use extra cores.
      */
-    Pmmh(std::vector<Vec> startTheta, unsigned numMCMCIters, const std::string& dataFile, unsigned int numCols, bool mc);
+    Pmmh(const std::vector<Vec> &startTheta, unsigned numMCMCIters, const std::string &dataFile, unsigned numCols, bool mc);
 
 
     /**

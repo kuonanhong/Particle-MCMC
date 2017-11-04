@@ -3,7 +3,7 @@
 #include <cmath>
 
 
-SVolFilter::SVolFilter(int numParts, double beta, double phi, double sigma) 
+SVolFilter::SVolFilter(unsigned numParts, double beta, double phi, double sigma) 
     : m_beta(beta), m_phi(phi), m_sigma(sigma), SISRFilter(numParts)
 {
 }

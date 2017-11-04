@@ -6,8 +6,8 @@
 #include "densities.h"
 #include "convenience_funcs.h"
 
-
-Pmmh::Pmmh(std::vector<Vec> startTheta, unsigned numMCMCIters, const std::string& dataFile, unsigned int numCols, bool mc) : 
+#include <iostream>
+Pmmh::Pmmh(const std::vector<Vec> &startTheta, unsigned numMCMCIters, const std::string &dataFile, unsigned numCols, bool mc) : 
         m_numMCMCIters(numMCMCIters), m_multicore(mc), m_dimTheta(0), m_currentTheta(startTheta)
 {
     m_data = convenience_funcs::readInData(dataFile, numCols);
@@ -238,6 +238,7 @@ void Pmmh::commence_sampling_sc(std::string samplesFile, std::string messagesFil
             
             // increase the iteration counter
             iter++;
+            
 
         } else { // not the first iteration      
         
@@ -337,6 +338,7 @@ void Pmmh::commence_sampling_sc(std::string samplesFile, std::string messagesFil
             convenience_funcs::logParams(m_currentTheta, m_samplesFileStream);
                 
         } // else{
+
     } //while(iter < m_numMCMCIters)
     
     // stop writing thetas and messages

@@ -12,7 +12,8 @@ typedef std::chrono::high_resolution_clock Clock;
 //#include "jac_filt_test.h"
 //#include "jac_filt_test_apf.h" 
 //#include "jacetal_apf_sisr_compare.h"
-#include "do_pmmh_jacetal.h"
+#include "do_pmmh_svol.h"
+//#include "do_pmmh_jacetal.h"
 //#include "do_ada_pmmh_jacetal.h"
 
 
@@ -37,7 +38,8 @@ int main(int argc, char **argv)
     //jac_filt_test();
     //jac_filt_test_apf(); 
     //jacetal_apf_sisr_compare();
-    do_pmmh_jacetal();  
+    do_pmmh_svol();
+    //do_pmmh_jacetal();  
     //do_ada_pmmh_jacetal(); 
 
 
@@ -49,10 +51,6 @@ int main(int argc, char **argv)
     std::cout << "Delta t2-t1: " 
               << std::chrono::duration_cast<std::chrono::minutes>(end - begin).count()
               << " minutes" << std::endl;
-    
-//    double elapsed_ms = double(end - begin) / CLOCKS_PER_SEC * 1000; //number milliseconds
-//    std::cout << "elapsed time in ms: " << elapsed_ms << std::endl;
-//    std::cout << "elapsed time in minutes: " << elapsed_ms / (1000*60) << std::endl;
 
 	return 0;
 }
