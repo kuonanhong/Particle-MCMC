@@ -169,13 +169,13 @@ double SISRFilter::getESS() const
 }
 
 
-const std::vector<std::vector<Vec> >& SISRFilter::getFullParts() const
+std::vector<std::vector<Vec> > SISRFilter::getFullParts() const
 {
     return m_particles;
 }
 
 
-const std::vector<Mat>& SISRFilter::getExpectations() const
+std::vector<Mat> SISRFilter::getExpectations() const
 {
     return m_expectations;
 }

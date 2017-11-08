@@ -77,14 +77,14 @@ public:
      * @brief get $p(x_{1:t}|y_{1:t})$
      * @return The up-to-date set of path samples for the joint smoothing distribution.
      */
-    const std::vector<std::vector<Vec> >& getFullParts() const;
+    std::vector<std::vector<Vec> > getFullParts() const;
     
     //!
     /**
      * @brief get all stored expectations. With respect to $p(x_t|y_{1:t})$
      * @return returns a std::vector<Mat> of all of the approximated expectations.
      */
-     const std::vector<Mat>& getExpectations() const;
+     std::vector<Mat> getExpectations() const;
     
     
     //!
