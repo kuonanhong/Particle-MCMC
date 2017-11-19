@@ -8,7 +8,7 @@
 void jac_filt_test_apf()
 {
     // algorithm and example variables 
-    int num_parts(3000);
+    int num_parts(5000);
     APFResampStyle rt = APFResampStyle::everytime_multinomial;
     int path_length = 0; // filtering only
 
@@ -49,12 +49,20 @@ void jac_filt_test_apf()
     
     // make a function that will help us store mean of filtering distributions
     std::vector<std::function<const Mat(const Vec&)> > fs;
-    auto idtyLambda = [](const Vec& x){ return Eigen::Map<const Mat>(x.data(), x.size(), 1); };
-    fs.push_back(idtyLambda);
+    //auto idtyLambda = [](const Vec& x){ return Eigen::Map<const Mat>(x.data(), x.size(), 1); };
+    auto volLambda = [&mus, &phis, &sigmas, &beta, &R_sigmas](const Vec& x)->const Mat
+    {
+        Mat E(1,1);
+        Mat R = R_sigmas.array().square().matrix().asDiagonal();
+        E(0,0) = std::exp( mus(0) + phis(0)*(x(0) - mus(0)) + sigmas(0)*sigmas(0)/2.0 );
+        return beta * E * beta.transpose() + R;
+    };
+    //fs.push_back(idtyLambda);
+    fs.push_back(volLambda);
 
     // now run through the data and filter 
-    //std::string filePath("/home/taylor/ssm/data/some_csvs/weekly_etf_data_200151223_second_baby.csv");
-    std::string filePath("/home/taylor/ssm/data/some_csvs/jacq_y_data.csv");
+    std::string filePath("/home/taylor/ssm/data/some_csvs/weekly_etf_data_200151223_second_baby.csv");
+    //std::string filePath("/home/taylor/ssm/data/some_csvs/jacq_y_data.csv");
     std::ifstream inFile(filePath);
     std::string dataLine;
     std::string oneNumber;
@@ -81,7 +89,7 @@ void jac_filt_test_apf()
         myMod.filterOrSmooth(yt, fs);
 
         // print stuff if you'd like
-        std::cout << myMod.getExpectations()[0].transpose() << "\n";
+        std::cout << myMod.getExpectations()[0] << "\n";
         //std::cout << log(myMod.getCondLike()) << "\n";
 
 //        Mat tmpVar( myMod.getPredictiveVar() );        

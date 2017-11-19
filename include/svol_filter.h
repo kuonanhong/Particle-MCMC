@@ -27,7 +27,7 @@ public:
      * @brief The constructor.
      * @param numParts the number of particles you want.
      */
-    SVolFilter(unsigned numParts, double beta, double phi, double sigma);
+    SVolFilter(unsigned numParts, double beta, double phi, double sigma, unsigned pLen=0);
     
     /**
      * @brief The destructor.

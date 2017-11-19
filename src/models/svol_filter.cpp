@@ -3,11 +3,11 @@
 #include <cmath>
 
 
-SVolFilter::SVolFilter(unsigned numParts, double beta, double phi, double sigma) 
-    : m_beta(beta), m_phi(phi), m_sigma(sigma), SISRFilter(numParts)
+SVolFilter::SVolFilter(unsigned numParts, double beta, double phi, double sigma, unsigned pLen) 
+    : m_beta(beta), m_phi(phi), m_sigma(sigma), 
+    SISRFilter(numParts, SISRResampStyle::everytime_multinomial, pLen)
 {
 }
-
 
 SVolFilter::~SVolFilter()
 {

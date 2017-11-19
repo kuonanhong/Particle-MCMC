@@ -10,11 +10,18 @@ typedef std::chrono::high_resolution_clock Clock;
 //#include "noisy_ar1_comparison.h"
 //#include "msvol_test.h"
 //#include "jac_filt_test.h"
-//#include "jac_filt_test_apf.h" 
+#include "jac_filt_test_apf.h" 
 //#include "jacetal_apf_sisr_compare.h"
-#include "do_pmmh_svol.h"
+//#include "do_pmmh_svol.h"
 //#include "do_pmmh_jacetal.h"
+
+
+//#include "do_ada_pmmh_svol.h"
 //#include "do_ada_pmmh_jacetal.h"
+
+
+#include <vector>
+#include <Eigen/Dense>
 
 
 int main(int argc, char **argv)
@@ -24,7 +31,9 @@ int main(int argc, char **argv)
     //clock_t begin = clock();  
     auto begin = Clock::now();
     
-    
+
+
+
 
     //kFilterTest();
     //sVolTest();
@@ -38,7 +47,8 @@ int main(int argc, char **argv)
     //jac_filt_test();
     //jac_filt_test_apf(); 
     //jacetal_apf_sisr_compare();
-    do_pmmh_svol();
+    //do_pmmh_svol();
+    //do_ada_pmmh_svol();
     //do_pmmh_jacetal();  
     //do_ada_pmmh_jacetal(); 
 

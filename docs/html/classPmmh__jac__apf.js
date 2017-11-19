@@ -1,13 +1,9 @@
 var classPmmh__jac__apf =
 [
-    [ "Pmmh_jac_apf", "classPmmh__jac__apf.html#a10d1ff1b6f508a1b9a9492e6bf8a563b", null ],
+    [ "Pmmh_jac_apf", "classPmmh__jac__apf.html#ac195b6fc79a2d91620ceb077e752c4a8", null ],
     [ "~Pmmh_jac_apf", "classPmmh__jac__apf.html#afbe2594fe7e40914ac4edc36580ebc33", null ],
-    [ "flattenParams", "classPmmh__jac__apf.html#a9f3f949aa9017178936878fe87c4fd79", null ],
-    [ "invTwiceFisher", "classPmmh__jac__apf.html#ae96bbb73b47bab903061dcc1e0e5e14c", null ],
-    [ "logLikeEvaluate", "classPmmh__jac__apf.html#a34973f896a5fe11b04f93cc80ee54474", null ],
-    [ "logPriorEvaluate", "classPmmh__jac__apf.html#ade139b7e8122a9cc37d4aae22e6ec752", null ],
-    [ "logQEvaluate", "classPmmh__jac__apf.html#a49126fee9cb4daea00333c45f52945ee", null ],
-    [ "qSample", "classPmmh__jac__apf.html#a863fc68aa67907e531c4da13afc74914", null ],
-    [ "twiceFisher", "classPmmh__jac__apf.html#ab4e3f02111c1232c54dbcc814e5778af", null ],
-    [ "unFlattenParams", "classPmmh__jac__apf.html#a5d6152e013c3aba4a70d1a874364ae3b", null ]
+    [ "logLikeEvaluate", "classPmmh__jac__apf.html#acd0869e2b01566fcd45d85e850d4ee11", null ],
+    [ "logPriorEvaluate", "classPmmh__jac__apf.html#ab253d4b6c59a5e9529d042eb7b98dc8a", null ],
+    [ "logQEvaluate", "classPmmh__jac__apf.html#a17edc1dc687fb753eff22d5bb7e44964", null ],
+    [ "qSample", "classPmmh__jac__apf.html#a0127e07b0f9ba6b042418c575b78ca55", null ]
 ];

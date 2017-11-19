@@ -1,0 +1,201 @@
+\hypertarget{classPmmh__svol__sisr}{}\section{Pmmh\+\_\+svol\+\_\+sisr Class Reference}
+\label{classPmmh__svol__sisr}\index{Pmmh\+\_\+svol\+\_\+sisr@{Pmmh\+\_\+svol\+\_\+sisr}}
+
+
+Estimates simple stochastic volatility model with a particle marginal Metropolis-\/\+Hastings algorithm.  
+
+
+
+
+{\ttfamily \#include $<$pmmh\+\_\+svol\+\_\+sisr.\+h$>$}
+
+
+
+Inheritance diagram for Pmmh\+\_\+svol\+\_\+sisr\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{classPmmh__svol__sisr__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Pmmh\+\_\+svol\+\_\+sisr\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{classPmmh__svol__sisr__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPmmh__svol__sisr_ad07ecbdfaccbb26ecefe2f6fd3e2338d}{Pmmh\+\_\+svol\+\_\+sisr} (unsigned num\+Parts, const std\+::vector$<$ Vec $>$ \&start\+Theta, const std\+::vector$<$ Mat $>$ \&q\+Sigma, unsigned num\+M\+C\+M\+C\+Iters, const std\+::string \&data\+File, unsigned num\+Cols, bool mc)
+\begin{DoxyCompactList}\small\item\em The constructor. \end{DoxyCompactList}\item 
+\hyperlink{classPmmh__svol__sisr_a7e0b043e751ab654c0e7dc25434a2f2a}{$\sim$\+Pmmh\+\_\+svol\+\_\+sisr} ()\hypertarget{classPmmh__svol__sisr_a7e0b043e751ab654c0e7dc25434a2f2a}{}\label{classPmmh__svol__sisr_a7e0b043e751ab654c0e7dc25434a2f2a}
+
+\begin{DoxyCompactList}\small\item\em The destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classPmmh__svol__sisr_a18df26cb5c0bddefbd24866b1b4ff142}{q\+Sample} (const std\+::vector$<$ Vec $>$ \&old\+Params, std\+::vector$<$ Vec $>$ \&new\+Params)
+\begin{DoxyCompactList}\small\item\em Samples new proposal parameters from old parameters. \end{DoxyCompactList}\item 
+double \hyperlink{classPmmh__svol__sisr_a8164b385edb083df605ba766e000c12a}{log\+Q\+Evaluate} (const std\+::vector$<$ Vec $>$ \&old\+Params, const std\+::vector$<$ Vec $>$ \&new\+Params)
+\begin{DoxyCompactList}\small\item\em Evaluates the logarithm of the parameter proposal distribution. \end{DoxyCompactList}\item 
+double \hyperlink{classPmmh__svol__sisr_ab6c9983faf8ca460f8a8081c6a148aa2}{log\+Prior\+Evaluate} (const std\+::vector$<$ Vec $>$ \&theta)
+\begin{DoxyCompactList}\small\item\em Evaluates the log of the prior. \end{DoxyCompactList}\item 
+double \hyperlink{classPmmh__svol__sisr_af0bb463ef4d74e60022a4955f565390e}{log\+Like\+Evaluate} (const std\+::vector$<$ Vec $>$ \&theta, const std\+::vector$<$ Vec $>$ \&data, std\+::atomic\+\_\+bool \&cancelled)
+\begin{DoxyCompactList}\small\item\em Approximates the log-\/likelihood with a particle filter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Estimates simple stochastic volatility model with a particle marginal Metropolis-\/\+Hastings algorithm. 
+
+\begin{DoxyAuthor}{Author}
+taylor 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Pmmh\+\_\+svol\+\_\+sisr@{Pmmh\+\_\+svol\+\_\+sisr}!Pmmh\+\_\+svol\+\_\+sisr@{Pmmh\+\_\+svol\+\_\+sisr}}
+\index{Pmmh\+\_\+svol\+\_\+sisr@{Pmmh\+\_\+svol\+\_\+sisr}!Pmmh\+\_\+svol\+\_\+sisr@{Pmmh\+\_\+svol\+\_\+sisr}}
+\subsubsection[{\texorpdfstring{Pmmh\+\_\+svol\+\_\+sisr(unsigned num\+Parts, const std\+::vector$<$ Vec $>$ \&start\+Theta, const std\+::vector$<$ Mat $>$ \&q\+Sigma, unsigned num\+M\+C\+M\+C\+Iters, const std\+::string \&data\+File, unsigned num\+Cols, bool mc)}{Pmmh_svol_sisr(unsigned numParts, const std::vector< Vec > &startTheta, const std::vector< Mat > &qSigma, unsigned numMCMCIters, const std::string &dataFile, unsigned numCols, bool mc)}}]{\setlength{\rightskip}{0pt plus 5cm}Pmmh\+\_\+svol\+\_\+sisr\+::\+Pmmh\+\_\+svol\+\_\+sisr (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{num\+Parts, }
+\item[{const std\+::vector$<$ Vec $>$ \&}]{start\+Theta, }
+\item[{const std\+::vector$<$ Mat $>$ \&}]{q\+Sigma, }
+\item[{unsigned}]{num\+M\+C\+M\+C\+Iters, }
+\item[{const std\+::string \&}]{data\+File, }
+\item[{unsigned}]{num\+Cols, }
+\item[{bool}]{mc}
+\end{DoxyParamCaption}
+)}\hypertarget{classPmmh__svol__sisr_ad07ecbdfaccbb26ecefe2f6fd3e2338d}{}\label{classPmmh__svol__sisr_ad07ecbdfaccbb26ecefe2f6fd3e2338d}
+
+
+The constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+Parts} & the number of particles you want. \\
+\hline
+{\em start\+Theta} & the starting point parameters. \\
+\hline
+{\em the} & covariance matrix of the random walk proposal distribution. \\
+\hline
+{\em num\+M\+C\+M\+C\+Iters} & the number of M\+C\+MC iterations you want. \\
+\hline
+{\em data\+File} & the location of the observed time series data. \\
+\hline
+{\em num\+Cols} & the dimension of your observable time series data. \\
+\hline
+{\em mc} & true if you want to evaluate likelihood functions in parallel. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Pmmh\+\_\+svol\+\_\+sisr@{Pmmh\+\_\+svol\+\_\+sisr}!log\+Like\+Evaluate@{log\+Like\+Evaluate}}
+\index{log\+Like\+Evaluate@{log\+Like\+Evaluate}!Pmmh\+\_\+svol\+\_\+sisr@{Pmmh\+\_\+svol\+\_\+sisr}}
+\subsubsection[{\texorpdfstring{log\+Like\+Evaluate(const std\+::vector$<$ Vec $>$ \&theta, const std\+::vector$<$ Vec $>$ \&data, std\+::atomic\+\_\+bool \&cancelled)}{logLikeEvaluate(const std::vector< Vec > &theta, const std::vector< Vec > &data, std::atomic_bool &cancelled)}}]{\setlength{\rightskip}{0pt plus 5cm}double Pmmh\+\_\+svol\+\_\+sisr\+::log\+Like\+Evaluate (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ Vec $>$ \&}]{theta, }
+\item[{const std\+::vector$<$ Vec $>$ \&}]{data, }
+\item[{std\+::atomic\+\_\+bool \&}]{cancelled}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classPmmh__svol__sisr_af0bb463ef4d74e60022a4955f565390e}{}\label{classPmmh__svol__sisr_af0bb463ef4d74e60022a4955f565390e}
+
+
+Approximates the log-\/likelihood with a particle filter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em theta} & the parameters. \\
+\hline
+{\em data} & the observable data. \\
+\hline
+{\em cancelled} & function will terminate when this is set to true by the class. Must implement mc is true. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the evaluation (as a double) of the log likelihood approximation. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classPmmh_a293931e138576f063aab7e46228f0266}{Pmmh}.
+
+\index{Pmmh\+\_\+svol\+\_\+sisr@{Pmmh\+\_\+svol\+\_\+sisr}!log\+Prior\+Evaluate@{log\+Prior\+Evaluate}}
+\index{log\+Prior\+Evaluate@{log\+Prior\+Evaluate}!Pmmh\+\_\+svol\+\_\+sisr@{Pmmh\+\_\+svol\+\_\+sisr}}
+\subsubsection[{\texorpdfstring{log\+Prior\+Evaluate(const std\+::vector$<$ Vec $>$ \&theta)}{logPriorEvaluate(const std::vector< Vec > &theta)}}]{\setlength{\rightskip}{0pt plus 5cm}double Pmmh\+\_\+svol\+\_\+sisr\+::log\+Prior\+Evaluate (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ Vec $>$ \&}]{theta}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classPmmh__svol__sisr_ab6c9983faf8ca460f8a8081c6a148aa2}{}\label{classPmmh__svol__sisr_ab6c9983faf8ca460f8a8081c6a148aa2}
+
+
+Evaluates the log of the prior. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em theta} & the parameter inputs. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the logarithm of the prior evaluation. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classPmmh_a265ca1c1380d0ebc052be2c5424a0d3b}{Pmmh}.
+
+\index{Pmmh\+\_\+svol\+\_\+sisr@{Pmmh\+\_\+svol\+\_\+sisr}!log\+Q\+Evaluate@{log\+Q\+Evaluate}}
+\index{log\+Q\+Evaluate@{log\+Q\+Evaluate}!Pmmh\+\_\+svol\+\_\+sisr@{Pmmh\+\_\+svol\+\_\+sisr}}
+\subsubsection[{\texorpdfstring{log\+Q\+Evaluate(const std\+::vector$<$ Vec $>$ \&old\+Params, const std\+::vector$<$ Vec $>$ \&new\+Params)}{logQEvaluate(const std::vector< Vec > &oldParams, const std::vector< Vec > &newParams)}}]{\setlength{\rightskip}{0pt plus 5cm}double Pmmh\+\_\+svol\+\_\+sisr\+::log\+Q\+Evaluate (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ Vec $>$ \&}]{old\+Params, }
+\item[{const std\+::vector$<$ Vec $>$ \&}]{new\+Params}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classPmmh__svol__sisr_a8164b385edb083df605ba766e000c12a}{}\label{classPmmh__svol__sisr_a8164b385edb083df605ba766e000c12a}
+
+
+Evaluates the logarithm of the parameter proposal distribution. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em old\+Params} & \\
+\hline
+{\em new\+Params} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the logarithm of the density evaluation. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classPmmh_af8d3fdbc3f3c998670266a3032a53e80}{Pmmh}.
+
+\index{Pmmh\+\_\+svol\+\_\+sisr@{Pmmh\+\_\+svol\+\_\+sisr}!q\+Sample@{q\+Sample}}
+\index{q\+Sample@{q\+Sample}!Pmmh\+\_\+svol\+\_\+sisr@{Pmmh\+\_\+svol\+\_\+sisr}}
+\subsubsection[{\texorpdfstring{q\+Sample(const std\+::vector$<$ Vec $>$ \&old\+Params, std\+::vector$<$ Vec $>$ \&new\+Params)}{qSample(const std::vector< Vec > &oldParams, std::vector< Vec > &newParams)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pmmh\+\_\+svol\+\_\+sisr\+::q\+Sample (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ Vec $>$ \&}]{old\+Params, }
+\item[{std\+::vector$<$ Vec $>$ \&}]{new\+Params}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classPmmh__svol__sisr_a18df26cb5c0bddefbd24866b1b4ff142}{}\label{classPmmh__svol__sisr_a18df26cb5c0bddefbd24866b1b4ff142}
+
+
+Samples new proposal parameters from old parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em old\+Params} & \\
+\hline
+{\em new\+Params} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classPmmh_a7ada4decd5df894376c74e3ddba5daa1}{Pmmh}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{pmmh__svol__sisr_8h}{pmmh\+\_\+svol\+\_\+sisr.\+h}\end{DoxyCompactItemize}

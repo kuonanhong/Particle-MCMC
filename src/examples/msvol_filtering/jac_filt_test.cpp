@@ -53,6 +53,7 @@ void jac_filt_test()
     // lambdas that help get the filter mean
     std::vector<std::function<const Mat(const Vec&)> > fs;
     auto idtyLambda = [](const Vec& x) { return Eigen::Map<const Mat>(x.data(), x.size(), 1); };
+    //auto volLambda = [](const Vec& x) { return };
     fs.push_back(idtyLambda);
 
     

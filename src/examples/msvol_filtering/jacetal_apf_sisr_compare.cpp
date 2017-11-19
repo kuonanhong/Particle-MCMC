@@ -1,39 +1,8 @@
 #include "jacetal_apf_sisr_compare.h"
+
 #include "jacquier_et_al_apf.h" // apf model
 #include "jacquier_et_al.h" //sisr model
-
-
-std::vector<Vec> read_data(const std::string &dataFile, int num_obs, int size_obs)
-{
-    // return this
-    std::vector<Vec> data(num_obs, Vec(size_obs)); // dataset is 1000 observations each 9-d
-
-    // read in data and store in object
-    std::string line;
-    std::ifstream inFile(dataFile);
-    std::string oneNumberOnOneLine;
-    int time(0);
-    int elemNum(0);
-    while ( std::getline(inFile, line) ){ // every row of data
-    
-        elemNum = 0;
-        try{
-            std::istringstream buff(line);
-            while(std::getline(buff, oneNumberOnOneLine, ',')){
-                data[time](elemNum) = std::stod(oneNumberOnOneLine);
-                elemNum++;
-            }
-        } catch (const std::invalid_argument& ia){
-            std::cerr << "Invalid Argument: " << ia.what() << "\n";
-            continue;
-        }          
-        time++;
-    }
-    
-    // now return the data object
-    return data;
-}
-
+#include "convenience_funcs.h" // readInData
 
 void unFlattenParams(Mat &beta, Vec &phi, Vec &mu, Vec &sigma, Vec &RstdDevs, const std::vector<double> &flatOnes)
 {   
@@ -76,7 +45,7 @@ void jacetal_apf_sisr_compare()
     int np = 200;
         
     // read in data 
-    std::vector<Vec> data = read_data("/home/taylor/ssm/data/some_csvs/weekly_etf_data_200151223_201451", 436, 9);
+    std::vector<Vec> data = convenience_funcs::readInData("/home/taylor/ssm/data/some_csvs/weekly_etf_data_200151223_201451", 9);
 
     // ordering is: betas(9), phis(1),  mus(1), sigma(1), R_std_dev_vec(9)
     std::vector<double> currentThetas {1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0,

@@ -9,8 +9,9 @@ void sVolTest()
 {
     
     // instantiate model
-    SVolFilter myMod(500, .5, .91, 1.0); // true parameters from simulated data
-    SVolAPFFilter myMod2(500);
+    int numParts(5);
+    SVolFilter myMod(numParts, .5, .91, 1.0, 10); // true parameters from simulated data
+    //SVolAPFFilter myMod2(numParts);
         
     // stream in data
     std::string filePath("/home/taylor/ssm/data/some_csvs/svol_y_data.csv");
@@ -24,6 +25,11 @@ void sVolTest()
     
     while(std::getline(infile, line))
     {
+        
+        if(time == 10)
+            break;
+            
+        
         // construct yt
         Vec yt(1);
         try{
@@ -41,7 +47,7 @@ void sVolTest()
         
         //myMod.filterOrSmooth(yt);
         myMod.filterOrSmooth(yt, fs);
-        myMod2.filterOrSmooth(yt, fs);
+        //myMod2.filterOrSmooth(yt, fs);
         
 
         
@@ -50,13 +56,10 @@ void sVolTest()
 //                  << myMod.getLogCondLike() << ", "
 //                  << std::log(myMod2.getCondLike()) << "\n";
 
-
         
         
-
-         
-        std::cout << myMod.getExpectations()[0] << ","
-                  << myMod2.getExpectations()[0] << "\n";    
+        //std::cout << myMod.getExpectations()[0] << ","
+        //          << myMod2.getExpectations()[0] << "\n";    
                   
         //std::cout << "ESS: " << myMod.getESS() << "\n";
         //std::cout << "mean: " << myMod.getFilterMean()<< "\n";

@@ -135,40 +135,29 @@ Collaboration diagram for Pmmh_jac_apf:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a10d1ff1b6f508a1b9a9492e6bf8a563b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh__jac__apf.html#a10d1ff1b6f508a1b9a9492e6bf8a563b">Pmmh_jac_apf</a> (unsigned int numParts, std::vector&lt; double &gt; startTheta, unsigned int numMCMCIters, const std::string &amp;dataFile, unsigned int numCols, bool mc)</td></tr>
-<tr class="memdesc:a10d1ff1b6f508a1b9a9492e6bf8a563b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The constructor.  <a href="#a10d1ff1b6f508a1b9a9492e6bf8a563b">More...</a><br /></td></tr>
-<tr class="separator:a10d1ff1b6f508a1b9a9492e6bf8a563b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac195b6fc79a2d91620ceb077e752c4a8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh__jac__apf.html#ac195b6fc79a2d91620ceb077e752c4a8">Pmmh_jac_apf</a> (unsigned numParts, std::vector&lt; Vec &gt; startTheta, unsigned numMCMCIters, const std::string &amp;dataFile, unsigned numCols, bool mc)</td></tr>
+<tr class="memdesc:ac195b6fc79a2d91620ceb077e752c4a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The constructor.  <a href="#ac195b6fc79a2d91620ceb077e752c4a8">More...</a><br /></td></tr>
+<tr class="separator:ac195b6fc79a2d91620ceb077e752c4a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbe2594fe7e40914ac4edc36580ebc33"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afbe2594fe7e40914ac4edc36580ebc33"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh__jac__apf.html#afbe2594fe7e40914ac4edc36580ebc33">~Pmmh_jac_apf</a> ()</td></tr>
 <tr class="memdesc:afbe2594fe7e40914ac4edc36580ebc33"><td class="mdescLeft">&#160;</td><td class="mdescRight">The destructor. <br /></td></tr>
 <tr class="separator:afbe2594fe7e40914ac4edc36580ebc33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4e3f02111c1232c54dbcc814e5778af"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh__jac__apf.html#ab4e3f02111c1232c54dbcc814e5778af">twiceFisher</a> (const double &amp;phi)</td></tr>
-<tr class="memdesc:ab4e3f02111c1232c54dbcc814e5778af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience function that maps (-1,1) to the reals.  <a href="#ab4e3f02111c1232c54dbcc814e5778af">More...</a><br /></td></tr>
-<tr class="separator:ab4e3f02111c1232c54dbcc814e5778af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae96bbb73b47bab903061dcc1e0e5e14c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh__jac__apf.html#ae96bbb73b47bab903061dcc1e0e5e14c">invTwiceFisher</a> (const double &amp;psi)</td></tr>
-<tr class="memdesc:ae96bbb73b47bab903061dcc1e0e5e14c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience function that maps the reals to (-1,1)  <a href="#ae96bbb73b47bab903061dcc1e0e5e14c">More...</a><br /></td></tr>
-<tr class="separator:ae96bbb73b47bab903061dcc1e0e5e14c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f3f949aa9017178936878fe87c4fd79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh__jac__apf.html#a9f3f949aa9017178936878fe87c4fd79">flattenParams</a> (std::vector&lt; double &gt; &amp;flatOnes, const Mat &amp;beta, const Vec &amp;phis, const Vec &amp;mus, const Vec &amp;sigmas, const Vec &amp;RstdDevs)</td></tr>
-<tr class="memdesc:a9f3f949aa9017178936878fe87c4fd79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience function that.  <a href="#a9f3f949aa9017178936878fe87c4fd79">More...</a><br /></td></tr>
-<tr class="separator:a9f3f949aa9017178936878fe87c4fd79"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d6152e013c3aba4a70d1a874364ae3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh__jac__apf.html#a5d6152e013c3aba4a70d1a874364ae3b">unFlattenParams</a> (Mat &amp;beta, Vec &amp;phi, Vec &amp;mu, Vec &amp;sigma, Vec &amp;RstdDevs, const std::vector&lt; double &gt; &amp;flatOnes)</td></tr>
-<tr class="separator:a5d6152e013c3aba4a70d1a874364ae3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a863fc68aa67907e531c4da13afc74914"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh__jac__apf.html#a863fc68aa67907e531c4da13afc74914">qSample</a> (const std::vector&lt; double &gt; &amp;oldParams, std::vector&lt; double &gt; &amp;newParams)</td></tr>
-<tr class="memdesc:a863fc68aa67907e531c4da13afc74914"><td class="mdescLeft">&#160;</td><td class="mdescRight">Samples new proposal parameters from old parameters.  <a href="#a863fc68aa67907e531c4da13afc74914">More...</a><br /></td></tr>
-<tr class="separator:a863fc68aa67907e531c4da13afc74914"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49126fee9cb4daea00333c45f52945ee"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh__jac__apf.html#a49126fee9cb4daea00333c45f52945ee">logQEvaluate</a> (const std::vector&lt; double &gt; &amp;oldParams, const std::vector&lt; double &gt; &amp;newParams)</td></tr>
-<tr class="memdesc:a49126fee9cb4daea00333c45f52945ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the logarithm of the parameter proposal distribution.  <a href="#a49126fee9cb4daea00333c45f52945ee">More...</a><br /></td></tr>
-<tr class="separator:a49126fee9cb4daea00333c45f52945ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade139b7e8122a9cc37d4aae22e6ec752"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh__jac__apf.html#ade139b7e8122a9cc37d4aae22e6ec752">logPriorEvaluate</a> (const std::vector&lt; double &gt; &amp;theta)</td></tr>
-<tr class="memdesc:ade139b7e8122a9cc37d4aae22e6ec752"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the log of the prior.  <a href="#ade139b7e8122a9cc37d4aae22e6ec752">More...</a><br /></td></tr>
-<tr class="separator:ade139b7e8122a9cc37d4aae22e6ec752"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34973f896a5fe11b04f93cc80ee54474"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh__jac__apf.html#a34973f896a5fe11b04f93cc80ee54474">logLikeEvaluate</a> (const std::vector&lt; double &gt; &amp;theta, const std::vector&lt; Vec &gt; &amp;data, std::atomic_bool &amp;cancelled)</td></tr>
-<tr class="memdesc:a34973f896a5fe11b04f93cc80ee54474"><td class="mdescLeft">&#160;</td><td class="mdescRight">Approximates the log-likelihood with a particle filter.  <a href="#a34973f896a5fe11b04f93cc80ee54474">More...</a><br /></td></tr>
-<tr class="separator:a34973f896a5fe11b04f93cc80ee54474"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0127e07b0f9ba6b042418c575b78ca55"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh__jac__apf.html#a0127e07b0f9ba6b042418c575b78ca55">qSample</a> (const std::vector&lt; Vec &gt; &amp;oldParams, std::vector&lt; Vec &gt; &amp;newParams)</td></tr>
+<tr class="memdesc:a0127e07b0f9ba6b042418c575b78ca55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience function that.  <a href="#a0127e07b0f9ba6b042418c575b78ca55">More...</a><br /></td></tr>
+<tr class="separator:a0127e07b0f9ba6b042418c575b78ca55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17edc1dc687fb753eff22d5bb7e44964"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh__jac__apf.html#a17edc1dc687fb753eff22d5bb7e44964">logQEvaluate</a> (const std::vector&lt; Vec &gt; &amp;oldParams, const std::vector&lt; Vec &gt; &amp;newParams)</td></tr>
+<tr class="memdesc:a17edc1dc687fb753eff22d5bb7e44964"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the logarithm of the parameter proposal distribution.  <a href="#a17edc1dc687fb753eff22d5bb7e44964">More...</a><br /></td></tr>
+<tr class="separator:a17edc1dc687fb753eff22d5bb7e44964"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab253d4b6c59a5e9529d042eb7b98dc8a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh__jac__apf.html#ab253d4b6c59a5e9529d042eb7b98dc8a">logPriorEvaluate</a> (const std::vector&lt; Vec &gt; &amp;theta)</td></tr>
+<tr class="memdesc:ab253d4b6c59a5e9529d042eb7b98dc8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the log of the prior.  <a href="#ab253d4b6c59a5e9529d042eb7b98dc8a">More...</a><br /></td></tr>
+<tr class="separator:ab253d4b6c59a5e9529d042eb7b98dc8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd0869e2b01566fcd45d85e850d4ee11"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh__jac__apf.html#acd0869e2b01566fcd45d85e850d4ee11">logLikeEvaluate</a> (const std::vector&lt; Vec &gt; &amp;theta, const std::vector&lt; Vec &gt; &amp;data, std::atomic_bool &amp;cancelled)</td></tr>
+<tr class="memdesc:acd0869e2b01566fcd45d85e850d4ee11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Approximates the log-likelihood with a particle filter.  <a href="#acd0869e2b01566fcd45d85e850d4ee11">More...</a><br /></td></tr>
+<tr class="separator:acd0869e2b01566fcd45d85e850d4ee11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classPmmh"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classPmmh')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classPmmh.html">Pmmh</a></td></tr>
-<tr class="memitem:abb524fcd7cf848e9a4f519a59218a63c inherit pub_methods_classPmmh"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh.html#abb524fcd7cf848e9a4f519a59218a63c">Pmmh</a> (std::vector&lt; double &gt; startTheta, unsigned int numMCMCIters, const std::string &amp;dataFile, unsigned int numCols, bool mc)</td></tr>
-<tr class="memdesc:abb524fcd7cf848e9a4f519a59218a63c inherit pub_methods_classPmmh"><td class="mdescLeft">&#160;</td><td class="mdescRight">The constructor.  <a href="#abb524fcd7cf848e9a4f519a59218a63c">More...</a><br /></td></tr>
-<tr class="separator:abb524fcd7cf848e9a4f519a59218a63c inherit pub_methods_classPmmh"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4752fceaa1b278fcadb583865bfd0b5 inherit pub_methods_classPmmh"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh.html#aa4752fceaa1b278fcadb583865bfd0b5">Pmmh</a> (const std::vector&lt; Vec &gt; &amp;startTheta, unsigned numMCMCIters, const std::string &amp;dataFile, unsigned numCols, bool mc)</td></tr>
+<tr class="memdesc:aa4752fceaa1b278fcadb583865bfd0b5 inherit pub_methods_classPmmh"><td class="mdescLeft">&#160;</td><td class="mdescRight">The constructor.  <a href="#aa4752fceaa1b278fcadb583865bfd0b5">More...</a><br /></td></tr>
+<tr class="separator:aa4752fceaa1b278fcadb583865bfd0b5 inherit pub_methods_classPmmh"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52b058761ac6ede77eb3d8c0099e0d93 inherit pub_methods_classPmmh"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a52b058761ac6ede77eb3d8c0099e0d93"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh.html#a52b058761ac6ede77eb3d8c0099e0d93">~Pmmh</a> ()</td></tr>
 <tr class="memdesc:a52b058761ac6ede77eb3d8c0099e0d93 inherit pub_methods_classPmmh"><td class="mdescLeft">&#160;</td><td class="mdescRight">The destructor. <br /></td></tr>
@@ -182,26 +171,26 @@ Public Member Functions</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>taylor </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>14/10/17 </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a10d1ff1b6f508a1b9a9492e6bf8a563b"></a>
+<a class="anchor" id="ac195b6fc79a2d91620ceb077e752c4a8"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">Pmmh_jac_apf::Pmmh_jac_apf </td>
           <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramtype">unsigned&#160;</td>
           <td class="paramname"><em>numParts</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; double &gt;&#160;</td>
+          <td class="paramtype">std::vector&lt; Vec &gt;&#160;</td>
           <td class="paramname"><em>startTheta</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramtype">unsigned&#160;</td>
           <td class="paramname"><em>numMCMCIters</em>, </td>
         </tr>
         <tr>
@@ -213,7 +202,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramtype">unsigned&#160;</td>
           <td class="paramname"><em>numCols</em>, </td>
         </tr>
         <tr>
@@ -246,95 +235,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a9f3f949aa9017178936878fe87c4fd79"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Pmmh_jac_apf::flattenParams </td>
-          <td>(</td>
-          <td class="paramtype">std::vector&lt; double &gt; &amp;&#160;</td>
-          <td class="paramname"><em>flatOnes</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Mat &amp;&#160;</td>
-          <td class="paramname"><em>beta</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Vec &amp;&#160;</td>
-          <td class="paramname"><em>phis</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Vec &amp;&#160;</td>
-          <td class="paramname"><em>mus</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Vec &amp;&#160;</td>
-          <td class="paramname"><em>sigmas</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Vec &amp;&#160;</td>
-          <td class="paramname"><em>RstdDevs</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Convenience function that. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">flatOnes</td><td>the parameters in a std::vector&lt;double&gt; container. </td></tr>
-    <tr><td class="paramname">beta</td><td></td></tr>
-    <tr><td class="paramname">phis</td><td></td></tr>
-    <tr><td class="paramname">mus</td><td></td></tr>
-    <tr><td class="paramname">sigmas</td><td></td></tr>
-    <tr><td class="paramname">RstdDevs</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="ae96bbb73b47bab903061dcc1e0e5e14c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double Pmmh_jac_apf::invTwiceFisher </td>
-          <td>(</td>
-          <td class="paramtype">const double &amp;&#160;</td>
-          <td class="paramname"><em>psi</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Convenience function that maps the reals to (-1,1) </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">psi</td><td>an unbounded real number </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>phi which is between -1 and 1 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a34973f896a5fe11b04f93cc80ee54474"></a>
+<a class="anchor" id="acd0869e2b01566fcd45d85e850d4ee11"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -344,7 +245,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">double Pmmh_jac_apf::logLikeEvaluate </td>
           <td>(</td>
-          <td class="paramtype">const std::vector&lt; double &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::vector&lt; Vec &gt; &amp;&#160;</td>
           <td class="paramname"><em>theta</em>, </td>
         </tr>
         <tr>
@@ -383,11 +284,11 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the evaluation (as a double) of the log likelihood approximation. </dd></dl>
 
-<p>Implements <a class="el" href="classPmmh.html#a4a66167bea425f5d271ef7931f4a3e5f">Pmmh</a>.</p>
+<p>Implements <a class="el" href="classPmmh.html#a293931e138576f063aab7e46228f0266">Pmmh</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ade139b7e8122a9cc37d4aae22e6ec752"></a>
+<a class="anchor" id="ab253d4b6c59a5e9529d042eb7b98dc8a"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -397,7 +298,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">double Pmmh_jac_apf::logPriorEvaluate </td>
           <td>(</td>
-          <td class="paramtype">const std::vector&lt; double &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::vector&lt; Vec &gt; &amp;&#160;</td>
           <td class="paramname"><em>theta</em></td><td>)</td>
           <td></td>
         </tr>
@@ -418,11 +319,11 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the logarithm of the prior evaluation. </dd></dl>
 
-<p>Implements <a class="el" href="classPmmh.html#ada5cc8317bd91ca129909abe0ec2cd1b">Pmmh</a>.</p>
+<p>Implements <a class="el" href="classPmmh.html#a265ca1c1380d0ebc052be2c5424a0d3b">Pmmh</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a49126fee9cb4daea00333c45f52945ee"></a>
+<a class="anchor" id="a17edc1dc687fb753eff22d5bb7e44964"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -432,13 +333,13 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">double Pmmh_jac_apf::logQEvaluate </td>
           <td>(</td>
-          <td class="paramtype">const std::vector&lt; double &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::vector&lt; Vec &gt; &amp;&#160;</td>
           <td class="paramname"><em>oldParams</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::vector&lt; double &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::vector&lt; Vec &gt; &amp;&#160;</td>
           <td class="paramname"><em>newParams</em>&#160;</td>
         </tr>
         <tr>
@@ -464,11 +365,11 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the logarithm of the density evaluation. </dd></dl>
 
-<p>Implements <a class="el" href="classPmmh.html#a9948772ed9f9e1024302c524641d9915">Pmmh</a>.</p>
+<p>Implements <a class="el" href="classPmmh.html#af8d3fdbc3f3c998670266a3032a53e80">Pmmh</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a863fc68aa67907e531c4da13afc74914"></a>
+<a class="anchor" id="a0127e07b0f9ba6b042418c575b78ca55"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -478,13 +379,13 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void Pmmh_jac_apf::qSample </td>
           <td>(</td>
-          <td class="paramtype">const std::vector&lt; double &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::vector&lt; Vec &gt; &amp;&#160;</td>
           <td class="paramname"><em>oldParams</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; double &gt; &amp;&#160;</td>
+          <td class="paramtype">std::vector&lt; Vec &gt; &amp;&#160;</td>
           <td class="paramname"><em>newParams</em>&#160;</td>
         </tr>
         <tr>
@@ -500,102 +401,28 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Samples new proposal parameters from old parameters. </p>
+<p>Convenience function that. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">flatOnes</td><td>the parameters in a std::vector&lt;double&gt; container. </td></tr>
+    <tr><td class="paramname">beta</td><td></td></tr>
+    <tr><td class="paramname">phis</td><td></td></tr>
+    <tr><td class="paramname">mus</td><td></td></tr>
+    <tr><td class="paramname">sigmas</td><td></td></tr>
+    <tr><td class="paramname">RstdDevs</td><td></td></tr>
+    <tr><td class="paramname">beta</td><td></td></tr>
+    <tr><td class="paramname">phi</td><td></td></tr>
+    <tr><td class="paramname">mu</td><td></td></tr>
+    <tr><td class="paramname">sigma</td><td></td></tr>
+    <tr><td class="paramname">RstdDevs</td><td></td></tr>
+    <tr><td class="paramname">flatOnes</td><td>Samples new proposal parameters from old parameters. </td></tr>
     <tr><td class="paramname">oldParams</td><td></td></tr>
     <tr><td class="paramname">newParams</td><td></td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="classPmmh.html#ab8527fd052ddaa434b8b4ab9715d503f">Pmmh</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ab4e3f02111c1232c54dbcc814e5778af"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double Pmmh_jac_apf::twiceFisher </td>
-          <td>(</td>
-          <td class="paramtype">const double &amp;&#160;</td>
-          <td class="paramname"><em>phi</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Convenience function that maps (-1,1) to the reals. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">phi</td><td>the parameter that needs to stay between -1 and 1 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>the evaluation of this function. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a5d6152e013c3aba4a70d1a874364ae3b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Pmmh_jac_apf::unFlattenParams </td>
-          <td>(</td>
-          <td class="paramtype">Mat &amp;&#160;</td>
-          <td class="paramname"><em>beta</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Vec &amp;&#160;</td>
-          <td class="paramname"><em>phi</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Vec &amp;&#160;</td>
-          <td class="paramname"><em>mu</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Vec &amp;&#160;</td>
-          <td class="paramname"><em>sigma</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Vec &amp;&#160;</td>
-          <td class="paramname"><em>RstdDevs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; double &gt; &amp;&#160;</td>
-          <td class="paramname"><em>flatOnes</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">beta</td><td></td></tr>
-    <tr><td class="paramname">phi</td><td></td></tr>
-    <tr><td class="paramname">mu</td><td></td></tr>
-    <tr><td class="paramname">sigma</td><td></td></tr>
-    <tr><td class="paramname">RstdDevs</td><td></td></tr>
-    <tr><td class="paramname">flatOnes</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Implements <a class="el" href="classPmmh.html#a7ada4decd5df894376c74e3ddba5daa1">Pmmh</a>.</p>
 
 </div>
 </div>

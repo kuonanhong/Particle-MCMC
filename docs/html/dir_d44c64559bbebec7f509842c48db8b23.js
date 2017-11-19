@@ -4,6 +4,7 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
     [ "convenience_funcs.h", "convenience__funcs_8h_source.html", null ],
     [ "densities.h", "densities_8h.html", "densities_8h" ],
     [ "do_pmmh_jacetal.h", "do__pmmh__jacetal_8h_source.html", null ],
+    [ "do_pmmh_svol.h", "do__pmmh__svol_8h_source.html", null ],
     [ "jac_filt_test.h", "jac__filt__test_8h_source.html", null ],
     [ "jac_filt_test_apf.h", "jac__filt__test__apf_8h_source.html", null ],
     [ "jacetal_apf_sisr_compare.h", "jacetal__apf__sisr__compare_8h_source.html", null ],
@@ -28,10 +29,15 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
     [ "pmfs.h", "pmfs_8h.html", "pmfs_8h" ],
     [ "pmmh.h", "pmmh_8h_source.html", null ],
     [ "pmmh_jac_apf.h", "pmmh__jac__apf_8h_source.html", null ],
+    [ "pmmh_svol_sisr.h", "pmmh__svol__sisr_8h.html", [
+      [ "Pmmh_svol_sisr", "classPmmh__svol__sisr.html", "classPmmh__svol__sisr" ]
+    ] ],
     [ "sisr_filter.h", "sisr__filter_8h_source.html", null ],
     [ "svol_apf_filter.h", "svol__apf__filter_8h_source.html", null ],
     [ "svol_apf_test.h", "svol__apf__test_8h_source.html", null ],
-    [ "svol_filter.h", "svol__filter_8h_source.html", null ],
+    [ "svol_filter.h", "svol__filter_8h.html", [
+      [ "SVolFilter", "classSVolFilter.html", "classSVolFilter" ]
+    ] ],
     [ "svol_test.h", "svol__test_8h_source.html", null ],
     [ "transformations.h", "transformations_8h_source.html", null ],
     [ "utilities.h", "utilities_8h_source.html", null ]

@@ -6,9 +6,9 @@ void do_pmmh_svol()
 {
     // variables that we canchange
     unsigned np (200);
-    unsigned numMCMC(1000);
+    unsigned numMCMC(10000);
     unsigned nc(1);
-    bool mc(false);
+    bool mc(true);
 
     // start parameters
     Vec startBeta(1);
@@ -26,9 +26,9 @@ void do_pmmh_svol()
     Mat qVar1(1,1);
     Mat qVar2(1,1);
     Mat qVar3(1,1);
-    qVar1(0,0) = .01;
-    qVar2(0,0) =  0.001;
-    qVar3(0,0) = 0.0002;
+    qVar1(0,0) = .04;
+    qVar2(0,0) =  0.004;
+    qVar3(0,0) = 0.06;
     std::vector<Mat> qSigma;
     qSigma.push_back(qVar1);
     qSigma.push_back(qVar2);

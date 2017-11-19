@@ -19,6 +19,7 @@ var annotated_dup =
     [ "NAr1Filter", "classNAr1Filter.html", "classNAr1Filter" ],
     [ "Pmmh", "classPmmh.html", "classPmmh" ],
     [ "Pmmh_jac_apf", "classPmmh__jac__apf.html", "classPmmh__jac__apf" ],
+    [ "Pmmh_svol_sisr", "classPmmh__svol__sisr.html", "classPmmh__svol__sisr" ],
     [ "SISRFilter", "classSISRFilter.html", "classSISRFilter" ],
     [ "SVolAPFFilter", "classSVolAPFFilter.html", "classSVolAPFFilter" ],
     [ "SVolFilter", "classSVolFilter.html", "classSVolFilter" ]

@@ -12,7 +12,8 @@ var hierarchy =
     [ "MultinomResamp", "classMultinomResamp.html", null ],
     [ "densities::MVNSampler", "classdensities_1_1MVNSampler.html", null ],
     [ "Pmmh", "classPmmh.html", [
-      [ "Pmmh_jac_apf", "classPmmh__jac__apf.html", null ]
+      [ "Pmmh_jac_apf", "classPmmh__jac__apf.html", null ],
+      [ "Pmmh_svol_sisr", "classPmmh__svol__sisr.html", null ]
     ] ],
     [ "SISRFilter", "classSISRFilter.html", [
       [ "JacEtAl", "classJacEtAl.html", null ],

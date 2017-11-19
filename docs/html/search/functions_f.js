@@ -5,5 +5,5 @@ var searchData=
   ['setmean',['setMean',['../classdensities_1_1MVNSampler.html#a456f1e8ed39efc34ee3a7667dfb2011c',1,'densities::MVNSampler']]],
   ['sisrfilter',['SISRFilter',['../classSISRFilter.html#a3105536db67f9aef8a08c32866a81a38',1,'SISRFilter']]],
   ['svolapffilter',['SVolAPFFilter',['../classSVolAPFFilter.html#a6d1d4e7fa5b0b2916ef801b73258b00d',1,'SVolAPFFilter']]],
-  ['svolfilter',['SVolFilter',['../classSVolFilter.html#a04a1a3024e1cf642833694e329f4e9e4',1,'SVolFilter']]]
+  ['svolfilter',['SVolFilter',['../classSVolFilter.html#a508bc5de545367e0ef0ee683b9e3b7b4',1,'SVolFilter']]]
 ];

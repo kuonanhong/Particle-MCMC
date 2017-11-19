@@ -6,7 +6,7 @@ namespace transformations
 {
 
     /**
-     * @brief Maps -1 < phi < 1 to the reals.
+     * @brief Maps (-1, 1) to the reals.
      * @param phi
      * @return psi
      */
@@ -19,6 +19,22 @@ namespace transformations
      * @return phi
     */
     double invTwiceFisher(const double &psi);
+    
+    
+    /**
+     * @brief Maps (0,1) to the reals.
+     * @param p
+     * @return logit(p)
+    */
+    double logit(const double &p);
+    
+    
+    /**
+     * @brief Maps the reals to (0,1)
+     * @param r
+     * @return p = invlogit(p)
+    */
+    double inv_logit(const double &r);
 
     
 }

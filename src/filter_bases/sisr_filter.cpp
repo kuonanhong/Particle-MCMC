@@ -1,7 +1,5 @@
 #include "sisr_filter.h"
 
-#include <iostream> //temporary
-
 SISRFilter::SISRFilter(int numParts, SISRResampStyle resampTechnique, unsigned int pathLength, double essPerc)
                 : m_now(0), m_logLastCondLike(0.0), m_numParts(numParts), m_resampTechnique(resampTechnique), 
                   m_pathLength(pathLength), m_ESS(m_numParts), m_percentOfNumPartsThresh(essPerc)
@@ -119,7 +117,7 @@ void SISRFilter::filterOrSmooth(const Vec &dat, const std::vector<std::function<
             // overwrite stuff
             m_logUnNormWeights[ii] += currentLogWtAdjs[ii];
             m_particles[timeSelector][ii] = newSamps[ii];
-                        
+
         }
         
         // compute estimate of log p(y_t|y_{1:t-1}) with log-exp-sum trick
@@ -150,7 +148,7 @@ void SISRFilter::filterOrSmooth(const Vec &dat, const std::vector<std::function<
         // resample 
         if (m_resampTechnique == SISRResampStyle::everytime_multinomial)
             multinomRsmp(m_particles, m_logUnNormWeights);
-            
+
         // advance time
         m_now += 1;        
     }
