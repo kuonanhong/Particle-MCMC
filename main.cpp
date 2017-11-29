@@ -4,24 +4,21 @@
 typedef std::chrono::high_resolution_clock Clock;
 
 //#include "kfilter_test.h"
+#include "hmm_test.h"
 //#include "svol_test.h"
 //#include "noisy_ar1_test.h"
 //#include "svol_apf_test.h"
 //#include "noisy_ar1_comparison.h"
 //#include "msvol_test.h"
 //#include "jac_filt_test.h"
-#include "jac_filt_test_apf.h" 
+//#include "jac_filt_test_apf.h" 
 //#include "jacetal_apf_sisr_compare.h"
 //#include "do_pmmh_svol.h"
 //#include "do_pmmh_jacetal.h"
 
-
 //#include "do_ada_pmmh_svol.h"
 //#include "do_ada_pmmh_jacetal.h"
-
-
-#include <vector>
-#include <Eigen/Dense>
+//#include "do_ada_pmmh_msl_apf.h"
 
 
 int main(int argc, char **argv)
@@ -32,10 +29,8 @@ int main(int argc, char **argv)
     auto begin = Clock::now();
     
 
-
-
-
     //kFilterTest();
+    hmmTest();
     //sVolTest();
     //noisyAr1Test();
     //sVolAPFTest();
@@ -51,9 +46,7 @@ int main(int argc, char **argv)
     //do_ada_pmmh_svol();
     //do_pmmh_jacetal();  
     //do_ada_pmmh_jacetal(); 
-
-
-    
+    //do_ada_pmmh_msl_apf();
 
     // remove this stuff if you want a gmon.out
     //clock_t end = clock();
