@@ -17,7 +17,7 @@ typedef Eigen::Matrix< double, Eigen::Dynamic, Eigen::Dynamic > Mat;
 */
 class Lgssm
 {
-private:
+private: 
     Vec m_predMean;
     Vec m_filtMean;
     Mat m_predVar;
