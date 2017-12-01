@@ -36,33 +36,39 @@ SISRFilter::SISRFilter(int numParts, SISRResampStyle resampTechnique, unsigned i
 SISRFilter::~SISRFilter() {}
 
 
-void SISRFilter::filterOrSmooth(const Vec &dat, const std::vector<std::function<const Mat(const Vec&)> >& fs) //TODO: no support for ESS stuff
+void SISRFilter::filterOrSmooth(const Vec &dat, const std::vector<std::function<const Mat(const Vec&)> >& fs )
 {
-    // need this depending on whether we are filtering or (poor man) smoothing
-    int timeSelector = ((m_pathLength == 0) ? 0 : m_now);
-    int prevTime     = ((m_pathLength == 0) ? 0 : m_now - 1);
+    if ( m_pathLength == 0 ){
+        filter(dat, fs);   
+    }else{
+        smooth(dat, fs);
+    }
+}
+
+
+void SISRFilter::filter(const Vec &dat, const std::vector<std::function<const Mat(const Vec&)> >& fs) //TODO: no support for ESS stuff
+{
 
     if (m_now == 0) //time 1
     {
+    int timeSelector = 0;
+       
         // initialize m_filtMean and m_dimState
         m_dimState = q1Samp(dat).rows();
-        
+       
         // only need to iterate over particles once
-        std::vector<double> currentLogWtAdjs(m_numParts);
+        //std::vector<double> currentLogWtAdjs(m_numParts);
         double sumWts(0.0);
         for(unsigned int ii = 0; ii < m_numParts; ++ii)
         {
             // sample particles
             m_particles[timeSelector][ii] = q1Samp(dat);
-            currentLogWtAdjs[ii] = logMuEv(m_particles[timeSelector][ii]);
-            currentLogWtAdjs[ii] += logGEv(dat, m_particles[timeSelector][ii]);
-            currentLogWtAdjs[ii] -= logQ1Ev(m_particles[timeSelector][ii], dat); 
-            
-            // overwrite log weights 
-            m_logUnNormWeights[ii] = currentLogWtAdjs[ii];
-                        
+            m_logUnNormWeights[ii] = logMuEv(m_particles[timeSelector][ii]);
+            m_logUnNormWeights[ii] += logGEv(dat, m_particles[timeSelector][ii]);
+            m_logUnNormWeights[ii] -= logQ1Ev(m_particles[timeSelector][ii], dat);
+                       
         }
-        
+       
         // calculate log cond likelihood with log-exp-sum trick
         std::vector<double>::iterator idxOfMax = std::max_element(m_logUnNormWeights.begin(), m_logUnNormWeights.end());
         double sumExp(0.0);
@@ -70,7 +76,7 @@ void SISRFilter::filterOrSmooth(const Vec &dat, const std::vector<std::function<
             sumExp += std::exp(m_logUnNormWeights[i] - (*idxOfMax));
         }
         m_logLastCondLike = -std::log(m_numParts) + (*idxOfMax) + std::log(sumExp);
-    
+   
         // calculate expectations before you resample
         m_expectations.resize(fs.size());
         std::fill(m_expectations.begin(), m_expectations.end(), Vec::Zero(m_dimState)); // fill everything with zero vctors
@@ -84,42 +90,46 @@ void SISRFilter::filterOrSmooth(const Vec &dat, const std::vector<std::function<
             m_expectations[fId] /= weightNormConst;
             fId++;
         }
-    
-    
+   
+   
         // resample if you should
         if (m_resampTechnique == SISRResampStyle::everytime_multinomial)
             multinomRsmp(m_particles, m_logUnNormWeights);
-    
+   
         // advance time step
-        m_now += 1;    
+        m_now += 1;   
     }
     else // m_now > 0
     {
-        
+
+    int timeSelector = 0;
+        int prevTime     = 0;
+       
         // try to iterate over particles all at once
         std::vector<Vec> newSamps(m_numParts);
-        std::vector<double> currentLogWtAdjs(m_numParts); 
+        //std::vector<double> currentLogWtAdjs(m_numParts);
         std::vector<double> oldLogUnNormWts(m_logUnNormWeights);
+        double currentLogWtAdjIndiv;       
         double maxOldLogUnNormWts(m_logUnNormWeights[0]);
         double sumWts(0.0);
         for(unsigned int ii = 0; ii < m_numParts; ++ii)
         {
             // sample and get weight adjustments
-            newSamps[ii] = qSamp(m_particles[prevTime][ii], dat); 
-            currentLogWtAdjs[ii] = logFEv(newSamps[ii], m_particles[prevTime][ii]);
-            currentLogWtAdjs[ii] += logGEv(dat, newSamps[ii]);
-            currentLogWtAdjs[ii] -= logQEv(newSamps[ii], m_particles[prevTime][ii], dat);
+            newSamps[ii] = qSamp(m_particles[prevTime][ii], dat);
+            currentLogWtAdjIndiv = logFEv(newSamps[ii], m_particles[prevTime][ii]);
+            currentLogWtAdjIndiv += logGEv(dat, newSamps[ii]);
+            currentLogWtAdjIndiv -= logQEv(newSamps[ii], m_particles[prevTime][ii], dat);
  
             // update max of old logUnNormWts
             if (m_logUnNormWeights[ii] > maxOldLogUnNormWts)
                 maxOldLogUnNormWts = m_logUnNormWeights[ii];
  
             // overwrite stuff
-            m_logUnNormWeights[ii] += currentLogWtAdjs[ii];
+            m_logUnNormWeights[ii] += currentLogWtAdjIndiv;
             m_particles[timeSelector][ii] = newSamps[ii];
 
         }
-        
+       
         // compute estimate of log p(y_t|y_{1:t-1}) with log-exp-sum trick
         double maxNumer = *std::max_element(m_logUnNormWeights.begin(), m_logUnNormWeights.end()); //because you added log adjustments
         double sumExp1(0.0);
@@ -128,7 +138,7 @@ void SISRFilter::filterOrSmooth(const Vec &dat, const std::vector<std::function<
             sumExp1 += std::exp(m_logUnNormWeights[i] - maxNumer);
             sumExp2 += std::exp(oldLogUnNormWts[i] - maxOldLogUnNormWts);
         }
-        m_logLastCondLike = maxNumer + std::log(sumExp1) - maxOldLogUnNormWts - std::log(sumExp2); 
+        m_logLastCondLike = maxNumer + std::log(sumExp1) - maxOldLogUnNormWts - std::log(sumExp2);
 
         // calculate expectations before you resample
         m_expectations.resize(fs.size());
@@ -144,13 +154,128 @@ void SISRFilter::filterOrSmooth(const Vec &dat, const std::vector<std::function<
             fId++;
         }
 
-  
-        // resample 
+ 
+        // resample
         if (m_resampTechnique == SISRResampStyle::everytime_multinomial)
             multinomRsmp(m_particles, m_logUnNormWeights);
 
         // advance time
-        m_now += 1;        
+        m_now += 1;       
+    }
+}
+
+void SISRFilter::smooth(const Vec &dat, const std::vector<std::function<const Mat(const Vec&)> >& fs) //TODO: no support for ESS stuff
+{
+
+    if (m_now == 0) //time 1
+    {
+    int timeSelector = m_now;
+       
+        // initialize m_filtMean and m_dimState
+        m_dimState = q1Samp(dat).rows();
+       
+        // only need to iterate over particles once
+        //std::vector<double> currentLogWtAdjs(m_numParts);
+        double sumWts(0.0);
+        for(unsigned int ii = 0; ii < m_numParts; ++ii)
+        {
+            // sample particles
+            m_particles[timeSelector][ii] = q1Samp(dat);
+            m_logUnNormWeights[ii] = logMuEv(m_particles[timeSelector][ii]);
+            m_logUnNormWeights[ii] += logGEv(dat, m_particles[timeSelector][ii]);
+            m_logUnNormWeights[ii] -= logQ1Ev(m_particles[timeSelector][ii], dat);
+        }
+       
+        // calculate log cond likelihood with log-exp-sum trick
+        std::vector<double>::iterator idxOfMax = std::max_element(m_logUnNormWeights.begin(), m_logUnNormWeights.end());
+        double sumExp(0.0);
+        for(unsigned int i = 0; i < m_numParts; ++i){
+            sumExp += std::exp(m_logUnNormWeights[i] - (*idxOfMax));
+        }
+        m_logLastCondLike = -std::log(m_numParts) + (*idxOfMax) + std::log(sumExp);
+   
+        // calculate expectations before you resample
+        m_expectations.resize(fs.size());
+        std::fill(m_expectations.begin(), m_expectations.end(), Vec::Zero(m_dimState)); // fill everything with zero vctors
+        int fId(0);
+        for(auto & h : fs){
+            double weightNormConst (0.0);
+            for(size_t prtcl = 0; prtcl < m_numParts; ++prtcl){ // iterate over all particles
+                m_expectations[fId] += h(m_particles[timeSelector][prtcl]) * std::exp(m_logUnNormWeights[prtcl]);
+                weightNormConst += std::exp(m_logUnNormWeights[prtcl]);
+            }
+            m_expectations[fId] /= weightNormConst;
+            fId++;
+        }
+   
+   
+        // resample if you should
+        if (m_resampTechnique == SISRResampStyle::everytime_multinomial)
+            multinomRsmp(m_particles, m_logUnNormWeights);
+   
+        // advance time step
+        m_now += 1;   
+    }
+    else // m_now > 0
+    {
+        int timeSelector = m_now;
+        int prevTime     = m_now - 1;
+       
+    // try to iterate over particles all at once
+        //std::vector<Vec> newSamps(m_numParts);
+        //std::vector<double> currentLogWtAdjs(m_numParts);
+        double currentLogWtAdjIndiv;
+        std::vector<double> oldLogUnNormWts(m_logUnNormWeights);
+        double maxOldLogUnNormWts(m_logUnNormWeights[0]);
+        double sumWts(0.0);
+        for(unsigned int ii = 0; ii < m_numParts; ++ii)
+        {
+            // sample and get weight adjustments
+            m_particles[timeSelector][ii] = qSamp(m_particles[prevTime][ii], dat);
+            currentLogWtAdjIndiv = logFEv(m_particles[timeSelector][ii], m_particles[prevTime][ii]);
+            currentLogWtAdjIndiv += logGEv(dat, m_particles[timeSelector][ii]);
+            currentLogWtAdjIndiv -= logQEv(m_particles[timeSelector][ii], m_particles[prevTime][ii], dat);
+ 
+            // update max of old logUnNormWts
+            if (m_logUnNormWeights[ii] > maxOldLogUnNormWts)
+                maxOldLogUnNormWts = m_logUnNormWeights[ii];
+ 
+            // overwrite stuff
+            m_logUnNormWeights[ii] += currentLogWtAdjIndiv;   
+
+        }
+       
+        // compute estimate of log p(y_t|y_{1:t-1}) with log-exp-sum trick
+        double maxNumer = *std::max_element(m_logUnNormWeights.begin(), m_logUnNormWeights.end()); //because you added log adjustments
+        double sumExp1(0.0);
+        double sumExp2(0.0);
+        for(unsigned int i = 0; i < m_numParts; ++i){
+            sumExp1 += std::exp(m_logUnNormWeights[i] - maxNumer);
+            sumExp2 += std::exp(oldLogUnNormWts[i] - maxOldLogUnNormWts);
+        }
+        m_logLastCondLike = maxNumer + std::log(sumExp1) - maxOldLogUnNormWts - std::log(sumExp2);
+
+        // calculate expectations before you resample
+        m_expectations.resize(fs.size());
+        std::fill(m_expectations.begin(), m_expectations.end(), Vec::Zero(m_dimState)); // fill everything with zero vctors
+        int fId(0);
+        for(auto & h : fs){ // iterate over all functions
+            double weightNormConst (0.0);
+            for(size_t prtcl = 0; prtcl < m_numParts; ++prtcl){ // iterate over all particles
+                m_expectations[fId] += h(m_particles[timeSelector][prtcl]) * std::exp(m_logUnNormWeights[prtcl]);
+                weightNormConst += std::exp(m_logUnNormWeights[prtcl]);
+            }
+            m_expectations[fId] /= weightNormConst;
+            fId++;
+        }
+
+ 
+        // resample
+        if (m_resampTechnique == SISRResampStyle::everytime_multinomial)
+            multinomRsmp(m_particles, m_logUnNormWeights);
+
+        // advance time
+        m_now += 1;       
     }
 }
 

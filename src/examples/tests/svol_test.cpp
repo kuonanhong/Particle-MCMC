@@ -9,7 +9,7 @@ void sVolTest()
 {
     
     // instantiate model
-    int numParts(5);
+    int numParts(10000);
     SVolFilter myMod(numParts, .5, .91, 1.0, 10); // true parameters from simulated data
     //SVolAPFFilter myMod2(numParts);
         

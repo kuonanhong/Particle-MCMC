@@ -46,7 +46,7 @@ void hmmTest()
 
     // filter through the data
     std::string num;
-    //double ll(0.0);
+    double ll(0.0);
     while(std::getline(infile, num))
     {
         Vec yt(1);

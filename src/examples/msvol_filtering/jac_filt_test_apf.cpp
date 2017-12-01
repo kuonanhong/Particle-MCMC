@@ -8,10 +8,10 @@
 void jac_filt_test_apf()
 {
     // algorithm and example variables 
-    int num_parts(5000);
+    int num_parts(100);
     APFResampStyle rt = APFResampStyle::everytime_multinomial;
-    int path_length = 0; // filtering only
-
+    int path_length = 0; 
+    
     // model variables
     int num_factors = 1;
     int dim_obs = 9;
@@ -89,8 +89,8 @@ void jac_filt_test_apf()
         myMod.filterOrSmooth(yt, fs);
 
         // print stuff if you'd like
-        std::cout << myMod.getExpectations()[0] << "\n";
-        //std::cout << log(myMod.getCondLike()) << "\n";
+        //std::cout << myMod.getExpectations()[0] << "\n";
+        std::cout << myMod.getLogCondLike() << "\n";
 
 //        Mat tmpVar( myMod.getPredictiveVar() );        
 //        for(int row = 0; row < dim_obs; ++row){
@@ -103,10 +103,10 @@ void jac_filt_test_apf()
 //            }
 //            std::cout << "\n";
 //        }
-        //ll += log(myMod.getCondLike());
+        ll += myMod.getLogCondLike();
         
         // increment time
         time += 1;
     }
-    //std::cout << ll << "\n";
+    std::cout << ll << "\n";
 }

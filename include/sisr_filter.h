@@ -38,6 +38,8 @@ private:
     
     // methods
     void multinomRsmp(std::vector<std::vector<Vec> > &oldParts, std::vector<double> &oldLogUnNormWts);
+    void filter (const Vec &data, const std::vector<std::function<const Mat(const Vec&)> >& fs = std::vector<std::function<const Mat(const Vec&)> >());
+    void smooth (const Vec &data, const std::vector<std::function<const Mat(const Vec&)> >& fs = std::vector<std::function<const Mat(const Vec&)> >());
 
 public:
 

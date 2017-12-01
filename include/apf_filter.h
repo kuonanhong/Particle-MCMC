@@ -39,6 +39,10 @@ private:
     // methods
     std::vector<int> kGen(const std::vector<double> &logFirstStageWeights); // for first-stage sampling
     void multinomRsmp(std::vector<std::vector<Vec> > &oldParts, std::vector<double> &oldLogUnNormWts); // for final resampling
+    void filter(const Vec &data, const std::vector<std::function<const Mat(const Vec&)> >& fs);
+    void smooth(const Vec &data, const std::vector<std::function<const Mat(const Vec&)> >& fs);
+
+
 
 public:
 

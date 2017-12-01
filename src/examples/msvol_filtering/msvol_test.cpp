@@ -8,7 +8,7 @@ void msvol_test()
     ////////////////////////////////////
     // algorithm and example variables /
     ////////////////////////////////////
-    int num_parts = 1000;
+    int num_parts = 50;
     
     /////////////////////////////////////////////////////////////////
     // instantiate model object with known parameters               /
@@ -76,8 +76,8 @@ void msvol_test()
         myMod.filterOrSmooth(yt, fs);
 
         // print stuff if you'd like
-        std::cout << myMod.getExpectations()[0].transpose() << "\n";
-        //std::cout << myMod.getCondLike() << "\n";
+        //std::cout << myMod.getExpectations()[0].transpose() << "\n";
+        std::cout << myMod.getLogCondLike() << "\n";
         //ll += myMod.getLogCondLike();
         
         // increment time
