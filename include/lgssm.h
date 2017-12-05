@@ -70,7 +70,7 @@ public:
     //! Perform a Kalman filter predict-and-update.
     /**
      * \param yt the new data point.
-     * \param stateTransMat the transition matrix of the state
+     * \param stateTrans the transition matrix of the state
      * \param cholStateVar the Cholesky Decomposition of the state noise covariance matrix.
      * \param stateInptAffector the matrix affecting how input data affects state transition.
      * \param inputData exogenous input data

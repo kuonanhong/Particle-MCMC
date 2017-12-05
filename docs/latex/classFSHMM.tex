@@ -1,0 +1,139 @@
+\hypertarget{classFSHMM}{}\section{F\+S\+H\+MM Class Reference}
+\label{classFSHMM}\index{F\+S\+H\+MM@{F\+S\+H\+MM}}
+
+
+A base-\/class for Finite State H\+MM Filtering.  
+
+
+
+
+{\ttfamily \#include $<$fshmm.\+h$>$}
+
+
+
+Inheritance diagram for F\+S\+H\+MM\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=151pt]{classFSHMM__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classFSHMM_a7d9109a5f787b3842f84257b79791cb9}{F\+S\+H\+MM} ()
+\begin{DoxyCompactList}\small\item\em Default constructor (need this for resampling function) \end{DoxyCompactList}\item 
+\hyperlink{classFSHMM_a644606d0cb00e2e0779fe8dcf53e2a42}{F\+S\+H\+MM} (const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&init\+State\+Distr, const \hyperlink{pmfs_8h_ae601f56a556993079f730483c574356f}{Mat} \&trans\+Mat)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classFSHMM_a0d011b77cf9541a312fffa43d24fa41f}{$\sim$\+F\+S\+H\+MM} ()\hypertarget{classFSHMM_a0d011b77cf9541a312fffa43d24fa41f}{}\label{classFSHMM_a0d011b77cf9541a312fffa43d24fa41f}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+double \hyperlink{classFSHMM_a38325b38c4f20521f50cc7891d44839d}{get\+Cond\+Like} () const 
+\begin{DoxyCompactList}\small\item\em Get the latest conditional likelihood. \end{DoxyCompactList}\item 
+\hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \hyperlink{classFSHMM_af58a522cbeb2afa6a9211ac75100c1c2}{get\+Filter\+Vec} () const 
+\begin{DoxyCompactList}\small\item\em Get the current filter vector. \end{DoxyCompactList}\item 
+unsigned \hyperlink{classFSHMM_a2f166ff74c89b2103477be60eeb098d1}{dim\+State} () const 
+\begin{DoxyCompactList}\small\item\em Get the dimension of the state. \end{DoxyCompactList}\item 
+void \hyperlink{classFSHMM_a3e8519b8370eecec760d098bb5d38b3e}{update} (const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&cond\+Dens\+Vec)
+\begin{DoxyCompactList}\small\item\em Perform a H\+MM filter update. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A base-\/class for Finite State H\+MM Filtering. 
+
+Inherit from this if your model is a finite state hidden Markov model. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{F\+S\+H\+MM@{F\+S\+H\+MM}!F\+S\+H\+MM@{F\+S\+H\+MM}}
+\index{F\+S\+H\+MM@{F\+S\+H\+MM}!F\+S\+H\+MM@{F\+S\+H\+MM}}
+\subsubsection[{\texorpdfstring{F\+S\+H\+M\+M()}{FSHMM()}}]{\setlength{\rightskip}{0pt plus 5cm}F\+S\+H\+M\+M\+::\+F\+S\+H\+MM (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classFSHMM_a7d9109a5f787b3842f84257b79791cb9}{}\label{classFSHMM_a7d9109a5f787b3842f84257b79791cb9}
+
+
+Default constructor (need this for resampling function) 
+
+Default constructor (need this for resampling function) \index{F\+S\+H\+MM@{F\+S\+H\+MM}!F\+S\+H\+MM@{F\+S\+H\+MM}}
+\index{F\+S\+H\+MM@{F\+S\+H\+MM}!F\+S\+H\+MM@{F\+S\+H\+MM}}
+\subsubsection[{\texorpdfstring{F\+S\+H\+M\+M(const Vec \&init\+State\+Distr, const Mat \&trans\+Mat)}{FSHMM(const Vec &initStateDistr, const Mat &transMat)}}]{\setlength{\rightskip}{0pt plus 5cm}F\+S\+H\+M\+M\+::\+F\+S\+H\+MM (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vec} \&}]{init\+State\+Distr, }
+\item[{const {\bf Mat} \&}]{trans\+Mat}
+\end{DoxyParamCaption}
+)}\hypertarget{classFSHMM_a644606d0cb00e2e0779fe8dcf53e2a42}{}\label{classFSHMM_a644606d0cb00e2e0779fe8dcf53e2a42}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em init\+State\+Distr} & first time state prior distribution. \\
+\hline
+{\em trans\+Mat} & time homogeneous transition matrix. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{F\+S\+H\+MM@{F\+S\+H\+MM}!dim\+State@{dim\+State}}
+\index{dim\+State@{dim\+State}!F\+S\+H\+MM@{F\+S\+H\+MM}}
+\subsubsection[{\texorpdfstring{dim\+State() const }{dimState() const }}]{\setlength{\rightskip}{0pt plus 5cm}unsigned F\+S\+H\+M\+M\+::dim\+State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classFSHMM_a2f166ff74c89b2103477be60eeb098d1}{}\label{classFSHMM_a2f166ff74c89b2103477be60eeb098d1}
+
+
+Get the dimension of the state. 
+
+Returns the dimension of the state process. \index{F\+S\+H\+MM@{F\+S\+H\+MM}!get\+Cond\+Like@{get\+Cond\+Like}}
+\index{get\+Cond\+Like@{get\+Cond\+Like}!F\+S\+H\+MM@{F\+S\+H\+MM}}
+\subsubsection[{\texorpdfstring{get\+Cond\+Like() const }{getCondLike() const }}]{\setlength{\rightskip}{0pt plus 5cm}double F\+S\+H\+M\+M\+::get\+Cond\+Like (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classFSHMM_a38325b38c4f20521f50cc7891d44839d}{}\label{classFSHMM_a38325b38c4f20521f50cc7891d44839d}
+
+
+Get the latest conditional likelihood. 
+
+\begin{DoxyReturn}{Returns}
+the latest conditional likelihood. 
+\end{DoxyReturn}
+\index{F\+S\+H\+MM@{F\+S\+H\+MM}!get\+Filter\+Vec@{get\+Filter\+Vec}}
+\index{get\+Filter\+Vec@{get\+Filter\+Vec}!F\+S\+H\+MM@{F\+S\+H\+MM}}
+\subsubsection[{\texorpdfstring{get\+Filter\+Vec() const }{getFilterVec() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vec} F\+S\+H\+M\+M\+::get\+Filter\+Vec (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classFSHMM_af58a522cbeb2afa6a9211ac75100c1c2}{}\label{classFSHMM_af58a522cbeb2afa6a9211ac75100c1c2}
+
+
+Get the current filter vector. 
+
+get the current filter vector. \begin{DoxyReturn}{Returns}
+a probability Eigen\+::\+Vector\+Xd 
+\end{DoxyReturn}
+\index{F\+S\+H\+MM@{F\+S\+H\+MM}!update@{update}}
+\index{update@{update}!F\+S\+H\+MM@{F\+S\+H\+MM}}
+\subsubsection[{\texorpdfstring{update(const Vec \&cond\+Dens\+Vec)}{update(const Vec &condDensVec)}}]{\setlength{\rightskip}{0pt plus 5cm}void F\+S\+H\+M\+M\+::update (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vec} \&}]{cond\+Dens\+Vec}
+\end{DoxyParamCaption}
+)}\hypertarget{classFSHMM_a3e8519b8370eecec760d098bb5d38b3e}{}\label{classFSHMM_a3e8519b8370eecec760d098bb5d38b3e}
+
+
+Perform a H\+MM filter update. 
+
+Perform a H\+MM filter update. 
+\begin{DoxyParams}{Parameters}
+{\em cond\+Dens\+Vec} & the vector (in x\+\_\+t) of p(y\+\_\+t$\vert$x\+\_\+t) \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/fshmm.\+h\end{DoxyCompactItemize}

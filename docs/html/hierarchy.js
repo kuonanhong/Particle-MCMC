@@ -7,6 +7,10 @@ var hierarchy =
     ] ],
     [ "pmfs::DiscreteCustomSampler", "classpmfs_1_1DiscreteCustomSampler.html", null ],
     [ "pmfs::DiscreteUnifSampler", "classpmfs_1_1DiscreteUnifSampler.html", null ],
+    [ "FSHMM", "classFSHMM.html", [
+      [ "SimpleHmm", "classSimpleHmm.html", null ]
+    ] ],
+    [ "Hmm_Rbpf", "classHmm__Rbpf.html", null ],
     [ "Kalman_RBPF", "classKalman__RBPF.html", null ],
     [ "Lgssm", "classLgssm.html", null ],
     [ "MultinomResamp", "classMultinomResamp.html", null ],

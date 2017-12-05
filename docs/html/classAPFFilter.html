@@ -139,34 +139,34 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af9a5210f2927616dd6c82705d203b012"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAPFFilter.html#af9a5210f2927616dd6c82705d203b012">getLogCondLike</a> () const </td></tr>
 <tr class="memdesc:af9a5210f2927616dd6c82705d203b012"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the latest log conditional likelihood.  <a href="#af9a5210f2927616dd6c82705d203b012">More...</a><br /></td></tr>
 <tr class="separator:af9a5210f2927616dd6c82705d203b012"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2ec5f04285cd1821f21ee85dcf50e3f"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::vector&lt; Vec &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAPFFilter.html#aa2ec5f04285cd1821f21ee85dcf50e3f">getFullParts</a> () const </td></tr>
+<tr class="memitem:aa2ec5f04285cd1821f21ee85dcf50e3f"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::vector&lt; <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAPFFilter.html#aa2ec5f04285cd1821f21ee85dcf50e3f">getFullParts</a> () const </td></tr>
 <tr class="memdesc:aa2ec5f04285cd1821f21ee85dcf50e3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the full set of particle paths. Only works if pathLength &gt; 0 in constructor.  <a href="#aa2ec5f04285cd1821f21ee85dcf50e3f">More...</a><br /></td></tr>
 <tr class="separator:aa2ec5f04285cd1821f21ee85dcf50e3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84281845b2986f246fc132d13fd33e3d"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; Mat &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAPFFilter.html#a84281845b2986f246fc132d13fd33e3d">getExpectations</a> () const </td></tr>
+<tr class="memitem:a84281845b2986f246fc132d13fd33e3d"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="pmfs_8h.html#ae601f56a556993079f730483c574356f">Mat</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAPFFilter.html#a84281845b2986f246fc132d13fd33e3d">getExpectations</a> () const </td></tr>
 <tr class="memdesc:a84281845b2986f246fc132d13fd33e3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">return all stored expectations (taken with respect to $p(x_t|y_{1:t})$  <a href="#a84281845b2986f246fc132d13fd33e3d">More...</a><br /></td></tr>
 <tr class="separator:a84281845b2986f246fc132d13fd33e3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e552b59cc1e2adc56b06ea7925df51f"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; double &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAPFFilter.html#a5e552b59cc1e2adc56b06ea7925df51f">getWeights</a> () const </td></tr>
 <tr class="memdesc:a5e552b59cc1e2adc56b06ea7925df51f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the latest log un-normalized weights.  <a href="#a5e552b59cc1e2adc56b06ea7925df51f">More...</a><br /></td></tr>
 <tr class="separator:a5e552b59cc1e2adc56b06ea7925df51f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc7ee7fed78dd93309784378523e0399"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAPFFilter.html#adc7ee7fed78dd93309784378523e0399">filterOrSmooth</a> (const Vec &amp;dataconst, const std::vector&lt; std::function&lt; const Mat(const Vec &amp;)&gt; &gt; &amp;fs=std::vector&lt; std::function&lt; const Mat(const Vec &amp;)&gt; &gt;())</td></tr>
+<tr class="memitem:adc7ee7fed78dd93309784378523e0399"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAPFFilter.html#adc7ee7fed78dd93309784378523e0399">filterOrSmooth</a> (const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;dataconst, const std::vector&lt; std::function&lt; const <a class="el" href="pmfs_8h.html#ae601f56a556993079f730483c574356f">Mat</a>(const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;)&gt; &gt; &amp;fs=std::vector&lt; std::function&lt; const <a class="el" href="pmfs_8h.html#ae601f56a556993079f730483c574356f">Mat</a>(const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;)&gt; &gt;())</td></tr>
 <tr class="memdesc:adc7ee7fed78dd93309784378523e0399"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use a new datapoint to update the filtering distribution (or smoothing if pathLength &gt; 0).  <a href="#adc7ee7fed78dd93309784378523e0399">More...</a><br /></td></tr>
 <tr class="separator:adc7ee7fed78dd93309784378523e0399"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3d1501c147477ce1128b221f7b608fd"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAPFFilter.html#af3d1501c147477ce1128b221f7b608fd">logMuEv</a> (const Vec &amp;x1)=0</td></tr>
+<tr class="memitem:af3d1501c147477ce1128b221f7b608fd"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAPFFilter.html#af3d1501c147477ce1128b221f7b608fd">logMuEv</a> (const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x1)=0</td></tr>
 <tr class="memdesc:af3d1501c147477ce1128b221f7b608fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the log of mu.  <a href="#af3d1501c147477ce1128b221f7b608fd">More...</a><br /></td></tr>
 <tr class="separator:af3d1501c147477ce1128b221f7b608fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c136104f4d96e6481406ef1397ead51"><td class="memItemLeft" align="right" valign="top">virtual Vec&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAPFFilter.html#a2c136104f4d96e6481406ef1397ead51">propMu</a> (const Vec &amp;xtm1)=0</td></tr>
+<tr class="memitem:a2c136104f4d96e6481406ef1397ead51"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAPFFilter.html#a2c136104f4d96e6481406ef1397ead51">propMu</a> (const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;xtm1)=0</td></tr>
 <tr class="memdesc:a2c136104f4d96e6481406ef1397ead51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the proposal distribution taking a Vec from the previous time's state, and returning a state for the current time.  <a href="#a2c136104f4d96e6481406ef1397ead51">More...</a><br /></td></tr>
 <tr class="separator:a2c136104f4d96e6481406ef1397ead51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a017be49a493263156ae60ccc424f7daa"><td class="memItemLeft" align="right" valign="top">virtual Vec&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAPFFilter.html#a017be49a493263156ae60ccc424f7daa">q1Samp</a> (const Vec &amp;y1)=0</td></tr>
+<tr class="memitem:a017be49a493263156ae60ccc424f7daa"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAPFFilter.html#a017be49a493263156ae60ccc424f7daa">q1Samp</a> (const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;y1)=0</td></tr>
 <tr class="memdesc:a017be49a493263156ae60ccc424f7daa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Samples from q1.  <a href="#a017be49a493263156ae60ccc424f7daa">More...</a><br /></td></tr>
 <tr class="separator:a017be49a493263156ae60ccc424f7daa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a367c77209129a84f3d64ff3bcaaac513"><td class="memItemLeft" align="right" valign="top">virtual Vec&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAPFFilter.html#a367c77209129a84f3d64ff3bcaaac513">fSamp</a> (const Vec &amp;xtm1)=0</td></tr>
+<tr class="memitem:a367c77209129a84f3d64ff3bcaaac513"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAPFFilter.html#a367c77209129a84f3d64ff3bcaaac513">fSamp</a> (const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;xtm1)=0</td></tr>
 <tr class="memdesc:a367c77209129a84f3d64ff3bcaaac513"><td class="mdescLeft">&#160;</td><td class="mdescRight">Samples from f.  <a href="#a367c77209129a84f3d64ff3bcaaac513">More...</a><br /></td></tr>
 <tr class="separator:a367c77209129a84f3d64ff3bcaaac513"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18ba363183c0c92e6c58d6f3faccbea7"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAPFFilter.html#a18ba363183c0c92e6c58d6f3faccbea7">logQ1Ev</a> (const Vec &amp;x1, const Vec &amp;y1)=0</td></tr>
+<tr class="memitem:a18ba363183c0c92e6c58d6f3faccbea7"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAPFFilter.html#a18ba363183c0c92e6c58d6f3faccbea7">logQ1Ev</a> (const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x1, const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;y1)=0</td></tr>
 <tr class="memdesc:a18ba363183c0c92e6c58d6f3faccbea7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the log of q1.  <a href="#a18ba363183c0c92e6c58d6f3faccbea7">More...</a><br /></td></tr>
 <tr class="separator:a18ba363183c0c92e6c58d6f3faccbea7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2d0b5329d7ae123ae4de5dddefb5591"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAPFFilter.html#ac2d0b5329d7ae123ae4de5dddefb5591">logGEv</a> (const Vec &amp;yt, const Vec &amp;xt)=0</td></tr>
+<tr class="memitem:ac2d0b5329d7ae123ae4de5dddefb5591"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAPFFilter.html#ac2d0b5329d7ae123ae4de5dddefb5591">logGEv</a> (const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;yt, const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;xt)=0</td></tr>
 <tr class="memdesc:ac2d0b5329d7ae123ae4de5dddefb5591"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the log of g.  <a href="#ac2d0b5329d7ae123ae4de5dddefb5591">More...</a><br /></td></tr>
 <tr class="separator:ac2d0b5329d7ae123ae4de5dddefb5591"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -225,14 +225,14 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void APFFilter::filterOrSmooth </td>
           <td>(</td>
-          <td class="paramtype">const Vec &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>dataconst</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::vector&lt; std::function&lt; const Mat(const Vec &amp;)&gt; &gt; &amp;&#160;</td>
-          <td class="paramname"><em>fs</em> = <code>std::vector&lt;&#160;std::function&lt;&#160;const&#160;Mat(const&#160;Vec&#160;&amp;)&gt;&#160;&gt;()</code>&#160;</td>
+          <td class="paramtype">const std::vector&lt; std::function&lt; const <a class="el" href="pmfs_8h.html#ae601f56a556993079f730483c574356f">Mat</a>(const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;)&gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>fs</em> = <code>std::vector&lt;&#160;std::function&lt;&#160;const&#160;<a class="el" href="pmfs_8h.html#ae601f56a556993079f730483c574356f">Mat</a>(const&#160;<a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>&#160;&amp;)&gt;&#160;&gt;()</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -245,8 +245,8 @@ Public Member Functions</h2></td></tr>
 <p>Use a new datapoint to update the filtering distribution (or smoothing if pathLength &gt; 0). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>Vec representing the data </td></tr>
-    <tr><td class="paramname">a</td><td>std::vector of callback functions that are used to calculate expectations with respect to the filtering distribution. </td></tr>
+    <tr><td class="paramname">dataconst</td><td>a Vec representing the data </td></tr>
+    <tr><td class="paramname">fs</td><td>a std::vector of callback functions that are used to calculate expectations with respect to the filtering distribution. </td></tr>
   </table>
   </dd>
 </dl>
@@ -261,9 +261,9 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual Vec APFFilter::fSamp </td>
+          <td class="memname">virtual <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> APFFilter::fSamp </td>
           <td>(</td>
-          <td class="paramtype">const Vec &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>xtm1</em></td><td>)</td>
           <td></td>
         </tr>
@@ -293,7 +293,7 @@ Public Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const std::vector&lt;Mat&gt;&amp; APFFilter::getExpectations </td>
+          <td class="memname">const std::vector&lt;<a class="el" href="pmfs_8h.html#ae601f56a556993079f730483c574356f">Mat</a>&gt;&amp; APFFilter::getExpectations </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -311,7 +311,7 @@ Public Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const std::vector&lt;std::vector&lt;Vec&gt; &gt;&amp; APFFilter::getFullParts </td>
+          <td class="memname">const std::vector&lt;std::vector&lt;<a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>&gt; &gt;&amp; APFFilter::getFullParts </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -370,13 +370,13 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">virtual double APFFilter::logGEv </td>
           <td>(</td>
-          <td class="paramtype">const Vec &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>yt</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const Vec &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>xt</em>&#160;</td>
         </tr>
         <tr>
@@ -416,7 +416,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">virtual double APFFilter::logMuEv </td>
           <td>(</td>
-          <td class="paramtype">const Vec &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>x1</em></td><td>)</td>
           <td></td>
         </tr>
@@ -451,13 +451,13 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">virtual double APFFilter::logQ1Ev </td>
           <td>(</td>
-          <td class="paramtype">const Vec &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>x1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const Vec &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>y1</em>&#160;</td>
         </tr>
         <tr>
@@ -495,9 +495,9 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual Vec APFFilter::propMu </td>
+          <td class="memname">virtual <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> APFFilter::propMu </td>
           <td>(</td>
-          <td class="paramtype">const Vec &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>xtm1</em></td><td>)</td>
           <td></td>
         </tr>
@@ -530,9 +530,9 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual Vec APFFilter::q1Samp </td>
+          <td class="memname">virtual <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> APFFilter::q1Samp </td>
           <td>(</td>
-          <td class="paramtype">const Vec &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>y1</em></td><td>)</td>
           <td></td>
         </tr>

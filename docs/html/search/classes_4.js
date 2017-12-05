@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['lgssm',['Lgssm',['../classLgssm.html',1,'']]]
+  ['jacetal',['JacEtAl',['../classJacEtAl.html',1,'']]],
+  ['jacetalapf',['JacEtAlAPF',['../classJacEtAlAPF.html',1,'']]]
 ];

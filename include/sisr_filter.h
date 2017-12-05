@@ -48,7 +48,7 @@ public:
      * @brief Constructor 
      * @param numParts number of particles
      * @param resampTechnique  which resampling strategy?
-     * @param pathLength. Set to 0 if you don't want save entire paths. Otherwise, enter time length.
+     * @param pathLength Set to 0 if you don't want save entire paths. Otherwise, enter time length.
      * @param essPerc ignored unless SISRResampStyle is "ess." What percent of ESS is the threshold for resampling.
      */
     SISRFilter(int numParts, SISRResampStyle resampTechnique = SISRResampStyle::everytime_multinomial, 
@@ -60,7 +60,7 @@ public:
 
     //!
     /**
-     * @brief get $\log p(y_t|y_{1:t-1})$ or $\log p(y_1)$.
+     * @brief get log p(y_t|y_{1:t-1})$ or log p(y_1).
      * @return The estimate of the most recent log conditional likelihood. 
      */
     double getLogCondLike() const; 

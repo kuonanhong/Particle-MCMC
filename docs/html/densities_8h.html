@@ -69,6 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -125,13 +126,14 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="densities_8h__dep__incl.png" border="0" usemap="#include_2densities_8hdep" alt=""/></div>
 <map name="include_2densities_8hdep" id="include_2densities_8hdep">
-<area shape="rect" id="node2" href="jacquier__et__al_8h.html" title="A class that performs filtering for the multivariate stochastic volatility model of &quot;Stochastic Volat..." alt="" coords="5,87,164,114"/>
-<area shape="rect" id="node3" href="jacquier__et__al__apf_8h.html" title="An APF implementation of the multivariate stochastic volatility model from &quot;Stochastic Volatility: Un..." alt="" coords="189,80,319,121"/>
-<area shape="rect" id="node4" href="msvol__sisr_8h.html" title="Implements the multivariate stochastic volatility model from Pitt and Shephard 1999. " alt="" coords="343,87,485,114"/>
-<area shape="rect" id="node5" href="noisy__ar1__apf__filter_8h_source.html" title="include/noisy_ar1_apf\l_filter.h" alt="" coords="508,80,656,121"/>
-<area shape="rect" id="node6" href="noisy__ar1__filter_8h_source.html" title="include/noisy_ar1_filter.h" alt="" coords="680,87,847,114"/>
-<area shape="rect" id="node7" href="svol__apf__filter_8h_source.html" title="include/svol_apf_filter.h" alt="" coords="871,87,1029,114"/>
-<area shape="rect" id="node8" href="svol__filter_8h.html" title="Centered parametrization. A class implementing the classic stochastic volatility model of Taylor..." alt="" coords="1053,87,1188,114"/>
+<area shape="rect" id="node2" href="hmm__rbpf_8h.html" title="Rao&#45;Blackwellized particle filtering where the innder models are discrete state hmms. " alt="" coords="5,87,141,114"/>
+<area shape="rect" id="node3" href="jacquier__et__al_8h.html" title="A class that performs filtering for the multivariate stochastic volatility model of &quot;Stochastic Volat..." alt="" coords="166,87,325,114"/>
+<area shape="rect" id="node4" href="jacquier__et__al__apf_8h.html" title="An APF implementation of the multivariate stochastic volatility model from &quot;Stochastic Volatility: Un..." alt="" coords="349,80,480,121"/>
+<area shape="rect" id="node5" href="msvol__sisr_8h.html" title="Implements the multivariate stochastic volatility model from Pitt and Shephard 1999. " alt="" coords="504,87,645,114"/>
+<area shape="rect" id="node6" href="noisy__ar1__apf__filter_8h_source.html" title="include/noisy_ar1_apf\l_filter.h" alt="" coords="669,80,817,121"/>
+<area shape="rect" id="node7" href="noisy__ar1__filter_8h_source.html" title="include/noisy_ar1_filter.h" alt="" coords="841,87,1007,114"/>
+<area shape="rect" id="node8" href="svol__apf__filter_8h_source.html" title="include/svol_apf_filter.h" alt="" coords="1031,87,1190,114"/>
+<area shape="rect" id="node9" href="svol__filter_8h.html" title="Centered parametrization. A class implementing the classic stochastic volatility model of Taylor..." alt="" coords="1214,87,1349,114"/>
 </map>
 </div>
 </div>
@@ -148,28 +150,22 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a4c7df05c6f5e8a0d15ae14bcdbc07152"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4c7df05c6f5e8a0d15ae14bcdbc07152"></a>
-typedef Eigen::Matrix&lt; double, Eigen::Dynamic, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>Vec</b></td></tr>
+<tr class="memitem:a4c7df05c6f5e8a0d15ae14bcdbc07152"><td class="memItemLeft" align="right" valign="top">typedef Eigen::Matrix&lt; double, Eigen::Dynamic, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="densities_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a></td></tr>
 <tr class="separator:a4c7df05c6f5e8a0d15ae14bcdbc07152"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae601f56a556993079f730483c574356f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae601f56a556993079f730483c574356f"></a>
-typedef Eigen::Matrix&lt; double, Eigen::Dynamic, Eigen::Dynamic &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>Mat</b></td></tr>
+<tr class="memitem:ae601f56a556993079f730483c574356f"><td class="memItemLeft" align="right" valign="top">typedef Eigen::Matrix&lt; double, Eigen::Dynamic, Eigen::Dynamic &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="densities_8h.html#ae601f56a556993079f730483c574356f">Mat</a></td></tr>
 <tr class="separator:ae601f56a556993079f730483c574356f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a50fd069caa24dac797922e8af6ed68e2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a50fd069caa24dac797922e8af6ed68e2"></a>
-const double&#160;</td><td class="memItemRight" valign="bottom"><b>densities::inv_sqrt_2pi</b> (0.3989422804014327)</td></tr>
+<tr class="memitem:a50fd069caa24dac797922e8af6ed68e2"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="densities_8h.html#a50fd069caa24dac797922e8af6ed68e2">densities::inv_sqrt_2pi</a> (0.3989422804014327)</td></tr>
 <tr class="separator:a50fd069caa24dac797922e8af6ed68e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36eeab0ef3c0cbfa190716631c183f17"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a36eeab0ef3c0cbfa190716631c183f17"></a>
-const double&#160;</td><td class="memItemRight" valign="bottom"><b>densities::sqrt_two_over_pi</b> (0.797884560802865)</td></tr>
+<tr class="memitem:a36eeab0ef3c0cbfa190716631c183f17"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="densities_8h.html#a36eeab0ef3c0cbfa190716631c183f17">densities::sqrt_two_over_pi</a> (0.797884560802865)</td></tr>
 <tr class="separator:a36eeab0ef3c0cbfa190716631c183f17"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae55ae08fac65b33b193ed333538dd340"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae55ae08fac65b33b193ed333538dd340"></a>
-const double&#160;</td><td class="memItemRight" valign="bottom"><b>densities::log_two_pi</b> (1.83787706640935)</td></tr>
+<tr class="memitem:ae55ae08fac65b33b193ed333538dd340"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="densities_8h.html#ae55ae08fac65b33b193ed333538dd340">densities::log_two_pi</a> (1.83787706640935)</td></tr>
 <tr class="separator:ae55ae08fac65b33b193ed333538dd340"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45b1879e50e22cb4ee16e2b9b86c3b14"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a45b1879e50e22cb4ee16e2b9b86c3b14"></a>
-const double&#160;</td><td class="memItemRight" valign="bottom"><b>densities::log_two_over_pi</b> (-0.451582705289455)</td></tr>
+<tr class="memitem:a45b1879e50e22cb4ee16e2b9b86c3b14"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="densities_8h.html#a45b1879e50e22cb4ee16e2b9b86c3b14">densities::log_two_over_pi</a> (-0.451582705289455)</td></tr>
 <tr class="separator:a45b1879e50e22cb4ee16e2b9b86c3b14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e47ab78e9b67622852378c44b6ccc2d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="densities_8h.html#a9e47ab78e9b67622852378c44b6ccc2d">densities::evalMultivNorm</a> (const Vec &amp;x, const Vec &amp;meanVec, const Mat &amp;covMat, bool log=false)</td></tr>
+<tr class="memitem:a9e47ab78e9b67622852378c44b6ccc2d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="densities_8h.html#a9e47ab78e9b67622852378c44b6ccc2d">densities::evalMultivNorm</a> (const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x, const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;meanVec, const <a class="el" href="pmfs_8h.html#ae601f56a556993079f730483c574356f">Mat</a> &amp;covMat, bool log=false)</td></tr>
 <tr class="memdesc:a9e47ab78e9b67622852378c44b6ccc2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the multivariate normal density.  <a href="densities_8h.html#a9e47ab78e9b67622852378c44b6ccc2d">More...</a><br /></td></tr>
 <tr class="separator:a9e47ab78e9b67622852378c44b6ccc2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c5bdd99b4d611a05cb2cf2615c4c07a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="densities_8h.html#a0c5bdd99b4d611a05cb2cf2615c4c07a">densities::evalUnivBeta</a> (const double &amp;x, const double &amp;alpha, const double &amp;beta, bool log=false)</td></tr>
@@ -184,7 +180,34 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><b>densities::lo
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Can sample from a distribution with fixed mean and covariance, fixed mean only, fixed covariance only, or nothing fixed. </p>
-</div><h2 class="groupheader">Function Documentation</h2>
+</div><h2 class="groupheader">Typedef Documentation</h2>
+<a class="anchor" id="ae601f56a556993079f730483c574356f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Eigen::Matrix&lt; double, Eigen::Dynamic, Eigen::Dynamic &gt; Mat</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Shorthand typedef for Eigen::MatrixXd </p>
+
+</div>
+</div>
+<a class="anchor" id="a4c7df05c6f5e8a0d15ae14bcdbc07152"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Eigen::Matrix&lt; double, Eigen::Dynamic, 1 &gt; Vec</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Shorthand typedef for Eigen::VectorXd </p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="file_a9e47ab78e9b67622852378c44b6ccc2d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -192,19 +215,19 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><b>densities::lo
         <tr>
           <td class="memname">double densities::evalMultivNorm </td>
           <td>(</td>
-          <td class="paramtype">const Vec &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>x</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const Vec &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>meanVec</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const Mat &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="pmfs_8h.html#ae601f56a556993079f730483c574356f">Mat</a> &amp;&#160;</td>
           <td class="paramname"><em>covMat</em>, </td>
         </tr>
         <tr>
@@ -277,6 +300,7 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><b>densities::lo
     <tr><td class="paramname">x</td><td>the point </td></tr>
     <tr><td class="paramname">alpha</td><td>parameter 1 </td></tr>
     <tr><td class="paramname">beta</td><td>parameter 2 </td></tr>
+    <tr><td class="paramname">log</td><td>true if you want log density </td></tr>
   </table>
   </dd>
 </dl>
@@ -319,6 +343,7 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><b>densities::lo
   <table class="params">
     <tr><td class="paramname">x</td><td>the point you're evaluating at </td></tr>
     <tr><td class="paramname">sigmaSqd</td><td>the scale parameter </td></tr>
+    <tr><td class="paramname">log</td><td>true if you want log density. </td></tr>
   </table>
   </dd>
 </dl>
@@ -368,10 +393,79 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><b>densities::lo
     <tr><td class="paramname">x</td><td>the point </td></tr>
     <tr><td class="paramname">alpha</td><td>shape parameter </td></tr>
     <tr><td class="paramname">beta</td><td>rate parameter </td></tr>
+    <tr><td class="paramname">log</td><td>true if you want log density. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>double evaluation. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="file_a50fd069caa24dac797922e8af6ed68e2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const double densities::inv_sqrt_2pi </td>
+          <td>(</td>
+          <td class="paramtype">0.&#160;</td>
+          <td class="paramname"><em>3989422804014327</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>(2 pi)^(-1/2) </p>
+
+</div>
+</div>
+<a class="anchor" id="file_a45b1879e50e22cb4ee16e2b9b86c3b14"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const double densities::log_two_over_pi </td>
+          <td>(</td>
+          <td class="paramtype">-0.&#160;</td>
+          <td class="paramname"><em>451582705289455</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>log(2/pi) </p>
+
+</div>
+</div>
+<a class="anchor" id="file_ae55ae08fac65b33b193ed333538dd340"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const double densities::log_two_pi </td>
+          <td>(</td>
+          <td class="paramtype">1.&#160;</td>
+          <td class="paramname"><em>83787706640935</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>log(2pi) </p>
+
+</div>
+</div>
+<a class="anchor" id="file_a36eeab0ef3c0cbfa190716631c183f17"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const double densities::sqrt_two_over_pi </td>
+          <td>(</td>
+          <td class="paramtype">0.&#160;</td>
+          <td class="paramname"><em>797884560802865</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>(2/pi)^(1/2) </p>
 
 </div>
 </div>

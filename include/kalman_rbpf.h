@@ -12,6 +12,9 @@ typedef Eigen::Matrix< double, Eigen::Dynamic, Eigen::Dynamic > Mat;
 
 enum class RBPFResampStyle {everytime_multinomial, never, ess_multinomial};
 
+//TODO: IMPLEMENT LOG WEIGHTS
+
+
 //! A base-class for Kalman Rao-Blackwellized Particle Filtering.
 /*!
  * \class Kalman_RBPF
@@ -63,22 +66,92 @@ public:
      */
     double getCondLike() const; 
     
-    //! Get the up-to-date un-normalized weights.
-    /**
-     * @return the un-normalized weights of right now. 
-     */
-    std::vector<double> getWeights() const;
     
-    // pure virtuals...need to define these
-    virtual double      muEv          (const Vec                 &x21                                       ) = 0;
-    virtual Vec              q1Samp        (const Vec                 &y1                                        ) = 0;
-    virtual Vec              initKalmanMean(const Vec                 &x21                                       ) = 0;
-    virtual Mat              initKalmanVar (const Vec                 &x21                                       ) = 0;
-    virtual Vec              qSamp         (const Vec                 &x2tm1,    const Vec &yt                   ) = 0;
-    virtual double      q1Ev          (const Vec                 &x1,       const Vec &y1                   ) = 0;
-    virtual double      fEv           (const Vec                 &x2t,      const Vec &x2tm1                ) = 0;
-    virtual double      qEv           (const Vec                 &x2t,      const Vec &x2tm1, const Vec &yt ) = 0;
-    virtual void             updateKalman  (      Lgssm               &aModel,   const Vec &yt,    const Vec &x2t) = 0;
+    //! Evaluates the first time state density.
+    /**
+     * @brief evaluates mu.
+     * @param x21 component two at time 1
+     * @return a double evaluation
+     */
+    virtual double muEv(const Vec &x21) = 0;
+    
+    
+    //! Sample from the first sampler.
+    /**
+     * @brief samples the second component of the state at time 1.
+     * @param y1 most recent datum.
+     * @return a Vec sample for x21.
+     */
+    virtual Vec q1Samp(const Vec &y1) = 0;
+    
+    
+    //! Provides the initial mean vector for each Kalman filter object.
+    /**
+     * @brief provides the initial mean vector for each Kalman filter object.
+     * @param x21 the second state componenent at time 1.
+     * @return a Vec representing the unconditional mean.
+     */
+    virtual Vec initKalmanMean(const Vec &x21) = 0;
+    
+    
+    //! Provides the initial covariance matrix for each Kalman filter object.
+    /**
+     * @brief provides the initial covariance matrix for each Kalman filter object.
+     * @param x21 the second state component at time 1.
+     * @return a covariance matrix. 
+     */
+    virtual Mat initKalmanVar(const Vec &x21) = 0;
+    
+    
+    //! Samples the time t second component. 
+    /**
+     * @brief Samples the time t second component.
+     * @param x2tm1 the previous time's second state component.
+     * @param yt the current observation.
+     * @return a Vec sample of the second state component at the current time.
+     */
+    virtual Vec qSamp(const Vec &x2tm1, const Vec &yt) = 0;
+    
+    
+    //! Evaluates the proposal density of the second state component at time 1.
+    /**
+     * @brief Evaluates the proposal density of the second state component at time 1.
+     * @param x21 the second state component at time 1 you sampled. 
+     * @param y1 time 1 observation.
+     * @return a double evaluation of the density.
+     */
+    virtual double q1Ev(const Vec &x21, const Vec &y1) = 0;
+    
+    
+    //! Evaluates the state transition density for the second state component.
+    /**
+     * @brief Evaluates the state transition density for the second state component.
+     * @param x2t the current second state component.
+     * @param x2tm1 the previous second state component.
+     * @return a double evaluation.
+     */
+    virtual double fEv(const Vec &x2t, const Vec &x2tm1) = 0;
+    
+    
+    //! Evaluates the proposal density at time t > 1.
+    /**
+     * @brief Evaluates the proposal density at time t > 1. 
+     * @param x2t the current second state component.
+     * @param x2tm1 the previous second state component.
+     * @param yt the current time series observation.
+     * @return a double evaluation.
+     */
+    virtual double qEv(const Vec &x2t, const Vec &x2tm1, const Vec &yt) = 0;
+    
+    
+    //! How to update your inner Kalman filter object at each time.
+    /**
+     * @brief How to update your inner Kalman filter object at each time.
+     * @param aModel a Kalman filter object describing the conditional closed-form model.
+     * @param yt the current time series observation.
+     * @param x2t the current second state component.
+     */
+    virtual void updateKalman(Lgssm &aModel, const Vec &yt, const Vec &x2t) = 0;
 };
 
 #endif //KALMAN_RBPF_H

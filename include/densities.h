@@ -5,7 +5,10 @@
 #include <Eigen/Dense> //linear algebra stuff
 #include <random>
 
+/** Shorthand typedef for Eigen::VectorXd */
 typedef Eigen::Matrix< double, Eigen::Dynamic, 1              > Vec;
+
+/** Shorthand typedef for Eigen::MatrixXd */
 typedef Eigen::Matrix< double, Eigen::Dynamic, Eigen::Dynamic > Mat;
 
 namespace densities
@@ -14,13 +17,16 @@ namespace densities
 /////////         Constants            /////////
 ////////////////////////////////////////////////
 
-    
+/** (2 pi)^(-1/2) */
 const double inv_sqrt_2pi(0.3989422804014327);
 
+/** (2/pi)^(1/2) */
 const double sqrt_two_over_pi(0.797884560802865);
 
+/** log(2pi) */
 const double log_two_pi (1.83787706640935);
 
+/** log(2/pi) */
 const double log_two_over_pi (-0.451582705289455);
 
 
@@ -43,6 +49,7 @@ double evalMultivNorm(const Vec &x, const Vec &meanVec, const Mat &covMat, bool 
  * @param x the point
  * @param alpha parameter 1 
  * @param beta parameter 2
+ * @param log true if you want log density
  * @return double evaluation.
 */       
 double evalUnivBeta(const double &x, const double &alpha, const double &beta, bool log = false);
@@ -52,6 +59,7 @@ double evalUnivBeta(const double &x, const double &alpha, const double &beta, bo
  * @param x the point
  * @param alpha shape parameter  
  * @param beta rate parameter 
+ * @param log true if you want log density.
  * @return double evaluation.
 */       
 double evalUnivInvGamma(const double &x, const double &alpha, const double &beta, bool log = false);
@@ -60,6 +68,7 @@ double evalUnivInvGamma(const double &x, const double &alpha, const double &beta
  * @brief Evaluates the half-normal density
  * @param x the point you're evaluating at
  * @param sigmaSqd the scale parameter
+ * @param log true if you want log density.
  * @return double evaluation.
  */
 double evalUnivHalfNorm(const double &x, const double &sigmaSqd, bool log = false);

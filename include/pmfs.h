@@ -6,8 +6,12 @@
 #include <chrono>
 #include <Eigen/Dense> //linear algebra stuff
 
+/** Shorthand typedef for Eigen::VectorXd */
 typedef Eigen::Matrix< double, Eigen::Dynamic, 1              > Vec;
+
+/** Shorthand typedef for Eigen::MatrixXd */
 typedef Eigen::Matrix< double, Eigen::Dynamic, Eigen::Dynamic > Mat;
+
 
 namespace pmfs
 {
@@ -20,6 +24,7 @@ namespace pmfs
  * @brief Evaluates discrete uniform pmf
  * @param x the hypothetical value of a rv 
  * @param k the size of the support i.e. (1,2,...k)
+ * @param log true if you want log pmf
  * @return P(X=x) probability that X equals x
  */
 double evalDiscreteUnif(const int &x, const int &k, bool log = false);
@@ -76,7 +81,7 @@ public:
 
     //! The constructor.
     /**
-     \param k the size of the support i.e. (1,2,...k)
+     \param weights the vector of weights
      */
     DiscreteCustomSampler(const std::vector<double>& weights);
     

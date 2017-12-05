@@ -1,6 +1,11 @@
 #include "fshmm.h"
 
 
+FSHMM::FSHMM()
+{
+}
+
+
 FSHMM::FSHMM(const Vec &initStateDistr, const Mat &transMat) :
     m_filtVec(initStateDistr), m_transMatTranspose(transMat.transpose()), m_lastCondLike(0.0), m_fresh(false)
 {
@@ -29,18 +34,18 @@ unsigned FSHMM::dimState() const
 }
 
 
-void FSHMM::update(const Vec &yt)
+void FSHMM::update(const Vec &yt, const Vec &condDensVec)
 {
     if (!m_fresh)  // hasn't seen data before and so filtVec is just time 1 state prior
     {
-        m_filtVec = m_filtVec.cwiseProduct( obsDens(yt) ); // now it's the joint
+        m_filtVec = m_filtVec.cwiseProduct( condDensVec ); // now it's p(x_t, y_t | y_{1:t-1})
         m_lastCondLike = m_filtVec.sum();
         m_filtVec /= m_lastCondLike;
         m_fresh = true;
         
     } else { // has seen data before
         m_filtVec = m_transMatTranspose * m_filtVec; // now p(x_t |y_{1:t-1})
-        m_filtVec = m_filtVec.cwiseProduct( obsDens(yt) ); // now p(y_t,x_t|y_{1:t-1})
+        m_filtVec = m_filtVec.cwiseProduct( condDensVec ); // now p(y_t,x_t|y_{1:t-1})
         m_lastCondLike = m_filtVec.sum();
         m_filtVec /= m_lastCondLike; // now p(x_t|y_{1:t})
     }

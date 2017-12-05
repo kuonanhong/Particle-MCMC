@@ -47,11 +47,13 @@ void hmmTest()
     // filter through the data
     std::string num;
     double ll(0.0);
+    Vec yt(1);
+    Vec condDens;
     while(std::getline(infile, num))
     {
-        Vec yt(1);
         yt(0) = std::stod(num);
-        mod.update(yt);
+        condDens = mod.obsDens(yt);
+        mod.update(yt, condDens);
         ll += std::log( mod.getCondLike() );
         //std::cout << std::log(mod.getCondLike()) << "\n";
         //std::cout << yt << ", " << mod.getFilterVec()(1) << "\n";

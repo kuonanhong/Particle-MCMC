@@ -24,7 +24,7 @@ public:
      * @brief The constructor.
      * @param numParts the number of particles you want.
      * @param startTheta the starting point parameters.
-     * @param the covariance matrix of the random walk proposal distribution.
+     * @param qSigma covariance matrix of the random walk proposal distribution.
      * @param numMCMCIters the number of MCMC iterations you want.
      * @param dataFile the location of the observed time series data.
      * @param numCols the dimension of your observable time series data.

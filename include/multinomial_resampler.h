@@ -7,6 +7,7 @@
 #include <chrono>
 
 #include "lgssm.h"
+#include "fshmm.h"
 
 typedef Eigen::Matrix< double, Eigen::Dynamic, 1> Vec;
 
@@ -27,7 +28,7 @@ private:
     std::mt19937 m_gen;
 public:
     /**
-     * @brief The default constructor. 
+     * @brief The default constructor. This is the only option available. Sets the seed. 
      */
     MultinomResamp();
 
@@ -60,11 +61,20 @@ public:
       * @param oldWts un-normalized weights of each particle.
       */
     void ressampKRBPF(std::vector<Lgssm> &oldMods, std::vector<Vec> &oldSamps, std::vector<double> &oldWts);
+    
+    
+    /**
+      * @brief Function to resample for RBPFs--you have to resample the samples AND models.
+      * @param oldMods embedded HMM filter objects.
+      * @param oldSamps samples of each particle.
+      * @param oldWts un-normalized weights of each particle.
+      */
+    void ressampHRBPF(std::vector<FSHMM> &oldMods, std::vector<Vec> &oldSamps, std::vector<double> &oldWts);
 
 
     /**
      * @brief Function to sample random indices. Used inside APFs.
-     * @param firstStageWeights first-stage weights for first stage of proposal distribution in APF
+     * @param logFirstStageWeights first-stage weights for first stage of proposal distribution in APF
      * @return A std::vector of integer indices.
      */
     std::vector<int> kGen(const std::vector<double> &logFirstStageWeights);

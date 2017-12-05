@@ -1,0 +1,7 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classSISRFilter.html" title="A base&#45;class for Sequential Importance Sampling with Resampling. " alt="" coords="5,81,88,108"/>
+<area shape="rect" id="node2" href="$classJacEtAl.html" title="A SISR implementation of the multivariate stochastic volatility model of Jacquier et al..." alt="" coords="149,5,217,32"/>
+<area shape="rect" id="node3" href="$classMSVolSISR.html" title="A SISR implementation of the multivariate stochastic volatility model of Pitt and Shephard 1999..." alt="" coords="136,56,229,83"/>
+<area shape="rect" id="node4" href="$classNAr1Filter.html" title="A SISR implementation of an AR(1) + Noise model. " alt="" coords="142,107,223,133"/>
+<area shape="rect" id="node5" href="$classSVolFilter.html" title="A SISR implementation of the classic stochastic volatility model of Taylor. " alt="" coords="143,157,222,184"/>
+</map>

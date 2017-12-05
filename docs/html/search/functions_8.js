@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['kalman_5frbpf',['Kalman_RBPF',['../classKalman__RBPF.html#aa7130565819b45f993100dbf7f048c37',1,'Kalman_RBPF']]],
-  ['kgen',['kGen',['../classMultinomResamp.html#ad29946389803294445cb27e74d949cd5',1,'MultinomResamp']]]
+  ['jacetal',['JacEtAl',['../classJacEtAl.html#a356023f0edf2c58601e47f8cc0fe4ae0',1,'JacEtAl']]],
+  ['jacetalapf',['JacEtAlAPF',['../classJacEtAlAPF.html#ac410fda3eb39aea5703740ca75276938',1,'JacEtAlAPF']]]
 ];

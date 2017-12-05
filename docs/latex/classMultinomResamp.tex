@@ -14,16 +14,18 @@ A class for Multinomial Resampling.
 \item 
 \hyperlink{classMultinomResamp_a3134e22c0b7e0215045eb783bdc44669}{Multinom\+Resamp} ()\hypertarget{classMultinomResamp_a3134e22c0b7e0215045eb783bdc44669}{}\label{classMultinomResamp_a3134e22c0b7e0215045eb783bdc44669}
 
-\begin{DoxyCompactList}\small\item\em The default constructor. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em The default constructor. This is the only option available. Sets the seed. \end{DoxyCompactList}\item 
 \hyperlink{classMultinomResamp_a590495e677a522fa7863e3885631f777}{$\sim$\+Multinom\+Resamp} ()\hypertarget{classMultinomResamp_a590495e677a522fa7863e3885631f777}{}\label{classMultinomResamp_a590495e677a522fa7863e3885631f777}
 
 \begin{DoxyCompactList}\small\item\em The default destructor. \end{DoxyCompactList}\item 
-void \hyperlink{classMultinomResamp_a0c24d6d59254855421b8ae13b2ebbcd9}{resamp} (std\+::vector$<$ std\+::vector$<$ Vec $>$ $>$ \&old\+Parts, std\+::vector$<$ double $>$ \&old\+Weights)
+void \hyperlink{classMultinomResamp_a0c24d6d59254855421b8ae13b2ebbcd9}{resamp} (std\+::vector$<$ std\+::vector$<$ \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} $>$ $>$ \&old\+Parts, std\+::vector$<$ double $>$ \&old\+Weights)
 \begin{DoxyCompactList}\small\item\em Function to resample in place from weights {\itshape not} in log-\/space. \end{DoxyCompactList}\item 
-void \hyperlink{classMultinomResamp_a0ea6269180faf0b0613072d9bc8a7b53}{resamp\+Log\+Wts} (std\+::vector$<$ std\+::vector$<$ Vec $>$ $>$ \&old\+Parts, std\+::vector$<$ double $>$ \&old\+Log\+Un\+Norm\+Wts)
+void \hyperlink{classMultinomResamp_a0ea6269180faf0b0613072d9bc8a7b53}{resamp\+Log\+Wts} (std\+::vector$<$ std\+::vector$<$ \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} $>$ $>$ \&old\+Parts, std\+::vector$<$ double $>$ \&old\+Log\+Un\+Norm\+Wts)
 \begin{DoxyCompactList}\small\item\em Function to resample in place from S\+I\+S\+Rs or A\+P\+FS with weights in log-\/space. \end{DoxyCompactList}\item 
-void \hyperlink{classMultinomResamp_ad39c4f5d5460e3e4a2c56370c8dab39f}{ressamp\+K\+R\+B\+PF} (std\+::vector$<$ \hyperlink{classLgssm}{Lgssm} $>$ \&old\+Mods, std\+::vector$<$ Vec $>$ \&old\+Samps, std\+::vector$<$ double $>$ \&old\+Wts)
+void \hyperlink{classMultinomResamp_ad39c4f5d5460e3e4a2c56370c8dab39f}{ressamp\+K\+R\+B\+PF} (std\+::vector$<$ \hyperlink{classLgssm}{Lgssm} $>$ \&old\+Mods, std\+::vector$<$ \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} $>$ \&old\+Samps, std\+::vector$<$ double $>$ \&old\+Wts)
 \begin{DoxyCompactList}\small\item\em Function to resample R\+B\+P\+Fs--recall you have to resample the samples A\+ND models. \end{DoxyCompactList}\item 
+void \hyperlink{classMultinomResamp_aaddcbec4eb62954d8d7aa96c45ffd7d0}{ressamp\+H\+R\+B\+PF} (std\+::vector$<$ \hyperlink{classFSHMM}{F\+S\+H\+MM} $>$ \&old\+Mods, std\+::vector$<$ \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} $>$ \&old\+Samps, std\+::vector$<$ double $>$ \&old\+Wts)
+\begin{DoxyCompactList}\small\item\em Function to resample for R\+B\+P\+Fs--you have to resample the samples A\+ND models. \end{DoxyCompactList}\item 
 std\+::vector$<$ int $>$ \hyperlink{classMultinomResamp_ad29946389803294445cb27e74d949cd5}{k\+Gen} (const std\+::vector$<$ double $>$ \&log\+First\+Stage\+Weights)
 \begin{DoxyCompactList}\small\item\em Function to sample random indices. Used inside A\+P\+Fs. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -53,7 +55,7 @@ Function to sample random indices. Used inside A\+P\+Fs.
 
 
 \begin{DoxyParams}{Parameters}
-{\em first\+Stage\+Weights} & first-\/stage weights for first stage of proposal distribution in A\+PF \\
+{\em log\+First\+Stage\+Weights} & first-\/stage weights for first stage of proposal distribution in A\+PF \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -63,7 +65,7 @@ A std\+::vector of integer indices.
 \index{resamp@{resamp}!Multinom\+Resamp@{Multinom\+Resamp}}
 \subsubsection[{\texorpdfstring{resamp(std\+::vector$<$ std\+::vector$<$ Vec $>$ $>$ \&old\+Parts, std\+::vector$<$ double $>$ \&old\+Weights)}{resamp(std::vector< std::vector< Vec > > &oldParts, std::vector< double > &oldWeights)}}]{\setlength{\rightskip}{0pt plus 5cm}void Multinom\+Resamp\+::resamp (
 \begin{DoxyParamCaption}
-\item[{std\+::vector$<$ std\+::vector$<$ Vec $>$ $>$ \&}]{old\+Parts, }
+\item[{std\+::vector$<$ std\+::vector$<$ {\bf Vec} $>$ $>$ \&}]{old\+Parts, }
 \item[{std\+::vector$<$ double $>$ \&}]{old\+Weights}
 \end{DoxyParamCaption}
 )}\hypertarget{classMultinomResamp_a0c24d6d59254855421b8ae13b2ebbcd9}{}\label{classMultinomResamp_a0c24d6d59254855421b8ae13b2ebbcd9}
@@ -82,7 +84,7 @@ Function to resample in place from weights {\itshape not} in log-\/space.
 \index{resamp\+Log\+Wts@{resamp\+Log\+Wts}!Multinom\+Resamp@{Multinom\+Resamp}}
 \subsubsection[{\texorpdfstring{resamp\+Log\+Wts(std\+::vector$<$ std\+::vector$<$ Vec $>$ $>$ \&old\+Parts, std\+::vector$<$ double $>$ \&old\+Log\+Un\+Norm\+Wts)}{resampLogWts(std::vector< std::vector< Vec > > &oldParts, std::vector< double > &oldLogUnNormWts)}}]{\setlength{\rightskip}{0pt plus 5cm}void Multinom\+Resamp\+::resamp\+Log\+Wts (
 \begin{DoxyParamCaption}
-\item[{std\+::vector$<$ std\+::vector$<$ Vec $>$ $>$ \&}]{old\+Parts, }
+\item[{std\+::vector$<$ std\+::vector$<$ {\bf Vec} $>$ $>$ \&}]{old\+Parts, }
 \item[{std\+::vector$<$ double $>$ \&}]{old\+Log\+Un\+Norm\+Wts}
 \end{DoxyParamCaption}
 )}\hypertarget{classMultinomResamp_a0ea6269180faf0b0613072d9bc8a7b53}{}\label{classMultinomResamp_a0ea6269180faf0b0613072d9bc8a7b53}
@@ -97,12 +99,34 @@ Function to resample in place from S\+I\+S\+Rs or A\+P\+FS with weights in log-\
 {\em old\+Log\+Un\+Norm\+Wts} & the std\+::vector$<$double$>$ of log-\/un-\/normalized weights. \\
 \hline
 \end{DoxyParams}
+\index{Multinom\+Resamp@{Multinom\+Resamp}!ressamp\+H\+R\+B\+PF@{ressamp\+H\+R\+B\+PF}}
+\index{ressamp\+H\+R\+B\+PF@{ressamp\+H\+R\+B\+PF}!Multinom\+Resamp@{Multinom\+Resamp}}
+\subsubsection[{\texorpdfstring{ressamp\+H\+R\+B\+P\+F(std\+::vector$<$ F\+S\+H\+M\+M $>$ \&old\+Mods, std\+::vector$<$ Vec $>$ \&old\+Samps, std\+::vector$<$ double $>$ \&old\+Wts)}{ressampHRBPF(std::vector< FSHMM > &oldMods, std::vector< Vec > &oldSamps, std::vector< double > &oldWts)}}]{\setlength{\rightskip}{0pt plus 5cm}void Multinom\+Resamp\+::ressamp\+H\+R\+B\+PF (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ {\bf F\+S\+H\+MM} $>$ \&}]{old\+Mods, }
+\item[{std\+::vector$<$ {\bf Vec} $>$ \&}]{old\+Samps, }
+\item[{std\+::vector$<$ double $>$ \&}]{old\+Wts}
+\end{DoxyParamCaption}
+)}\hypertarget{classMultinomResamp_aaddcbec4eb62954d8d7aa96c45ffd7d0}{}\label{classMultinomResamp_aaddcbec4eb62954d8d7aa96c45ffd7d0}
+
+
+Function to resample for R\+B\+P\+Fs--you have to resample the samples A\+ND models. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em old\+Mods} & embedded H\+MM filter objects. \\
+\hline
+{\em old\+Samps} & samples of each particle. \\
+\hline
+{\em old\+Wts} & un-\/normalized weights of each particle. \\
+\hline
+\end{DoxyParams}
 \index{Multinom\+Resamp@{Multinom\+Resamp}!ressamp\+K\+R\+B\+PF@{ressamp\+K\+R\+B\+PF}}
 \index{ressamp\+K\+R\+B\+PF@{ressamp\+K\+R\+B\+PF}!Multinom\+Resamp@{Multinom\+Resamp}}
 \subsubsection[{\texorpdfstring{ressamp\+K\+R\+B\+P\+F(std\+::vector$<$ Lgssm $>$ \&old\+Mods, std\+::vector$<$ Vec $>$ \&old\+Samps, std\+::vector$<$ double $>$ \&old\+Wts)}{ressampKRBPF(std::vector< Lgssm > &oldMods, std::vector< Vec > &oldSamps, std::vector< double > &oldWts)}}]{\setlength{\rightskip}{0pt plus 5cm}void Multinom\+Resamp\+::ressamp\+K\+R\+B\+PF (
 \begin{DoxyParamCaption}
 \item[{std\+::vector$<$ {\bf Lgssm} $>$ \&}]{old\+Mods, }
-\item[{std\+::vector$<$ Vec $>$ \&}]{old\+Samps, }
+\item[{std\+::vector$<$ {\bf Vec} $>$ \&}]{old\+Samps, }
 \item[{std\+::vector$<$ double $>$ \&}]{old\+Wts}
 \end{DoxyParamCaption}
 )}\hypertarget{classMultinomResamp_ad39c4f5d5460e3e4a2c56370c8dab39f}{}\label{classMultinomResamp_ad39c4f5d5460e3e4a2c56370c8dab39f}

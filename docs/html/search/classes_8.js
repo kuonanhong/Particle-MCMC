@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['sisrfilter',['SISRFilter',['../classSISRFilter.html',1,'']]],
-  ['svolapffilter',['SVolAPFFilter',['../classSVolAPFFilter.html',1,'']]],
-  ['svolfilter',['SVolFilter',['../classSVolFilter.html',1,'']]]
+  ['nar1apffilter',['NAr1APFFilter',['../classNAr1APFFilter.html',1,'']]],
+  ['nar1filter',['NAr1Filter',['../classNAr1Filter.html',1,'']]]
 ];

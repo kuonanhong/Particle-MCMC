@@ -37,19 +37,19 @@ Collaboration diagram for N\+Ar1\+Filter\+:\nopagebreak
 \begin{DoxyCompactList}\small\item\em The destructor. \end{DoxyCompactList}\item 
 bool \hyperlink{classNAr1Filter_aee9f60c01d44bb0e54092a04be1fbb1a}{is\+Sd\+Neg} ()
 \begin{DoxyCompactList}\small\item\em Are either of the standard deviation parameters negative? \end{DoxyCompactList}\item 
-Vec \hyperlink{classNAr1Filter_a6ae702c69b4f3e7b2109f99e2fd5d8b7}{q1\+Samp} (const Vec \&y1)
+\hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \hyperlink{classNAr1Filter_a6ae702c69b4f3e7b2109f99e2fd5d8b7}{q1\+Samp} (const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&y1)
 \begin{DoxyCompactList}\small\item\em Samples from q1. \end{DoxyCompactList}\item 
-double \hyperlink{classNAr1Filter_ac97b366af3d4def2b45d394fb85865f0}{log\+Mu\+Ev} (const Vec \&x1)
+double \hyperlink{classNAr1Filter_ac97b366af3d4def2b45d394fb85865f0}{log\+Mu\+Ev} (const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x1)
 \begin{DoxyCompactList}\small\item\em Evaluates the log of mu. \end{DoxyCompactList}\item 
-double \hyperlink{classNAr1Filter_af8eb2b66ff1806dd0d4c4ac1f7129a51}{log\+Q1\+Ev} (const Vec \&x1, const Vec \&y1)
+double \hyperlink{classNAr1Filter_af8eb2b66ff1806dd0d4c4ac1f7129a51}{log\+Q1\+Ev} (const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x1, const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&y1)
 \begin{DoxyCompactList}\small\item\em Evaluates the log of q1. \end{DoxyCompactList}\item 
-double \hyperlink{classNAr1Filter_aed4a7fb8160aabe9a7dc702826ccae60}{log\+G\+Ev} (const Vec \&yt, const Vec \&xt)
+double \hyperlink{classNAr1Filter_aed4a7fb8160aabe9a7dc702826ccae60}{log\+G\+Ev} (const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&yt, const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&xt)
 \begin{DoxyCompactList}\small\item\em Evaluates the log of g. \end{DoxyCompactList}\item 
-double \hyperlink{classNAr1Filter_ae42e9ccf333b8590bd79831be8083dcd}{log\+Q\+Ev} (const Vec \&xt, const Vec \&xtm1, const Vec \&yt)
+double \hyperlink{classNAr1Filter_ae42e9ccf333b8590bd79831be8083dcd}{log\+Q\+Ev} (const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&xt, const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&xtm1, const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&yt)
 \begin{DoxyCompactList}\small\item\em Evaluates the log of q (assumed constant). \end{DoxyCompactList}\item 
-double \hyperlink{classNAr1Filter_adff7d17aa5271b8df4c77d752a6fd773}{log\+F\+Ev} (const Vec \&xt, const Vec \&xtm1)
+double \hyperlink{classNAr1Filter_adff7d17aa5271b8df4c77d752a6fd773}{log\+F\+Ev} (const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&xt, const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&xtm1)
 \begin{DoxyCompactList}\small\item\em Evaluates the log of f. \end{DoxyCompactList}\item 
-Vec \hyperlink{classNAr1Filter_af4f7f8b643e5750dc83e27ea7bf05f18}{q\+Samp} (const Vec \&xtm1, const Vec \&yt)
+\hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \hyperlink{classNAr1Filter_af4f7f8b643e5750dc83e27ea7bf05f18}{q\+Samp} (const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&xtm1, const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&yt)
 \begin{DoxyCompactList}\small\item\em Samples from q (assumed constant for all time). \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -91,6 +91,10 @@ The constructor.
 \hline
 {\em a} & a double for the state ar(1) parameter. \\
 \hline
+{\em resamp\+Technique} & the style of resampling you want. \\
+\hline
+{\em path\+Length} & the path\+Length you want (just set it to zero unless you have a good reason not to) \\
+\hline
 \end{DoxyParams}
 
 
@@ -113,8 +117,8 @@ true if either standard deviation is negative (which is bad). Otherwise false.
 \index{log\+F\+Ev@{log\+F\+Ev}!N\+Ar1\+Filter@{N\+Ar1\+Filter}}
 \subsubsection[{\texorpdfstring{log\+F\+Ev(const Vec \&xt, const Vec \&xtm1)}{logFEv(const Vec &xt, const Vec &xtm1)}}]{\setlength{\rightskip}{0pt plus 5cm}double N\+Ar1\+Filter\+::log\+F\+Ev (
 \begin{DoxyParamCaption}
-\item[{const Vec \&}]{xt, }
-\item[{const Vec \&}]{xtm1}
+\item[{const {\bf Vec} \&}]{xt, }
+\item[{const {\bf Vec} \&}]{xtm1}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classNAr1Filter_adff7d17aa5271b8df4c77d752a6fd773}{}\label{classNAr1Filter_adff7d17aa5271b8df4c77d752a6fd773}
 
@@ -139,8 +143,8 @@ Implements \hyperlink{classSISRFilter_ab91474fc79efb84ed1dafbc8c542f59e}{S\+I\+S
 \index{log\+G\+Ev@{log\+G\+Ev}!N\+Ar1\+Filter@{N\+Ar1\+Filter}}
 \subsubsection[{\texorpdfstring{log\+G\+Ev(const Vec \&yt, const Vec \&xt)}{logGEv(const Vec &yt, const Vec &xt)}}]{\setlength{\rightskip}{0pt plus 5cm}double N\+Ar1\+Filter\+::log\+G\+Ev (
 \begin{DoxyParamCaption}
-\item[{const Vec \&}]{yt, }
-\item[{const Vec \&}]{xt}
+\item[{const {\bf Vec} \&}]{yt, }
+\item[{const {\bf Vec} \&}]{xt}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classNAr1Filter_aed4a7fb8160aabe9a7dc702826ccae60}{}\label{classNAr1Filter_aed4a7fb8160aabe9a7dc702826ccae60}
 
@@ -165,7 +169,7 @@ Implements \hyperlink{classSISRFilter_aac59b077648fa74d2a5db970e3d7ffac}{S\+I\+S
 \index{log\+Mu\+Ev@{log\+Mu\+Ev}!N\+Ar1\+Filter@{N\+Ar1\+Filter}}
 \subsubsection[{\texorpdfstring{log\+Mu\+Ev(const Vec \&x1)}{logMuEv(const Vec &x1)}}]{\setlength{\rightskip}{0pt plus 5cm}double N\+Ar1\+Filter\+::log\+Mu\+Ev (
 \begin{DoxyParamCaption}
-\item[{const Vec \&}]{x1}
+\item[{const {\bf Vec} \&}]{x1}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classNAr1Filter_ac97b366af3d4def2b45d394fb85865f0}{}\label{classNAr1Filter_ac97b366af3d4def2b45d394fb85865f0}
 
@@ -188,8 +192,8 @@ Implements \hyperlink{classSISRFilter_ab6ffa8e1cdee34f1afb825e35462afaa}{S\+I\+S
 \index{log\+Q1\+Ev@{log\+Q1\+Ev}!N\+Ar1\+Filter@{N\+Ar1\+Filter}}
 \subsubsection[{\texorpdfstring{log\+Q1\+Ev(const Vec \&x1, const Vec \&y1)}{logQ1Ev(const Vec &x1, const Vec &y1)}}]{\setlength{\rightskip}{0pt plus 5cm}double N\+Ar1\+Filter\+::log\+Q1\+Ev (
 \begin{DoxyParamCaption}
-\item[{const Vec \&}]{x1, }
-\item[{const Vec \&}]{y1}
+\item[{const {\bf Vec} \&}]{x1, }
+\item[{const {\bf Vec} \&}]{y1}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classNAr1Filter_af8eb2b66ff1806dd0d4c4ac1f7129a51}{}\label{classNAr1Filter_af8eb2b66ff1806dd0d4c4ac1f7129a51}
 
@@ -214,9 +218,9 @@ Implements \hyperlink{classSISRFilter_a61a1971bd8208abbe3ccbacd66d35c23}{S\+I\+S
 \index{log\+Q\+Ev@{log\+Q\+Ev}!N\+Ar1\+Filter@{N\+Ar1\+Filter}}
 \subsubsection[{\texorpdfstring{log\+Q\+Ev(const Vec \&xt, const Vec \&xtm1, const Vec \&yt)}{logQEv(const Vec &xt, const Vec &xtm1, const Vec &yt)}}]{\setlength{\rightskip}{0pt plus 5cm}double N\+Ar1\+Filter\+::log\+Q\+Ev (
 \begin{DoxyParamCaption}
-\item[{const Vec \&}]{xt, }
-\item[{const Vec \&}]{xtm1, }
-\item[{const Vec \&}]{yt}
+\item[{const {\bf Vec} \&}]{xt, }
+\item[{const {\bf Vec} \&}]{xtm1, }
+\item[{const {\bf Vec} \&}]{yt}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classNAr1Filter_ae42e9ccf333b8590bd79831be8083dcd}{}\label{classNAr1Filter_ae42e9ccf333b8590bd79831be8083dcd}
 
@@ -241,9 +245,9 @@ Implements \hyperlink{classSISRFilter_af289db59b008a0ab795fc3b8e9887043}{S\+I\+S
 
 \index{N\+Ar1\+Filter@{N\+Ar1\+Filter}!q1\+Samp@{q1\+Samp}}
 \index{q1\+Samp@{q1\+Samp}!N\+Ar1\+Filter@{N\+Ar1\+Filter}}
-\subsubsection[{\texorpdfstring{q1\+Samp(const Vec \&y1)}{q1Samp(const Vec &y1)}}]{\setlength{\rightskip}{0pt plus 5cm}Vec N\+Ar1\+Filter\+::q1\+Samp (
+\subsubsection[{\texorpdfstring{q1\+Samp(const Vec \&y1)}{q1Samp(const Vec &y1)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vec} N\+Ar1\+Filter\+::q1\+Samp (
 \begin{DoxyParamCaption}
-\item[{const Vec \&}]{y1}
+\item[{const {\bf Vec} \&}]{y1}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classNAr1Filter_a6ae702c69b4f3e7b2109f99e2fd5d8b7}{}\label{classNAr1Filter_a6ae702c69b4f3e7b2109f99e2fd5d8b7}
 
@@ -264,10 +268,10 @@ Implements \hyperlink{classSISRFilter_a5a57cd67535e31bb1ab20fb42499f911}{S\+I\+S
 
 \index{N\+Ar1\+Filter@{N\+Ar1\+Filter}!q\+Samp@{q\+Samp}}
 \index{q\+Samp@{q\+Samp}!N\+Ar1\+Filter@{N\+Ar1\+Filter}}
-\subsubsection[{\texorpdfstring{q\+Samp(const Vec \&xtm1, const Vec \&yt)}{qSamp(const Vec &xtm1, const Vec &yt)}}]{\setlength{\rightskip}{0pt plus 5cm}Vec N\+Ar1\+Filter\+::q\+Samp (
+\subsubsection[{\texorpdfstring{q\+Samp(const Vec \&xtm1, const Vec \&yt)}{qSamp(const Vec &xtm1, const Vec &yt)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vec} N\+Ar1\+Filter\+::q\+Samp (
 \begin{DoxyParamCaption}
-\item[{const Vec \&}]{xtm1, }
-\item[{const Vec \&}]{yt}
+\item[{const {\bf Vec} \&}]{xtm1, }
+\item[{const {\bf Vec} \&}]{yt}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classNAr1Filter_af4f7f8b643e5750dc83e27ea7bf05f18}{}\label{classNAr1Filter_af4f7f8b643e5750dc83e27ea7bf05f18}
 

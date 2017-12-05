@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['pmmh',['Pmmh',['../classPmmh.html#aa4752fceaa1b278fcadb583865bfd0b5',1,'Pmmh']]],
-  ['pmmh_5fjac_5fapf',['Pmmh_jac_apf',['../classPmmh__jac__apf.html#ac195b6fc79a2d91620ceb077e752c4a8',1,'Pmmh_jac_apf']]],
-  ['pmmh_5fsvol_5fsisr',['Pmmh_svol_sisr',['../classPmmh__svol__sisr.html#ad07ecbdfaccbb26ecefe2f6fd3e2338d',1,'Pmmh_svol_sisr']]],
-  ['propmu',['propMu',['../classAPFFilter.html#a2c136104f4d96e6481406ef1397ead51',1,'APFFilter::propMu()'],['../classJacEtAlAPF.html#a3066fe2bd0b399a85eaf51ecdb1c3660',1,'JacEtAlAPF::propMu()'],['../classNAr1APFFilter.html#a92a000138b5440613ab85c3811eb5525',1,'NAr1APFFilter::propMu()'],['../classSVolAPFFilter.html#a5a5d8ac387f71cb64d8da66c38bbff71',1,'SVolAPFFilter::propMu()']]]
+  ['nar1apffilter',['NAr1APFFilter',['../classNAr1APFFilter.html#aa13a3fea25c159bb9939726288062809',1,'NAr1APFFilter']]],
+  ['nar1filter',['NAr1Filter',['../classNAr1Filter.html#a98b2a069363ceb684abd8ae5c9d2b814',1,'NAr1Filter']]]
 ];

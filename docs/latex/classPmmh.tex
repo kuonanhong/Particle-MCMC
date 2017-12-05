@@ -11,8 +11,7 @@ A base-\/class for particle marginal Metropolis-\/\+Hastings.
 
 
 
-Inheritance diagram for Pmmh\+:
-\nopagebreak
+Inheritance diagram for Pmmh\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -22,20 +21,20 @@ Inheritance diagram for Pmmh\+:
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classPmmh_aa4752fceaa1b278fcadb583865bfd0b5}{Pmmh} (const std\+::vector$<$ Vec $>$ \&start\+Theta, unsigned num\+M\+C\+M\+C\+Iters, const std\+::string \&data\+File, unsigned num\+Cols, bool mc)
+\hyperlink{classPmmh_aa4752fceaa1b278fcadb583865bfd0b5}{Pmmh} (const std\+::vector$<$ \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} $>$ \&start\+Theta, unsigned num\+M\+C\+M\+C\+Iters, const std\+::string \&data\+File, unsigned num\+Cols, bool mc)
 \begin{DoxyCompactList}\small\item\em The constructor. \end{DoxyCompactList}\item 
 \hyperlink{classPmmh_a52b058761ac6ede77eb3d8c0099e0d93}{$\sim$\+Pmmh} ()\hypertarget{classPmmh_a52b058761ac6ede77eb3d8c0099e0d93}{}\label{classPmmh_a52b058761ac6ede77eb3d8c0099e0d93}
 
 \begin{DoxyCompactList}\small\item\em The destructor. \end{DoxyCompactList}\item 
 void \hyperlink{classPmmh_ac035560cb209fb5cade23e431b5e1fd3}{commence\+Sampling} (std\+::string samples\+File, std\+::string messages\+File)
 \begin{DoxyCompactList}\small\item\em Call this to begin sampling. \end{DoxyCompactList}\item 
-virtual void \hyperlink{classPmmh_a7ada4decd5df894376c74e3ddba5daa1}{q\+Sample} (const std\+::vector$<$ Vec $>$ \&old\+Params, std\+::vector$<$ Vec $>$ \&new\+Params)=0
+virtual void \hyperlink{classPmmh_a7ada4decd5df894376c74e3ddba5daa1}{q\+Sample} (const std\+::vector$<$ \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} $>$ \&old\+Params, std\+::vector$<$ \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} $>$ \&new\+Params)=0
 \begin{DoxyCompactList}\small\item\em The function that proposes new parameters. Tip\+: Make sure to declare your static R\+NG inside the implementation of this. \end{DoxyCompactList}\item 
-virtual double \hyperlink{classPmmh_af8d3fdbc3f3c998670266a3032a53e80}{log\+Q\+Evaluate} (const std\+::vector$<$ Vec $>$ \&old\+Params, const std\+::vector$<$ Vec $>$ \&new\+Params)=0
+virtual double \hyperlink{classPmmh_af8d3fdbc3f3c998670266a3032a53e80}{log\+Q\+Evaluate} (const std\+::vector$<$ \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} $>$ \&old\+Params, const std\+::vector$<$ \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} $>$ \&new\+Params)=0
 \begin{DoxyCompactList}\small\item\em Evaluates the logarithm of the proposal density. \end{DoxyCompactList}\item 
-virtual double \hyperlink{classPmmh_a265ca1c1380d0ebc052be2c5424a0d3b}{log\+Prior\+Evaluate} (const std\+::vector$<$ Vec $>$ \&theta)=0
+virtual double \hyperlink{classPmmh_a265ca1c1380d0ebc052be2c5424a0d3b}{log\+Prior\+Evaluate} (const std\+::vector$<$ \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} $>$ \&theta)=0
 \begin{DoxyCompactList}\small\item\em Evaluates the log of the model\textquotesingle{}s prior distribution. \end{DoxyCompactList}\item 
-virtual double \hyperlink{classPmmh_a293931e138576f063aab7e46228f0266}{log\+Like\+Evaluate} (const std\+::vector$<$ Vec $>$ \&theta, const std\+::vector$<$ Vec $>$ \&data, std\+::atomic\+\_\+bool \&cancelled)=0
+virtual double \hyperlink{classPmmh_a293931e138576f063aab7e46228f0266}{log\+Like\+Evaluate} (const std\+::vector$<$ \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} $>$ \&theta, const std\+::vector$<$ \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} $>$ \&data, std\+::atomic\+\_\+bool \&cancelled)=0
 \begin{DoxyCompactList}\small\item\em Evaluates (approximates) the log-\/likelihood with a particle filter. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -55,7 +54,7 @@ taylor
 \index{Pmmh@{Pmmh}!Pmmh@{Pmmh}}
 \subsubsection[{\texorpdfstring{Pmmh(const std\+::vector$<$ Vec $>$ \&start\+Theta, unsigned num\+M\+C\+M\+C\+Iters, const std\+::string \&data\+File, unsigned num\+Cols, bool mc)}{Pmmh(const std::vector< Vec > &startTheta, unsigned numMCMCIters, const std::string &dataFile, unsigned numCols, bool mc)}}]{\setlength{\rightskip}{0pt plus 5cm}Pmmh\+::\+Pmmh (
 \begin{DoxyParamCaption}
-\item[{const std\+::vector$<$ Vec $>$ \&}]{start\+Theta, }
+\item[{const std\+::vector$<$ {\bf Vec} $>$ \&}]{start\+Theta, }
 \item[{unsigned}]{num\+M\+C\+M\+C\+Iters, }
 \item[{const std\+::string \&}]{data\+File, }
 \item[{unsigned}]{num\+Cols, }
@@ -96,7 +95,7 @@ Call this to begin sampling.
 
 
 \begin{DoxyParams}{Parameters}
-{\em samples\+File\+File} & where to store the csv of parameter samples. \\
+{\em samples\+File} & where to store the csv of parameter samples. \\
 \hline
 {\em messages\+File} & where to store the logged messages. \\
 \hline
@@ -105,8 +104,8 @@ Call this to begin sampling.
 \index{log\+Like\+Evaluate@{log\+Like\+Evaluate}!Pmmh@{Pmmh}}
 \subsubsection[{\texorpdfstring{log\+Like\+Evaluate(const std\+::vector$<$ Vec $>$ \&theta, const std\+::vector$<$ Vec $>$ \&data, std\+::atomic\+\_\+bool \&cancelled)=0}{logLikeEvaluate(const std::vector< Vec > &theta, const std::vector< Vec > &data, std::atomic_bool &cancelled)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual double Pmmh\+::log\+Like\+Evaluate (
 \begin{DoxyParamCaption}
-\item[{const std\+::vector$<$ Vec $>$ \&}]{theta, }
-\item[{const std\+::vector$<$ Vec $>$ \&}]{data, }
+\item[{const std\+::vector$<$ {\bf Vec} $>$ \&}]{theta, }
+\item[{const std\+::vector$<$ {\bf Vec} $>$ \&}]{data, }
 \item[{std\+::atomic\+\_\+bool \&}]{cancelled}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classPmmh_a293931e138576f063aab7e46228f0266}{}\label{classPmmh_a293931e138576f063aab7e46228f0266}
@@ -128,13 +127,13 @@ the evaluation (as a double) of the log likelihood approximation.
 \end{DoxyReturn}
 
 
-Implemented in \hyperlink{classPmmh__jac__apf_acd0869e2b01566fcd45d85e850d4ee11}{Pmmh\+\_\+jac\+\_\+apf}, and \hyperlink{classPmmh__svol__sisr_af0bb463ef4d74e60022a4955f565390e}{Pmmh\+\_\+svol\+\_\+sisr}.
+Implemented in \hyperlink{classPmmh__svol__sisr_af0bb463ef4d74e60022a4955f565390e}{Pmmh\+\_\+svol\+\_\+sisr}, and \hyperlink{classPmmh__jac__apf_acd0869e2b01566fcd45d85e850d4ee11}{Pmmh\+\_\+jac\+\_\+apf}.
 
 \index{Pmmh@{Pmmh}!log\+Prior\+Evaluate@{log\+Prior\+Evaluate}}
 \index{log\+Prior\+Evaluate@{log\+Prior\+Evaluate}!Pmmh@{Pmmh}}
 \subsubsection[{\texorpdfstring{log\+Prior\+Evaluate(const std\+::vector$<$ Vec $>$ \&theta)=0}{logPriorEvaluate(const std::vector< Vec > &theta)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual double Pmmh\+::log\+Prior\+Evaluate (
 \begin{DoxyParamCaption}
-\item[{const std\+::vector$<$ Vec $>$ \&}]{theta}
+\item[{const std\+::vector$<$ {\bf Vec} $>$ \&}]{theta}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classPmmh_a265ca1c1380d0ebc052be2c5424a0d3b}{}\label{classPmmh_a265ca1c1380d0ebc052be2c5424a0d3b}
 
@@ -151,14 +150,14 @@ the log of the prior density.
 \end{DoxyReturn}
 
 
-Implemented in \hyperlink{classPmmh__jac__apf_ab253d4b6c59a5e9529d042eb7b98dc8a}{Pmmh\+\_\+jac\+\_\+apf}, and \hyperlink{classPmmh__svol__sisr_ab6c9983faf8ca460f8a8081c6a148aa2}{Pmmh\+\_\+svol\+\_\+sisr}.
+Implemented in \hyperlink{classPmmh__svol__sisr_ab6c9983faf8ca460f8a8081c6a148aa2}{Pmmh\+\_\+svol\+\_\+sisr}, and \hyperlink{classPmmh__jac__apf_ab253d4b6c59a5e9529d042eb7b98dc8a}{Pmmh\+\_\+jac\+\_\+apf}.
 
 \index{Pmmh@{Pmmh}!log\+Q\+Evaluate@{log\+Q\+Evaluate}}
 \index{log\+Q\+Evaluate@{log\+Q\+Evaluate}!Pmmh@{Pmmh}}
 \subsubsection[{\texorpdfstring{log\+Q\+Evaluate(const std\+::vector$<$ Vec $>$ \&old\+Params, const std\+::vector$<$ Vec $>$ \&new\+Params)=0}{logQEvaluate(const std::vector< Vec > &oldParams, const std::vector< Vec > &newParams)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual double Pmmh\+::log\+Q\+Evaluate (
 \begin{DoxyParamCaption}
-\item[{const std\+::vector$<$ Vec $>$ \&}]{old\+Params, }
-\item[{const std\+::vector$<$ Vec $>$ \&}]{new\+Params}
+\item[{const std\+::vector$<$ {\bf Vec} $>$ \&}]{old\+Params, }
+\item[{const std\+::vector$<$ {\bf Vec} $>$ \&}]{new\+Params}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classPmmh_af8d3fdbc3f3c998670266a3032a53e80}{}\label{classPmmh_af8d3fdbc3f3c998670266a3032a53e80}
 
@@ -177,14 +176,14 @@ the log of the proposal density.
 \end{DoxyReturn}
 
 
-Implemented in \hyperlink{classPmmh__jac__apf_a17edc1dc687fb753eff22d5bb7e44964}{Pmmh\+\_\+jac\+\_\+apf}, and \hyperlink{classPmmh__svol__sisr_a8164b385edb083df605ba766e000c12a}{Pmmh\+\_\+svol\+\_\+sisr}.
+Implemented in \hyperlink{classPmmh__svol__sisr_a8164b385edb083df605ba766e000c12a}{Pmmh\+\_\+svol\+\_\+sisr}, and \hyperlink{classPmmh__jac__apf_a17edc1dc687fb753eff22d5bb7e44964}{Pmmh\+\_\+jac\+\_\+apf}.
 
 \index{Pmmh@{Pmmh}!q\+Sample@{q\+Sample}}
 \index{q\+Sample@{q\+Sample}!Pmmh@{Pmmh}}
 \subsubsection[{\texorpdfstring{q\+Sample(const std\+::vector$<$ Vec $>$ \&old\+Params, std\+::vector$<$ Vec $>$ \&new\+Params)=0}{qSample(const std::vector< Vec > &oldParams, std::vector< Vec > &newParams)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Pmmh\+::q\+Sample (
 \begin{DoxyParamCaption}
-\item[{const std\+::vector$<$ Vec $>$ \&}]{old\+Params, }
-\item[{std\+::vector$<$ Vec $>$ \&}]{new\+Params}
+\item[{const std\+::vector$<$ {\bf Vec} $>$ \&}]{old\+Params, }
+\item[{std\+::vector$<$ {\bf Vec} $>$ \&}]{new\+Params}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classPmmh_a7ada4decd5df894376c74e3ddba5daa1}{}\label{classPmmh_a7ada4decd5df894376c74e3ddba5daa1}
 
@@ -200,7 +199,7 @@ The function that proposes new parameters. Tip\+: Make sure to declare your stat
 \end{DoxyParams}
 
 
-Implemented in \hyperlink{classPmmh__jac__apf_a0127e07b0f9ba6b042418c575b78ca55}{Pmmh\+\_\+jac\+\_\+apf}, and \hyperlink{classPmmh__svol__sisr_a18df26cb5c0bddefbd24866b1b4ff142}{Pmmh\+\_\+svol\+\_\+sisr}.
+Implemented in \hyperlink{classPmmh__svol__sisr_a18df26cb5c0bddefbd24866b1b4ff142}{Pmmh\+\_\+svol\+\_\+sisr}, and \hyperlink{classPmmh__jac__apf_a0127e07b0f9ba6b042418c575b78ca55}{Pmmh\+\_\+jac\+\_\+apf}.
 
 
 

@@ -31,6 +31,8 @@ public:
      * @param osd a double for the observation standard deviation.
      * @param ssd a double for the state process standard deviation.
      * @param a a double for the state ar(1) parameter.
+     * @param resampTechnique the style of resampling you want.
+     * @param pathLength the pathLength you want (just set it to zero unless you have a good reason not to)
      */
     NAr1Filter(int numParts, double osd, double ssd, double a, 
                 SISRResampStyle resampTechnique, int pathLength);

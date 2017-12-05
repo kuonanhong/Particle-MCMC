@@ -31,15 +31,15 @@ public:
 
     /**
      * @brief The constructor
-     * @param numParts, an integer representing the number of particles.
-     * @param beta, a Mat representing the factor loadings matrix.
-     * @param RAsVec, a Vec representing the diagonal elements of the observational covariance matrix.
-     * @param mus, a Vec representing the mean of the log-volatility processes.
-     * @param phis, a Vec representing the AR parameters of the log-volatility processes.
-     * @param sigmas, a Vec representing the standard deviations of the log-volatility processes.
-     * @param resampTechnique, an enum class representing the type of resampling to be performed.
-     * @param pathLength, set to the length of your time series data if you want to store entire paths. Otherwise set to 0.
-     * @param percEss, the percent of the maximum effective sample size threshold for resampling. Not important for several resampTechniques.
+     * @param numParts an integer representing the number of particles.
+     * @param beta a Mat representing the factor loadings matrix.
+     * @param RAsVec a Vec representing the diagonal elements of the observational covariance matrix.
+     * @param mus a Vec representing the mean of the log-volatility processes.
+     * @param phis a Vec representing the AR parameters of the log-volatility processes.
+     * @param sigmas a Vec representing the standard deviations of the log-volatility processes.
+     * @param resampTechnique an enum class representing the type of resampling to be performed.
+     * @param pathLength set to the length of your time series data if you want to store entire paths. Otherwise set to 0.
+     * @param percEss the percent of the maximum effective sample size threshold for resampling. Not important for several resampTechniques.
      */
     JacEtAl(int numParts, const Mat &beta, const Vec &RAsVec, const Vec &mus, const Vec &phis, const Vec &sigmas, 
               SISRResampStyle resampTechnique, int pathLength = 0, double percEss = 1.0);

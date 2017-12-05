@@ -1,0 +1,96 @@
+\hypertarget{classSimpleHmm}{}\section{Simple\+Hmm Class Reference}
+\label{classSimpleHmm}\index{Simple\+Hmm@{Simple\+Hmm}}
+
+
+A simple 2 state H\+MM.  
+
+
+
+
+{\ttfamily \#include $<$simple\+\_\+hmm.\+h$>$}
+
+
+
+Inheritance diagram for Simple\+Hmm\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=151pt]{classSimpleHmm__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Simple\+Hmm\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=151pt]{classSimpleHmm__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSimpleHmm_a97ec9e0dfab48e96820dd69924ebc263}{Simple\+Hmm} (double low\+Var, double high\+Var, const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&init\+State, const \hyperlink{pmfs_8h_ae601f56a556993079f730483c574356f}{Mat} \&trans\+Mat)
+\begin{DoxyCompactList}\small\item\em The constructor. \end{DoxyCompactList}\item 
+\hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \hyperlink{classSimpleHmm_aea9ee06189659df76eb6fc336dc0d2ca}{obs\+Dens} (const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&data)
+\begin{DoxyCompactList}\small\item\em Convenience function that genrates the vector of conditional densities. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A simple 2 state H\+MM. 
+
+Just used for testing purposes. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Simple\+Hmm@{Simple\+Hmm}!Simple\+Hmm@{Simple\+Hmm}}
+\index{Simple\+Hmm@{Simple\+Hmm}!Simple\+Hmm@{Simple\+Hmm}}
+\subsubsection[{\texorpdfstring{Simple\+Hmm(double low\+Var, double high\+Var, const Vec \&init\+State, const Mat \&trans\+Mat)}{SimpleHmm(double lowVar, double highVar, const Vec &initState, const Mat &transMat)}}]{\setlength{\rightskip}{0pt plus 5cm}Simple\+Hmm\+::\+Simple\+Hmm (
+\begin{DoxyParamCaption}
+\item[{double}]{low\+Var, }
+\item[{double}]{high\+Var, }
+\item[{const {\bf Vec} \&}]{init\+State, }
+\item[{const {\bf Mat} \&}]{trans\+Mat}
+\end{DoxyParamCaption}
+)}\hypertarget{classSimpleHmm_a97ec9e0dfab48e96820dd69924ebc263}{}\label{classSimpleHmm_a97ec9e0dfab48e96820dd69924ebc263}
+
+
+The constructor. 
+
+constructs an object. 
+\begin{DoxyParams}{Parameters}
+{\em low\+Var} & the lower variance for one of the regimes \\
+\hline
+{\em high\+Var} & the higher variance for the other regime \\
+\hline
+{\em init\+State} & the initial state distribution. \\
+\hline
+{\em trans\+Mat} & the transition matrix. element ij is the prob of trans from i to j. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Simple\+Hmm@{Simple\+Hmm}!obs\+Dens@{obs\+Dens}}
+\index{obs\+Dens@{obs\+Dens}!Simple\+Hmm@{Simple\+Hmm}}
+\subsubsection[{\texorpdfstring{obs\+Dens(const Vec \&data)}{obsDens(const Vec &data)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vec} Simple\+Hmm\+::obs\+Dens (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vec} \&}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{classSimpleHmm_aea9ee06189659df76eb6fc336dc0d2ca}{}\label{classSimpleHmm_aea9ee06189659df76eb6fc336dc0d2ca}
+
+
+Convenience function that genrates the vector of conditional densities. 
+
+p(y\+\_\+t$\vert$x\+\_\+t) 
+\begin{DoxyParams}{Parameters}
+{\em data} & the most recent observed data point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vec of all the probabilities conditional on different xts. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/simple\+\_\+hmm.\+h\end{DoxyCompactItemize}

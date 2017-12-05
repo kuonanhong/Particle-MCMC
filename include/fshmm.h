@@ -21,10 +21,16 @@ private:
     bool m_fresh;
 public:
 
+    //! Default constructor (need this for resampling function)
+    /**
+     * @brief Default constructor (need this for resampling function)
+     */
+    FSHMM();
+
     //! Constructor
     /*!
-      \param initStateMean first time state prior distribution's mean vector.
-      \param initStateVar first time state prior distribution's covariance matrix.
+      \param initStateDistr first time state prior distribution.
+      \param transMat time homogeneous transition matrix.
     */
     FSHMM(const Vec &initStateDistr, const Mat &transMat);
     
@@ -50,18 +56,13 @@ public:
      */
     unsigned dimState() const;
     
-    //! Perform a Kalman filter predict-and-update.
+    //! Perform a HMM filter update.
     /**
-     * \param yt the new data point.
-     */      
-    void update(const Vec &yt);
-    
-    //! Returns a probability p(data|x) for each x in a row vector
-    /**
-     * @param data the observed datum at a given time
-     * @return a row vector of doubles corresponding to each state value
+     * @brief Perform a HMM filter update.
+     * @param yt the current datum.
+     * @param condDensVec the vector (in x_t) of p(y_t|x_t)
      */
-    virtual Vec obsDens(const Vec &data) = 0;
+    void update(const Vec &yt, const Vec &condDensVec);
 
 };
 

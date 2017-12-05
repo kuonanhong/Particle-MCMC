@@ -9,6 +9,8 @@ var annotated_dup =
       [ "DiscreteUnifSampler", "classpmfs_1_1DiscreteUnifSampler.html", "classpmfs_1_1DiscreteUnifSampler" ]
     ] ],
     [ "APFFilter", "classAPFFilter.html", "classAPFFilter" ],
+    [ "FSHMM", "classFSHMM.html", "classFSHMM" ],
+    [ "Hmm_Rbpf", "classHmm__Rbpf.html", "classHmm__Rbpf" ],
     [ "JacEtAl", "classJacEtAl.html", "classJacEtAl" ],
     [ "JacEtAlAPF", "classJacEtAlAPF.html", "classJacEtAlAPF" ],
     [ "Kalman_RBPF", "classKalman__RBPF.html", "classKalman__RBPF" ],
@@ -20,6 +22,7 @@ var annotated_dup =
     [ "Pmmh", "classPmmh.html", "classPmmh" ],
     [ "Pmmh_jac_apf", "classPmmh__jac__apf.html", "classPmmh__jac__apf" ],
     [ "Pmmh_svol_sisr", "classPmmh__svol__sisr.html", "classPmmh__svol__sisr" ],
+    [ "SimpleHmm", "classSimpleHmm.html", "classSimpleHmm" ],
     [ "SISRFilter", "classSISRFilter.html", "classSISRFilter" ],
     [ "SVolAPFFilter", "classSVolAPFFilter.html", "classSVolAPFFilter" ],
     [ "SVolFilter", "classSVolFilter.html", "classSVolFilter" ]

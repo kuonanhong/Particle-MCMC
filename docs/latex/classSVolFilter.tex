@@ -35,19 +35,19 @@ Collaboration diagram for S\+Vol\+Filter\+:\nopagebreak
 \hyperlink{classSVolFilter_a5b894ffc4a62d9e441d9070df9727eb6}{$\sim$\+S\+Vol\+Filter} ()\hypertarget{classSVolFilter_a5b894ffc4a62d9e441d9070df9727eb6}{}\label{classSVolFilter_a5b894ffc4a62d9e441d9070df9727eb6}
 
 \begin{DoxyCompactList}\small\item\em The destructor. \end{DoxyCompactList}\item 
-double \hyperlink{classSVolFilter_a9adc1eb288e46a2e05fa89d1b8d9f1ef}{log\+Q1\+Ev} (const Vec \&x1, const Vec \&y1)
+double \hyperlink{classSVolFilter_a9adc1eb288e46a2e05fa89d1b8d9f1ef}{log\+Q1\+Ev} (const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x1, const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&y1)
 \begin{DoxyCompactList}\small\item\em Evaluates the log of q1. \end{DoxyCompactList}\item 
-double \hyperlink{classSVolFilter_ab052dcfa9ce2100ffb02350ccf0b6d17}{log\+Mu\+Ev} (const Vec \&x1)
+double \hyperlink{classSVolFilter_ab052dcfa9ce2100ffb02350ccf0b6d17}{log\+Mu\+Ev} (const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x1)
 \begin{DoxyCompactList}\small\item\em Evaluates the log of mu. \end{DoxyCompactList}\item 
-double \hyperlink{classSVolFilter_a81a8e2857ddb699738461b5e2beab1c0}{log\+G\+Ev} (const Vec \&yt, const Vec \&xt)
+double \hyperlink{classSVolFilter_a81a8e2857ddb699738461b5e2beab1c0}{log\+G\+Ev} (const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&yt, const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&xt)
 \begin{DoxyCompactList}\small\item\em Evaluates the log of g. \end{DoxyCompactList}\item 
-double \hyperlink{classSVolFilter_af2bbbe9c2d3bddb3e85b9ed5a14a24cb}{log\+Q\+Ev} (const Vec \&xt, const Vec \&xtm1, const Vec \&yt)
+double \hyperlink{classSVolFilter_af2bbbe9c2d3bddb3e85b9ed5a14a24cb}{log\+Q\+Ev} (const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&xt, const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&xtm1, const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&yt)
 \begin{DoxyCompactList}\small\item\em Evaluates the log of q. \end{DoxyCompactList}\item 
-double \hyperlink{classSVolFilter_a506d813662f0d888e48607962bfefbbd}{log\+F\+Ev} (const Vec \&xt, const Vec \&xtm1)
+double \hyperlink{classSVolFilter_a506d813662f0d888e48607962bfefbbd}{log\+F\+Ev} (const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&xt, const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&xtm1)
 \begin{DoxyCompactList}\small\item\em Evaluates the log of f. \end{DoxyCompactList}\item 
-Vec \hyperlink{classSVolFilter_a754e3c40b1db7798a48f3f4ad636b07c}{q\+Samp} (const Vec \&xtm1, const Vec \&yt)
+\hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \hyperlink{classSVolFilter_a754e3c40b1db7798a48f3f4ad636b07c}{q\+Samp} (const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&xtm1, const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&yt)
 \begin{DoxyCompactList}\small\item\em Samples from q (assumed constant throughout time). \end{DoxyCompactList}\item 
-Vec \hyperlink{classSVolFilter_aaea1d4b59cdd3053f060d5013e338162}{q1\+Samp} (const Vec \&y1)
+\hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \hyperlink{classSVolFilter_aaea1d4b59cdd3053f060d5013e338162}{q1\+Samp} (const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&y1)
 \begin{DoxyCompactList}\small\item\em Samples from q1. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -82,6 +82,14 @@ The constructor.
 \begin{DoxyParams}{Parameters}
 {\em num\+Parts} & the number of particles you want. \\
 \hline
+{\em beta} & \\
+\hline
+{\em phi} & \\
+\hline
+{\em sigma} & \\
+\hline
+{\em p\+Len} & the length of particles. only set to non-\/zero number if you want to pre-\/allocate. \\
+\hline
 \end{DoxyParams}
 
 
@@ -90,8 +98,8 @@ The constructor.
 \index{log\+F\+Ev@{log\+F\+Ev}!S\+Vol\+Filter@{S\+Vol\+Filter}}
 \subsubsection[{\texorpdfstring{log\+F\+Ev(const Vec \&xt, const Vec \&xtm1)}{logFEv(const Vec &xt, const Vec &xtm1)}}]{\setlength{\rightskip}{0pt plus 5cm}double S\+Vol\+Filter\+::log\+F\+Ev (
 \begin{DoxyParamCaption}
-\item[{const Vec \&}]{xt, }
-\item[{const Vec \&}]{xtm1}
+\item[{const {\bf Vec} \&}]{xt, }
+\item[{const {\bf Vec} \&}]{xtm1}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classSVolFilter_a506d813662f0d888e48607962bfefbbd}{}\label{classSVolFilter_a506d813662f0d888e48607962bfefbbd}
 
@@ -116,8 +124,8 @@ Implements \hyperlink{classSISRFilter_ab91474fc79efb84ed1dafbc8c542f59e}{S\+I\+S
 \index{log\+G\+Ev@{log\+G\+Ev}!S\+Vol\+Filter@{S\+Vol\+Filter}}
 \subsubsection[{\texorpdfstring{log\+G\+Ev(const Vec \&yt, const Vec \&xt)}{logGEv(const Vec &yt, const Vec &xt)}}]{\setlength{\rightskip}{0pt plus 5cm}double S\+Vol\+Filter\+::log\+G\+Ev (
 \begin{DoxyParamCaption}
-\item[{const Vec \&}]{yt, }
-\item[{const Vec \&}]{xt}
+\item[{const {\bf Vec} \&}]{yt, }
+\item[{const {\bf Vec} \&}]{xt}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classSVolFilter_a81a8e2857ddb699738461b5e2beab1c0}{}\label{classSVolFilter_a81a8e2857ddb699738461b5e2beab1c0}
 
@@ -142,7 +150,7 @@ Implements \hyperlink{classSISRFilter_aac59b077648fa74d2a5db970e3d7ffac}{S\+I\+S
 \index{log\+Mu\+Ev@{log\+Mu\+Ev}!S\+Vol\+Filter@{S\+Vol\+Filter}}
 \subsubsection[{\texorpdfstring{log\+Mu\+Ev(const Vec \&x1)}{logMuEv(const Vec &x1)}}]{\setlength{\rightskip}{0pt plus 5cm}double S\+Vol\+Filter\+::log\+Mu\+Ev (
 \begin{DoxyParamCaption}
-\item[{const Vec \&}]{x1}
+\item[{const {\bf Vec} \&}]{x1}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classSVolFilter_ab052dcfa9ce2100ffb02350ccf0b6d17}{}\label{classSVolFilter_ab052dcfa9ce2100ffb02350ccf0b6d17}
 
@@ -165,8 +173,8 @@ Implements \hyperlink{classSISRFilter_ab6ffa8e1cdee34f1afb825e35462afaa}{S\+I\+S
 \index{log\+Q1\+Ev@{log\+Q1\+Ev}!S\+Vol\+Filter@{S\+Vol\+Filter}}
 \subsubsection[{\texorpdfstring{log\+Q1\+Ev(const Vec \&x1, const Vec \&y1)}{logQ1Ev(const Vec &x1, const Vec &y1)}}]{\setlength{\rightskip}{0pt plus 5cm}double S\+Vol\+Filter\+::log\+Q1\+Ev (
 \begin{DoxyParamCaption}
-\item[{const Vec \&}]{x1, }
-\item[{const Vec \&}]{y1}
+\item[{const {\bf Vec} \&}]{x1, }
+\item[{const {\bf Vec} \&}]{y1}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classSVolFilter_a9adc1eb288e46a2e05fa89d1b8d9f1ef}{}\label{classSVolFilter_a9adc1eb288e46a2e05fa89d1b8d9f1ef}
 
@@ -191,9 +199,9 @@ Implements \hyperlink{classSISRFilter_a61a1971bd8208abbe3ccbacd66d35c23}{S\+I\+S
 \index{log\+Q\+Ev@{log\+Q\+Ev}!S\+Vol\+Filter@{S\+Vol\+Filter}}
 \subsubsection[{\texorpdfstring{log\+Q\+Ev(const Vec \&xt, const Vec \&xtm1, const Vec \&yt)}{logQEv(const Vec &xt, const Vec &xtm1, const Vec &yt)}}]{\setlength{\rightskip}{0pt plus 5cm}double S\+Vol\+Filter\+::log\+Q\+Ev (
 \begin{DoxyParamCaption}
-\item[{const Vec \&}]{xt, }
-\item[{const Vec \&}]{xtm1, }
-\item[{const Vec \&}]{yt}
+\item[{const {\bf Vec} \&}]{xt, }
+\item[{const {\bf Vec} \&}]{xtm1, }
+\item[{const {\bf Vec} \&}]{yt}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classSVolFilter_af2bbbe9c2d3bddb3e85b9ed5a14a24cb}{}\label{classSVolFilter_af2bbbe9c2d3bddb3e85b9ed5a14a24cb}
 
@@ -218,9 +226,9 @@ Implements \hyperlink{classSISRFilter_af289db59b008a0ab795fc3b8e9887043}{S\+I\+S
 
 \index{S\+Vol\+Filter@{S\+Vol\+Filter}!q1\+Samp@{q1\+Samp}}
 \index{q1\+Samp@{q1\+Samp}!S\+Vol\+Filter@{S\+Vol\+Filter}}
-\subsubsection[{\texorpdfstring{q1\+Samp(const Vec \&y1)}{q1Samp(const Vec &y1)}}]{\setlength{\rightskip}{0pt plus 5cm}Vec S\+Vol\+Filter\+::q1\+Samp (
+\subsubsection[{\texorpdfstring{q1\+Samp(const Vec \&y1)}{q1Samp(const Vec &y1)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vec} S\+Vol\+Filter\+::q1\+Samp (
 \begin{DoxyParamCaption}
-\item[{const Vec \&}]{y1}
+\item[{const {\bf Vec} \&}]{y1}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classSVolFilter_aaea1d4b59cdd3053f060d5013e338162}{}\label{classSVolFilter_aaea1d4b59cdd3053f060d5013e338162}
 
@@ -241,10 +249,10 @@ Implements \hyperlink{classSISRFilter_a5a57cd67535e31bb1ab20fb42499f911}{S\+I\+S
 
 \index{S\+Vol\+Filter@{S\+Vol\+Filter}!q\+Samp@{q\+Samp}}
 \index{q\+Samp@{q\+Samp}!S\+Vol\+Filter@{S\+Vol\+Filter}}
-\subsubsection[{\texorpdfstring{q\+Samp(const Vec \&xtm1, const Vec \&yt)}{qSamp(const Vec &xtm1, const Vec &yt)}}]{\setlength{\rightskip}{0pt plus 5cm}Vec S\+Vol\+Filter\+::q\+Samp (
+\subsubsection[{\texorpdfstring{q\+Samp(const Vec \&xtm1, const Vec \&yt)}{qSamp(const Vec &xtm1, const Vec &yt)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vec} S\+Vol\+Filter\+::q\+Samp (
 \begin{DoxyParamCaption}
-\item[{const Vec \&}]{xtm1, }
-\item[{const Vec \&}]{yt}
+\item[{const {\bf Vec} \&}]{xtm1, }
+\item[{const {\bf Vec} \&}]{yt}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classSVolFilter_a754e3c40b1db7798a48f3f4ad636b07c}{}\label{classSVolFilter_a754e3c40b1db7798a48f3f4ad636b07c}
 

@@ -69,6 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -132,11 +133,9 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a4c7df05c6f5e8a0d15ae14bcdbc07152"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4c7df05c6f5e8a0d15ae14bcdbc07152"></a>
-typedef Eigen::Matrix&lt; double, Eigen::Dynamic, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>Vec</b></td></tr>
+<tr class="memitem:a4c7df05c6f5e8a0d15ae14bcdbc07152"><td class="memItemLeft" align="right" valign="top">typedef Eigen::Matrix&lt; double, Eigen::Dynamic, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a></td></tr>
 <tr class="separator:a4c7df05c6f5e8a0d15ae14bcdbc07152"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae601f56a556993079f730483c574356f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae601f56a556993079f730483c574356f"></a>
-typedef Eigen::Matrix&lt; double, Eigen::Dynamic, Eigen::Dynamic &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>Mat</b></td></tr>
+<tr class="memitem:ae601f56a556993079f730483c574356f"><td class="memItemLeft" align="right" valign="top">typedef Eigen::Matrix&lt; double, Eigen::Dynamic, Eigen::Dynamic &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pmfs_8h.html#ae601f56a556993079f730483c574356f">Mat</a></td></tr>
 <tr class="separator:ae601f56a556993079f730483c574356f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -145,6 +144,33 @@ Functions</h2></td></tr>
 <tr class="memdesc:a21666e2a5112aa29a78053d23803f1b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates discrete uniform pmf.  <a href="pmfs_8h.html#a21666e2a5112aa29a78053d23803f1b0">More...</a><br /></td></tr>
 <tr class="separator:a21666e2a5112aa29a78053d23803f1b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a class="anchor" id="ae601f56a556993079f730483c574356f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Eigen::Matrix&lt; double, Eigen::Dynamic, Eigen::Dynamic &gt; Mat</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Shorthand typedef for Eigen::MatrixXd </p>
+
+</div>
+</div>
+<a class="anchor" id="a4c7df05c6f5e8a0d15ae14bcdbc07152"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Eigen::Matrix&lt; double, Eigen::Dynamic, 1 &gt; Vec</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Shorthand typedef for Eigen::VectorXd </p>
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="file_a21666e2a5112aa29a78053d23803f1b0"></a>
 <div class="memitem">
@@ -181,6 +207,7 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">x</td><td>the hypothetical value of a rv </td></tr>
     <tr><td class="paramname">k</td><td>the size of the support i.e. (1,2,...k) </td></tr>
+    <tr><td class="paramname">log</td><td>true if you want log pmf </td></tr>
   </table>
   </dd>
 </dl>

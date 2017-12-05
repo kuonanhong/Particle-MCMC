@@ -126,41 +126,38 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKalman__RBPF.html#a454f1736e8889904f755ca904f6eebc0">~Kalman_RBPF</a> ()</td></tr>
 <tr class="memdesc:a454f1736e8889904f755ca904f6eebc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The desuctor. <br /></td></tr>
 <tr class="separator:a454f1736e8889904f755ca904f6eebc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72d5ed61d0289a6977bf178145f5b969"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKalman__RBPF.html#a72d5ed61d0289a6977bf178145f5b969">filter</a> (const Vec &amp;data)</td></tr>
+<tr class="memitem:a72d5ed61d0289a6977bf178145f5b969"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKalman__RBPF.html#a72d5ed61d0289a6977bf178145f5b969">filter</a> (const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;data)</td></tr>
 <tr class="memdesc:a72d5ed61d0289a6977bf178145f5b969"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filter!  <a href="#a72d5ed61d0289a6977bf178145f5b969">More...</a><br /></td></tr>
 <tr class="separator:a72d5ed61d0289a6977bf178145f5b969"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d65ffce3d115ecaf1c8e97b9222cdde"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKalman__RBPF.html#a2d65ffce3d115ecaf1c8e97b9222cdde">getCondLike</a> () const </td></tr>
 <tr class="memdesc:a2d65ffce3d115ecaf1c8e97b9222cdde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the latest conditional likelihood.  <a href="#a2d65ffce3d115ecaf1c8e97b9222cdde">More...</a><br /></td></tr>
 <tr class="separator:a2d65ffce3d115ecaf1c8e97b9222cdde"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d411f1992b9a09ac3ee70f48ed34c7c"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKalman__RBPF.html#a8d411f1992b9a09ac3ee70f48ed34c7c">getWeights</a> () const </td></tr>
-<tr class="memdesc:a8d411f1992b9a09ac3ee70f48ed34c7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the up-to-date un-normalized weights.  <a href="#a8d411f1992b9a09ac3ee70f48ed34c7c">More...</a><br /></td></tr>
-<tr class="separator:a8d411f1992b9a09ac3ee70f48ed34c7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25e8682d13a04eb1075a4d30dfa6825a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a25e8682d13a04eb1075a4d30dfa6825a"></a>
-virtual double&#160;</td><td class="memItemRight" valign="bottom"><b>muEv</b> (const Vec &amp;x21)=0</td></tr>
+<tr class="memitem:a25e8682d13a04eb1075a4d30dfa6825a"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKalman__RBPF.html#a25e8682d13a04eb1075a4d30dfa6825a">muEv</a> (const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x21)=0</td></tr>
+<tr class="memdesc:a25e8682d13a04eb1075a4d30dfa6825a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the first time state density.  <a href="#a25e8682d13a04eb1075a4d30dfa6825a">More...</a><br /></td></tr>
 <tr class="separator:a25e8682d13a04eb1075a4d30dfa6825a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71e394c093f606f80a92a3fc4fe087a3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a71e394c093f606f80a92a3fc4fe087a3"></a>
-virtual Vec&#160;</td><td class="memItemRight" valign="bottom"><b>q1Samp</b> (const Vec &amp;y1)=0</td></tr>
+<tr class="memitem:a71e394c093f606f80a92a3fc4fe087a3"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKalman__RBPF.html#a71e394c093f606f80a92a3fc4fe087a3">q1Samp</a> (const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;y1)=0</td></tr>
+<tr class="memdesc:a71e394c093f606f80a92a3fc4fe087a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sample from the first sampler.  <a href="#a71e394c093f606f80a92a3fc4fe087a3">More...</a><br /></td></tr>
 <tr class="separator:a71e394c093f606f80a92a3fc4fe087a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a870a53fc149adf8042fa12eb5d9a8d30"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a870a53fc149adf8042fa12eb5d9a8d30"></a>
-virtual Vec&#160;</td><td class="memItemRight" valign="bottom"><b>initKalmanMean</b> (const Vec &amp;x21)=0</td></tr>
+<tr class="memitem:a870a53fc149adf8042fa12eb5d9a8d30"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKalman__RBPF.html#a870a53fc149adf8042fa12eb5d9a8d30">initKalmanMean</a> (const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x21)=0</td></tr>
+<tr class="memdesc:a870a53fc149adf8042fa12eb5d9a8d30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the initial mean vector for each Kalman filter object.  <a href="#a870a53fc149adf8042fa12eb5d9a8d30">More...</a><br /></td></tr>
 <tr class="separator:a870a53fc149adf8042fa12eb5d9a8d30"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f7f37a90d9382ca2ad7dfef4acf1bc0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4f7f37a90d9382ca2ad7dfef4acf1bc0"></a>
-virtual Mat&#160;</td><td class="memItemRight" valign="bottom"><b>initKalmanVar</b> (const Vec &amp;x21)=0</td></tr>
+<tr class="memitem:a4f7f37a90d9382ca2ad7dfef4acf1bc0"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="pmfs_8h.html#ae601f56a556993079f730483c574356f">Mat</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKalman__RBPF.html#a4f7f37a90d9382ca2ad7dfef4acf1bc0">initKalmanVar</a> (const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x21)=0</td></tr>
+<tr class="memdesc:a4f7f37a90d9382ca2ad7dfef4acf1bc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the initial covariance matrix for each Kalman filter object.  <a href="#a4f7f37a90d9382ca2ad7dfef4acf1bc0">More...</a><br /></td></tr>
 <tr class="separator:a4f7f37a90d9382ca2ad7dfef4acf1bc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3ee89a06a18a287445e366230a6bd65"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad3ee89a06a18a287445e366230a6bd65"></a>
-virtual Vec&#160;</td><td class="memItemRight" valign="bottom"><b>qSamp</b> (const Vec &amp;x2tm1, const Vec &amp;yt)=0</td></tr>
+<tr class="memitem:ad3ee89a06a18a287445e366230a6bd65"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKalman__RBPF.html#ad3ee89a06a18a287445e366230a6bd65">qSamp</a> (const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x2tm1, const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;yt)=0</td></tr>
+<tr class="memdesc:ad3ee89a06a18a287445e366230a6bd65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Samples the time t second component.  <a href="#ad3ee89a06a18a287445e366230a6bd65">More...</a><br /></td></tr>
 <tr class="separator:ad3ee89a06a18a287445e366230a6bd65"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc3a0c0214699593426db94db29298d6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abc3a0c0214699593426db94db29298d6"></a>
-virtual double&#160;</td><td class="memItemRight" valign="bottom"><b>q1Ev</b> (const Vec &amp;x1, const Vec &amp;y1)=0</td></tr>
-<tr class="separator:abc3a0c0214699593426db94db29298d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03bfc2e7f32a86ab4fe653958d2f7dd4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a03bfc2e7f32a86ab4fe653958d2f7dd4"></a>
-virtual double&#160;</td><td class="memItemRight" valign="bottom"><b>fEv</b> (const Vec &amp;x2t, const Vec &amp;x2tm1)=0</td></tr>
+<tr class="memitem:a36b66fd90b6d810d88e5ec9785cb0307"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKalman__RBPF.html#a36b66fd90b6d810d88e5ec9785cb0307">q1Ev</a> (const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x21, const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;y1)=0</td></tr>
+<tr class="memdesc:a36b66fd90b6d810d88e5ec9785cb0307"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the proposal density of the second state component at time 1.  <a href="#a36b66fd90b6d810d88e5ec9785cb0307">More...</a><br /></td></tr>
+<tr class="separator:a36b66fd90b6d810d88e5ec9785cb0307"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03bfc2e7f32a86ab4fe653958d2f7dd4"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKalman__RBPF.html#a03bfc2e7f32a86ab4fe653958d2f7dd4">fEv</a> (const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x2t, const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x2tm1)=0</td></tr>
+<tr class="memdesc:a03bfc2e7f32a86ab4fe653958d2f7dd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the state transition density for the second state component.  <a href="#a03bfc2e7f32a86ab4fe653958d2f7dd4">More...</a><br /></td></tr>
 <tr class="separator:a03bfc2e7f32a86ab4fe653958d2f7dd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5b8e717c5d4c838b0d246b496971d16"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad5b8e717c5d4c838b0d246b496971d16"></a>
-virtual double&#160;</td><td class="memItemRight" valign="bottom"><b>qEv</b> (const Vec &amp;x2t, const Vec &amp;x2tm1, const Vec &amp;yt)=0</td></tr>
+<tr class="memitem:ad5b8e717c5d4c838b0d246b496971d16"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKalman__RBPF.html#ad5b8e717c5d4c838b0d246b496971d16">qEv</a> (const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x2t, const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x2tm1, const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;yt)=0</td></tr>
+<tr class="memdesc:ad5b8e717c5d4c838b0d246b496971d16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the proposal density at time t &gt; 1.  <a href="#ad5b8e717c5d4c838b0d246b496971d16">More...</a><br /></td></tr>
 <tr class="separator:ad5b8e717c5d4c838b0d246b496971d16"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67abffa6fe0510147037ed102aa30ed0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a67abffa6fe0510147037ed102aa30ed0"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>updateKalman</b> (<a class="el" href="classLgssm.html">Lgssm</a> &amp;aModel, const Vec &amp;yt, const Vec &amp;x2t)=0</td></tr>
+<tr class="memitem:a67abffa6fe0510147037ed102aa30ed0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKalman__RBPF.html#a67abffa6fe0510147037ed102aa30ed0">updateKalman</a> (<a class="el" href="classLgssm.html">Lgssm</a> &amp;aModel, const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;yt, const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x2t)=0</td></tr>
+<tr class="memdesc:a67abffa6fe0510147037ed102aa30ed0"><td class="mdescLeft">&#160;</td><td class="mdescRight">How to update your inner Kalman filter object at each time.  <a href="#a67abffa6fe0510147037ed102aa30ed0">More...</a><br /></td></tr>
 <tr class="separator:a67abffa6fe0510147037ed102aa30ed0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -203,6 +200,50 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>updateKalman<
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a03bfc2e7f32a86ab4fe653958d2f7dd4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual double Kalman_RBPF::fEv </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramname"><em>x2t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramname"><em>x2tm1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Evaluates the state transition density for the second state component. </p>
+<p>Evaluates the state transition density for the second state component. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x2t</td><td>the current second state component. </td></tr>
+    <tr><td class="paramname">x2tm1</td><td>the previous second state component. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a double evaluation. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a72d5ed61d0289a6977bf178145f5b969"></a>
 <div class="memitem">
 <div class="memproto">
@@ -210,7 +251,7 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>updateKalman<
         <tr>
           <td class="memname">void Kalman_RBPF::filter </td>
           <td>(</td>
-          <td class="paramtype">const Vec &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>data</em></td><td>)</td>
           <td></td>
         </tr>
@@ -245,21 +286,324 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>updateKalman<
 
 </div>
 </div>
-<a class="anchor" id="a8d411f1992b9a09ac3ee70f48ed34c7c"></a>
+<a class="anchor" id="a870a53fc149adf8042fa12eb5d9a8d30"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;double&gt; Kalman_RBPF::getWeights </td>
+          <td class="memname">virtual <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> Kalman_RBPF::initKalmanMean </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramname"><em>x21</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Get the up-to-date un-normalized weights. </p>
-<dl class="section return"><dt>Returns</dt><dd>the un-normalized weights of right now. </dd></dl>
+<p>Provides the initial mean vector for each Kalman filter object. </p>
+<p>provides the initial mean vector for each Kalman filter object. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x21</td><td>the second state componenent at time 1. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a Vec representing the unconditional mean. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4f7f37a90d9382ca2ad7dfef4acf1bc0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="pmfs_8h.html#ae601f56a556993079f730483c574356f">Mat</a> Kalman_RBPF::initKalmanVar </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramname"><em>x21</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Provides the initial covariance matrix for each Kalman filter object. </p>
+<p>provides the initial covariance matrix for each Kalman filter object. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x21</td><td>the second state component at time 1. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a covariance matrix. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a25e8682d13a04eb1075a4d30dfa6825a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual double Kalman_RBPF::muEv </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramname"><em>x21</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Evaluates the first time state density. </p>
+<p>evaluates mu. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x21</td><td>component two at time 1 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a double evaluation </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a36b66fd90b6d810d88e5ec9785cb0307"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual double Kalman_RBPF::q1Ev </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramname"><em>x21</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramname"><em>y1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Evaluates the proposal density of the second state component at time 1. </p>
+<p>Evaluates the proposal density of the second state component at time 1. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x21</td><td>the second state component at time 1 you sampled. </td></tr>
+    <tr><td class="paramname">y1</td><td>time 1 observation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a double evaluation of the density. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a71e394c093f606f80a92a3fc4fe087a3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> Kalman_RBPF::q1Samp </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramname"><em>y1</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sample from the first sampler. </p>
+<p>samples the second component of the state at time 1. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">y1</td><td>most recent datum. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a Vec sample for x21. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad5b8e717c5d4c838b0d246b496971d16"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual double Kalman_RBPF::qEv </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramname"><em>x2t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramname"><em>x2tm1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramname"><em>yt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Evaluates the proposal density at time t &gt; 1. </p>
+<p>Evaluates the proposal density at time t &gt; 1. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x2t</td><td>the current second state component. </td></tr>
+    <tr><td class="paramname">x2tm1</td><td>the previous second state component. </td></tr>
+    <tr><td class="paramname">yt</td><td>the current time series observation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a double evaluation. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad3ee89a06a18a287445e366230a6bd65"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> Kalman_RBPF::qSamp </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramname"><em>x2tm1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramname"><em>yt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Samples the time t second component. </p>
+<p>Samples the time t second component. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x2tm1</td><td>the previous time's second state component. </td></tr>
+    <tr><td class="paramname">yt</td><td>the current observation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a Vec sample of the second state component at the current time. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a67abffa6fe0510147037ed102aa30ed0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Kalman_RBPF::updateKalman </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classLgssm.html">Lgssm</a> &amp;&#160;</td>
+          <td class="paramname"><em>aModel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramname"><em>yt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramname"><em>x2t</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>How to update your inner Kalman filter object at each time. </p>
+<p>How to update your inner Kalman filter object at each time. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">aModel</td><td>a Kalman filter object describing the conditional closed-form model. </td></tr>
+    <tr><td class="paramname">yt</td><td>the current time series observation. </td></tr>
+    <tr><td class="paramname">x2t</td><td>the current second state component. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

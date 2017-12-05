@@ -59,7 +59,7 @@ public:
 
     /**
      * @brief Call this to begin sampling.
-     * @param samplesFileFile where to store the csv of parameter samples.
+     * @param samplesFile where to store the csv of parameter samples.
      * @param messagesFile where to store the logged messages.
      */
     void commenceSampling(std::string samplesFile, std::string messagesFile);

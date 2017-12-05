@@ -44,30 +44,6 @@ public:
     ~Pmmh_jac_apf();
 
 
-//    /**
-//     * @brief Convenience function that 
-//     * @param flatOnes the parameters in a std::vector<double> container.
-//     * @param beta
-//     * @param phis 
-//     * @param mus
-//     * @param sigmas
-//     * @param RstdDevs
-//     */
-//    void flattenParams(std::vector<double> &flatOnes, const Mat &beta, const Vec &phis, const Vec &mus, const Vec &sigmas, const Vec &RstdDevs);
-//    
-//    
-//    /**
-//     * @brief 
-//     * @param beta
-//     * @param phi
-//     * @param mu
-//     * @param sigma
-//     * @param RstdDevs
-//     * @param flatOnes
-//     */
-//    void unFlattenParams(Mat &beta, Vec &phi, Vec &mu, Vec &sigma, Vec &RstdDevs, const std::vector<double> &flatOnes);
-
-
     /**
      * @brief Samples new proposal parameters from old parameters.
      * @param oldParams

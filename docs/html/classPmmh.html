@@ -128,7 +128,7 @@ Inheritance diagram for Pmmh:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa4752fceaa1b278fcadb583865bfd0b5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh.html#aa4752fceaa1b278fcadb583865bfd0b5">Pmmh</a> (const std::vector&lt; Vec &gt; &amp;startTheta, unsigned numMCMCIters, const std::string &amp;dataFile, unsigned numCols, bool mc)</td></tr>
+<tr class="memitem:aa4752fceaa1b278fcadb583865bfd0b5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh.html#aa4752fceaa1b278fcadb583865bfd0b5">Pmmh</a> (const std::vector&lt; <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &gt; &amp;startTheta, unsigned numMCMCIters, const std::string &amp;dataFile, unsigned numCols, bool mc)</td></tr>
 <tr class="memdesc:aa4752fceaa1b278fcadb583865bfd0b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The constructor.  <a href="#aa4752fceaa1b278fcadb583865bfd0b5">More...</a><br /></td></tr>
 <tr class="separator:aa4752fceaa1b278fcadb583865bfd0b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52b058761ac6ede77eb3d8c0099e0d93"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a52b058761ac6ede77eb3d8c0099e0d93"></a>
@@ -138,16 +138,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac035560cb209fb5cade23e431b5e1fd3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh.html#ac035560cb209fb5cade23e431b5e1fd3">commenceSampling</a> (std::string samplesFile, std::string messagesFile)</td></tr>
 <tr class="memdesc:ac035560cb209fb5cade23e431b5e1fd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call this to begin sampling.  <a href="#ac035560cb209fb5cade23e431b5e1fd3">More...</a><br /></td></tr>
 <tr class="separator:ac035560cb209fb5cade23e431b5e1fd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ada4decd5df894376c74e3ddba5daa1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh.html#a7ada4decd5df894376c74e3ddba5daa1">qSample</a> (const std::vector&lt; Vec &gt; &amp;oldParams, std::vector&lt; Vec &gt; &amp;newParams)=0</td></tr>
+<tr class="memitem:a7ada4decd5df894376c74e3ddba5daa1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh.html#a7ada4decd5df894376c74e3ddba5daa1">qSample</a> (const std::vector&lt; <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &gt; &amp;oldParams, std::vector&lt; <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &gt; &amp;newParams)=0</td></tr>
 <tr class="memdesc:a7ada4decd5df894376c74e3ddba5daa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function that proposes new parameters. Tip: Make sure to declare your static RNG inside the implementation of this.  <a href="#a7ada4decd5df894376c74e3ddba5daa1">More...</a><br /></td></tr>
 <tr class="separator:a7ada4decd5df894376c74e3ddba5daa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8d3fdbc3f3c998670266a3032a53e80"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh.html#af8d3fdbc3f3c998670266a3032a53e80">logQEvaluate</a> (const std::vector&lt; Vec &gt; &amp;oldParams, const std::vector&lt; Vec &gt; &amp;newParams)=0</td></tr>
+<tr class="memitem:af8d3fdbc3f3c998670266a3032a53e80"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh.html#af8d3fdbc3f3c998670266a3032a53e80">logQEvaluate</a> (const std::vector&lt; <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &gt; &amp;oldParams, const std::vector&lt; <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &gt; &amp;newParams)=0</td></tr>
 <tr class="memdesc:af8d3fdbc3f3c998670266a3032a53e80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the logarithm of the proposal density.  <a href="#af8d3fdbc3f3c998670266a3032a53e80">More...</a><br /></td></tr>
 <tr class="separator:af8d3fdbc3f3c998670266a3032a53e80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a265ca1c1380d0ebc052be2c5424a0d3b"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh.html#a265ca1c1380d0ebc052be2c5424a0d3b">logPriorEvaluate</a> (const std::vector&lt; Vec &gt; &amp;theta)=0</td></tr>
+<tr class="memitem:a265ca1c1380d0ebc052be2c5424a0d3b"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh.html#a265ca1c1380d0ebc052be2c5424a0d3b">logPriorEvaluate</a> (const std::vector&lt; <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &gt; &amp;theta)=0</td></tr>
 <tr class="memdesc:a265ca1c1380d0ebc052be2c5424a0d3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the log of the model's prior distribution.  <a href="#a265ca1c1380d0ebc052be2c5424a0d3b">More...</a><br /></td></tr>
 <tr class="separator:a265ca1c1380d0ebc052be2c5424a0d3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a293931e138576f063aab7e46228f0266"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh.html#a293931e138576f063aab7e46228f0266">logLikeEvaluate</a> (const std::vector&lt; Vec &gt; &amp;theta, const std::vector&lt; Vec &gt; &amp;data, std::atomic_bool &amp;cancelled)=0</td></tr>
+<tr class="memitem:a293931e138576f063aab7e46228f0266"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh.html#a293931e138576f063aab7e46228f0266">logLikeEvaluate</a> (const std::vector&lt; <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &gt; &amp;theta, const std::vector&lt; <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &gt; &amp;data, std::atomic_bool &amp;cancelled)=0</td></tr>
 <tr class="memdesc:a293931e138576f063aab7e46228f0266"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates (approximates) the log-likelihood with a particle filter.  <a href="#a293931e138576f063aab7e46228f0266">More...</a><br /></td></tr>
 <tr class="separator:a293931e138576f063aab7e46228f0266"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -163,7 +163,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">Pmmh::Pmmh </td>
           <td>(</td>
-          <td class="paramtype">const std::vector&lt; Vec &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>startTheta</em>, </td>
         </tr>
         <tr>
@@ -240,7 +240,7 @@ Public Member Functions</h2></td></tr>
 <p>Call this to begin sampling. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">samplesFileFile</td><td>where to store the csv of parameter samples. </td></tr>
+    <tr><td class="paramname">samplesFile</td><td>where to store the csv of parameter samples. </td></tr>
     <tr><td class="paramname">messagesFile</td><td>where to store the logged messages. </td></tr>
   </table>
   </dd>
@@ -258,13 +258,13 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">virtual double Pmmh::logLikeEvaluate </td>
           <td>(</td>
-          <td class="paramtype">const std::vector&lt; Vec &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>theta</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::vector&lt; Vec &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>data</em>, </td>
         </tr>
         <tr>
@@ -297,7 +297,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the evaluation (as a double) of the log likelihood approximation. </dd></dl>
 
-<p>Implemented in <a class="el" href="classPmmh__jac__apf.html#acd0869e2b01566fcd45d85e850d4ee11">Pmmh_jac_apf</a>, and <a class="el" href="classPmmh__svol__sisr.html#af0bb463ef4d74e60022a4955f565390e">Pmmh_svol_sisr</a>.</p>
+<p>Implemented in <a class="el" href="classPmmh__svol__sisr.html#af0bb463ef4d74e60022a4955f565390e">Pmmh_svol_sisr</a>, and <a class="el" href="classPmmh__jac__apf.html#acd0869e2b01566fcd45d85e850d4ee11">Pmmh_jac_apf</a>.</p>
 
 </div>
 </div>
@@ -311,7 +311,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">virtual double Pmmh::logPriorEvaluate </td>
           <td>(</td>
-          <td class="paramtype">const std::vector&lt; Vec &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>theta</em></td><td>)</td>
           <td></td>
         </tr>
@@ -332,7 +332,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the log of the prior density. </dd></dl>
 
-<p>Implemented in <a class="el" href="classPmmh__jac__apf.html#ab253d4b6c59a5e9529d042eb7b98dc8a">Pmmh_jac_apf</a>, and <a class="el" href="classPmmh__svol__sisr.html#ab6c9983faf8ca460f8a8081c6a148aa2">Pmmh_svol_sisr</a>.</p>
+<p>Implemented in <a class="el" href="classPmmh__svol__sisr.html#ab6c9983faf8ca460f8a8081c6a148aa2">Pmmh_svol_sisr</a>, and <a class="el" href="classPmmh__jac__apf.html#ab253d4b6c59a5e9529d042eb7b98dc8a">Pmmh_jac_apf</a>.</p>
 
 </div>
 </div>
@@ -346,13 +346,13 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">virtual double Pmmh::logQEvaluate </td>
           <td>(</td>
-          <td class="paramtype">const std::vector&lt; Vec &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>oldParams</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::vector&lt; Vec &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>newParams</em>&#160;</td>
         </tr>
         <tr>
@@ -378,7 +378,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the log of the proposal density. </dd></dl>
 
-<p>Implemented in <a class="el" href="classPmmh__jac__apf.html#a17edc1dc687fb753eff22d5bb7e44964">Pmmh_jac_apf</a>, and <a class="el" href="classPmmh__svol__sisr.html#a8164b385edb083df605ba766e000c12a">Pmmh_svol_sisr</a>.</p>
+<p>Implemented in <a class="el" href="classPmmh__svol__sisr.html#a8164b385edb083df605ba766e000c12a">Pmmh_svol_sisr</a>, and <a class="el" href="classPmmh__jac__apf.html#a17edc1dc687fb753eff22d5bb7e44964">Pmmh_jac_apf</a>.</p>
 
 </div>
 </div>
@@ -392,13 +392,13 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">virtual void Pmmh::qSample </td>
           <td>(</td>
-          <td class="paramtype">const std::vector&lt; Vec &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>oldParams</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; Vec &gt; &amp;&#160;</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>newParams</em>&#160;</td>
         </tr>
         <tr>
@@ -423,7 +423,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classPmmh__jac__apf.html#a0127e07b0f9ba6b042418c575b78ca55">Pmmh_jac_apf</a>, and <a class="el" href="classPmmh__svol__sisr.html#a18df26cb5c0bddefbd24866b1b4ff142">Pmmh_svol_sisr</a>.</p>
+<p>Implemented in <a class="el" href="classPmmh__svol__sisr.html#a18df26cb5c0bddefbd24866b1b4ff142">Pmmh_svol_sisr</a>, and <a class="el" href="classPmmh__jac__apf.html#a0127e07b0f9ba6b042418c575b78ca55">Pmmh_jac_apf</a>.</p>
 
 </div>
 </div>

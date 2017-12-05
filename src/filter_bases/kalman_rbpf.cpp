@@ -78,7 +78,7 @@ void Kalman_RBPF::filter(const Vec &data)
             
             // can't divide by 0
             if( std::isnan(unNormWeightUpdate)){
-                throw std::runtime_error("divide by 0 error: q1Ev evaluated to 0!");
+                throw std::runtime_error("divide by 0 error: qEv evaluated to 0!");
             }
             
             tmpLikeDenom += m_unNormWeights[ii];
@@ -106,10 +106,10 @@ double Kalman_RBPF::getCondLike() const
     return m_lastCondLike;
 }
 
-std::vector<double> Kalman_RBPF::getWeights() const
-{
-    return m_unNormWeights;
-}
+//std::vector<double> Kalman_RBPF::getWeights() const
+//{
+//    return m_unNormWeights;
+//}
 
 void Kalman_RBPF::ressampMultinomKRBPF(std::vector<Lgssm> &oldMods, 
                                        std::vector<Vec> &oldSamps, 

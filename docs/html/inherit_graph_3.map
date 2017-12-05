@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classKalman__RBPF.html" title="A base&#45;class for Kalman Rao&#45;Blackwellized Particle Filtering. " alt="" coords="5,5,115,32"/>
+<area shape="rect" id="node1" href="$classFSHMM.html" title="A base&#45;class for Finite State HMM Filtering. " alt="" coords="5,5,76,32"/>
+<area shape="rect" id="node2" href="$classSimpleHmm.html" title="A simple 2 state HMM. " alt="" coords="124,5,219,32"/>
 </map>

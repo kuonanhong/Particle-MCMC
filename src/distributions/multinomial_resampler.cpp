@@ -3,9 +3,10 @@
 #include <assert.h>
 #include <iostream>
 
-MultinomResamp::MultinomResamp() : m_gen{static_cast<std::uint32_t>(
-              std::chrono::high_resolution_clock::now().time_since_epoch().count()
-          )}
+MultinomResamp::MultinomResamp() 
+        : m_gen{static_cast<std::uint32_t>(
+                    std::chrono::high_resolution_clock::now().time_since_epoch().count()
+                                           )}
 {
 }
 
@@ -125,6 +126,42 @@ void MultinomResamp::ressampKRBPF(std::vector<Lgssm> &oldMods, std::vector<Vec> 
     std::fill (oldWts.begin(), oldWts.end(), 1.0);
 }
 
+
+void MultinomResamp::ressampHRBPF(std::vector<FSHMM> &oldMods, std::vector<Vec> &oldSamps, std::vector<double> &oldWts)
+{
+    // check to make sure the weights aren't all 0.0!
+    if( std::accumulate(oldWts.begin(), oldWts.end(), 0.0) == 0.0){
+        throw std::runtime_error("oldWts ARE ALL 0");
+    }
+    
+    // get dimensions
+    unsigned numParticles = oldWts.size();
+    
+    // Create the distribution with those weights
+    std::discrete_distribution<> idxSampler(oldWts.begin(), oldWts.end());
+    
+    // create temporary vectors for samps and mods
+    std::vector<Vec>   tmpSamps(numParticles);
+    std::vector<FSHMM> tmpMods(numParticles);
+    
+    // sample from the original parts and store in temporary
+    int whichPart;
+    for(unsigned part = 0; part < numParticles; ++part)
+    {
+        whichPart = idxSampler(m_gen);
+        tmpSamps[part] = oldSamps[whichPart];
+        tmpMods[part] = oldMods[whichPart];
+    }
+    
+    //overwrite olds with news
+    std::swap (oldMods, tmpMods);
+    std::swap (oldSamps, tmpSamps);
+    
+    // re-write weights to all 1s
+    std::fill (oldWts.begin(), oldWts.end(), 1.0);
+}
+
+
 std::vector<int> MultinomResamp::kGen(const std::vector<double> &logFirstStageWeights)
 {
     // these log weights may be very negative. If that's the case, exponentiating them may cause underflow
@@ -134,7 +171,7 @@ std::vector<int> MultinomResamp::kGen(const std::vector<double> &logFirstStageWe
     
    // Create the distribution with exponentiated log-weights
     std::vector<double> w;
-    int dim = logFirstStageWeights.size();
+    unsigned dim = logFirstStageWeights.size();
     w.resize(dim);
     double m = *std::max_element(logFirstStageWeights.begin(), logFirstStageWeights.end());
 //    std::cout << "max for kgen: "<< m << "\n";
@@ -145,7 +182,7 @@ std::vector<int> MultinomResamp::kGen(const std::vector<double> &logFirstStageWe
     
     // sample ks
     std::vector<int> ks(dim); 
-    for(unsigned int i = 0; i < dim; ++i){
+    for(unsigned i = 0; i < dim; ++i){
         ks[i] = kGenerator(m_gen);
     }
     

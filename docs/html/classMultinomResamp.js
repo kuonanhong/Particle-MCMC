@@ -5,5 +5,6 @@ var classMultinomResamp =
     [ "kGen", "classMultinomResamp.html#ad29946389803294445cb27e74d949cd5", null ],
     [ "resamp", "classMultinomResamp.html#a0c24d6d59254855421b8ae13b2ebbcd9", null ],
     [ "resampLogWts", "classMultinomResamp.html#a0ea6269180faf0b0613072d9bc8a7b53", null ],
+    [ "ressampHRBPF", "classMultinomResamp.html#aaddcbec4eb62954d8d7aa96c45ffd7d0", null ],
     [ "ressampKRBPF", "classMultinomResamp.html#ad39c4f5d5460e3e4a2c56370c8dab39f", null ]
 ];

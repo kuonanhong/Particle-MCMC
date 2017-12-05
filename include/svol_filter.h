@@ -26,6 +26,10 @@ public:
     /**
      * @brief The constructor.
      * @param numParts the number of particles you want.
+     * @param beta 
+     * @param phi
+     * @param sigma
+     * @param pLen the length of particles. only set to non-zero number if you want to pre-allocate.
      */
     SVolFilter(unsigned numParts, double beta, double phi, double sigma, unsigned pLen=0);
     

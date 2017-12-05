@@ -90,8 +90,8 @@ public:
 
      /**
       * @brief Use a new datapoint to update the filtering distribution (or smoothing if pathLength > 0).
-      * @param a Vec representing the data
-      * @param a std::vector of callback functions that are used to calculate expectations with respect to the filtering distribution.
+      * @param dataconst a Vec representing the data
+      * @param fs a std::vector of callback functions that are used to calculate expectations with respect to the filtering distribution.
       */
     void filterOrSmooth (const Vec &dataconst, const std::vector<std::function<const Mat(const Vec&)> >& fs = std::vector<std::function<const Mat(const Vec&)> >()); 
     
