@@ -10,8 +10,8 @@ You have to build this yourself. Make sure to compile with C++11 enabled (`-std=
 3. `mcmc_algos` are classes performing MCMC techniques for specific models. These classes inherit from the classes in `mcmc_bases`.
 4. `mcmc_bases` are all of the base classes for certain types of MCMC algorithms. Inheriting from these allows the user to skip writing a bunch of code.
 5. `models` are particle filtering classes for specific state space models.
-6. `filter_bases` are Kalman filtering and particle filtering base classes. Inheriting from these abstracts away all of the details of how this is performed. 
-7. `utilities` functions that might be useful.
+6. `filter_bases` are Kalman filtering and particle filtering base classes. Inheriting from these abstracts away all of the details of how this is performed. Particle filter base classes are pure virtual, while the closed form filtering classes (fshmm and lgssm) are not.
+7. `utilities` functions that might be useful and have no other home (e.g. reading or logging data, transforming parameters with common functions, etc.).
 
 ## Documentation
 [More details on everything can be found here.](https://tbrown122387.github.io/ssm/)
