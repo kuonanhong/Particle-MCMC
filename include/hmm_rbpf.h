@@ -12,6 +12,7 @@
 enum class HMMRBPFResampStyle {everytime_multinomial, never, ess_multinomial};
 
 //TODO: IMPLEMENT LOG WEIGHTS
+// TODO: implement expectations
 
 //! A base-class for HMM Rao-Blackwellized Particle Filtering. 
 /*!
@@ -25,16 +26,16 @@ class Hmm_Rbpf{
 private:
     unsigned            m_numParts;
     unsigned            m_now;
-    double              m_lastCondLike;
+    double              m_lastLogCondLike;
     //double              m_ess;//todo
     //double              m_percentNumPartsThresh; //todo
     std::vector<FSHMM>  m_p_innerMods;
     std::vector<Vec>    m_p_samps;
-    std::vector<double> m_unNormWeights;
+    std::vector<double> m_logUnNormWeights;
     HMMRBPFResampStyle  m_resampTechnique;
     MultinomResamp      m_resampler;
     
-    void resampMultinomHRBPF(std::vector<FSHMM> &oldMods, std::vector<Vec> &oldSamps, std::vector<double> &oldWts);
+    void resampMultinomHRBPF(std::vector<FSHMM> &oldMods, std::vector<Vec> &oldSamps, std::vector<double> &oldLogWts);
 public:
 
     //! The constructor.
@@ -66,7 +67,7 @@ public:
      * @brief Get the latest conditional likelihood.
      * @return the latest conditional likelihood.
      */
-    double getCondLike() const;
+    double getLogCondLike() const;
     
 
     //! Evaluates the first time state density.
@@ -75,7 +76,7 @@ public:
      * @param x21 component two at time 1
      * @return a double evaluation
      */
-    virtual double muEv(const Vec &x21) = 0;
+    virtual double logMuEv(const Vec &x21) = 0;
     
     
     //! Sample from the first sampler.
@@ -121,7 +122,7 @@ public:
      * @param y1 time 1 observation.
      * @return a double evaluation of the density.
      */
-    virtual double q1Ev(const Vec &x21, const Vec &y1) = 0;
+    virtual double logQ1Ev(const Vec &x21, const Vec &y1) = 0;
     
     
     //! Evaluates the state transition density for the second state component.
@@ -131,7 +132,7 @@ public:
      * @param x2tm1 the previous second state component.
      * @return a double evaluation.
      */
-    virtual double fEv(const Vec &x2t, const Vec &x2tm1) = 0;
+    virtual double logFEv(const Vec &x2t, const Vec &x2tm1) = 0;
     
     
     //! Evaluates the proposal density at time t > 1.
@@ -142,7 +143,7 @@ public:
      * @param yt the current time series observation.
      * @return a double evaluation.
      */
-    virtual double qEv(const Vec &x2t, const Vec &x2tm1, const Vec &yt ) = 0;
+    virtual double logQEv(const Vec &x2t, const Vec &x2tm1, const Vec &yt ) = 0;
     
     
     //! How to update your inner HMM filter object at each time.

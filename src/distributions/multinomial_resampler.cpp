@@ -127,18 +127,21 @@ void MultinomResamp::ressampKRBPF(std::vector<Lgssm> &oldMods, std::vector<Vec> 
 }
 
 
-void MultinomResamp::ressampHRBPF(std::vector<FSHMM> &oldMods, std::vector<Vec> &oldSamps, std::vector<double> &oldWts)
+void MultinomResamp::ressampHRBPF(std::vector<FSHMM> &oldMods, std::vector<Vec> &oldSamps, std::vector<double> &oldLogUnNormWts)
 {
-    // check to make sure the weights aren't all 0.0!
-    if( std::accumulate(oldWts.begin(), oldWts.end(), 0.0) == 0.0){
-        throw std::runtime_error("oldWts ARE ALL 0");
-    }
-    
     // get dimensions
-    unsigned numParticles = oldWts.size();
+    unsigned numParticles = oldLogUnNormWts.size();
     
     // Create the distribution with those weights
-    std::discrete_distribution<> idxSampler(oldWts.begin(), oldWts.end());
+    std::vector<double> w;
+    w.resize(numParticles);
+    double m = *std::max_element(oldLogUnNormWts.begin(), oldLogUnNormWts.end());
+    std::transform(oldLogUnNormWts.begin(),
+                    oldLogUnNormWts.end(),
+                    w.begin(),
+                    [&m](double &d)->double{return std::exp(d-m);}
+                    );
+    std::discrete_distribution<> idxSampler(w.begin(), w.end());
     
     // create temporary vectors for samps and mods
     std::vector<Vec>   tmpSamps(numParticles);
@@ -158,7 +161,7 @@ void MultinomResamp::ressampHRBPF(std::vector<FSHMM> &oldMods, std::vector<Vec> 
     std::swap (oldSamps, tmpSamps);
     
     // re-write weights to all 1s
-    std::fill (oldWts.begin(), oldWts.end(), 1.0);
+    std::fill (oldLogUnNormWts.begin(), oldLogUnNormWts.end(), 0.0);
 }
 
 

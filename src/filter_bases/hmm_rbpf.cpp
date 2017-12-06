@@ -1,18 +1,18 @@
 #include "hmm_rbpf.h"
 
-
+#include <iostream>
 // doesn't instantiate or resize LGSSM mods because 
 // their first time prior might depend on samples
 Hmm_Rbpf::Hmm_Rbpf(unsigned numParts, HMMRBPFResampStyle rt)
-    : m_numParts(numParts), m_now(0), m_lastCondLike(1.0), m_resampTechnique(rt)
+    : m_numParts(numParts), m_now(0), m_lastLogCondLike(0.0), m_resampTechnique(rt)
 {
-    m_unNormWeights.resize(numParts);
+    m_logUnNormWeights.resize(numParts);
     m_p_samps.resize(numParts);
     
     // set all the weights to uniform
     std::vector<double>::iterator it;
-    for(it = m_unNormWeights.begin(); it != m_unNormWeights.end(); ++it){
-        *it = 1.0;
+    for(it = m_logUnNormWeights.begin(); it != m_logUnNormWeights.end(); ++it){
+        *it = 0.0;
     }
 }
 
@@ -30,7 +30,7 @@ void Hmm_Rbpf::filter(const Vec &data)
         // initialize and update the closed-form mods        
         Vec tmpProbs;
         Mat tmpTransMat;
-        double weightAdj;
+        double logWeightAdj;
         double tmpForFirstLike(0.0);
         for(unsigned ii = 0; ii < m_numParts; ++ii){
             
@@ -39,22 +39,22 @@ void Hmm_Rbpf::filter(const Vec &data)
             tmpTransMat = initHMMTransMat(m_p_samps[ii]);
             m_p_innerMods.emplace_back(tmpProbs, tmpTransMat); 
             updateFSHMM(m_p_innerMods[ii], data, m_p_samps[ii]);
-            weightAdj = m_p_innerMods[ii].getCondLike() * muEv(m_p_samps[ii]) / q1Ev(m_p_samps[ii], data); 
+            logWeightAdj = std::log(m_p_innerMods[ii].getCondLike()) + logMuEv(m_p_samps[ii]) - logQ1Ev(m_p_samps[ii], data); 
 
-            // can't divide by 0
-            if( std::isnan(weightAdj)){
-                throw std::runtime_error("divide by 0 error: q1Ev evaluated to 0!");
-            }
+//            // can't divide by 0
+//            if( std::isnan(weightAdj)){
+//                throw std::runtime_error("divide by 0 error: q1Ev evaluated to 0!");
+//            }
      
-            m_unNormWeights[ii] *= weightAdj;
-            tmpForFirstLike += weightAdj;
+            m_logUnNormWeights[ii] += logWeightAdj;
+            tmpForFirstLike += std::exp(logWeightAdj);
         }
-        m_lastCondLike = tmpForFirstLike / m_numParts; // store likelihood
+        m_lastLogCondLike = std::log(tmpForFirstLike) - std::log(m_numParts); // store likelihood
         
         
         // resample (unnormalized weights ok)
         if (m_resampTechnique == HMMRBPFResampStyle::everytime_multinomial)
-            resampMultinomHRBPF(m_p_innerMods, m_p_samps, m_unNormWeights);
+            resampMultinomHRBPF(m_p_innerMods, m_p_samps, m_logUnNormWeights);
 //        else if ( (m_resampTechnique == HMMRBPFResampStyle::ess_multinomial) && (m_ESS < m_percentOfNumPartsThresh * m_numParts) )
 //            resampMultinomHRBPF(m_p_innerMods, m_p_samps, m_unNormWeights);
             
@@ -65,30 +65,32 @@ void Hmm_Rbpf::filter(const Vec &data)
         
         // update
         Vec newX2Samp;
-        double unNormWeightUpdate;
+        double logUnNormWeightUpdate;
         double tmpLikeNumer(0.0);
         double tmpLikeDenom(0.0);
         for(unsigned ii = 0; ii < m_numParts; ++ii){
             
             newX2Samp = qSamp(m_p_samps[ii], data);
             updateFSHMM(m_p_innerMods[ii], data, newX2Samp);
-            unNormWeightUpdate = m_p_innerMods[ii].getCondLike() * fEv(newX2Samp, m_p_samps[ii]) / qEv(newX2Samp, m_p_samps[ii], data);
+            logUnNormWeightUpdate = std::log(m_p_innerMods[ii].getCondLike())
+                                    + logFEv(newX2Samp, m_p_samps[ii]) 
+                                    - logQEv(newX2Samp, m_p_samps[ii], data);
             
             // can't divide by 0
-            if( std::isnan(unNormWeightUpdate)){
-                throw std::runtime_error("divide by 0 error: qEv evaluated to 0!");
-            }
+//            if( std::isnan(unNormWeightUpdate)){
+//                throw std::runtime_error("divide by 0 error: qEv evaluated to 0!");
+//            }
             
-            tmpLikeDenom += m_unNormWeights[ii];
-            m_unNormWeights[ii] *= unNormWeightUpdate;
-            tmpLikeNumer += m_unNormWeights[ii]; 
+            tmpLikeDenom += std::exp(m_logUnNormWeights[ii]);
+            m_logUnNormWeights[ii] += logUnNormWeightUpdate;
+            tmpLikeNumer += std::exp(m_logUnNormWeights[ii]); 
             m_p_samps[ii] = newX2Samp;
         }
-        m_lastCondLike = tmpLikeNumer / tmpLikeDenom;
+        m_lastLogCondLike = std::log(tmpLikeNumer) - std::log( tmpLikeDenom );
         
         // resample (unnormalized weights ok)
         if (m_resampTechnique == HMMRBPFResampStyle::everytime_multinomial)
-            resampMultinomHRBPF(m_p_innerMods, m_p_samps, m_unNormWeights);
+            resampMultinomHRBPF(m_p_innerMods, m_p_samps, m_logUnNormWeights);
 //        else if ( (m_resampTechnique == HMMRBPFResampStyle::ess_multinomial) && (m_ESS < m_percentOfNumPartsThresh * m_numParts) )
 //            resampMultinomHRBPF(m_p_innerMods, m_p_samps, m_unNormWeights);
         
@@ -99,15 +101,15 @@ void Hmm_Rbpf::filter(const Vec &data)
 }
 
 
-double Hmm_Rbpf::getCondLike() const
+double Hmm_Rbpf::getLogCondLike() const
 {
-    return m_lastCondLike;
+    return m_lastLogCondLike;
 }
 
 
 void Hmm_Rbpf::resampMultinomHRBPF(std::vector<FSHMM> &oldMods, 
                                     std::vector<Vec> &oldSamps, 
-                                    std::vector<double> &oldWts)
+                                    std::vector<double> &oldLogWts)
 {
-    m_resampler.ressampHRBPF(oldMods, oldSamps, oldWts);
+    m_resampler.ressampHRBPF(oldMods, oldSamps, oldLogWts);
 }
