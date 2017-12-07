@@ -17,6 +17,6 @@ You have to build this yourself. Make sure to compile with C++11 enabled (`-std=
 [More details on everything can be found here.](https://tbrown122387.github.io/ssm/)
 
 ## To-Do List
-- [] Make a parameter class that organizes which are transformed, constrained, etc.
-- [] Implement more resampling options (different algorithms, different schedules, etc.)
-- [] unit testing...
+- Make a parameter class that organizes which are transformed, constrained, etc.
+- Implement more resampling options (different algorithms, different schedules, etc.)
+- unit testing...
