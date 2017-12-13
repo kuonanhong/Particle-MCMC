@@ -1,5 +1,7 @@
 #include "apf_filter.h"
+
 #include <iostream>
+#include <cmath>
 // constructors
 
 double log_sum_exp(const std::vector<double> &arr, const double &someScalar = 0.0) 
@@ -87,7 +89,7 @@ void APFFilter::filter(const Vec &data, const std::vector<std::function<const Ma
         // calculate expectations before you resample
         m_expectations.resize(fs.size());
         m_dimState = q1Samp(data).rows();
-        std::fill(m_expectations.begin(), m_expectations.end(), Vec::Zero(m_dimState)); // fill everything with zero vctors
+        std::fill(m_expectations.begin(), m_expectations.end(), Vec::Zero(m_dimState)); // TODO: should this be Mat::Zero(m_dimState, m_dimState)?
         int fId(0);
         for(auto & h : fs){
             double weightNormConst (0.0);
@@ -162,7 +164,7 @@ void APFFilter::filter(const Vec &data, const std::vector<std::function<const Ma
         
         // calculate expectations before you resample
         //m_expectations.resize(fs.size());
-        std::fill(m_expectations.begin(), m_expectations.end(), Vec::Zero(m_dimState)); // fill everything with zero vctors
+        std::fill(m_expectations.begin(), m_expectations.end(), Vec::Zero(m_dimState)); // TODO: should this be Mat::Zero(m_dimState, m_dimState)?
         int fId(0);
         for(auto & h : fs){
             double weightNormConst (0.0);

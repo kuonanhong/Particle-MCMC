@@ -79,7 +79,7 @@ void SISRFilter::filter(const Vec &dat, const std::vector<std::function<const Ma
    
         // calculate expectations before you resample
         m_expectations.resize(fs.size());
-        std::fill(m_expectations.begin(), m_expectations.end(), Vec::Zero(m_dimState)); // fill everything with zero vctors
+        std::fill(m_expectations.begin(), m_expectations.end(), Vec::Zero(m_dimState)); // TODO: should this be Mat::Zero(m_dimState, m_dimState)?
         int fId(0);
         for(auto & h : fs){
             double weightNormConst (0.0);
@@ -142,7 +142,7 @@ void SISRFilter::filter(const Vec &dat, const std::vector<std::function<const Ma
 
         // calculate expectations before you resample
         m_expectations.resize(fs.size());
-        std::fill(m_expectations.begin(), m_expectations.end(), Vec::Zero(m_dimState)); // fill everything with zero vctors
+        std::fill(m_expectations.begin(), m_expectations.end(), Vec::Zero(m_dimState)); // TODO: should this be Mat::Zero(m_dimState, m_dimState)?
         int fId(0);
         for(auto & h : fs){ // iterate over all functions
             double weightNormConst (0.0);
