@@ -3,6 +3,7 @@
 #include <fstream> // for fstream
 
 #include "svol_filter.h" 
+#include "svol_bs_filter.h"
 #include "svol_apf_filter.h"
 
 void sVolTest()
@@ -10,11 +11,12 @@ void sVolTest()
     
     // instantiate model
     int numParts(10000);
-    SVolFilter myMod(numParts, .5, .91, 1.0, 10); // true parameters from simulated data
+    //SVolFilter myMod(numParts, .5, .91, 1.0, 0); // true parameters from simulated data
+    SVolBSFilter myMod(numParts, .5, .91, 1.0, 0);
     //SVolAPFFilter myMod2(numParts);
         
     // stream in data
-    std::string filePath("/home/taylor/ssm/data/some_csvs/svol_y_data.csv");
+    std::string filePath("/home/t/ssm/data/some_csvs/svol_y_data.csv");
     std::ifstream infile(filePath);
     std::string line;
     unsigned int time = 0;
@@ -25,11 +27,7 @@ void sVolTest()
     
     while(std::getline(infile, line))
     {
-        
-        if(time == 10)
-            break;
-            
-        
+                
         // construct yt
         Vec yt(1);
         try{
@@ -52,8 +50,8 @@ void sVolTest()
 
         
         //std::cout << "time: " << time << "\n";
-//        std::cout //<< "cond likes: " 
-//                  << myMod.getLogCondLike() << ", "
+        std::cout //<< "cond likes: " 
+                  << myMod.getLogCondLike() << "\n";
 //                  << std::log(myMod2.getCondLike()) << "\n";
 
         
