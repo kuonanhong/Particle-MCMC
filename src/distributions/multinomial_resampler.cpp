@@ -16,40 +16,40 @@ MultinomResamp::~MultinomResamp()
 }
 
 
-void MultinomResamp::resamp(std::vector<std::vector<Vec> > &oldParts, std::vector<double> &oldWeights)
-{
-    
-    // check to make sure the weights aren't all 0.0!
-    if( std::accumulate(oldWeights.begin(), oldWeights.end(), 0.0) == 0.0){
-        throw std::runtime_error("oldWeights ARE ALL 0");
-    }
-    
-    // get dimensions
-    int timeLength = oldParts.size();
-    int numParticles = oldParts[0].size();
-    
-    // Create the distribution with those weights
-    std::discrete_distribution<> idxSampler(oldWeights.begin(), oldWeights.end());
-    
-    // create temporary particle vector and weight vector
-    //std::vector<std::vector<Vec> > tmpPartics = oldParts;//(timeLength, std::vector<Vec>(numParticles) );
-    std::vector<std::vector<Vec> > tmpPartics(timeLength, std::vector<Vec>(numParticles));
-    
-    // sample from the original parts and store in tmpParts
-    int whichPart;
-    for(int part = 0; part < numParticles; ++part)
-    {
-        whichPart = idxSampler(m_gen);
-        for(int time = 0; time < timeLength; ++time)
-        {
-            tmpPartics[time][part] = oldParts[time][whichPart];
-        }
-    }
-        
-    //overwrite olds with news
-    std::swap (oldParts, tmpPartics);
-    std::fill (oldWeights.begin(), oldWeights.end(), 1.0); 
-}
+//void MultinomResamp::resamp(std::vector<std::vector<Vec> > &oldParts, std::vector<double> &oldWeights)
+//{
+//    
+//    // check to make sure the weights aren't all 0.0!
+//    if( std::accumulate(oldWeights.begin(), oldWeights.end(), 0.0) == 0.0){
+//        throw std::runtime_error("oldWeights ARE ALL 0");
+//    }
+//    
+//    // get dimensions
+//    int timeLength = oldParts.size();
+//    int numParticles = oldParts[0].size();
+//    
+//    // Create the distribution with those weights
+//    std::discrete_distribution<> idxSampler(oldWeights.begin(), oldWeights.end());
+//    
+//    // create temporary particle vector and weight vector
+//    //std::vector<std::vector<Vec> > tmpPartics = oldParts;//(timeLength, std::vector<Vec>(numParticles) );
+//    std::vector<std::vector<Vec> > tmpPartics(timeLength, std::vector<Vec>(numParticles));
+//    
+//    // sample from the original parts and store in tmpParts
+//    int whichPart;
+//    for(int part = 0; part < numParticles; ++part)
+//    {
+//        whichPart = idxSampler(m_gen);
+//        for(int time = 0; time < timeLength; ++time)
+//        {
+//            tmpPartics[time][part] = oldParts[time][whichPart];
+//        }
+//    }
+//        
+//    //overwrite olds with news
+//    std::swap (oldParts, tmpPartics);
+//    std::fill (oldWeights.begin(), oldWeights.end(), 1.0); 
+//}
 
 void MultinomResamp::resampLogWts(std::vector<std::vector<Vec> > &oldParts, std::vector<double> &oldLogUnNormWts)
 {
@@ -66,9 +66,7 @@ void MultinomResamp::resampLogWts(std::vector<std::vector<Vec> > &oldParts, std:
     std::vector<double> w;
     w.resize(oldLogUnNormWts.size());
     double m = *std::max_element(oldLogUnNormWts.begin(), oldLogUnNormWts.end());
-//    std::cout << "max for resamp: "<< m << "\n";
     std::transform(oldLogUnNormWts.begin(), oldLogUnNormWts.end(), w.begin(), 
-//                    [](double& d) -> double { return std::exp(d + 100.0); });
                     [&m](double& d) -> double { return std::exp( d - m ); } );
     std::discrete_distribution<> idxSampler(w.begin(), w.end());
     
@@ -87,7 +85,8 @@ void MultinomResamp::resampLogWts(std::vector<std::vector<Vec> > &oldParts, std:
     }
         
     //overwrite olds with news
-    std::swap (oldParts, tmpPartics);
+    //std::swap (oldParts, tmpPartics);
+    oldParts = std::move(tmpPartics);
     std::fill (oldLogUnNormWts.begin(), oldLogUnNormWts.end(), 0.0); // change back    
 }
 
@@ -157,8 +156,10 @@ void MultinomResamp::ressampHRBPF(std::vector<FSHMM> &oldMods, std::vector<Vec> 
     }
     
     //overwrite olds with news
-    std::swap (oldMods, tmpMods);
-    std::swap (oldSamps, tmpSamps);
+    //std::swap (oldMods, tmpMods);
+    //std::swap (oldSamps, tmpSamps);
+    oldMods = std::move(tmpMods);
+    oldSamps = std::move(tmpSamps);
     
     // re-write weights to all 1s
     std::fill (oldLogUnNormWts.begin(), oldLogUnNormWts.end(), 0.0);
