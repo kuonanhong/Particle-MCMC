@@ -10,7 +10,8 @@ typedef Eigen::Matrix< double, Eigen::Dynamic, Eigen::Dynamic > Mat;
 
 enum class BSResampStyle {everytime_multinomial, never, ess_multinomial};
 
-//! A base-class for Bootstrap Filtering (SISR with naive proposals).
+//! A base-class for Bootstrap Filtering (SISR with naive proposals). This class is a bit faster because it 
+// can't store entire particle paths, and it doesn't give you a choice of proposal.
 /**
  * @class BSFilter
  * @author taylor
@@ -21,23 +22,20 @@ class BSFilter
 {
 private:
     // members
-    std::vector<std::vector<Vec> > m_particles;
+    std::vector<Vec>               m_particles;
     std::vector<double>            m_logUnNormWeights;
     unsigned int                   m_dimState;
     unsigned int                   m_now;         // time point
     unsigned int                   m_numParts;    // num particles
     double                         m_logLastCondLike; // log p(y_t|y_{1:t-1}) or log p(y1) 
     BSResampStyle                  m_resampTechnique;
-    unsigned int                   m_pathLength; // optional: pre-allocate with int >= 1
     double                         m_ESS; // effective sample size
     double                         m_percentOfNumPartsThresh; // what percent of particles is the lower bound for ESS resampling?
     MultinomResamp                 m_resampler;
     std::vector<Mat>               m_expectations; // stores any sample averages the user wants
     
     // methods
-    void multinomRsmp(std::vector<std::vector<Vec> > &oldParts, std::vector<double> &oldLogUnNormWts);
-    void filter (const Vec &data, const std::vector<std::function<const Mat(const Vec&)> >& fs = std::vector<std::function<const Mat(const Vec&)> >());
-    void smooth (const Vec &data, const std::vector<std::function<const Mat(const Vec&)> >& fs = std::vector<std::function<const Mat(const Vec&)> >());
+    void multinomRsmp(std::vector<Vec> &oldParts, std::vector<double> &oldLogUnNormWts);
 
 public:
 
@@ -71,14 +69,7 @@ public:
      */
     double getESS() const; 
     
-    
-    //!
-    /**
-     * @brief get $p(x_{1:t}|y_{1:t})$
-     * @return The up-to-date set of path samples for the joint smoothing distribution.
-     */
-    std::vector<std::vector<Vec> > getFullParts() const;
-    
+        
     //!
     /**
      * @brief get all stored expectations. With respect to $p(x_t|y_{1:t})$
@@ -101,7 +92,7 @@ public:
      * @param data is a const Vec& representing the current observed value of the time series.
      * @param fs is a vector of functions that operate on each particle Vec. They are used to store empirical expectations (taken with respect to the filtering distribution).
      */
-    void filterOrSmooth (const Vec &data, const std::vector<std::function<const Mat(const Vec&)> >& fs = std::vector<std::function<const Mat(const Vec&)> >());  //depending on if m_pathLength == 0 or > 0
+    void filter(const Vec &data, const std::vector<std::function<const Mat(const Vec&)> >& fs = std::vector<std::function<const Mat(const Vec&)> >());  //depending on if m_pathLength == 0 or > 0
 
     //! 
     /**
