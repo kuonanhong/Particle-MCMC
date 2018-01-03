@@ -19,4 +19,5 @@ You have to build this yourself. Make sure to compile with C++11 enabled (`-std=
 ## To-Do List
 - Make a parameter class that organizes which are transformed, constrained, etc.
 - Implement more resampling options (different algorithms, different schedules, etc.)
+- Make sure all resamplers and classes are log-weights only
 - unit testing...

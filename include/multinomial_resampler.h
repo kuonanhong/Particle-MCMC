@@ -38,14 +38,6 @@ public:
      */
     ~MultinomResamp();
     
-    
-    /**
-     * @brief Function to resample in place from weights *not* in log-space.
-     * @param oldParts the old particles in form std::vector<std::vector<Eigen::VectorXd> >.
-     * @param oldWeights the soon-to-be outdated std::vector of un-normalized weights.
-     */
-    void resamp(std::vector<std::vector<Vec> > &oldParts, std::vector<double> &oldWeights);
-    
 
     /**
      * @brief Function to resample in place from SISRs or APFS with weights in log-space.
@@ -54,6 +46,13 @@ public:
      */
     void resampLogWts(std::vector<std::vector<Vec> > &oldParts, std::vector<double> &oldLogUnNormWts);
     
+
+    /**
+     * @brief Function to resample in place from SISRs or APFS with weights in log-space.
+     * @param oldParts the old particles in form std::vector<Eigen::VectorXd>.
+     * @param oldLogUnNormWts the std::vector<double> of log-un-normalized weights.
+     */
+    void resampLogWts(std::vector<Vec> &oldParts, std::vector<double> &oldLogUnNormWts);
 
     /**
       * @brief Function to resample RBPFs--recall you have to resample the samples AND models.

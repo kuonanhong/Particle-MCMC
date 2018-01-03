@@ -11,12 +11,12 @@ void sVolTest()
     
     // instantiate model
     int numParts(10000);
-    //SVolFilter myMod(numParts, .5, .91, 1.0, 0); // true parameters from simulated data
-    SVolBSFilter myMod(numParts, .5, .91, 1.0, 0);
+    SVolFilter myMod(numParts, .5, .91, 1.0, 0); // true parameters from simulated data
+    SVolBSFilter myMod2(numParts, .5, .91, 1.0, 0);
     //SVolAPFFilter myMod2(numParts);
         
     // stream in data
-    std::string filePath("/home/t/ssm/data/some_csvs/svol_y_data.csv");
+    std::string filePath("/home/taylor/ssm/data/some_csvs/svol_y_data.csv");
     std::ifstream infile(filePath);
     std::string line;
     unsigned int time = 0;
@@ -45,13 +45,15 @@ void sVolTest()
         
         //myMod.filterOrSmooth(yt);
         myMod.filterOrSmooth(yt, fs);
+        myMod2.filter(yt, fs); // for bs filter
         //myMod2.filterOrSmooth(yt, fs);
         
 
         
         //std::cout << "time: " << time << "\n";
         std::cout //<< "cond likes: " 
-                  << myMod.getLogCondLike() << "\n";
+                  << myMod.getLogCondLike() << ", "
+                  << myMod2.getLogCondLike() << "\n";
 //                  << std::log(myMod2.getCondLike()) << "\n";
 
         
