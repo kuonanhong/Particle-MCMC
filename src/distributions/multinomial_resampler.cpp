@@ -163,7 +163,7 @@ void MultinomResamp::ressampHRBPF(std::vector<FSHMM> &oldMods, std::vector<Vec> 
 }
 
 
-std::vector<int> MultinomResamp::kGen(const std::vector<double> &logFirstStageWeights)
+std::vector<unsigned int> MultinomResamp::kGen(const std::vector<double> &logFirstStageWeights)
 {
     // these log weights may be very negative. If that's the case, exponentiating them may cause underflow
     // so we use the "log-exp-sum" trick
@@ -172,20 +172,22 @@ std::vector<int> MultinomResamp::kGen(const std::vector<double> &logFirstStageWe
     
    // Create the distribution with exponentiated log-weights
     std::vector<double> w;
-    unsigned dim = logFirstStageWeights.size();
+    unsigned int dim = logFirstStageWeights.size();
     w.resize(dim);
     double m = *std::max_element(logFirstStageWeights.begin(), logFirstStageWeights.end());
 //    std::cout << "max for kgen: "<< m << "\n";
-    std::transform(logFirstStageWeights.begin(), logFirstStageWeights.end(), w.begin(), 
-//                    [](const double& d) -> double { return std::exp(d + 100.0); } );
-                    [&m](const double& d) -> double { return std::exp(d-m); } );
+    std::transform(logFirstStageWeights.begin(), 
+                   logFirstStageWeights.end(), 
+                   w.begin(), 
+                   [&m](const double& d) -> double { return std::exp(d-m); } );
     std::discrete_distribution<> kGenerator(w.begin(), w.end());
     
     // sample ks
-    std::vector<int> ks(dim); 
+    std::vector<unsigned int> ks(dim); 
     for(size_t i = 0; i < dim; ++i){
         ks[i] = kGenerator(m_gen);
     }
     
+    // return the indexes
     return ks;
 }

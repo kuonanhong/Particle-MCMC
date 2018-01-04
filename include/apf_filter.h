@@ -3,7 +3,7 @@
 
 #include <vector>
 #include <functional>
-#include <Eigen/Dense> // linear algebra stuff
+#include <Eigen/Dense> 
 
 #include "multinomial_resampler.h"
 
@@ -37,7 +37,7 @@ private:
     std::vector<Mat>                m_expectations;
 
     // methods
-    std::vector<int> kGen(const std::vector<double> &logFirstStageWeights); // for first-stage sampling
+    std::vector<unsigned int> kGen(const std::vector<double> &logFirstStageWeights); // for first-stage sampling
     void multinomRsmp(std::vector<std::vector<Vec> > &oldParts, std::vector<double> &oldLogUnNormWts); // for final resampling
     void filter(const Vec &data, const std::vector<std::function<const Mat(const Vec&)> >& fs);
     void smooth(const Vec &data, const std::vector<std::function<const Mat(const Vec&)> >& fs);

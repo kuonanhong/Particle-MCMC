@@ -77,7 +77,7 @@ public:
      * @param logFirstStageWeights first-stage weights for first stage of proposal distribution in APF
      * @return A std::vector of integer indices.
      */
-    std::vector<int> kGen(const std::vector<double> &logFirstStageWeights);
+    std::vector<unsigned int> kGen(const std::vector<double> &logFirstStageWeights);
 };
 
 #endif //MULTINOMIALRESAMPLER_H
