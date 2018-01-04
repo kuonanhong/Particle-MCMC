@@ -43,3 +43,5 @@ src/examples2/
 src/mcmc_algos2/
 src/mcmc_bases2/
 src/models2/
+Release/
+Debug/
