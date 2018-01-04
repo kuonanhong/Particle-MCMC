@@ -2,7 +2,7 @@
 //#include <cmath>
 
 JacEtAlAPF::JacEtAlAPF(int numParts, const Mat &beta, const Vec &R_sigmas_as_vec, const Vec &mus, const Vec &phis, const Vec &sigmas, APFResampStyle resampTechnique, int pathLength)
-    : APFFilter(numParts, resampTechnique, pathLength), m_beta(beta), m_R_sigmas(R_sigmas_as_vec), m_mus(mus), m_phis(phis), m_sigmas(sigmas)
+    : APFFilter(numParts, resampTechnique), m_beta(beta), m_R_sigmas(R_sigmas_as_vec), m_mus(mus), m_phis(phis), m_sigmas(sigmas)
 {
     // num factors and dimension of obs
     m_dim_obs = m_beta.rows();

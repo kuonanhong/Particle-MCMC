@@ -65,8 +65,8 @@ void noisyAr1Comparison()
 
         // update all models (maybe problem below line)
         myLgssmMod.update(yt, stateTrans, cholStateVar, stateInptAffector, inpt, obsMat, obsInptAffector, cholObsVar);
-        mySISRMod.filterOrSmooth(yt, fs);
-        myAPFMod.filterOrSmooth(yt, fs);
+        mySISRMod.filter(yt, fs);
+        myAPFMod.filter(yt, fs);
 
 
         //std::cout << myLgssmMod.getLogCondLike() << ","

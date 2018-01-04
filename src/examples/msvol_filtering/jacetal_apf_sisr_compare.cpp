@@ -68,8 +68,8 @@ void jacetal_apf_sisr_compare()
     //iterate over time
     std::cout << "APFLogLike, SISRLogLike\n"; 
     for(int row = 0; row < data.size(); ++row){
-        modAPF.filterOrSmooth(data[row]);  
-        modSISR.filterOrSmooth(data[row]);
+        modAPF.filter(data[row]);  
+        modSISR.filter(data[row]);
         std::cout << modAPF.getLogCondLike() << ", " << modSISR.getLogCondLike() << "\n";
     }
     

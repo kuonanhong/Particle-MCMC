@@ -26,7 +26,7 @@ int main(int argc, char **argv)
 
     // remove this if you want a gmon.out
     //clock_t begin = clock();  
-    //auto begin = Clock::now();
+    auto begin = Clock::now();
     
 
     //kFilterTest();
@@ -50,10 +50,10 @@ int main(int argc, char **argv)
 
     // remove this stuff if you want a gmon.out
     //clock_t end = clock();
-//    auto end = Clock::now();
-//    std::cout << "Delta t2-t1: " 
-//              << std::chrono::duration_cast<std::chrono::seconds>(end - begin).count()
-//              << " seconds" << std::endl;
+    auto end = Clock::now();
+    std::cout << "Delta t2-t1: " 
+              << std::chrono::duration_cast<std::chrono::milliseconds>(end - begin).count()
+              << " milliseconds" << std::endl;
 
 	return 0;
 }

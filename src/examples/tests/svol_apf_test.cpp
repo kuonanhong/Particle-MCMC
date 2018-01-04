@@ -34,7 +34,7 @@ void sVolAPFTest()
         }
         
         
-        myMod.filterOrSmooth(yt, fs);
+        myMod.filter(yt, fs);
         
         
 //        std::cout <<  time << ","

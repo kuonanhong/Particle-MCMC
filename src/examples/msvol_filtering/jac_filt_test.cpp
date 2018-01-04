@@ -80,7 +80,7 @@ void jac_filt_test()
         }
 
         // update
-        myMod.filterOrSmooth(yt, fs);
+        myMod.filter(yt, fs);
         std::cout << myMod.getExpectations()[0].transpose() << "\n";
         //std::cout << myMod.getLogCondLike() << "\n";
         

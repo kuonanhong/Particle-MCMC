@@ -43,9 +43,9 @@ void sVolTest()
         fs.push_back( meanLambda );
         
         //myMod.filterOrSmooth(yt);
-        myMod.filterOrSmooth(yt, fs);
+        myMod.filter(yt, fs);  // sisr filter
         myMod2.filter(yt, fs); // for bs filter
-        myMod3.filterOrSmooth(yt, fs); // apf filter
+        myMod3.filter(yt, fs); // apf filter
         
         
         //std::cout << "time: " << time << "\n";

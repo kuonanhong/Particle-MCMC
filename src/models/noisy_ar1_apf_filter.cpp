@@ -5,7 +5,7 @@
 
 //constructors destructors
 NAr1APFFilter::NAr1APFFilter(int numParts,double osd, double ssd,double a, APFResampStyle resampTechnique, int pathLength) 
-        : APFFilter(numParts, resampTechnique, pathLength), m_alpha(a), m_stateSd(ssd), m_obsSd(osd)
+        : APFFilter(numParts, resampTechnique), m_alpha(a), m_stateSd(ssd), m_obsSd(osd)
 {
 }
 

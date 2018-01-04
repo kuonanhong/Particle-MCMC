@@ -1,5 +1,5 @@
-#ifndef APF_H
-#define APF_H
+#ifndef APF_SMOOTH_H
+#define APF_SMOOTH_H
 
 #include <vector>
 #include <functional>
@@ -13,31 +13,32 @@ typedef Eigen::Matrix< double, Eigen::Dynamic, Eigen::Dynamic > Mat;
 // TODO-actually implement ess in filterOrSmooth
 enum class APFResampStyle {everytime_multinomial, never, ess_multinomial};
 
-//! A base-class for Auxiliary Particle Filtering. Filtering only, no smoothing.
+//! A base-class for Auxiliary Particle Filtering.
  /**
   * @class APFFilter
   * @author taylor
   * @date 09/09/17
   * @file APFFilter.h
   * @brief A base class for Auxiliary Particle Filtering.
-  * Inherit from this if you want to use an APF for your state space model. Filtering only, no smoothing.
+  * Inherit from this if you want to use an APF for your state space model.
   */
-class APFFilter
+class APFSmoother
 {
 private:
-    std::vector<Vec>                m_particles;
+    std::vector<std::vector<Vec> >  m_particles;
     std::vector<double>             m_logUnNormWeights;
     unsigned int                    m_now;         // time point
     unsigned int                    m_numParts;    // num particles
     unsigned int                    m_dimState;
     double                          m_logLastCondLike; // log p(y_t|y_{1:t-1}) or log p(y1)
     APFResampStyle                  m_resampTechnique;
+    unsigned int                    m_pathLength;
     MultinomResamp                  m_resampler; // for resampling particles and sampling indices
-    std::vector<Mat>                m_expectations;
 
     // methods
     std::vector<unsigned int> kGen(const std::vector<double> &logFirstStageWeights); // for first-stage sampling
-    void multinomRsmp(std::vector<Vec> &oldParts, std::vector<double> &oldLogUnNormWts); // for final resampling
+    void multinomRsmp(std::vector<std::vector<Vec> > &oldParts, std::vector<double> &oldLogUnNormWts); // for final resampling
+
 
 
 public:
@@ -48,12 +49,12 @@ public:
       * @param resampTechnique the resampling style.
       * @param pathLength set to 0 if you are filtering. Otherwise, if you wish to retain samples of the entire path, set to time length of data.
       */
-    APFFilter (int numParts, APFResampStyle resampTechnique = APFResampStyle::everytime_multinomial);
+    APFSmoother (int numParts, unsigned int pathLength, APFResampStyle resampTechnique = APFResampStyle::everytime_multinomial);
 
     /**
      * @brief The destructor. 
      */
-    ~APFFilter ();
+    ~APFSmoother ();
     
     
      /**
@@ -62,12 +63,12 @@ public:
       */
     double getLogCondLike () const; 
     
-    
+
     /**
-     * @brief return all stored expectations (taken with respect to $p(x_t|y_{1:t})$
-     * @return return a std::vector<Mat> of expectations. How many depends on how many callbacks you gave to 
+     * @brief Get the full set of particle paths. Only works if pathLength > 0 in constructor.
+     * @return The full set of particle paths as std::vector<std::vector<Vec> >.
      */
-    std::vector<Mat> getExpectations () const;
+    std::vector<std::vector<Vec> > getFullParts () const;
 
 
      /**
@@ -78,11 +79,11 @@ public:
     
 
      /**
-      * @brief Use a new datapoint to update the filtering distribution (or smoothing if pathLength > 0).
+      * @brief Use a new datapoint to update the smoothing distribution.
       * @param data a Vec representing the data
       * @param fs a std::vector of callback functions that are used to calculate expectations with respect to the filtering distribution.
       */
-    void filter(const Vec &data, const std::vector<std::function<const Mat(const Vec&)> >& fs = std::vector<std::function<const Mat(const Vec&)> >());
+    void smooth(const Vec &data);
     
 
     /**
@@ -136,4 +137,4 @@ public:
 
 };
 
-#endif //APF_H
+#endif //APF_SMOOTH_H

@@ -2,7 +2,7 @@
               
 JacEtAl::JacEtAl(int numParts, const Mat &beta, const Vec &RAsVec, const Vec &mus, const Vec &phis, const Vec &sigmas, 
                      SISRResampStyle resampTechnique, int pathLength, double percEss)
-    : SISRFilter(numParts, resampTechnique, pathLength, percEss), m_beta(beta), m_R(RAsVec), m_mus(mus), m_phis(phis), m_sigmas(sigmas)
+    : SISRFilter(numParts, resampTechnique, percEss), m_beta(beta), m_R(RAsVec), m_mus(mus), m_phis(phis), m_sigmas(sigmas)
 {
     // num factors and dimension of obs
     m_dim_obs = m_beta.rows();

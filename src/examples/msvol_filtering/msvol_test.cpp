@@ -73,7 +73,7 @@ void msvol_test()
         }
 
         // update
-        myMod.filterOrSmooth(yt, fs);
+        myMod.filter(yt, fs);
 
         // print stuff if you'd like
         //std::cout << myMod.getExpectations()[0].transpose() << "\n";

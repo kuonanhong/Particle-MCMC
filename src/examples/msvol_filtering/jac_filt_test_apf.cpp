@@ -86,7 +86,7 @@ void jac_filt_test_apf()
         }
 
         // update
-        myMod.filterOrSmooth(yt, fs);
+        myMod.filter(yt, fs);
 
         // print stuff if you'd like
         //std::cout << myMod.getExpectations()[0] << "\n";

@@ -191,7 +191,7 @@ double Pmmh_jac_apf::logLikeEvaluate(const std::vector<Vec>& theta, const std::v
         
     unsigned int row (0);
     while(row < data.size() && !cancelled){
-        mod.filterOrSmooth(data[row]);  
+        mod.filter(data[row]);  
         logLike += mod.getLogCondLike();
         row++;
     }

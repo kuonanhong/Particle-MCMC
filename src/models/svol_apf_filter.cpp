@@ -3,7 +3,7 @@
 //constructors and destructors
 // defaults to 0 pathlength
 SVolAPFFilter::SVolAPFFilter(int numParts)//, APFResampStyle resampTechnique) 
-        : APFFilter(numParts, APFResampStyle::everytime_multinomial, 0) //defaults to everytime resampling
+        : APFFilter(numParts, APFResampStyle::everytime_multinomial) //defaults to everytime resampling
 {
 }
 

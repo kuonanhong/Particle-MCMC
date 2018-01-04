@@ -125,7 +125,7 @@ double Pmmh_svol_sisr::logLikeEvaluate(const std::vector<Vec>& theta, const std:
         
     unsigned int row (0);
     while(row < data.size() && !cancelled){
-        mod.filterOrSmooth(data[row]);  
+        mod.filter(data[row]);  
         logLike += mod.getLogCondLike();
         row++;
     }
