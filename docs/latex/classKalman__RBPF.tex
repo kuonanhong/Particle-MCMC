@@ -12,32 +12,32 @@ A base-\/class for Kalman Rao-\/\+Blackwellized Particle Filtering.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classKalman__RBPF_aa7130565819b45f993100dbf7f048c37}{Kalman\+\_\+\+R\+B\+PF} (int num\+Parts, R\+B\+P\+F\+Resamp\+Style resamp\+Technique=R\+B\+P\+F\+Resamp\+Style\+::everytime\+\_\+multinomial)
+\hyperlink{classKalman__RBPF_aa7130565819b45f993100dbf7f048c37}{Kalman\+\_\+\+R\+B\+PF} (int num\+Parts, \hyperlink{kalman__rbpf_8h_ad3790b392be9413a27de33728aad31e2}{R\+B\+P\+F\+Resamp\+Style} resamp\+Technique=R\+B\+P\+F\+Resamp\+Style\+::everytime\+\_\+multinomial)
 \begin{DoxyCompactList}\small\item\em The constructor. \end{DoxyCompactList}\item 
 \hyperlink{classKalman__RBPF_a454f1736e8889904f755ca904f6eebc0}{$\sim$\+Kalman\+\_\+\+R\+B\+PF} ()\hypertarget{classKalman__RBPF_a454f1736e8889904f755ca904f6eebc0}{}\label{classKalman__RBPF_a454f1736e8889904f755ca904f6eebc0}
 
 \begin{DoxyCompactList}\small\item\em The desuctor. \end{DoxyCompactList}\item 
-void \hyperlink{classKalman__RBPF_a72d5ed61d0289a6977bf178145f5b969}{filter} (const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&data)
+void \hyperlink{classKalman__RBPF_a72d5ed61d0289a6977bf178145f5b969}{filter} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&data)
 \begin{DoxyCompactList}\small\item\em Filter! \end{DoxyCompactList}\item 
 double \hyperlink{classKalman__RBPF_a2d65ffce3d115ecaf1c8e97b9222cdde}{get\+Cond\+Like} () const 
 \begin{DoxyCompactList}\small\item\em Get the latest conditional likelihood. \end{DoxyCompactList}\item 
-virtual double \hyperlink{classKalman__RBPF_a25e8682d13a04eb1075a4d30dfa6825a}{mu\+Ev} (const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x21)=0
+virtual double \hyperlink{classKalman__RBPF_a25e8682d13a04eb1075a4d30dfa6825a}{mu\+Ev} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x21)=0
 \begin{DoxyCompactList}\small\item\em Evaluates the first time state density. \end{DoxyCompactList}\item 
-virtual \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \hyperlink{classKalman__RBPF_a71e394c093f606f80a92a3fc4fe087a3}{q1\+Samp} (const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&y1)=0
+virtual \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \hyperlink{classKalman__RBPF_a71e394c093f606f80a92a3fc4fe087a3}{q1\+Samp} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&y1)=0
 \begin{DoxyCompactList}\small\item\em Sample from the first sampler. \end{DoxyCompactList}\item 
-virtual \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \hyperlink{classKalman__RBPF_a870a53fc149adf8042fa12eb5d9a8d30}{init\+Kalman\+Mean} (const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x21)=0
+virtual \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \hyperlink{classKalman__RBPF_a870a53fc149adf8042fa12eb5d9a8d30}{init\+Kalman\+Mean} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x21)=0
 \begin{DoxyCompactList}\small\item\em Provides the initial mean vector for each Kalman filter object. \end{DoxyCompactList}\item 
-virtual \hyperlink{pmfs_8h_ae601f56a556993079f730483c574356f}{Mat} \hyperlink{classKalman__RBPF_a4f7f37a90d9382ca2ad7dfef4acf1bc0}{init\+Kalman\+Var} (const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x21)=0
+virtual \hyperlink{apf__filter_8h_ae601f56a556993079f730483c574356f}{Mat} \hyperlink{classKalman__RBPF_a4f7f37a90d9382ca2ad7dfef4acf1bc0}{init\+Kalman\+Var} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x21)=0
 \begin{DoxyCompactList}\small\item\em Provides the initial covariance matrix for each Kalman filter object. \end{DoxyCompactList}\item 
-virtual \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \hyperlink{classKalman__RBPF_ad3ee89a06a18a287445e366230a6bd65}{q\+Samp} (const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x2tm1, const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&yt)=0
+virtual \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \hyperlink{classKalman__RBPF_ad3ee89a06a18a287445e366230a6bd65}{q\+Samp} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x2tm1, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&yt)=0
 \begin{DoxyCompactList}\small\item\em Samples the time t second component. \end{DoxyCompactList}\item 
-virtual double \hyperlink{classKalman__RBPF_a36b66fd90b6d810d88e5ec9785cb0307}{q1\+Ev} (const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x21, const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&y1)=0
+virtual double \hyperlink{classKalman__RBPF_a36b66fd90b6d810d88e5ec9785cb0307}{q1\+Ev} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x21, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&y1)=0
 \begin{DoxyCompactList}\small\item\em Evaluates the proposal density of the second state component at time 1. \end{DoxyCompactList}\item 
-virtual double \hyperlink{classKalman__RBPF_a03bfc2e7f32a86ab4fe653958d2f7dd4}{f\+Ev} (const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x2t, const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x2tm1)=0
+virtual double \hyperlink{classKalman__RBPF_a03bfc2e7f32a86ab4fe653958d2f7dd4}{f\+Ev} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x2t, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x2tm1)=0
 \begin{DoxyCompactList}\small\item\em Evaluates the state transition density for the second state component. \end{DoxyCompactList}\item 
-virtual double \hyperlink{classKalman__RBPF_ad5b8e717c5d4c838b0d246b496971d16}{q\+Ev} (const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x2t, const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x2tm1, const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&yt)=0
+virtual double \hyperlink{classKalman__RBPF_ad5b8e717c5d4c838b0d246b496971d16}{q\+Ev} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x2t, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x2tm1, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&yt)=0
 \begin{DoxyCompactList}\small\item\em Evaluates the proposal density at time t $>$ 1. \end{DoxyCompactList}\item 
-virtual void \hyperlink{classKalman__RBPF_a67abffa6fe0510147037ed102aa30ed0}{update\+Kalman} (\hyperlink{classLgssm}{Lgssm} \&a\+Model, const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&yt, const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x2t)=0
+virtual void \hyperlink{classKalman__RBPF_a67abffa6fe0510147037ed102aa30ed0}{update\+Kalman} (\hyperlink{classLgssm}{Lgssm} \&a\+Model, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&yt, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x2t)=0
 \begin{DoxyCompactList}\small\item\em How to update your inner Kalman filter object at each time. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -55,7 +55,7 @@ taylor
 \subsubsection[{\texorpdfstring{Kalman\+\_\+\+R\+B\+P\+F(int num\+Parts, R\+B\+P\+F\+Resamp\+Style resamp\+Technique=\+R\+B\+P\+F\+Resamp\+Style\+::everytime\+\_\+multinomial)}{Kalman_RBPF(int numParts, RBPFResampStyle resampTechnique=RBPFResampStyle::everytime_multinomial)}}]{\setlength{\rightskip}{0pt plus 5cm}Kalman\+\_\+\+R\+B\+P\+F\+::\+Kalman\+\_\+\+R\+B\+PF (
 \begin{DoxyParamCaption}
 \item[{int}]{num\+Parts, }
-\item[{R\+B\+P\+F\+Resamp\+Style}]{resamp\+Technique = {\ttfamily RBPFResampStyle\+:\+:everytime\+\_\+multinomial}}
+\item[{{\bf R\+B\+P\+F\+Resamp\+Style}}]{resamp\+Technique = {\ttfamily RBPFResampStyle\+:\+:everytime\+\_\+multinomial}}
 \end{DoxyParamCaption}
 )}\hypertarget{classKalman__RBPF_aa7130565819b45f993100dbf7f048c37}{}\label{classKalman__RBPF_aa7130565819b45f993100dbf7f048c37}
 
@@ -295,4 +295,4 @@ How to update your inner Kalman filter object at each time.
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-include/kalman\+\_\+rbpf.\+h\end{DoxyCompactItemize}
+include/\hyperlink{kalman__rbpf_8h}{kalman\+\_\+rbpf.\+h}\end{DoxyCompactItemize}

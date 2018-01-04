@@ -16,27 +16,29 @@ A base-\/class for H\+MM Rao-\/\+Blackwellized Particle Filtering.
 \begin{DoxyCompactList}\small\item\em The constructor. \end{DoxyCompactList}\item 
 \hyperlink{classHmm__Rbpf_a5bcc8f6c36cbbb6e7fabfe85bca9136f}{$\sim$\+Hmm\+\_\+\+Rbpf} ()
 \begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
-void \hyperlink{classHmm__Rbpf_aa79770fd41c231cb1ff45726f4160e37}{filter} (const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&data)
+void \hyperlink{classHmm__Rbpf_a74266bf4053458eb0be03d5849144375}{filter} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&data, const std\+::vector$<$ std\+::function$<$ const \hyperlink{apf__filter_8h_ae601f56a556993079f730483c574356f}{Mat}(const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x1t\+Probs, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x2t)$>$ $>$ \&fs=std\+::vector$<$ std\+::function$<$ const \hyperlink{apf__filter_8h_ae601f56a556993079f730483c574356f}{Mat}(const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&)$>$ $>$())
 \begin{DoxyCompactList}\small\item\em Filter. \end{DoxyCompactList}\item 
-double \hyperlink{classHmm__Rbpf_a413c03584961a6dfe6959900814b3705}{get\+Cond\+Like} () const 
+double \hyperlink{classHmm__Rbpf_a6938942431c84e73f4918eaf87446844}{get\+Log\+Cond\+Like} () const 
 \begin{DoxyCompactList}\small\item\em Get the latest conditional likelihood. \end{DoxyCompactList}\item 
-virtual double \hyperlink{classHmm__Rbpf_a266a48b8a34268c966ac58b9be45a9be}{mu\+Ev} (const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x21)=0
+std\+::vector$<$ \hyperlink{apf__filter_8h_ae601f56a556993079f730483c574356f}{Mat} $>$ \hyperlink{classHmm__Rbpf_a56340163d1ed12c1454aea347ab34f6e}{get\+Expectations} () const 
+\begin{DoxyCompactList}\small\item\em Get vector of expectations. \end{DoxyCompactList}\item 
+virtual double \hyperlink{classHmm__Rbpf_a0490747141865bdca060e4a49ca5430e}{log\+Mu\+Ev} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x21)=0
 \begin{DoxyCompactList}\small\item\em Evaluates the first time state density. \end{DoxyCompactList}\item 
-virtual \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \hyperlink{classHmm__Rbpf_a1517fdbdf37a4dab6e6c0bca229fd4a0}{q1\+Samp} (const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&y1)=0
+virtual \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \hyperlink{classHmm__Rbpf_a1517fdbdf37a4dab6e6c0bca229fd4a0}{q1\+Samp} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&y1)=0
 \begin{DoxyCompactList}\small\item\em Sample from the first sampler. \end{DoxyCompactList}\item 
-virtual \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \hyperlink{classHmm__Rbpf_a33ab8bbb1a85fd06fa2d507fa5d48904}{init\+H\+M\+M\+Prob\+Vec} (const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x21)=0
+virtual \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \hyperlink{classHmm__Rbpf_a33ab8bbb1a85fd06fa2d507fa5d48904}{init\+H\+M\+M\+Prob\+Vec} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x21)=0
 \begin{DoxyCompactList}\small\item\em Provides the initial mean vector for each H\+MM filter object. \end{DoxyCompactList}\item 
-virtual \hyperlink{pmfs_8h_ae601f56a556993079f730483c574356f}{Mat} \hyperlink{classHmm__Rbpf_a752c2997aee03219fe3eb4fbe63ed3af}{init\+H\+M\+M\+Trans\+Mat} (const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x21)=0
+virtual \hyperlink{apf__filter_8h_ae601f56a556993079f730483c574356f}{Mat} \hyperlink{classHmm__Rbpf_a752c2997aee03219fe3eb4fbe63ed3af}{init\+H\+M\+M\+Trans\+Mat} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x21)=0
 \begin{DoxyCompactList}\small\item\em Provides the transition matrix for each H\+MM filter object. \end{DoxyCompactList}\item 
-virtual \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \hyperlink{classHmm__Rbpf_a3552390cea3b92ce312f4ebd14875f69}{q\+Samp} (const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x2tm1, const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&yt)=0
+virtual \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \hyperlink{classHmm__Rbpf_a3552390cea3b92ce312f4ebd14875f69}{q\+Samp} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x2tm1, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&yt)=0
 \begin{DoxyCompactList}\small\item\em Samples the time t second component. \end{DoxyCompactList}\item 
-virtual double \hyperlink{classHmm__Rbpf_ab09ad68fd6d1b5e614bd772cb5e20a78}{q1\+Ev} (const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x21, const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&y1)=0
+virtual double \hyperlink{classHmm__Rbpf_a5feb153a18b40144844f343c2c1af7df}{log\+Q1\+Ev} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x21, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&y1)=0
 \begin{DoxyCompactList}\small\item\em Evaluates the proposal density of the second state component at time 1. \end{DoxyCompactList}\item 
-virtual double \hyperlink{classHmm__Rbpf_a9964a93b3eabddbafd2b3fd6cbaead94}{f\+Ev} (const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x2t, const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x2tm1)=0
+virtual double \hyperlink{classHmm__Rbpf_a94fc0439184e6f4c49de5738a0f3bbed}{log\+F\+Ev} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x2t, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x2tm1)=0
 \begin{DoxyCompactList}\small\item\em Evaluates the state transition density for the second state component. \end{DoxyCompactList}\item 
-virtual double \hyperlink{classHmm__Rbpf_ad1088176f3f3b7c86dce48de66ccd31c}{q\+Ev} (const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x2t, const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x2tm1, const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&yt)=0
+virtual double \hyperlink{classHmm__Rbpf_ae01bb25063173899739b61236d5d7b15}{log\+Q\+Ev} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x2t, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x2tm1, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&yt)=0
 \begin{DoxyCompactList}\small\item\em Evaluates the proposal density at time t $>$ 1. \end{DoxyCompactList}\item 
-virtual void \hyperlink{classHmm__Rbpf_aafd7e87c211684e8c4692646e46785ba}{update\+F\+S\+H\+MM} (\hyperlink{classFSHMM}{F\+S\+H\+MM} \&a\+Model, const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&yt, const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x2t)=0
+virtual void \hyperlink{classHmm__Rbpf_aafd7e87c211684e8c4692646e46785ba}{update\+F\+S\+H\+MM} (\hyperlink{classFSHMM}{F\+S\+H\+MM} \&a\+Model, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&yt, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x2t)=0
 \begin{DoxyCompactList}\small\item\em How to update your inner H\+MM filter object at each time. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -82,35 +84,14 @@ Destructor.
 destructor. 
 
 \subsection{Member Function Documentation}
-\index{Hmm\+\_\+\+Rbpf@{Hmm\+\_\+\+Rbpf}!f\+Ev@{f\+Ev}}
-\index{f\+Ev@{f\+Ev}!Hmm\+\_\+\+Rbpf@{Hmm\+\_\+\+Rbpf}}
-\subsubsection[{\texorpdfstring{f\+Ev(const Vec \&x2t, const Vec \&x2tm1)=0}{fEv(const Vec &x2t, const Vec &x2tm1)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual double Hmm\+\_\+\+Rbpf\+::f\+Ev (
-\begin{DoxyParamCaption}
-\item[{const {\bf Vec} \&}]{x2t, }
-\item[{const {\bf Vec} \&}]{x2tm1}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classHmm__Rbpf_a9964a93b3eabddbafd2b3fd6cbaead94}{}\label{classHmm__Rbpf_a9964a93b3eabddbafd2b3fd6cbaead94}
-
-
-Evaluates the state transition density for the second state component. 
-
-Evaluates the state transition density for the second state component. 
-\begin{DoxyParams}{Parameters}
-{\em x2t} & the current second state component. \\
-\hline
-{\em x2tm1} & the previous second state component. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-a double evaluation. 
-\end{DoxyReturn}
 \index{Hmm\+\_\+\+Rbpf@{Hmm\+\_\+\+Rbpf}!filter@{filter}}
 \index{filter@{filter}!Hmm\+\_\+\+Rbpf@{Hmm\+\_\+\+Rbpf}}
-\subsubsection[{\texorpdfstring{filter(const Vec \&data)}{filter(const Vec &data)}}]{\setlength{\rightskip}{0pt plus 5cm}void Hmm\+\_\+\+Rbpf\+::filter (
+\subsubsection[{\texorpdfstring{filter(const Vec \&data, const std\+::vector$<$ std\+::function$<$ const Mat(const Vec \&x1t\+Probs, const Vec \&x2t)$>$ $>$ \&fs=std\+::vector$<$ std\+::function$<$ const Mat(const Vec \&, const Vec \&)$>$ $>$())}{filter(const Vec &data, const std::vector< std::function< const Mat(const Vec &x1tProbs, const Vec &x2t)> > &fs=std::vector< std::function< const Mat(const Vec &, const Vec &)> >())}}]{\setlength{\rightskip}{0pt plus 5cm}void Hmm\+\_\+\+Rbpf\+::filter (
 \begin{DoxyParamCaption}
-\item[{const {\bf Vec} \&}]{data}
+\item[{const {\bf Vec} \&}]{data, }
+\item[{const std\+::vector$<$ std\+::function$<$ const {\bf Mat}(const {\bf Vec} \&x1t\+Probs, const {\bf Vec} \&x2t)$>$ $>$ \&}]{fs = {\ttfamily std\+:\+:vector$<$~std\+:\+:function$<$~const~{\bf Mat}(const~{\bf Vec}~\&,~const~{\bf Vec}~\&)$>$~$>$()}}
 \end{DoxyParamCaption}
-)}\hypertarget{classHmm__Rbpf_aa79770fd41c231cb1ff45726f4160e37}{}\label{classHmm__Rbpf_aa79770fd41c231cb1ff45726f4160e37}
+)}\hypertarget{classHmm__Rbpf_a74266bf4053458eb0be03d5849144375}{}\label{classHmm__Rbpf_a74266bf4053458eb0be03d5849144375}
 
 
 Filter. 
@@ -119,14 +100,30 @@ filters everything based on a new data point.
 \begin{DoxyParams}{Parameters}
 {\em data} & the most recent time series observation. \\
 \hline
+{\em fs} & a vector of functions computing logE\mbox{[}h(x\+\_\+1t, x\+\_\+2t$^\wedge$i)$\vert$ x\+\_\+2t$^\wedge$i,y\+\_\+1\+:t\mbox{]}. will access the probability vector of x\+\_\+1t \\
+\hline
 \end{DoxyParams}
-\index{Hmm\+\_\+\+Rbpf@{Hmm\+\_\+\+Rbpf}!get\+Cond\+Like@{get\+Cond\+Like}}
-\index{get\+Cond\+Like@{get\+Cond\+Like}!Hmm\+\_\+\+Rbpf@{Hmm\+\_\+\+Rbpf}}
-\subsubsection[{\texorpdfstring{get\+Cond\+Like() const }{getCondLike() const }}]{\setlength{\rightskip}{0pt plus 5cm}double Hmm\+\_\+\+Rbpf\+::get\+Cond\+Like (
+\index{Hmm\+\_\+\+Rbpf@{Hmm\+\_\+\+Rbpf}!get\+Expectations@{get\+Expectations}}
+\index{get\+Expectations@{get\+Expectations}!Hmm\+\_\+\+Rbpf@{Hmm\+\_\+\+Rbpf}}
+\subsubsection[{\texorpdfstring{get\+Expectations() const }{getExpectations() const }}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf Mat}$>$ Hmm\+\_\+\+Rbpf\+::get\+Expectations (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const}\hypertarget{classHmm__Rbpf_a413c03584961a6dfe6959900814b3705}{}\label{classHmm__Rbpf_a413c03584961a6dfe6959900814b3705}
+) const}\hypertarget{classHmm__Rbpf_a56340163d1ed12c1454aea347ab34f6e}{}\label{classHmm__Rbpf_a56340163d1ed12c1454aea347ab34f6e}
+
+
+Get vector of expectations. 
+
+\begin{DoxyReturn}{Returns}
+vector of expectations 
+\end{DoxyReturn}
+\index{Hmm\+\_\+\+Rbpf@{Hmm\+\_\+\+Rbpf}!get\+Log\+Cond\+Like@{get\+Log\+Cond\+Like}}
+\index{get\+Log\+Cond\+Like@{get\+Log\+Cond\+Like}!Hmm\+\_\+\+Rbpf@{Hmm\+\_\+\+Rbpf}}
+\subsubsection[{\texorpdfstring{get\+Log\+Cond\+Like() const }{getLogCondLike() const }}]{\setlength{\rightskip}{0pt plus 5cm}double Hmm\+\_\+\+Rbpf\+::get\+Log\+Cond\+Like (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classHmm__Rbpf_a6938942431c84e73f4918eaf87446844}{}\label{classHmm__Rbpf_a6938942431c84e73f4918eaf87446844}
 
 
 Get the latest conditional likelihood. 
@@ -172,13 +169,35 @@ provides the transition matrix for each H\+MM filter object.
 \begin{DoxyReturn}{Returns}
 a transition matrix where element (ij) is the probability of transitioning from state i to state j. 
 \end{DoxyReturn}
-\index{Hmm\+\_\+\+Rbpf@{Hmm\+\_\+\+Rbpf}!mu\+Ev@{mu\+Ev}}
-\index{mu\+Ev@{mu\+Ev}!Hmm\+\_\+\+Rbpf@{Hmm\+\_\+\+Rbpf}}
-\subsubsection[{\texorpdfstring{mu\+Ev(const Vec \&x21)=0}{muEv(const Vec &x21)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual double Hmm\+\_\+\+Rbpf\+::mu\+Ev (
+\index{Hmm\+\_\+\+Rbpf@{Hmm\+\_\+\+Rbpf}!log\+F\+Ev@{log\+F\+Ev}}
+\index{log\+F\+Ev@{log\+F\+Ev}!Hmm\+\_\+\+Rbpf@{Hmm\+\_\+\+Rbpf}}
+\subsubsection[{\texorpdfstring{log\+F\+Ev(const Vec \&x2t, const Vec \&x2tm1)=0}{logFEv(const Vec &x2t, const Vec &x2tm1)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual double Hmm\+\_\+\+Rbpf\+::log\+F\+Ev (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vec} \&}]{x2t, }
+\item[{const {\bf Vec} \&}]{x2tm1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classHmm__Rbpf_a94fc0439184e6f4c49de5738a0f3bbed}{}\label{classHmm__Rbpf_a94fc0439184e6f4c49de5738a0f3bbed}
+
+
+Evaluates the state transition density for the second state component. 
+
+Evaluates the state transition density for the second state component. 
+\begin{DoxyParams}{Parameters}
+{\em x2t} & the current second state component. \\
+\hline
+{\em x2tm1} & the previous second state component. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a double evaluation. 
+\end{DoxyReturn}
+\index{Hmm\+\_\+\+Rbpf@{Hmm\+\_\+\+Rbpf}!log\+Mu\+Ev@{log\+Mu\+Ev}}
+\index{log\+Mu\+Ev@{log\+Mu\+Ev}!Hmm\+\_\+\+Rbpf@{Hmm\+\_\+\+Rbpf}}
+\subsubsection[{\texorpdfstring{log\+Mu\+Ev(const Vec \&x21)=0}{logMuEv(const Vec &x21)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual double Hmm\+\_\+\+Rbpf\+::log\+Mu\+Ev (
 \begin{DoxyParamCaption}
 \item[{const {\bf Vec} \&}]{x21}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classHmm__Rbpf_a266a48b8a34268c966ac58b9be45a9be}{}\label{classHmm__Rbpf_a266a48b8a34268c966ac58b9be45a9be}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classHmm__Rbpf_a0490747141865bdca060e4a49ca5430e}{}\label{classHmm__Rbpf_a0490747141865bdca060e4a49ca5430e}
 
 
 Evaluates the first time state density. 
@@ -191,14 +210,14 @@ evaluates mu.
 \begin{DoxyReturn}{Returns}
 a double evaluation 
 \end{DoxyReturn}
-\index{Hmm\+\_\+\+Rbpf@{Hmm\+\_\+\+Rbpf}!q1\+Ev@{q1\+Ev}}
-\index{q1\+Ev@{q1\+Ev}!Hmm\+\_\+\+Rbpf@{Hmm\+\_\+\+Rbpf}}
-\subsubsection[{\texorpdfstring{q1\+Ev(const Vec \&x21, const Vec \&y1)=0}{q1Ev(const Vec &x21, const Vec &y1)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual double Hmm\+\_\+\+Rbpf\+::q1\+Ev (
+\index{Hmm\+\_\+\+Rbpf@{Hmm\+\_\+\+Rbpf}!log\+Q1\+Ev@{log\+Q1\+Ev}}
+\index{log\+Q1\+Ev@{log\+Q1\+Ev}!Hmm\+\_\+\+Rbpf@{Hmm\+\_\+\+Rbpf}}
+\subsubsection[{\texorpdfstring{log\+Q1\+Ev(const Vec \&x21, const Vec \&y1)=0}{logQ1Ev(const Vec &x21, const Vec &y1)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual double Hmm\+\_\+\+Rbpf\+::log\+Q1\+Ev (
 \begin{DoxyParamCaption}
 \item[{const {\bf Vec} \&}]{x21, }
 \item[{const {\bf Vec} \&}]{y1}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classHmm__Rbpf_ab09ad68fd6d1b5e614bd772cb5e20a78}{}\label{classHmm__Rbpf_ab09ad68fd6d1b5e614bd772cb5e20a78}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classHmm__Rbpf_a5feb153a18b40144844f343c2c1af7df}{}\label{classHmm__Rbpf_a5feb153a18b40144844f343c2c1af7df}
 
 
 Evaluates the proposal density of the second state component at time 1. 
@@ -212,6 +231,31 @@ Evaluates the proposal density of the second state component at time 1.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 a double evaluation of the density. 
+\end{DoxyReturn}
+\index{Hmm\+\_\+\+Rbpf@{Hmm\+\_\+\+Rbpf}!log\+Q\+Ev@{log\+Q\+Ev}}
+\index{log\+Q\+Ev@{log\+Q\+Ev}!Hmm\+\_\+\+Rbpf@{Hmm\+\_\+\+Rbpf}}
+\subsubsection[{\texorpdfstring{log\+Q\+Ev(const Vec \&x2t, const Vec \&x2tm1, const Vec \&yt)=0}{logQEv(const Vec &x2t, const Vec &x2tm1, const Vec &yt)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual double Hmm\+\_\+\+Rbpf\+::log\+Q\+Ev (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vec} \&}]{x2t, }
+\item[{const {\bf Vec} \&}]{x2tm1, }
+\item[{const {\bf Vec} \&}]{yt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classHmm__Rbpf_ae01bb25063173899739b61236d5d7b15}{}\label{classHmm__Rbpf_ae01bb25063173899739b61236d5d7b15}
+
+
+Evaluates the proposal density at time t $>$ 1. 
+
+Evaluates the proposal density at time t $>$ 1. 
+\begin{DoxyParams}{Parameters}
+{\em x2t} & the current second state component. \\
+\hline
+{\em x2tm1} & the previous second state component. \\
+\hline
+{\em yt} & the current time series observation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a double evaluation. 
 \end{DoxyReturn}
 \index{Hmm\+\_\+\+Rbpf@{Hmm\+\_\+\+Rbpf}!q1\+Samp@{q1\+Samp}}
 \index{q1\+Samp@{q1\+Samp}!Hmm\+\_\+\+Rbpf@{Hmm\+\_\+\+Rbpf}}
@@ -231,31 +275,6 @@ samples the second component of the state at time 1.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 a Vec sample for x21. 
-\end{DoxyReturn}
-\index{Hmm\+\_\+\+Rbpf@{Hmm\+\_\+\+Rbpf}!q\+Ev@{q\+Ev}}
-\index{q\+Ev@{q\+Ev}!Hmm\+\_\+\+Rbpf@{Hmm\+\_\+\+Rbpf}}
-\subsubsection[{\texorpdfstring{q\+Ev(const Vec \&x2t, const Vec \&x2tm1, const Vec \&yt)=0}{qEv(const Vec &x2t, const Vec &x2tm1, const Vec &yt)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual double Hmm\+\_\+\+Rbpf\+::q\+Ev (
-\begin{DoxyParamCaption}
-\item[{const {\bf Vec} \&}]{x2t, }
-\item[{const {\bf Vec} \&}]{x2tm1, }
-\item[{const {\bf Vec} \&}]{yt}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classHmm__Rbpf_ad1088176f3f3b7c86dce48de66ccd31c}{}\label{classHmm__Rbpf_ad1088176f3f3b7c86dce48de66ccd31c}
-
-
-Evaluates the proposal density at time t $>$ 1. 
-
-Evaluates the proposal density at time t $>$ 1. 
-\begin{DoxyParams}{Parameters}
-{\em x2t} & the current second state component. \\
-\hline
-{\em x2tm1} & the previous second state component. \\
-\hline
-{\em yt} & the current time series observation. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-a double evaluation. 
 \end{DoxyReturn}
 \index{Hmm\+\_\+\+Rbpf@{Hmm\+\_\+\+Rbpf}!q\+Samp@{q\+Samp}}
 \index{q\+Samp@{q\+Samp}!Hmm\+\_\+\+Rbpf@{Hmm\+\_\+\+Rbpf}}

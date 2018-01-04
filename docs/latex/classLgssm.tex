@@ -15,18 +15,18 @@ A base-\/class for Kalman Filtering.
 \hyperlink{classLgssm_a8c729ab27738f29225847777b740877e}{Lgssm} ()\hypertarget{classLgssm_a8c729ab27738f29225847777b740877e}{}\label{classLgssm_a8c729ab27738f29225847777b740877e}
 
 \begin{DoxyCompactList}\small\item\em Default Constructor. \end{DoxyCompactList}\item 
-\hyperlink{classLgssm_a779def860490023f436b4efe071789fd}{Lgssm} (const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&init\+State\+Mean, const \hyperlink{pmfs_8h_ae601f56a556993079f730483c574356f}{Mat} \&init\+State\+Var)
+\hyperlink{classLgssm_a779def860490023f436b4efe071789fd}{Lgssm} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&init\+State\+Mean, const \hyperlink{apf__filter_8h_ae601f56a556993079f730483c574356f}{Mat} \&init\+State\+Var)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 \hyperlink{classLgssm_afdb5db740e12453879d8b985180426a4}{$\sim$\+Lgssm} ()\hypertarget{classLgssm_afdb5db740e12453879d8b985180426a4}{}\label{classLgssm_afdb5db740e12453879d8b985180426a4}
 
 \begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
 double \hyperlink{classLgssm_abf04a9c7501ab5fa91246963b57721c4}{get\+Log\+Cond\+Like} () const 
 \begin{DoxyCompactList}\small\item\em Get the latest conditional likelihood. \end{DoxyCompactList}\item 
-\hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \hyperlink{classLgssm_aed914f9b681c5788dc11a49f2e31b74f}{get\+Filt\+Mean} () const 
+\hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \hyperlink{classLgssm_aed914f9b681c5788dc11a49f2e31b74f}{get\+Filt\+Mean} () const 
 \begin{DoxyCompactList}\small\item\em Get the latest filtering mean. \end{DoxyCompactList}\item 
-\hyperlink{pmfs_8h_ae601f56a556993079f730483c574356f}{Mat} \hyperlink{classLgssm_a03c6188372603269f0497a66f41d0563}{get\+Filt\+Var} () const 
+\hyperlink{apf__filter_8h_ae601f56a556993079f730483c574356f}{Mat} \hyperlink{classLgssm_a03c6188372603269f0497a66f41d0563}{get\+Filt\+Var} () const 
 \begin{DoxyCompactList}\small\item\em Get the latest filtering covariance matrix. \end{DoxyCompactList}\item 
-void \hyperlink{classLgssm_a1f21af488dde504b4c01ccd53ef60e2f}{update} (const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&yt, const \hyperlink{pmfs_8h_ae601f56a556993079f730483c574356f}{Mat} \&state\+Trans, const \hyperlink{pmfs_8h_ae601f56a556993079f730483c574356f}{Mat} \&chol\+State\+Var, const \hyperlink{pmfs_8h_ae601f56a556993079f730483c574356f}{Mat} \&state\+Inpt\+Affector, const \hyperlink{pmfs_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&input\+Data, const \hyperlink{pmfs_8h_ae601f56a556993079f730483c574356f}{Mat} \&obs\+Mat, const \hyperlink{pmfs_8h_ae601f56a556993079f730483c574356f}{Mat} \&obs\+Inpt\+Affector, const \hyperlink{pmfs_8h_ae601f56a556993079f730483c574356f}{Mat} \&chol\+Obs\+Var)
+void \hyperlink{classLgssm_a1f21af488dde504b4c01ccd53ef60e2f}{update} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&yt, const \hyperlink{apf__filter_8h_ae601f56a556993079f730483c574356f}{Mat} \&state\+Trans, const \hyperlink{apf__filter_8h_ae601f56a556993079f730483c574356f}{Mat} \&chol\+State\+Var, const \hyperlink{apf__filter_8h_ae601f56a556993079f730483c574356f}{Mat} \&state\+Inpt\+Affector, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&input\+Data, const \hyperlink{apf__filter_8h_ae601f56a556993079f730483c574356f}{Mat} \&obs\+Mat, const \hyperlink{apf__filter_8h_ae601f56a556993079f730483c574356f}{Mat} \&obs\+Inpt\+Affector, const \hyperlink{apf__filter_8h_ae601f56a556993079f730483c574356f}{Mat} \&chol\+Obs\+Var)
 \begin{DoxyCompactList}\small\item\em Perform a Kalman filter predict-\/and-\/update. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 

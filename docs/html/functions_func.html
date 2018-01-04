@@ -70,7 +70,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
       <li class="current"><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -83,18 +82,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow4" class="tabs3">
     <ul class="tablist">
       <li><a href="#index_a"><span>a</span></a></li>
+      <li><a href="#index_b"><span>b</span></a></li>
       <li><a href="#index_c"><span>c</span></a></li>
       <li><a href="#index_d"><span>d</span></a></li>
       <li><a href="#index_f"><span>f</span></a></li>
       <li><a href="#index_g"><span>g</span></a></li>
       <li><a href="#index_h"><span>h</span></a></li>
       <li><a href="#index_i"><span>i</span></a></li>
-      <li><a href="#index_j"><span>j</span></a></li>
       <li><a href="#index_k"><span>k</span></a></li>
       <li><a href="#index_l"><span>l</span></a></li>
       <li><a href="#index_m"><span>m</span></a></li>
-      <li><a href="#index_n"><span>n</span></a></li>
-      <li><a href="#index_o"><span>o</span></a></li>
       <li><a href="#index_p"><span>p</span></a></li>
       <li><a href="#index_q"><span>q</span></a></li>
       <li><a href="#index_r"><span>r</span></a></li>
@@ -137,7 +134,17 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 
 <h3><a class="anchor" id="index_a"></a>- a -</h3><ul>
 <li>APFFilter()
-: <a class="el" href="classAPFFilter.html#acda2f47653ceda4bfd3d9a25d18790c7">APFFilter</a>
+: <a class="el" href="classAPFFilter.html#a86e261db9017205973b3f8f26e004370">APFFilter</a>
+</li>
+<li>APFSmoother()
+: <a class="el" href="classAPFSmoother.html#a51d9a70bc16259592f9a92fcd1008bc3">APFSmoother</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_b"></a>- b -</h3><ul>
+<li>BSFilter()
+: <a class="el" href="classBSFilter.html#acf56f49838e7cd4bbc131dd23f0bebe3">BSFilter</a>
 </li>
 </ul>
 
@@ -164,25 +171,21 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 
 <h3><a class="anchor" id="index_f"></a>- f -</h3><ul>
 <li>fEv()
-: <a class="el" href="classHmm__Rbpf.html#a9964a93b3eabddbafd2b3fd6cbaead94">Hmm_Rbpf</a>
-, <a class="el" href="classKalman__RBPF.html#a03bfc2e7f32a86ab4fe653958d2f7dd4">Kalman_RBPF</a>
+: <a class="el" href="classKalman__RBPF.html#a03bfc2e7f32a86ab4fe653958d2f7dd4">Kalman_RBPF</a>
 </li>
 <li>filter()
-: <a class="el" href="classHmm__Rbpf.html#aa79770fd41c231cb1ff45726f4160e37">Hmm_Rbpf</a>
+: <a class="el" href="classAPFFilter.html#aa087692fec5a7aafa30f6ec9e6227697">APFFilter</a>
+, <a class="el" href="classBSFilter.html#ac3040c97a24838736e479ac4af219562">BSFilter</a>
+, <a class="el" href="classHmm__Rbpf.html#a74266bf4053458eb0be03d5849144375">Hmm_Rbpf</a>
 , <a class="el" href="classKalman__RBPF.html#a72d5ed61d0289a6977bf178145f5b969">Kalman_RBPF</a>
-</li>
-<li>filterOrSmooth()
-: <a class="el" href="classAPFFilter.html#adc7ee7fed78dd93309784378523e0399">APFFilter</a>
-, <a class="el" href="classSISRFilter.html#a8c22a038dc47490b5532f2ec6c21a548">SISRFilter</a>
+, <a class="el" href="classSISRFilter.html#a0c1a506e724152d49011083095f523d0">SISRFilter</a>
 </li>
 <li>fSamp()
 : <a class="el" href="classAPFFilter.html#a367c77209129a84f3d64ff3bcaaac513">APFFilter</a>
-, <a class="el" href="classJacEtAlAPF.html#abb98b3c8dcb28b43bebf54c15e0f8616">JacEtAlAPF</a>
-, <a class="el" href="classNAr1APFFilter.html#a7490ba7d06d2d82930afce64100cce99">NAr1APFFilter</a>
-, <a class="el" href="classSVolAPFFilter.html#a3e24042d1c2763c80fe56ab9a5359aac">SVolAPFFilter</a>
+, <a class="el" href="classAPFSmoother.html#a823b3f5d1d942f5305d05dfd318f4851">APFSmoother</a>
 </li>
 <li>FSHMM()
-: <a class="el" href="classFSHMM.html#a644606d0cb00e2e0779fe8dcf53e2a42">FSHMM</a>
+: <a class="el" href="classFSHMM.html#a7d9109a5f787b3842f84257b79791cb9">FSHMM</a>
 </li>
 </ul>
 
@@ -190,14 +193,17 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <h3><a class="anchor" id="index_g"></a>- g -</h3><ul>
 <li>getCondLike()
 : <a class="el" href="classFSHMM.html#a38325b38c4f20521f50cc7891d44839d">FSHMM</a>
-, <a class="el" href="classHmm__Rbpf.html#a413c03584961a6dfe6959900814b3705">Hmm_Rbpf</a>
 , <a class="el" href="classKalman__RBPF.html#a2d65ffce3d115ecaf1c8e97b9222cdde">Kalman_RBPF</a>
 </li>
 <li>getESS()
-: <a class="el" href="classSISRFilter.html#aab226ed51d07c493151a6788e6f90b86">SISRFilter</a>
+: <a class="el" href="classBSFilter.html#ade1e772ec74f4cf3ffaea84d466f26cc">BSFilter</a>
+, <a class="el" href="classSISRFilter.html#aab226ed51d07c493151a6788e6f90b86">SISRFilter</a>
+, <a class="el" href="classSISRSmoother.html#a9e6a9e4681075c1ea28a7476b261e1fc">SISRSmoother</a>
 </li>
 <li>getExpectations()
-: <a class="el" href="classAPFFilter.html#a84281845b2986f246fc132d13fd33e3d">APFFilter</a>
+: <a class="el" href="classAPFFilter.html#adf8af6603940182e0a42646cace2f233">APFFilter</a>
+, <a class="el" href="classBSFilter.html#a8e591e267bdaf681062ee11486acd88a">BSFilter</a>
+, <a class="el" href="classHmm__Rbpf.html#a56340163d1ed12c1454aea347ab34f6e">Hmm_Rbpf</a>
 , <a class="el" href="classSISRFilter.html#a4dd3b90b857114e599a8f71703cb768e">SISRFilter</a>
 </li>
 <li>getFilterVec()
@@ -210,22 +216,27 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 : <a class="el" href="classLgssm.html#a03c6188372603269f0497a66f41d0563">Lgssm</a>
 </li>
 <li>getFullParts()
-: <a class="el" href="classAPFFilter.html#aa2ec5f04285cd1821f21ee85dcf50e3f">APFFilter</a>
-, <a class="el" href="classSISRFilter.html#a8ca159b052883c9c4dc0231145f6fe85">SISRFilter</a>
+: <a class="el" href="classAPFSmoother.html#af9bd42db37a53bc03f238a6db829102c">APFSmoother</a>
+, <a class="el" href="classSISRFilter.html#aff930757bb06eda7b180342ba04fc335">SISRFilter</a>
+, <a class="el" href="classSISRSmoother.html#a52ba9c6f180491ed1751772bb832c5ac">SISRSmoother</a>
 </li>
 <li>getLogCondLike()
 : <a class="el" href="classAPFFilter.html#af9a5210f2927616dd6c82705d203b012">APFFilter</a>
+, <a class="el" href="classAPFSmoother.html#af78387b6b79bb2d3c3b44663e7fc31f3">APFSmoother</a>
+, <a class="el" href="classBSFilter.html#a1e3791db4cea7b21a6cb135220823cc2">BSFilter</a>
+, <a class="el" href="classHmm__Rbpf.html#a6938942431c84e73f4918eaf87446844">Hmm_Rbpf</a>
 , <a class="el" href="classLgssm.html#abf04a9c7501ab5fa91246963b57721c4">Lgssm</a>
 , <a class="el" href="classSISRFilter.html#a9bec319e692266cacdd7e6cd9b60e77d">SISRFilter</a>
+, <a class="el" href="classSISRSmoother.html#a6316bfec4e62d522e1fe32f8c4b18b0f">SISRSmoother</a>
 </li>
 <li>getLogUWeights()
-: <a class="el" href="classSISRFilter.html#aa87ac349cbc21f70fb51c24fcbbc521a">SISRFilter</a>
-</li>
-<li>getPredictiveVar()
-: <a class="el" href="classJacEtAlAPF.html#a568748b544f75aad1cf779216affc229">JacEtAlAPF</a>
+: <a class="el" href="classBSFilter.html#a80aa1183f38d12b3a180ab6a143ab4fd">BSFilter</a>
+, <a class="el" href="classSISRFilter.html#aa87ac349cbc21f70fb51c24fcbbc521a">SISRFilter</a>
+, <a class="el" href="classSISRSmoother.html#af7ede0870c83af1e4accfa70675b21bc">SISRSmoother</a>
 </li>
 <li>getWeights()
-: <a class="el" href="classAPFFilter.html#a5e552b59cc1e2adc56b06ea7925df51f">APFFilter</a>
+: <a class="el" href="classAPFFilter.html#a397d4b1b17e0ed2b8304d87c704efd84">APFFilter</a>
+, <a class="el" href="classAPFSmoother.html#a6bc97edb04f65e1f038f753b9fb2dd9c">APFSmoother</a>
 </li>
 </ul>
 
@@ -250,19 +261,6 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>initKalmanVar()
 : <a class="el" href="classKalman__RBPF.html#a4f7f37a90d9382ca2ad7dfef4acf1bc0">Kalman_RBPF</a>
 </li>
-<li>isSdNeg()
-: <a class="el" href="classNAr1Filter.html#aee9f60c01d44bb0e54092a04be1fbb1a">NAr1Filter</a>
-</li>
-</ul>
-
-
-<h3><a class="anchor" id="index_j"></a>- j -</h3><ul>
-<li>JacEtAl()
-: <a class="el" href="classJacEtAl.html#a356023f0edf2c58601e47f8cc0fe4ae0">JacEtAl</a>
-</li>
-<li>JacEtAlAPF()
-: <a class="el" href="classJacEtAlAPF.html#ac410fda3eb39aea5703740ca75276938">JacEtAlAPF</a>
-</li>
 </ul>
 
 
@@ -271,7 +269,7 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 : <a class="el" href="classKalman__RBPF.html#aa7130565819b45f993100dbf7f048c37">Kalman_RBPF</a>
 </li>
 <li>kGen()
-: <a class="el" href="classMultinomResamp.html#ad29946389803294445cb27e74d949cd5">MultinomResamp</a>
+: <a class="el" href="classMultinomResamp.html#a74c84e7b6b88eb1f6e1a0c77d734d7cf">MultinomResamp</a>
 </li>
 </ul>
 
@@ -281,78 +279,54 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 : <a class="el" href="classLgssm.html#a8c729ab27738f29225847777b740877e">Lgssm</a>
 </li>
 <li>logFEv()
-: <a class="el" href="classJacEtAl.html#a7742c736cf4136968dcf8629c4a3914e">JacEtAl</a>
-, <a class="el" href="classMSVolSISR.html#acd51af2d17300973b8fa4748e5729f3c">MSVolSISR</a>
-, <a class="el" href="classNAr1Filter.html#adff7d17aa5271b8df4c77d752a6fd773">NAr1Filter</a>
+: <a class="el" href="classHmm__Rbpf.html#a94fc0439184e6f4c49de5738a0f3bbed">Hmm_Rbpf</a>
 , <a class="el" href="classSISRFilter.html#ab91474fc79efb84ed1dafbc8c542f59e">SISRFilter</a>
-, <a class="el" href="classSVolAPFFilter.html#a575cd624bfc47497ac32213627df6a65">SVolAPFFilter</a>
-, <a class="el" href="classSVolFilter.html#a506d813662f0d888e48607962bfefbbd">SVolFilter</a>
+, <a class="el" href="classSISRSmoother.html#aa9bf9fcee0283b90984964e7a76f6096">SISRSmoother</a>
 </li>
 <li>logGEv()
 : <a class="el" href="classAPFFilter.html#ac2d0b5329d7ae123ae4de5dddefb5591">APFFilter</a>
-, <a class="el" href="classJacEtAl.html#aa37b7701fac288d76b72640b2c98f253">JacEtAl</a>
-, <a class="el" href="classJacEtAlAPF.html#a0cd22a37063906eddf47f8b4887919eb">JacEtAlAPF</a>
-, <a class="el" href="classMSVolSISR.html#a1e7efc4dd05351872764983a99a0c5ed">MSVolSISR</a>
-, <a class="el" href="classNAr1APFFilter.html#afabcd7acb729a62955856c9737e76059">NAr1APFFilter</a>
-, <a class="el" href="classNAr1Filter.html#aed4a7fb8160aabe9a7dc702826ccae60">NAr1Filter</a>
+, <a class="el" href="classAPFSmoother.html#acd249cf906d89162f367ded9f02c7793">APFSmoother</a>
+, <a class="el" href="classBSFilter.html#aa612efc58f9442a7f6401a5edf0c2799">BSFilter</a>
 , <a class="el" href="classSISRFilter.html#aac59b077648fa74d2a5db970e3d7ffac">SISRFilter</a>
-, <a class="el" href="classSVolAPFFilter.html#ac0b9ba8b7fcb918c011bb662f3306d19">SVolAPFFilter</a>
-, <a class="el" href="classSVolFilter.html#a81a8e2857ddb699738461b5e2beab1c0">SVolFilter</a>
+, <a class="el" href="classSISRSmoother.html#a15cafa515e345d7ea5b3afefcca27386">SISRSmoother</a>
 </li>
 <li>logLikeEvaluate()
 : <a class="el" href="classPmmh.html#a293931e138576f063aab7e46228f0266">Pmmh</a>
-, <a class="el" href="classPmmh__jac__apf.html#acd0869e2b01566fcd45d85e850d4ee11">Pmmh_jac_apf</a>
-, <a class="el" href="classPmmh__svol__sisr.html#af0bb463ef4d74e60022a4955f565390e">Pmmh_svol_sisr</a>
 </li>
 <li>logMuEv()
 : <a class="el" href="classAPFFilter.html#af3d1501c147477ce1128b221f7b608fd">APFFilter</a>
-, <a class="el" href="classJacEtAl.html#a96f970a2b0e7f0583a5fe567b6353ffe">JacEtAl</a>
-, <a class="el" href="classJacEtAlAPF.html#ac61d6bcb7a63bc95fda6e138255c2535">JacEtAlAPF</a>
-, <a class="el" href="classMSVolSISR.html#a2af842b09bada27765bf8e7e60c59183">MSVolSISR</a>
-, <a class="el" href="classNAr1APFFilter.html#ad85b9a81c93f86ebcc8e837bb2ca010f">NAr1APFFilter</a>
-, <a class="el" href="classNAr1Filter.html#ac97b366af3d4def2b45d394fb85865f0">NAr1Filter</a>
+, <a class="el" href="classAPFSmoother.html#a6afc79350b182fe4083936d1abd2beda">APFSmoother</a>
+, <a class="el" href="classBSFilter.html#a1c1084627bfaf2f3ccf882fc23240b7a">BSFilter</a>
+, <a class="el" href="classHmm__Rbpf.html#a0490747141865bdca060e4a49ca5430e">Hmm_Rbpf</a>
 , <a class="el" href="classSISRFilter.html#ab6ffa8e1cdee34f1afb825e35462afaa">SISRFilter</a>
-, <a class="el" href="classSVolAPFFilter.html#ac019751d65847aabfb4a5b4cdcfbcf4c">SVolAPFFilter</a>
-, <a class="el" href="classSVolFilter.html#ab052dcfa9ce2100ffb02350ccf0b6d17">SVolFilter</a>
+, <a class="el" href="classSISRSmoother.html#a5498af2a7a572435f303a2238c252464">SISRSmoother</a>
 </li>
 <li>logPriorEvaluate()
 : <a class="el" href="classPmmh.html#a265ca1c1380d0ebc052be2c5424a0d3b">Pmmh</a>
-, <a class="el" href="classPmmh__jac__apf.html#ab253d4b6c59a5e9529d042eb7b98dc8a">Pmmh_jac_apf</a>
-, <a class="el" href="classPmmh__svol__sisr.html#ab6c9983faf8ca460f8a8081c6a148aa2">Pmmh_svol_sisr</a>
 </li>
 <li>logQ1Ev()
 : <a class="el" href="classAPFFilter.html#a18ba363183c0c92e6c58d6f3faccbea7">APFFilter</a>
-, <a class="el" href="classJacEtAl.html#aec5fff50e30a9df174b04f2ab53c73d0">JacEtAl</a>
-, <a class="el" href="classJacEtAlAPF.html#a36e56af90cafe323fc42d8eaf75402f9">JacEtAlAPF</a>
-, <a class="el" href="classMSVolSISR.html#a9c776bfbf157ff4f0dc3cbe1c4212142">MSVolSISR</a>
-, <a class="el" href="classNAr1APFFilter.html#a0839d99fe62312b8a2c5c781b879fa79">NAr1APFFilter</a>
-, <a class="el" href="classNAr1Filter.html#af8eb2b66ff1806dd0d4c4ac1f7129a51">NAr1Filter</a>
+, <a class="el" href="classAPFSmoother.html#a4353091a34dac9dd072f407a593aea03">APFSmoother</a>
+, <a class="el" href="classBSFilter.html#a4d2bc2a2530306abaf1a717596b5814d">BSFilter</a>
+, <a class="el" href="classHmm__Rbpf.html#a5feb153a18b40144844f343c2c1af7df">Hmm_Rbpf</a>
 , <a class="el" href="classSISRFilter.html#a61a1971bd8208abbe3ccbacd66d35c23">SISRFilter</a>
-, <a class="el" href="classSVolAPFFilter.html#ade59e30d3d1517a0c64fc44bc027d53c">SVolAPFFilter</a>
-, <a class="el" href="classSVolFilter.html#a9adc1eb288e46a2e05fa89d1b8d9f1ef">SVolFilter</a>
+, <a class="el" href="classSISRSmoother.html#a316ce1b0f0e18d277b0687f727a00a0a">SISRSmoother</a>
 </li>
 <li>logQEv()
-: <a class="el" href="classJacEtAl.html#a73a94bbb16389102b20def8c0bdf96d8">JacEtAl</a>
-, <a class="el" href="classMSVolSISR.html#af5ef1c3d5499bc9f2693a3f918def613">MSVolSISR</a>
-, <a class="el" href="classNAr1Filter.html#ae42e9ccf333b8590bd79831be8083dcd">NAr1Filter</a>
+: <a class="el" href="classBSFilter.html#aed949f0e0533ea3f781f7b3088596784">BSFilter</a>
+, <a class="el" href="classHmm__Rbpf.html#ae01bb25063173899739b61236d5d7b15">Hmm_Rbpf</a>
 , <a class="el" href="classSISRFilter.html#af289db59b008a0ab795fc3b8e9887043">SISRFilter</a>
-, <a class="el" href="classSVolFilter.html#af2bbbe9c2d3bddb3e85b9ed5a14a24cb">SVolFilter</a>
+, <a class="el" href="classSISRSmoother.html#a73f4cea772e649b791b66473408b9b61">SISRSmoother</a>
 </li>
 <li>logQEvaluate()
 : <a class="el" href="classPmmh.html#af8d3fdbc3f3c998670266a3032a53e80">Pmmh</a>
-, <a class="el" href="classPmmh__jac__apf.html#a17edc1dc687fb753eff22d5bb7e44964">Pmmh_jac_apf</a>
-, <a class="el" href="classPmmh__svol__sisr.html#a8164b385edb083df605ba766e000c12a">Pmmh_svol_sisr</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_m"></a>- m -</h3><ul>
-<li>MSVolSISR()
-: <a class="el" href="classMSVolSISR.html#a036830dc21a366c40a083ddf4c3344ae">MSVolSISR</a>
-</li>
 <li>muEv()
-: <a class="el" href="classHmm__Rbpf.html#a266a48b8a34268c966ac58b9be45a9be">Hmm_Rbpf</a>
-, <a class="el" href="classKalman__RBPF.html#a25e8682d13a04eb1075a4d30dfa6825a">Kalman_RBPF</a>
+: <a class="el" href="classKalman__RBPF.html#a25e8682d13a04eb1075a4d30dfa6825a">Kalman_RBPF</a>
 </li>
 <li>MultinomResamp()
 : <a class="el" href="classMultinomResamp.html#a3134e22c0b7e0215045eb783bdc44669">MultinomResamp</a>
@@ -363,85 +337,47 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 </ul>
 
 
-<h3><a class="anchor" id="index_n"></a>- n -</h3><ul>
-<li>NAr1APFFilter()
-: <a class="el" href="classNAr1APFFilter.html#aa13a3fea25c159bb9939726288062809">NAr1APFFilter</a>
-</li>
-<li>NAr1Filter()
-: <a class="el" href="classNAr1Filter.html#a98b2a069363ceb684abd8ae5c9d2b814">NAr1Filter</a>
-</li>
-</ul>
-
-
-<h3><a class="anchor" id="index_o"></a>- o -</h3><ul>
-<li>obsDens()
-: <a class="el" href="classSimpleHmm.html#aea9ee06189659df76eb6fc336dc0d2ca">SimpleHmm</a>
-</li>
-</ul>
-
-
 <h3><a class="anchor" id="index_p"></a>- p -</h3><ul>
 <li>Pmmh()
 : <a class="el" href="classPmmh.html#aa4752fceaa1b278fcadb583865bfd0b5">Pmmh</a>
 </li>
-<li>Pmmh_jac_apf()
-: <a class="el" href="classPmmh__jac__apf.html#ac195b6fc79a2d91620ceb077e752c4a8">Pmmh_jac_apf</a>
-</li>
-<li>Pmmh_svol_sisr()
-: <a class="el" href="classPmmh__svol__sisr.html#ad07ecbdfaccbb26ecefe2f6fd3e2338d">Pmmh_svol_sisr</a>
-</li>
 <li>propMu()
 : <a class="el" href="classAPFFilter.html#a2c136104f4d96e6481406ef1397ead51">APFFilter</a>
-, <a class="el" href="classJacEtAlAPF.html#a3066fe2bd0b399a85eaf51ecdb1c3660">JacEtAlAPF</a>
-, <a class="el" href="classNAr1APFFilter.html#a92a000138b5440613ab85c3811eb5525">NAr1APFFilter</a>
-, <a class="el" href="classSVolAPFFilter.html#a5a5d8ac387f71cb64d8da66c38bbff71">SVolAPFFilter</a>
+, <a class="el" href="classAPFSmoother.html#a8c95c24e4e6f5699ef6f9b95c64fc9eb">APFSmoother</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_q"></a>- q -</h3><ul>
 <li>q1Ev()
-: <a class="el" href="classHmm__Rbpf.html#ab09ad68fd6d1b5e614bd772cb5e20a78">Hmm_Rbpf</a>
-, <a class="el" href="classKalman__RBPF.html#a36b66fd90b6d810d88e5ec9785cb0307">Kalman_RBPF</a>
+: <a class="el" href="classKalman__RBPF.html#a36b66fd90b6d810d88e5ec9785cb0307">Kalman_RBPF</a>
 </li>
 <li>q1Samp()
 : <a class="el" href="classAPFFilter.html#a017be49a493263156ae60ccc424f7daa">APFFilter</a>
+, <a class="el" href="classAPFSmoother.html#ae1b444849e0e2882c00e928409d8fc4b">APFSmoother</a>
+, <a class="el" href="classBSFilter.html#a9792df8f9b13495bc8bdcc53adeae347">BSFilter</a>
 , <a class="el" href="classHmm__Rbpf.html#a1517fdbdf37a4dab6e6c0bca229fd4a0">Hmm_Rbpf</a>
-, <a class="el" href="classJacEtAl.html#a154ca22da5c981f2d0c9515dc89a472c">JacEtAl</a>
-, <a class="el" href="classJacEtAlAPF.html#afdd084c634e7ad591499a6c8c90ee9d0">JacEtAlAPF</a>
 , <a class="el" href="classKalman__RBPF.html#a71e394c093f606f80a92a3fc4fe087a3">Kalman_RBPF</a>
-, <a class="el" href="classMSVolSISR.html#ac828fdce8a00f9ac3adbe0fa019fe49d">MSVolSISR</a>
-, <a class="el" href="classNAr1APFFilter.html#a294a2044c95ba6e013758fa62f3ef979">NAr1APFFilter</a>
-, <a class="el" href="classNAr1Filter.html#a6ae702c69b4f3e7b2109f99e2fd5d8b7">NAr1Filter</a>
 , <a class="el" href="classSISRFilter.html#a5a57cd67535e31bb1ab20fb42499f911">SISRFilter</a>
-, <a class="el" href="classSVolAPFFilter.html#a9da55ac2cfbc51ce0bc65a335942b1b6">SVolAPFFilter</a>
-, <a class="el" href="classSVolFilter.html#aaea1d4b59cdd3053f060d5013e338162">SVolFilter</a>
+, <a class="el" href="classSISRSmoother.html#a1c7a32fa83f90fa6666bd0e739189275">SISRSmoother</a>
 </li>
 <li>qEv()
-: <a class="el" href="classHmm__Rbpf.html#ad1088176f3f3b7c86dce48de66ccd31c">Hmm_Rbpf</a>
-, <a class="el" href="classKalman__RBPF.html#ad5b8e717c5d4c838b0d246b496971d16">Kalman_RBPF</a>
+: <a class="el" href="classKalman__RBPF.html#ad5b8e717c5d4c838b0d246b496971d16">Kalman_RBPF</a>
 </li>
 <li>qSamp()
-: <a class="el" href="classHmm__Rbpf.html#a3552390cea3b92ce312f4ebd14875f69">Hmm_Rbpf</a>
-, <a class="el" href="classJacEtAl.html#a2b2696527c89fdf462639e55dfbc67ce">JacEtAl</a>
+: <a class="el" href="classBSFilter.html#ac23ed2dc31035a7b1f5e1ce21ac66869">BSFilter</a>
+, <a class="el" href="classHmm__Rbpf.html#a3552390cea3b92ce312f4ebd14875f69">Hmm_Rbpf</a>
 , <a class="el" href="classKalman__RBPF.html#ad3ee89a06a18a287445e366230a6bd65">Kalman_RBPF</a>
-, <a class="el" href="classMSVolSISR.html#a4f2f68902ba97f6dee582f1f01d1f5d7">MSVolSISR</a>
-, <a class="el" href="classNAr1Filter.html#af4f7f8b643e5750dc83e27ea7bf05f18">NAr1Filter</a>
 , <a class="el" href="classSISRFilter.html#a2c480a10cac8b52a36ab1309cf9ea1a4">SISRFilter</a>
-, <a class="el" href="classSVolFilter.html#a754e3c40b1db7798a48f3f4ad636b07c">SVolFilter</a>
+, <a class="el" href="classSISRSmoother.html#a15f1f84cfb370dfdbb27a6360c840c60">SISRSmoother</a>
 </li>
 <li>qSample()
 : <a class="el" href="classPmmh.html#a7ada4decd5df894376c74e3ddba5daa1">Pmmh</a>
-, <a class="el" href="classPmmh__jac__apf.html#a0127e07b0f9ba6b042418c575b78ca55">Pmmh_jac_apf</a>
-, <a class="el" href="classPmmh__svol__sisr.html#a18df26cb5c0bddefbd24866b1b4ff142">Pmmh_svol_sisr</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_r"></a>- r -</h3><ul>
-<li>resamp()
-: <a class="el" href="classMultinomResamp.html#a0c24d6d59254855421b8ae13b2ebbcd9">MultinomResamp</a>
-</li>
 <li>resampLogWts()
 : <a class="el" href="classMultinomResamp.html#a0ea6269180faf0b0613072d9bc8a7b53">MultinomResamp</a>
 </li>
@@ -467,17 +403,15 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>setMean()
 : <a class="el" href="classdensities_1_1MVNSampler.html#a456f1e8ed39efc34ee3a7667dfb2011c">densities::MVNSampler</a>
 </li>
-<li>SimpleHmm()
-: <a class="el" href="classSimpleHmm.html#a97ec9e0dfab48e96820dd69924ebc263">SimpleHmm</a>
-</li>
 <li>SISRFilter()
-: <a class="el" href="classSISRFilter.html#a3105536db67f9aef8a08c32866a81a38">SISRFilter</a>
+: <a class="el" href="classSISRFilter.html#a4a629ed5114ed0b3620381ace62af491">SISRFilter</a>
 </li>
-<li>SVolAPFFilter()
-: <a class="el" href="classSVolAPFFilter.html#a6d1d4e7fa5b0b2916ef801b73258b00d">SVolAPFFilter</a>
+<li>SISRSmoother()
+: <a class="el" href="classSISRSmoother.html#a1d2c23e5a42ad2529335126f8b5e744e">SISRSmoother</a>
 </li>
-<li>SVolFilter()
-: <a class="el" href="classSVolFilter.html#a508bc5de545367e0ef0ee683b9e3b7b4">SVolFilter</a>
+<li>smooth()
+: <a class="el" href="classAPFSmoother.html#acaf872bc7356e60198fedce0665afeb6">APFSmoother</a>
+, <a class="el" href="classSISRSmoother.html#a11193002ca13b8186167f7c3f6db625c">SISRSmoother</a>
 </li>
 </ul>
 
@@ -487,7 +421,7 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 : <a class="el" href="classdensities_1_1UniformSampler.html#a29714b42a62dd91603d42b3a2b82eec8">densities::UniformSampler</a>
 </li>
 <li>update()
-: <a class="el" href="classFSHMM.html#a3e8519b8370eecec760d098bb5d38b3e">FSHMM</a>
+: <a class="el" href="classFSHMM.html#a6a9c239a6de129579cc659269c6bc03f">FSHMM</a>
 , <a class="el" href="classLgssm.html#a1f21af488dde504b4c01ccd53ef60e2f">Lgssm</a>
 </li>
 <li>updateFSHMM()
@@ -503,14 +437,17 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>~APFFilter()
 : <a class="el" href="classAPFFilter.html#ac2f814288c00c8b4f149cb4887d11f92">APFFilter</a>
 </li>
+<li>~APFSmoother()
+: <a class="el" href="classAPFSmoother.html#a12ee69daa15fc1f59a8efd9303894896">APFSmoother</a>
+</li>
+<li>~BSFilter()
+: <a class="el" href="classBSFilter.html#aff30bee4608cadfda7dd49a0d57bb39c">BSFilter</a>
+</li>
 <li>~FSHMM()
 : <a class="el" href="classFSHMM.html#a0d011b77cf9541a312fffa43d24fa41f">FSHMM</a>
 </li>
 <li>~Hmm_Rbpf()
 : <a class="el" href="classHmm__Rbpf.html#a5bcc8f6c36cbbb6e7fabfe85bca9136f">Hmm_Rbpf</a>
-</li>
-<li>~JacEtAlAPF()
-: <a class="el" href="classJacEtAlAPF.html#ae601f6fd2c95012e54fabfc4072c91dd">JacEtAlAPF</a>
 </li>
 <li>~Kalman_RBPF()
 : <a class="el" href="classKalman__RBPF.html#a454f1736e8889904f755ca904f6eebc0">Kalman_RBPF</a>
@@ -518,35 +455,17 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>~Lgssm()
 : <a class="el" href="classLgssm.html#afdb5db740e12453879d8b985180426a4">Lgssm</a>
 </li>
-<li>~MSVolSISR()
-: <a class="el" href="classMSVolSISR.html#a5e1706e6f5ea33e9c3cf7a1d58485690">MSVolSISR</a>
-</li>
 <li>~MultinomResamp()
 : <a class="el" href="classMultinomResamp.html#a590495e677a522fa7863e3885631f777">MultinomResamp</a>
-</li>
-<li>~NAr1APFFilter()
-: <a class="el" href="classNAr1APFFilter.html#ace56d42e3c625ded273809f9e8cb6d3f">NAr1APFFilter</a>
-</li>
-<li>~NAr1Filter()
-: <a class="el" href="classNAr1Filter.html#aee6f04f3144fb87edd42e641b134856b">NAr1Filter</a>
 </li>
 <li>~Pmmh()
 : <a class="el" href="classPmmh.html#a52b058761ac6ede77eb3d8c0099e0d93">Pmmh</a>
 </li>
-<li>~Pmmh_jac_apf()
-: <a class="el" href="classPmmh__jac__apf.html#afbe2594fe7e40914ac4edc36580ebc33">Pmmh_jac_apf</a>
-</li>
-<li>~Pmmh_svol_sisr()
-: <a class="el" href="classPmmh__svol__sisr.html#a7e0b043e751ab654c0e7dc25434a2f2a">Pmmh_svol_sisr</a>
-</li>
 <li>~SISRFilter()
 : <a class="el" href="classSISRFilter.html#a6953590c7317c8dbf2341640dea71af8">SISRFilter</a>
 </li>
-<li>~SVolAPFFilter()
-: <a class="el" href="classSVolAPFFilter.html#a18c961a2cac2076288c5195502ca0d8f">SVolAPFFilter</a>
-</li>
-<li>~SVolFilter()
-: <a class="el" href="classSVolFilter.html#a5b894ffc4a62d9e441d9070df9727eb6">SVolFilter</a>
+<li>~SISRSmoother()
+: <a class="el" href="classSISRSmoother.html#a800ef5dc1cda37c7f0f0fd7f70ac0696">SISRSmoother</a>
 </li>
 </ul>
 </div><!-- contents -->

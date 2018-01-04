@@ -7,18 +7,23 @@
 
 #include "multinomial_resampler.h"
 
+/** typedef for linear algebra stuff */
 typedef Eigen::Matrix< double, Eigen::Dynamic, 1              > Vec;
+/** typedef for linear algebra stuff */
 typedef Eigen::Matrix< double, Eigen::Dynamic, Eigen::Dynamic > Mat;
 
 // TODO-actually implement ess in filterOrSmooth
+
+/** enum class for the type of resampling to be performed */
 enum class APFResampStyle {everytime_multinomial, never, ess_multinomial};
 
-//! A base-class for Auxiliary Particle Filtering.
+
+//! A base-class for Auxiliary Particle Filtering. Particle smoothing only; no filtering.
  /**
-  * @class APFFilter
+  * @class APFSmoother
   * @author taylor
   * @date 09/09/17
-  * @file APFFilter.h
+  * @file apf_smooth.h
   * @brief A base class for Auxiliary Particle Filtering.
   * Inherit from this if you want to use an APF for your state space model.
   */
@@ -81,7 +86,6 @@ public:
      /**
       * @brief Use a new datapoint to update the smoothing distribution.
       * @param data a Vec representing the data
-      * @param fs a std::vector of callback functions that are used to calculate expectations with respect to the filtering distribution.
       */
     void smooth(const Vec &data);
     

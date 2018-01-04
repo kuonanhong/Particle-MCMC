@@ -70,7 +70,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -111,10 +110,10 @@ $(document).ready(function(){initNavTree('classSISRFilter.html','');});
 
 <p>This is the complete list of members for <a class="el" href="classSISRFilter.html">SISRFilter</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="classSISRFilter.html#a8c22a038dc47490b5532f2ec6c21a548">filterOrSmooth</a>(const Vec &amp;data, const std::vector&lt; std::function&lt; const Mat(const Vec &amp;)&gt; &gt; &amp;fs=std::vector&lt; std::function&lt; const Mat(const Vec &amp;)&gt; &gt;())</td><td class="entry"><a class="el" href="classSISRFilter.html">SISRFilter</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classSISRFilter.html#a0c1a506e724152d49011083095f523d0">filter</a>(const Vec &amp;data, const std::vector&lt; std::function&lt; const Mat(const Vec &amp;)&gt; &gt; &amp;fs=std::vector&lt; std::function&lt; const Mat(const Vec &amp;)&gt; &gt;())</td><td class="entry"><a class="el" href="classSISRFilter.html">SISRFilter</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classSISRFilter.html#aab226ed51d07c493151a6788e6f90b86">getESS</a>() const </td><td class="entry"><a class="el" href="classSISRFilter.html">SISRFilter</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classSISRFilter.html#a4dd3b90b857114e599a8f71703cb768e">getExpectations</a>() const </td><td class="entry"><a class="el" href="classSISRFilter.html">SISRFilter</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classSISRFilter.html#a8ca159b052883c9c4dc0231145f6fe85">getFullParts</a>() const </td><td class="entry"><a class="el" href="classSISRFilter.html">SISRFilter</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classSISRFilter.html#aff930757bb06eda7b180342ba04fc335">getFullParts</a>() const </td><td class="entry"><a class="el" href="classSISRFilter.html">SISRFilter</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classSISRFilter.html#a9bec319e692266cacdd7e6cd9b60e77d">getLogCondLike</a>() const </td><td class="entry"><a class="el" href="classSISRFilter.html">SISRFilter</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classSISRFilter.html#aa87ac349cbc21f70fb51c24fcbbc521a">getLogUWeights</a>() const </td><td class="entry"><a class="el" href="classSISRFilter.html">SISRFilter</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classSISRFilter.html#ab91474fc79efb84ed1dafbc8c542f59e">logFEv</a>(const Vec &amp;xt, const Vec &amp;xtm1)=0</td><td class="entry"><a class="el" href="classSISRFilter.html">SISRFilter</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
@@ -124,7 +123,7 @@ $(document).ready(function(){initNavTree('classSISRFilter.html','');});
   <tr class="even"><td class="entry"><a class="el" href="classSISRFilter.html#af289db59b008a0ab795fc3b8e9887043">logQEv</a>(const Vec &amp;xt, const Vec &amp;xtm1, const Vec &amp;yt)=0</td><td class="entry"><a class="el" href="classSISRFilter.html">SISRFilter</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
   <tr><td class="entry"><a class="el" href="classSISRFilter.html#a5a57cd67535e31bb1ab20fb42499f911">q1Samp</a>(const Vec &amp;y1)=0</td><td class="entry"><a class="el" href="classSISRFilter.html">SISRFilter</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classSISRFilter.html#a2c480a10cac8b52a36ab1309cf9ea1a4">qSamp</a>(const Vec &amp;xtm1, const Vec &amp;yt)=0</td><td class="entry"><a class="el" href="classSISRFilter.html">SISRFilter</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classSISRFilter.html#a3105536db67f9aef8a08c32866a81a38">SISRFilter</a>(int numParts, SISRResampStyle resampTechnique=SISRResampStyle::everytime_multinomial, unsigned int pathLength=0, double essPerc=1.0)</td><td class="entry"><a class="el" href="classSISRFilter.html">SISRFilter</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classSISRFilter.html#a4a629ed5114ed0b3620381ace62af491">SISRFilter</a>(int numParts, SISRResampStyle resampTechnique=SISRResampStyle::everytime_multinomial, double essPerc=1.0)</td><td class="entry"><a class="el" href="classSISRFilter.html">SISRFilter</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classSISRFilter.html#a6953590c7317c8dbf2341640dea71af8">~SISRFilter</a>()</td><td class="entry"><a class="el" href="classSISRFilter.html">SISRFilter</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->

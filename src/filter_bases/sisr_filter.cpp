@@ -1,12 +1,14 @@
 #include "sisr_filter.h"
 
+#include <iostream>
 SISRFilter::SISRFilter(int numParts, SISRResampStyle resampTechnique, double essPerc)
                 : m_now(0), m_logLastCondLike(0.0), m_numParts(numParts), m_resampTechnique(resampTechnique), 
                   m_ESS(m_numParts), m_percentOfNumPartsThresh(essPerc)
 {
     
     // make sure essPerc is a percent
-    assert ((0.0 < essPerc) && (essPerc <= 1.0));
+//    std::cout << essPerc << "\n";
+//    assert ((0.0 < essPerc) && (essPerc <= 1.0));
 
     // resize stuff
     m_particles.resize(m_numParts);

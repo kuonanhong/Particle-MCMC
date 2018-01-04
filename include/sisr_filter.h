@@ -5,9 +5,12 @@
 
 #include "multinomial_resampler.h"
 
+/** typedef for linear algebra stuff */
 typedef Eigen::Matrix< double, Eigen::Dynamic, 1              > Vec;
+/** typedef for linear algebra stuff */
 typedef Eigen::Matrix< double, Eigen::Dynamic, Eigen::Dynamic > Mat;
 
+/** enum class for the type of resampling to be performed */
 enum class SISRResampStyle {everytime_multinomial, never, ess_multinomial};
 
 //! A base-class for Sequential Importance Sampling with Resampling. Filtering only; no smoothing.
@@ -15,7 +18,7 @@ enum class SISRResampStyle {everytime_multinomial, never, ess_multinomial};
  * @class SISRFilter
  * @author taylor
  * @date 07/09/17
- * @file SISRFilter.h
+ * @file sisr_filter.h
  * @brief A base-class for Sequential Importance Sampling with Resampling. 
  * Inherit from this if you want to use a SISR for your state space model. Filtering only; no smoothing.
  */
@@ -45,7 +48,6 @@ public:
      * @brief Constructor 
      * @param numParts number of particles
      * @param resampTechnique  which resampling strategy?
-     * @param pathLength Set to 0 if you don't want save entire paths. Otherwise, enter time length.
      * @param essPerc ignored unless SISRResampStyle is "ess." What percent of ESS is the threshold for resampling.
      */
     SISRFilter(int numParts, SISRResampStyle resampTechnique = SISRResampStyle::everytime_multinomial, double essPerc = 1.0);

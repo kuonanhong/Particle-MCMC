@@ -110,11 +110,18 @@ $(document).ready(function(){initNavTree('index.html','');});
 <li><code>mcmc_algos</code> are classes performing MCMC techniques for specific models. These classes inherit from the classes in <code>mcmc_bases</code>.</li>
 <li><code>mcmc_bases</code> are all of the base classes for certain types of MCMC algorithms. Inheriting from these allows the user to skip writing a bunch of code.</li>
 <li><code>models</code> are particle filtering classes for specific state space models.</li>
-<li><code>filter_bases</code> are Kalman filtering and particle filtering base classes. Inheriting from these abstracts away all of the details of how this is performed.</li>
-<li><code>utilities</code> functions that might be useful.</li>
+<li><code>filter_bases</code> are Kalman filtering and particle filtering base classes. Inheriting from these abstracts away all of the details of how this is performed. Particle filter base classes are pure virtual, while the closed form filtering classes (fshmm and lgssm) are not.</li>
+<li><code>utilities</code> functions that might be useful and have no other home (e.g. reading or logging data, transforming parameters with common functions, etc.).</li>
 </ol>
 <h2>Documentation</h2>
-<p><a href="https://tbrown122387.github.io/ssm/">More details on everything can be found here.</a> </p>
+<p><a href="https://tbrown122387.github.io/ssm/">More details on everything can be found here.</a></p>
+<h2>To-Do List</h2>
+<ul>
+<li>Make a parameter class that organizes which are transformed, constrained, etc.</li>
+<li>Implement more resampling options (different algorithms, different schedules, etc.)</li>
+<li>Make sure all resamplers and classes are log-weights only</li>
+<li>unit testing... </li>
+</ul>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

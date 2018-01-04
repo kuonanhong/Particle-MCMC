@@ -70,7 +70,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -111,19 +110,18 @@ $(document).ready(function(){initNavTree('classAPFFilter.html','');});
 
 <p>This is the complete list of members for <a class="el" href="classAPFFilter.html">APFFilter</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="classAPFFilter.html#acda2f47653ceda4bfd3d9a25d18790c7">APFFilter</a>(int numParts, APFResampStyle resampTechnique=APFResampStyle::everytime_multinomial, unsigned int pathLength=0)</td><td class="entry"><a class="el" href="classAPFFilter.html">APFFilter</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classAPFFilter.html#adc7ee7fed78dd93309784378523e0399">filterOrSmooth</a>(const Vec &amp;dataconst, const std::vector&lt; std::function&lt; const Mat(const Vec &amp;)&gt; &gt; &amp;fs=std::vector&lt; std::function&lt; const Mat(const Vec &amp;)&gt; &gt;())</td><td class="entry"><a class="el" href="classAPFFilter.html">APFFilter</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classAPFFilter.html#a86e261db9017205973b3f8f26e004370">APFFilter</a>(int numParts, APFResampStyle resampTechnique=APFResampStyle::everytime_multinomial)</td><td class="entry"><a class="el" href="classAPFFilter.html">APFFilter</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classAPFFilter.html#aa087692fec5a7aafa30f6ec9e6227697">filter</a>(const Vec &amp;data, const std::vector&lt; std::function&lt; const Mat(const Vec &amp;)&gt; &gt; &amp;fs=std::vector&lt; std::function&lt; const Mat(const Vec &amp;)&gt; &gt;())</td><td class="entry"><a class="el" href="classAPFFilter.html">APFFilter</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classAPFFilter.html#a367c77209129a84f3d64ff3bcaaac513">fSamp</a>(const Vec &amp;xtm1)=0</td><td class="entry"><a class="el" href="classAPFFilter.html">APFFilter</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classAPFFilter.html#a84281845b2986f246fc132d13fd33e3d">getExpectations</a>() const </td><td class="entry"><a class="el" href="classAPFFilter.html">APFFilter</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classAPFFilter.html#aa2ec5f04285cd1821f21ee85dcf50e3f">getFullParts</a>() const </td><td class="entry"><a class="el" href="classAPFFilter.html">APFFilter</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classAPFFilter.html#af9a5210f2927616dd6c82705d203b012">getLogCondLike</a>() const </td><td class="entry"><a class="el" href="classAPFFilter.html">APFFilter</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classAPFFilter.html#a5e552b59cc1e2adc56b06ea7925df51f">getWeights</a>() const </td><td class="entry"><a class="el" href="classAPFFilter.html">APFFilter</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classAPFFilter.html#ac2d0b5329d7ae123ae4de5dddefb5591">logGEv</a>(const Vec &amp;yt, const Vec &amp;xt)=0</td><td class="entry"><a class="el" href="classAPFFilter.html">APFFilter</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classAPFFilter.html#af3d1501c147477ce1128b221f7b608fd">logMuEv</a>(const Vec &amp;x1)=0</td><td class="entry"><a class="el" href="classAPFFilter.html">APFFilter</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classAPFFilter.html#a18ba363183c0c92e6c58d6f3faccbea7">logQ1Ev</a>(const Vec &amp;x1, const Vec &amp;y1)=0</td><td class="entry"><a class="el" href="classAPFFilter.html">APFFilter</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classAPFFilter.html#a2c136104f4d96e6481406ef1397ead51">propMu</a>(const Vec &amp;xtm1)=0</td><td class="entry"><a class="el" href="classAPFFilter.html">APFFilter</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classAPFFilter.html#a017be49a493263156ae60ccc424f7daa">q1Samp</a>(const Vec &amp;y1)=0</td><td class="entry"><a class="el" href="classAPFFilter.html">APFFilter</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classAPFFilter.html#ac2f814288c00c8b4f149cb4887d11f92">~APFFilter</a>()</td><td class="entry"><a class="el" href="classAPFFilter.html">APFFilter</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classAPFFilter.html#adf8af6603940182e0a42646cace2f233">getExpectations</a>() const </td><td class="entry"><a class="el" href="classAPFFilter.html">APFFilter</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classAPFFilter.html#af9a5210f2927616dd6c82705d203b012">getLogCondLike</a>() const </td><td class="entry"><a class="el" href="classAPFFilter.html">APFFilter</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classAPFFilter.html#a397d4b1b17e0ed2b8304d87c704efd84">getWeights</a>() const </td><td class="entry"><a class="el" href="classAPFFilter.html">APFFilter</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classAPFFilter.html#ac2d0b5329d7ae123ae4de5dddefb5591">logGEv</a>(const Vec &amp;yt, const Vec &amp;xt)=0</td><td class="entry"><a class="el" href="classAPFFilter.html">APFFilter</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classAPFFilter.html#af3d1501c147477ce1128b221f7b608fd">logMuEv</a>(const Vec &amp;x1)=0</td><td class="entry"><a class="el" href="classAPFFilter.html">APFFilter</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classAPFFilter.html#a18ba363183c0c92e6c58d6f3faccbea7">logQ1Ev</a>(const Vec &amp;x1, const Vec &amp;y1)=0</td><td class="entry"><a class="el" href="classAPFFilter.html">APFFilter</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classAPFFilter.html#a2c136104f4d96e6481406ef1397ead51">propMu</a>(const Vec &amp;xtm1)=0</td><td class="entry"><a class="el" href="classAPFFilter.html">APFFilter</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classAPFFilter.html#a017be49a493263156ae60ccc424f7daa">q1Samp</a>(const Vec &amp;y1)=0</td><td class="entry"><a class="el" href="classAPFFilter.html">APFFilter</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classAPFFilter.html#ac2f814288c00c8b4f149cb4887d11f92">~APFFilter</a>()</td><td class="entry"><a class="el" href="classAPFFilter.html">APFFilter</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

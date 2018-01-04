@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['jacetal',['JacEtAl',['../classJacEtAl.html',1,'']]],
-  ['jacetalapf',['JacEtAlAPF',['../classJacEtAlAPF.html',1,'']]]
+  ['hmm_5frbpf',['Hmm_Rbpf',['../classHmm__Rbpf.html',1,'']]]
 ];

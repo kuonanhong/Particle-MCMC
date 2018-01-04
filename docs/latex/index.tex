@@ -13,10 +13,20 @@ You have to build this yourself. Make sure to compile with C++11 enabled ({\ttfa
 \item {\ttfamily mcmc\+\_\+algos} are classes performing M\+C\+MC techniques for specific models. These classes inherit from the classes in {\ttfamily mcmc\+\_\+bases}.
 \item {\ttfamily mcmc\+\_\+bases} are all of the base classes for certain types of M\+C\+MC algorithms. Inheriting from these allows the user to skip writing a bunch of code.
 \item {\ttfamily models} are particle filtering classes for specific state space models.
-\item {\ttfamily filter\+\_\+bases} are Kalman filtering and particle filtering base classes. Inheriting from these abstracts away all of the details of how this is performed.
-\item {\ttfamily utilities} functions that might be useful.
+\item {\ttfamily filter\+\_\+bases} are Kalman filtering and particle filtering base classes. Inheriting from these abstracts away all of the details of how this is performed. Particle filter base classes are pure virtual, while the closed form filtering classes (fshmm and lgssm) are not.
+\item {\ttfamily utilities} functions that might be useful and have no other home (e.\+g. reading or logging data, transforming parameters with common functions, etc.).
 \end{DoxyEnumerate}
 
 \subsection*{Documentation}
 
-\href{https://tbrown122387.github.io/ssm/}{\tt More details on everything can be found here.} 
+\href{https://tbrown122387.github.io/ssm/}{\tt More details on everything can be found here.}
+
+\subsection*{To-\/\+Do List}
+
+
+\begin{DoxyItemize}
+\item Make a parameter class that organizes which are transformed, constrained, etc.
+\item Implement more resampling options (different algorithms, different schedules, etc.)
+\item Make sure all resamplers and classes are log-\/weights only
+\item unit testing... 
+\end{DoxyItemize}

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['vec',['Vec',['../densities_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152',1,'Vec():&#160;densities.h'],['../pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152',1,'Vec():&#160;pmfs.h']]]
+  ['vec',['Vec',['../apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152',1,'Vec():&#160;apf_filter.h'],['../apf__smooth_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152',1,'Vec():&#160;apf_smooth.h'],['../bootstrap__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152',1,'Vec():&#160;bootstrap_filter.h'],['../densities_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152',1,'Vec():&#160;densities.h'],['../kalman__rbpf_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152',1,'Vec():&#160;kalman_rbpf.h'],['../multinomial__resampler_8h.html#a360fe0c7b2382d504256a49473c3be26',1,'Vec():&#160;multinomial_resampler.h'],['../pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152',1,'Vec():&#160;pmfs.h'],['../pmmh_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152',1,'Vec():&#160;pmmh.h'],['../sisr__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152',1,'Vec():&#160;sisr_filter.h'],['../sisr__smooth_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152',1,'Vec():&#160;sisr_smooth.h']]]
 ];

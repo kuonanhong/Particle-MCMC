@@ -70,7 +70,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -125,37 +124,40 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5bcc8f6c36cbbb6e7fabfe85bca9136f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHmm__Rbpf.html#a5bcc8f6c36cbbb6e7fabfe85bca9136f">~Hmm_Rbpf</a> ()</td></tr>
 <tr class="memdesc:a5bcc8f6c36cbbb6e7fabfe85bca9136f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="#a5bcc8f6c36cbbb6e7fabfe85bca9136f">More...</a><br /></td></tr>
 <tr class="separator:a5bcc8f6c36cbbb6e7fabfe85bca9136f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa79770fd41c231cb1ff45726f4160e37"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHmm__Rbpf.html#aa79770fd41c231cb1ff45726f4160e37">filter</a> (const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;data)</td></tr>
-<tr class="memdesc:aa79770fd41c231cb1ff45726f4160e37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filter.  <a href="#aa79770fd41c231cb1ff45726f4160e37">More...</a><br /></td></tr>
-<tr class="separator:aa79770fd41c231cb1ff45726f4160e37"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a413c03584961a6dfe6959900814b3705"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHmm__Rbpf.html#a413c03584961a6dfe6959900814b3705">getCondLike</a> () const </td></tr>
-<tr class="memdesc:a413c03584961a6dfe6959900814b3705"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the latest conditional likelihood.  <a href="#a413c03584961a6dfe6959900814b3705">More...</a><br /></td></tr>
-<tr class="separator:a413c03584961a6dfe6959900814b3705"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a266a48b8a34268c966ac58b9be45a9be"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHmm__Rbpf.html#a266a48b8a34268c966ac58b9be45a9be">muEv</a> (const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x21)=0</td></tr>
-<tr class="memdesc:a266a48b8a34268c966ac58b9be45a9be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the first time state density.  <a href="#a266a48b8a34268c966ac58b9be45a9be">More...</a><br /></td></tr>
-<tr class="separator:a266a48b8a34268c966ac58b9be45a9be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1517fdbdf37a4dab6e6c0bca229fd4a0"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHmm__Rbpf.html#a1517fdbdf37a4dab6e6c0bca229fd4a0">q1Samp</a> (const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;y1)=0</td></tr>
+<tr class="memitem:a74266bf4053458eb0be03d5849144375"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHmm__Rbpf.html#a74266bf4053458eb0be03d5849144375">filter</a> (const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;data, const std::vector&lt; std::function&lt; const <a class="el" href="apf__filter_8h.html#ae601f56a556993079f730483c574356f">Mat</a>(const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x1tProbs, const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x2t)&gt; &gt; &amp;fs=std::vector&lt; std::function&lt; const <a class="el" href="apf__filter_8h.html#ae601f56a556993079f730483c574356f">Mat</a>(const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;, const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;)&gt; &gt;())</td></tr>
+<tr class="memdesc:a74266bf4053458eb0be03d5849144375"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filter.  <a href="#a74266bf4053458eb0be03d5849144375">More...</a><br /></td></tr>
+<tr class="separator:a74266bf4053458eb0be03d5849144375"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6938942431c84e73f4918eaf87446844"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHmm__Rbpf.html#a6938942431c84e73f4918eaf87446844">getLogCondLike</a> () const </td></tr>
+<tr class="memdesc:a6938942431c84e73f4918eaf87446844"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the latest conditional likelihood.  <a href="#a6938942431c84e73f4918eaf87446844">More...</a><br /></td></tr>
+<tr class="separator:a6938942431c84e73f4918eaf87446844"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56340163d1ed12c1454aea347ab34f6e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="apf__filter_8h.html#ae601f56a556993079f730483c574356f">Mat</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHmm__Rbpf.html#a56340163d1ed12c1454aea347ab34f6e">getExpectations</a> () const </td></tr>
+<tr class="memdesc:a56340163d1ed12c1454aea347ab34f6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get vector of expectations.  <a href="#a56340163d1ed12c1454aea347ab34f6e">More...</a><br /></td></tr>
+<tr class="separator:a56340163d1ed12c1454aea347ab34f6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0490747141865bdca060e4a49ca5430e"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHmm__Rbpf.html#a0490747141865bdca060e4a49ca5430e">logMuEv</a> (const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x21)=0</td></tr>
+<tr class="memdesc:a0490747141865bdca060e4a49ca5430e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the first time state density.  <a href="#a0490747141865bdca060e4a49ca5430e">More...</a><br /></td></tr>
+<tr class="separator:a0490747141865bdca060e4a49ca5430e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1517fdbdf37a4dab6e6c0bca229fd4a0"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHmm__Rbpf.html#a1517fdbdf37a4dab6e6c0bca229fd4a0">q1Samp</a> (const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;y1)=0</td></tr>
 <tr class="memdesc:a1517fdbdf37a4dab6e6c0bca229fd4a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sample from the first sampler.  <a href="#a1517fdbdf37a4dab6e6c0bca229fd4a0">More...</a><br /></td></tr>
 <tr class="separator:a1517fdbdf37a4dab6e6c0bca229fd4a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33ab8bbb1a85fd06fa2d507fa5d48904"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHmm__Rbpf.html#a33ab8bbb1a85fd06fa2d507fa5d48904">initHMMProbVec</a> (const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x21)=0</td></tr>
+<tr class="memitem:a33ab8bbb1a85fd06fa2d507fa5d48904"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHmm__Rbpf.html#a33ab8bbb1a85fd06fa2d507fa5d48904">initHMMProbVec</a> (const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x21)=0</td></tr>
 <tr class="memdesc:a33ab8bbb1a85fd06fa2d507fa5d48904"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the initial mean vector for each HMM filter object.  <a href="#a33ab8bbb1a85fd06fa2d507fa5d48904">More...</a><br /></td></tr>
 <tr class="separator:a33ab8bbb1a85fd06fa2d507fa5d48904"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a752c2997aee03219fe3eb4fbe63ed3af"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="pmfs_8h.html#ae601f56a556993079f730483c574356f">Mat</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHmm__Rbpf.html#a752c2997aee03219fe3eb4fbe63ed3af">initHMMTransMat</a> (const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x21)=0</td></tr>
+<tr class="memitem:a752c2997aee03219fe3eb4fbe63ed3af"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="apf__filter_8h.html#ae601f56a556993079f730483c574356f">Mat</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHmm__Rbpf.html#a752c2997aee03219fe3eb4fbe63ed3af">initHMMTransMat</a> (const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x21)=0</td></tr>
 <tr class="memdesc:a752c2997aee03219fe3eb4fbe63ed3af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the transition matrix for each HMM filter object.  <a href="#a752c2997aee03219fe3eb4fbe63ed3af">More...</a><br /></td></tr>
 <tr class="separator:a752c2997aee03219fe3eb4fbe63ed3af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3552390cea3b92ce312f4ebd14875f69"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHmm__Rbpf.html#a3552390cea3b92ce312f4ebd14875f69">qSamp</a> (const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x2tm1, const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;yt)=0</td></tr>
+<tr class="memitem:a3552390cea3b92ce312f4ebd14875f69"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHmm__Rbpf.html#a3552390cea3b92ce312f4ebd14875f69">qSamp</a> (const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x2tm1, const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;yt)=0</td></tr>
 <tr class="memdesc:a3552390cea3b92ce312f4ebd14875f69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Samples the time t second component.  <a href="#a3552390cea3b92ce312f4ebd14875f69">More...</a><br /></td></tr>
 <tr class="separator:a3552390cea3b92ce312f4ebd14875f69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab09ad68fd6d1b5e614bd772cb5e20a78"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHmm__Rbpf.html#ab09ad68fd6d1b5e614bd772cb5e20a78">q1Ev</a> (const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x21, const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;y1)=0</td></tr>
-<tr class="memdesc:ab09ad68fd6d1b5e614bd772cb5e20a78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the proposal density of the second state component at time 1.  <a href="#ab09ad68fd6d1b5e614bd772cb5e20a78">More...</a><br /></td></tr>
-<tr class="separator:ab09ad68fd6d1b5e614bd772cb5e20a78"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9964a93b3eabddbafd2b3fd6cbaead94"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHmm__Rbpf.html#a9964a93b3eabddbafd2b3fd6cbaead94">fEv</a> (const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x2t, const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x2tm1)=0</td></tr>
-<tr class="memdesc:a9964a93b3eabddbafd2b3fd6cbaead94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the state transition density for the second state component.  <a href="#a9964a93b3eabddbafd2b3fd6cbaead94">More...</a><br /></td></tr>
-<tr class="separator:a9964a93b3eabddbafd2b3fd6cbaead94"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1088176f3f3b7c86dce48de66ccd31c"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHmm__Rbpf.html#ad1088176f3f3b7c86dce48de66ccd31c">qEv</a> (const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x2t, const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x2tm1, const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;yt)=0</td></tr>
-<tr class="memdesc:ad1088176f3f3b7c86dce48de66ccd31c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the proposal density at time t &gt; 1.  <a href="#ad1088176f3f3b7c86dce48de66ccd31c">More...</a><br /></td></tr>
-<tr class="separator:ad1088176f3f3b7c86dce48de66ccd31c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aafd7e87c211684e8c4692646e46785ba"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHmm__Rbpf.html#aafd7e87c211684e8c4692646e46785ba">updateFSHMM</a> (<a class="el" href="classFSHMM.html">FSHMM</a> &amp;aModel, const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;yt, const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x2t)=0</td></tr>
+<tr class="memitem:a5feb153a18b40144844f343c2c1af7df"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHmm__Rbpf.html#a5feb153a18b40144844f343c2c1af7df">logQ1Ev</a> (const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x21, const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;y1)=0</td></tr>
+<tr class="memdesc:a5feb153a18b40144844f343c2c1af7df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the proposal density of the second state component at time 1.  <a href="#a5feb153a18b40144844f343c2c1af7df">More...</a><br /></td></tr>
+<tr class="separator:a5feb153a18b40144844f343c2c1af7df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94fc0439184e6f4c49de5738a0f3bbed"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHmm__Rbpf.html#a94fc0439184e6f4c49de5738a0f3bbed">logFEv</a> (const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x2t, const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x2tm1)=0</td></tr>
+<tr class="memdesc:a94fc0439184e6f4c49de5738a0f3bbed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the state transition density for the second state component.  <a href="#a94fc0439184e6f4c49de5738a0f3bbed">More...</a><br /></td></tr>
+<tr class="separator:a94fc0439184e6f4c49de5738a0f3bbed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae01bb25063173899739b61236d5d7b15"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHmm__Rbpf.html#ae01bb25063173899739b61236d5d7b15">logQEv</a> (const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x2t, const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x2tm1, const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;yt)=0</td></tr>
+<tr class="memdesc:ae01bb25063173899739b61236d5d7b15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the proposal density at time t &gt; 1.  <a href="#ae01bb25063173899739b61236d5d7b15">More...</a><br /></td></tr>
+<tr class="separator:ae01bb25063173899739b61236d5d7b15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafd7e87c211684e8c4692646e46785ba"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHmm__Rbpf.html#aafd7e87c211684e8c4692646e46785ba">updateFSHMM</a> (<a class="el" href="classFSHMM.html">FSHMM</a> &amp;aModel, const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;yt, const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x2t)=0</td></tr>
 <tr class="memdesc:aafd7e87c211684e8c4692646e46785ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">How to update your inner HMM filter object at each time.  <a href="#aafd7e87c211684e8c4692646e46785ba">More...</a><br /></td></tr>
 <tr class="separator:aafd7e87c211684e8c4692646e46785ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -217,60 +219,26 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a9964a93b3eabddbafd2b3fd6cbaead94"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual double Hmm_Rbpf::fEv </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
-          <td class="paramname"><em>x2t</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
-          <td class="paramname"><em>x2tm1</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Evaluates the state transition density for the second state component. </p>
-<p>Evaluates the state transition density for the second state component. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">x2t</td><td>the current second state component. </td></tr>
-    <tr><td class="paramname">x2tm1</td><td>the previous second state component. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a double evaluation. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="aa79770fd41c231cb1ff45726f4160e37"></a>
+<a class="anchor" id="a74266bf4053458eb0be03d5849144375"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void Hmm_Rbpf::filter </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
-          <td class="paramname"><em>data</em></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const std::vector&lt; std::function&lt; const <a class="el" href="apf__filter_8h.html#ae601f56a556993079f730483c574356f">Mat</a>(const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x1tProbs, const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x2t)&gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>fs</em> = <code>std::vector&lt;&#160;std::function&lt;&#160;const&#160;<a class="el" href="apf__filter_8h.html#ae601f56a556993079f730483c574356f">Mat</a>(const&#160;<a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>&#160;&amp;,&#160;const&#160;<a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>&#160;&amp;)&gt;&#160;&gt;()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -279,18 +247,37 @@ Public Member Functions</h2></td></tr>
 <p>filters everything based on a new data point. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">data</td><td>the most recent time series observation. </td></tr>
+    <tr><td class="paramname">fs</td><td>a vector of functions computing logE[h(x_1t, x_2t^i)| x_2t^i,y_1:t]. will access the probability vector of x_1t </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="a413c03584961a6dfe6959900814b3705"></a>
+<a class="anchor" id="a56340163d1ed12c1454aea347ab34f6e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double Hmm_Rbpf::getCondLike </td>
+          <td class="memname">std::vector&lt;<a class="el" href="apf__filter_8h.html#ae601f56a556993079f730483c574356f">Mat</a>&gt; Hmm_Rbpf::getExpectations </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get vector of expectations. </p>
+<dl class="section return"><dt>Returns</dt><dd>vector of expectations </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6938942431c84e73f4918eaf87446844"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Hmm_Rbpf::getLogCondLike </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -311,9 +298,9 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> Hmm_Rbpf::initHMMProbVec </td>
+          <td class="memname">virtual <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> Hmm_Rbpf::initHMMProbVec </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>x21</em></td><td>)</td>
           <td></td>
         </tr>
@@ -344,9 +331,9 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="pmfs_8h.html#ae601f56a556993079f730483c574356f">Mat</a> Hmm_Rbpf::initHMMTransMat </td>
+          <td class="memname">virtual <a class="el" href="apf__filter_8h.html#ae601f56a556993079f730483c574356f">Mat</a> Hmm_Rbpf::initHMMTransMat </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>x21</em></td><td>)</td>
           <td></td>
         </tr>
@@ -369,7 +356,7 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a266a48b8a34268c966ac58b9be45a9be"></a>
+<a class="anchor" id="a94fc0439184e6f4c49de5738a0f3bbed"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -377,9 +364,53 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual double Hmm_Rbpf::muEv </td>
+          <td class="memname">virtual double Hmm_Rbpf::logFEv </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramname"><em>x2t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramname"><em>x2tm1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Evaluates the state transition density for the second state component. </p>
+<p>Evaluates the state transition density for the second state component. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x2t</td><td>the current second state component. </td></tr>
+    <tr><td class="paramname">x2tm1</td><td>the previous second state component. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a double evaluation. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0490747141865bdca060e4a49ca5430e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual double Hmm_Rbpf::logMuEv </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>x21</em></td><td>)</td>
           <td></td>
         </tr>
@@ -402,7 +433,7 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ab09ad68fd6d1b5e614bd772cb5e20a78"></a>
+<a class="anchor" id="a5feb153a18b40144844f343c2c1af7df"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -410,15 +441,15 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual double Hmm_Rbpf::q1Ev </td>
+          <td class="memname">virtual double Hmm_Rbpf::logQ1Ev </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>x21</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>y1</em>&#160;</td>
         </tr>
         <tr>
@@ -446,7 +477,7 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a1517fdbdf37a4dab6e6c0bca229fd4a0"></a>
+<a class="anchor" id="ae01bb25063173899739b61236d5d7b15"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -454,54 +485,21 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> Hmm_Rbpf::q1Samp </td>
+          <td class="memname">virtual double Hmm_Rbpf::logQEv </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
-          <td class="paramname"><em>y1</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Sample from the first sampler. </p>
-<p>samples the second component of the state at time 1. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">y1</td><td>most recent datum. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a Vec sample for x21. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ad1088176f3f3b7c86dce48de66ccd31c"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual double Hmm_Rbpf::qEv </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>x2t</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>x2tm1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>yt</em>&#160;</td>
         </tr>
         <tr>
@@ -530,6 +528,39 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a1517fdbdf37a4dab6e6c0bca229fd4a0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> Hmm_Rbpf::q1Samp </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramname"><em>y1</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sample from the first sampler. </p>
+<p>samples the second component of the state at time 1. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">y1</td><td>most recent datum. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a Vec sample for x21. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a3552390cea3b92ce312f4ebd14875f69"></a>
 <div class="memitem">
 <div class="memproto">
@@ -538,15 +569,15 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> Hmm_Rbpf::qSamp </td>
+          <td class="memname">virtual <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> Hmm_Rbpf::qSamp </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>x2tm1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>yt</em>&#160;</td>
         </tr>
         <tr>
@@ -590,13 +621,13 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>yt</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>x2t</em>&#160;</td>
         </tr>
         <tr>

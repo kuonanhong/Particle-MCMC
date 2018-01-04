@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['nar1apffilter',['NAr1APFFilter',['../classNAr1APFFilter.html#aa13a3fea25c159bb9939726288062809',1,'NAr1APFFilter']]],
-  ['nar1filter',['NAr1Filter',['../classNAr1Filter.html#a98b2a069363ceb684abd8ae5c9d2b814',1,'NAr1Filter']]]
+  ['pmmh',['Pmmh',['../classPmmh.html#aa4752fceaa1b278fcadb583865bfd0b5',1,'Pmmh']]],
+  ['propmu',['propMu',['../classAPFFilter.html#a2c136104f4d96e6481406ef1397ead51',1,'APFFilter::propMu()'],['../classAPFSmoother.html#a8c95c24e4e6f5699ef6f9b95c64fc9eb',1,'APFSmoother::propMu()']]]
 ];

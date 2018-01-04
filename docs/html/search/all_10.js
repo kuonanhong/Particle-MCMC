@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['resamp',['resamp',['../classMultinomResamp.html#a0c24d6d59254855421b8ae13b2ebbcd9',1,'MultinomResamp']]],
-  ['resamplogwts',['resampLogWts',['../classMultinomResamp.html#a0ea6269180faf0b0613072d9bc8a7b53',1,'MultinomResamp']]],
-  ['ressamphrbpf',['ressampHRBPF',['../classMultinomResamp.html#aaddcbec4eb62954d8d7aa96c45ffd7d0',1,'MultinomResamp']]],
-  ['ressampkrbpf',['ressampKRBPF',['../classMultinomResamp.html#ad39c4f5d5460e3e4a2c56370c8dab39f',1,'MultinomResamp']]]
+  ['uniformsampler',['UniformSampler',['../classdensities_1_1UniformSampler.html',1,'densities']]],
+  ['uniformsampler',['UniformSampler',['../classdensities_1_1UniformSampler.html#a29714b42a62dd91603d42b3a2b82eec8',1,'densities::UniformSampler::UniformSampler()'],['../classdensities_1_1UniformSampler.html#a8dbc3ef50efd8b6b9aa64819f7f71095',1,'densities::UniformSampler::UniformSampler(double lower, double upper)']]],
+  ['update',['update',['../classFSHMM.html#a6a9c239a6de129579cc659269c6bc03f',1,'FSHMM::update()'],['../classLgssm.html#a1f21af488dde504b4c01ccd53ef60e2f',1,'Lgssm::update()']]],
+  ['updatefshmm',['updateFSHMM',['../classHmm__Rbpf.html#aafd7e87c211684e8c4692646e46785ba',1,'Hmm_Rbpf']]],
+  ['updatekalman',['updateKalman',['../classKalman__RBPF.html#a67abffa6fe0510147037ed102aa30ed0',1,'Kalman_RBPF']]]
 ];

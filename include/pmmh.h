@@ -7,7 +7,9 @@
 #include <future>
 #include <Eigen/Dense> // linear algebra stuff
 
+/** typedef for linear algebra stuff */
 typedef Eigen::Matrix< double, Eigen::Dynamic, 1              > Vec;
+/** typedef for linear algebra stuff */
 typedef Eigen::Matrix< double, Eigen::Dynamic, Eigen::Dynamic > Mat;
 
 //! A base-class for particle marginal Metropolis-Hastings.
@@ -15,7 +17,7 @@ typedef Eigen::Matrix< double, Eigen::Dynamic, Eigen::Dynamic > Mat;
   * @class Pmmh
   * @author taylor
   * @date 10/14/17
-  * @file Pmmh.h
+  * @file pmmh.h
   * @brief A base class for particle marginal Metropolis-Hastings.
   * Inherit from this if you want to use pmmh to estimate your SSM.
   * The benefits are that doing so will force you to implement certain functions, 

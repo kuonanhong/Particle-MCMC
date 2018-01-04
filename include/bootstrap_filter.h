@@ -5,9 +5,12 @@
 
 #include "multinomial_resampler.h"
 
+/** typedef for linear algebra stuff */
 typedef Eigen::Matrix< double, Eigen::Dynamic, 1              > Vec;
+/** typedef for linear algebra stuff */
 typedef Eigen::Matrix< double, Eigen::Dynamic, Eigen::Dynamic > Mat;
 
+/** enum class for the type of resampling to be performed */
 enum class BSResampStyle {everytime_multinomial, never, ess_multinomial};
 
 //! A base-class for Bootstrap Filtering (SISR with naive proposals). This class is a bit faster because it 

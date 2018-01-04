@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hmmrbpfresampstyle',['HMMRBPFResampStyle',['../hmm__rbpf_8h.html#aa0729d190f1f8b76b203466a41f1505f',1,'hmm_rbpf.h']]]
+  ['apfresampstyle',['APFResampStyle',['../apf__filter_8h.html#a187a7338bc8872e7607cf1ea4ffed47b',1,'APFResampStyle():&#160;apf_filter.h'],['../apf__smooth_8h.html#a187a7338bc8872e7607cf1ea4ffed47b',1,'APFResampStyle():&#160;apf_smooth.h']]]
 ];

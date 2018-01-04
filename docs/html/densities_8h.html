@@ -126,14 +126,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="densities_8h__dep__incl.png" border="0" usemap="#include_2densities_8hdep" alt=""/></div>
 <map name="include_2densities_8hdep" id="include_2densities_8hdep">
-<area shape="rect" id="node2" href="hmm__rbpf_8h.html" title="Rao&#45;Blackwellized particle filtering where the innder models are discrete state hmms. " alt="" coords="5,87,141,114"/>
-<area shape="rect" id="node3" href="jacquier__et__al_8h.html" title="A class that performs filtering for the multivariate stochastic volatility model of &quot;Stochastic Volat..." alt="" coords="166,87,325,114"/>
-<area shape="rect" id="node4" href="jacquier__et__al__apf_8h.html" title="An APF implementation of the multivariate stochastic volatility model from &quot;Stochastic Volatility: Un..." alt="" coords="349,80,480,121"/>
-<area shape="rect" id="node5" href="msvol__sisr_8h.html" title="Implements the multivariate stochastic volatility model from Pitt and Shephard 1999. " alt="" coords="504,87,645,114"/>
-<area shape="rect" id="node6" href="noisy__ar1__apf__filter_8h_source.html" title="include/noisy_ar1_apf\l_filter.h" alt="" coords="669,80,817,121"/>
-<area shape="rect" id="node7" href="noisy__ar1__filter_8h_source.html" title="include/noisy_ar1_filter.h" alt="" coords="841,87,1007,114"/>
-<area shape="rect" id="node8" href="svol__apf__filter_8h_source.html" title="include/svol_apf_filter.h" alt="" coords="1031,87,1190,114"/>
-<area shape="rect" id="node9" href="svol__filter_8h.html" title="Centered parametrization. A class implementing the classic stochastic volatility model of Taylor..." alt="" coords="1214,87,1349,114"/>
+<area shape="rect" id="node2" href="hmm__rbpf_8h.html" title="Rao&#45;Blackwellized particle filtering where the innder models are discrete state hmms. " alt="" coords="5,80,141,107"/>
 </map>
 </div>
 </div>
@@ -165,7 +158,7 @@ Functions</h2></td></tr>
 <tr class="separator:ae55ae08fac65b33b193ed333538dd340"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45b1879e50e22cb4ee16e2b9b86c3b14"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="densities_8h.html#a45b1879e50e22cb4ee16e2b9b86c3b14">densities::log_two_over_pi</a> (-0.451582705289455)</td></tr>
 <tr class="separator:a45b1879e50e22cb4ee16e2b9b86c3b14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e47ab78e9b67622852378c44b6ccc2d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="densities_8h.html#a9e47ab78e9b67622852378c44b6ccc2d">densities::evalMultivNorm</a> (const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x, const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;meanVec, const <a class="el" href="pmfs_8h.html#ae601f56a556993079f730483c574356f">Mat</a> &amp;covMat, bool log=false)</td></tr>
+<tr class="memitem:a9e47ab78e9b67622852378c44b6ccc2d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="densities_8h.html#a9e47ab78e9b67622852378c44b6ccc2d">densities::evalMultivNorm</a> (const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x, const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;meanVec, const <a class="el" href="apf__filter_8h.html#ae601f56a556993079f730483c574356f">Mat</a> &amp;covMat, bool log=false)</td></tr>
 <tr class="memdesc:a9e47ab78e9b67622852378c44b6ccc2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the multivariate normal density.  <a href="densities_8h.html#a9e47ab78e9b67622852378c44b6ccc2d">More...</a><br /></td></tr>
 <tr class="separator:a9e47ab78e9b67622852378c44b6ccc2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c5bdd99b4d611a05cb2cf2615c4c07a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="densities_8h.html#a0c5bdd99b4d611a05cb2cf2615c4c07a">densities::evalUnivBeta</a> (const double &amp;x, const double &amp;alpha, const double &amp;beta, bool log=false)</td></tr>
@@ -186,7 +179,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef Eigen::Matrix&lt; double, Eigen::Dynamic, Eigen::Dynamic &gt; Mat</td>
+          <td class="memname">typedef Eigen::Matrix&lt; double, Eigen::Dynamic, Eigen::Dynamic &gt; <a class="el" href="apf__filter_8h.html#ae601f56a556993079f730483c574356f">Mat</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -199,7 +192,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef Eigen::Matrix&lt; double, Eigen::Dynamic, 1 &gt; Vec</td>
+          <td class="memname">typedef Eigen::Matrix&lt; double, Eigen::Dynamic, 1 &gt; <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -215,19 +208,19 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">double densities::evalMultivNorm </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>x</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>meanVec</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="pmfs_8h.html#ae601f56a556993079f730483c574356f">Mat</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="apf__filter_8h.html#ae601f56a556993079f730483c574356f">Mat</a> &amp;&#160;</td>
           <td class="paramname"><em>covMat</em>, </td>
         </tr>
         <tr>

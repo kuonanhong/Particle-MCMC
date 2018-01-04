@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['jacetal',['JacEtAl',['../classJacEtAl.html',1,'JacEtAl'],['../classJacEtAl.html#a356023f0edf2c58601e47f8cc0fe4ae0',1,'JacEtAl::JacEtAl()']]],
-  ['jacetalapf',['JacEtAlAPF',['../classJacEtAlAPF.html',1,'JacEtAlAPF'],['../classJacEtAlAPF.html#ac410fda3eb39aea5703740ca75276938',1,'JacEtAlAPF::JacEtAlAPF()']]],
-  ['jacquier_5fet_5fal_2eh',['jacquier_et_al.h',['../jacquier__et__al_8h.html',1,'']]],
-  ['jacquier_5fet_5fal_5fapf_2eh',['jacquier_et_al_apf.h',['../jacquier__et__al__apf_8h.html',1,'']]]
+  ['inithmmprobvec',['initHMMProbVec',['../classHmm__Rbpf.html#a33ab8bbb1a85fd06fa2d507fa5d48904',1,'Hmm_Rbpf']]],
+  ['inithmmtransmat',['initHMMTransMat',['../classHmm__Rbpf.html#a752c2997aee03219fe3eb4fbe63ed3af',1,'Hmm_Rbpf']]],
+  ['initkalmanmean',['initKalmanMean',['../classKalman__RBPF.html#a870a53fc149adf8042fa12eb5d9a8d30',1,'Kalman_RBPF']]],
+  ['initkalmanvar',['initKalmanVar',['../classKalman__RBPF.html#a4f7f37a90d9382ca2ad7dfef4acf1bc0',1,'Kalman_RBPF']]],
+  ['inv_5fsqrt_5f2pi',['inv_sqrt_2pi',['../densities_8h.html#a50fd069caa24dac797922e8af6ed68e2',1,'densities']]]
 ];

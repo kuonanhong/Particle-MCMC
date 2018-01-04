@@ -9,6 +9,7 @@
 #include "lgssm.h"
 #include "fshmm.h"
 
+/** typedef for linear algebra stuff */
 typedef Eigen::Matrix< double, Eigen::Dynamic, 1> Vec;
 
 
@@ -17,7 +18,7 @@ typedef Eigen::Matrix< double, Eigen::Dynamic, 1> Vec;
   * @class MultinomResamp
   * @author taylor
   * @date 07/09/17
-  * @file multinomialResampler.h
+  * @file multinomial_resampler.h
   * @brief A class used for all the multinomial resampling in any model.
   * Keep in mind this is usually implemented by the base classes themselves, and so
   * this would mean they are not touched by the typical end-user.

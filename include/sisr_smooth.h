@@ -5,17 +5,20 @@
 
 #include "multinomial_resampler.h"
 
+/** typedef for linear algebra stuff */
 typedef Eigen::Matrix< double, Eigen::Dynamic, 1              > Vec;
+/** typedef for linear algebra stuff */
 typedef Eigen::Matrix< double, Eigen::Dynamic, Eigen::Dynamic > Mat;
 
+/** enum class for the type of resampling to be performed */
 enum class SISRResampStyle {everytime_multinomial, never, ess_multinomial};
 
 //! A base-class for Sequential Importance Sampling with Resampling.
 /**
- * @class SISRFilter
+ * @class SISRSmoother
  * @author taylor
  * @date 07/09/17
- * @file SISRFilter.h
+ * @file sisr_smooth.h
  * @brief A base-class for Sequential Importance Sampling with Resampling. 
  * Inherit from this if you want to use a SISR for your state space model. 
  */
@@ -91,7 +94,6 @@ public:
     /**
      * @brief If storing whole paths, performs smoothing. If not storing whole paths, performs filtering.
      * @param data is a const Vec& representing the current observed value of the time series.
-     * @param fs is a vector of functions that operate on each particle Vec. They are used to store empirical expectations (taken with respect to the filtering distribution).
      */
     void smooth (const Vec &data);
 

@@ -3,19 +3,25 @@
 \subsection*{Files}
 \begin{DoxyCompactItemize}
 \item 
+file \hyperlink{apf__filter_8h}{apf\+\_\+filter.\+h}
+\begin{DoxyCompactList}\small\item\em A base class for Auxiliary Particle Filtering. Inherit from this if you want to use an A\+PF for your state space model. Filtering only, no smoothing. \end{DoxyCompactList}\item 
+file \hyperlink{apf__smooth_8h}{apf\+\_\+smooth.\+h}
+\begin{DoxyCompactList}\small\item\em A base class for Auxiliary Particle Filtering. Inherit from this if you want to use an A\+PF for your state space model. \end{DoxyCompactList}\item 
+file \hyperlink{bootstrap__filter_8h}{bootstrap\+\_\+filter.\+h}
+\item 
 file \hyperlink{densities_8h}{densities.\+h}
 \begin{DoxyCompactList}\small\item\em Can sample from a distribution with fixed mean and covariance, fixed mean only, fixed covariance only, or nothing fixed. \end{DoxyCompactList}\item 
 file \hyperlink{hmm__rbpf_8h}{hmm\+\_\+rbpf.\+h}
 \begin{DoxyCompactList}\small\item\em Rao-\/\+Blackwellized particle filtering where the innder models are discrete state hmms. \end{DoxyCompactList}\item 
-file \hyperlink{jacquier__et__al_8h}{jacquier\+\_\+et\+\_\+al.\+h}
-\begin{DoxyCompactList}\small\item\em A class that performs filtering for the multivariate stochastic volatility model of \char`\"{}\+Stochastic Volatility\+: Univariate and Multivariate Extensions\char`\"{} by Jacuquier et al. \end{DoxyCompactList}\item 
-file \hyperlink{jacquier__et__al__apf_8h}{jacquier\+\_\+et\+\_\+al\+\_\+apf.\+h}
-\begin{DoxyCompactList}\small\item\em An A\+PF implementation of the multivariate stochastic volatility model from \char`\"{}\+Stochastic Volatility\+: Univariate and Multivariate Extensions\char`\"{}. \end{DoxyCompactList}\item 
-file \hyperlink{msvol__sisr_8h}{msvol\+\_\+sisr.\+h}
-\begin{DoxyCompactList}\small\item\em Implements the multivariate stochastic volatility model from Pitt and Shephard 1999. \end{DoxyCompactList}\item 
+file \hyperlink{kalman__rbpf_8h}{kalman\+\_\+rbpf.\+h}
+\begin{DoxyCompactList}\small\item\em Rao-\/\+Blackwellized Particle Filter with Linear Gaussian submodel. \end{DoxyCompactList}\item 
+file \hyperlink{multinomial__resampler_8h}{multinomial\+\_\+resampler.\+h}
+\begin{DoxyCompactList}\small\item\em A class used for all the multinomial resampling in any model. Keep in mind this is usually implemented by the base classes themselves, and so this would mean they are not touched by the typical end-\/user. \end{DoxyCompactList}\item 
 file \hyperlink{pmfs_8h}{pmfs.\+h}
 \item 
-file \hyperlink{pmmh__svol__sisr_8h}{pmmh\+\_\+svol\+\_\+sisr.\+h}
-\begin{DoxyCompactList}\small\item\em Estimates simple stochastic volatility model with a particle marginal Metropolis-\/\+Hastings algorithm. \end{DoxyCompactList}\item 
-file \hyperlink{svol__filter_8h}{svol\+\_\+filter.\+h}
-\begin{DoxyCompactList}\small\item\em Centered parametrization. A class implementing the classic stochastic volatility model of Taylor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+file \hyperlink{pmmh_8h}{pmmh.\+h}
+\begin{DoxyCompactList}\small\item\em A base class for particle marginal Metropolis-\/\+Hastings. Inherit from this if you want to use pmmh to estimate your S\+SM. The benefits are that doing so will force you to implement certain functions, and it will abstract away the threaded MH implementation. \end{DoxyCompactList}\item 
+file \hyperlink{sisr__filter_8h}{sisr\+\_\+filter.\+h}
+\begin{DoxyCompactList}\small\item\em A base-\/class for Sequential Importance Sampling with Resampling. Inherit from this if you want to use a S\+I\+SR for your state space model. Filtering only; no smoothing. \end{DoxyCompactList}\item 
+file \hyperlink{sisr__smooth_8h}{sisr\+\_\+smooth.\+h}
+\begin{DoxyCompactList}\small\item\em A base-\/class for Sequential Importance Sampling with Resampling. Inherit from this if you want to use a S\+I\+SR for your state space model. \end{DoxyCompactList}\end{DoxyCompactItemize}

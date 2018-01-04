@@ -1,11 +1,14 @@
 var searchData=
 [
-  ['sample',['sample',['../classdensities_1_1MVNSampler.html#a6be29ab6518db1f6457e95469e6970a4',1,'densities::MVNSampler::sample()'],['../classdensities_1_1UniformSampler.html#a1c4ab518cac3aecb0f4aa199cbc7a312',1,'densities::UniformSampler::sample()'],['../classpmfs_1_1DiscreteUnifSampler.html#a5fdb6cfffe456497b8e296a4d7721a13',1,'pmfs::DiscreteUnifSampler::sample()'],['../classpmfs_1_1DiscreteCustomSampler.html#ad449b68933655c879b567a085ea42a80',1,'pmfs::DiscreteCustomSampler::sample()']]],
-  ['setcovar',['setCovar',['../classdensities_1_1MVNSampler.html#a914d6a896a1b7946085732a5758c16bb',1,'densities::MVNSampler']]],
-  ['setmean',['setMean',['../classdensities_1_1MVNSampler.html#a456f1e8ed39efc34ee3a7667dfb2011c',1,'densities::MVNSampler']]],
-  ['simplehmm',['SimpleHmm',['../classSimpleHmm.html#a97ec9e0dfab48e96820dd69924ebc263',1,'SimpleHmm']]],
-  ['sisrfilter',['SISRFilter',['../classSISRFilter.html#a3105536db67f9aef8a08c32866a81a38',1,'SISRFilter']]],
-  ['sqrt_5ftwo_5fover_5fpi',['sqrt_two_over_pi',['../densities_8h.html#a36eeab0ef3c0cbfa190716631c183f17',1,'densities']]],
-  ['svolapffilter',['SVolAPFFilter',['../classSVolAPFFilter.html#a6d1d4e7fa5b0b2916ef801b73258b00d',1,'SVolAPFFilter']]],
-  ['svolfilter',['SVolFilter',['../classSVolFilter.html#a508bc5de545367e0ef0ee683b9e3b7b4',1,'SVolFilter']]]
+  ['_7eapffilter',['~APFFilter',['../classAPFFilter.html#ac2f814288c00c8b4f149cb4887d11f92',1,'APFFilter']]],
+  ['_7eapfsmoother',['~APFSmoother',['../classAPFSmoother.html#a12ee69daa15fc1f59a8efd9303894896',1,'APFSmoother']]],
+  ['_7ebsfilter',['~BSFilter',['../classBSFilter.html#aff30bee4608cadfda7dd49a0d57bb39c',1,'BSFilter']]],
+  ['_7efshmm',['~FSHMM',['../classFSHMM.html#a0d011b77cf9541a312fffa43d24fa41f',1,'FSHMM']]],
+  ['_7ehmm_5frbpf',['~Hmm_Rbpf',['../classHmm__Rbpf.html#a5bcc8f6c36cbbb6e7fabfe85bca9136f',1,'Hmm_Rbpf']]],
+  ['_7ekalman_5frbpf',['~Kalman_RBPF',['../classKalman__RBPF.html#a454f1736e8889904f755ca904f6eebc0',1,'Kalman_RBPF']]],
+  ['_7elgssm',['~Lgssm',['../classLgssm.html#afdb5db740e12453879d8b985180426a4',1,'Lgssm']]],
+  ['_7emultinomresamp',['~MultinomResamp',['../classMultinomResamp.html#a590495e677a522fa7863e3885631f777',1,'MultinomResamp']]],
+  ['_7epmmh',['~Pmmh',['../classPmmh.html#a52b058761ac6ede77eb3d8c0099e0d93',1,'Pmmh']]],
+  ['_7esisrfilter',['~SISRFilter',['../classSISRFilter.html#a6953590c7317c8dbf2341640dea71af8',1,'SISRFilter']]],
+  ['_7esisrsmoother',['~SISRSmoother',['../classSISRSmoother.html#a800ef5dc1cda37c7f0f0fd7f70ac0696',1,'SISRSmoother']]]
 ];

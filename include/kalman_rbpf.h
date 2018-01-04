@@ -7,9 +7,12 @@
 #include "lgssm.h"
 #include "multinomial_resampler.h" 
 
+/** typedef for linear algebra stuff */
 typedef Eigen::Matrix< double, Eigen::Dynamic, 1              > Vec;
+/** typedef for linear algebra stuff */
 typedef Eigen::Matrix< double, Eigen::Dynamic, Eigen::Dynamic > Mat;
 
+/** enum class for the type of resampling to be performed */
 enum class RBPFResampStyle {everytime_multinomial, never, ess_multinomial};
 
 //TODO: IMPLEMENT LOG WEIGHTS
@@ -19,7 +22,7 @@ enum class RBPFResampStyle {everytime_multinomial, never, ess_multinomial};
 /*!
  * \class Kalman_RBPF
  * \author taylor
- * \file Kalman_RBPF.h
+ * \file kalman_rbpf.h
  * \brief Rao-Blackwellized Particle Filter with Linear Gaussian submodel
  */
 class Kalman_RBPF{

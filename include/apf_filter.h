@@ -7,10 +7,14 @@
 
 #include "multinomial_resampler.h"
 
+/** typedef for linear algebra stuff */
 typedef Eigen::Matrix< double, Eigen::Dynamic, 1              > Vec;
+/** typedef for linear algebra stuff */
 typedef Eigen::Matrix< double, Eigen::Dynamic, Eigen::Dynamic > Mat;
 
 // TODO-actually implement ess in filterOrSmooth
+
+/** enum class for the type of resampling to be performed */
 enum class APFResampStyle {everytime_multinomial, never, ess_multinomial};
 
 //! A base-class for Auxiliary Particle Filtering. Filtering only, no smoothing.
@@ -18,7 +22,7 @@ enum class APFResampStyle {everytime_multinomial, never, ess_multinomial};
   * @class APFFilter
   * @author taylor
   * @date 09/09/17
-  * @file APFFilter.h
+  * @file apf_filter.h
   * @brief A base class for Auxiliary Particle Filtering.
   * Inherit from this if you want to use an APF for your state space model. Filtering only, no smoothing.
   */
@@ -46,7 +50,6 @@ public:
       * @brief The constructor.
       * @param numParts the number of particles you want to use.
       * @param resampTechnique the resampling style.
-      * @param pathLength set to 0 if you are filtering. Otherwise, if you wish to retain samples of the entire path, set to time length of data.
       */
     APFFilter (int numParts, APFResampStyle resampTechnique = APFResampStyle::everytime_multinomial);
 

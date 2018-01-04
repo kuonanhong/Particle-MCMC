@@ -1,0 +1,261 @@
+\hypertarget{classAPFSmoother}{}\section{A\+P\+F\+Smoother Class Reference}
+\label{classAPFSmoother}\index{A\+P\+F\+Smoother@{A\+P\+F\+Smoother}}
+
+
+A base-\/class for Auxiliary Particle Filtering. Particle smoothing only; no filtering.  
+
+
+
+
+{\ttfamily \#include $<$apf\+\_\+smooth.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classAPFSmoother_a51d9a70bc16259592f9a92fcd1008bc3}{A\+P\+F\+Smoother} (int num\+Parts, unsigned int path\+Length, \hyperlink{apf__filter_8h_a187a7338bc8872e7607cf1ea4ffed47b}{A\+P\+F\+Resamp\+Style} resamp\+Technique=A\+P\+F\+Resamp\+Style\+::everytime\+\_\+multinomial)
+\begin{DoxyCompactList}\small\item\em The constructor. \end{DoxyCompactList}\item 
+\hyperlink{classAPFSmoother_a12ee69daa15fc1f59a8efd9303894896}{$\sim$\+A\+P\+F\+Smoother} ()\hypertarget{classAPFSmoother_a12ee69daa15fc1f59a8efd9303894896}{}\label{classAPFSmoother_a12ee69daa15fc1f59a8efd9303894896}
+
+\begin{DoxyCompactList}\small\item\em The destructor. \end{DoxyCompactList}\item 
+double \hyperlink{classAPFSmoother_af78387b6b79bb2d3c3b44663e7fc31f3}{get\+Log\+Cond\+Like} () const 
+\begin{DoxyCompactList}\small\item\em Get the latest log conditional likelihood. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} $>$ $>$ \hyperlink{classAPFSmoother_af9bd42db37a53bc03f238a6db829102c}{get\+Full\+Parts} () const 
+\begin{DoxyCompactList}\small\item\em Get the full set of particle paths. Only works if path\+Length $>$ 0 in constructor. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \hyperlink{classAPFSmoother_a6bc97edb04f65e1f038f753b9fb2dd9c}{get\+Weights} () const 
+\begin{DoxyCompactList}\small\item\em Get the latest log un-\/normalized weights. \end{DoxyCompactList}\item 
+void \hyperlink{classAPFSmoother_acaf872bc7356e60198fedce0665afeb6}{smooth} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&data)
+\begin{DoxyCompactList}\small\item\em Use a new datapoint to update the smoothing distribution. \end{DoxyCompactList}\item 
+virtual double \hyperlink{classAPFSmoother_a6afc79350b182fe4083936d1abd2beda}{log\+Mu\+Ev} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x1)=0
+\begin{DoxyCompactList}\small\item\em Evaluates the log of mu. \end{DoxyCompactList}\item 
+virtual \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \hyperlink{classAPFSmoother_a8c95c24e4e6f5699ef6f9b95c64fc9eb}{prop\+Mu} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&xtm1)=0
+\begin{DoxyCompactList}\small\item\em Evaluates the proposal distribution taking a Vec from the previous time\textquotesingle{}s state, and returning a state for the current time. \end{DoxyCompactList}\item 
+virtual \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \hyperlink{classAPFSmoother_ae1b444849e0e2882c00e928409d8fc4b}{q1\+Samp} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&y1)=0
+\begin{DoxyCompactList}\small\item\em Samples from q1. \end{DoxyCompactList}\item 
+virtual \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \hyperlink{classAPFSmoother_a823b3f5d1d942f5305d05dfd318f4851}{f\+Samp} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&xtm1)=0
+\begin{DoxyCompactList}\small\item\em Samples from f. \end{DoxyCompactList}\item 
+virtual double \hyperlink{classAPFSmoother_a4353091a34dac9dd072f407a593aea03}{log\+Q1\+Ev} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x1, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&y1)=0
+\begin{DoxyCompactList}\small\item\em Evaluates the log of q1. \end{DoxyCompactList}\item 
+virtual double \hyperlink{classAPFSmoother_acd249cf906d89162f367ded9f02c7793}{log\+G\+Ev} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&yt, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&xt)=0
+\begin{DoxyCompactList}\small\item\em Evaluates the log of g. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A base-\/class for Auxiliary Particle Filtering. Particle smoothing only; no filtering. 
+
+\begin{DoxyAuthor}{Author}
+taylor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+09/09/17 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{A\+P\+F\+Smoother@{A\+P\+F\+Smoother}!A\+P\+F\+Smoother@{A\+P\+F\+Smoother}}
+\index{A\+P\+F\+Smoother@{A\+P\+F\+Smoother}!A\+P\+F\+Smoother@{A\+P\+F\+Smoother}}
+\subsubsection[{\texorpdfstring{A\+P\+F\+Smoother(int num\+Parts, unsigned int path\+Length, A\+P\+F\+Resamp\+Style resamp\+Technique=\+A\+P\+F\+Resamp\+Style\+::everytime\+\_\+multinomial)}{APFSmoother(int numParts, unsigned int pathLength, APFResampStyle resampTechnique=APFResampStyle::everytime_multinomial)}}]{\setlength{\rightskip}{0pt plus 5cm}A\+P\+F\+Smoother\+::\+A\+P\+F\+Smoother (
+\begin{DoxyParamCaption}
+\item[{int}]{num\+Parts, }
+\item[{unsigned int}]{path\+Length, }
+\item[{{\bf A\+P\+F\+Resamp\+Style}}]{resamp\+Technique = {\ttfamily APFResampStyle\+:\+:everytime\+\_\+multinomial}}
+\end{DoxyParamCaption}
+)}\hypertarget{classAPFSmoother_a51d9a70bc16259592f9a92fcd1008bc3}{}\label{classAPFSmoother_a51d9a70bc16259592f9a92fcd1008bc3}
+
+
+The constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+Parts} & the number of particles you want to use. \\
+\hline
+{\em resamp\+Technique} & the resampling style. \\
+\hline
+{\em path\+Length} & set to 0 if you are filtering. Otherwise, if you wish to retain samples of the entire path, set to time length of data. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{A\+P\+F\+Smoother@{A\+P\+F\+Smoother}!f\+Samp@{f\+Samp}}
+\index{f\+Samp@{f\+Samp}!A\+P\+F\+Smoother@{A\+P\+F\+Smoother}}
+\subsubsection[{\texorpdfstring{f\+Samp(const Vec \&xtm1)=0}{fSamp(const Vec &xtm1)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Vec} A\+P\+F\+Smoother\+::f\+Samp (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vec} \&}]{xtm1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classAPFSmoother_a823b3f5d1d942f5305d05dfd318f4851}{}\label{classAPFSmoother_a823b3f5d1d942f5305d05dfd318f4851}
+
+
+Samples from f. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xtm1} & a Vec representing the previous time\textquotesingle{}s state. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a Vec state sample for the current time. 
+\end{DoxyReturn}
+\index{A\+P\+F\+Smoother@{A\+P\+F\+Smoother}!get\+Full\+Parts@{get\+Full\+Parts}}
+\index{get\+Full\+Parts@{get\+Full\+Parts}!A\+P\+F\+Smoother@{A\+P\+F\+Smoother}}
+\subsubsection[{\texorpdfstring{get\+Full\+Parts() const }{getFullParts() const }}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$std\+::vector$<${\bf Vec}$>$ $>$ A\+P\+F\+Smoother\+::get\+Full\+Parts (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classAPFSmoother_af9bd42db37a53bc03f238a6db829102c}{}\label{classAPFSmoother_af9bd42db37a53bc03f238a6db829102c}
+
+
+Get the full set of particle paths. Only works if path\+Length $>$ 0 in constructor. 
+
+\begin{DoxyReturn}{Returns}
+The full set of particle paths as std\+::vector$<$std\+::vector$<$\+Vec$>$ $>$. 
+\end{DoxyReturn}
+\index{A\+P\+F\+Smoother@{A\+P\+F\+Smoother}!get\+Log\+Cond\+Like@{get\+Log\+Cond\+Like}}
+\index{get\+Log\+Cond\+Like@{get\+Log\+Cond\+Like}!A\+P\+F\+Smoother@{A\+P\+F\+Smoother}}
+\subsubsection[{\texorpdfstring{get\+Log\+Cond\+Like() const }{getLogCondLike() const }}]{\setlength{\rightskip}{0pt plus 5cm}double A\+P\+F\+Smoother\+::get\+Log\+Cond\+Like (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classAPFSmoother_af78387b6b79bb2d3c3b44663e7fc31f3}{}\label{classAPFSmoother_af78387b6b79bb2d3c3b44663e7fc31f3}
+
+
+Get the latest log conditional likelihood. 
+
+\begin{DoxyReturn}{Returns}
+a double of the most recent conditional likelihood. 
+\end{DoxyReturn}
+\index{A\+P\+F\+Smoother@{A\+P\+F\+Smoother}!get\+Weights@{get\+Weights}}
+\index{get\+Weights@{get\+Weights}!A\+P\+F\+Smoother@{A\+P\+F\+Smoother}}
+\subsubsection[{\texorpdfstring{get\+Weights() const }{getWeights() const }}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$double$>$ A\+P\+F\+Smoother\+::get\+Weights (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classAPFSmoother_a6bc97edb04f65e1f038f753b9fb2dd9c}{}\label{classAPFSmoother_a6bc97edb04f65e1f038f753b9fb2dd9c}
+
+
+Get the latest log un-\/normalized weights. 
+
+\begin{DoxyReturn}{Returns}
+a std\+::vector$<$double$>$ of the log un norm weights. 
+\end{DoxyReturn}
+\index{A\+P\+F\+Smoother@{A\+P\+F\+Smoother}!log\+G\+Ev@{log\+G\+Ev}}
+\index{log\+G\+Ev@{log\+G\+Ev}!A\+P\+F\+Smoother@{A\+P\+F\+Smoother}}
+\subsubsection[{\texorpdfstring{log\+G\+Ev(const Vec \&yt, const Vec \&xt)=0}{logGEv(const Vec &yt, const Vec &xt)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual double A\+P\+F\+Smoother\+::log\+G\+Ev (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vec} \&}]{yt, }
+\item[{const {\bf Vec} \&}]{xt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classAPFSmoother_acd249cf906d89162f367ded9f02c7793}{}\label{classAPFSmoother_acd249cf906d89162f367ded9f02c7793}
+
+
+Evaluates the log of g. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em yt} & a Vec representing time t\textquotesingle{}s data observation. \\
+\hline
+{\em xt} & a Vec representing time t\textquotesingle{}s state. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a double evaluation. 
+\end{DoxyReturn}
+\index{A\+P\+F\+Smoother@{A\+P\+F\+Smoother}!log\+Mu\+Ev@{log\+Mu\+Ev}}
+\index{log\+Mu\+Ev@{log\+Mu\+Ev}!A\+P\+F\+Smoother@{A\+P\+F\+Smoother}}
+\subsubsection[{\texorpdfstring{log\+Mu\+Ev(const Vec \&x1)=0}{logMuEv(const Vec &x1)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual double A\+P\+F\+Smoother\+::log\+Mu\+Ev (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vec} \&}]{x1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classAPFSmoother_a6afc79350b182fe4083936d1abd2beda}{}\label{classAPFSmoother_a6afc79350b182fe4083936d1abd2beda}
+
+
+Evaluates the log of mu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x1} & a Vec representing time 1\textquotesingle{}s state. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a double evaluation. 
+\end{DoxyReturn}
+\index{A\+P\+F\+Smoother@{A\+P\+F\+Smoother}!log\+Q1\+Ev@{log\+Q1\+Ev}}
+\index{log\+Q1\+Ev@{log\+Q1\+Ev}!A\+P\+F\+Smoother@{A\+P\+F\+Smoother}}
+\subsubsection[{\texorpdfstring{log\+Q1\+Ev(const Vec \&x1, const Vec \&y1)=0}{logQ1Ev(const Vec &x1, const Vec &y1)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual double A\+P\+F\+Smoother\+::log\+Q1\+Ev (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vec} \&}]{x1, }
+\item[{const {\bf Vec} \&}]{y1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classAPFSmoother_a4353091a34dac9dd072f407a593aea03}{}\label{classAPFSmoother_a4353091a34dac9dd072f407a593aea03}
+
+
+Evaluates the log of q1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x1} & a Vec representing time 1\textquotesingle{}s state. \\
+\hline
+{\em y1} & a Vec representing time 1\textquotesingle{}s data observation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a double evaluation. 
+\end{DoxyReturn}
+\index{A\+P\+F\+Smoother@{A\+P\+F\+Smoother}!prop\+Mu@{prop\+Mu}}
+\index{prop\+Mu@{prop\+Mu}!A\+P\+F\+Smoother@{A\+P\+F\+Smoother}}
+\subsubsection[{\texorpdfstring{prop\+Mu(const Vec \&xtm1)=0}{propMu(const Vec &xtm1)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Vec} A\+P\+F\+Smoother\+::prop\+Mu (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vec} \&}]{xtm1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classAPFSmoother_a8c95c24e4e6f5699ef6f9b95c64fc9eb}{}\label{classAPFSmoother_a8c95c24e4e6f5699ef6f9b95c64fc9eb}
+
+
+Evaluates the proposal distribution taking a Vec from the previous time\textquotesingle{}s state, and returning a state for the current time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xtm1} & a Vec representing the previous time\textquotesingle{}s state. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a Vec representing a likely current time state, to be used by the observation density. 
+\end{DoxyReturn}
+\index{A\+P\+F\+Smoother@{A\+P\+F\+Smoother}!q1\+Samp@{q1\+Samp}}
+\index{q1\+Samp@{q1\+Samp}!A\+P\+F\+Smoother@{A\+P\+F\+Smoother}}
+\subsubsection[{\texorpdfstring{q1\+Samp(const Vec \&y1)=0}{q1Samp(const Vec &y1)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Vec} A\+P\+F\+Smoother\+::q1\+Samp (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vec} \&}]{y1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classAPFSmoother_ae1b444849e0e2882c00e928409d8fc4b}{}\label{classAPFSmoother_ae1b444849e0e2882c00e928409d8fc4b}
+
+
+Samples from q1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em y1} & a Vec representing time 1\textquotesingle{}s data point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a Vec sample for time 1\textquotesingle{}s state. 
+\end{DoxyReturn}
+\index{A\+P\+F\+Smoother@{A\+P\+F\+Smoother}!smooth@{smooth}}
+\index{smooth@{smooth}!A\+P\+F\+Smoother@{A\+P\+F\+Smoother}}
+\subsubsection[{\texorpdfstring{smooth(const Vec \&data)}{smooth(const Vec &data)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+P\+F\+Smoother\+::smooth (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vec} \&}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{classAPFSmoother_acaf872bc7356e60198fedce0665afeb6}{}\label{classAPFSmoother_acaf872bc7356e60198fedce0665afeb6}
+
+
+Use a new datapoint to update the smoothing distribution. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & a Vec representing the data \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{apf__smooth_8h}{apf\+\_\+smooth.\+h}\end{DoxyCompactItemize}

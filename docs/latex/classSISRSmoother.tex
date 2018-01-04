@@ -1,0 +1,313 @@
+\hypertarget{classSISRSmoother}{}\section{S\+I\+S\+R\+Smoother Class Reference}
+\label{classSISRSmoother}\index{S\+I\+S\+R\+Smoother@{S\+I\+S\+R\+Smoother}}
+
+
+A base-\/class for Sequential Importance Sampling with Resampling.  
+
+
+
+
+{\ttfamily \#include $<$sisr\+\_\+smooth.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSISRSmoother_a1d2c23e5a42ad2529335126f8b5e744e}{S\+I\+S\+R\+Smoother} (int num\+Parts, \hyperlink{sisr__filter_8h_a2486051fd2028dedca520d3e0f8fd92f}{S\+I\+S\+R\+Resamp\+Style} resamp\+Technique=S\+I\+S\+R\+Resamp\+Style\+::everytime\+\_\+multinomial, unsigned int path\+Length=0, double ess\+Perc=1.\+0)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classSISRSmoother_a800ef5dc1cda37c7f0f0fd7f70ac0696}{$\sim$\+S\+I\+S\+R\+Smoother} ()\hypertarget{classSISRSmoother_a800ef5dc1cda37c7f0f0fd7f70ac0696}{}\label{classSISRSmoother_a800ef5dc1cda37c7f0f0fd7f70ac0696}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+double \hyperlink{classSISRSmoother_a6316bfec4e62d522e1fe32f8c4b18b0f}{get\+Log\+Cond\+Like} () const 
+\begin{DoxyCompactList}\small\item\em get log p(y\+\_\+t$\vert$y\+\_\+\{1\+:t-\/1\})\$ or log p(y\+\_\+1). \end{DoxyCompactList}\item 
+double \hyperlink{classSISRSmoother_a9e6a9e4681075c1ea28a7476b261e1fc}{get\+E\+SS} () const 
+\begin{DoxyCompactList}\small\item\em get effective sample size. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} $>$ $>$ \hyperlink{classSISRSmoother_a52ba9c6f180491ed1751772bb832c5ac}{get\+Full\+Parts} () const 
+\begin{DoxyCompactList}\small\item\em get \$p(x\+\_\+\{1\+:t\}$\vert$y\+\_\+\{1\+:t\})\$ \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \hyperlink{classSISRSmoother_af7ede0870c83af1e4accfa70675b21bc}{get\+Log\+U\+Weights} () const 
+\begin{DoxyCompactList}\small\item\em Get log-\/un-\/normalized weights. \end{DoxyCompactList}\item 
+void \hyperlink{classSISRSmoother_a11193002ca13b8186167f7c3f6db625c}{smooth} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&data)
+\begin{DoxyCompactList}\small\item\em If storing whole paths, performs smoothing. If not storing whole paths, performs filtering. \end{DoxyCompactList}\item 
+virtual double \hyperlink{classSISRSmoother_a5498af2a7a572435f303a2238c252464}{log\+Mu\+Ev} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x1)=0
+\begin{DoxyCompactList}\small\item\em Calculate mu\+Ev or logmu\+Ev. \end{DoxyCompactList}\item 
+virtual \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \hyperlink{classSISRSmoother_a1c7a32fa83f90fa6666bd0e739189275}{q1\+Samp} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&y1)=0
+\begin{DoxyCompactList}\small\item\em Samples from time 1 proposal. \end{DoxyCompactList}\item 
+virtual double \hyperlink{classSISRSmoother_a316ce1b0f0e18d277b0687f727a00a0a}{log\+Q1\+Ev} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x1, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&y1)=0
+\begin{DoxyCompactList}\small\item\em Calculate q1\+Ev or log q1\+Ev. \end{DoxyCompactList}\item 
+virtual double \hyperlink{classSISRSmoother_a15cafa515e345d7ea5b3afefcca27386}{log\+G\+Ev} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&yt, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&xt)=0
+\begin{DoxyCompactList}\small\item\em Calculate g\+Ev or log\+G\+Ev. \end{DoxyCompactList}\item 
+virtual double \hyperlink{classSISRSmoother_aa9bf9fcee0283b90984964e7a76f6096}{log\+F\+Ev} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&xt, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&xtm1)=0
+\begin{DoxyCompactList}\small\item\em Calculate f\+Ev or log\+F\+Ev. \end{DoxyCompactList}\item 
+virtual \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \hyperlink{classSISRSmoother_a15f1f84cfb370dfdbb27a6360c840c60}{q\+Samp} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&xtm1, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&yt)=0
+\begin{DoxyCompactList}\small\item\em Sample from the proposal distribution. \end{DoxyCompactList}\item 
+virtual double \hyperlink{classSISRSmoother_a73f4cea772e649b791b66473408b9b61}{log\+Q\+Ev} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&xt, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&xtm1, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&yt)=0
+\begin{DoxyCompactList}\small\item\em Calculate q\+Ev or log\+Q\+Ev. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A base-\/class for Sequential Importance Sampling with Resampling. 
+
+\begin{DoxyAuthor}{Author}
+taylor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+07/09/17 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{S\+I\+S\+R\+Smoother@{S\+I\+S\+R\+Smoother}!S\+I\+S\+R\+Smoother@{S\+I\+S\+R\+Smoother}}
+\index{S\+I\+S\+R\+Smoother@{S\+I\+S\+R\+Smoother}!S\+I\+S\+R\+Smoother@{S\+I\+S\+R\+Smoother}}
+\subsubsection[{\texorpdfstring{S\+I\+S\+R\+Smoother(int num\+Parts, S\+I\+S\+R\+Resamp\+Style resamp\+Technique=\+S\+I\+S\+R\+Resamp\+Style\+::everytime\+\_\+multinomial, unsigned int path\+Length=0, double ess\+Perc=1.\+0)}{SISRSmoother(int numParts, SISRResampStyle resampTechnique=SISRResampStyle::everytime_multinomial, unsigned int pathLength=0, double essPerc=1.0)}}]{\setlength{\rightskip}{0pt plus 5cm}S\+I\+S\+R\+Smoother\+::\+S\+I\+S\+R\+Smoother (
+\begin{DoxyParamCaption}
+\item[{int}]{num\+Parts, }
+\item[{{\bf S\+I\+S\+R\+Resamp\+Style}}]{resamp\+Technique = {\ttfamily SISRResampStyle\+:\+:everytime\+\_\+multinomial}, }
+\item[{unsigned int}]{path\+Length = {\ttfamily 0}, }
+\item[{double}]{ess\+Perc = {\ttfamily 1.0}}
+\end{DoxyParamCaption}
+)}\hypertarget{classSISRSmoother_a1d2c23e5a42ad2529335126f8b5e744e}{}\label{classSISRSmoother_a1d2c23e5a42ad2529335126f8b5e744e}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+Parts} & number of particles \\
+\hline
+{\em resamp\+Technique} & which resampling strategy? \\
+\hline
+{\em path\+Length} & Set to 0 if you don\textquotesingle{}t want save entire paths. Otherwise, enter time length. \\
+\hline
+{\em ess\+Perc} & ignored unless S\+I\+S\+R\+Resamp\+Style is \char`\"{}ess.\char`\"{} What percent of E\+SS is the threshold for resampling. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{S\+I\+S\+R\+Smoother@{S\+I\+S\+R\+Smoother}!get\+E\+SS@{get\+E\+SS}}
+\index{get\+E\+SS@{get\+E\+SS}!S\+I\+S\+R\+Smoother@{S\+I\+S\+R\+Smoother}}
+\subsubsection[{\texorpdfstring{get\+E\+S\+S() const }{getESS() const }}]{\setlength{\rightskip}{0pt plus 5cm}double S\+I\+S\+R\+Smoother\+::get\+E\+SS (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classSISRSmoother_a9e6a9e4681075c1ea28a7476b261e1fc}{}\label{classSISRSmoother_a9e6a9e4681075c1ea28a7476b261e1fc}
+
+
+get effective sample size. 
+
+\begin{DoxyReturn}{Returns}
+The current estimate for the effective sample size. 
+\end{DoxyReturn}
+\index{S\+I\+S\+R\+Smoother@{S\+I\+S\+R\+Smoother}!get\+Full\+Parts@{get\+Full\+Parts}}
+\index{get\+Full\+Parts@{get\+Full\+Parts}!S\+I\+S\+R\+Smoother@{S\+I\+S\+R\+Smoother}}
+\subsubsection[{\texorpdfstring{get\+Full\+Parts() const }{getFullParts() const }}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$std\+::vector$<${\bf Vec}$>$ $>$ S\+I\+S\+R\+Smoother\+::get\+Full\+Parts (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classSISRSmoother_a52ba9c6f180491ed1751772bb832c5ac}{}\label{classSISRSmoother_a52ba9c6f180491ed1751772bb832c5ac}
+
+
+get \$p(x\+\_\+\{1\+:t\}$\vert$y\+\_\+\{1\+:t\})\$ 
+
+\begin{DoxyReturn}{Returns}
+The up-\/to-\/date set of path samples for the joint smoothing distribution. 
+\end{DoxyReturn}
+\index{S\+I\+S\+R\+Smoother@{S\+I\+S\+R\+Smoother}!get\+Log\+Cond\+Like@{get\+Log\+Cond\+Like}}
+\index{get\+Log\+Cond\+Like@{get\+Log\+Cond\+Like}!S\+I\+S\+R\+Smoother@{S\+I\+S\+R\+Smoother}}
+\subsubsection[{\texorpdfstring{get\+Log\+Cond\+Like() const }{getLogCondLike() const }}]{\setlength{\rightskip}{0pt plus 5cm}double S\+I\+S\+R\+Smoother\+::get\+Log\+Cond\+Like (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classSISRSmoother_a6316bfec4e62d522e1fe32f8c4b18b0f}{}\label{classSISRSmoother_a6316bfec4e62d522e1fe32f8c4b18b0f}
+
+
+get log p(y\+\_\+t$\vert$y\+\_\+\{1\+:t-\/1\})\$ or log p(y\+\_\+1). 
+
+\begin{DoxyReturn}{Returns}
+The estimate of the most recent log conditional likelihood. 
+\end{DoxyReturn}
+\index{S\+I\+S\+R\+Smoother@{S\+I\+S\+R\+Smoother}!get\+Log\+U\+Weights@{get\+Log\+U\+Weights}}
+\index{get\+Log\+U\+Weights@{get\+Log\+U\+Weights}!S\+I\+S\+R\+Smoother@{S\+I\+S\+R\+Smoother}}
+\subsubsection[{\texorpdfstring{get\+Log\+U\+Weights() const }{getLogUWeights() const }}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$double$>$ S\+I\+S\+R\+Smoother\+::get\+Log\+U\+Weights (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classSISRSmoother_af7ede0870c83af1e4accfa70675b21bc}{}\label{classSISRSmoother_af7ede0870c83af1e4accfa70675b21bc}
+
+
+Get log-\/un-\/normalized weights. 
+
+\begin{DoxyReturn}{Returns}
+The most recent std\+::vector of log-\/un-\/normalized weights. 
+\end{DoxyReturn}
+\index{S\+I\+S\+R\+Smoother@{S\+I\+S\+R\+Smoother}!log\+F\+Ev@{log\+F\+Ev}}
+\index{log\+F\+Ev@{log\+F\+Ev}!S\+I\+S\+R\+Smoother@{S\+I\+S\+R\+Smoother}}
+\subsubsection[{\texorpdfstring{log\+F\+Ev(const Vec \&xt, const Vec \&xtm1)=0}{logFEv(const Vec &xt, const Vec &xtm1)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual double S\+I\+S\+R\+Smoother\+::log\+F\+Ev (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vec} \&}]{xt, }
+\item[{const {\bf Vec} \&}]{xtm1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classSISRSmoother_aa9bf9fcee0283b90984964e7a76f6096}{}\label{classSISRSmoother_aa9bf9fcee0283b90984964e7a76f6096}
+
+
+Calculate f\+Ev or log\+F\+Ev. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xt} & is a const Vec\& describing the time t state \\
+\hline
+{\em xtm1} & is a const Vec\& describing the time t-\/1 state \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the density or log-\/denity evaluation as a double 
+\end{DoxyReturn}
+\index{S\+I\+S\+R\+Smoother@{S\+I\+S\+R\+Smoother}!log\+G\+Ev@{log\+G\+Ev}}
+\index{log\+G\+Ev@{log\+G\+Ev}!S\+I\+S\+R\+Smoother@{S\+I\+S\+R\+Smoother}}
+\subsubsection[{\texorpdfstring{log\+G\+Ev(const Vec \&yt, const Vec \&xt)=0}{logGEv(const Vec &yt, const Vec &xt)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual double S\+I\+S\+R\+Smoother\+::log\+G\+Ev (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vec} \&}]{yt, }
+\item[{const {\bf Vec} \&}]{xt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classSISRSmoother_a15cafa515e345d7ea5b3afefcca27386}{}\label{classSISRSmoother_a15cafa515e345d7ea5b3afefcca27386}
+
+
+Calculate g\+Ev or log\+G\+Ev. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em yt} & is a const Vec\& describing the time t datum \\
+\hline
+{\em xt} & is a const Vec\& describing the time t state \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the density or log-\/density evaluation as a double 
+\end{DoxyReturn}
+\index{S\+I\+S\+R\+Smoother@{S\+I\+S\+R\+Smoother}!log\+Mu\+Ev@{log\+Mu\+Ev}}
+\index{log\+Mu\+Ev@{log\+Mu\+Ev}!S\+I\+S\+R\+Smoother@{S\+I\+S\+R\+Smoother}}
+\subsubsection[{\texorpdfstring{log\+Mu\+Ev(const Vec \&x1)=0}{logMuEv(const Vec &x1)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual double S\+I\+S\+R\+Smoother\+::log\+Mu\+Ev (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vec} \&}]{x1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classSISRSmoother_a5498af2a7a572435f303a2238c252464}{}\label{classSISRSmoother_a5498af2a7a572435f303a2238c252464}
+
+
+Calculate mu\+Ev or logmu\+Ev. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x1} & is a const Vec\& describing the state sample \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the density or log-\/density evaluation as a double 
+\end{DoxyReturn}
+\index{S\+I\+S\+R\+Smoother@{S\+I\+S\+R\+Smoother}!log\+Q1\+Ev@{log\+Q1\+Ev}}
+\index{log\+Q1\+Ev@{log\+Q1\+Ev}!S\+I\+S\+R\+Smoother@{S\+I\+S\+R\+Smoother}}
+\subsubsection[{\texorpdfstring{log\+Q1\+Ev(const Vec \&x1, const Vec \&y1)=0}{logQ1Ev(const Vec &x1, const Vec &y1)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual double S\+I\+S\+R\+Smoother\+::log\+Q1\+Ev (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vec} \&}]{x1, }
+\item[{const {\bf Vec} \&}]{y1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classSISRSmoother_a316ce1b0f0e18d277b0687f727a00a0a}{}\label{classSISRSmoother_a316ce1b0f0e18d277b0687f727a00a0a}
+
+
+Calculate q1\+Ev or log q1\+Ev. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x1} & is a const Vec\& describing the time 1 state sample \\
+\hline
+{\em y1} & is a const Vec\& describing the time 1 datum \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the density or log-\/density evaluation as a double 
+\end{DoxyReturn}
+\index{S\+I\+S\+R\+Smoother@{S\+I\+S\+R\+Smoother}!log\+Q\+Ev@{log\+Q\+Ev}}
+\index{log\+Q\+Ev@{log\+Q\+Ev}!S\+I\+S\+R\+Smoother@{S\+I\+S\+R\+Smoother}}
+\subsubsection[{\texorpdfstring{log\+Q\+Ev(const Vec \&xt, const Vec \&xtm1, const Vec \&yt)=0}{logQEv(const Vec &xt, const Vec &xtm1, const Vec &yt)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual double S\+I\+S\+R\+Smoother\+::log\+Q\+Ev (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vec} \&}]{xt, }
+\item[{const {\bf Vec} \&}]{xtm1, }
+\item[{const {\bf Vec} \&}]{yt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classSISRSmoother_a73f4cea772e649b791b66473408b9b61}{}\label{classSISRSmoother_a73f4cea772e649b791b66473408b9b61}
+
+
+Calculate q\+Ev or log\+Q\+Ev. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xt} & is a const Vec\& describing the time t state \\
+\hline
+{\em xtm1} & is a const Vec\& describing the time t-\/1 state \\
+\hline
+{\em yt} & is a const Vec\& describing the time t datum \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the density or log-\/density evaluation as a double 
+\end{DoxyReturn}
+\index{S\+I\+S\+R\+Smoother@{S\+I\+S\+R\+Smoother}!q1\+Samp@{q1\+Samp}}
+\index{q1\+Samp@{q1\+Samp}!S\+I\+S\+R\+Smoother@{S\+I\+S\+R\+Smoother}}
+\subsubsection[{\texorpdfstring{q1\+Samp(const Vec \&y1)=0}{q1Samp(const Vec &y1)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Vec} S\+I\+S\+R\+Smoother\+::q1\+Samp (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vec} \&}]{y1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classSISRSmoother_a1c7a32fa83f90fa6666bd0e739189275}{}\label{classSISRSmoother_a1c7a32fa83f90fa6666bd0e739189275}
+
+
+Samples from time 1 proposal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em y1} & is a const Vec\& representing the first observed datum \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the sample as a Vec 
+\end{DoxyReturn}
+\index{S\+I\+S\+R\+Smoother@{S\+I\+S\+R\+Smoother}!q\+Samp@{q\+Samp}}
+\index{q\+Samp@{q\+Samp}!S\+I\+S\+R\+Smoother@{S\+I\+S\+R\+Smoother}}
+\subsubsection[{\texorpdfstring{q\+Samp(const Vec \&xtm1, const Vec \&yt)=0}{qSamp(const Vec &xtm1, const Vec &yt)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Vec} S\+I\+S\+R\+Smoother\+::q\+Samp (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vec} \&}]{xtm1, }
+\item[{const {\bf Vec} \&}]{yt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classSISRSmoother_a15f1f84cfb370dfdbb27a6360c840c60}{}\label{classSISRSmoother_a15f1f84cfb370dfdbb27a6360c840c60}
+
+
+Sample from the proposal distribution. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xtm1} & is a const Vec\& describing the time t-\/1 state \\
+\hline
+{\em yt} & is a const Vec\& describing the time t datum \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the sample as a Vec 
+\end{DoxyReturn}
+\index{S\+I\+S\+R\+Smoother@{S\+I\+S\+R\+Smoother}!smooth@{smooth}}
+\index{smooth@{smooth}!S\+I\+S\+R\+Smoother@{S\+I\+S\+R\+Smoother}}
+\subsubsection[{\texorpdfstring{smooth(const Vec \&data)}{smooth(const Vec &data)}}]{\setlength{\rightskip}{0pt plus 5cm}void S\+I\+S\+R\+Smoother\+::smooth (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vec} \&}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{classSISRSmoother_a11193002ca13b8186167f7c3f6db625c}{}\label{classSISRSmoother_a11193002ca13b8186167f7c3f6db625c}
+
+
+If storing whole paths, performs smoothing. If not storing whole paths, performs filtering. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & is a const Vec\& representing the current observed value of the time series. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{sisr__smooth_8h}{sisr\+\_\+smooth.\+h}\end{DoxyCompactItemize}

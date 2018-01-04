@@ -1,0 +1,62 @@
+\hypertarget{sisr__filter_8h}{}\section{include/sisr\+\_\+filter.h File Reference}
+\label{sisr__filter_8h}\index{include/sisr\+\_\+filter.\+h@{include/sisr\+\_\+filter.\+h}}
+
+
+A base-\/class for Sequential Importance Sampling with Resampling. Inherit from this if you want to use a S\+I\+SR for your state space model. Filtering only; no smoothing.  
+
+
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\\*
+{\ttfamily \#include \char`\"{}multinomial\+\_\+resampler.\+h\char`\"{}}\\*
+Include dependency graph for sisr\+\_\+filter.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sisr__filter_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classSISRFilter}{S\+I\+S\+R\+Filter}
+\begin{DoxyCompactList}\small\item\em A base-\/class for Sequential Importance Sampling with Resampling. Filtering only; no smoothing. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef Eigen\+::\+Matrix$<$ double, Eigen\+::\+Dynamic, 1 $>$ \hyperlink{sisr__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec}
+\item 
+typedef Eigen\+::\+Matrix$<$ double, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ \hyperlink{sisr__filter_8h_ae601f56a556993079f730483c574356f}{Mat}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{sisr__filter_8h_a2486051fd2028dedca520d3e0f8fd92f}{S\+I\+S\+R\+Resamp\+Style} \{ \\*
+{\bfseries everytime\+\_\+multinomial}, 
+{\bfseries never}, 
+{\bfseries ess\+\_\+multinomial}, 
+{\bfseries everytime\+\_\+multinomial}, 
+\\*
+{\bfseries never}, 
+{\bfseries ess\+\_\+multinomial}
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A base-\/class for Sequential Importance Sampling with Resampling. Inherit from this if you want to use a S\+I\+SR for your state space model. Filtering only; no smoothing. 
+
+
+
+\subsection{Typedef Documentation}
+\index{sisr\+\_\+filter.\+h@{sisr\+\_\+filter.\+h}!Mat@{Mat}}
+\index{Mat@{Mat}!sisr\+\_\+filter.\+h@{sisr\+\_\+filter.\+h}}
+\subsubsection[{\texorpdfstring{Mat}{Mat}}]{\setlength{\rightskip}{0pt plus 5cm}typedef Eigen\+::\+Matrix$<$ double, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ {\bf Mat}}\hypertarget{sisr__filter_8h_ae601f56a556993079f730483c574356f}{}\label{sisr__filter_8h_ae601f56a556993079f730483c574356f}
+typedef for linear algebra stuff \index{sisr\+\_\+filter.\+h@{sisr\+\_\+filter.\+h}!Vec@{Vec}}
+\index{Vec@{Vec}!sisr\+\_\+filter.\+h@{sisr\+\_\+filter.\+h}}
+\subsubsection[{\texorpdfstring{Vec}{Vec}}]{\setlength{\rightskip}{0pt plus 5cm}typedef Eigen\+::\+Matrix$<$ double, Eigen\+::\+Dynamic, 1 $>$ {\bf Vec}}\hypertarget{sisr__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{}\label{sisr__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}
+typedef for linear algebra stuff 
+
+\subsection{Enumeration Type Documentation}
+\index{sisr\+\_\+filter.\+h@{sisr\+\_\+filter.\+h}!S\+I\+S\+R\+Resamp\+Style@{S\+I\+S\+R\+Resamp\+Style}}
+\index{S\+I\+S\+R\+Resamp\+Style@{S\+I\+S\+R\+Resamp\+Style}!sisr\+\_\+filter.\+h@{sisr\+\_\+filter.\+h}}
+\subsubsection[{\texorpdfstring{S\+I\+S\+R\+Resamp\+Style}{SISRResampStyle}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf S\+I\+S\+R\+Resamp\+Style}\hspace{0.3cm}{\ttfamily [strong]}}\hypertarget{sisr__filter_8h_a2486051fd2028dedca520d3e0f8fd92f}{}\label{sisr__filter_8h_a2486051fd2028dedca520d3e0f8fd92f}
+enum class for the type of resampling to be performed 

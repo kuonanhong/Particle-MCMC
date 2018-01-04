@@ -70,7 +70,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -112,27 +111,16 @@ $(document).ready(function(){initNavTree('classSISRFilter.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>A base-class for Sequential Importance Sampling with Resampling.  
+<p>A base-class for Sequential Importance Sampling with Resampling. Filtering only; no smoothing.  
  <a href="classSISRFilter.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="sisr__filter_8h_source.html">sisr_filter.h</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for SISRFilter:</div>
-<div class="dyncontent">
-<div class="center"><img src="classSISRFilter__inherit__graph.png" border="0" usemap="#SISRFilter_inherit__map" alt="Inheritance graph"/></div>
-<map name="SISRFilter_inherit__map" id="SISRFilter_inherit__map">
-<area shape="rect" id="node2" href="classJacEtAl.html" title="A SISR implementation of the multivariate stochastic volatility model of Jacquier et al..." alt="" coords="5,80,73,107"/>
-<area shape="rect" id="node3" href="classMSVolSISR.html" title="A SISR implementation of the multivariate stochastic volatility model of Pitt and Shephard 1999..." alt="" coords="98,80,191,107"/>
-<area shape="rect" id="node4" href="classNAr1Filter.html" title="A SISR implementation of an AR(1) + Noise model. " alt="" coords="216,80,297,107"/>
-<area shape="rect" id="node5" href="classSVolFilter.html" title="A SISR implementation of the classic stochastic volatility model of Taylor. " alt="" coords="321,80,400,107"/>
-</map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3105536db67f9aef8a08c32866a81a38"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSISRFilter.html#a3105536db67f9aef8a08c32866a81a38">SISRFilter</a> (int numParts, SISRResampStyle resampTechnique=SISRResampStyle::everytime_multinomial, unsigned int pathLength=0, double essPerc=1.0)</td></tr>
-<tr class="memdesc:a3105536db67f9aef8a08c32866a81a38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a3105536db67f9aef8a08c32866a81a38">More...</a><br /></td></tr>
-<tr class="separator:a3105536db67f9aef8a08c32866a81a38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a629ed5114ed0b3620381ace62af491"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSISRFilter.html#a4a629ed5114ed0b3620381ace62af491">SISRFilter</a> (int numParts, <a class="el" href="sisr__filter_8h.html#a2486051fd2028dedca520d3e0f8fd92f">SISRResampStyle</a> resampTechnique=SISRResampStyle::everytime_multinomial, double essPerc=1.0)</td></tr>
+<tr class="memdesc:a4a629ed5114ed0b3620381ace62af491"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a4a629ed5114ed0b3620381ace62af491">More...</a><br /></td></tr>
+<tr class="separator:a4a629ed5114ed0b3620381ace62af491"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6953590c7317c8dbf2341640dea71af8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6953590c7317c8dbf2341640dea71af8"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSISRFilter.html#a6953590c7317c8dbf2341640dea71af8">~SISRFilter</a> ()</td></tr>
 <tr class="memdesc:a6953590c7317c8dbf2341640dea71af8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
@@ -143,46 +131,46 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aab226ed51d07c493151a6788e6f90b86"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSISRFilter.html#aab226ed51d07c493151a6788e6f90b86">getESS</a> () const </td></tr>
 <tr class="memdesc:aab226ed51d07c493151a6788e6f90b86"><td class="mdescLeft">&#160;</td><td class="mdescRight">get effective sample size.  <a href="#aab226ed51d07c493151a6788e6f90b86">More...</a><br /></td></tr>
 <tr class="separator:aab226ed51d07c493151a6788e6f90b86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ca159b052883c9c4dc0231145f6fe85"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSISRFilter.html#a8ca159b052883c9c4dc0231145f6fe85">getFullParts</a> () const </td></tr>
-<tr class="memdesc:a8ca159b052883c9c4dc0231145f6fe85"><td class="mdescLeft">&#160;</td><td class="mdescRight">get $p(x_{1:t}|y_{1:t})$  <a href="#a8ca159b052883c9c4dc0231145f6fe85">More...</a><br /></td></tr>
-<tr class="separator:a8ca159b052883c9c4dc0231145f6fe85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4dd3b90b857114e599a8f71703cb768e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="pmfs_8h.html#ae601f56a556993079f730483c574356f">Mat</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSISRFilter.html#a4dd3b90b857114e599a8f71703cb768e">getExpectations</a> () const </td></tr>
+<tr class="memitem:aff930757bb06eda7b180342ba04fc335"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSISRFilter.html#aff930757bb06eda7b180342ba04fc335">getFullParts</a> () const </td></tr>
+<tr class="memdesc:aff930757bb06eda7b180342ba04fc335"><td class="mdescLeft">&#160;</td><td class="mdescRight">get $p(x_{1:t}|y_{1:t})$  <a href="#aff930757bb06eda7b180342ba04fc335">More...</a><br /></td></tr>
+<tr class="separator:aff930757bb06eda7b180342ba04fc335"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4dd3b90b857114e599a8f71703cb768e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="apf__filter_8h.html#ae601f56a556993079f730483c574356f">Mat</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSISRFilter.html#a4dd3b90b857114e599a8f71703cb768e">getExpectations</a> () const </td></tr>
 <tr class="memdesc:a4dd3b90b857114e599a8f71703cb768e"><td class="mdescLeft">&#160;</td><td class="mdescRight">get all stored expectations. With respect to $p(x_t|y_{1:t})$  <a href="#a4dd3b90b857114e599a8f71703cb768e">More...</a><br /></td></tr>
 <tr class="separator:a4dd3b90b857114e599a8f71703cb768e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa87ac349cbc21f70fb51c24fcbbc521a"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSISRFilter.html#aa87ac349cbc21f70fb51c24fcbbc521a">getLogUWeights</a> () const </td></tr>
 <tr class="memdesc:aa87ac349cbc21f70fb51c24fcbbc521a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get log-un-normalized weights.  <a href="#aa87ac349cbc21f70fb51c24fcbbc521a">More...</a><br /></td></tr>
 <tr class="separator:aa87ac349cbc21f70fb51c24fcbbc521a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c22a038dc47490b5532f2ec6c21a548"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSISRFilter.html#a8c22a038dc47490b5532f2ec6c21a548">filterOrSmooth</a> (const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;data, const std::vector&lt; std::function&lt; const <a class="el" href="pmfs_8h.html#ae601f56a556993079f730483c574356f">Mat</a>(const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;)&gt; &gt; &amp;fs=std::vector&lt; std::function&lt; const <a class="el" href="pmfs_8h.html#ae601f56a556993079f730483c574356f">Mat</a>(const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;)&gt; &gt;())</td></tr>
-<tr class="memdesc:a8c22a038dc47490b5532f2ec6c21a548"><td class="mdescLeft">&#160;</td><td class="mdescRight">If storing whole paths, performs smoothing. If not storing whole paths, performs filtering.  <a href="#a8c22a038dc47490b5532f2ec6c21a548">More...</a><br /></td></tr>
-<tr class="separator:a8c22a038dc47490b5532f2ec6c21a548"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab6ffa8e1cdee34f1afb825e35462afaa"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSISRFilter.html#ab6ffa8e1cdee34f1afb825e35462afaa">logMuEv</a> (const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x1)=0</td></tr>
+<tr class="memitem:a0c1a506e724152d49011083095f523d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSISRFilter.html#a0c1a506e724152d49011083095f523d0">filter</a> (const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;data, const std::vector&lt; std::function&lt; const <a class="el" href="apf__filter_8h.html#ae601f56a556993079f730483c574356f">Mat</a>(const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;)&gt; &gt; &amp;fs=std::vector&lt; std::function&lt; const <a class="el" href="apf__filter_8h.html#ae601f56a556993079f730483c574356f">Mat</a>(const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;)&gt; &gt;())</td></tr>
+<tr class="memdesc:a0c1a506e724152d49011083095f523d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">If storing whole paths, performs smoothing. If not storing whole paths, performs filtering.  <a href="#a0c1a506e724152d49011083095f523d0">More...</a><br /></td></tr>
+<tr class="separator:a0c1a506e724152d49011083095f523d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6ffa8e1cdee34f1afb825e35462afaa"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSISRFilter.html#ab6ffa8e1cdee34f1afb825e35462afaa">logMuEv</a> (const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x1)=0</td></tr>
 <tr class="memdesc:ab6ffa8e1cdee34f1afb825e35462afaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate muEv or logmuEv.  <a href="#ab6ffa8e1cdee34f1afb825e35462afaa">More...</a><br /></td></tr>
 <tr class="separator:ab6ffa8e1cdee34f1afb825e35462afaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a57cd67535e31bb1ab20fb42499f911"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSISRFilter.html#a5a57cd67535e31bb1ab20fb42499f911">q1Samp</a> (const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;y1)=0</td></tr>
+<tr class="memitem:a5a57cd67535e31bb1ab20fb42499f911"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSISRFilter.html#a5a57cd67535e31bb1ab20fb42499f911">q1Samp</a> (const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;y1)=0</td></tr>
 <tr class="memdesc:a5a57cd67535e31bb1ab20fb42499f911"><td class="mdescLeft">&#160;</td><td class="mdescRight">Samples from time 1 proposal.  <a href="#a5a57cd67535e31bb1ab20fb42499f911">More...</a><br /></td></tr>
 <tr class="separator:a5a57cd67535e31bb1ab20fb42499f911"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61a1971bd8208abbe3ccbacd66d35c23"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSISRFilter.html#a61a1971bd8208abbe3ccbacd66d35c23">logQ1Ev</a> (const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x1, const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;y1)=0</td></tr>
+<tr class="memitem:a61a1971bd8208abbe3ccbacd66d35c23"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSISRFilter.html#a61a1971bd8208abbe3ccbacd66d35c23">logQ1Ev</a> (const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x1, const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;y1)=0</td></tr>
 <tr class="memdesc:a61a1971bd8208abbe3ccbacd66d35c23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate q1Ev or log q1Ev.  <a href="#a61a1971bd8208abbe3ccbacd66d35c23">More...</a><br /></td></tr>
 <tr class="separator:a61a1971bd8208abbe3ccbacd66d35c23"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac59b077648fa74d2a5db970e3d7ffac"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSISRFilter.html#aac59b077648fa74d2a5db970e3d7ffac">logGEv</a> (const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;yt, const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;xt)=0</td></tr>
+<tr class="memitem:aac59b077648fa74d2a5db970e3d7ffac"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSISRFilter.html#aac59b077648fa74d2a5db970e3d7ffac">logGEv</a> (const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;yt, const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;xt)=0</td></tr>
 <tr class="memdesc:aac59b077648fa74d2a5db970e3d7ffac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate gEv or logGEv.  <a href="#aac59b077648fa74d2a5db970e3d7ffac">More...</a><br /></td></tr>
 <tr class="separator:aac59b077648fa74d2a5db970e3d7ffac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab91474fc79efb84ed1dafbc8c542f59e"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSISRFilter.html#ab91474fc79efb84ed1dafbc8c542f59e">logFEv</a> (const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;xt, const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;xtm1)=0</td></tr>
+<tr class="memitem:ab91474fc79efb84ed1dafbc8c542f59e"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSISRFilter.html#ab91474fc79efb84ed1dafbc8c542f59e">logFEv</a> (const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;xt, const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;xtm1)=0</td></tr>
 <tr class="memdesc:ab91474fc79efb84ed1dafbc8c542f59e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate fEv or logFEv.  <a href="#ab91474fc79efb84ed1dafbc8c542f59e">More...</a><br /></td></tr>
 <tr class="separator:ab91474fc79efb84ed1dafbc8c542f59e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c480a10cac8b52a36ab1309cf9ea1a4"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSISRFilter.html#a2c480a10cac8b52a36ab1309cf9ea1a4">qSamp</a> (const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;xtm1, const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;yt)=0</td></tr>
+<tr class="memitem:a2c480a10cac8b52a36ab1309cf9ea1a4"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSISRFilter.html#a2c480a10cac8b52a36ab1309cf9ea1a4">qSamp</a> (const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;xtm1, const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;yt)=0</td></tr>
 <tr class="memdesc:a2c480a10cac8b52a36ab1309cf9ea1a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sample from the proposal distribution.  <a href="#a2c480a10cac8b52a36ab1309cf9ea1a4">More...</a><br /></td></tr>
 <tr class="separator:a2c480a10cac8b52a36ab1309cf9ea1a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af289db59b008a0ab795fc3b8e9887043"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSISRFilter.html#af289db59b008a0ab795fc3b8e9887043">logQEv</a> (const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;xt, const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;xtm1, const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;yt)=0</td></tr>
+<tr class="memitem:af289db59b008a0ab795fc3b8e9887043"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSISRFilter.html#af289db59b008a0ab795fc3b8e9887043">logQEv</a> (const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;xt, const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;xtm1, const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;yt)=0</td></tr>
 <tr class="memdesc:af289db59b008a0ab795fc3b8e9887043"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate qEv or logQEv.  <a href="#af289db59b008a0ab795fc3b8e9887043">More...</a><br /></td></tr>
 <tr class="separator:af289db59b008a0ab795fc3b8e9887043"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A base-class for Sequential Importance Sampling with Resampling. </p>
+<div class="textblock"><p>A base-class for Sequential Importance Sampling with Resampling. Filtering only; no smoothing. </p>
 <dl class="section author"><dt>Author</dt><dd>taylor </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>07/09/17 </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a3105536db67f9aef8a08c32866a81a38"></a>
+<a class="anchor" id="a4a629ed5114ed0b3620381ace62af491"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -195,14 +183,8 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">SISRResampStyle&#160;</td>
+          <td class="paramtype"><a class="el" href="sisr__filter_8h.html#a2486051fd2028dedca520d3e0f8fd92f">SISRResampStyle</a>&#160;</td>
           <td class="paramname"><em>resampTechnique</em> = <code>SISRResampStyle::everytime_multinomial</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>pathLength</em> = <code>0</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -223,7 +205,6 @@ Public Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">numParts</td><td>number of particles </td></tr>
     <tr><td class="paramname">resampTechnique</td><td>which resampling strategy? </td></tr>
-    <tr><td class="paramname">pathLength</td><td>Set to 0 if you don't want save entire paths. Otherwise, enter time length. </td></tr>
     <tr><td class="paramname">essPerc</td><td>ignored unless SISRResampStyle is "ess." What percent of ESS is the threshold for resampling. </td></tr>
   </table>
   </dd>
@@ -232,21 +213,21 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a8c22a038dc47490b5532f2ec6c21a548"></a>
+<a class="anchor" id="a0c1a506e724152d49011083095f523d0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void SISRFilter::filterOrSmooth </td>
+          <td class="memname">void SISRFilter::filter </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>data</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::vector&lt; std::function&lt; const <a class="el" href="pmfs_8h.html#ae601f56a556993079f730483c574356f">Mat</a>(const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;)&gt; &gt; &amp;&#160;</td>
-          <td class="paramname"><em>fs</em> = <code>std::vector&lt;&#160;std::function&lt;&#160;const&#160;<a class="el" href="pmfs_8h.html#ae601f56a556993079f730483c574356f">Mat</a>(const&#160;<a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>&#160;&amp;)&gt;&#160;&gt;()</code>&#160;</td>
+          <td class="paramtype">const std::vector&lt; std::function&lt; const <a class="el" href="apf__filter_8h.html#ae601f56a556993079f730483c574356f">Mat</a>(const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;)&gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>fs</em> = <code>std::vector&lt;&#160;std::function&lt;&#160;const&#160;<a class="el" href="apf__filter_8h.html#ae601f56a556993079f730483c574356f">Mat</a>(const&#160;<a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>&#160;&amp;)&gt;&#160;&gt;()</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -290,7 +271,7 @@ Public Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="pmfs_8h.html#ae601f56a556993079f730483c574356f">Mat</a>&gt; SISRFilter::getExpectations </td>
+          <td class="memname">std::vector&lt;<a class="el" href="apf__filter_8h.html#ae601f56a556993079f730483c574356f">Mat</a>&gt; SISRFilter::getExpectations </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -303,12 +284,12 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a8ca159b052883c9c4dc0231145f6fe85"></a>
+<a class="anchor" id="aff930757bb06eda7b180342ba04fc335"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;std::vector&lt;<a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>&gt; &gt; SISRFilter::getFullParts </td>
+          <td class="memname">std::vector&lt;<a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>&gt; SISRFilter::getFullParts </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -367,13 +348,13 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">virtual double SISRFilter::logFEv </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>xt</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>xtm1</em>&#160;</td>
         </tr>
         <tr>
@@ -399,8 +380,6 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the density or log-denity evaluation as a double </dd></dl>
 
-<p>Implemented in <a class="el" href="classNAr1Filter.html#adff7d17aa5271b8df4c77d752a6fd773">NAr1Filter</a>, <a class="el" href="classJacEtAl.html#a7742c736cf4136968dcf8629c4a3914e">JacEtAl</a>, <a class="el" href="classMSVolSISR.html#acd51af2d17300973b8fa4748e5729f3c">MSVolSISR</a>, and <a class="el" href="classSVolFilter.html#a506d813662f0d888e48607962bfefbbd">SVolFilter</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="aac59b077648fa74d2a5db970e3d7ffac"></a>
@@ -413,13 +392,13 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">virtual double SISRFilter::logGEv </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>yt</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>xt</em>&#160;</td>
         </tr>
         <tr>
@@ -445,8 +424,6 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the density or log-density evaluation as a double </dd></dl>
 
-<p>Implemented in <a class="el" href="classNAr1Filter.html#aed4a7fb8160aabe9a7dc702826ccae60">NAr1Filter</a>, <a class="el" href="classJacEtAl.html#aa37b7701fac288d76b72640b2c98f253">JacEtAl</a>, <a class="el" href="classMSVolSISR.html#a1e7efc4dd05351872764983a99a0c5ed">MSVolSISR</a>, and <a class="el" href="classSVolFilter.html#a81a8e2857ddb699738461b5e2beab1c0">SVolFilter</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="ab6ffa8e1cdee34f1afb825e35462afaa"></a>
@@ -459,7 +436,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">virtual double SISRFilter::logMuEv </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>x1</em></td><td>)</td>
           <td></td>
         </tr>
@@ -480,8 +457,6 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the density or log-density evaluation as a double </dd></dl>
 
-<p>Implemented in <a class="el" href="classNAr1Filter.html#ac97b366af3d4def2b45d394fb85865f0">NAr1Filter</a>, <a class="el" href="classJacEtAl.html#a96f970a2b0e7f0583a5fe567b6353ffe">JacEtAl</a>, <a class="el" href="classMSVolSISR.html#a2af842b09bada27765bf8e7e60c59183">MSVolSISR</a>, and <a class="el" href="classSVolFilter.html#ab052dcfa9ce2100ffb02350ccf0b6d17">SVolFilter</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a61a1971bd8208abbe3ccbacd66d35c23"></a>
@@ -494,13 +469,13 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">virtual double SISRFilter::logQ1Ev </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>x1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>y1</em>&#160;</td>
         </tr>
         <tr>
@@ -526,8 +501,6 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the density or log-density evaluation as a double </dd></dl>
 
-<p>Implemented in <a class="el" href="classNAr1Filter.html#af8eb2b66ff1806dd0d4c4ac1f7129a51">NAr1Filter</a>, <a class="el" href="classJacEtAl.html#aec5fff50e30a9df174b04f2ab53c73d0">JacEtAl</a>, <a class="el" href="classMSVolSISR.html#a9c776bfbf157ff4f0dc3cbe1c4212142">MSVolSISR</a>, and <a class="el" href="classSVolFilter.html#a9adc1eb288e46a2e05fa89d1b8d9f1ef">SVolFilter</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="af289db59b008a0ab795fc3b8e9887043"></a>
@@ -540,19 +513,19 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">virtual double SISRFilter::logQEv </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>xt</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>xtm1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>yt</em>&#160;</td>
         </tr>
         <tr>
@@ -579,8 +552,6 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the density or log-density evaluation as a double </dd></dl>
 
-<p>Implemented in <a class="el" href="classNAr1Filter.html#ae42e9ccf333b8590bd79831be8083dcd">NAr1Filter</a>, <a class="el" href="classJacEtAl.html#a73a94bbb16389102b20def8c0bdf96d8">JacEtAl</a>, <a class="el" href="classMSVolSISR.html#af5ef1c3d5499bc9f2693a3f918def613">MSVolSISR</a>, and <a class="el" href="classSVolFilter.html#af2bbbe9c2d3bddb3e85b9ed5a14a24cb">SVolFilter</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a5a57cd67535e31bb1ab20fb42499f911"></a>
@@ -591,9 +562,9 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> SISRFilter::q1Samp </td>
+          <td class="memname">virtual <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> SISRFilter::q1Samp </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>y1</em></td><td>)</td>
           <td></td>
         </tr>
@@ -614,8 +585,6 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the sample as a Vec </dd></dl>
 
-<p>Implemented in <a class="el" href="classSVolFilter.html#aaea1d4b59cdd3053f060d5013e338162">SVolFilter</a>, <a class="el" href="classNAr1Filter.html#a6ae702c69b4f3e7b2109f99e2fd5d8b7">NAr1Filter</a>, <a class="el" href="classJacEtAl.html#a154ca22da5c981f2d0c9515dc89a472c">JacEtAl</a>, and <a class="el" href="classMSVolSISR.html#ac828fdce8a00f9ac3adbe0fa019fe49d">MSVolSISR</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a2c480a10cac8b52a36ab1309cf9ea1a4"></a>
@@ -626,15 +595,15 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> SISRFilter::qSamp </td>
+          <td class="memname">virtual <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> SISRFilter::qSamp </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>xtm1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="pmfs_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>yt</em>&#160;</td>
         </tr>
         <tr>
@@ -659,8 +628,6 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the sample as a Vec </dd></dl>
-
-<p>Implemented in <a class="el" href="classNAr1Filter.html#af4f7f8b643e5750dc83e27ea7bf05f18">NAr1Filter</a>, <a class="el" href="classJacEtAl.html#a2b2696527c89fdf462639e55dfbc67ce">JacEtAl</a>, <a class="el" href="classMSVolSISR.html#a4f2f68902ba97f6dee582f1f01d1f5d7">MSVolSISR</a>, and <a class="el" href="classSVolFilter.html#a754e3c40b1db7798a48f3f4ad636b07c">SVolFilter</a>.</p>
 
 </div>
 </div>
