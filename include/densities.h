@@ -72,6 +72,28 @@ double evalUnivInvGamma(const double &x, const double &alpha, const double &beta
  * @return double evaluation.
  */
 double evalUnivHalfNorm(const double &x, const double &sigmaSqd, bool log = false);
+
+
+/**
+ * @brief Evaluates the logit-Normal distribution (see Wiki for more info)
+ * @param x in [0,1] the point you're evaluating at
+ * @param mu location parameter that can take any real number
+ * @param sigma scale parameter that needs to be positive
+ * @param log true if you want to evalute the log-density
+ */
+double evalLogitNormal(const double &x, const double &mu, const double &sigma, bool log = false);
+ 
+
+/**
+ * @brief Evaluates what I call the "twice-fisher-Normal" distribution
+ * https://stats.stackexchange.com/questions/321905/what-is-the-name-of-this-random-variable/321907#321907
+ * @param x in [-1,1] the point you are evaluating at
+ * @param mu the location parameter (all real numbers)
+ * @param sigma the scale parameter (positive)
+ * @param log true if you want to evaluate the log-density
+ */
+double evalTwiceFisherNormal(const double &x, const double &mu, const double &sigma, bool log = false);
+
  
 ////////////////////////////////////////////////
 /////////           samplers           /////////
