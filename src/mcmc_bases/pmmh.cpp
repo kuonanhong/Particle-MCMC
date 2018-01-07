@@ -8,11 +8,11 @@
 
 #include <iostream>
 Pmmh::Pmmh(const std::vector<Vec> &startTheta, unsigned numMCMCIters, const std::string &dataFile, unsigned numCols, bool mc) : 
-        m_numMCMCIters(numMCMCIters), m_multicore(mc), m_dimTheta(0), m_currentTheta(startTheta)
+        m_numMCMCIters(numMCMCIters), m_multicore(mc), m_dimTheta(0), m_currentTheta(startTheta), m_numAcceptances(0.0)
 {
     m_data = convenience_funcs::readInData(dataFile, numCols);
     m_numExtraThreads = std::thread::hardware_concurrency() - 1;
-    for(int i = 0; i < startTheta.size(); ++i)
+    for(size_t i = 0; i < startTheta.size(); ++i)
         m_dimTheta += startTheta[i].rows();
 }
 
@@ -52,7 +52,7 @@ void Pmmh::commence_sampling_mc(std::string samplesFile, std::string messagesFil
         if (iter == 0) { 
             
             m_messageStream << "***Iter number: " << 1 << " out of " << m_numMCMCIters << "\n";
-            //std::cout << "***Iter number: " << 1 << " out of " << m_numMCMCIters << "\n";        
+            std::cout << "***Iter number: " << 1 << " out of " << m_numMCMCIters << "\n";        
         
             // write accepted parameters to file (initial guesses are always "accepted")
             convenience_funcs::logParams(m_currentTheta, m_samplesFileStream);
@@ -115,6 +115,9 @@ void Pmmh::commence_sampling_mc(std::string samplesFile, std::string messagesFil
                 m_messageStream << "***Iter number: " << iter+1 << " out of " << m_numMCMCIters << "\n";
                 std::cout << "***Iter number: " << iter+1 << " out of " << m_numMCMCIters << "\n";        
                 
+                m_messageStream << "acceptance rate: " << m_numAcceptances / iter << " \n";
+                std::cout << "acceptance rate: " << m_numAcceptances / iter << " \n";
+                
                 m_messageStream << "Using core number " << i+1 << " out of " << m_numExtraThreads << "\n";
                 std::cout << "Using core number " << i+1 << " out of " << m_numExtraThreads << "\n";
                 
@@ -152,6 +155,7 @@ void Pmmh::commence_sampling_mc(std::string samplesFile, std::string messagesFil
                     oldLogLike = newLL;
                     m_messageStream << "accepted 100 percent\n";
                     cancel_token = true; // cancel remaining threads
+                    m_numAcceptances += 1.0;
                     break; // stop iterating over threads because the following loglikes will need the new parameters
                 }else if ( std::log(draw) <= logARs[i] ) {
                     // probabilistic accept
@@ -162,6 +166,7 @@ void Pmmh::commence_sampling_mc(std::string samplesFile, std::string messagesFil
                     oldLogLike = newLL;
                     m_messageStream << "accepted probabilistically\n";
                     cancel_token = true; // cancel remaining threads
+                    m_numAcceptances += 1.0;
                     break; // stop iterating over threads
                 } else if ( std::log(draw) > logARs[i] ) {
                     std::cout << "rejecting!\n";
@@ -271,6 +276,9 @@ void Pmmh::commence_sampling_sc(std::string samplesFile, std::string messagesFil
             m_messageStream << "***Iter number: " << iter+1 << " out of " << m_numMCMCIters << "\n";
             std::cout << "***Iter number: " << iter+1 << " out of " << m_numMCMCIters << "\n";        
             
+            m_messageStream << "acceptance rate: " << m_numAcceptances / iter << " \n";
+            std::cout << "acceptance rate: " << m_numAcceptances / iter << " \n";
+
             m_messageStream << "AR: " << std::exp(logAR) << "\n";
             std::cout << "AR: " << std::exp(logAR) << "\n";
 
@@ -291,35 +299,37 @@ void Pmmh::commence_sampling_sc(std::string samplesFile, std::string messagesFil
             double draw = runif.sample();
             if ( std::isinf(-logAR)){
                 // 0 acceptance rate
-                std::cout << "rejecting!\n";
                 // do not change the parameters
                 // oldPrior stays the same 
                 // oldLogLike stays the same
                 iter++; // increase number of iters
+                std::cout << "rejected 100 percent\n";
                 m_messageStream << "rejected 100 percent\n";
             }else if (logAR >= 0.0){
                 // 100 percent accept 
-                std::cout << "accepting!\n";
                 iter++; // increase number of iters
                 m_currentTheta = proposedTheta;
                 oldLogPrior = newLogPrior;
                 oldLogLike = newLL;
+                m_numAcceptances += 1.0;
+                std::cout << "accepted 100 percent\n";
                 m_messageStream << "accepted 100 percent\n";
             }else if ( std::log(draw) <= logAR ) {
                 // probabilistic accept
-                std::cout << "accepting!\n";
                 iter++; // increase number of iters
                 m_currentTheta = proposedTheta;
                 oldLogPrior = newLogPrior;
                 oldLogLike = newLL;
+                m_numAcceptances += 1.0;
+                std::cout << "accepted probabilistically\n";
                 m_messageStream << "accepted probabilistically\n";
             } else if ( std::log(draw) > logAR ) {
-                std::cout << "rejecting!\n";
                 // probabilistically reject
                 // parameters do not change
                 // oldPrior stays the same 
                 // oldLogLike stays the same     
-                iter++; // increase number of iters           
+                iter++; // increase number of iters  
+                std::cout << "rejected probabilistically\n";
                 m_messageStream << "rejected probabilistically\n";
             }else if (std::isnan(logAR) ){ 
                 // this is unexpected behavior

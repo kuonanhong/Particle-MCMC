@@ -35,6 +35,7 @@ private:
     unsigned int        m_numExtraThreads;
     std::mutex          m_outFileMutex;
     bool                m_multicore;
+    double              m_numAcceptances;
 
     void commence_sampling_mc(std::string samplesFile, std::string messagesFile);
     void commence_sampling_sc(std::string samplesFile, std::string messagesFile);
