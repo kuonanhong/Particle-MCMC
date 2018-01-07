@@ -93,7 +93,7 @@ double densities::evalUnivHalfNorm(const double &x, const double &sigmaSqd, bool
 
 double densities::evalLogitNormal(const double &x, const double &mu, const double &sigma, bool log)
 {
-    if( (x >= 0.0) && (x <= 1.0)){
+    if( (x >= 0.0) && (x <= 1.0) && (sigma > 0.0)){
         if(log){
             return -std::log(sigma) - .5*log_two_pi - std::log(x) - std::log(1.0-x) - .5*(transformations::logit(x)-mu)*(transformations::logit(x)-mu)/(sigma*sigma);
         }else{
@@ -112,7 +112,7 @@ double densities::evalLogitNormal(const double &x, const double &mu, const doubl
 
 double densities::evalTwiceFisherNormal(const double &x, const double &mu, const double &sigma, bool log)
 {
-    if( (x >= -1.0) && (x <= 1.0)){
+    if( (x >= -1.0) && (x <= 1.0) && (sigma > 0.0)){
         if(log){
             return -std::log(sigma) - .5*log_two_pi + std::log(2.0) - std::log(1.0+x) - std::log(1.0-x) - (std::log( (1.0+x)/(1.0-x))-mu)*(std::log( (1.0+x)/(1.0-x))-mu)/(2.0*sigma*sigma);
         }else{

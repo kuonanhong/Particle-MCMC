@@ -79,7 +79,8 @@ double evalUnivHalfNorm(const double &x, const double &sigmaSqd, bool log = fals
  * @param x in [0,1] the point you're evaluating at
  * @param mu location parameter that can take any real number
  * @param sigma scale parameter that needs to be positive
- * @param log true if you want to evalute the log-density
+ * @param log true if you want to evalute the log-density. False otherwise.
+ * @return a double evaluation
  */
 double evalLogitNormal(const double &x, const double &mu, const double &sigma, bool log = false);
  
@@ -90,9 +91,21 @@ double evalLogitNormal(const double &x, const double &mu, const double &sigma, b
  * @param x in [-1,1] the point you are evaluating at
  * @param mu the location parameter (all real numbers)
  * @param sigma the scale parameter (positive)
- * @param log true if you want to evaluate the log-density
+ * @param log true if you want to evaluate the log-density. False otherwise.
+ * @return a double evaluation
  */
 double evalTwiceFisherNormal(const double &x, const double &mu, const double &sigma, bool log = false);
+
+
+/**
+ * @brief Evaluates the lognormal density
+ * @param x in (0,infty) the point you are evaluating at
+ * @param mu the location parameter
+ * @param sigma in (0, infty) the scale parameter
+ * @param log true if you want to evaluate the log-density. False otherwise.
+ * @return a double evaluation
+ */
+double evalLogNormal(const double &x, const double &mu, const double &sigma, bool log = false);
 
  
 ////////////////////////////////////////////////
