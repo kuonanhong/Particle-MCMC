@@ -1,6 +1,6 @@
 #include "bootstrap_filter.h"
 
-BSFilter::BSFilter(int numParts, BSResampStyle resampTechnique, unsigned int pathLength, double essPerc)
+BSFilter::BSFilter(unsigned int numParts, BSResampStyle resampTechnique, double essPerc)
                 : m_now(0), m_logLastCondLike(0.0), m_numParts(numParts), m_resampTechnique(resampTechnique), 
                   m_ESS(m_numParts), m_percentOfNumPartsThresh(essPerc)
 {

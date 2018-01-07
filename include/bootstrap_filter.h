@@ -50,8 +50,7 @@ public:
      * @param pathLength Set to 0 if you don't want save entire paths. Otherwise, enter time length.
      * @param essPerc ignored unless SISRResampStyle is "ess." What percent of ESS is the threshold for resampling.
      */
-    BSFilter(int numParts, BSResampStyle resampTechnique = BSResampStyle::everytime_multinomial, 
-                unsigned int pathLength = 0, double essPerc = 1.0);
+    BSFilter(unsigned int numParts, BSResampStyle resampTechnique = BSResampStyle::everytime_multinomial, double essPerc = 1.0);
     
     //! Destructor.
     ~BSFilter();
@@ -140,16 +139,6 @@ public:
      * @return the sample as a Vec
      */
     virtual Vec qSamp (const Vec &xtm1, const Vec &yt ) = 0;
-    
-    //!
-    /**
-     * @brief Calculate qEv or logQEv
-     * @param xt is a const Vec& describing the time t state
-     * @param xtm1 is a const Vec& describing the time t-1 state
-     * @param yt is a const Vec& describing the time t datum
-     * @return the density or log-density evaluation as a double
-     */
-    virtual double logQEv (const Vec &xt, const Vec &xtm1, const Vec &yt ) = 0;    
 };
 
 #endif // SISRFILTER_H
