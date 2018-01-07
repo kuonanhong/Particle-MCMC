@@ -107,6 +107,16 @@ double evalTwiceFisherNormal(const double &x, const double &mu, const double &si
  */
 double evalLogNormal(const double &x, const double &mu, const double &sigma, bool log = false);
 
+/**
+ * @brief Evaluates the uniform density.
+ * @param x in (lower, upper] the point you are evaluating at.
+ * @param lower the lower bound of the support for x.
+ * @param upper the upper bound for the support of x.
+ * @param log true if you want to evaluate the log-density. False otherwise.
+ * @return a double evaluation.
+ */
+double evalUniform(const double &x, const double &lower, const double &upper, bool log = false);
+
  
 ////////////////////////////////////////////////
 /////////           samplers           /////////

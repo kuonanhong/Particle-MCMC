@@ -94,10 +94,11 @@ double densities::evalUnivHalfNorm(const double &x, const double &sigmaSqd, bool
 double densities::evalLogitNormal(const double &x, const double &mu, const double &sigma, bool log)
 {
     if( (x >= 0.0) && (x <= 1.0) && (sigma > 0.0)){
+        
+        double exponent = -.5*(transformations::logit(x) - mu)*(transformations::logit(x) - mu) / (sigma*sigma);
         if(log){
-            return -std::log(sigma) - .5*log_two_pi - std::log(x) - std::log(1.0-x) - .5*(transformations::logit(x)-mu)*(transformations::logit(x)-mu)/(sigma*sigma);
+            return -std::log(sigma) - .5*log_two_pi - std::log(x) - std::log(1.0-x) + exponent;
         }else{
-            double exponent = -.5*(transformations::logit(x) - mu)*(transformations::logit(x) - mu) / (sigma*sigma);
             return inv_sqrt_2pi * std::exp(exponent) / (x * (1.0-x) * sigma);   
         }
     }else{
@@ -113,10 +114,11 @@ double densities::evalLogitNormal(const double &x, const double &mu, const doubl
 double densities::evalTwiceFisherNormal(const double &x, const double &mu, const double &sigma, bool log)
 {
     if( (x >= -1.0) && (x <= 1.0) && (sigma > 0.0)){
+        
+        double exponent = -.5*(std::log((1.0+x)/(1.0-x)) - mu)*(std::log((1.0+x)/(1.0-x)) - mu)/(sigma* sigma);
         if(log){
-            return -std::log(sigma) - .5*log_two_pi + std::log(2.0) - std::log(1.0+x) - std::log(1.0-x) - (std::log( (1.0+x)/(1.0-x))-mu)*(std::log( (1.0+x)/(1.0-x))-mu)/(2.0*sigma*sigma);
+            return -std::log(sigma) - .5*log_two_pi + std::log(2.0) - std::log(1.0+x) - std::log(1.0-x) + exponent;
         }else{
-            double exponent = -.5*(std::log((1.0+x)/(1.0-x)) - mu)*(std::log((1.0+x)/(1.0-x)) - mu)/(sigma* sigma);
             return inv_sqrt_2pi * 2.0 * std::exp(exponent)/( (1.0-x)*(1.0+x)*sigma );
         }
     }else{
@@ -127,6 +129,50 @@ double densities::evalTwiceFisherNormal(const double &x, const double &mu, const
         }
     }
 }
+
+
+double densities::evalLogNormal(const double &x, const double &mu, const double &sigma, bool log)
+{
+    if( (x > 0.0) && (sigma > 0.0)){
+        
+        double exponent = -.5*(std::log(x)-mu)*(std::log(x)-mu)/(sigma*sigma);
+        if(log){
+            return -std::log(x) - std::log(sigma) - .5*log_two_pi + exponent;
+        }else{
+            return inv_sqrt_2pi*std::exp(exponent)/(sigma*x);
+        }
+    }else{
+        if(log){
+            return -1.0/0.0;
+        }else{
+            return 0.0;
+        }
+    }
+}
+
+
+double densities::evalUniform(const double &x, const double &lower, const double &upper, bool log)
+{
+
+    if( (x > lower) && (x <= upper)){
+        
+        double width = upper-lower;
+        if(log){
+            return -std::log(width);
+        }else{
+            return 1.0/width;
+        }
+    }else{
+        if(log){
+            return -1.0/0.0;
+        }else{
+            return 0.0;
+        }
+    }
+    
+}
+
+
 
 ////////////////////////////////////////////////
 /////////           samplers           /////////
