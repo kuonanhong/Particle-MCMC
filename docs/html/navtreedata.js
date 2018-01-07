@@ -23,7 +23,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 ".html",
-"sisr__smooth_8h.html#a2486051fd2028dedca520d3e0f8fd92faefd13eec9fdcde04f037a4bd3dd594aa"
+"sisr__smooth_8h.html#a2486051fd2028dedca520d3e0f8fd92fac7561db7a418dd39b2201dfe110ab4a4"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

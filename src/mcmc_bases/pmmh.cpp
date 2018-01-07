@@ -52,7 +52,7 @@ void Pmmh::commence_sampling_mc(std::string samplesFile, std::string messagesFil
         if (iter == 0) { 
             
             m_messageStream << "***Iter number: " << 1 << " out of " << m_numMCMCIters << "\n";
-            std::cout << "***Iter number: " << 1 << " out of " << m_numMCMCIters << "\n";        
+            //std::cout << "***Iter number: " << 1 << " out of " << m_numMCMCIters << "\n";        
         
             // write accepted parameters to file (initial guesses are always "accepted")
             convenience_funcs::logParams(m_currentTheta, m_samplesFileStream);
@@ -76,13 +76,13 @@ void Pmmh::commence_sampling_mc(std::string samplesFile, std::string messagesFil
         
             // propose several new thetas 
             std::vector<std::vector<Vec> > proposedThetas (m_numExtraThreads, std::vector<Vec>(m_dimTheta));
-            for(unsigned int i = 0; i < m_numExtraThreads; ++i)
+            for(size_t i = 0; i < m_numExtraThreads; ++i)
                 qSample(m_currentTheta, proposedThetas[i]);
             
             // store newPrior evaluations and transition kernel evaluations 
             std::vector<double> logQOldToNews(m_numExtraThreads, 0.0);
             std::vector<double> logQNewToOlds(m_numExtraThreads, 0.0);
-            for(unsigned int i = 0; i < m_numExtraThreads; ++i){
+            for(size_t i = 0; i < m_numExtraThreads; ++i){
                 newLogPriors[i] = logPriorEvaluate(proposedThetas[i]);
                 logQOldToNews[i] = logQEvaluate(m_currentTheta, proposedThetas[i]);
                 logQNewToOlds[i] = logQEvaluate(proposedThetas[i], m_currentTheta);
@@ -96,10 +96,11 @@ void Pmmh::commence_sampling_mc(std::string samplesFile, std::string messagesFil
 
             // accept or reject proposal
             std::vector<double> logARs(m_numExtraThreads, 0.0);
-            for(unsigned int i = 0; i < m_numExtraThreads; ++i){
+            for(size_t i = 0; i < m_numExtraThreads; ++i){
                 
                 // blocks until it is available
                 std::cout << "trying to get() data from core " << i+1 << " out of " << m_numExtraThreads << "\n";
+                m_messageStream << "trying to get() data from core " << i+1 << " out of " << m_numExtraThreads << "\n";
                 double newLL = newLogLikes[i].get();
                 
                 // get acceptance ratio
@@ -113,16 +114,23 @@ void Pmmh::commence_sampling_mc(std::string samplesFile, std::string messagesFil
                 // output some stuff
                 m_messageStream << "***Iter number: " << iter+1 << " out of " << m_numMCMCIters << "\n";
                 std::cout << "***Iter number: " << iter+1 << " out of " << m_numMCMCIters << "\n";        
+                
                 m_messageStream << "Using core number " << i+1 << " out of " << m_numExtraThreads << "\n";
+                std::cout << "Using core number " << i+1 << " out of " << m_numExtraThreads << "\n";
+                
                 m_messageStream << "AR: " << std::exp(logARs[i]) << "\n";
-                m_messageStream << "PriorRatio: " << std::exp(newLogPriors[i] - oldLogPrior) << "\n";
-                m_messageStream << "oldLogLike: " << oldLogLike << "\n";
-                m_messageStream << "newLogLike: " << newLL << "\n";
-                m_messageStream << "LikeRatio: " << std::exp(newLL - oldLogLike) << "\n";
                 std::cout << "AR: " << std::exp(logARs[i]) << "\n";
+                
+                m_messageStream << "PriorRatio: " << std::exp(newLogPriors[i] - oldLogPrior) << "\n";
                 std::cout << "PriorRatio: " << std::exp(newLogPriors[i] - oldLogPrior) << "\n";
+                
+                m_messageStream << "oldLogLike: " << oldLogLike << "\n";
                 std::cout << "oldLogLike: " << oldLogLike << "\n";
+                
+                m_messageStream << "newLogLike: " << newLL << "\n";
                 std::cout << "newLogLike: " << newLL << "\n";
+                
+                m_messageStream << "LikeRatio: " << std::exp(newLL - oldLogLike) << "\n";
                 std::cout << "LikeRatio: " << std::exp(newLL - oldLogLike) << "\n";
                         
                 // decide whether to accept or reject

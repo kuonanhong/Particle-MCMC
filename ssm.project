@@ -72,7 +72,7 @@
         <IncludePath Value="/home/taylor/ssm/include2"/>
         <IncludePath Value="/usr/include/eigen3"/>
       </Compiler>
-      <Linker Options="-lpthread" Required="yes"/>
+      <Linker Options="" Required="yes"/>
       <ResourceCompiler Options="" Required="no"/>
       <General OutputFile="$(IntermediateDirectory)/lib$(ProjectName).a" IntermediateDirectory="./Debug" Command="" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(IntermediateDirectory)" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
       <BuildSystem Name="Default"/>

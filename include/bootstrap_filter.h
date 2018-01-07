@@ -47,7 +47,6 @@ public:
      * @brief Constructor 
      * @param numParts number of particles
      * @param resampTechnique  which resampling strategy?
-     * @param pathLength Set to 0 if you don't want save entire paths. Otherwise, enter time length.
      * @param essPerc ignored unless SISRResampStyle is "ess." What percent of ESS is the threshold for resampling.
      */
     BSFilter(unsigned int numParts, BSResampStyle resampTechnique = BSResampStyle::everytime_multinomial, double essPerc = 1.0);

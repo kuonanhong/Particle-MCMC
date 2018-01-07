@@ -12,7 +12,7 @@ A base-\/class for Bootstrap Filtering (S\+I\+SR with naive proposals). This cla
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classBSFilter_acf56f49838e7cd4bbc131dd23f0bebe3}{B\+S\+Filter} (int num\+Parts, \hyperlink{bootstrap__filter_8h_a476b3b5754056a34ac843629c9570b49}{B\+S\+Resamp\+Style} resamp\+Technique=B\+S\+Resamp\+Style\+::everytime\+\_\+multinomial, unsigned int path\+Length=0, double ess\+Perc=1.\+0)
+\hyperlink{classBSFilter_ae10863380da750be1a5d506483743353}{B\+S\+Filter} (unsigned int num\+Parts, \hyperlink{bootstrap__filter_8h_a476b3b5754056a34ac843629c9570b49}{B\+S\+Resamp\+Style} resamp\+Technique=B\+S\+Resamp\+Style\+::everytime\+\_\+multinomial, double ess\+Perc=1.\+0)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 \hyperlink{classBSFilter_aff30bee4608cadfda7dd49a0d57bb39c}{$\sim$\+B\+S\+Filter} ()\hypertarget{classBSFilter_aff30bee4608cadfda7dd49a0d57bb39c}{}\label{classBSFilter_aff30bee4608cadfda7dd49a0d57bb39c}
 
@@ -36,9 +36,7 @@ virtual double \hyperlink{classBSFilter_a4d2bc2a2530306abaf1a717596b5814d}{log\+
 virtual double \hyperlink{classBSFilter_aa612efc58f9442a7f6401a5edf0c2799}{log\+G\+Ev} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&yt, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&xt)=0
 \begin{DoxyCompactList}\small\item\em Calculate g\+Ev or log\+G\+Ev. \end{DoxyCompactList}\item 
 virtual \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \hyperlink{classBSFilter_ac23ed2dc31035a7b1f5e1ce21ac66869}{q\+Samp} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&xtm1, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&yt)=0
-\begin{DoxyCompactList}\small\item\em Sample from the proposal distribution. \end{DoxyCompactList}\item 
-virtual double \hyperlink{classBSFilter_aed949f0e0533ea3f781f7b3088596784}{log\+Q\+Ev} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&xt, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&xtm1, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&yt)=0
-\begin{DoxyCompactList}\small\item\em Calculate q\+Ev or log\+Q\+Ev. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Sample from the proposal distribution. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -55,14 +53,13 @@ taylor
 \subsection{Constructor \& Destructor Documentation}
 \index{B\+S\+Filter@{B\+S\+Filter}!B\+S\+Filter@{B\+S\+Filter}}
 \index{B\+S\+Filter@{B\+S\+Filter}!B\+S\+Filter@{B\+S\+Filter}}
-\subsubsection[{\texorpdfstring{B\+S\+Filter(int num\+Parts, B\+S\+Resamp\+Style resamp\+Technique=\+B\+S\+Resamp\+Style\+::everytime\+\_\+multinomial, unsigned int path\+Length=0, double ess\+Perc=1.\+0)}{BSFilter(int numParts, BSResampStyle resampTechnique=BSResampStyle::everytime_multinomial, unsigned int pathLength=0, double essPerc=1.0)}}]{\setlength{\rightskip}{0pt plus 5cm}B\+S\+Filter\+::\+B\+S\+Filter (
+\subsubsection[{\texorpdfstring{B\+S\+Filter(unsigned int num\+Parts, B\+S\+Resamp\+Style resamp\+Technique=\+B\+S\+Resamp\+Style\+::everytime\+\_\+multinomial, double ess\+Perc=1.\+0)}{BSFilter(unsigned int numParts, BSResampStyle resampTechnique=BSResampStyle::everytime_multinomial, double essPerc=1.0)}}]{\setlength{\rightskip}{0pt plus 5cm}B\+S\+Filter\+::\+B\+S\+Filter (
 \begin{DoxyParamCaption}
-\item[{int}]{num\+Parts, }
+\item[{unsigned int}]{num\+Parts, }
 \item[{{\bf B\+S\+Resamp\+Style}}]{resamp\+Technique = {\ttfamily BSResampStyle\+:\+:everytime\+\_\+multinomial}, }
-\item[{unsigned int}]{path\+Length = {\ttfamily 0}, }
 \item[{double}]{ess\+Perc = {\ttfamily 1.0}}
 \end{DoxyParamCaption}
-)}\hypertarget{classBSFilter_acf56f49838e7cd4bbc131dd23f0bebe3}{}\label{classBSFilter_acf56f49838e7cd4bbc131dd23f0bebe3}
+)}\hypertarget{classBSFilter_ae10863380da750be1a5d506483743353}{}\label{classBSFilter_ae10863380da750be1a5d506483743353}
 
 
 Constructor. 
@@ -72,8 +69,6 @@ Constructor.
 {\em num\+Parts} & number of particles \\
 \hline
 {\em resamp\+Technique} & which resampling strategy? \\
-\hline
-{\em path\+Length} & Set to 0 if you don\textquotesingle{}t want save entire paths. Otherwise, enter time length. \\
 \hline
 {\em ess\+Perc} & ignored unless S\+I\+S\+R\+Resamp\+Style is \char`\"{}ess.\char`\"{} What percent of E\+SS is the threshold for resampling. \\
 \hline
@@ -214,31 +209,6 @@ Calculate q1\+Ev or log q1\+Ev.
 {\em x1} & is a const Vec\& describing the time 1 state sample \\
 \hline
 {\em y1} & is a const Vec\& describing the time 1 datum \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-the density or log-\/density evaluation as a double 
-\end{DoxyReturn}
-\index{B\+S\+Filter@{B\+S\+Filter}!log\+Q\+Ev@{log\+Q\+Ev}}
-\index{log\+Q\+Ev@{log\+Q\+Ev}!B\+S\+Filter@{B\+S\+Filter}}
-\subsubsection[{\texorpdfstring{log\+Q\+Ev(const Vec \&xt, const Vec \&xtm1, const Vec \&yt)=0}{logQEv(const Vec &xt, const Vec &xtm1, const Vec &yt)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual double B\+S\+Filter\+::log\+Q\+Ev (
-\begin{DoxyParamCaption}
-\item[{const {\bf Vec} \&}]{xt, }
-\item[{const {\bf Vec} \&}]{xtm1, }
-\item[{const {\bf Vec} \&}]{yt}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classBSFilter_aed949f0e0533ea3f781f7b3088596784}{}\label{classBSFilter_aed949f0e0533ea3f781f7b3088596784}
-
-
-Calculate q\+Ev or log\+Q\+Ev. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em xt} & is a const Vec\& describing the time t state \\
-\hline
-{\em xtm1} & is a const Vec\& describing the time t-\/1 state \\
-\hline
-{\em yt} & is a const Vec\& describing the time t datum \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

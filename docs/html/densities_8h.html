@@ -170,6 +170,18 @@ Functions</h2></td></tr>
 <tr class="memitem:a7bdccb2414aa07d7d0710b459b5de9cd"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="densities_8h.html#a7bdccb2414aa07d7d0710b459b5de9cd">densities::evalUnivHalfNorm</a> (const double &amp;x, const double &amp;sigmaSqd, bool log=false)</td></tr>
 <tr class="memdesc:a7bdccb2414aa07d7d0710b459b5de9cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the half-normal density.  <a href="densities_8h.html#a7bdccb2414aa07d7d0710b459b5de9cd">More...</a><br /></td></tr>
 <tr class="separator:a7bdccb2414aa07d7d0710b459b5de9cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8870f93803b6c442b9ed52b22466add9"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="densities_8h.html#a8870f93803b6c442b9ed52b22466add9">densities::evalLogitNormal</a> (const double &amp;x, const double &amp;mu, const double &amp;sigma, bool log=false)</td></tr>
+<tr class="memdesc:a8870f93803b6c442b9ed52b22466add9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the logit-Normal distribution (see Wiki for more info)  <a href="densities_8h.html#a8870f93803b6c442b9ed52b22466add9">More...</a><br /></td></tr>
+<tr class="separator:a8870f93803b6c442b9ed52b22466add9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a849b888256727957e74ca32fffeeb3bd"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="densities_8h.html#a849b888256727957e74ca32fffeeb3bd">densities::evalTwiceFisherNormal</a> (const double &amp;x, const double &amp;mu, const double &amp;sigma, bool log=false)</td></tr>
+<tr class="memdesc:a849b888256727957e74ca32fffeeb3bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates what I call the "twice-fisher-Normal" distribution <a href="https://stats.stackexchange.com/questions/321905/what-is-the-name-of-this-random-variable/321907#321907">https://stats.stackexchange.com/questions/321905/what-is-the-name-of-this-random-variable/321907#321907</a>.  <a href="densities_8h.html#a849b888256727957e74ca32fffeeb3bd">More...</a><br /></td></tr>
+<tr class="separator:a849b888256727957e74ca32fffeeb3bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa887eafb2d1b19a84d48aa55baa9eba7"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="densities_8h.html#aa887eafb2d1b19a84d48aa55baa9eba7">densities::evalLogNormal</a> (const double &amp;x, const double &amp;mu, const double &amp;sigma, bool log=false)</td></tr>
+<tr class="memdesc:aa887eafb2d1b19a84d48aa55baa9eba7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the lognormal density.  <a href="densities_8h.html#aa887eafb2d1b19a84d48aa55baa9eba7">More...</a><br /></td></tr>
+<tr class="separator:aa887eafb2d1b19a84d48aa55baa9eba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae99cffa2862161bd49b60a2c44c88273"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="densities_8h.html#ae99cffa2862161bd49b60a2c44c88273">densities::evalUniform</a> (const double &amp;x, const double &amp;lower, const double &amp;upper, bool log=false)</td></tr>
+<tr class="memdesc:ae99cffa2862161bd49b60a2c44c88273"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the uniform density.  <a href="densities_8h.html#ae99cffa2862161bd49b60a2c44c88273">More...</a><br /></td></tr>
+<tr class="separator:ae99cffa2862161bd49b60a2c44c88273"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Can sample from a distribution with fixed mean and covariance, fixed mean only, fixed covariance only, or nothing fixed. </p>
@@ -201,6 +213,106 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="file_a8870f93803b6c442b9ed52b22466add9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double densities::evalLogitNormal </td>
+          <td>(</td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>mu</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>sigma</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>log</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Evaluates the logit-Normal distribution (see Wiki for more info) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>in [0,1] the point you're evaluating at </td></tr>
+    <tr><td class="paramname">mu</td><td>location parameter that can take any real number </td></tr>
+    <tr><td class="paramname">sigma</td><td>scale parameter that needs to be positive </td></tr>
+    <tr><td class="paramname">log</td><td>true if you want to evalute the log-density. False otherwise. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a double evaluation </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="file_aa887eafb2d1b19a84d48aa55baa9eba7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double densities::evalLogNormal </td>
+          <td>(</td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>mu</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>sigma</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>log</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Evaluates the lognormal density. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>in (0,infty) the point you are evaluating at </td></tr>
+    <tr><td class="paramname">mu</td><td>the location parameter </td></tr>
+    <tr><td class="paramname">sigma</td><td>in (0, infty) the scale parameter </td></tr>
+    <tr><td class="paramname">log</td><td>true if you want to evaluate the log-density. False otherwise. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a double evaluation </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="file_a9e47ab78e9b67622852378c44b6ccc2d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -248,6 +360,106 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a double </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="file_a849b888256727957e74ca32fffeeb3bd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double densities::evalTwiceFisherNormal </td>
+          <td>(</td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>mu</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>sigma</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>log</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Evaluates what I call the "twice-fisher-Normal" distribution <a href="https://stats.stackexchange.com/questions/321905/what-is-the-name-of-this-random-variable/321907#321907">https://stats.stackexchange.com/questions/321905/what-is-the-name-of-this-random-variable/321907#321907</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>in [-1,1] the point you are evaluating at </td></tr>
+    <tr><td class="paramname">mu</td><td>the location parameter (all real numbers) </td></tr>
+    <tr><td class="paramname">sigma</td><td>the scale parameter (positive) </td></tr>
+    <tr><td class="paramname">log</td><td>true if you want to evaluate the log-density. False otherwise. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a double evaluation </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="file_ae99cffa2862161bd49b60a2c44c88273"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double densities::evalUniform </td>
+          <td>(</td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>lower</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>upper</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>log</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Evaluates the uniform density. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>in (lower, upper] the point you are evaluating at. </td></tr>
+    <tr><td class="paramname">lower</td><td>the lower bound of the support for x. </td></tr>
+    <tr><td class="paramname">upper</td><td>the upper bound for the support of x. </td></tr>
+    <tr><td class="paramname">log</td><td>true if you want to evaluate the log-density. False otherwise. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a double evaluation. </dd></dl>
 
 </div>
 </div>
