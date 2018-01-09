@@ -2,7 +2,8 @@ var annotated_dup =
 [
     [ "densities", null, [
       [ "MVNSampler", "classdensities_1_1MVNSampler.html", "classdensities_1_1MVNSampler" ],
-      [ "UniformSampler", "classdensities_1_1UniformSampler.html", "classdensities_1_1UniformSampler" ]
+      [ "UniformSampler", "classdensities_1_1UniformSampler.html", "classdensities_1_1UniformSampler" ],
+      [ "UnivNormSampler", "classdensities_1_1UnivNormSampler.html", "classdensities_1_1UnivNormSampler" ]
     ] ],
     [ "pmfs", null, [
       [ "DiscreteCustomSampler", "classpmfs_1_1DiscreteCustomSampler.html", "classpmfs_1_1DiscreteCustomSampler" ],

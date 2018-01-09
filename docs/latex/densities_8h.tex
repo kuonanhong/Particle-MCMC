@@ -2,7 +2,7 @@
 \label{densities_8h}\index{include/densities.\+h@{include/densities.\+h}}
 
 
-Can sample from a distribution with fixed mean and covariance, fixed mean only, fixed covariance only, or nothing fixed.  
+Samples from univariate Normal distribution.  
 
 
 {\ttfamily \#include $<$chrono$>$}\\*
@@ -25,6 +25,8 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
+class \hyperlink{classdensities_1_1UnivNormSampler}{densities\+::\+Univ\+Norm\+Sampler}
+\begin{DoxyCompactList}\small\item\em A class that performs sampling from a univariate Normal distribution. \end{DoxyCompactList}\item 
 class \hyperlink{classdensities_1_1MVNSampler}{densities\+::\+M\+V\+N\+Sampler}
 \begin{DoxyCompactList}\small\item\em A class that performs sampling from a multivariate normal distribution. \end{DoxyCompactList}\item 
 class \hyperlink{classdensities_1_1UniformSampler}{densities\+::\+Uniform\+Sampler}
@@ -47,8 +49,10 @@ const double \hyperlink{densities_8h_ae55ae08fac65b33b193ed333538dd340}{densitie
 \item 
 const double \hyperlink{densities_8h_a45b1879e50e22cb4ee16e2b9b86c3b14}{densities\+::log\+\_\+two\+\_\+over\+\_\+pi} (-\/0.\+451582705289455)
 \item 
+double \hyperlink{densities_8h_a1aa7759f20eabd016e3ae3e558b5824d}{densities\+::eval\+Univ\+Norm} (const double \&x, const double \&mu, const double \&sigma, bool log=false)
+\begin{DoxyCompactList}\small\item\em Evaluates the univariate Normal density. \end{DoxyCompactList}\item 
 double \hyperlink{densities_8h_a9e47ab78e9b67622852378c44b6ccc2d}{densities\+::eval\+Multiv\+Norm} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&mean\+Vec, const \hyperlink{apf__filter_8h_ae601f56a556993079f730483c574356f}{Mat} \&cov\+Mat, bool log=false)
-\begin{DoxyCompactList}\small\item\em Evaluates the multivariate normal density. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Evaluates the multivariate Normal density. \end{DoxyCompactList}\item 
 double \hyperlink{densities_8h_a0c5bdd99b4d611a05cb2cf2615c4c07a}{densities\+::eval\+Univ\+Beta} (const double \&x, const double \&alpha, const double \&beta, bool log=false)
 \begin{DoxyCompactList}\small\item\em Evaluates the univariate Beta density. \end{DoxyCompactList}\item 
 double \hyperlink{densities_8h_a6a348ae64240f768da13e50a1d30eb69}{densities\+::eval\+Univ\+Inv\+Gamma} (const double \&x, const double \&alpha, const double \&beta, bool log=false)
@@ -66,9 +70,9 @@ double \hyperlink{densities_8h_ae99cffa2862161bd49b60a2c44c88273}{densities\+::e
 
 
 \subsection{Detailed Description}
-Can sample from a distribution with fixed mean and covariance, fixed mean only, fixed covariance only, or nothing fixed. 
+Samples from univariate Normal distribution. 
 
-
+Can sample from a distribution with fixed mean and covariance, fixed mean only, fixed covariance only, or nothing fixed.
 
 \subsection{Typedef Documentation}
 \index{densities.\+h@{densities.\+h}!Mat@{Mat}}
@@ -148,21 +152,21 @@ a double evaluation
 )}\hypertarget{densities_8h_file_a9e47ab78e9b67622852378c44b6ccc2d}{}\label{densities_8h_file_a9e47ab78e9b67622852378c44b6ccc2d}
 
 
-Evaluates the multivariate normal density. 
+Evaluates the multivariate Normal density. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em x} & \\
+{\em x} & the point you\textquotesingle{}re evaluating at. \\
 \hline
-{\em mean\+Vec} & the mean vector \\
+{\em mean\+Vec} & the mean vector. \\
 \hline
-{\em cov\+Mat} & the positive definite, symmetric covariance matrix \\
+{\em cov\+Mat} & the positive definite, symmetric covariance matrix. \\
 \hline
-{\em log} & true if you want to return the log density. false otherwise \\
+{\em log} & true if you want to return the log density. False otherwise. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-a double 
+a double evaluation. 
 \end{DoxyReturn}
 \index{densities.\+h@{densities.\+h}!eval\+Twice\+Fisher\+Normal@{eval\+Twice\+Fisher\+Normal}}
 \index{eval\+Twice\+Fisher\+Normal@{eval\+Twice\+Fisher\+Normal}!densities.\+h@{densities.\+h}}
@@ -300,6 +304,34 @@ Evaluates the univariate Inverse Gamma density.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 double evaluation. 
+\end{DoxyReturn}
+\index{densities.\+h@{densities.\+h}!eval\+Univ\+Norm@{eval\+Univ\+Norm}}
+\index{eval\+Univ\+Norm@{eval\+Univ\+Norm}!densities.\+h@{densities.\+h}}
+\subsubsection[{\texorpdfstring{eval\+Univ\+Norm(const double \&x, const double \&mu, const double \&sigma, bool log=false)}{evalUnivNorm(const double &x, const double &mu, const double &sigma, bool log=false)}}]{\setlength{\rightskip}{0pt plus 5cm}double densities\+::eval\+Univ\+Norm (
+\begin{DoxyParamCaption}
+\item[{const double \&}]{x, }
+\item[{const double \&}]{mu, }
+\item[{const double \&}]{sigma, }
+\item[{bool}]{log = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\hypertarget{densities_8h_file_a1aa7759f20eabd016e3ae3e558b5824d}{}\label{densities_8h_file_a1aa7759f20eabd016e3ae3e558b5824d}
+
+
+Evaluates the univariate Normal density. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the point at which you\textquotesingle{}re evaluating. \\
+\hline
+{\em mu} & the mean. \\
+\hline
+{\em sigma} & the standard deviation. \\
+\hline
+{\em log} & true if you want the log-\/density. False otherwise. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a double evaluation. 
 \end{DoxyReturn}
 \index{densities.\+h@{densities.\+h}!inv\+\_\+sqrt\+\_\+2pi@{inv\+\_\+sqrt\+\_\+2pi}}
 \index{inv\+\_\+sqrt\+\_\+2pi@{inv\+\_\+sqrt\+\_\+2pi}!densities.\+h@{densities.\+h}}

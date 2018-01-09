@@ -35,12 +35,22 @@ const double log_two_over_pi (-0.451582705289455);
 ////////////////////////////////////////////////
 
 /**
- * @brief Evaluates the multivariate normal density
- * @param x 
- * @param meanVec the mean vector
- * @param covMat the positive definite, symmetric covariance matrix
- * @param log true if you want to return the log density. false otherwise
- * @return a double 
+ * @brief Evaluates the univariate Normal density.
+ * @param x the point at which you're evaluating.
+ * @param mu the mean.
+ * @param sigma the standard deviation.
+ * @param log true if you want the log-density. False otherwise.
+ * @return a double evaluation.
+ */
+double evalUnivNorm(const double &x, const double &mu, const double &sigma, bool log = false);
+
+/**
+ * @brief Evaluates the multivariate Normal density
+ * @param x the point you're evaluating at.
+ * @param meanVec the mean vector.
+ * @param covMat the positive definite, symmetric covariance matrix.
+ * @param log true if you want to return the log density. False otherwise.
+ * @return a double evaluation.
  */
 double evalMultivNorm(const Vec &x, const Vec &meanVec, const Mat &covMat, bool log = false);
 
@@ -121,6 +131,58 @@ double evalUniform(const double &x, const double &lower, const double &upper, bo
 ////////////////////////////////////////////////
 /////////           samplers           /////////
 ////////////////////////////////////////////////
+
+
+//! A class that performs sampling from a univariate Normal distribution.
+/**
+* @class UnivNormSampler
+* @author taylor
+* @file densities.h
+* @brief Samples from univariate Normal distribution.
+*/
+class UnivNormSampler
+{
+private:
+    std::mt19937 m_rng;    // mt engine
+    std::normal_distribution<> m_z_gen;
+    double m_mu;
+    double m_sigma;
+    
+public:
+    /**
+     * @brief Default-constructor sets up for univariate standard Normal random variate generation.
+     */
+    UnivNormSampler();
+
+
+     /**
+      * @brief The user must supply both mean and covariance matrix.
+      * @param mu a double for the mean of the sampling distribution.
+      * @param sigma a double (> 0) representing the standard deviation of the samples.
+      */
+    UnivNormSampler(const double &mu, const double &sigma);
+
+
+    /**
+     * @brief sets the standard deviation of the sampler.
+     * @param sigma the desired standard deviation.
+     */
+    void setStdDev(const double &sigma);
+    
+    
+    /**
+     * @brief sets the mean of the sampler.
+     * @param mu the desired mean.
+     */
+    void setMean(const double &mu);
+    
+        
+     /**
+      * @brief Draws a random number.
+      * @return a random sample of type double.
+      */
+    double sample();    
+};
 
 //! A class that performs sampling from a multivariate normal distribution.
 /**

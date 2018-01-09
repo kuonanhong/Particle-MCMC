@@ -8,5 +8,6 @@ var searchData=
   ['evaluniform',['evalUniform',['../densities_8h.html#ae99cffa2862161bd49b60a2c44c88273',1,'densities']]],
   ['evalunivbeta',['evalUnivBeta',['../densities_8h.html#a0c5bdd99b4d611a05cb2cf2615c4c07a',1,'densities']]],
   ['evalunivhalfnorm',['evalUnivHalfNorm',['../densities_8h.html#a7bdccb2414aa07d7d0710b459b5de9cd',1,'densities']]],
-  ['evalunivinvgamma',['evalUnivInvGamma',['../densities_8h.html#a6a348ae64240f768da13e50a1d30eb69',1,'densities']]]
+  ['evalunivinvgamma',['evalUnivInvGamma',['../densities_8h.html#a6a348ae64240f768da13e50a1d30eb69',1,'densities']]],
+  ['evalunivnorm',['evalUnivNorm',['../densities_8h.html#a1aa7759f20eabd016e3ae3e558b5824d',1,'densities']]]
 ];

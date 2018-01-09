@@ -100,16 +100,13 @@ $(document).ready(function(){initNavTree('index.html','');});
 <div class="title">SSM </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>There are two main purposes for this code. One is to provide base classes for different filters (e.g. the Kalman Filter, Sequential Importance Sampling with Resampling (SISR), the Auxiliary Particle Filter (APF), etc.). The other is to provide base classes for particle Markov chain Monte Carlo algorithms. This second category of base classes make use of the first category. Please see the different examples for demonstrations.</p>
+<div class="textblock"><p>There are two main purposes for this code. One is to provide base classes for different filters (e.g. the Kalman Filter, Sequential Importance Sampling with Resampling (SISR), the Auxiliary Particle Filter (APF), etc.). The other is to provide base classes for particle Markov chain Monte Carlo algorithms. This second category of base classes make use of the first category. Please see the different examples for demonstrations, which are located in my other repository <code>ssm_examples</code>.</p>
 <h2>Installation</h2>
-<p>You have to build this yourself. Make sure to compile with C++11 enabled (<code>-std=c++11</code>), to include the linker option <code>-lpthread</code>, and to include the <code>include</code> directory. Note, also, that this code all makes use of the <a href="http://eigen.tuxfamily.org/">Eigen library</a>.</p>
+<p>If you want to build yourself, make sure to compile with C++11 enabled (<code>-std=c++11</code>), and obviously to include the <code>include</code> directory. Note, also, that this code all makes use of the <a href="http://eigen.tuxfamily.org/">Eigen library</a>.</p>
 <h2>Organization of <code>src</code></h2>
 <ol type="1">
 <li><code>distributions</code> is all the code related to evaluating densities, mass functions, or pseudo-random number generation.</li>
-<li><code>examples</code> are all of the self-contained examples that implement specific models and algorithms.</li>
-<li><code>mcmc_algos</code> are classes performing MCMC techniques for specific models. These classes inherit from the classes in <code>mcmc_bases</code>.</li>
 <li><code>mcmc_bases</code> are all of the base classes for certain types of MCMC algorithms. Inheriting from these allows the user to skip writing a bunch of code.</li>
-<li><code>models</code> are particle filtering classes for specific state space models.</li>
 <li><code>filter_bases</code> are Kalman filtering and particle filtering base classes. Inheriting from these abstracts away all of the details of how this is performed. Particle filter base classes are pure virtual, while the closed form filtering classes (fshmm and lgssm) are not.</li>
 <li><code>utilities</code> functions that might be useful and have no other home (e.g. reading or logging data, transforming parameters with common functions, etc.).</li>
 </ol>
@@ -119,7 +116,7 @@ $(document).ready(function(){initNavTree('index.html','');});
 <ul>
 <li>Make a parameter class that organizes which are transformed, constrained, etc.</li>
 <li>Implement more resampling options (different algorithms, different schedules, etc.)</li>
-<li>Make sure all resamplers and classes are log-weights only</li>
+<li>Make univariate normal samplers/evaluators and further speed up any of the stuff in <code>densities</code></li>
 <li>unit testing... </li>
 </ul>
 </div></div><!-- contents -->

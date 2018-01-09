@@ -1,0 +1,109 @@
+\hypertarget{classdensities_1_1UnivNormSampler}{}\section{densities\+:\+:Univ\+Norm\+Sampler Class Reference}
+\label{classdensities_1_1UnivNormSampler}\index{densities\+::\+Univ\+Norm\+Sampler@{densities\+::\+Univ\+Norm\+Sampler}}
+
+
+A class that performs sampling from a univariate Normal distribution.  
+
+
+
+
+{\ttfamily \#include $<$densities.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classdensities_1_1UnivNormSampler_a1e81031b8312d7dee9a9d8f08d17d13a}{Univ\+Norm\+Sampler} ()\hypertarget{classdensities_1_1UnivNormSampler_a1e81031b8312d7dee9a9d8f08d17d13a}{}\label{classdensities_1_1UnivNormSampler_a1e81031b8312d7dee9a9d8f08d17d13a}
+
+\begin{DoxyCompactList}\small\item\em Default-\/constructor sets up for univariate standard Normal random variate generation. \end{DoxyCompactList}\item 
+\hyperlink{classdensities_1_1UnivNormSampler_a0284d90980b4cb8d9957e00af11c71e1}{Univ\+Norm\+Sampler} (const double \&mu, const double \&sigma)
+\begin{DoxyCompactList}\small\item\em The user must supply both mean and covariance matrix. \end{DoxyCompactList}\item 
+void \hyperlink{classdensities_1_1UnivNormSampler_ac579e126a9f884f334d58b29c408ceaa}{set\+Std\+Dev} (const double \&sigma)
+\begin{DoxyCompactList}\small\item\em sets the standard deviation of the sampler. \end{DoxyCompactList}\item 
+void \hyperlink{classdensities_1_1UnivNormSampler_a7c51871a59537bf5b14376e7e78cea4a}{set\+Mean} (const double \&mu)
+\begin{DoxyCompactList}\small\item\em sets the mean of the sampler. \end{DoxyCompactList}\item 
+double \hyperlink{classdensities_1_1UnivNormSampler_a95fe7880a41fad1b7d96f3ed22d35b33}{sample} ()
+\begin{DoxyCompactList}\small\item\em Draws a random number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class that performs sampling from a univariate Normal distribution. 
+
+\begin{DoxyAuthor}{Author}
+taylor 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{densities\+::\+Univ\+Norm\+Sampler@{densities\+::\+Univ\+Norm\+Sampler}!Univ\+Norm\+Sampler@{Univ\+Norm\+Sampler}}
+\index{Univ\+Norm\+Sampler@{Univ\+Norm\+Sampler}!densities\+::\+Univ\+Norm\+Sampler@{densities\+::\+Univ\+Norm\+Sampler}}
+\subsubsection[{\texorpdfstring{Univ\+Norm\+Sampler(const double \&mu, const double \&sigma)}{UnivNormSampler(const double &mu, const double &sigma)}}]{\setlength{\rightskip}{0pt plus 5cm}densities\+::\+Univ\+Norm\+Sampler\+::\+Univ\+Norm\+Sampler (
+\begin{DoxyParamCaption}
+\item[{const double \&}]{mu, }
+\item[{const double \&}]{sigma}
+\end{DoxyParamCaption}
+)}\hypertarget{classdensities_1_1UnivNormSampler_a0284d90980b4cb8d9957e00af11c71e1}{}\label{classdensities_1_1UnivNormSampler_a0284d90980b4cb8d9957e00af11c71e1}
+
+
+The user must supply both mean and covariance matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mu} & a double for the mean of the sampling distribution. \\
+\hline
+{\em sigma} & a double ($>$ 0) representing the standard deviation of the samples. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{densities\+::\+Univ\+Norm\+Sampler@{densities\+::\+Univ\+Norm\+Sampler}!sample@{sample}}
+\index{sample@{sample}!densities\+::\+Univ\+Norm\+Sampler@{densities\+::\+Univ\+Norm\+Sampler}}
+\subsubsection[{\texorpdfstring{sample()}{sample()}}]{\setlength{\rightskip}{0pt plus 5cm}double densities\+::\+Univ\+Norm\+Sampler\+::sample (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classdensities_1_1UnivNormSampler_a95fe7880a41fad1b7d96f3ed22d35b33}{}\label{classdensities_1_1UnivNormSampler_a95fe7880a41fad1b7d96f3ed22d35b33}
+
+
+Draws a random number. 
+
+\begin{DoxyReturn}{Returns}
+a random sample of type double. 
+\end{DoxyReturn}
+\index{densities\+::\+Univ\+Norm\+Sampler@{densities\+::\+Univ\+Norm\+Sampler}!set\+Mean@{set\+Mean}}
+\index{set\+Mean@{set\+Mean}!densities\+::\+Univ\+Norm\+Sampler@{densities\+::\+Univ\+Norm\+Sampler}}
+\subsubsection[{\texorpdfstring{set\+Mean(const double \&mu)}{setMean(const double &mu)}}]{\setlength{\rightskip}{0pt plus 5cm}void densities\+::\+Univ\+Norm\+Sampler\+::set\+Mean (
+\begin{DoxyParamCaption}
+\item[{const double \&}]{mu}
+\end{DoxyParamCaption}
+)}\hypertarget{classdensities_1_1UnivNormSampler_a7c51871a59537bf5b14376e7e78cea4a}{}\label{classdensities_1_1UnivNormSampler_a7c51871a59537bf5b14376e7e78cea4a}
+
+
+sets the mean of the sampler. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mu} & the desired mean. \\
+\hline
+\end{DoxyParams}
+\index{densities\+::\+Univ\+Norm\+Sampler@{densities\+::\+Univ\+Norm\+Sampler}!set\+Std\+Dev@{set\+Std\+Dev}}
+\index{set\+Std\+Dev@{set\+Std\+Dev}!densities\+::\+Univ\+Norm\+Sampler@{densities\+::\+Univ\+Norm\+Sampler}}
+\subsubsection[{\texorpdfstring{set\+Std\+Dev(const double \&sigma)}{setStdDev(const double &sigma)}}]{\setlength{\rightskip}{0pt plus 5cm}void densities\+::\+Univ\+Norm\+Sampler\+::set\+Std\+Dev (
+\begin{DoxyParamCaption}
+\item[{const double \&}]{sigma}
+\end{DoxyParamCaption}
+)}\hypertarget{classdensities_1_1UnivNormSampler_ac579e126a9f884f334d58b29c408ceaa}{}\label{classdensities_1_1UnivNormSampler_ac579e126a9f884f334d58b29c408ceaa}
+
+
+sets the standard deviation of the sampler. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sigma} & the desired standard deviation. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{densities_8h}{densities.\+h}\end{DoxyCompactItemize}

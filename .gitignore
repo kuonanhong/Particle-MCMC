@@ -40,5 +40,3 @@ Thumbs.db
 ###############
 include2/
 src/mcmc_bases2/
-Release/
-Debug/

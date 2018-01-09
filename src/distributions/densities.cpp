@@ -9,6 +9,25 @@
 ////////////////////////////////////////////////
 
 
+double densities::evalUnivNorm(const double &x, const double &mu, const double &sigma, bool log)
+{
+    double exponent = -.5*(x - mu)*(x-mu)/(sigma*sigma);
+    if( sigma > 0.0){
+        if(log){
+            return -std::log(sigma) - .5*log_two_pi + exponent;
+        }else{
+            return inv_sqrt_2pi * std::exp(exponent) / sigma;
+        }
+    }else{
+        if(log){
+            return -1.0/0.0;
+        }else{
+            return 0.0;
+        }
+    }
+}
+
+
 double densities::evalMultivNorm(const Vec &x, const Vec &meanVec, const Mat &covMat, bool log)
 {
     double quadform  = (x - meanVec).transpose() * covMat.inverse() * (x-meanVec);
@@ -21,7 +40,7 @@ double densities::evalMultivNorm(const Vec &x, const Vec &meanVec, const Mat &co
         Mat L = lltM.matrixL(); // the lower diagonal L such that M = LL^T
 
         // add up log of diagnols of Cholesky L
-        for(unsigned int i = 0; i < covMat.rows(); ++i){
+        for(size_t i = 0; i < covMat.rows(); ++i){
             ld += std::log(L(i,i));
         }
         ld *= 2; // covMat = LL^T
@@ -178,6 +197,47 @@ double densities::evalUniform(const double &x, const double &lower, const double
 /////////           samplers           /////////
 ////////////////////////////////////////////////
 
+/////////////// Univariate Normal Sampler
+
+
+densities::UnivNormSampler::UnivNormSampler()
+    : m_rng{static_cast<std::uint32_t>(std::chrono::high_resolution_clock::now().time_since_epoch().count())}, 
+      m_z_gen(0.0, 1.0)
+{
+    setMean(0.0);
+    setStdDev(1.0);
+}
+
+
+densities::UnivNormSampler::UnivNormSampler(const double &mu, const double &sigma)
+    : m_rng{static_cast<std::uint32_t>(std::chrono::high_resolution_clock::now().time_since_epoch().count())}, 
+      m_z_gen(0.0, 1.0)
+{
+    setMean(mu); 
+    setStdDev(sigma);
+}
+
+
+void densities::UnivNormSampler::setMean(const double &mu)
+{
+    m_mu = mu;
+}
+
+
+void densities::UnivNormSampler::setStdDev(const double &sigma)
+{
+    m_sigma = sigma;
+}
+
+
+double densities::UnivNormSampler::sample()
+{
+    return m_mu + m_sigma *m_z_gen(m_rng);
+}
+
+
+/////////////// Multivariate Normal Sampler
+
 
 densities::MVNSampler::MVNSampler()
         : m_rng{static_cast<std::uint32_t>(std::chrono::high_resolution_clock::now().time_since_epoch().count())}, 
@@ -218,7 +278,7 @@ void densities::MVNSampler::setMean(const Vec &meanVec)
 Vec densities::MVNSampler::sample()
 {
     Vec Z(m_mean.rows());
-    for (int jj=0; jj< m_mean.rows(); ++jj) 
+    for (size_t jj=0; jj< m_mean.rows(); ++jj) 
     {
         Z(jj) = m_z_gen(m_rng);
     }

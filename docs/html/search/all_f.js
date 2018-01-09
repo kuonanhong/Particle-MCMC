@@ -1,9 +1,10 @@
 var searchData=
 [
   ['ssm',['SSM',['../index.html',1,'']]],
-  ['sample',['sample',['../classdensities_1_1MVNSampler.html#a6be29ab6518db1f6457e95469e6970a4',1,'densities::MVNSampler::sample()'],['../classdensities_1_1UniformSampler.html#a1c4ab518cac3aecb0f4aa199cbc7a312',1,'densities::UniformSampler::sample()'],['../classpmfs_1_1DiscreteUnifSampler.html#a5fdb6cfffe456497b8e296a4d7721a13',1,'pmfs::DiscreteUnifSampler::sample()'],['../classpmfs_1_1DiscreteCustomSampler.html#ad449b68933655c879b567a085ea42a80',1,'pmfs::DiscreteCustomSampler::sample()']]],
+  ['sample',['sample',['../classdensities_1_1UnivNormSampler.html#a95fe7880a41fad1b7d96f3ed22d35b33',1,'densities::UnivNormSampler::sample()'],['../classdensities_1_1MVNSampler.html#a6be29ab6518db1f6457e95469e6970a4',1,'densities::MVNSampler::sample()'],['../classdensities_1_1UniformSampler.html#a1c4ab518cac3aecb0f4aa199cbc7a312',1,'densities::UniformSampler::sample()'],['../classpmfs_1_1DiscreteUnifSampler.html#a5fdb6cfffe456497b8e296a4d7721a13',1,'pmfs::DiscreteUnifSampler::sample()'],['../classpmfs_1_1DiscreteCustomSampler.html#ad449b68933655c879b567a085ea42a80',1,'pmfs::DiscreteCustomSampler::sample()']]],
   ['setcovar',['setCovar',['../classdensities_1_1MVNSampler.html#a914d6a896a1b7946085732a5758c16bb',1,'densities::MVNSampler']]],
-  ['setmean',['setMean',['../classdensities_1_1MVNSampler.html#a456f1e8ed39efc34ee3a7667dfb2011c',1,'densities::MVNSampler']]],
+  ['setmean',['setMean',['../classdensities_1_1UnivNormSampler.html#a7c51871a59537bf5b14376e7e78cea4a',1,'densities::UnivNormSampler::setMean()'],['../classdensities_1_1MVNSampler.html#a456f1e8ed39efc34ee3a7667dfb2011c',1,'densities::MVNSampler::setMean()']]],
+  ['setstddev',['setStdDev',['../classdensities_1_1UnivNormSampler.html#ac579e126a9f884f334d58b29c408ceaa',1,'densities::UnivNormSampler']]],
   ['sisr_5ffilter_2eh',['sisr_filter.h',['../sisr__filter_8h.html',1,'']]],
   ['sisr_5fsmooth_2eh',['sisr_smooth.h',['../sisr__smooth_8h.html',1,'']]],
   ['sisrfilter',['SISRFilter',['../classSISRFilter.html',1,'SISRFilter'],['../classSISRFilter.html#a4a629ed5114ed0b3620381ace62af491',1,'SISRFilter::SISRFilter()']]],
