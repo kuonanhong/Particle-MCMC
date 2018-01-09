@@ -40,7 +40,7 @@ private:
     std::vector<Mat>                m_expectations;
 
     // methods
-    std::vector<unsigned int> kGen(const std::vector<double> &logFirstStageWeights); // for first-stage sampling
+    void kGen(const std::vector<double> &logFirstStageWeights, std::vector<unsigned int> &ks); // for first-stage sampling
     void multinomRsmp(std::vector<Vec> &oldParts, std::vector<double> &oldLogUnNormWts); // for final resampling
 
 

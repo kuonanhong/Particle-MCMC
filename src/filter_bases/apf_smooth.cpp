@@ -91,7 +91,8 @@ void APFSmoother::smooth(const Vec &data)
         }
         
         // draw k (indexes) 
-        std::vector<unsigned int> myKs = kGen(logFirstStageUnNormWeights); 
+        std::vector<unsigned int> myKs(m_numParts);
+        kGen(logFirstStageUnNormWeights, myKs); 
 
         // now draw xts
         double m1(-1.0/0.0);
@@ -152,9 +153,9 @@ std::vector<double> APFSmoother::getWeights() const
 }
 
 
-std::vector<unsigned int> APFSmoother::kGen(const std::vector<double> &logFirstStageWeights)
+void APFSmoother::kGen(const std::vector<double> &logFirstStageWeights, std::vector<unsigned int> &ks)
 {
-    return m_resampler.kGen(logFirstStageWeights);
+    m_resampler.kGen(logFirstStageWeights, ks);
 }
 
 

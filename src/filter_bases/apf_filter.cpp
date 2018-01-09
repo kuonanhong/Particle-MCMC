@@ -111,7 +111,8 @@ void APFFilter::filter(const Vec &data, const std::vector<std::function<const Ma
         }
                
         // draw ks (indexes) (handles underflow issues)
-        std::vector<unsigned int> myKs = kGen(logFirstStageUnNormWeights); 
+        std::vector<unsigned int> myKs(m_numParts);
+        kGen(logFirstStageUnNormWeights, myKs); 
                 
         // now draw xts
         double m1(-1.0/0.0);
@@ -183,9 +184,9 @@ std::vector<double> APFFilter::getWeights() const
 }
 
 
-std::vector<unsigned int> APFFilter::kGen(const std::vector<double> &logFirstStageWeights)
+void APFFilter::kGen(const std::vector<double> &logFirstStageWeights, std::vector<unsigned int> &ks)
 {
-    return m_resampler.kGen(logFirstStageWeights);
+    m_resampler.kGen(logFirstStageWeights, ks);
 }
 
 
