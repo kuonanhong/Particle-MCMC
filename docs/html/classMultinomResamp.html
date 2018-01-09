@@ -138,25 +138,35 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aaddcbec4eb62954d8d7aa96c45ffd7d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMultinomResamp.html#aaddcbec4eb62954d8d7aa96c45ffd7d0">ressampHRBPF</a> (std::vector&lt; <a class="el" href="classFSHMM.html">FSHMM</a> &gt; &amp;oldMods, std::vector&lt; <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &gt; &amp;oldSamps, std::vector&lt; double &gt; &amp;oldWts)</td></tr>
 <tr class="memdesc:aaddcbec4eb62954d8d7aa96c45ffd7d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to resample for RBPFs&ndash;you have to resample the samples AND models.  <a href="#aaddcbec4eb62954d8d7aa96c45ffd7d0">More...</a><br /></td></tr>
 <tr class="separator:aaddcbec4eb62954d8d7aa96c45ffd7d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74c84e7b6b88eb1f6e1a0c77d734d7cf"><td class="memItemLeft" align="right" valign="top">std::vector&lt; unsigned int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMultinomResamp.html#a74c84e7b6b88eb1f6e1a0c77d734d7cf">kGen</a> (const std::vector&lt; double &gt; &amp;logFirstStageWeights)</td></tr>
-<tr class="memdesc:a74c84e7b6b88eb1f6e1a0c77d734d7cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to sample random indices. Used inside APFs.  <a href="#a74c84e7b6b88eb1f6e1a0c77d734d7cf">More...</a><br /></td></tr>
-<tr class="separator:a74c84e7b6b88eb1f6e1a0c77d734d7cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8112ff1114963723e24a1eed4a9f3efb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMultinomResamp.html#a8112ff1114963723e24a1eed4a9f3efb">kGen</a> (const std::vector&lt; double &gt; &amp;logFirstStageWeights, std::vector&lt; unsigned int &gt; &amp;ks)</td></tr>
+<tr class="memdesc:a8112ff1114963723e24a1eed4a9f3efb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to sample random indices. Used inside APFs.  <a href="#a8112ff1114963723e24a1eed4a9f3efb">More...</a><br /></td></tr>
+<tr class="separator:a8112ff1114963723e24a1eed4a9f3efb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A class for Multinomial Resampling. </p>
 <dl class="section author"><dt>Author</dt><dd>taylor </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>07/09/17 </dd></dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a74c84e7b6b88eb1f6e1a0c77d734d7cf"></a>
+<a class="anchor" id="a8112ff1114963723e24a1eed4a9f3efb"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;unsigned int&gt; MultinomResamp::kGen </td>
+          <td class="memname">void MultinomResamp::kGen </td>
           <td>(</td>
           <td class="paramtype">const std::vector&lt; double &gt; &amp;&#160;</td>
-          <td class="paramname"><em>logFirstStageWeights</em></td><td>)</td>
+          <td class="paramname"><em>logFirstStageWeights</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">std::vector&lt; unsigned int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>ks</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -165,10 +175,10 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">logFirstStageWeights</td><td>first-stage weights for first stage of proposal distribution in APF </td></tr>
+    <tr><td class="paramname">ks</td><td>the "returned" indices of type std::vector&lt;unsigned int&gt; </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A std::vector of integer indices. </dd></dl>
 
 </div>
 </div>

@@ -76,7 +76,7 @@ public:
     /**
      * @brief Function to sample random indices. Used inside APFs.
      * @param logFirstStageWeights first-stage weights for first stage of proposal distribution in APF
-     * @return A std::vector of integer indices.
+     * @param ks the "returned" indices of type std::vector<unsigned int>
      */
     void kGen(const std::vector<double> &logFirstStageWeights, std::vector<unsigned int> &ks);
 };

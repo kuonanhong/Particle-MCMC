@@ -35,8 +35,8 @@ virtual double \hyperlink{classBSFilter_a4d2bc2a2530306abaf1a717596b5814d}{log\+
 \begin{DoxyCompactList}\small\item\em Calculate q1\+Ev or log q1\+Ev. \end{DoxyCompactList}\item 
 virtual double \hyperlink{classBSFilter_aa612efc58f9442a7f6401a5edf0c2799}{log\+G\+Ev} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&yt, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&xt)=0
 \begin{DoxyCompactList}\small\item\em Calculate g\+Ev or log\+G\+Ev. \end{DoxyCompactList}\item 
-virtual \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \hyperlink{classBSFilter_ac23ed2dc31035a7b1f5e1ce21ac66869}{q\+Samp} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&xtm1, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&yt)=0
-\begin{DoxyCompactList}\small\item\em Sample from the proposal distribution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+virtual \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \hyperlink{classBSFilter_ad1cc178c82a518832200949ca4e3d6f6}{f\+Samp} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&xtm1)=0
+\begin{DoxyCompactList}\small\item\em Sample from the state transition distribution. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -95,6 +95,25 @@ If storing whole paths, performs smoothing. If not storing whole paths, performs
 {\em fs} & is a vector of functions that operate on each particle Vec. They are used to store empirical expectations (taken with respect to the filtering distribution). \\
 \hline
 \end{DoxyParams}
+\index{B\+S\+Filter@{B\+S\+Filter}!f\+Samp@{f\+Samp}}
+\index{f\+Samp@{f\+Samp}!B\+S\+Filter@{B\+S\+Filter}}
+\subsubsection[{\texorpdfstring{f\+Samp(const Vec \&xtm1)=0}{fSamp(const Vec &xtm1)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Vec} B\+S\+Filter\+::f\+Samp (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vec} \&}]{xtm1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classBSFilter_ad1cc178c82a518832200949ca4e3d6f6}{}\label{classBSFilter_ad1cc178c82a518832200949ca4e3d6f6}
+
+
+Sample from the state transition distribution. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xtm1} & is a const Vec\& describing the time t-\/1 state \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the sample as a Vec 
+\end{DoxyReturn}
 \index{B\+S\+Filter@{B\+S\+Filter}!get\+E\+SS@{get\+E\+SS}}
 \index{get\+E\+SS@{get\+E\+SS}!B\+S\+Filter@{B\+S\+Filter}}
 \subsubsection[{\texorpdfstring{get\+E\+S\+S() const }{getESS() const }}]{\setlength{\rightskip}{0pt plus 5cm}double B\+S\+Filter\+::get\+E\+SS (
@@ -228,28 +247,6 @@ Samples from time 1 proposal.
 
 \begin{DoxyParams}{Parameters}
 {\em y1} & is a const Vec\& representing the first observed datum \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-the sample as a Vec 
-\end{DoxyReturn}
-\index{B\+S\+Filter@{B\+S\+Filter}!q\+Samp@{q\+Samp}}
-\index{q\+Samp@{q\+Samp}!B\+S\+Filter@{B\+S\+Filter}}
-\subsubsection[{\texorpdfstring{q\+Samp(const Vec \&xtm1, const Vec \&yt)=0}{qSamp(const Vec &xtm1, const Vec &yt)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Vec} B\+S\+Filter\+::q\+Samp (
-\begin{DoxyParamCaption}
-\item[{const {\bf Vec} \&}]{xtm1, }
-\item[{const {\bf Vec} \&}]{yt}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classBSFilter_ac23ed2dc31035a7b1f5e1ce21ac66869}{}\label{classBSFilter_ac23ed2dc31035a7b1f5e1ce21ac66869}
-
-
-Sample from the proposal distribution. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em xtm1} & is a const Vec\& describing the time t-\/1 state \\
-\hline
-{\em yt} & is a const Vec\& describing the time t datum \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

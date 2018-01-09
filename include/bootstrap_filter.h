@@ -132,12 +132,11 @@ public:
     
     //!
     /**
-     * @brief Sample from the proposal distribution
+     * @brief Sample from the state transition distribution
      * @param xtm1 is a const Vec& describing the time t-1 state
-     * @param yt is a const Vec& describing the time t datum
      * @return the sample as a Vec
      */
-    virtual Vec qSamp (const Vec &xtm1, const Vec &yt ) = 0;
+    virtual Vec fSamp (const Vec &xtm1) = 0;
 };
 
 #endif // SISRFILTER_H

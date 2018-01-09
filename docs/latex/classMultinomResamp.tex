@@ -26,7 +26,7 @@ void \hyperlink{classMultinomResamp_ad39c4f5d5460e3e4a2c56370c8dab39f}{ressamp\+
 \begin{DoxyCompactList}\small\item\em Function to resample R\+B\+P\+Fs--recall you have to resample the samples A\+ND models. \end{DoxyCompactList}\item 
 void \hyperlink{classMultinomResamp_aaddcbec4eb62954d8d7aa96c45ffd7d0}{ressamp\+H\+R\+B\+PF} (std\+::vector$<$ \hyperlink{classFSHMM}{F\+S\+H\+MM} $>$ \&old\+Mods, std\+::vector$<$ \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} $>$ \&old\+Samps, std\+::vector$<$ double $>$ \&old\+Wts)
 \begin{DoxyCompactList}\small\item\em Function to resample for R\+B\+P\+Fs--you have to resample the samples A\+ND models. \end{DoxyCompactList}\item 
-std\+::vector$<$ unsigned int $>$ \hyperlink{classMultinomResamp_a74c84e7b6b88eb1f6e1a0c77d734d7cf}{k\+Gen} (const std\+::vector$<$ double $>$ \&log\+First\+Stage\+Weights)
+void \hyperlink{classMultinomResamp_a8112ff1114963723e24a1eed4a9f3efb}{k\+Gen} (const std\+::vector$<$ double $>$ \&log\+First\+Stage\+Weights, std\+::vector$<$ unsigned int $>$ \&ks)
 \begin{DoxyCompactList}\small\item\em Function to sample random indices. Used inside A\+P\+Fs. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -44,11 +44,12 @@ taylor
 \subsection{Member Function Documentation}
 \index{Multinom\+Resamp@{Multinom\+Resamp}!k\+Gen@{k\+Gen}}
 \index{k\+Gen@{k\+Gen}!Multinom\+Resamp@{Multinom\+Resamp}}
-\subsubsection[{\texorpdfstring{k\+Gen(const std\+::vector$<$ double $>$ \&log\+First\+Stage\+Weights)}{kGen(const std::vector< double > &logFirstStageWeights)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$unsigned int$>$ Multinom\+Resamp\+::k\+Gen (
+\subsubsection[{\texorpdfstring{k\+Gen(const std\+::vector$<$ double $>$ \&log\+First\+Stage\+Weights, std\+::vector$<$ unsigned int $>$ \&ks)}{kGen(const std::vector< double > &logFirstStageWeights, std::vector< unsigned int > &ks)}}]{\setlength{\rightskip}{0pt plus 5cm}void Multinom\+Resamp\+::k\+Gen (
 \begin{DoxyParamCaption}
-\item[{const std\+::vector$<$ double $>$ \&}]{log\+First\+Stage\+Weights}
+\item[{const std\+::vector$<$ double $>$ \&}]{log\+First\+Stage\+Weights, }
+\item[{std\+::vector$<$ unsigned int $>$ \&}]{ks}
 \end{DoxyParamCaption}
-)}\hypertarget{classMultinomResamp_a74c84e7b6b88eb1f6e1a0c77d734d7cf}{}\label{classMultinomResamp_a74c84e7b6b88eb1f6e1a0c77d734d7cf}
+)}\hypertarget{classMultinomResamp_a8112ff1114963723e24a1eed4a9f3efb}{}\label{classMultinomResamp_a8112ff1114963723e24a1eed4a9f3efb}
 
 
 Function to sample random indices. Used inside A\+P\+Fs. 
@@ -57,10 +58,9 @@ Function to sample random indices. Used inside A\+P\+Fs.
 \begin{DoxyParams}{Parameters}
 {\em log\+First\+Stage\+Weights} & first-\/stage weights for first stage of proposal distribution in A\+PF \\
 \hline
+{\em ks} & the \char`\"{}returned\char`\"{} indices of type std\+::vector$<$unsigned int$>$ \\
+\hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-A std\+::vector of integer indices. 
-\end{DoxyReturn}
 \index{Multinom\+Resamp@{Multinom\+Resamp}!resamp\+Log\+Wts@{resamp\+Log\+Wts}}
 \index{resamp\+Log\+Wts@{resamp\+Log\+Wts}!Multinom\+Resamp@{Multinom\+Resamp}}
 \subsubsection[{\texorpdfstring{resamp\+Log\+Wts(std\+::vector$<$ std\+::vector$<$ Vec $>$ $>$ \&old\+Parts, std\+::vector$<$ double $>$ \&old\+Log\+Un\+Norm\+Wts)}{resampLogWts(std::vector< std::vector< Vec > > &oldParts, std::vector< double > &oldLogUnNormWts)}}]{\setlength{\rightskip}{0pt plus 5cm}void Multinom\+Resamp\+::resamp\+Log\+Wts (

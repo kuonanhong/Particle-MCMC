@@ -84,7 +84,7 @@ void BSFilter::filter(const Vec &dat, const std::vector<std::function<const Mat(
         for(size_t ii = 0; ii < m_numParts; ++ii)
         {
             // sample and get weight adjustments
-            newSamps[ii] = qSamp(m_particles[ii], dat);
+            newSamps[ii] = fSamp(m_particles[ii]);
             currentLogWtAdjIndiv = logGEv(dat, newSamps[ii]);
  
             // update max of old logUnNormWts
