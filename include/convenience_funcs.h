@@ -35,9 +35,9 @@ namespace convenience_funcs{
     /**
      * @brief reads in data in a csv file with no header and separates by commas. 
      * @param fileLoc the string filepath of the file.
-     * @param numCols the number of columns of data you're expecting.
+     * @return a std::vector of your data. Each elemenet is a row in Eigen::VectorXd form.
      */
-    std::vector<Vec> readInData(const std::string& fileLoc, unsigned int numCols);
+    std::vector<Vec> readInData(const std::string& fileLoc);
 
 
     
