@@ -2,18 +2,18 @@
 ## Auto Generated makefile by CodeLite IDE
 ## any manual changes will be erased      
 ##
-## Release
+## Debug
 ProjectName            :=ssm
-ConfigurationName      :=Release
+ConfigurationName      :=Debug
 WorkspacePath          :=/home/taylor/Documents/ssmworkspace
 ProjectPath            :=/home/taylor/ssm
-IntermediateDirectory  :=./Release
+IntermediateDirectory  :=./Debug
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=taylor
-Date                   :=09/01/18
+Date                   :=16/01/18
 CodeLitePath           :=/home/taylor/.codelite
 LinkerName             :=/usr/bin/x86_64-linux-gnu-g++
 SharedObjectLinkerName :=/usr/bin/x86_64-linux-gnu-g++ -shared -fPIC
@@ -50,8 +50,8 @@ LibPath                := $(LibraryPathSwitch).
 AR       := /usr/bin/x86_64-linux-gnu-ar rcu
 CXX      := /usr/bin/x86_64-linux-gnu-g++
 CC       := /usr/bin/x86_64-linux-gnu-gcc
-CXXFLAGS :=  -pg -O3 -std=c++11 $(Preprocessors)
-CFLAGS   :=   $(Preprocessors)
+CXXFLAGS :=  -g -std=c++11 -Wall $(Preprocessors)
+CFLAGS   :=  -g $(Preprocessors)
 ASFLAGS  := 
 AS       := /usr/bin/x86_64-linux-gnu-as
 
@@ -78,15 +78,15 @@ $(OutputFile): $(Objects)
 	@echo "" > $(IntermediateDirectory)/.d
 	@echo $(Objects0)  > $(ObjectsFileList)
 	$(AR) $(ArchiveOutputSwitch)$(OutputFile) @$(ObjectsFileList) $(ArLibs)
-	@$(MakeDirCommand) "/home/taylor/Documents/ssmworkspace/.build-release"
-	@echo rebuilt > "/home/taylor/Documents/ssmworkspace/.build-release/ssm"
+	@$(MakeDirCommand) "/home/taylor/Documents/ssmworkspace/.build-debug"
+	@echo rebuilt > "/home/taylor/Documents/ssmworkspace/.build-debug/ssm"
 
 MakeIntermediateDirs:
-	@test -d ./Release || $(MakeDirCommand) ./Release
+	@test -d ./Debug || $(MakeDirCommand) ./Debug
 
 
-./Release:
-	@test -d ./Release || $(MakeDirCommand) ./Release
+./Debug:
+	@test -d ./Debug || $(MakeDirCommand) ./Debug
 
 PreBuild:
 
@@ -228,6 +228,6 @@ $(IntermediateDirectory)/src_mcmc_bases_pmmh.cpp$(PreprocessSuffix): src/mcmc_ba
 ## Clean
 ##
 clean:
-	$(RM) -r ./Release/
+	$(RM) -r ./Debug/
 
 

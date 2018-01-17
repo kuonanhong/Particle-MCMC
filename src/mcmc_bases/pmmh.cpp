@@ -6,11 +6,10 @@
 #include "densities.h"
 #include "convenience_funcs.h"
 
-#include <iostream>
 Pmmh::Pmmh(const std::vector<Vec> &startTheta, unsigned numMCMCIters, const std::string &dataFile, unsigned numCols, bool mc) : 
-        m_numMCMCIters(numMCMCIters), m_multicore(mc), m_dimTheta(0), m_currentTheta(startTheta), m_numAcceptances(0.0)
+        m_currentTheta(startTheta), m_dimTheta(0), m_numMCMCIters(numMCMCIters), m_multicore(mc), m_numAcceptances(0.0)
 {
-    m_data = convenience_funcs::readInData(dataFile, numCols);
+    m_data = convenience_funcs::readInData(dataFile);//, numCols);
     m_numExtraThreads = std::thread::hardware_concurrency() - 1;
     for(size_t i = 0; i < startTheta.size(); ++i)
         m_dimTheta += startTheta[i].rows();
