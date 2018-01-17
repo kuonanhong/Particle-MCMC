@@ -42,4 +42,10 @@ include2/
 src/mcmc_bases2/
 Debug/
 Release/
+.RData
+.Rhistory
+
+# codelite stuff
 *.mk
+*.project
+*.txt
