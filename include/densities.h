@@ -54,6 +54,20 @@ double evalUnivNorm(const double &x, const double &mu, const double &sigma, bool
  */
 double evalMultivNorm(const Vec &x, const Vec &meanVec, const Mat &covMat, bool log = false);
 
+
+/**
+ * @brief Evaluates the multivariate Normal density using the Woodbury Matrix Identity to speed up inversion. 
+ * Sigma = A + UCU'. This function assumes A is diagonal and C is symmetric.
+ * @param x the point you're evaluating at.
+ * @param meanVec the mean vector.
+ * @param A  of A + UCU' in vector form because we explicitly make it diagonal.
+ * @param U of A + UCU'
+ * @param C of A + UCU'
+ * @param log true if you want to return the log density. False otherwise.
+ * @return a double evaluation.
+ */
+double evalMultivNormWBDA(const Vec &x, const Vec &meanVec, const Vec &A, const Mat &U, const Mat &C, bool log = false);
+
 /**
  * @brief Evaluates the univariate Beta density
  * @param x the point

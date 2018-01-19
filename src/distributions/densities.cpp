@@ -55,6 +55,38 @@ double densities::evalMultivNorm(const Vec &x, const Vec &meanVec, const Mat &co
 
 }
 
+double densities::evalMultivNormWBDA(const Vec &x, const Vec &meanVec, const Vec &A, const Mat &U, const Mat &C, bool log)
+{
+    Mat Ainv = A.asDiagonal().inverse();
+    Mat Cinv = C.inverse();
+    Mat invThing = (Cinv + U.transpose()*Ainv*U).inverse();
+    Mat SigInv = Ainv - Ainv*U*invThing*U.transpose()*Ainv;
+    double quadform = (x-meanVec).transpose() * SigInv * (x-meanVec);
+    
+    if (log){
+
+        // calculate log-determinant using cholesky decomposition (assumes symmetric and positive definite)
+        double halfld (0.0);
+        Eigen::LLT<Mat> lltSigInv(SigInv);
+
+  
+        Mat L = lltSigInv.matrixL(); // the lower diagonal L such that SigInv = LL^T
+
+        // add up log of diagnols of Cholesky L
+        for(size_t i = 0; i < SigInv.rows(); ++i){
+            halfld += std::log(L(i,i));
+        }
+
+        return -.5*log_two_pi * SigInv.rows() + halfld - .5*quadform;
+
+
+    }else{  // not the log density
+        double normConst = std::pow(inv_sqrt_2pi, SigInv.rows()) * std::pow(SigInv.determinant(), .5);
+        return normConst * std::exp(-.5* quadform);
+    }
+}
+
+
 
 double densities::evalUnivBeta(const double &x, const double &alpha, const double &beta, bool log)
 {
