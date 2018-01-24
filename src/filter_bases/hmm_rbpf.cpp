@@ -151,5 +151,5 @@ void Hmm_Rbpf::resampMultinomHRBPF(std::vector<FSHMM> &oldMods,
                                     std::vector<Vec> &oldSamps, 
                                     std::vector<double> &oldLogWts)
 {
-    m_resampler.ressampHRBPF(oldMods, oldSamps, oldLogWts);
+    m_resampler.resampHRBPF(oldMods, oldSamps, oldLogWts);
 }

@@ -59,18 +59,18 @@ public:
       * @brief Function to resample RBPFs--recall you have to resample the samples AND models.
       * @param oldMods embedded kalman filter objects.
       * @param oldSamps samples of each particle.
-      * @param oldWts un-normalized weights of each particle.
+      * @param oldLogWts log un-normalized weights of each particle.
       */
-    void ressampKRBPF(std::vector<Lgssm> &oldMods, std::vector<Vec> &oldSamps, std::vector<double> &oldWts);
+    void resampKRBPF(std::vector<Lgssm> &oldMods, std::vector<Vec> &oldSamps, std::vector<double> &oldLogWts);
     
     
     /**
       * @brief Function to resample for RBPFs--you have to resample the samples AND models.
       * @param oldMods embedded HMM filter objects.
       * @param oldSamps samples of each particle.
-      * @param oldWts un-normalized weights of each particle.
+      * @param oldLogUnNormWts log un-normalized weights of each particle.
       */
-    void ressampHRBPF(std::vector<FSHMM> &oldMods, std::vector<Vec> &oldSamps, std::vector<double> &oldWts);
+    void resampHRBPF(std::vector<FSHMM> &oldMods, std::vector<Vec> &oldSamps, std::vector<double> &oldLogUnNormWts);
 
 
     /**

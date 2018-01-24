@@ -115,5 +115,5 @@ void Kalman_RBPF::ressampMultinomKRBPF(std::vector<Lgssm> &oldMods,
                                        std::vector<Vec> &oldSamps, 
                                        std::vector<double> &oldWts)
 {
-    m_resampler.ressampKRBPF(oldMods, oldSamps, oldWts);
+    m_resampler.resampKRBPF(oldMods, oldSamps, oldWts);
 }

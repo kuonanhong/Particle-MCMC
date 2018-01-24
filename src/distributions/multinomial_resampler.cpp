@@ -90,26 +90,26 @@ void MultinomResamp::resampLogWts(std::vector<Vec> &oldParts, std::vector<double
 }
 
 
-void MultinomResamp::ressampKRBPF(std::vector<Lgssm> &oldMods, std::vector<Vec> &oldSamps, std::vector<double> &oldWts)
+void MultinomResamp::resampKRBPF(std::vector<Lgssm> &oldMods, std::vector<Vec> &oldSamps, std::vector<double> &oldLogWts)
 {
-    // check to make sure the weights aren't all 0.0!
-    if( std::accumulate(oldWts.begin(), oldWts.end(), 0.0) == 0.0){
-        throw std::runtime_error("oldWts ARE ALL 0");
-    }
-    
     // get dimensions
-    int numParticles = oldWts.size();
+    int numParticles = oldLogWts.size();
     
-    // Create the distribution with those weights
-    std::discrete_distribution<> idxSampler(oldWts.begin(), oldWts.end());
+    // Create the distribution with exponentiated log-weights
+    std::vector<double> w;
+    w.resize(oldLogWts.size());
+    double m = *std::max_element(oldLogWts.begin(), oldLogWts.end());
+    std::transform(oldLogWts.begin(), oldLogWts.end(), w.begin(), 
+                    [&m](double& d) -> double { return std::exp( d - m ); } );
+    std::discrete_distribution<> idxSampler(w.begin(), w.end());
     
     // create temporary vectors for samps and mods
     std::vector<Vec>   tmpSamps(numParticles);
     std::vector<Lgssm> tmpMods(numParticles);
     
     // sample from the original parts and store in temporary
-    int whichPart;
-    for(int part = 0; part < numParticles; ++part)
+    unsigned int whichPart;
+    for(size_t part = 0; part < numParticles; ++part)
     {
         whichPart = idxSampler(m_gen);
         tmpSamps[part] = oldSamps[whichPart];
@@ -117,15 +117,13 @@ void MultinomResamp::ressampKRBPF(std::vector<Lgssm> &oldMods, std::vector<Vec> 
     }
     
     //overwrite olds with news
-    std::swap (oldMods, tmpMods);
-    std::swap (oldSamps, tmpSamps);
-    
-    // re-write weights to all 1s
-    std::fill (oldWts.begin(), oldWts.end(), 1.0);
+    oldMods = std::move(tmpMods);
+    oldSamps = std::move(tmpSamps);
+    std::fill (oldLogWts.begin(), oldLogWts.end(), 0.0);
 }
 
 
-void MultinomResamp::ressampHRBPF(std::vector<FSHMM> &oldMods, std::vector<Vec> &oldSamps, std::vector<double> &oldLogUnNormWts)
+void MultinomResamp::resampHRBPF(std::vector<FSHMM> &oldMods, std::vector<Vec> &oldSamps, std::vector<double> &oldLogUnNormWts)
 {
     // get dimensions
     unsigned numParticles = oldLogUnNormWts.size();
@@ -157,8 +155,6 @@ void MultinomResamp::ressampHRBPF(std::vector<FSHMM> &oldMods, std::vector<Vec> 
     //overwrite olds with news
     oldMods = std::move(tmpMods);
     oldSamps = std::move(tmpSamps);
-    
-    // re-write weights to all 1s
     std::fill(oldLogUnNormWts.begin(), oldLogUnNormWts.end(), 0.0);
 }
 
