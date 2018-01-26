@@ -114,14 +114,14 @@ $(document).ready(function(){initNavTree('sisr__filter_8h.html','');});
 <p>A base-class for Sequential Importance Sampling with Resampling. Inherit from this if you want to use a SISR for your state space model. Filtering only; no smoothing.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;Eigen/Dense&gt;</code><br />
-<code>#include &quot;<a class="el" href="multinomial__resampler_8h_source.html">multinomial_resampler.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="mn__resampler_8h_source.html">mn_resampler.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for sisr_filter.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="sisr__filter_8h__incl.png" border="0" usemap="#include_2sisr__filter_8h" alt=""/></div>
 <map name="include_2sisr__filter_8h" id="include_2sisr__filter_8h">
-<area shape="rect" id="node3" href="multinomial__resampler_8h.html" title="A class used for all the multinomial resampling in any model. Keep in mind this is usually implemente..." alt="" coords="226,80,389,107"/>
-<area shape="rect" id="node7" href="lgssm_8h_source.html" title="lgssm.h" alt="" coords="413,155,481,181"/>
+<area shape="rect" id="node3" href="mn__resampler_8h.html" title="A class used for all the multinomial resampling in any model. Keep in mind this is usually implemente..." alt="" coords="242,80,357,107"/>
+<area shape="rect" id="node7" href="lgssm_8h_source.html" title="lgssm.h" alt="" coords="405,155,473,181"/>
 <area shape="rect" id="node9" href="fshmm_8h_source.html" title="fshmm.h" alt="" coords="5,155,79,181"/>
 </map>
 </div>
@@ -130,7 +130,7 @@ Include dependency graph for sisr_filter.h:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSISRFilter.html">SISRFilter</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSISRFilter.html">SISRFilter&lt; N &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A base-class for Sequential Importance Sampling with Resampling. Filtering only; no smoothing.  <a href="classSISRFilter.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -157,6 +157,12 @@ Enumerations</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A base-class for Sequential Importance Sampling with Resampling. Inherit from this if you want to use a SISR for your state space model. Filtering only; no smoothing. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">N</td><td>the number of particles </td></tr>
+  </table>
+  </dd>
+</dl>
 </div><h2 class="groupheader">Typedef Documentation</h2>
 <a class="anchor" id="ae601f56a556993079f730483c574356f"></a>
 <div class="memitem">

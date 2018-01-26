@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>ssm: BSFilter Class Reference</title>
+<title>ssm: BSFilter&lt; N &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -107,73 +107,66 @@ $(document).ready(function(){initNavTree('classBSFilter.html','');});
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classBSFilter-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">BSFilter Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+<div class="title">BSFilter&lt; N &gt; Class Template Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>A base-class for Bootstrap Filtering (SISR with naive proposals). This class is a bit faster because it.  
+<p>A base class for the boostrap particle filter.  
  <a href="classBSFilter.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="bootstrap__filter_8h_source.html">bootstrap_filter.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae10863380da750be1a5d506483743353"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBSFilter.html#ae10863380da750be1a5d506483743353">BSFilter</a> (unsigned int numParts, <a class="el" href="bootstrap__filter_8h.html#a476b3b5754056a34ac843629c9570b49">BSResampStyle</a> resampTechnique=BSResampStyle::everytime_multinomial, double essPerc=1.0)</td></tr>
-<tr class="memdesc:ae10863380da750be1a5d506483743353"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#ae10863380da750be1a5d506483743353">More...</a><br /></td></tr>
-<tr class="separator:ae10863380da750be1a5d506483743353"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff30bee4608cadfda7dd49a0d57bb39c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aff30bee4608cadfda7dd49a0d57bb39c"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBSFilter.html#aff30bee4608cadfda7dd49a0d57bb39c">~BSFilter</a> ()</td></tr>
-<tr class="memdesc:aff30bee4608cadfda7dd49a0d57bb39c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
-<tr class="separator:aff30bee4608cadfda7dd49a0d57bb39c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e3791db4cea7b21a6cb135220823cc2"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBSFilter.html#a1e3791db4cea7b21a6cb135220823cc2">getLogCondLike</a> () const </td></tr>
-<tr class="memdesc:a1e3791db4cea7b21a6cb135220823cc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">get log p(y_t|y_{1:t-1})$ or log p(y_1).  <a href="#a1e3791db4cea7b21a6cb135220823cc2">More...</a><br /></td></tr>
-<tr class="separator:a1e3791db4cea7b21a6cb135220823cc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade1e772ec74f4cf3ffaea84d466f26cc"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBSFilter.html#ade1e772ec74f4cf3ffaea84d466f26cc">getESS</a> () const </td></tr>
-<tr class="memdesc:ade1e772ec74f4cf3ffaea84d466f26cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">get effective sample size.  <a href="#ade1e772ec74f4cf3ffaea84d466f26cc">More...</a><br /></td></tr>
-<tr class="separator:ade1e772ec74f4cf3ffaea84d466f26cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e591e267bdaf681062ee11486acd88a"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="apf__filter_8h.html#ae601f56a556993079f730483c574356f">Mat</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBSFilter.html#a8e591e267bdaf681062ee11486acd88a">getExpectations</a> () const </td></tr>
-<tr class="memdesc:a8e591e267bdaf681062ee11486acd88a"><td class="mdescLeft">&#160;</td><td class="mdescRight">get all stored expectations. With respect to $p(x_t|y_{1:t})$  <a href="#a8e591e267bdaf681062ee11486acd88a">More...</a><br /></td></tr>
-<tr class="separator:a8e591e267bdaf681062ee11486acd88a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80aa1183f38d12b3a180ab6a143ab4fd"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBSFilter.html#a80aa1183f38d12b3a180ab6a143ab4fd">getLogUWeights</a> () const </td></tr>
-<tr class="memdesc:a80aa1183f38d12b3a180ab6a143ab4fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get log-un-normalized weights.  <a href="#a80aa1183f38d12b3a180ab6a143ab4fd">More...</a><br /></td></tr>
-<tr class="separator:a80aa1183f38d12b3a180ab6a143ab4fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3040c97a24838736e479ac4af219562"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBSFilter.html#ac3040c97a24838736e479ac4af219562">filter</a> (const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;data, const std::vector&lt; std::function&lt; const <a class="el" href="apf__filter_8h.html#ae601f56a556993079f730483c574356f">Mat</a>(const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;)&gt; &gt; &amp;fs=std::vector&lt; std::function&lt; const <a class="el" href="apf__filter_8h.html#ae601f56a556993079f730483c574356f">Mat</a>(const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;)&gt; &gt;())</td></tr>
-<tr class="memdesc:ac3040c97a24838736e479ac4af219562"><td class="mdescLeft">&#160;</td><td class="mdescRight">If storing whole paths, performs smoothing. If not storing whole paths, performs filtering.  <a href="#ac3040c97a24838736e479ac4af219562">More...</a><br /></td></tr>
-<tr class="separator:ac3040c97a24838736e479ac4af219562"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c1084627bfaf2f3ccf882fc23240b7a"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBSFilter.html#a1c1084627bfaf2f3ccf882fc23240b7a">logMuEv</a> (const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x1)=0</td></tr>
-<tr class="memdesc:a1c1084627bfaf2f3ccf882fc23240b7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate muEv or logmuEv.  <a href="#a1c1084627bfaf2f3ccf882fc23240b7a">More...</a><br /></td></tr>
-<tr class="separator:a1c1084627bfaf2f3ccf882fc23240b7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9792df8f9b13495bc8bdcc53adeae347"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBSFilter.html#a9792df8f9b13495bc8bdcc53adeae347">q1Samp</a> (const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;y1)=0</td></tr>
-<tr class="memdesc:a9792df8f9b13495bc8bdcc53adeae347"><td class="mdescLeft">&#160;</td><td class="mdescRight">Samples from time 1 proposal.  <a href="#a9792df8f9b13495bc8bdcc53adeae347">More...</a><br /></td></tr>
-<tr class="separator:a9792df8f9b13495bc8bdcc53adeae347"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d2bc2a2530306abaf1a717596b5814d"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBSFilter.html#a4d2bc2a2530306abaf1a717596b5814d">logQ1Ev</a> (const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x1, const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;y1)=0</td></tr>
-<tr class="memdesc:a4d2bc2a2530306abaf1a717596b5814d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate q1Ev or log q1Ev.  <a href="#a4d2bc2a2530306abaf1a717596b5814d">More...</a><br /></td></tr>
-<tr class="separator:a4d2bc2a2530306abaf1a717596b5814d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa612efc58f9442a7f6401a5edf0c2799"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBSFilter.html#aa612efc58f9442a7f6401a5edf0c2799">logGEv</a> (const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;yt, const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;xt)=0</td></tr>
-<tr class="memdesc:aa612efc58f9442a7f6401a5edf0c2799"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate gEv or logGEv.  <a href="#aa612efc58f9442a7f6401a5edf0c2799">More...</a><br /></td></tr>
-<tr class="separator:aa612efc58f9442a7f6401a5edf0c2799"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1cc178c82a518832200949ca4e3d6f6"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBSFilter.html#ad1cc178c82a518832200949ca4e3d6f6">fSamp</a> (const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;xtm1)=0</td></tr>
-<tr class="memdesc:ad1cc178c82a518832200949ca4e3d6f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sample from the state transition distribution.  <a href="#ad1cc178c82a518832200949ca4e3d6f6">More...</a><br /></td></tr>
-<tr class="separator:ad1cc178c82a518832200949ca4e3d6f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f94bc98a11cb80763a7bdc1dd86c279"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBSFilter.html#a4f94bc98a11cb80763a7bdc1dd86c279">BSFilter</a> (<a class="el" href="bootstrap__filter_8h.html#a476b3b5754056a34ac843629c9570b49">BSResampStyle</a> resampTechnique=BSResampStyle::everytime_multinomial, double essPerc=1.0)</td></tr>
+<tr class="memdesc:a4f94bc98a11cb80763a7bdc1dd86c279"><td class="mdescLeft">&#160;</td><td class="mdescRight">The constructor.  <a href="#a4f94bc98a11cb80763a7bdc1dd86c279">More...</a><br /></td></tr>
+<tr class="separator:a4f94bc98a11cb80763a7bdc1dd86c279"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a874cdf362ca780a5afeb4b3da3210244"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a874cdf362ca780a5afeb4b3da3210244"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBSFilter.html#a874cdf362ca780a5afeb4b3da3210244">~BSFilter</a> ()</td></tr>
+<tr class="memdesc:a874cdf362ca780a5afeb4b3da3210244"><td class="mdescLeft">&#160;</td><td class="mdescRight">The destructor. <br /></td></tr>
+<tr class="separator:a874cdf362ca780a5afeb4b3da3210244"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8db158adf8136ade250d243a289154a8"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBSFilter.html#a8db158adf8136ade250d243a289154a8">getLogCondLike</a> () const </td></tr>
+<tr class="memdesc:a8db158adf8136ade250d243a289154a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the most recent (log-) conditiona likelihood.  <a href="#a8db158adf8136ade250d243a289154a8">More...</a><br /></td></tr>
+<tr class="separator:a8db158adf8136ade250d243a289154a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38dbc8460036319a676926e5f0240249"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBSFilter.html#a38dbc8460036319a676926e5f0240249">filter</a> (const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;data, const std::vector&lt; std::function&lt; const <a class="el" href="apf__filter_8h.html#ae601f56a556993079f730483c574356f">Mat</a>(const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;)&gt; &gt; &amp;fs=std::vector&lt; std::function&lt; const <a class="el" href="apf__filter_8h.html#ae601f56a556993079f730483c574356f">Mat</a>(const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;)&gt; &gt;())</td></tr>
+<tr class="memdesc:a38dbc8460036319a676926e5f0240249"><td class="mdescLeft">&#160;</td><td class="mdescRight">updates filtering distribution on a new datapoint.  <a href="#a38dbc8460036319a676926e5f0240249">More...</a><br /></td></tr>
+<tr class="separator:a38dbc8460036319a676926e5f0240249"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad9844b6cf839b99db2b29556a225f75"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="apf__filter_8h.html#ae601f56a556993079f730483c574356f">Mat</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBSFilter.html#aad9844b6cf839b99db2b29556a225f75">getExpectations</a> () const </td></tr>
+<tr class="memdesc:aad9844b6cf839b99db2b29556a225f75"><td class="mdescLeft">&#160;</td><td class="mdescRight">return all stored expectations (taken with respect to $p(x_t|y_{1:t})$  <a href="#aad9844b6cf839b99db2b29556a225f75">More...</a><br /></td></tr>
+<tr class="separator:aad9844b6cf839b99db2b29556a225f75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9317b6253d10ee5b50f68515ae7a5cb7"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBSFilter.html#a9317b6253d10ee5b50f68515ae7a5cb7">logMuEv</a> (const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x1)=0</td></tr>
+<tr class="memdesc:a9317b6253d10ee5b50f68515ae7a5cb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate muEv or logmuEv.  <a href="#a9317b6253d10ee5b50f68515ae7a5cb7">More...</a><br /></td></tr>
+<tr class="separator:a9317b6253d10ee5b50f68515ae7a5cb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a981b7de2820c496508f7fe23723add06"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBSFilter.html#a981b7de2820c496508f7fe23723add06">q1Samp</a> (const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;y1)=0</td></tr>
+<tr class="memdesc:a981b7de2820c496508f7fe23723add06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Samples from time 1 proposal.  <a href="#a981b7de2820c496508f7fe23723add06">More...</a><br /></td></tr>
+<tr class="separator:a981b7de2820c496508f7fe23723add06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a50ae948bee94114567ca798c8e6f1f"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBSFilter.html#a9a50ae948bee94114567ca798c8e6f1f">logQ1Ev</a> (const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x1, const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;y1)=0</td></tr>
+<tr class="memdesc:a9a50ae948bee94114567ca798c8e6f1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate q1Ev or log q1Ev.  <a href="#a9a50ae948bee94114567ca798c8e6f1f">More...</a><br /></td></tr>
+<tr class="separator:a9a50ae948bee94114567ca798c8e6f1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7ee72e08ab3c0e6ae66f3210a0f18d4"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBSFilter.html#ae7ee72e08ab3c0e6ae66f3210a0f18d4">logGEv</a> (const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;yt, const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;xt)=0</td></tr>
+<tr class="memdesc:ae7ee72e08ab3c0e6ae66f3210a0f18d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate gEv or logGEv.  <a href="#ae7ee72e08ab3c0e6ae66f3210a0f18d4">More...</a><br /></td></tr>
+<tr class="separator:ae7ee72e08ab3c0e6ae66f3210a0f18d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d4caf998045f89a6887c3113c5c38f9"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBSFilter.html#a3d4caf998045f89a6887c3113c5c38f9">fSamp</a> (const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;xtm1)=0</td></tr>
+<tr class="memdesc:a3d4caf998045f89a6887c3113c5c38f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sample from the state transition distribution.  <a href="#a3d4caf998045f89a6887c3113c5c38f9">More...</a><br /></td></tr>
+<tr class="separator:a3d4caf998045f89a6887c3113c5c38f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A base-class for Bootstrap Filtering (SISR with naive proposals). This class is a bit faster because it. </p>
+<div class="textblock"><h3>template&lt;size_t N&gt;<br />
+class BSFilter&lt; N &gt;</h3>
+
+<p>A base class for the boostrap particle filter. </p>
 <dl class="section author"><dt>Author</dt><dd>taylor </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>07/09/17 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>26/01/18 </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ae10863380da750be1a5d506483743353"></a>
+<a class="anchor" id="a4f94bc98a11cb80763a7bdc1dd86c279"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;size_t N&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">BSFilter::BSFilter </td>
+          <td class="memname"><a class="el" href="classBSFilter.html">BSFilter</a>&lt; N &gt;::<a class="el" href="classBSFilter.html">BSFilter</a> </td>
           <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>numParts</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype"><a class="el" href="bootstrap__filter_8h.html#a476b3b5754056a34ac843629c9570b49">BSResampStyle</a>&#160;</td>
           <td class="paramname"><em>resampTechnique</em> = <code>BSResampStyle::everytime_multinomial</code>, </td>
         </tr>
@@ -191,12 +184,11 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Constructor. </p>
+<p>The constructor. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">numParts</td><td>number of particles </td></tr>
-    <tr><td class="paramname">resampTechnique</td><td>which resampling strategy? </td></tr>
-    <tr><td class="paramname">essPerc</td><td>ignored unless SISRResampStyle is "ess." What percent of ESS is the threshold for resampling. </td></tr>
+    <tr><td class="paramname">resampTechnique</td><td>the type of resampling you want to do </td></tr>
+    <tr><td class="paramname">essPerc</td><td>the effective sample size percent threshold, below which you want to resample. </td></tr>
   </table>
   </dd>
 </dl>
@@ -204,12 +196,14 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="ac3040c97a24838736e479ac4af219562"></a>
+<a class="anchor" id="a38dbc8460036319a676926e5f0240249"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;size_t N&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void BSFilter::filter </td>
+          <td class="memname">void <a class="el" href="classBSFilter.html">BSFilter</a>&lt; N &gt;::filter </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>data</em>, </td>
@@ -218,7 +212,7 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const std::vector&lt; std::function&lt; const <a class="el" href="apf__filter_8h.html#ae601f56a556993079f730483c574356f">Mat</a>(const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;)&gt; &gt; &amp;&#160;</td>
-          <td class="paramname"><em>fs</em> = <code>std::vector&lt;&#160;std::function&lt;&#160;const&#160;<a class="el" href="apf__filter_8h.html#ae601f56a556993079f730483c574356f">Mat</a>(const&#160;<a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>&#160;&amp;)&gt;&#160;&gt;()</code>&#160;</td>
+          <td class="paramname"><em>fs</em> = <code>std::vector&lt;std::function&lt;const&#160;<a class="el" href="apf__filter_8h.html#ae601f56a556993079f730483c574356f">Mat</a>(const&#160;<a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>&amp;)&gt;&#160;&gt;()</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -228,26 +222,28 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>If storing whole paths, performs smoothing. If not storing whole paths, performs filtering. </p>
+<p>updates filtering distribution on a new datapoint. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>is a const Vec&amp; representing the current observed value of the time series. </td></tr>
-    <tr><td class="paramname">fs</td><td>is a vector of functions that operate on each particle Vec. They are used to store empirical expectations (taken with respect to the filtering distribution). </td></tr>
+    <tr><td class="paramname">data</td><td>the most recent data point </td></tr>
+    <tr><td class="paramname">fs</td><td>a vector of functions if you want to calculate expectations. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="ad1cc178c82a518832200949ca4e3d6f6"></a>
+<a class="anchor" id="a3d4caf998045f89a6887c3113c5c38f9"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;size_t N&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> BSFilter::fSamp </td>
+          <td class="memname">virtual <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> <a class="el" href="classBSFilter.html">BSFilter</a>&lt; N &gt;::fSamp </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>xtm1</em></td><td>)</td>
@@ -272,12 +268,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ade1e772ec74f4cf3ffaea84d466f26cc"></a>
+<a class="anchor" id="aad9844b6cf839b99db2b29556a225f75"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;size_t N&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">double BSFilter::getESS </td>
+          <td class="memname">std::vector&lt; <a class="el" href="apf__filter_8h.html#ae601f56a556993079f730483c574356f">Mat</a> &gt; <a class="el" href="classBSFilter.html">BSFilter</a>&lt; N &gt;::getExpectations </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -285,17 +283,19 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>get effective sample size. </p>
-<dl class="section return"><dt>Returns</dt><dd>The current estimate for the effective sample size. </dd></dl>
+<p>return all stored expectations (taken with respect to $p(x_t|y_{1:t})$ </p>
+<dl class="section return"><dt>Returns</dt><dd>return a std::vector&lt;Mat&gt; of expectations. How many depends on how many callbacks you gave to </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a8e591e267bdaf681062ee11486acd88a"></a>
+<a class="anchor" id="a8db158adf8136ade250d243a289154a8"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;size_t N&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="apf__filter_8h.html#ae601f56a556993079f730483c574356f">Mat</a>&gt; BSFilter::getExpectations </td>
+          <td class="memname">double <a class="el" href="classBSFilter.html">BSFilter</a>&lt; N &gt;::getLogCondLike </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -303,56 +303,22 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>get all stored expectations. With respect to $p(x_t|y_{1:t})$ </p>
-<dl class="section return"><dt>Returns</dt><dd>returns a std::vector&lt;Mat&gt; of all of the approximated expectations. </dd></dl>
+<p>Returns the most recent (log-) conditiona likelihood. </p>
+<dl class="section return"><dt>Returns</dt><dd>log p(y_t | y_{1:t-1}) </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a1e3791db4cea7b21a6cb135220823cc2"></a>
+<a class="anchor" id="ae7ee72e08ab3c0e6ae66f3210a0f18d4"></a>
 <div class="memitem">
 <div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double BSFilter::getLogCondLike </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>get log p(y_t|y_{1:t-1})$ or log p(y_1). </p>
-<dl class="section return"><dt>Returns</dt><dd>The estimate of the most recent log conditional likelihood. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a80aa1183f38d12b3a180ab6a143ab4fd"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;double&gt; BSFilter::getLogUWeights </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get log-un-normalized weights. </p>
-<dl class="section return"><dt>Returns</dt><dd>The most recent std::vector of log-un-normalized weights. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="aa612efc58f9442a7f6401a5edf0c2799"></a>
-<div class="memitem">
-<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t N&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual double BSFilter::logGEv </td>
+          <td class="memname">virtual double <a class="el" href="classBSFilter.html">BSFilter</a>&lt; N &gt;::logGEv </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>yt</em>, </td>
@@ -388,15 +354,17 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a1c1084627bfaf2f3ccf882fc23240b7a"></a>
+<a class="anchor" id="a9317b6253d10ee5b50f68515ae7a5cb7"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;size_t N&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual double BSFilter::logMuEv </td>
+          <td class="memname">virtual double <a class="el" href="classBSFilter.html">BSFilter</a>&lt; N &gt;::logMuEv </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>x1</em></td><td>)</td>
@@ -421,15 +389,17 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a4d2bc2a2530306abaf1a717596b5814d"></a>
+<a class="anchor" id="a9a50ae948bee94114567ca798c8e6f1f"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;size_t N&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual double BSFilter::logQ1Ev </td>
+          <td class="memname">virtual double <a class="el" href="classBSFilter.html">BSFilter</a>&lt; N &gt;::logQ1Ev </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>x1</em>, </td>
@@ -465,15 +435,17 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a9792df8f9b13495bc8bdcc53adeae347"></a>
+<a class="anchor" id="a981b7de2820c496508f7fe23723add06"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;size_t N&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> BSFilter::q1Samp </td>
+          <td class="memname">virtual <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> <a class="el" href="classBSFilter.html">BSFilter</a>&lt; N &gt;::q1Samp </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>y1</em></td><td>)</td>

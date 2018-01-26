@@ -16,6 +16,7 @@ var annotated_dup =
     [ "Hmm_Rbpf", "classHmm__Rbpf.html", "classHmm__Rbpf" ],
     [ "Kalman_RBPF", "classKalman__RBPF.html", "classKalman__RBPF" ],
     [ "Lgssm", "classLgssm.html", "classLgssm" ],
+    [ "MNResamp", "classMNResamp.html", "classMNResamp" ],
     [ "MultinomResamp", "classMultinomResamp.html", "classMultinomResamp" ],
     [ "Pmmh", "classPmmh.html", "classPmmh" ],
     [ "SISRFilter", "classSISRFilter.html", "classSISRFilter" ],

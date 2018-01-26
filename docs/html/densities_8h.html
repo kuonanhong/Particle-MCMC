@@ -167,6 +167,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a9e47ab78e9b67622852378c44b6ccc2d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="densities_8h.html#a9e47ab78e9b67622852378c44b6ccc2d">densities::evalMultivNorm</a> (const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x, const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;meanVec, const <a class="el" href="apf__filter_8h.html#ae601f56a556993079f730483c574356f">Mat</a> &amp;covMat, bool log=false)</td></tr>
 <tr class="memdesc:a9e47ab78e9b67622852378c44b6ccc2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the multivariate Normal density.  <a href="densities_8h.html#a9e47ab78e9b67622852378c44b6ccc2d">More...</a><br /></td></tr>
 <tr class="separator:a9e47ab78e9b67622852378c44b6ccc2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af239258a90eb6b592233c26f526e14d3"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="densities_8h.html#af239258a90eb6b592233c26f526e14d3">densities::evalMultivNormWBDA</a> (const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x, const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;meanVec, const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;A, const <a class="el" href="apf__filter_8h.html#ae601f56a556993079f730483c574356f">Mat</a> &amp;U, const <a class="el" href="apf__filter_8h.html#ae601f56a556993079f730483c574356f">Mat</a> &amp;C, bool log=false)</td></tr>
+<tr class="memdesc:af239258a90eb6b592233c26f526e14d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the multivariate Normal density using the Woodbury Matrix Identity to speed up inversion. Sigma = A + UCU'. This function assumes A is diagonal and C is symmetric.  <a href="densities_8h.html#af239258a90eb6b592233c26f526e14d3">More...</a><br /></td></tr>
+<tr class="separator:af239258a90eb6b592233c26f526e14d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c5bdd99b4d611a05cb2cf2615c4c07a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="densities_8h.html#a0c5bdd99b4d611a05cb2cf2615c4c07a">densities::evalUnivBeta</a> (const double &amp;x, const double &amp;alpha, const double &amp;beta, bool log=false)</td></tr>
 <tr class="memdesc:a0c5bdd99b4d611a05cb2cf2615c4c07a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the univariate Beta density.  <a href="densities_8h.html#a0c5bdd99b4d611a05cb2cf2615c4c07a">More...</a><br /></td></tr>
 <tr class="separator:a0c5bdd99b4d611a05cb2cf2615c4c07a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -362,6 +365,70 @@ Functions</h2></td></tr>
     <tr><td class="paramname">x</td><td>the point you're evaluating at. </td></tr>
     <tr><td class="paramname">meanVec</td><td>the mean vector. </td></tr>
     <tr><td class="paramname">covMat</td><td>the positive definite, symmetric covariance matrix. </td></tr>
+    <tr><td class="paramname">log</td><td>true if you want to return the log density. False otherwise. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a double evaluation. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="file_af239258a90eb6b592233c26f526e14d3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double densities::evalMultivNormWBDA </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramname"><em>meanVec</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="apf__filter_8h.html#ae601f56a556993079f730483c574356f">Mat</a> &amp;&#160;</td>
+          <td class="paramname"><em>U</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="apf__filter_8h.html#ae601f56a556993079f730483c574356f">Mat</a> &amp;&#160;</td>
+          <td class="paramname"><em>C</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>log</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Evaluates the multivariate Normal density using the Woodbury Matrix Identity to speed up inversion. Sigma = A + UCU'. This function assumes A is diagonal and C is symmetric. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>the point you're evaluating at. </td></tr>
+    <tr><td class="paramname">meanVec</td><td>the mean vector. </td></tr>
+    <tr><td class="paramname">A</td><td>of A + UCU' in vector form because we explicitly make it diagonal. </td></tr>
+    <tr><td class="paramname">U</td><td>of A + UCU' </td></tr>
+    <tr><td class="paramname">C</td><td>of A + UCU' </td></tr>
     <tr><td class="paramname">log</td><td>true if you want to return the log density. False otherwise. </td></tr>
   </table>
   </dd>

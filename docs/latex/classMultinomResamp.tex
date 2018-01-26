@@ -22,9 +22,9 @@ void \hyperlink{classMultinomResamp_a0ea6269180faf0b0613072d9bc8a7b53}{resamp\+L
 \begin{DoxyCompactList}\small\item\em Function to resample in place from S\+I\+S\+Rs or A\+P\+FS with weights in log-\/space. \end{DoxyCompactList}\item 
 void \hyperlink{classMultinomResamp_afd01aa78b0e2c0112c6af41164bc1e2b}{resamp\+Log\+Wts} (std\+::vector$<$ \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} $>$ \&old\+Parts, std\+::vector$<$ double $>$ \&old\+Log\+Un\+Norm\+Wts)
 \begin{DoxyCompactList}\small\item\em Function to resample in place from S\+I\+S\+Rs or A\+P\+FS with weights in log-\/space. \end{DoxyCompactList}\item 
-void \hyperlink{classMultinomResamp_ad39c4f5d5460e3e4a2c56370c8dab39f}{ressamp\+K\+R\+B\+PF} (std\+::vector$<$ \hyperlink{classLgssm}{Lgssm} $>$ \&old\+Mods, std\+::vector$<$ \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} $>$ \&old\+Samps, std\+::vector$<$ double $>$ \&old\+Wts)
+void \hyperlink{classMultinomResamp_a67ded8594a810950febe37a44e2a8a82}{resamp\+K\+R\+B\+PF} (std\+::vector$<$ \hyperlink{classLgssm}{Lgssm} $>$ \&old\+Mods, std\+::vector$<$ \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} $>$ \&old\+Samps, std\+::vector$<$ double $>$ \&old\+Log\+Wts)
 \begin{DoxyCompactList}\small\item\em Function to resample R\+B\+P\+Fs--recall you have to resample the samples A\+ND models. \end{DoxyCompactList}\item 
-void \hyperlink{classMultinomResamp_aaddcbec4eb62954d8d7aa96c45ffd7d0}{ressamp\+H\+R\+B\+PF} (std\+::vector$<$ \hyperlink{classFSHMM}{F\+S\+H\+MM} $>$ \&old\+Mods, std\+::vector$<$ \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} $>$ \&old\+Samps, std\+::vector$<$ double $>$ \&old\+Wts)
+void \hyperlink{classMultinomResamp_afe270f582430874e2a45c63eb7e0fe04}{resamp\+H\+R\+B\+PF} (std\+::vector$<$ \hyperlink{classFSHMM}{F\+S\+H\+MM} $>$ \&old\+Mods, std\+::vector$<$ \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} $>$ \&old\+Samps, std\+::vector$<$ double $>$ \&old\+Log\+Un\+Norm\+Wts)
 \begin{DoxyCompactList}\small\item\em Function to resample for R\+B\+P\+Fs--you have to resample the samples A\+ND models. \end{DoxyCompactList}\item 
 void \hyperlink{classMultinomResamp_a8112ff1114963723e24a1eed4a9f3efb}{k\+Gen} (const std\+::vector$<$ double $>$ \&log\+First\+Stage\+Weights, std\+::vector$<$ unsigned int $>$ \&ks)
 \begin{DoxyCompactList}\small\item\em Function to sample random indices. Used inside A\+P\+Fs. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -59,6 +59,50 @@ Function to sample random indices. Used inside A\+P\+Fs.
 {\em log\+First\+Stage\+Weights} & first-\/stage weights for first stage of proposal distribution in A\+PF \\
 \hline
 {\em ks} & the \char`\"{}returned\char`\"{} indices of type std\+::vector$<$unsigned int$>$ \\
+\hline
+\end{DoxyParams}
+\index{Multinom\+Resamp@{Multinom\+Resamp}!resamp\+H\+R\+B\+PF@{resamp\+H\+R\+B\+PF}}
+\index{resamp\+H\+R\+B\+PF@{resamp\+H\+R\+B\+PF}!Multinom\+Resamp@{Multinom\+Resamp}}
+\subsubsection[{\texorpdfstring{resamp\+H\+R\+B\+P\+F(std\+::vector$<$ F\+S\+H\+M\+M $>$ \&old\+Mods, std\+::vector$<$ Vec $>$ \&old\+Samps, std\+::vector$<$ double $>$ \&old\+Log\+Un\+Norm\+Wts)}{resampHRBPF(std::vector< FSHMM > &oldMods, std::vector< Vec > &oldSamps, std::vector< double > &oldLogUnNormWts)}}]{\setlength{\rightskip}{0pt plus 5cm}void Multinom\+Resamp\+::resamp\+H\+R\+B\+PF (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ {\bf F\+S\+H\+MM} $>$ \&}]{old\+Mods, }
+\item[{std\+::vector$<$ {\bf Vec} $>$ \&}]{old\+Samps, }
+\item[{std\+::vector$<$ double $>$ \&}]{old\+Log\+Un\+Norm\+Wts}
+\end{DoxyParamCaption}
+)}\hypertarget{classMultinomResamp_afe270f582430874e2a45c63eb7e0fe04}{}\label{classMultinomResamp_afe270f582430874e2a45c63eb7e0fe04}
+
+
+Function to resample for R\+B\+P\+Fs--you have to resample the samples A\+ND models. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em old\+Mods} & embedded H\+MM filter objects. \\
+\hline
+{\em old\+Samps} & samples of each particle. \\
+\hline
+{\em old\+Log\+Un\+Norm\+Wts} & log un-\/normalized weights of each particle. \\
+\hline
+\end{DoxyParams}
+\index{Multinom\+Resamp@{Multinom\+Resamp}!resamp\+K\+R\+B\+PF@{resamp\+K\+R\+B\+PF}}
+\index{resamp\+K\+R\+B\+PF@{resamp\+K\+R\+B\+PF}!Multinom\+Resamp@{Multinom\+Resamp}}
+\subsubsection[{\texorpdfstring{resamp\+K\+R\+B\+P\+F(std\+::vector$<$ Lgssm $>$ \&old\+Mods, std\+::vector$<$ Vec $>$ \&old\+Samps, std\+::vector$<$ double $>$ \&old\+Log\+Wts)}{resampKRBPF(std::vector< Lgssm > &oldMods, std::vector< Vec > &oldSamps, std::vector< double > &oldLogWts)}}]{\setlength{\rightskip}{0pt plus 5cm}void Multinom\+Resamp\+::resamp\+K\+R\+B\+PF (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ {\bf Lgssm} $>$ \&}]{old\+Mods, }
+\item[{std\+::vector$<$ {\bf Vec} $>$ \&}]{old\+Samps, }
+\item[{std\+::vector$<$ double $>$ \&}]{old\+Log\+Wts}
+\end{DoxyParamCaption}
+)}\hypertarget{classMultinomResamp_a67ded8594a810950febe37a44e2a8a82}{}\label{classMultinomResamp_a67ded8594a810950febe37a44e2a8a82}
+
+
+Function to resample R\+B\+P\+Fs--recall you have to resample the samples A\+ND models. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em old\+Mods} & embedded kalman filter objects. \\
+\hline
+{\em old\+Samps} & samples of each particle. \\
+\hline
+{\em old\+Log\+Wts} & log un-\/normalized weights of each particle. \\
 \hline
 \end{DoxyParams}
 \index{Multinom\+Resamp@{Multinom\+Resamp}!resamp\+Log\+Wts@{resamp\+Log\+Wts}}
@@ -97,50 +141,6 @@ Function to resample in place from S\+I\+S\+Rs or A\+P\+FS with weights in log-\
 {\em old\+Parts} & the old particles in form std\+::vector$<$\+Eigen\+::\+Vector\+Xd$>$. \\
 \hline
 {\em old\+Log\+Un\+Norm\+Wts} & the std\+::vector$<$double$>$ of log-\/un-\/normalized weights. \\
-\hline
-\end{DoxyParams}
-\index{Multinom\+Resamp@{Multinom\+Resamp}!ressamp\+H\+R\+B\+PF@{ressamp\+H\+R\+B\+PF}}
-\index{ressamp\+H\+R\+B\+PF@{ressamp\+H\+R\+B\+PF}!Multinom\+Resamp@{Multinom\+Resamp}}
-\subsubsection[{\texorpdfstring{ressamp\+H\+R\+B\+P\+F(std\+::vector$<$ F\+S\+H\+M\+M $>$ \&old\+Mods, std\+::vector$<$ Vec $>$ \&old\+Samps, std\+::vector$<$ double $>$ \&old\+Wts)}{ressampHRBPF(std::vector< FSHMM > &oldMods, std::vector< Vec > &oldSamps, std::vector< double > &oldWts)}}]{\setlength{\rightskip}{0pt plus 5cm}void Multinom\+Resamp\+::ressamp\+H\+R\+B\+PF (
-\begin{DoxyParamCaption}
-\item[{std\+::vector$<$ {\bf F\+S\+H\+MM} $>$ \&}]{old\+Mods, }
-\item[{std\+::vector$<$ {\bf Vec} $>$ \&}]{old\+Samps, }
-\item[{std\+::vector$<$ double $>$ \&}]{old\+Wts}
-\end{DoxyParamCaption}
-)}\hypertarget{classMultinomResamp_aaddcbec4eb62954d8d7aa96c45ffd7d0}{}\label{classMultinomResamp_aaddcbec4eb62954d8d7aa96c45ffd7d0}
-
-
-Function to resample for R\+B\+P\+Fs--you have to resample the samples A\+ND models. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em old\+Mods} & embedded H\+MM filter objects. \\
-\hline
-{\em old\+Samps} & samples of each particle. \\
-\hline
-{\em old\+Wts} & un-\/normalized weights of each particle. \\
-\hline
-\end{DoxyParams}
-\index{Multinom\+Resamp@{Multinom\+Resamp}!ressamp\+K\+R\+B\+PF@{ressamp\+K\+R\+B\+PF}}
-\index{ressamp\+K\+R\+B\+PF@{ressamp\+K\+R\+B\+PF}!Multinom\+Resamp@{Multinom\+Resamp}}
-\subsubsection[{\texorpdfstring{ressamp\+K\+R\+B\+P\+F(std\+::vector$<$ Lgssm $>$ \&old\+Mods, std\+::vector$<$ Vec $>$ \&old\+Samps, std\+::vector$<$ double $>$ \&old\+Wts)}{ressampKRBPF(std::vector< Lgssm > &oldMods, std::vector< Vec > &oldSamps, std::vector< double > &oldWts)}}]{\setlength{\rightskip}{0pt plus 5cm}void Multinom\+Resamp\+::ressamp\+K\+R\+B\+PF (
-\begin{DoxyParamCaption}
-\item[{std\+::vector$<$ {\bf Lgssm} $>$ \&}]{old\+Mods, }
-\item[{std\+::vector$<$ {\bf Vec} $>$ \&}]{old\+Samps, }
-\item[{std\+::vector$<$ double $>$ \&}]{old\+Wts}
-\end{DoxyParamCaption}
-)}\hypertarget{classMultinomResamp_ad39c4f5d5460e3e4a2c56370c8dab39f}{}\label{classMultinomResamp_ad39c4f5d5460e3e4a2c56370c8dab39f}
-
-
-Function to resample R\+B\+P\+Fs--recall you have to resample the samples A\+ND models. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em old\+Mods} & embedded kalman filter objects. \\
-\hline
-{\em old\+Samps} & samples of each particle. \\
-\hline
-{\em old\+Wts} & un-\/normalized weights of each particle. \\
 \hline
 \end{DoxyParams}
 

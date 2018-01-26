@@ -1,0 +1,84 @@
+\hypertarget{classMNResamp}{}\section{M\+N\+Resamp$<$ N $>$ Class Template Reference}
+\label{classMNResamp}\index{M\+N\+Resamp$<$ N $>$@{M\+N\+Resamp$<$ N $>$}}
+
+
+A class template for Multinomial Resampling.  
+
+
+
+
+{\ttfamily \#include $<$mn\+\_\+resampler.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMNResamp_a5b19989c7ebca4cf6d4cf5b5023714f9}{M\+N\+Resamp} ()\hypertarget{classMNResamp_a5b19989c7ebca4cf6d4cf5b5023714f9}{}\label{classMNResamp_a5b19989c7ebca4cf6d4cf5b5023714f9}
+
+\begin{DoxyCompactList}\small\item\em The default constructor. This is the only option available. Sets the seed. \end{DoxyCompactList}\item 
+\hyperlink{classMNResamp_ab7ec18956deafe46729f95003ec593a1}{$\sim$\+M\+N\+Resamp} ()\hypertarget{classMNResamp_ab7ec18956deafe46729f95003ec593a1}{}\label{classMNResamp_ab7ec18956deafe46729f95003ec593a1}
+
+\begin{DoxyCompactList}\small\item\em The destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classMNResamp_a5c84e23bbe2f57984084835995dc41fd}{resamp\+Log\+Wts} (std\+::array$<$ \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec}, N $>$ \&old\+Parts, std\+::array$<$ double, N $>$ \&old\+Log\+Un\+Norm\+Wts)
+\begin{DoxyCompactList}\small\item\em Function to resample from log unnormalized weights. \end{DoxyCompactList}\item 
+void \hyperlink{classMNResamp_a152ee53e6df53587bea13bf8c9e74322}{k\+Gen} (const std\+::array$<$ double, N $>$ \&log\+First\+Stage\+Weights, std\+::array$<$ unsigned int, N $>$ \&ks)
+\begin{DoxyCompactList}\small\item\em Function to sample random indices. Used inside A\+P\+Fs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$size\+\_\+t N$>$\\*
+class M\+N\+Resamp$<$ N $>$}
+
+A class template for Multinomial Resampling. 
+
+\begin{DoxyAuthor}{Author}
+taylor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+07/09/17 
+\end{DoxyDate}
+
+
+\subsection{Member Function Documentation}
+\index{M\+N\+Resamp@{M\+N\+Resamp}!k\+Gen@{k\+Gen}}
+\index{k\+Gen@{k\+Gen}!M\+N\+Resamp@{M\+N\+Resamp}}
+\subsubsection[{\texorpdfstring{k\+Gen(const std\+::array$<$ double, N $>$ \&log\+First\+Stage\+Weights, std\+::array$<$ unsigned int, N $>$ \&ks)}{kGen(const std::array< double, N > &logFirstStageWeights, std::array< unsigned int, N > &ks)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\+\_\+t N$>$ void {\bf M\+N\+Resamp}$<$ N $>$\+::k\+Gen (
+\begin{DoxyParamCaption}
+\item[{const std\+::array$<$ double, N $>$ \&}]{log\+First\+Stage\+Weights, }
+\item[{std\+::array$<$ unsigned int, N $>$ \&}]{ks}
+\end{DoxyParamCaption}
+)}\hypertarget{classMNResamp_a152ee53e6df53587bea13bf8c9e74322}{}\label{classMNResamp_a152ee53e6df53587bea13bf8c9e74322}
+
+
+Function to sample random indices. Used inside A\+P\+Fs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em log\+First\+Stage\+Weights} & first-\/stage weights for first stage of proposal distribution in A\+PF \\
+\hline
+{\em ks} & the \char`\"{}returned\char`\"{} indices of type std\+::array$<$unsigned int, N$>$ \\
+\hline
+\end{DoxyParams}
+\index{M\+N\+Resamp@{M\+N\+Resamp}!resamp\+Log\+Wts@{resamp\+Log\+Wts}}
+\index{resamp\+Log\+Wts@{resamp\+Log\+Wts}!M\+N\+Resamp@{M\+N\+Resamp}}
+\subsubsection[{\texorpdfstring{resamp\+Log\+Wts(std\+::array$<$ Vec, N $>$ \&old\+Parts, std\+::array$<$ double, N $>$ \&old\+Log\+Un\+Norm\+Wts)}{resampLogWts(std::array< Vec, N > &oldParts, std::array< double, N > &oldLogUnNormWts)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\+\_\+t N$>$ void {\bf M\+N\+Resamp}$<$ N $>$\+::resamp\+Log\+Wts (
+\begin{DoxyParamCaption}
+\item[{std\+::array$<$ {\bf Vec}, N $>$ \&}]{old\+Parts, }
+\item[{std\+::array$<$ double, N $>$ \&}]{old\+Log\+Un\+Norm\+Wts}
+\end{DoxyParamCaption}
+)}\hypertarget{classMNResamp_a5c84e23bbe2f57984084835995dc41fd}{}\label{classMNResamp_a5c84e23bbe2f57984084835995dc41fd}
+
+
+Function to resample from log unnormalized weights. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em old\+Parts} & \\
+\hline
+{\em old\+Log\+Un\+Norm\+Wts} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{mn__resampler_8h}{mn\+\_\+resampler.\+h}\end{DoxyCompactItemize}

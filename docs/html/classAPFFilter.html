@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>ssm: APFFilter Class Reference</title>
+<title>ssm: APFFilter&lt; N &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -107,7 +107,7 @@ $(document).ready(function(){initNavTree('classAPFFilter.html','');});
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classAPFFilter-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">APFFilter Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+<div class="title">APFFilter&lt; N &gt; Class Template Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -118,69 +118,61 @@ $(document).ready(function(){initNavTree('classAPFFilter.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a86e261db9017205973b3f8f26e004370"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAPFFilter.html#a86e261db9017205973b3f8f26e004370">APFFilter</a> (int numParts, <a class="el" href="apf__filter_8h.html#a187a7338bc8872e7607cf1ea4ffed47b">APFResampStyle</a> resampTechnique=APFResampStyle::everytime_multinomial)</td></tr>
-<tr class="memdesc:a86e261db9017205973b3f8f26e004370"><td class="mdescLeft">&#160;</td><td class="mdescRight">The constructor.  <a href="#a86e261db9017205973b3f8f26e004370">More...</a><br /></td></tr>
-<tr class="separator:a86e261db9017205973b3f8f26e004370"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2f814288c00c8b4f149cb4887d11f92"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac2f814288c00c8b4f149cb4887d11f92"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAPFFilter.html#ac2f814288c00c8b4f149cb4887d11f92">~APFFilter</a> ()</td></tr>
-<tr class="memdesc:ac2f814288c00c8b4f149cb4887d11f92"><td class="mdescLeft">&#160;</td><td class="mdescRight">The destructor. <br /></td></tr>
-<tr class="separator:ac2f814288c00c8b4f149cb4887d11f92"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9a5210f2927616dd6c82705d203b012"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAPFFilter.html#af9a5210f2927616dd6c82705d203b012">getLogCondLike</a> () const </td></tr>
-<tr class="memdesc:af9a5210f2927616dd6c82705d203b012"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the latest log conditional likelihood.  <a href="#af9a5210f2927616dd6c82705d203b012">More...</a><br /></td></tr>
-<tr class="separator:af9a5210f2927616dd6c82705d203b012"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf8af6603940182e0a42646cace2f233"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="apf__filter_8h.html#ae601f56a556993079f730483c574356f">Mat</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAPFFilter.html#adf8af6603940182e0a42646cace2f233">getExpectations</a> () const </td></tr>
-<tr class="memdesc:adf8af6603940182e0a42646cace2f233"><td class="mdescLeft">&#160;</td><td class="mdescRight">return all stored expectations (taken with respect to $p(x_t|y_{1:t})$  <a href="#adf8af6603940182e0a42646cace2f233">More...</a><br /></td></tr>
-<tr class="separator:adf8af6603940182e0a42646cace2f233"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a397d4b1b17e0ed2b8304d87c704efd84"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAPFFilter.html#a397d4b1b17e0ed2b8304d87c704efd84">getWeights</a> () const </td></tr>
-<tr class="memdesc:a397d4b1b17e0ed2b8304d87c704efd84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the latest log un-normalized weights.  <a href="#a397d4b1b17e0ed2b8304d87c704efd84">More...</a><br /></td></tr>
-<tr class="separator:a397d4b1b17e0ed2b8304d87c704efd84"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa087692fec5a7aafa30f6ec9e6227697"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAPFFilter.html#aa087692fec5a7aafa30f6ec9e6227697">filter</a> (const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;data, const std::vector&lt; std::function&lt; const <a class="el" href="apf__filter_8h.html#ae601f56a556993079f730483c574356f">Mat</a>(const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;)&gt; &gt; &amp;fs=std::vector&lt; std::function&lt; const <a class="el" href="apf__filter_8h.html#ae601f56a556993079f730483c574356f">Mat</a>(const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;)&gt; &gt;())</td></tr>
-<tr class="memdesc:aa087692fec5a7aafa30f6ec9e6227697"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use a new datapoint to update the filtering distribution (or smoothing if pathLength &gt; 0).  <a href="#aa087692fec5a7aafa30f6ec9e6227697">More...</a><br /></td></tr>
-<tr class="separator:aa087692fec5a7aafa30f6ec9e6227697"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3d1501c147477ce1128b221f7b608fd"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAPFFilter.html#af3d1501c147477ce1128b221f7b608fd">logMuEv</a> (const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x1)=0</td></tr>
-<tr class="memdesc:af3d1501c147477ce1128b221f7b608fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the log of mu.  <a href="#af3d1501c147477ce1128b221f7b608fd">More...</a><br /></td></tr>
-<tr class="separator:af3d1501c147477ce1128b221f7b608fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c136104f4d96e6481406ef1397ead51"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAPFFilter.html#a2c136104f4d96e6481406ef1397ead51">propMu</a> (const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;xtm1)=0</td></tr>
-<tr class="memdesc:a2c136104f4d96e6481406ef1397ead51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the proposal distribution taking a Vec from the previous time's state, and returning a state for the current time.  <a href="#a2c136104f4d96e6481406ef1397ead51">More...</a><br /></td></tr>
-<tr class="separator:a2c136104f4d96e6481406ef1397ead51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a017be49a493263156ae60ccc424f7daa"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAPFFilter.html#a017be49a493263156ae60ccc424f7daa">q1Samp</a> (const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;y1)=0</td></tr>
-<tr class="memdesc:a017be49a493263156ae60ccc424f7daa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Samples from q1.  <a href="#a017be49a493263156ae60ccc424f7daa">More...</a><br /></td></tr>
-<tr class="separator:a017be49a493263156ae60ccc424f7daa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a367c77209129a84f3d64ff3bcaaac513"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAPFFilter.html#a367c77209129a84f3d64ff3bcaaac513">fSamp</a> (const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;xtm1)=0</td></tr>
-<tr class="memdesc:a367c77209129a84f3d64ff3bcaaac513"><td class="mdescLeft">&#160;</td><td class="mdescRight">Samples from f.  <a href="#a367c77209129a84f3d64ff3bcaaac513">More...</a><br /></td></tr>
-<tr class="separator:a367c77209129a84f3d64ff3bcaaac513"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18ba363183c0c92e6c58d6f3faccbea7"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAPFFilter.html#a18ba363183c0c92e6c58d6f3faccbea7">logQ1Ev</a> (const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x1, const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;y1)=0</td></tr>
-<tr class="memdesc:a18ba363183c0c92e6c58d6f3faccbea7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the log of q1.  <a href="#a18ba363183c0c92e6c58d6f3faccbea7">More...</a><br /></td></tr>
-<tr class="separator:a18ba363183c0c92e6c58d6f3faccbea7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2d0b5329d7ae123ae4de5dddefb5591"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAPFFilter.html#ac2d0b5329d7ae123ae4de5dddefb5591">logGEv</a> (const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;yt, const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;xt)=0</td></tr>
-<tr class="memdesc:ac2d0b5329d7ae123ae4de5dddefb5591"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the log of g.  <a href="#ac2d0b5329d7ae123ae4de5dddefb5591">More...</a><br /></td></tr>
-<tr class="separator:ac2d0b5329d7ae123ae4de5dddefb5591"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad694644c5526bf4b962b5016a37e65da"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAPFFilter.html#ad694644c5526bf4b962b5016a37e65da">APFFilter</a> (<a class="el" href="apf__filter_8h.html#a187a7338bc8872e7607cf1ea4ffed47b">APFResampStyle</a> resampTechnique=APFResampStyle::everytime_multinomial)</td></tr>
+<tr class="memdesc:ad694644c5526bf4b962b5016a37e65da"><td class="mdescLeft">&#160;</td><td class="mdescRight">The constructor.  <a href="#ad694644c5526bf4b962b5016a37e65da">More...</a><br /></td></tr>
+<tr class="separator:ad694644c5526bf4b962b5016a37e65da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77981b917396b33b51d9c711c5d97c36"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a77981b917396b33b51d9c711c5d97c36"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAPFFilter.html#a77981b917396b33b51d9c711c5d97c36">~APFFilter</a> ()</td></tr>
+<tr class="memdesc:a77981b917396b33b51d9c711c5d97c36"><td class="mdescLeft">&#160;</td><td class="mdescRight">The destructor. <br /></td></tr>
+<tr class="separator:a77981b917396b33b51d9c711c5d97c36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2142078c81d660421ad2d98b80aee38"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAPFFilter.html#ac2142078c81d660421ad2d98b80aee38">getLogCondLike</a> () const </td></tr>
+<tr class="memdesc:ac2142078c81d660421ad2d98b80aee38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the latest log conditional likelihood.  <a href="#ac2142078c81d660421ad2d98b80aee38">More...</a><br /></td></tr>
+<tr class="separator:ac2142078c81d660421ad2d98b80aee38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a103b23fb56c293eaa63e4312b050952f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="apf__filter_8h.html#ae601f56a556993079f730483c574356f">Mat</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAPFFilter.html#a103b23fb56c293eaa63e4312b050952f">getExpectations</a> () const </td></tr>
+<tr class="memdesc:a103b23fb56c293eaa63e4312b050952f"><td class="mdescLeft">&#160;</td><td class="mdescRight">return all stored expectations (taken with respect to $p(x_t|y_{1:t})$  <a href="#a103b23fb56c293eaa63e4312b050952f">More...</a><br /></td></tr>
+<tr class="separator:a103b23fb56c293eaa63e4312b050952f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ce3e3d31a90ff06f6e62b66755f239b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAPFFilter.html#a0ce3e3d31a90ff06f6e62b66755f239b">filter</a> (const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;data, const std::vector&lt; std::function&lt; const <a class="el" href="apf__filter_8h.html#ae601f56a556993079f730483c574356f">Mat</a>(const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;)&gt; &gt; &amp;fs=std::vector&lt; std::function&lt; const <a class="el" href="apf__filter_8h.html#ae601f56a556993079f730483c574356f">Mat</a>(const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;)&gt; &gt;())</td></tr>
+<tr class="memdesc:a0ce3e3d31a90ff06f6e62b66755f239b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use a new datapoint to update the filtering distribution (or smoothing if pathLength &gt; 0).  <a href="#a0ce3e3d31a90ff06f6e62b66755f239b">More...</a><br /></td></tr>
+<tr class="separator:a0ce3e3d31a90ff06f6e62b66755f239b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a046e084b1eb982f743c180cc0b7c9f"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAPFFilter.html#a5a046e084b1eb982f743c180cc0b7c9f">logMuEv</a> (const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x1)=0</td></tr>
+<tr class="memdesc:a5a046e084b1eb982f743c180cc0b7c9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the log of mu.  <a href="#a5a046e084b1eb982f743c180cc0b7c9f">More...</a><br /></td></tr>
+<tr class="separator:a5a046e084b1eb982f743c180cc0b7c9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fe96c18e0e3206210295c12de883c39"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAPFFilter.html#a7fe96c18e0e3206210295c12de883c39">propMu</a> (const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;xtm1)=0</td></tr>
+<tr class="memdesc:a7fe96c18e0e3206210295c12de883c39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the proposal distribution taking a Vec from the previous time's state, and returning a state for the current time.  <a href="#a7fe96c18e0e3206210295c12de883c39">More...</a><br /></td></tr>
+<tr class="separator:a7fe96c18e0e3206210295c12de883c39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63b58cc57c9ebc33042a745262f72777"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAPFFilter.html#a63b58cc57c9ebc33042a745262f72777">q1Samp</a> (const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;y1)=0</td></tr>
+<tr class="memdesc:a63b58cc57c9ebc33042a745262f72777"><td class="mdescLeft">&#160;</td><td class="mdescRight">Samples from q1.  <a href="#a63b58cc57c9ebc33042a745262f72777">More...</a><br /></td></tr>
+<tr class="separator:a63b58cc57c9ebc33042a745262f72777"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b2a7e9638bce587a9b81ada9da951d1"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAPFFilter.html#a3b2a7e9638bce587a9b81ada9da951d1">fSamp</a> (const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;xtm1)=0</td></tr>
+<tr class="memdesc:a3b2a7e9638bce587a9b81ada9da951d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Samples from f.  <a href="#a3b2a7e9638bce587a9b81ada9da951d1">More...</a><br /></td></tr>
+<tr class="separator:a3b2a7e9638bce587a9b81ada9da951d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a149fdaf9f3479dd5044176eb369a99aa"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAPFFilter.html#a149fdaf9f3479dd5044176eb369a99aa">logQ1Ev</a> (const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x1, const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;y1)=0</td></tr>
+<tr class="memdesc:a149fdaf9f3479dd5044176eb369a99aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the log of q1.  <a href="#a149fdaf9f3479dd5044176eb369a99aa">More...</a><br /></td></tr>
+<tr class="separator:a149fdaf9f3479dd5044176eb369a99aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ea311b6d8549ac2746f9d54d82b64aa"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAPFFilter.html#a4ea311b6d8549ac2746f9d54d82b64aa">logGEv</a> (const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;yt, const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;xt)=0</td></tr>
+<tr class="memdesc:a4ea311b6d8549ac2746f9d54d82b64aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the log of g.  <a href="#a4ea311b6d8549ac2746f9d54d82b64aa">More...</a><br /></td></tr>
+<tr class="separator:a4ea311b6d8549ac2746f9d54d82b64aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A base-class for Auxiliary Particle Filtering. Filtering only, no smoothing. </p>
+<div class="textblock"><h3>template&lt;size_t N&gt;<br />
+class APFFilter&lt; N &gt;</h3>
+
+<p>A base-class for Auxiliary Particle Filtering. Filtering only, no smoothing. </p>
 <dl class="section author"><dt>Author</dt><dd>taylor </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>09/09/17 </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a86e261db9017205973b3f8f26e004370"></a>
+<a class="anchor" id="ad694644c5526bf4b962b5016a37e65da"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;size_t N&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">APFFilter::APFFilter </td>
+          <td class="memname"><a class="el" href="classAPFFilter.html">APFFilter</a>&lt; N &gt;::<a class="el" href="classAPFFilter.html">APFFilter</a> </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>numParts</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype"><a class="el" href="apf__filter_8h.html#a187a7338bc8872e7607cf1ea4ffed47b">APFResampStyle</a>&#160;</td>
-          <td class="paramname"><em>resampTechnique</em> = <code>APFResampStyle::everytime_multinomial</code>&#160;</td>
-        </tr>
-        <tr>
+          <td class="paramname"><em>resampTechnique</em> = <code>APFResampStyle::everytime_multinomial</code></td><td>)</td>
           <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -188,7 +180,6 @@ Public Member Functions</h2></td></tr>
 <p>The constructor. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">numParts</td><td>the number of particles you want to use. </td></tr>
     <tr><td class="paramname">resampTechnique</td><td>the resampling style. </td></tr>
   </table>
   </dd>
@@ -197,12 +188,14 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="aa087692fec5a7aafa30f6ec9e6227697"></a>
+<a class="anchor" id="a0ce3e3d31a90ff06f6e62b66755f239b"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;size_t N&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void APFFilter::filter </td>
+          <td class="memname">void <a class="el" href="classAPFFilter.html">APFFilter</a>&lt; N &gt;::filter </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>data</em>, </td>
@@ -211,7 +204,7 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const std::vector&lt; std::function&lt; const <a class="el" href="apf__filter_8h.html#ae601f56a556993079f730483c574356f">Mat</a>(const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;)&gt; &gt; &amp;&#160;</td>
-          <td class="paramname"><em>fs</em> = <code>std::vector&lt;&#160;std::function&lt;&#160;const&#160;<a class="el" href="apf__filter_8h.html#ae601f56a556993079f730483c574356f">Mat</a>(const&#160;<a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>&#160;&amp;)&gt;&#160;&gt;()</code>&#160;</td>
+          <td class="paramname"><em>fs</em> = <code>std::vector&lt;std::function&lt;const&#160;<a class="el" href="apf__filter_8h.html#ae601f56a556993079f730483c574356f">Mat</a>(const&#160;<a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>&amp;)&gt;&#160;&gt;()</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -232,15 +225,17 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a367c77209129a84f3d64ff3bcaaac513"></a>
+<a class="anchor" id="a3b2a7e9638bce587a9b81ada9da951d1"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;size_t N&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> APFFilter::fSamp </td>
+          <td class="memname">virtual <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> <a class="el" href="classAPFFilter.html">APFFilter</a>&lt; N &gt;::fSamp </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>xtm1</em></td><td>)</td>
@@ -265,12 +260,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="adf8af6603940182e0a42646cace2f233"></a>
+<a class="anchor" id="a103b23fb56c293eaa63e4312b050952f"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;size_t N&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="apf__filter_8h.html#ae601f56a556993079f730483c574356f">Mat</a>&gt; APFFilter::getExpectations </td>
+          <td class="memname">std::vector&lt; <a class="el" href="apf__filter_8h.html#ae601f56a556993079f730483c574356f">Mat</a> &gt; <a class="el" href="classAPFFilter.html">APFFilter</a>&lt; N &gt;::getExpectations </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -283,12 +280,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="af9a5210f2927616dd6c82705d203b012"></a>
+<a class="anchor" id="ac2142078c81d660421ad2d98b80aee38"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;size_t N&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">double APFFilter::getLogCondLike </td>
+          <td class="memname">double <a class="el" href="classAPFFilter.html">APFFilter</a>&lt; N &gt;::getLogCondLike </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -301,33 +300,17 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a397d4b1b17e0ed2b8304d87c704efd84"></a>
+<a class="anchor" id="a4ea311b6d8549ac2746f9d54d82b64aa"></a>
 <div class="memitem">
 <div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;double&gt; APFFilter::getWeights </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get the latest log un-normalized weights. </p>
-<dl class="section return"><dt>Returns</dt><dd>a std::vector&lt;double&gt; of the log un norm weights. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ac2d0b5329d7ae123ae4de5dddefb5591"></a>
-<div class="memitem">
-<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t N&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual double APFFilter::logGEv </td>
+          <td class="memname">virtual double <a class="el" href="classAPFFilter.html">APFFilter</a>&lt; N &gt;::logGEv </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>yt</em>, </td>
@@ -363,15 +346,17 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="af3d1501c147477ce1128b221f7b608fd"></a>
+<a class="anchor" id="a5a046e084b1eb982f743c180cc0b7c9f"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;size_t N&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual double APFFilter::logMuEv </td>
+          <td class="memname">virtual double <a class="el" href="classAPFFilter.html">APFFilter</a>&lt; N &gt;::logMuEv </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>x1</em></td><td>)</td>
@@ -396,15 +381,17 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a18ba363183c0c92e6c58d6f3faccbea7"></a>
+<a class="anchor" id="a149fdaf9f3479dd5044176eb369a99aa"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;size_t N&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual double APFFilter::logQ1Ev </td>
+          <td class="memname">virtual double <a class="el" href="classAPFFilter.html">APFFilter</a>&lt; N &gt;::logQ1Ev </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>x1</em>, </td>
@@ -440,15 +427,17 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a2c136104f4d96e6481406ef1397ead51"></a>
+<a class="anchor" id="a7fe96c18e0e3206210295c12de883c39"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;size_t N&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> APFFilter::propMu </td>
+          <td class="memname">virtual <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> <a class="el" href="classAPFFilter.html">APFFilter</a>&lt; N &gt;::propMu </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>xtm1</em></td><td>)</td>
@@ -473,15 +462,17 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a017be49a493263156ae60ccc424f7daa"></a>
+<a class="anchor" id="a63b58cc57c9ebc33042a745262f72777"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;size_t N&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> APFFilter::q1Samp </td>
+          <td class="memname">virtual <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> <a class="el" href="classAPFFilter.html">APFFilter</a>&lt; N &gt;::q1Samp </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;&#160;</td>
           <td class="paramname"><em>y1</em></td><td>)</td>

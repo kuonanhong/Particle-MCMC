@@ -4,7 +4,7 @@ var searchData=
   ['setcovar',['setCovar',['../classdensities_1_1MVNSampler.html#a914d6a896a1b7946085732a5758c16bb',1,'densities::MVNSampler']]],
   ['setmean',['setMean',['../classdensities_1_1UnivNormSampler.html#a7c51871a59537bf5b14376e7e78cea4a',1,'densities::UnivNormSampler::setMean()'],['../classdensities_1_1MVNSampler.html#a456f1e8ed39efc34ee3a7667dfb2011c',1,'densities::MVNSampler::setMean()']]],
   ['setstddev',['setStdDev',['../classdensities_1_1UnivNormSampler.html#ac579e126a9f884f334d58b29c408ceaa',1,'densities::UnivNormSampler']]],
-  ['sisrfilter',['SISRFilter',['../classSISRFilter.html#a4a629ed5114ed0b3620381ace62af491',1,'SISRFilter']]],
+  ['sisrfilter',['SISRFilter',['../classSISRFilter.html#af0474d774f660314e3e29948c05afa3c',1,'SISRFilter']]],
   ['sisrsmoother',['SISRSmoother',['../classSISRSmoother.html#a1d2c23e5a42ad2529335126f8b5e744e',1,'SISRSmoother']]],
   ['smooth',['smooth',['../classAPFSmoother.html#acaf872bc7356e60198fedce0665afeb6',1,'APFSmoother::smooth()'],['../classSISRSmoother.html#a11193002ca13b8186167f7c3f6db625c',1,'SISRSmoother::smooth()']]],
   ['sqrt_5ftwo_5fover_5fpi',['sqrt_two_over_pi',['../densities_8h.html#a36eeab0ef3c0cbfa190716631c183f17',1,'densities']]]

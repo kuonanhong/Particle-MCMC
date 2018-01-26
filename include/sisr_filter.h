@@ -3,7 +3,7 @@
 
 #include <Eigen/Dense> //linear algebra stuff
 
-#include "multinomial_resampler.h"
+#include "mn_resampler.h"
 
 /** typedef for linear algebra stuff */
 typedef Eigen::Matrix< double, Eigen::Dynamic, 1              > Vec;
@@ -21,13 +21,15 @@ enum class SISRResampStyle {everytime_multinomial, never, ess_multinomial};
  * @file sisr_filter.h
  * @brief A base-class for Sequential Importance Sampling with Resampling. 
  * Inherit from this if you want to use a SISR for your state space model. Filtering only; no smoothing.
+ * @tparam N the number of particles
  */
+template <size_t N>
 class SISRFilter
 {
 private:
     // members
-    std::vector<Vec>               m_particles;
-    std::vector<double>            m_logUnNormWeights;
+    std::array<Vec, N>             m_particles;
+    std::array<double, N>          m_logUnNormWeights;
     unsigned int                   m_dimState;
     unsigned int                   m_now;         // time point
     unsigned int                   m_numParts;    // num particles
@@ -35,22 +37,21 @@ private:
     SISRResampStyle                m_resampTechnique;
     double                         m_ESS; // effective sample size
     double                         m_percentOfNumPartsThresh; // what percent of particles is the lower bound for ESS resampling?
-    MultinomResamp                 m_resampler;
+    MNResamp<N>                    m_resampler;
     std::vector<Mat>               m_expectations; // stores any sample averages the user wants
     
     // methods
-    void multinomRsmp(std::vector<Vec> &oldParts, std::vector<double> &oldLogUnNormWts);
+    void multinomRsmp(std::array<Vec,N> &oldParts, std::array<double,N> &oldLogUnNormWts);
 
 public:
 
     //!
     /**
      * @brief Constructor 
-     * @param numParts number of particles
      * @param resampTechnique  which resampling strategy?
      * @param essPerc ignored unless SISRResampStyle is "ess." What percent of ESS is the threshold for resampling.
      */
-    SISRFilter(int numParts, SISRResampStyle resampTechnique = SISRResampStyle::everytime_multinomial, double essPerc = 1.0);
+    SISRFilter(SISRResampStyle resampTechnique = SISRResampStyle::everytime_multinomial, double essPerc = 1.0);
     
     //! Destructor.
     ~SISRFilter();
@@ -66,21 +67,6 @@ public:
     
     //!
     /**
-     * @brief get effective sample size.
-     * @return The current estimate for the effective sample size.
-     */
-    double getESS() const; 
-    
-    
-    //!
-    /**
-     * @brief get $p(x_{1:t}|y_{1:t})$
-     * @return The up-to-date set of path samples for the joint smoothing distribution.
-     */
-    std::vector<Vec> getFullParts() const;
-    
-    //!
-    /**
      * @brief get all stored expectations. With respect to $p(x_t|y_{1:t})$
      * @return returns a std::vector<Mat> of all of the approximated expectations.
      */
@@ -92,7 +78,7 @@ public:
      * @brief Get log-un-normalized weights.
      * @return The most recent std::vector of log-un-normalized weights.
      */
-    std::vector<double> getLogUWeights () const; 
+    std::array<double,N> getLogUWeights () const; 
     
     
     //!
@@ -165,5 +151,163 @@ public:
      */
     virtual double logQEv (const Vec &xt, const Vec &xtm1, const Vec &yt ) = 0;    
 };
+
+
+template <size_t N>
+SISRFilter<N>::SISRFilter(SISRResampStyle resampTechnique, double essPerc)
+                : m_now(0), m_logLastCondLike(0.0), m_resampTechnique(resampTechnique), 
+                  m_ESS(m_numParts), m_percentOfNumPartsThresh(essPerc)
+{
+    m_numParts = m_particles.size();
+    std::fill(m_logUnNormWeights.begin(), m_logUnNormWeights.end(), 0.0);
+}
+
+
+template <size_t N>
+SISRFilter<N>::~SISRFilter() {}
+
+
+
+template <size_t N>
+void SISRFilter<N>::filter(const Vec &dat, const std::vector<std::function<const Mat(const Vec&)> >& fs) 
+{
+
+    if (m_now == 0) //time 1
+    {
+       
+        // initialize m_filtMean and m_dimState
+        m_dimState = q1Samp(dat).rows();
+       
+        // only need to iterate over particles once
+        double sumWts(0.0);
+        for(size_t ii = 0; ii < m_numParts; ++ii)
+        {
+            // sample particles
+            m_particles[ii] = q1Samp(dat);
+            m_logUnNormWeights[ii] = logMuEv(m_particles[ii]);
+            m_logUnNormWeights[ii] += logGEv(dat, m_particles[ii]);
+            m_logUnNormWeights[ii] -= logQ1Ev(m_particles[ii], dat);
+                       
+        }
+       
+        // calculate log cond likelihood with log-exp-sum trick
+        double max = *std::max_element(m_logUnNormWeights.begin(), m_logUnNormWeights.end());
+        double sumExp(0.0);
+        for(size_t i = 0; i < m_numParts; ++i){
+            sumExp += std::exp(m_logUnNormWeights[i] - max);
+        }
+        m_logLastCondLike = -std::log(m_numParts) + max + std::log(sumExp);
+   
+        // calculate expectations before you resample
+        m_expectations.resize(fs.size());
+        std::fill(m_expectations.begin(), m_expectations.end(), Vec::Zero(m_dimState)); // TODO: should this be Mat::Zero(m_dimState, m_dimState)?
+        int fId(0);
+        double weightNormConst;
+        for(auto & h : fs){
+            weightNormConst = 0.0;
+            for(size_t prtcl = 0; prtcl < m_numParts; ++prtcl){ // iterate over all particles
+                m_expectations[fId] += h(m_particles[prtcl]) * std::exp(m_logUnNormWeights[prtcl]);
+                weightNormConst += std::exp(m_logUnNormWeights[prtcl]);
+            }
+            m_expectations[fId] /= weightNormConst;
+            fId++;
+        }
+   
+        // resample if you should
+        if (m_resampTechnique == SISRResampStyle::everytime_multinomial)
+            multinomRsmp(m_particles, m_logUnNormWeights);
+   
+        // advance time step
+        m_now += 1;   
+    }
+    else // m_now > 0
+    {
+
+        // try to iterate over particles all at once
+        std::array<Vec, N> newSamps;
+        std::array<double,N> oldLogUnNormWts;
+        double currentLogWtAdjIndiv;       
+        double maxOldLogUnNormWts(m_logUnNormWeights[0]);
+        double sumWts(0.0);
+        for(size_t ii = 0; ii < m_numParts; ++ii)
+        {
+            // sample and get weight adjustments
+            newSamps[ii] = qSamp(m_particles[ii], dat);
+            currentLogWtAdjIndiv = logFEv(newSamps[ii], m_particles[ii]);
+            currentLogWtAdjIndiv += logGEv(dat, newSamps[ii]);
+            currentLogWtAdjIndiv -= logQEv(newSamps[ii], m_particles[ii], dat);
+ 
+            // update max of old logUnNormWts
+            if (m_logUnNormWeights[ii] > maxOldLogUnNormWts)
+                maxOldLogUnNormWts = m_logUnNormWeights[ii];
+ 
+            // overwrite stuff
+            m_logUnNormWeights[ii] += currentLogWtAdjIndiv;
+            m_particles[ii] = newSamps[ii];
+
+        }
+       
+        // compute estimate of log p(y_t|y_{1:t-1}) with log-exp-sum trick
+        double maxNumer = *std::max_element(m_logUnNormWeights.begin(), m_logUnNormWeights.end()); //because you added log adjustments
+        double sumExp1(0.0);
+        double sumExp2(0.0);
+        for(size_t i = 0; i < m_numParts; ++i){
+            sumExp1 += std::exp(m_logUnNormWeights[i] - maxNumer);
+            sumExp2 += std::exp(oldLogUnNormWts[i] - maxOldLogUnNormWts);
+        }
+        m_logLastCondLike = maxNumer + std::log(sumExp1) - maxOldLogUnNormWts - std::log(sumExp2);
+
+        // calculate expectations before you resample
+        m_expectations.resize(fs.size());
+        std::fill(m_expectations.begin(), m_expectations.end(), Vec::Zero(m_dimState)); // TODO: should this be Mat::Zero(m_dimState, m_dimState)?
+        int fId(0);
+        double weightNormConst;
+        for(auto & h : fs){ // iterate over all functions
+            weightNormConst = 0.0;
+            for(size_t prtcl = 0; prtcl < m_numParts; ++prtcl){ // iterate over all particles
+                m_expectations[fId] += h(m_particles[prtcl]) * std::exp(m_logUnNormWeights[prtcl]);
+                weightNormConst += std::exp(m_logUnNormWeights[prtcl]);
+            }
+            m_expectations[fId] /= weightNormConst;
+            fId++;
+        }
+ 
+        // resample
+        if (m_resampTechnique == SISRResampStyle::everytime_multinomial)
+            multinomRsmp(m_particles, m_logUnNormWeights);
+
+        // advance time
+        m_now += 1;       
+    }
+}
+
+
+template <size_t N>
+double SISRFilter<N>::getLogCondLike() const
+{
+    return m_logLastCondLike;
+}
+
+
+template <size_t N>
+std::vector<Mat> SISRFilter<N>::getExpectations() const
+{
+    return m_expectations;
+}
+
+
+template <size_t N>
+std::array<double, N> SISRFilter<N>::getLogUWeights() const
+{
+    return m_logUnNormWeights;
+}
+
+
+template <size_t N>
+void SISRFilter<N>::multinomRsmp(std::array<Vec,N> &oldParts, std::array<double,N> &oldLogWeights)
+{
+    m_resampler.resampLogWts(oldParts, oldLogWeights);
+}
+
 
 #endif // SISR_FILTER_H

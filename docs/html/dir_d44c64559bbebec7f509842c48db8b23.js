@@ -9,6 +9,7 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
     [ "hmm_rbpf.h", "hmm__rbpf_8h.html", "hmm__rbpf_8h" ],
     [ "kalman_rbpf.h", "kalman__rbpf_8h.html", "kalman__rbpf_8h" ],
     [ "lgssm.h", "lgssm_8h_source.html", null ],
+    [ "mn_resampler.h", "mn__resampler_8h.html", "mn__resampler_8h" ],
     [ "multinomial_resampler.h", "multinomial__resampler_8h.html", "multinomial__resampler_8h" ],
     [ "pmfs.h", "pmfs_8h.html", "pmfs_8h" ],
     [ "pmmh.h", "pmmh_8h.html", "pmmh_8h" ],

@@ -8,7 +8,8 @@ A base class for Auxiliary Particle Filtering. Inherit from this if you want to 
 {\ttfamily \#include $<$vector$>$}\\*
 {\ttfamily \#include $<$functional$>$}\\*
 {\ttfamily \#include $<$Eigen/\+Dense$>$}\\*
-{\ttfamily \#include \char`\"{}multinomial\+\_\+resampler.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$cmath$>$}\\*
+{\ttfamily \#include \char`\"{}mn\+\_\+resampler.\+h\char`\"{}}\\*
 Include dependency graph for apf\+\_\+filter.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -19,7 +20,7 @@ Include dependency graph for apf\+\_\+filter.\+h\+:\nopagebreak
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \hyperlink{classAPFFilter}{A\+P\+F\+Filter}
+class \hyperlink{classAPFFilter}{A\+P\+F\+Filter$<$ N $>$}
 \begin{DoxyCompactList}\small\item\em A base-\/class for Auxiliary Particle Filtering. Filtering only, no smoothing. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Typedefs}
 \begin{DoxyCompactItemize}
@@ -46,6 +47,11 @@ enum \hyperlink{apf__filter_8h_a187a7338bc8872e7607cf1ea4ffed47b}{A\+P\+F\+Resam
 \subsection{Detailed Description}
 A base class for Auxiliary Particle Filtering. Inherit from this if you want to use an A\+PF for your state space model. Filtering only, no smoothing. 
 
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em N} & the number of particles \\
+\hline
+\end{DoxyTemplParams}
 
 
 \subsection{Typedef Documentation}

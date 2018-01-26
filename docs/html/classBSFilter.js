@@ -1,15 +1,13 @@
 var classBSFilter =
 [
-    [ "BSFilter", "classBSFilter.html#ae10863380da750be1a5d506483743353", null ],
-    [ "~BSFilter", "classBSFilter.html#aff30bee4608cadfda7dd49a0d57bb39c", null ],
-    [ "filter", "classBSFilter.html#ac3040c97a24838736e479ac4af219562", null ],
-    [ "fSamp", "classBSFilter.html#ad1cc178c82a518832200949ca4e3d6f6", null ],
-    [ "getESS", "classBSFilter.html#ade1e772ec74f4cf3ffaea84d466f26cc", null ],
-    [ "getExpectations", "classBSFilter.html#a8e591e267bdaf681062ee11486acd88a", null ],
-    [ "getLogCondLike", "classBSFilter.html#a1e3791db4cea7b21a6cb135220823cc2", null ],
-    [ "getLogUWeights", "classBSFilter.html#a80aa1183f38d12b3a180ab6a143ab4fd", null ],
-    [ "logGEv", "classBSFilter.html#aa612efc58f9442a7f6401a5edf0c2799", null ],
-    [ "logMuEv", "classBSFilter.html#a1c1084627bfaf2f3ccf882fc23240b7a", null ],
-    [ "logQ1Ev", "classBSFilter.html#a4d2bc2a2530306abaf1a717596b5814d", null ],
-    [ "q1Samp", "classBSFilter.html#a9792df8f9b13495bc8bdcc53adeae347", null ]
+    [ "BSFilter", "classBSFilter.html#a4f94bc98a11cb80763a7bdc1dd86c279", null ],
+    [ "~BSFilter", "classBSFilter.html#a874cdf362ca780a5afeb4b3da3210244", null ],
+    [ "filter", "classBSFilter.html#a38dbc8460036319a676926e5f0240249", null ],
+    [ "fSamp", "classBSFilter.html#a3d4caf998045f89a6887c3113c5c38f9", null ],
+    [ "getExpectations", "classBSFilter.html#aad9844b6cf839b99db2b29556a225f75", null ],
+    [ "getLogCondLike", "classBSFilter.html#a8db158adf8136ade250d243a289154a8", null ],
+    [ "logGEv", "classBSFilter.html#ae7ee72e08ab3c0e6ae66f3210a0f18d4", null ],
+    [ "logMuEv", "classBSFilter.html#a9317b6253d10ee5b50f68515ae7a5cb7", null ],
+    [ "logQ1Ev", "classBSFilter.html#a9a50ae948bee94114567ca798c8e6f1f", null ],
+    [ "q1Samp", "classBSFilter.html#a981b7de2820c496508f7fe23723add06", null ]
 ];

@@ -7,7 +7,7 @@ var searchData=
   ['setstddev',['setStdDev',['../classdensities_1_1UnivNormSampler.html#ac579e126a9f884f334d58b29c408ceaa',1,'densities::UnivNormSampler']]],
   ['sisr_5ffilter_2eh',['sisr_filter.h',['../sisr__filter_8h.html',1,'']]],
   ['sisr_5fsmooth_2eh',['sisr_smooth.h',['../sisr__smooth_8h.html',1,'']]],
-  ['sisrfilter',['SISRFilter',['../classSISRFilter.html',1,'SISRFilter'],['../classSISRFilter.html#a4a629ed5114ed0b3620381ace62af491',1,'SISRFilter::SISRFilter()']]],
+  ['sisrfilter',['SISRFilter',['../classSISRFilter.html',1,'SISRFilter&lt; N &gt;'],['../classSISRFilter.html#af0474d774f660314e3e29948c05afa3c',1,'SISRFilter::SISRFilter()']]],
   ['sisrresampstyle',['SISRResampStyle',['../sisr__filter_8h.html#a2486051fd2028dedca520d3e0f8fd92f',1,'SISRResampStyle():&#160;sisr_filter.h'],['../sisr__smooth_8h.html#a2486051fd2028dedca520d3e0f8fd92f',1,'SISRResampStyle():&#160;sisr_smooth.h']]],
   ['sisrsmoother',['SISRSmoother',['../classSISRSmoother.html',1,'SISRSmoother'],['../classSISRSmoother.html#a1d2c23e5a42ad2529335126f8b5e744e',1,'SISRSmoother::SISRSmoother()']]],
   ['smooth',['smooth',['../classAPFSmoother.html#acaf872bc7356e60198fedce0665afeb6',1,'APFSmoother::smooth()'],['../classSISRSmoother.html#a11193002ca13b8186167f7c3f6db625c',1,'SISRSmoother::smooth()']]],

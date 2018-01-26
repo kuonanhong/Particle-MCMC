@@ -1,8 +1,8 @@
-\hypertarget{classBSFilter}{}\section{B\+S\+Filter Class Reference}
-\label{classBSFilter}\index{B\+S\+Filter@{B\+S\+Filter}}
+\hypertarget{classBSFilter}{}\section{B\+S\+Filter$<$ N $>$ Class Template Reference}
+\label{classBSFilter}\index{B\+S\+Filter$<$ N $>$@{B\+S\+Filter$<$ N $>$}}
 
 
-A base-\/class for Bootstrap Filtering (S\+I\+SR with naive proposals). This class is a bit faster because it.  
+A base class for the boostrap particle filter.  
 
 
 
@@ -12,65 +12,61 @@ A base-\/class for Bootstrap Filtering (S\+I\+SR with naive proposals). This cla
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classBSFilter_ae10863380da750be1a5d506483743353}{B\+S\+Filter} (unsigned int num\+Parts, \hyperlink{bootstrap__filter_8h_a476b3b5754056a34ac843629c9570b49}{B\+S\+Resamp\+Style} resamp\+Technique=B\+S\+Resamp\+Style\+::everytime\+\_\+multinomial, double ess\+Perc=1.\+0)
-\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-\hyperlink{classBSFilter_aff30bee4608cadfda7dd49a0d57bb39c}{$\sim$\+B\+S\+Filter} ()\hypertarget{classBSFilter_aff30bee4608cadfda7dd49a0d57bb39c}{}\label{classBSFilter_aff30bee4608cadfda7dd49a0d57bb39c}
+\hyperlink{classBSFilter_a4f94bc98a11cb80763a7bdc1dd86c279}{B\+S\+Filter} (\hyperlink{bootstrap__filter_8h_a476b3b5754056a34ac843629c9570b49}{B\+S\+Resamp\+Style} resamp\+Technique=B\+S\+Resamp\+Style\+::everytime\+\_\+multinomial, double ess\+Perc=1.\+0)
+\begin{DoxyCompactList}\small\item\em The constructor. \end{DoxyCompactList}\item 
+\hyperlink{classBSFilter_a874cdf362ca780a5afeb4b3da3210244}{$\sim$\+B\+S\+Filter} ()\hypertarget{classBSFilter_a874cdf362ca780a5afeb4b3da3210244}{}\label{classBSFilter_a874cdf362ca780a5afeb4b3da3210244}
 
-\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
-double \hyperlink{classBSFilter_a1e3791db4cea7b21a6cb135220823cc2}{get\+Log\+Cond\+Like} () const 
-\begin{DoxyCompactList}\small\item\em get log p(y\+\_\+t$\vert$y\+\_\+\{1\+:t-\/1\})\$ or log p(y\+\_\+1). \end{DoxyCompactList}\item 
-double \hyperlink{classBSFilter_ade1e772ec74f4cf3ffaea84d466f26cc}{get\+E\+SS} () const 
-\begin{DoxyCompactList}\small\item\em get effective sample size. \end{DoxyCompactList}\item 
-std\+::vector$<$ \hyperlink{apf__filter_8h_ae601f56a556993079f730483c574356f}{Mat} $>$ \hyperlink{classBSFilter_a8e591e267bdaf681062ee11486acd88a}{get\+Expectations} () const 
-\begin{DoxyCompactList}\small\item\em get all stored expectations. With respect to \$p(x\+\_\+t$\vert$y\+\_\+\{1\+:t\})\$ \end{DoxyCompactList}\item 
-std\+::vector$<$ double $>$ \hyperlink{classBSFilter_a80aa1183f38d12b3a180ab6a143ab4fd}{get\+Log\+U\+Weights} () const 
-\begin{DoxyCompactList}\small\item\em Get log-\/un-\/normalized weights. \end{DoxyCompactList}\item 
-void \hyperlink{classBSFilter_ac3040c97a24838736e479ac4af219562}{filter} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&data, const std\+::vector$<$ std\+::function$<$ const \hyperlink{apf__filter_8h_ae601f56a556993079f730483c574356f}{Mat}(const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&)$>$ $>$ \&fs=std\+::vector$<$ std\+::function$<$ const \hyperlink{apf__filter_8h_ae601f56a556993079f730483c574356f}{Mat}(const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&)$>$ $>$())
-\begin{DoxyCompactList}\small\item\em If storing whole paths, performs smoothing. If not storing whole paths, performs filtering. \end{DoxyCompactList}\item 
-virtual double \hyperlink{classBSFilter_a1c1084627bfaf2f3ccf882fc23240b7a}{log\+Mu\+Ev} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x1)=0
+\begin{DoxyCompactList}\small\item\em The destructor. \end{DoxyCompactList}\item 
+double \hyperlink{classBSFilter_a8db158adf8136ade250d243a289154a8}{get\+Log\+Cond\+Like} () const 
+\begin{DoxyCompactList}\small\item\em Returns the most recent (log-\/) conditiona likelihood. \end{DoxyCompactList}\item 
+void \hyperlink{classBSFilter_a38dbc8460036319a676926e5f0240249}{filter} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&data, const std\+::vector$<$ std\+::function$<$ const \hyperlink{apf__filter_8h_ae601f56a556993079f730483c574356f}{Mat}(const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&)$>$ $>$ \&fs=std\+::vector$<$ std\+::function$<$ const \hyperlink{apf__filter_8h_ae601f56a556993079f730483c574356f}{Mat}(const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&)$>$ $>$())
+\begin{DoxyCompactList}\small\item\em updates filtering distribution on a new datapoint. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{apf__filter_8h_ae601f56a556993079f730483c574356f}{Mat} $>$ \hyperlink{classBSFilter_aad9844b6cf839b99db2b29556a225f75}{get\+Expectations} () const 
+\begin{DoxyCompactList}\small\item\em return all stored expectations (taken with respect to \$p(x\+\_\+t$\vert$y\+\_\+\{1\+:t\})\$ \end{DoxyCompactList}\item 
+virtual double \hyperlink{classBSFilter_a9317b6253d10ee5b50f68515ae7a5cb7}{log\+Mu\+Ev} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x1)=0
 \begin{DoxyCompactList}\small\item\em Calculate mu\+Ev or logmu\+Ev. \end{DoxyCompactList}\item 
-virtual \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \hyperlink{classBSFilter_a9792df8f9b13495bc8bdcc53adeae347}{q1\+Samp} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&y1)=0
+virtual \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \hyperlink{classBSFilter_a981b7de2820c496508f7fe23723add06}{q1\+Samp} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&y1)=0
 \begin{DoxyCompactList}\small\item\em Samples from time 1 proposal. \end{DoxyCompactList}\item 
-virtual double \hyperlink{classBSFilter_a4d2bc2a2530306abaf1a717596b5814d}{log\+Q1\+Ev} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x1, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&y1)=0
+virtual double \hyperlink{classBSFilter_a9a50ae948bee94114567ca798c8e6f1f}{log\+Q1\+Ev} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x1, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&y1)=0
 \begin{DoxyCompactList}\small\item\em Calculate q1\+Ev or log q1\+Ev. \end{DoxyCompactList}\item 
-virtual double \hyperlink{classBSFilter_aa612efc58f9442a7f6401a5edf0c2799}{log\+G\+Ev} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&yt, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&xt)=0
+virtual double \hyperlink{classBSFilter_ae7ee72e08ab3c0e6ae66f3210a0f18d4}{log\+G\+Ev} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&yt, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&xt)=0
 \begin{DoxyCompactList}\small\item\em Calculate g\+Ev or log\+G\+Ev. \end{DoxyCompactList}\item 
-virtual \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \hyperlink{classBSFilter_ad1cc178c82a518832200949ca4e3d6f6}{f\+Samp} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&xtm1)=0
+virtual \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \hyperlink{classBSFilter_a3d4caf998045f89a6887c3113c5c38f9}{f\+Samp} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&xtm1)=0
 \begin{DoxyCompactList}\small\item\em Sample from the state transition distribution. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-A base-\/class for Bootstrap Filtering (S\+I\+SR with naive proposals). This class is a bit faster because it. 
+\subsubsection*{template$<$size\+\_\+t N$>$\\*
+class B\+S\+Filter$<$ N $>$}
+
+A base class for the boostrap particle filter. 
 
 \begin{DoxyAuthor}{Author}
 taylor 
 \end{DoxyAuthor}
 \begin{DoxyDate}{Date}
-07/09/17 
+26/01/18 
 \end{DoxyDate}
 
 
 \subsection{Constructor \& Destructor Documentation}
 \index{B\+S\+Filter@{B\+S\+Filter}!B\+S\+Filter@{B\+S\+Filter}}
 \index{B\+S\+Filter@{B\+S\+Filter}!B\+S\+Filter@{B\+S\+Filter}}
-\subsubsection[{\texorpdfstring{B\+S\+Filter(unsigned int num\+Parts, B\+S\+Resamp\+Style resamp\+Technique=\+B\+S\+Resamp\+Style\+::everytime\+\_\+multinomial, double ess\+Perc=1.\+0)}{BSFilter(unsigned int numParts, BSResampStyle resampTechnique=BSResampStyle::everytime_multinomial, double essPerc=1.0)}}]{\setlength{\rightskip}{0pt plus 5cm}B\+S\+Filter\+::\+B\+S\+Filter (
+\subsubsection[{\texorpdfstring{B\+S\+Filter(\+B\+S\+Resamp\+Style resamp\+Technique=\+B\+S\+Resamp\+Style\+::everytime\+\_\+multinomial, double ess\+Perc=1.\+0)}{BSFilter(BSResampStyle resampTechnique=BSResampStyle::everytime_multinomial, double essPerc=1.0)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\+\_\+t N$>$ {\bf B\+S\+Filter}$<$ N $>$\+::{\bf B\+S\+Filter} (
 \begin{DoxyParamCaption}
-\item[{unsigned int}]{num\+Parts, }
 \item[{{\bf B\+S\+Resamp\+Style}}]{resamp\+Technique = {\ttfamily BSResampStyle\+:\+:everytime\+\_\+multinomial}, }
 \item[{double}]{ess\+Perc = {\ttfamily 1.0}}
 \end{DoxyParamCaption}
-)}\hypertarget{classBSFilter_ae10863380da750be1a5d506483743353}{}\label{classBSFilter_ae10863380da750be1a5d506483743353}
+)}\hypertarget{classBSFilter_a4f94bc98a11cb80763a7bdc1dd86c279}{}\label{classBSFilter_a4f94bc98a11cb80763a7bdc1dd86c279}
 
 
-Constructor. 
+The constructor. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em num\+Parts} & number of particles \\
+{\em resamp\+Technique} & the type of resampling you want to do \\
 \hline
-{\em resamp\+Technique} & which resampling strategy? \\
-\hline
-{\em ess\+Perc} & ignored unless S\+I\+S\+R\+Resamp\+Style is \char`\"{}ess.\char`\"{} What percent of E\+SS is the threshold for resampling. \\
+{\em ess\+Perc} & the effective sample size percent threshold, below which you want to resample. \\
 \hline
 \end{DoxyParams}
 
@@ -78,30 +74,30 @@ Constructor.
 \subsection{Member Function Documentation}
 \index{B\+S\+Filter@{B\+S\+Filter}!filter@{filter}}
 \index{filter@{filter}!B\+S\+Filter@{B\+S\+Filter}}
-\subsubsection[{\texorpdfstring{filter(const Vec \&data, const std\+::vector$<$ std\+::function$<$ const Mat(const Vec \&)$>$ $>$ \&fs=std\+::vector$<$ std\+::function$<$ const Mat(const Vec \&)$>$ $>$())}{filter(const Vec &data, const std::vector< std::function< const Mat(const Vec &)> > &fs=std::vector< std::function< const Mat(const Vec &)> >())}}]{\setlength{\rightskip}{0pt plus 5cm}void B\+S\+Filter\+::filter (
+\subsubsection[{\texorpdfstring{filter(const Vec \&data, const std\+::vector$<$ std\+::function$<$ const Mat(const Vec \&)$>$ $>$ \&fs=std\+::vector$<$ std\+::function$<$ const Mat(const Vec \&)$>$ $>$())}{filter(const Vec &data, const std::vector< std::function< const Mat(const Vec &)> > &fs=std::vector< std::function< const Mat(const Vec &)> >())}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\+\_\+t N$>$ void {\bf B\+S\+Filter}$<$ N $>$\+::filter (
 \begin{DoxyParamCaption}
 \item[{const {\bf Vec} \&}]{data, }
-\item[{const std\+::vector$<$ std\+::function$<$ const {\bf Mat}(const {\bf Vec} \&)$>$ $>$ \&}]{fs = {\ttfamily std\+:\+:vector$<$~std\+:\+:function$<$~const~{\bf Mat}(const~{\bf Vec}~\&)$>$~$>$()}}
+\item[{const std\+::vector$<$ std\+::function$<$ const {\bf Mat}(const {\bf Vec} \&)$>$ $>$ \&}]{fs = {\ttfamily std\+:\+:vector$<$std\+:\+:function$<$const~{\bf Mat}(const~{\bf Vec}\&)$>$~$>$()}}
 \end{DoxyParamCaption}
-)}\hypertarget{classBSFilter_ac3040c97a24838736e479ac4af219562}{}\label{classBSFilter_ac3040c97a24838736e479ac4af219562}
+)}\hypertarget{classBSFilter_a38dbc8460036319a676926e5f0240249}{}\label{classBSFilter_a38dbc8460036319a676926e5f0240249}
 
 
-If storing whole paths, performs smoothing. If not storing whole paths, performs filtering. 
+updates filtering distribution on a new datapoint. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em data} & is a const Vec\& representing the current observed value of the time series. \\
+{\em data} & the most recent data point \\
 \hline
-{\em fs} & is a vector of functions that operate on each particle Vec. They are used to store empirical expectations (taken with respect to the filtering distribution). \\
+{\em fs} & a vector of functions if you want to calculate expectations. \\
 \hline
 \end{DoxyParams}
 \index{B\+S\+Filter@{B\+S\+Filter}!f\+Samp@{f\+Samp}}
 \index{f\+Samp@{f\+Samp}!B\+S\+Filter@{B\+S\+Filter}}
-\subsubsection[{\texorpdfstring{f\+Samp(const Vec \&xtm1)=0}{fSamp(const Vec &xtm1)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Vec} B\+S\+Filter\+::f\+Samp (
+\subsubsection[{\texorpdfstring{f\+Samp(const Vec \&xtm1)=0}{fSamp(const Vec &xtm1)=0}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\+\_\+t N$>$ virtual {\bf Vec} {\bf B\+S\+Filter}$<$ N $>$\+::f\+Samp (
 \begin{DoxyParamCaption}
 \item[{const {\bf Vec} \&}]{xtm1}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classBSFilter_ad1cc178c82a518832200949ca4e3d6f6}{}\label{classBSFilter_ad1cc178c82a518832200949ca4e3d6f6}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classBSFilter_a3d4caf998045f89a6887c3113c5c38f9}{}\label{classBSFilter_a3d4caf998045f89a6887c3113c5c38f9}
 
 
 Sample from the state transition distribution. 
@@ -114,70 +110,42 @@ Sample from the state transition distribution.
 \begin{DoxyReturn}{Returns}
 the sample as a Vec 
 \end{DoxyReturn}
-\index{B\+S\+Filter@{B\+S\+Filter}!get\+E\+SS@{get\+E\+SS}}
-\index{get\+E\+SS@{get\+E\+SS}!B\+S\+Filter@{B\+S\+Filter}}
-\subsubsection[{\texorpdfstring{get\+E\+S\+S() const }{getESS() const }}]{\setlength{\rightskip}{0pt plus 5cm}double B\+S\+Filter\+::get\+E\+SS (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-) const}\hypertarget{classBSFilter_ade1e772ec74f4cf3ffaea84d466f26cc}{}\label{classBSFilter_ade1e772ec74f4cf3ffaea84d466f26cc}
-
-
-get effective sample size. 
-
-\begin{DoxyReturn}{Returns}
-The current estimate for the effective sample size. 
-\end{DoxyReturn}
 \index{B\+S\+Filter@{B\+S\+Filter}!get\+Expectations@{get\+Expectations}}
 \index{get\+Expectations@{get\+Expectations}!B\+S\+Filter@{B\+S\+Filter}}
-\subsubsection[{\texorpdfstring{get\+Expectations() const }{getExpectations() const }}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf Mat}$>$ B\+S\+Filter\+::get\+Expectations (
+\subsubsection[{\texorpdfstring{get\+Expectations() const }{getExpectations() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\+\_\+t N$>$ std\+::vector$<$ {\bf Mat} $>$ {\bf B\+S\+Filter}$<$ N $>$\+::get\+Expectations (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const}\hypertarget{classBSFilter_a8e591e267bdaf681062ee11486acd88a}{}\label{classBSFilter_a8e591e267bdaf681062ee11486acd88a}
+) const}\hypertarget{classBSFilter_aad9844b6cf839b99db2b29556a225f75}{}\label{classBSFilter_aad9844b6cf839b99db2b29556a225f75}
 
 
-get all stored expectations. With respect to \$p(x\+\_\+t$\vert$y\+\_\+\{1\+:t\})\$ 
+return all stored expectations (taken with respect to \$p(x\+\_\+t$\vert$y\+\_\+\{1\+:t\})\$ 
 
 \begin{DoxyReturn}{Returns}
-returns a std\+::vector$<$\+Mat$>$ of all of the approximated expectations. 
+return a std\+::vector$<$\+Mat$>$ of expectations. How many depends on how many callbacks you gave to 
 \end{DoxyReturn}
 \index{B\+S\+Filter@{B\+S\+Filter}!get\+Log\+Cond\+Like@{get\+Log\+Cond\+Like}}
 \index{get\+Log\+Cond\+Like@{get\+Log\+Cond\+Like}!B\+S\+Filter@{B\+S\+Filter}}
-\subsubsection[{\texorpdfstring{get\+Log\+Cond\+Like() const }{getLogCondLike() const }}]{\setlength{\rightskip}{0pt plus 5cm}double B\+S\+Filter\+::get\+Log\+Cond\+Like (
+\subsubsection[{\texorpdfstring{get\+Log\+Cond\+Like() const }{getLogCondLike() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\+\_\+t N$>$ double {\bf B\+S\+Filter}$<$ N $>$\+::get\+Log\+Cond\+Like (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const}\hypertarget{classBSFilter_a1e3791db4cea7b21a6cb135220823cc2}{}\label{classBSFilter_a1e3791db4cea7b21a6cb135220823cc2}
+) const}\hypertarget{classBSFilter_a8db158adf8136ade250d243a289154a8}{}\label{classBSFilter_a8db158adf8136ade250d243a289154a8}
 
 
-get log p(y\+\_\+t$\vert$y\+\_\+\{1\+:t-\/1\})\$ or log p(y\+\_\+1). 
-
-\begin{DoxyReturn}{Returns}
-The estimate of the most recent log conditional likelihood. 
-\end{DoxyReturn}
-\index{B\+S\+Filter@{B\+S\+Filter}!get\+Log\+U\+Weights@{get\+Log\+U\+Weights}}
-\index{get\+Log\+U\+Weights@{get\+Log\+U\+Weights}!B\+S\+Filter@{B\+S\+Filter}}
-\subsubsection[{\texorpdfstring{get\+Log\+U\+Weights() const }{getLogUWeights() const }}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$double$>$ B\+S\+Filter\+::get\+Log\+U\+Weights (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-) const}\hypertarget{classBSFilter_a80aa1183f38d12b3a180ab6a143ab4fd}{}\label{classBSFilter_a80aa1183f38d12b3a180ab6a143ab4fd}
-
-
-Get log-\/un-\/normalized weights. 
+Returns the most recent (log-\/) conditiona likelihood. 
 
 \begin{DoxyReturn}{Returns}
-The most recent std\+::vector of log-\/un-\/normalized weights. 
+log p(y\+\_\+t $\vert$ y\+\_\+\{1\+:t-\/1\}) 
 \end{DoxyReturn}
 \index{B\+S\+Filter@{B\+S\+Filter}!log\+G\+Ev@{log\+G\+Ev}}
 \index{log\+G\+Ev@{log\+G\+Ev}!B\+S\+Filter@{B\+S\+Filter}}
-\subsubsection[{\texorpdfstring{log\+G\+Ev(const Vec \&yt, const Vec \&xt)=0}{logGEv(const Vec &yt, const Vec &xt)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual double B\+S\+Filter\+::log\+G\+Ev (
+\subsubsection[{\texorpdfstring{log\+G\+Ev(const Vec \&yt, const Vec \&xt)=0}{logGEv(const Vec &yt, const Vec &xt)=0}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\+\_\+t N$>$ virtual double {\bf B\+S\+Filter}$<$ N $>$\+::log\+G\+Ev (
 \begin{DoxyParamCaption}
 \item[{const {\bf Vec} \&}]{yt, }
 \item[{const {\bf Vec} \&}]{xt}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classBSFilter_aa612efc58f9442a7f6401a5edf0c2799}{}\label{classBSFilter_aa612efc58f9442a7f6401a5edf0c2799}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classBSFilter_ae7ee72e08ab3c0e6ae66f3210a0f18d4}{}\label{classBSFilter_ae7ee72e08ab3c0e6ae66f3210a0f18d4}
 
 
 Calculate g\+Ev or log\+G\+Ev. 
@@ -194,11 +162,11 @@ the density or log-\/density evaluation as a double
 \end{DoxyReturn}
 \index{B\+S\+Filter@{B\+S\+Filter}!log\+Mu\+Ev@{log\+Mu\+Ev}}
 \index{log\+Mu\+Ev@{log\+Mu\+Ev}!B\+S\+Filter@{B\+S\+Filter}}
-\subsubsection[{\texorpdfstring{log\+Mu\+Ev(const Vec \&x1)=0}{logMuEv(const Vec &x1)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual double B\+S\+Filter\+::log\+Mu\+Ev (
+\subsubsection[{\texorpdfstring{log\+Mu\+Ev(const Vec \&x1)=0}{logMuEv(const Vec &x1)=0}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\+\_\+t N$>$ virtual double {\bf B\+S\+Filter}$<$ N $>$\+::log\+Mu\+Ev (
 \begin{DoxyParamCaption}
 \item[{const {\bf Vec} \&}]{x1}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classBSFilter_a1c1084627bfaf2f3ccf882fc23240b7a}{}\label{classBSFilter_a1c1084627bfaf2f3ccf882fc23240b7a}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classBSFilter_a9317b6253d10ee5b50f68515ae7a5cb7}{}\label{classBSFilter_a9317b6253d10ee5b50f68515ae7a5cb7}
 
 
 Calculate mu\+Ev or logmu\+Ev. 
@@ -213,12 +181,12 @@ the density or log-\/density evaluation as a double
 \end{DoxyReturn}
 \index{B\+S\+Filter@{B\+S\+Filter}!log\+Q1\+Ev@{log\+Q1\+Ev}}
 \index{log\+Q1\+Ev@{log\+Q1\+Ev}!B\+S\+Filter@{B\+S\+Filter}}
-\subsubsection[{\texorpdfstring{log\+Q1\+Ev(const Vec \&x1, const Vec \&y1)=0}{logQ1Ev(const Vec &x1, const Vec &y1)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual double B\+S\+Filter\+::log\+Q1\+Ev (
+\subsubsection[{\texorpdfstring{log\+Q1\+Ev(const Vec \&x1, const Vec \&y1)=0}{logQ1Ev(const Vec &x1, const Vec &y1)=0}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\+\_\+t N$>$ virtual double {\bf B\+S\+Filter}$<$ N $>$\+::log\+Q1\+Ev (
 \begin{DoxyParamCaption}
 \item[{const {\bf Vec} \&}]{x1, }
 \item[{const {\bf Vec} \&}]{y1}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classBSFilter_a4d2bc2a2530306abaf1a717596b5814d}{}\label{classBSFilter_a4d2bc2a2530306abaf1a717596b5814d}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classBSFilter_a9a50ae948bee94114567ca798c8e6f1f}{}\label{classBSFilter_a9a50ae948bee94114567ca798c8e6f1f}
 
 
 Calculate q1\+Ev or log q1\+Ev. 
@@ -235,11 +203,11 @@ the density or log-\/density evaluation as a double
 \end{DoxyReturn}
 \index{B\+S\+Filter@{B\+S\+Filter}!q1\+Samp@{q1\+Samp}}
 \index{q1\+Samp@{q1\+Samp}!B\+S\+Filter@{B\+S\+Filter}}
-\subsubsection[{\texorpdfstring{q1\+Samp(const Vec \&y1)=0}{q1Samp(const Vec &y1)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Vec} B\+S\+Filter\+::q1\+Samp (
+\subsubsection[{\texorpdfstring{q1\+Samp(const Vec \&y1)=0}{q1Samp(const Vec &y1)=0}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\+\_\+t N$>$ virtual {\bf Vec} {\bf B\+S\+Filter}$<$ N $>$\+::q1\+Samp (
 \begin{DoxyParamCaption}
 \item[{const {\bf Vec} \&}]{y1}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classBSFilter_a9792df8f9b13495bc8bdcc53adeae347}{}\label{classBSFilter_a9792df8f9b13495bc8bdcc53adeae347}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classBSFilter_a981b7de2820c496508f7fe23723add06}{}\label{classBSFilter_a981b7de2820c496508f7fe23723add06}
 
 
 Samples from time 1 proposal. 

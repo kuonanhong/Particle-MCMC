@@ -30,6 +30,15 @@ namespace convenience_funcs{
      * @param ofs the target ofstream.
      */
     void logParams(const std::vector<Vec> &vecOfParams, std::ofstream &ofs);
+    
+    
+    /**
+     * @brief writes a std::array<Vec, N> to a row of an ofstream
+     * @param arrOfParams an array of Vecs of parameters to write
+     * @param ofs the target ofstream
+     */
+    template <size_t N>
+    void logParams(const std::array<Vec, N> &arrOfParams, std::ofstream &ofs);
 
     
     /**
@@ -42,5 +51,19 @@ namespace convenience_funcs{
 
     
 } // namespace conv_funcs
+
+template <size_t N>
+void convenience_funcs::logParams(const std::array<Vec, N> &arrOfParams, std::ofstream &ofs)
+{
+    for(size_t i = 0; i < arrOfParams.size(); ++i){ // every Vec 
+        for(size_t j = 0; j < arrOfParams[i].rows(); ++j){  // every elmeent of Vec
+            if ( i == 0 && j == 0) // first thing
+                ofs << arrOfParams[i](j);
+            else
+                ofs << ", " << arrOfParams[i](j);
+        }
+    }
+    ofs << "\n";
+}
 
 #endif //CONVENIENCE_FUNCS_H

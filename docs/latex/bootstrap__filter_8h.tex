@@ -1,7 +1,12 @@
 \hypertarget{bootstrap__filter_8h}{}\section{include/bootstrap\+\_\+filter.h File Reference}
 \label{bootstrap__filter_8h}\index{include/bootstrap\+\_\+filter.\+h@{include/bootstrap\+\_\+filter.\+h}}
+
+
+bootstrap particle filter  
+
+
 {\ttfamily \#include $<$Eigen/\+Dense$>$}\\*
-{\ttfamily \#include \char`\"{}multinomial\+\_\+resampler.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}mn\+\_\+resampler.\+h\char`\"{}}\\*
 Include dependency graph for bootstrap\+\_\+filter.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -12,8 +17,8 @@ Include dependency graph for bootstrap\+\_\+filter.\+h\+:\nopagebreak
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \hyperlink{classBSFilter}{B\+S\+Filter}
-\begin{DoxyCompactList}\small\item\em A base-\/class for Bootstrap Filtering (S\+I\+SR with naive proposals). This class is a bit faster because it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+class \hyperlink{classBSFilter}{B\+S\+Filter$<$ N $>$}
+\begin{DoxyCompactList}\small\item\em A base class for the boostrap particle filter. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
@@ -29,6 +34,16 @@ enum \hyperlink{bootstrap__filter_8h_a476b3b5754056a34ac843629c9570b49}{B\+S\+Re
 {\bfseries ess\+\_\+multinomial}
  \}
 \end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+bootstrap particle filter 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em N} & the number of particles \\
+\hline
+\end{DoxyTemplParams}
 
 
 \subsection{Typedef Documentation}

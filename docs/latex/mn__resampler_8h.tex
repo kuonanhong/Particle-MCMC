@@ -1,0 +1,54 @@
+\hypertarget{mn__resampler_8h}{}\section{include/mn\+\_\+resampler.h File Reference}
+\label{mn__resampler_8h}\index{include/mn\+\_\+resampler.\+h@{include/mn\+\_\+resampler.\+h}}
+
+
+A class used for all the multinomial resampling in any model. Keep in mind this is usually implemented by the base classes themselves, and so this would mean they are not touched by the typical end-\/user.  
+
+
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\\*
+{\ttfamily \#include $<$array$>$}\\*
+{\ttfamily \#include $<$random$>$}\\*
+{\ttfamily \#include $<$chrono$>$}\\*
+{\ttfamily \#include \char`\"{}lgssm.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fshmm.\+h\char`\"{}}\\*
+Include dependency graph for mn\+\_\+resampler.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mn__resampler_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mn__resampler_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classMNResamp}{M\+N\+Resamp$<$ N $>$}
+\begin{DoxyCompactList}\small\item\em A class template for Multinomial Resampling. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef Eigen\+::\+Matrix$<$ double, Eigen\+::\+Dynamic, 1 $>$ \hyperlink{mn__resampler_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class used for all the multinomial resampling in any model. Keep in mind this is usually implemented by the base classes themselves, and so this would mean they are not touched by the typical end-\/user. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em N} & the size of the array aka the number of particles \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Typedef Documentation}
+\index{mn\+\_\+resampler.\+h@{mn\+\_\+resampler.\+h}!Vec@{Vec}}
+\index{Vec@{Vec}!mn\+\_\+resampler.\+h@{mn\+\_\+resampler.\+h}}
+\subsubsection[{\texorpdfstring{Vec}{Vec}}]{\setlength{\rightskip}{0pt plus 5cm}typedef Eigen\+::\+Matrix$<$ double, Eigen\+::\+Dynamic, 1 $>$ {\bf Vec}}\hypertarget{mn__resampler_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{}\label{mn__resampler_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}
+typedef for linear algebra stuff 
