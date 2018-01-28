@@ -10,7 +10,7 @@
 #include "fshmm.h"
 
 /** typedef for linear algebra stuff */
-typedef Eigen::Matrix< double, Eigen::Dynamic, 1              > Vec;
+typedef Eigen::Matrix< double, Eigen::Dynamic, 1> Vec;
 
 
 //! A class template for Multinomial Resampling.
