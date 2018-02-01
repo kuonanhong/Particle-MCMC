@@ -58,7 +58,23 @@ public:
      * @param ks the "returned" indices of type std::array<unsigned int, N>
      */
     void kGen(const std::array<double,N> &logFirstStageWeights, std::array<unsigned int, N> &ks);
+    
+    /**
+      * @brief Function to resample RBPFs--recall you have to resample the samples AND models.
+      * @param oldMods embedded kalman filter objects.
+      * @param oldSamps samples of each particle.
+      * @param oldLogWts log un-normalized weights of each particle.
+      */
+    void resampKRBPF(std::array<Lgssm,N> &oldMods, std::array<Vec,N> &oldSamps, std::array<double,N> &oldLogWts);
 
+
+    /**
+      * @brief Function to resample for RBPFs--you have to resample the samples AND models.
+      * @param oldMods embedded HMM filter objects.
+      * @param oldSamps samples of each particle.
+      * @param oldLogUnNormWts log un-normalized weights of each particle.
+      */
+    void resampHRBPF(std::array<FSHMM,N> &oldMods, std::array<Vec,N> &oldSamps, std::array<double,N> &oldLogUnNormWts);
 };
 
 
@@ -67,8 +83,6 @@ public:
 ///////////////////////////////////////////////////////////////
 /////////////////////// implementations ///////////////////////
 ///////////////////////////////////////////////////////////////
-
-
 
 
 template<size_t N>
@@ -145,6 +159,69 @@ void MNResamp<N>::kGen(const std::array<double,N> &logFirstStageWeights, std::ar
     for(size_t i = 0; i < N; ++i){
         ks[i] = kGenerator(m_gen);
     }
+}
+
+
+template <size_t N>
+void MNResamp<N>::resampKRBPF(std::array<Lgssm,N> &oldMods, std::array<Vec,N> &oldSamps, std::array<double,N> &oldLogWts)
+{
+    // Create the distribution with exponentiated log-weights
+    std::array<double, N> w;
+    double m = *std::max_element(oldLogWts.begin(), oldLogWts.end());
+    std::transform(oldLogWts.begin(), oldLogWts.end(), w.begin(), 
+                    [&m](double& d) -> double { return std::exp( d - m ); } );
+    std::discrete_distribution<> idxSampler(w.begin(), w.end());
+    
+    // create temporary vectors for samps and mods
+    std::array<Vec, N> tmpSamps;
+    std::array<Lgssm, N> tmpMods;
+    
+    // sample from the original parts and store in temporary
+    unsigned int whichPart;
+    for(size_t part = 0; part < N; ++part)
+    {
+        whichPart = idxSampler(m_gen);
+        tmpSamps[part] = oldSamps[whichPart];
+        tmpMods[part] = oldMods[whichPart];
+    }
+    
+    //overwrite olds with news
+    oldMods = std::move(tmpMods);
+    oldSamps = std::move(tmpSamps);
+    std::fill(oldLogWts.begin(), oldLogWts.end(), 0.0);
+}
+
+
+template <size_t N>
+void MNResamp<N>::resampHRBPF(std::array<FSHMM,N> &oldMods, std::array<Vec,N> &oldSamps, std::array<double,N> &oldLogUnNormWts)
+{
+    // Create the distribution with those weights
+    std::array<double, N> w;
+    double m = *std::max_element(oldLogUnNormWts.begin(), oldLogUnNormWts.end());
+    std::transform(oldLogUnNormWts.begin(),
+                    oldLogUnNormWts.end(),
+                    w.begin(),
+                    [&m](double &d)->double{return std::exp(d-m);}
+                    );
+    std::discrete_distribution<> idxSampler(w.begin(), w.end());
+    
+    // create temporary vectors for samps and mods
+    std::array<Vec,N>   tmpSamps;
+    std::array<FSHMM,N> tmpMods;
+    
+    // sample from the original parts and store in temporary
+    int whichPart;
+    for(size_t part = 0; part < N; ++part)
+    {
+        whichPart = idxSampler(m_gen);
+        tmpSamps[part] = oldSamps[whichPart];
+        tmpMods[part] = oldMods[whichPart];
+    }
+    
+    //overwrite olds with news
+    oldMods = std::move(tmpMods);
+    oldSamps = std::move(tmpSamps);
+    std::fill(oldLogUnNormWts.begin(), oldLogUnNormWts.end(), 0.0);
 }
 
 

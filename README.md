@@ -16,5 +16,5 @@ If you want to build yourself, make sure to compile with C++11 enabled (`-std=c+
 ## To-Do List
 - Make a parameter class that organizes which are transformed, constrained, etc.
 - Implement more resampling options (different algorithms, different schedules, etc.)
-- Make univariate normal samplers/evaluators and further speed up any of the stuff in `densities`
-- unit testing...
+- make the resampler a template parameter
+- write more tests
