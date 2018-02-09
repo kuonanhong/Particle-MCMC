@@ -1,5 +1,5 @@
-#ifndef HMM_RBPF_H
-#define HMM_RBPF_H
+#ifndef HMM_RBPF_BS_H
+#define HMM_RBPF_BS_H
 
 #include <Eigen/Dense>
 #include <vector>
@@ -11,21 +11,18 @@
 #include "densities.h" // for typedefs
 
 /** enum class for the type of resampling to be performed */
-enum class HMMRBPFResampStyle {everytime_multinomial, never, ess_multinomial};
-
-//TODO: IMPLEMENT LOG WEIGHTS
-// TODO: implement expectations
+enum class HMMRBPFBSResampStyle {everytime_multinomial, never, ess_multinomial};
 
 //! A base-class for HMM Rao-Blackwellized Particle Filtering. 
 /*!
- * @class Hmm_Rbpf
+ * @class Hmm_Rbpf_BS
  * @author taylor
- * @file hmm_rbpf.h
+ * @file hmm_rbpf_bs.h
  * @brief Rao-Blackwellized particle filtering where the innder models are discrete state hmms.
- * @tparam
+ * @tparam np the number of parameters
  */
 template <size_t np>
-class Hmm_Rbpf{
+class Hmm_Rbpf_BS{
 private:
     std::array<FSHMM,np> m_p_innerMods;
     std::array<Vec,np> m_p_samps;
@@ -34,7 +31,7 @@ private:
     unsigned int m_now;
     unsigned int m_dimState;
     double m_logLastCondLike;
-    HMMRBPFResampStyle  m_resampTechnique;
+    HMMRBPFBSResampStyle  m_resampTechnique;
     MNResamp<np> m_resampler;
     std::vector<Mat> m_expectations;
     
@@ -46,14 +43,14 @@ public:
      * @brief constructor.
      * @param rt the type of resampling you want to do.
      */
-    Hmm_Rbpf(HMMRBPFResampStyle rt = HMMRBPFResampStyle::everytime_multinomial);
+    Hmm_Rbpf_BS(HMMRBPFBSResampStyle rt = HMMRBPFBSResampStyle::everytime_multinomial);
     
     
     //! Destructor.
     /**
      * @brief destructor.
      */
-    ~Hmm_Rbpf();
+    ~Hmm_Rbpf_BS();
 
 
     //! Filter.
@@ -79,16 +76,7 @@ public:
      * @brief Get vector of expectations.
      * @return vector of expectations
      */
-    std::vector<Mat> getExpectations() const;
-
-    //! Evaluates the first time state density.
-    /**
-     * @brief evaluates mu.
-     * @param x21 component two at time 1
-     * @return a double evaluation
-     */
-    virtual double logMuEv(const Vec &x21) = 0;
-    
+    std::vector<Mat> getExpectations() const;   
     
     //! Sample from the first sampler.
     /**
@@ -96,7 +84,7 @@ public:
      * @param y1 most recent datum.
      * @return a Vec sample for x21.
      */
-    virtual Vec q1Samp(const Vec &y1) = 0;
+    virtual Vec muSamp(const Vec &y1) = 0;
     
     
     //! Provides the initial mean vector for each HMM filter object.
@@ -123,38 +111,7 @@ public:
      * @param yt the current observation.
      * @return a Vec sample of the second state component at the current time.
      */
-    virtual Vec qSamp(const Vec &x2tm1, const Vec &yt) = 0;
-    
-    
-    //! Evaluates the proposal density of the second state component at time 1.
-    /**
-     * @brief Evaluates the proposal density of the second state component at time 1.
-     * @param x21 the second state component at time 1 you sampled. 
-     * @param y1 time 1 observation.
-     * @return a double evaluation of the density.
-     */
-    virtual double logQ1Ev(const Vec &x21, const Vec &y1) = 0;
-    
-    
-    //! Evaluates the state transition density for the second state component.
-    /**
-     * @brief Evaluates the state transition density for the second state component.
-     * @param x2t the current second state component.
-     * @param x2tm1 the previous second state component.
-     * @return a double evaluation.
-     */
-    virtual double logFEv(const Vec &x2t, const Vec &x2tm1) = 0;
-    
-    
-    //! Evaluates the proposal density at time t > 1.
-    /**
-     * @brief Evaluates the proposal density at time t > 1. 
-     * @param x2t the current second state component.
-     * @param x2tm1 the previous second state component.
-     * @param yt the current time series observation.
-     * @return a double evaluation.
-     */
-    virtual double logQEv(const Vec &x2t, const Vec &x2tm1, const Vec &yt ) = 0;
+    virtual Vec fSamp(const Vec &x2tm1, const Vec &yt) = 0;
     
     
     //! How to update your inner HMM filter object at each time.
@@ -175,7 +132,7 @@ public:
 // doesn't instantiate or resize LGSSM mods because 
 // their first time prior might depend on samples
 template <size_t np>
-Hmm_Rbpf<np>::Hmm_Rbpf(HMMRBPFResampStyle rt)
+Hmm_Rbpf_BS<np>::Hmm_Rbpf_BS(HMMRBPFBSResampStyle rt)
     : m_now(0), m_logLastCondLike(0.0), m_resampTechnique(rt)
 {
     std::fill(m_logUnNormWeights.begin(), m_logUnNormWeights.end(), 0.0);
@@ -183,27 +140,27 @@ Hmm_Rbpf<np>::Hmm_Rbpf(HMMRBPFResampStyle rt)
 
 
 template <size_t np>
-Hmm_Rbpf<np>::~Hmm_Rbpf()
+Hmm_Rbpf_BS<np>::~Hmm_Rbpf_BS()
 {
 }
 
 
 template <size_t np>
-double Hmm_Rbpf<np>::getLogCondLike() const
+double Hmm_Rbpf_BS<np>::getLogCondLike() const
 {
     return m_logLastCondLike;
 }
 
 
 template <size_t np>
-std::vector<Mat> Hmm_Rbpf<np>::getExpectations() const
+std::vector<Mat> Hmm_Rbpf_BS<np>::getExpectations() const
 {
     return m_expectations;
 }
 
 
 template <size_t np>
-void Hmm_Rbpf<np>::resampMultinomHRBPF(std::array<FSHMM,np> &oldMods, 
+void Hmm_Rbpf_BS<np>::resampMultinomHRBPF(std::array<FSHMM,np> &oldMods, 
                                        std::array<Vec,np> &oldSamps, 
                                        std::array<double,np> &oldLogWts)
 {
@@ -212,7 +169,7 @@ void Hmm_Rbpf<np>::resampMultinomHRBPF(std::array<FSHMM,np> &oldMods,
 
 
 template <size_t np>
-void Hmm_Rbpf<np>::filter(const Vec &data, 
+void Hmm_Rbpf_BS<np>::filter(const Vec &data, 
                             const std::vector<std::function<const Mat(const Vec &x1tProbs, const Vec &x2t)> >& fs)
 {
 
@@ -224,12 +181,13 @@ void Hmm_Rbpf<np>::filter(const Vec &data,
         double m1(0.0);
         for(size_t ii = 0; ii < np; ++ii){
             
-            m_p_samps[ii] = q1Samp(data); 
+            m_p_samps[ii] = muSamp(data); 
             tmpProbs = initHMMProbVec(m_p_samps[ii]);
             tmpTransMat = initHMMTransMat(m_p_samps[ii]);
-            m_p_innerMods.emplace_back(tmpProbs, tmpTransMat); 
+            m_p_innerMods[ii] = FSHMM(tmpProbs, tmpTransMat);
+            //m_p_innerMods.emplace_back(tmpProbs, tmpTransMat); 
             updateFSHMM(m_p_innerMods[ii], data, m_p_samps[ii]);
-            m_logUnNormWeights[ii] = std::log(m_p_innerMods[ii].getCondLike()) + logMuEv(m_p_samps[ii]) - logQ1Ev(m_p_samps[ii], data); 
+            m_logUnNormWeights[ii] = std::log(m_p_innerMods[ii].getCondLike()); 
 
             // maximum to be used in likelihood calc
             if(m_logUnNormWeights[ii] > m1)
@@ -246,7 +204,7 @@ void Hmm_Rbpf<np>::filter(const Vec &data,
         
         // calculate expectations before you resample
         m_expectations.resize(fs.size());
-        m_dimState = q1Samp(data).rows();
+        m_dimState = muSamp(data).rows();
         std::fill(m_expectations.begin(), m_expectations.end(), Mat::Zero(m_dimState, m_dimState)); // TODO: should this be Mat::Zero(m_dimState, m_dimState)?
         int fId(0);
         double m = *std::max_element(m_logUnNormWeights.begin(), m_logUnNormWeights.end());
@@ -270,7 +228,7 @@ void Hmm_Rbpf<np>::filter(const Vec &data,
 
         
         // resample (unnormalized weights ok)
-        if (m_resampTechnique == HMMRBPFResampStyle::everytime_multinomial)
+        if (m_resampTechnique == HMMRBPFBSResampStyle::everytime_multinomial)
             resampMultinomHRBPF(m_p_innerMods, m_p_samps, m_logUnNormWeights);
             
         // advance time step
@@ -285,13 +243,11 @@ void Hmm_Rbpf<np>::filter(const Vec &data,
         double sumexpdenom(0.0);
         for(size_t ii = 0; ii < np; ++ii){
             
-            newX2Samp = qSamp(m_p_samps[ii], data);
+            newX2Samp = fSamp(m_p_samps[ii], data);
             updateFSHMM(m_p_innerMods[ii], data, newX2Samp);
             sumexpdenom += std::exp(m_logUnNormWeights[ii] - m2);
             
-            m_logUnNormWeights[ii] += std::log(m_p_innerMods[ii].getCondLike())
-                                    + logFEv(newX2Samp, m_p_samps[ii]) 
-                                    - logQEv(newX2Samp, m_p_samps[ii], data);
+            m_logUnNormWeights[ii] += std::log(m_p_innerMods[ii].getCondLike());
 
             // update the maximum for the newest stuff/numerator
             if( m_logUnNormWeights[ii] > m1)
@@ -329,7 +285,7 @@ void Hmm_Rbpf<np>::filter(const Vec &data,
         }
         
         // resample (unnormalized weights ok)
-        if (m_resampTechnique == HMMRBPFResampStyle::everytime_multinomial)
+        if (m_resampTechnique == HMMRBPFBSResampStyle::everytime_multinomial)
             resampMultinomHRBPF(m_p_innerMods, m_p_samps, m_logUnNormWeights);
 //        else if ( (m_resampTechnique == HMMRBPFResampStyle::ess_multinomial) && (m_ESS < m_percentOfNumPartsThresh * m_numParts) )
 //            resampMultinomHRBPF(m_p_innerMods, m_p_samps, m_unNormWeights);
@@ -339,4 +295,4 @@ void Hmm_Rbpf<np>::filter(const Vec &data,
     }
     
 }
-#endif //HMM_RBPF_H
+#endif //HMM_RBPF_BS_H

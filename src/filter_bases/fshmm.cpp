@@ -38,7 +38,7 @@ void FSHMM::update(const Vec &yt, const Vec &condDensVec)
 {
     if (!m_fresh)  // hasn't seen data before and so filtVec is just time 1 state prior
     {
-        m_filtVec = m_filtVec.cwiseProduct( condDensVec ); // now it's p(x_t, y_t | y_{1:t-1})
+        m_filtVec = m_filtVec.cwiseProduct( condDensVec ); // now it's p(x_1, y_1)
         m_lastCondLike = m_filtVec.sum();
         m_filtVec /= m_lastCondLike;
         m_fresh = true;
