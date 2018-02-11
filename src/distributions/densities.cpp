@@ -30,13 +30,18 @@ double densities::evalUnivNorm(const double &x, const double &mu, const double &
 
 double densities::evalMultivNorm(const Vec &x, const Vec &meanVec, const Mat &covMat, bool log)
 {
-    double quadform  = (x - meanVec).transpose() * covMat.inverse() * (x-meanVec);
+    // from Eigen: Remember that Cholesky decompositions are not rank-revealing. 
+    /// This LLT decomposition is only stable on positive definite matrices, 
+    // use LDLT instead for the semidefinite case. Also, do not use a Cholesky 
+    // decomposition to determine whether a system of equations has a solution.
+    Eigen::LLT<Mat> lltM(covMat);
+    Vec tmp = lltM.solve(x-meanVec); // tmp = Sigma^{-1}(x-meanVec)  iff Sigma tmp = (x-meanVec)
+    double quadform = ((x-meanVec).transpose() * tmp)(0,0);
 
     if (log){
 
-        // calculate log-determinant using cholesky decomposition (assumes symmetric and positive definite)
+        // calculate log-determinant using cholesky decomposition too
         double ld (0.0);
-        Eigen::LLT<Mat> lltM(covMat);  
         Mat L = lltM.matrixL(); // the lower diagonal L such that M = LL^T
 
         // add up log of diagnols of Cholesky L
@@ -49,8 +54,8 @@ double densities::evalMultivNorm(const Vec &x, const Vec &meanVec, const Mat &co
 
 
     }else{  // not the log density
-        double normConst = pow(inv_sqrt_2pi, covMat.rows()) * pow(covMat.determinant(), -.5);
-        return normConst * exp(-.5* quadform);
+        double normConst = std::pow(inv_sqrt_2pi, covMat.rows()) * std::pow(covMat.determinant(), -.5);
+        return normConst * std::exp(-.5* quadform);
     }
 
 }
