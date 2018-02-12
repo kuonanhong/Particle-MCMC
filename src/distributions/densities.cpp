@@ -133,9 +133,9 @@ double densities::evalUnivHalfNorm(const double &x, const double &sigmaSqd, bool
 {
     if( (x >= 0.0) && (sigmaSqd > 0.0)){
         if (log){
-            return .5*log_two_over_pi - .5*std::log(sigmaSqd) - pow(x, 2) / (2*sigmaSqd);
+            return .5*log_two_over_pi - .5*std::log(sigmaSqd) - .5*x*x / sigmaSqd;
         }else{
-            return exp(-pow(x,2)/(2*sigmaSqd) ) * sqrt_two_over_pi / sqrt(sigmaSqd);
+            return std::exp(-.5*x*x/sigmaSqd) * sqrt_two_over_pi / std::sqrt(sigmaSqd);
         }
     }else{
         if (log){
