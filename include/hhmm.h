@@ -65,7 +65,7 @@ public:
      * @param yt the current datum.
      * @param condDensVec the vector (in x_t) of p(y_t| time t production states)
      */
-    void update(const Vec &yt, const Vec &condDensVec);
+    void update(const Vec &yt, const Eigen::Matrix<double, n2, 1> &condDensVec);
 
 };
 
@@ -119,11 +119,11 @@ void HHMM<n1,n2>::update(const Vec &yt, const Eigen::Matrix<double, n2, 1> &cond
     {
         for(size_t i = 0; i < n1; ++i){
             m_filtVecsLevel2[i] = m_filtVecsLevel2[i].cwiseProduct(condDensVec); // now p(y_1, x^2 | x^1) for each x^1
-            m_filtVecLevel1(i) = ( m_filtVecsLevel2[i] * m_filtVecLevel1(i) ).sum()  // now each p(y_1, x^1)
-            m_filtVecsLevel2[i] = m_filtVecsLevel2[i] / m_filtVecsLevel2[i].sum() // p(x^2 | x^1, y_1) because we divide by p(y_1 | x^1)
+            m_filtVecLevel1(i) = ( m_filtVecsLevel2[i] * m_filtVecLevel1(i) ).sum();  // now each p(y_1, x^1)
+            m_filtVecsLevel2[i] = m_filtVecsLevel2[i] / m_filtVecsLevel2[i].sum(); // p(x^2 | x^1, y_1) because we divide by p(y_1 | x^1)
         }
-        m_lastCondLike = m_filtVecsLevel1.sum();
-        m_filtVecsLevel1 = m_filtVecsLevel1 / m_lastCondLike;
+        m_lastCondLike = m_filtVecLevel1.sum();
+        m_filtVecLevel1 = m_filtVecLevel1 / m_lastCondLike;
         m_fresh = true;
         
     } else { // has seen data before
@@ -132,10 +132,10 @@ void HHMM<n1,n2>::update(const Vec &yt, const Eigen::Matrix<double, n2, 1> &cond
         for(size_t i = 0; i < n1; ++i){
             m_filtVecsLevel2[i] = m_transMatsTransposeLevel2[i] * m_filtVecsLevel2[i]; // now p(x_t^2 | x_t^1, y_{1:t-1})
             m_filtVecsLevel2[i] = m_filtVecsLevel2[i].cwiseProduct( condDensVec ); // now p(y_t, x_t^2 | x_t^1, y_{1:t-1})
-            m_filtVecLevel1(i) = ( m_filtVecsLevel2[i] * m_filtVecLevel1(i) ).sum() // each p(y_t, x_t^1 | y_{1:t-1})
-            m_filtVecsLevel2[i] = m_filtVecsLevel2[i] / m_filtVecsLevel2[i].sum() // each p(x_t^2 | x_t^1, y_{1:t})
+            m_filtVecLevel1(i) = ( m_filtVecsLevel2[i] * m_filtVecLevel1(i) ).sum(); // each p(y_t, x_t^1 | y_{1:t-1})
+            m_filtVecsLevel2[i] = m_filtVecsLevel2[i] / m_filtVecsLevel2[i].sum(); // each p(x_t^2 | x_t^1, y_{1:t})
         }
-        m_lastCondLike = m_filtVecsLevel1.sum(); // p(y_t | y_{1:t-1})
+        m_lastCondLike = m_filtVecLevel1.sum(); // p(y_t | y_{1:t-1})
         m_filtVecLevel1 = m_filtVecLevel1 / m_lastCondLike;
     }
 }
