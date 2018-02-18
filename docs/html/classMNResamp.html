@@ -132,6 +132,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a152ee53e6df53587bea13bf8c9e74322"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMNResamp.html#a152ee53e6df53587bea13bf8c9e74322">kGen</a> (const std::array&lt; double, N &gt; &amp;logFirstStageWeights, std::array&lt; unsigned int, N &gt; &amp;ks)</td></tr>
 <tr class="memdesc:a152ee53e6df53587bea13bf8c9e74322"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to sample random indices. Used inside APFs.  <a href="#a152ee53e6df53587bea13bf8c9e74322">More...</a><br /></td></tr>
 <tr class="separator:a152ee53e6df53587bea13bf8c9e74322"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefaf6ba9a6b993a530ae42413b878565"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMNResamp.html#aefaf6ba9a6b993a530ae42413b878565">resampKRBPF</a> (std::array&lt; <a class="el" href="classLgssm.html">Lgssm</a>, N &gt; &amp;oldMods, std::array&lt; <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>, N &gt; &amp;oldSamps, std::array&lt; double, N &gt; &amp;oldLogWts)</td></tr>
+<tr class="memdesc:aefaf6ba9a6b993a530ae42413b878565"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to resample RBPFs&ndash;recall you have to resample the samples AND models.  <a href="#aefaf6ba9a6b993a530ae42413b878565">More...</a><br /></td></tr>
+<tr class="separator:aefaf6ba9a6b993a530ae42413b878565"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cec5eaa8aa6dd8b8e228e324ad3e437"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMNResamp.html#a2cec5eaa8aa6dd8b8e228e324ad3e437">resampHRBPF</a> (std::array&lt; <a class="el" href="classFSHMM.html">FSHMM</a>, N &gt; &amp;oldMods, std::array&lt; <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>, N &gt; &amp;oldSamps, std::array&lt; double, N &gt; &amp;oldLogUnNormWts)</td></tr>
+<tr class="memdesc:a2cec5eaa8aa6dd8b8e228e324ad3e437"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to resample for RBPFs&ndash;you have to resample the samples AND models.  <a href="#a2cec5eaa8aa6dd8b8e228e324ad3e437">More...</a><br /></td></tr>
+<tr class="separator:a2cec5eaa8aa6dd8b8e228e324ad3e437"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;size_t N&gt;<br />
@@ -172,6 +178,94 @@ template&lt;size_t N&gt; </div>
   <table class="params">
     <tr><td class="paramname">logFirstStageWeights</td><td>first-stage weights for first stage of proposal distribution in APF </td></tr>
     <tr><td class="paramname">ks</td><td>the "returned" indices of type std::array&lt;unsigned int, N&gt; </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a2cec5eaa8aa6dd8b8e228e324ad3e437"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classMNResamp.html">MNResamp</a>&lt; N &gt;::resampHRBPF </td>
+          <td>(</td>
+          <td class="paramtype">std::array&lt; <a class="el" href="classFSHMM.html">FSHMM</a>, N &gt; &amp;&#160;</td>
+          <td class="paramname"><em>oldMods</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::array&lt; <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>, N &gt; &amp;&#160;</td>
+          <td class="paramname"><em>oldSamps</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::array&lt; double, N &gt; &amp;&#160;</td>
+          <td class="paramname"><em>oldLogUnNormWts</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Function to resample for RBPFs&ndash;you have to resample the samples AND models. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">oldMods</td><td>embedded HMM filter objects. </td></tr>
+    <tr><td class="paramname">oldSamps</td><td>samples of each particle. </td></tr>
+    <tr><td class="paramname">oldLogUnNormWts</td><td>log un-normalized weights of each particle. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aefaf6ba9a6b993a530ae42413b878565"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classMNResamp.html">MNResamp</a>&lt; N &gt;::resampKRBPF </td>
+          <td>(</td>
+          <td class="paramtype">std::array&lt; <a class="el" href="classLgssm.html">Lgssm</a>, N &gt; &amp;&#160;</td>
+          <td class="paramname"><em>oldMods</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::array&lt; <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>, N &gt; &amp;&#160;</td>
+          <td class="paramname"><em>oldSamps</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::array&lt; double, N &gt; &amp;&#160;</td>
+          <td class="paramname"><em>oldLogWts</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Function to resample RBPFs&ndash;recall you have to resample the samples AND models. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">oldMods</td><td>embedded kalman filter objects. </td></tr>
+    <tr><td class="paramname">oldSamps</td><td>samples of each particle. </td></tr>
+    <tr><td class="paramname">oldLogWts</td><td>log un-normalized weights of each particle. </td></tr>
   </table>
   </dd>
 </dl>

@@ -22,7 +22,7 @@ enum class HMMRBPFResampStyle {everytime_multinomial, never, ess_multinomial};
  * @author taylor
  * @file hmm_rbpf_sisr.h
  * @brief Rao-Blackwellized particle filtering where the innder models are discrete state hmms.
- * @tparam
+ * @tparam np the number of particles
  */
 template <size_t np>
 class Hmm_Rbpf{

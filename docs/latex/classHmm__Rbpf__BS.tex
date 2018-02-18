@@ -1,0 +1,231 @@
+\hypertarget{classHmm__Rbpf__BS}{}\section{Hmm\+\_\+\+Rbpf\+\_\+\+BS$<$ np $>$ Class Template Reference}
+\label{classHmm__Rbpf__BS}\index{Hmm\+\_\+\+Rbpf\+\_\+\+B\+S$<$ np $>$@{Hmm\+\_\+\+Rbpf\+\_\+\+B\+S$<$ np $>$}}
+
+
+A base-\/class for H\+MM Rao-\/\+Blackwellized Particle Filtering.  
+
+
+
+
+{\ttfamily \#include $<$hmm\+\_\+rbpf\+\_\+bs.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classHmm__Rbpf__BS_a7485e9b843711f9918dab590f4a2a948}{Hmm\+\_\+\+Rbpf\+\_\+\+BS} (\hyperlink{hmm__rbpf__bs_8h_aa825de46e9871700dd4b7e971a6b3baf}{H\+M\+M\+R\+B\+P\+F\+B\+S\+Resamp\+Style} rt=H\+M\+M\+R\+B\+P\+F\+B\+S\+Resamp\+Style\+::everytime\+\_\+multinomial)
+\begin{DoxyCompactList}\small\item\em The constructor. \end{DoxyCompactList}\item 
+\hyperlink{classHmm__Rbpf__BS_ab6fd74f1fc21042153f9cf889e229c21}{$\sim$\+Hmm\+\_\+\+Rbpf\+\_\+\+BS} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classHmm__Rbpf__BS_a6bed7b232c521446c8ff17b227953b52}{filter} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&data, const std\+::vector$<$ std\+::function$<$ const \hyperlink{apf__filter_8h_ae601f56a556993079f730483c574356f}{Mat}(const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x1t\+Probs, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x2t)$>$ $>$ \&fs=std\+::vector$<$ std\+::function$<$ const \hyperlink{apf__filter_8h_ae601f56a556993079f730483c574356f}{Mat}(const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&)$>$ $>$())
+\begin{DoxyCompactList}\small\item\em Filter. \end{DoxyCompactList}\item 
+double \hyperlink{classHmm__Rbpf__BS_afe3431ed081092533c65ac55ae61c625}{get\+Log\+Cond\+Like} () const 
+\begin{DoxyCompactList}\small\item\em Get the latest conditional likelihood. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{apf__filter_8h_ae601f56a556993079f730483c574356f}{Mat} $>$ \hyperlink{classHmm__Rbpf__BS_a91a69878e000492ce98ba270075ca0e2}{get\+Expectations} () const 
+\begin{DoxyCompactList}\small\item\em Get vector of expectations. \end{DoxyCompactList}\item 
+virtual \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \hyperlink{classHmm__Rbpf__BS_ab34e043feed01165f4dbe82ed109c8b2}{mu\+Samp} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&y1)=0
+\begin{DoxyCompactList}\small\item\em Sample from the first sampler. \end{DoxyCompactList}\item 
+virtual \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \hyperlink{classHmm__Rbpf__BS_a8eb90ceb79d049a20f9d919e54e42581}{init\+H\+M\+M\+Prob\+Vec} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x21)=0
+\begin{DoxyCompactList}\small\item\em Provides the initial mean vector for each H\+MM filter object. \end{DoxyCompactList}\item 
+virtual \hyperlink{apf__filter_8h_ae601f56a556993079f730483c574356f}{Mat} \hyperlink{classHmm__Rbpf__BS_a18dcd75f96604e26bd9935b3c08f78cd}{init\+H\+M\+M\+Trans\+Mat} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x21)=0
+\begin{DoxyCompactList}\small\item\em Provides the transition matrix for each H\+MM filter object. \end{DoxyCompactList}\item 
+virtual \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \hyperlink{classHmm__Rbpf__BS_acc905cb6e7962d958586af494d0e953c}{f\+Samp} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x2tm1, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&yt)=0
+\begin{DoxyCompactList}\small\item\em Samples the time t second component. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classHmm__Rbpf__BS_ac7ebabf12ea866281193884ba6b6cf69}{update\+F\+S\+H\+MM} (\hyperlink{classFSHMM}{F\+S\+H\+MM} \&a\+Model, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&yt, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x2t)=0
+\begin{DoxyCompactList}\small\item\em How to update your inner H\+MM filter object at each time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$size\+\_\+t np$>$\\*
+class Hmm\+\_\+\+Rbpf\+\_\+\+B\+S$<$ np $>$}
+
+A base-\/class for H\+MM Rao-\/\+Blackwellized Particle Filtering. 
+
+\begin{DoxyAuthor}{Author}
+taylor 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Hmm\+\_\+\+Rbpf\+\_\+\+BS@{Hmm\+\_\+\+Rbpf\+\_\+\+BS}!Hmm\+\_\+\+Rbpf\+\_\+\+BS@{Hmm\+\_\+\+Rbpf\+\_\+\+BS}}
+\index{Hmm\+\_\+\+Rbpf\+\_\+\+BS@{Hmm\+\_\+\+Rbpf\+\_\+\+BS}!Hmm\+\_\+\+Rbpf\+\_\+\+BS@{Hmm\+\_\+\+Rbpf\+\_\+\+BS}}
+\subsubsection[{\texorpdfstring{Hmm\+\_\+\+Rbpf\+\_\+\+B\+S(\+H\+M\+M\+R\+B\+P\+F\+B\+S\+Resamp\+Style rt=\+H\+M\+M\+R\+B\+P\+F\+B\+S\+Resamp\+Style\+::everytime\+\_\+multinomial)}{Hmm_Rbpf_BS(HMMRBPFBSResampStyle rt=HMMRBPFBSResampStyle::everytime_multinomial)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\+\_\+t np$>$ {\bf Hmm\+\_\+\+Rbpf\+\_\+\+BS}$<$ np $>$\+::{\bf Hmm\+\_\+\+Rbpf\+\_\+\+BS} (
+\begin{DoxyParamCaption}
+\item[{{\bf H\+M\+M\+R\+B\+P\+F\+B\+S\+Resamp\+Style}}]{rt = {\ttfamily HMMRBPFBSResampStyle\+:\+:everytime\+\_\+multinomial}}
+\end{DoxyParamCaption}
+)}\hypertarget{classHmm__Rbpf__BS_a7485e9b843711f9918dab590f4a2a948}{}\label{classHmm__Rbpf__BS_a7485e9b843711f9918dab590f4a2a948}
+
+
+The constructor. 
+
+constructor. 
+\begin{DoxyParams}{Parameters}
+{\em rt} & the type of resampling you want to do. \\
+\hline
+\end{DoxyParams}
+\index{Hmm\+\_\+\+Rbpf\+\_\+\+BS@{Hmm\+\_\+\+Rbpf\+\_\+\+BS}!````~Hmm\+\_\+\+Rbpf\+\_\+\+BS@{$\sim$\+Hmm\+\_\+\+Rbpf\+\_\+\+BS}}
+\index{````~Hmm\+\_\+\+Rbpf\+\_\+\+BS@{$\sim$\+Hmm\+\_\+\+Rbpf\+\_\+\+BS}!Hmm\+\_\+\+Rbpf\+\_\+\+BS@{Hmm\+\_\+\+Rbpf\+\_\+\+BS}}
+\subsubsection[{\texorpdfstring{$\sim$\+Hmm\+\_\+\+Rbpf\+\_\+\+B\+S()}{~Hmm_Rbpf_BS()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\+\_\+t np$>$ {\bf Hmm\+\_\+\+Rbpf\+\_\+\+BS}$<$ np $>$\+::$\sim${\bf Hmm\+\_\+\+Rbpf\+\_\+\+BS} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classHmm__Rbpf__BS_ab6fd74f1fc21042153f9cf889e229c21}{}\label{classHmm__Rbpf__BS_ab6fd74f1fc21042153f9cf889e229c21}
+
+
+Destructor. 
+
+destructor. 
+
+\subsection{Member Function Documentation}
+\index{Hmm\+\_\+\+Rbpf\+\_\+\+BS@{Hmm\+\_\+\+Rbpf\+\_\+\+BS}!filter@{filter}}
+\index{filter@{filter}!Hmm\+\_\+\+Rbpf\+\_\+\+BS@{Hmm\+\_\+\+Rbpf\+\_\+\+BS}}
+\subsubsection[{\texorpdfstring{filter(const Vec \&data, const std\+::vector$<$ std\+::function$<$ const Mat(const Vec \&x1t\+Probs, const Vec \&x2t)$>$ $>$ \&fs=std\+::vector$<$ std\+::function$<$ const Mat(const Vec \&, const Vec \&)$>$ $>$())}{filter(const Vec &data, const std::vector< std::function< const Mat(const Vec &x1tProbs, const Vec &x2t)> > &fs=std::vector< std::function< const Mat(const Vec &, const Vec &)> >())}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\+\_\+t np$>$ void {\bf Hmm\+\_\+\+Rbpf\+\_\+\+BS}$<$ np $>$\+::filter (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vec} \&}]{data, }
+\item[{const std\+::vector$<$ std\+::function$<$ const {\bf Mat}(const {\bf Vec} \&x1t\+Probs, const {\bf Vec} \&x2t)$>$ $>$ \&}]{fs = {\ttfamily std\+:\+:vector$<$std\+:\+:function$<$const~{\bf Mat}(const~{\bf Vec}\&,~const~{\bf Vec}\&)$>$~$>$()}}
+\end{DoxyParamCaption}
+)}\hypertarget{classHmm__Rbpf__BS_a6bed7b232c521446c8ff17b227953b52}{}\label{classHmm__Rbpf__BS_a6bed7b232c521446c8ff17b227953b52}
+
+
+Filter. 
+
+filters everything based on a new data point. 
+\begin{DoxyParams}{Parameters}
+{\em data} & the most recent time series observation. \\
+\hline
+{\em fs} & a vector of functions computing logE\mbox{[}h(x\+\_\+1t, x\+\_\+2t$^\wedge$i)$\vert$ x\+\_\+2t$^\wedge$i,y\+\_\+1\+:t\mbox{]}. will access the probability vector of x\+\_\+1t \\
+\hline
+\end{DoxyParams}
+\index{Hmm\+\_\+\+Rbpf\+\_\+\+BS@{Hmm\+\_\+\+Rbpf\+\_\+\+BS}!f\+Samp@{f\+Samp}}
+\index{f\+Samp@{f\+Samp}!Hmm\+\_\+\+Rbpf\+\_\+\+BS@{Hmm\+\_\+\+Rbpf\+\_\+\+BS}}
+\subsubsection[{\texorpdfstring{f\+Samp(const Vec \&x2tm1, const Vec \&yt)=0}{fSamp(const Vec &x2tm1, const Vec &yt)=0}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\+\_\+t np$>$ virtual {\bf Vec} {\bf Hmm\+\_\+\+Rbpf\+\_\+\+BS}$<$ np $>$\+::f\+Samp (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vec} \&}]{x2tm1, }
+\item[{const {\bf Vec} \&}]{yt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classHmm__Rbpf__BS_acc905cb6e7962d958586af494d0e953c}{}\label{classHmm__Rbpf__BS_acc905cb6e7962d958586af494d0e953c}
+
+
+Samples the time t second component. 
+
+Samples the time t second component. 
+\begin{DoxyParams}{Parameters}
+{\em x2tm1} & the previous time\textquotesingle{}s second state component. \\
+\hline
+{\em yt} & the current observation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a Vec sample of the second state component at the current time. 
+\end{DoxyReturn}
+\index{Hmm\+\_\+\+Rbpf\+\_\+\+BS@{Hmm\+\_\+\+Rbpf\+\_\+\+BS}!get\+Expectations@{get\+Expectations}}
+\index{get\+Expectations@{get\+Expectations}!Hmm\+\_\+\+Rbpf\+\_\+\+BS@{Hmm\+\_\+\+Rbpf\+\_\+\+BS}}
+\subsubsection[{\texorpdfstring{get\+Expectations() const }{getExpectations() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\+\_\+t np$>$ std\+::vector$<$ {\bf Mat} $>$ {\bf Hmm\+\_\+\+Rbpf\+\_\+\+BS}$<$ np $>$\+::get\+Expectations (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classHmm__Rbpf__BS_a91a69878e000492ce98ba270075ca0e2}{}\label{classHmm__Rbpf__BS_a91a69878e000492ce98ba270075ca0e2}
+
+
+Get vector of expectations. 
+
+\begin{DoxyReturn}{Returns}
+vector of expectations 
+\end{DoxyReturn}
+\index{Hmm\+\_\+\+Rbpf\+\_\+\+BS@{Hmm\+\_\+\+Rbpf\+\_\+\+BS}!get\+Log\+Cond\+Like@{get\+Log\+Cond\+Like}}
+\index{get\+Log\+Cond\+Like@{get\+Log\+Cond\+Like}!Hmm\+\_\+\+Rbpf\+\_\+\+BS@{Hmm\+\_\+\+Rbpf\+\_\+\+BS}}
+\subsubsection[{\texorpdfstring{get\+Log\+Cond\+Like() const }{getLogCondLike() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\+\_\+t np$>$ double {\bf Hmm\+\_\+\+Rbpf\+\_\+\+BS}$<$ np $>$\+::get\+Log\+Cond\+Like (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classHmm__Rbpf__BS_afe3431ed081092533c65ac55ae61c625}{}\label{classHmm__Rbpf__BS_afe3431ed081092533c65ac55ae61c625}
+
+
+Get the latest conditional likelihood. 
+
+Get the latest conditional likelihood. \begin{DoxyReturn}{Returns}
+the latest conditional likelihood. 
+\end{DoxyReturn}
+\index{Hmm\+\_\+\+Rbpf\+\_\+\+BS@{Hmm\+\_\+\+Rbpf\+\_\+\+BS}!init\+H\+M\+M\+Prob\+Vec@{init\+H\+M\+M\+Prob\+Vec}}
+\index{init\+H\+M\+M\+Prob\+Vec@{init\+H\+M\+M\+Prob\+Vec}!Hmm\+\_\+\+Rbpf\+\_\+\+BS@{Hmm\+\_\+\+Rbpf\+\_\+\+BS}}
+\subsubsection[{\texorpdfstring{init\+H\+M\+M\+Prob\+Vec(const Vec \&x21)=0}{initHMMProbVec(const Vec &x21)=0}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\+\_\+t np$>$ virtual {\bf Vec} {\bf Hmm\+\_\+\+Rbpf\+\_\+\+BS}$<$ np $>$\+::init\+H\+M\+M\+Prob\+Vec (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vec} \&}]{x21}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classHmm__Rbpf__BS_a8eb90ceb79d049a20f9d919e54e42581}{}\label{classHmm__Rbpf__BS_a8eb90ceb79d049a20f9d919e54e42581}
+
+
+Provides the initial mean vector for each H\+MM filter object. 
+
+provides the initial probability vector for each H\+MM filter object. 
+\begin{DoxyParams}{Parameters}
+{\em x21} & the second state componenent at time 1. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a Vec representing the probability of each state element. 
+\end{DoxyReturn}
+\index{Hmm\+\_\+\+Rbpf\+\_\+\+BS@{Hmm\+\_\+\+Rbpf\+\_\+\+BS}!init\+H\+M\+M\+Trans\+Mat@{init\+H\+M\+M\+Trans\+Mat}}
+\index{init\+H\+M\+M\+Trans\+Mat@{init\+H\+M\+M\+Trans\+Mat}!Hmm\+\_\+\+Rbpf\+\_\+\+BS@{Hmm\+\_\+\+Rbpf\+\_\+\+BS}}
+\subsubsection[{\texorpdfstring{init\+H\+M\+M\+Trans\+Mat(const Vec \&x21)=0}{initHMMTransMat(const Vec &x21)=0}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\+\_\+t np$>$ virtual {\bf Mat} {\bf Hmm\+\_\+\+Rbpf\+\_\+\+BS}$<$ np $>$\+::init\+H\+M\+M\+Trans\+Mat (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vec} \&}]{x21}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classHmm__Rbpf__BS_a18dcd75f96604e26bd9935b3c08f78cd}{}\label{classHmm__Rbpf__BS_a18dcd75f96604e26bd9935b3c08f78cd}
+
+
+Provides the transition matrix for each H\+MM filter object. 
+
+provides the transition matrix for each H\+MM filter object. 
+\begin{DoxyParams}{Parameters}
+{\em x21} & the second state component at time 1. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a transition matrix where element (ij) is the probability of transitioning from state i to state j. 
+\end{DoxyReturn}
+\index{Hmm\+\_\+\+Rbpf\+\_\+\+BS@{Hmm\+\_\+\+Rbpf\+\_\+\+BS}!mu\+Samp@{mu\+Samp}}
+\index{mu\+Samp@{mu\+Samp}!Hmm\+\_\+\+Rbpf\+\_\+\+BS@{Hmm\+\_\+\+Rbpf\+\_\+\+BS}}
+\subsubsection[{\texorpdfstring{mu\+Samp(const Vec \&y1)=0}{muSamp(const Vec &y1)=0}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\+\_\+t np$>$ virtual {\bf Vec} {\bf Hmm\+\_\+\+Rbpf\+\_\+\+BS}$<$ np $>$\+::mu\+Samp (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vec} \&}]{y1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classHmm__Rbpf__BS_ab34e043feed01165f4dbe82ed109c8b2}{}\label{classHmm__Rbpf__BS_ab34e043feed01165f4dbe82ed109c8b2}
+
+
+Sample from the first sampler. 
+
+samples the second component of the state at time 1. 
+\begin{DoxyParams}{Parameters}
+{\em y1} & most recent datum. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a Vec sample for x21. 
+\end{DoxyReturn}
+\index{Hmm\+\_\+\+Rbpf\+\_\+\+BS@{Hmm\+\_\+\+Rbpf\+\_\+\+BS}!update\+F\+S\+H\+MM@{update\+F\+S\+H\+MM}}
+\index{update\+F\+S\+H\+MM@{update\+F\+S\+H\+MM}!Hmm\+\_\+\+Rbpf\+\_\+\+BS@{Hmm\+\_\+\+Rbpf\+\_\+\+BS}}
+\subsubsection[{\texorpdfstring{update\+F\+S\+H\+M\+M(\+F\+S\+H\+M\+M \&a\+Model, const Vec \&yt, const Vec \&x2t)=0}{updateFSHMM(FSHMM &aModel, const Vec &yt, const Vec &x2t)=0}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\+\_\+t np$>$ virtual void {\bf Hmm\+\_\+\+Rbpf\+\_\+\+BS}$<$ np $>$\+::update\+F\+S\+H\+MM (
+\begin{DoxyParamCaption}
+\item[{{\bf F\+S\+H\+MM} \&}]{a\+Model, }
+\item[{const {\bf Vec} \&}]{yt, }
+\item[{const {\bf Vec} \&}]{x2t}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classHmm__Rbpf__BS_ac7ebabf12ea866281193884ba6b6cf69}{}\label{classHmm__Rbpf__BS_ac7ebabf12ea866281193884ba6b6cf69}
+
+
+How to update your inner H\+MM filter object at each time. 
+
+How to update your inner H\+MM filter object at each time. 
+\begin{DoxyParams}{Parameters}
+{\em a\+Model} & a H\+MM filter object describing the conditional closed-\/form model. \\
+\hline
+{\em yt} & the current time series observation. \\
+\hline
+{\em x2t} & the current second state component. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{hmm__rbpf__bs_8h}{hmm\+\_\+rbpf\+\_\+bs.\+h}\end{DoxyCompactItemize}

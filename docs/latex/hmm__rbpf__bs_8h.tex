@@ -1,0 +1,50 @@
+\hypertarget{hmm__rbpf__bs_8h}{}\section{include/hmm\+\_\+rbpf\+\_\+bs.h File Reference}
+\label{hmm__rbpf__bs_8h}\index{include/hmm\+\_\+rbpf\+\_\+bs.\+h@{include/hmm\+\_\+rbpf\+\_\+bs.\+h}}
+
+
+Rao-\/\+Blackwellized particle filtering where the innder models are discrete state hmms.  
+
+
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$functional$>$}\\*
+{\ttfamily \#include \char`\"{}fshmm.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}mn\+\_\+resampler.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}densities.\+h\char`\"{}}\\*
+Include dependency graph for hmm\+\_\+rbpf\+\_\+bs.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hmm__rbpf__bs_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classHmm__Rbpf__BS}{Hmm\+\_\+\+Rbpf\+\_\+\+B\+S$<$ np $>$}
+\begin{DoxyCompactList}\small\item\em A base-\/class for H\+MM Rao-\/\+Blackwellized Particle Filtering. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{hmm__rbpf__bs_8h_aa825de46e9871700dd4b7e971a6b3baf}{H\+M\+M\+R\+B\+P\+F\+B\+S\+Resamp\+Style} \{ {\bfseries everytime\+\_\+multinomial}, 
+{\bfseries never}, 
+{\bfseries ess\+\_\+multinomial}
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Rao-\/\+Blackwellized particle filtering where the innder models are discrete state hmms. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em np} & the number of parameters \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Enumeration Type Documentation}
+\index{hmm\+\_\+rbpf\+\_\+bs.\+h@{hmm\+\_\+rbpf\+\_\+bs.\+h}!H\+M\+M\+R\+B\+P\+F\+B\+S\+Resamp\+Style@{H\+M\+M\+R\+B\+P\+F\+B\+S\+Resamp\+Style}}
+\index{H\+M\+M\+R\+B\+P\+F\+B\+S\+Resamp\+Style@{H\+M\+M\+R\+B\+P\+F\+B\+S\+Resamp\+Style}!hmm\+\_\+rbpf\+\_\+bs.\+h@{hmm\+\_\+rbpf\+\_\+bs.\+h}}
+\subsubsection[{\texorpdfstring{H\+M\+M\+R\+B\+P\+F\+B\+S\+Resamp\+Style}{HMMRBPFBSResampStyle}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf H\+M\+M\+R\+B\+P\+F\+B\+S\+Resamp\+Style}\hspace{0.3cm}{\ttfamily [strong]}}\hypertarget{hmm__rbpf__bs_8h_aa825de46e9871700dd4b7e971a6b3baf}{}\label{hmm__rbpf__bs_8h_aa825de46e9871700dd4b7e971a6b3baf}
+enum class for the type of resampling to be performed 

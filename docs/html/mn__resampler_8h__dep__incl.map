@@ -1,5 +1,7 @@
 <map id="include/mn_resampler.h" name="include/mn_resampler.h">
 <area shape="rect" id="node2" href="$apf__filter_8h.html" title="A base class for Auxiliary Particle Filtering. Inherit from this if you want to use an APF for your s..." alt="" coords="5,80,133,107"/>
 <area shape="rect" id="node3" href="$bootstrap__filter_8h.html" title="bootstrap particle filter " alt="" coords="158,80,322,107"/>
-<area shape="rect" id="node4" href="$sisr__filter_8h.html" title="A base&#45;class for Sequential Importance Sampling with Resampling. Inherit from this if you want to use..." alt="" coords="347,80,477,107"/>
+<area shape="rect" id="node4" href="$hmm__rbpf__bs_8h.html" title="Rao&#45;Blackwellized particle filtering where the innder models are discrete state hmms. " alt="" coords="347,80,504,107"/>
+<area shape="rect" id="node5" href="$hmm__rbpf__sisr_8h.html" title="Rao&#45;Blackwellized particle filtering where the innder models are discrete state hmms. " alt="" coords="529,80,693,107"/>
+<area shape="rect" id="node6" href="$sisr__filter_8h.html" title="A base&#45;class for Sequential Importance Sampling with Resampling. Inherit from this if you want to use..." alt="" coords="717,80,848,107"/>
 </map>

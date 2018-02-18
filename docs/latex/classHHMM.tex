@@ -1,0 +1,130 @@
+\hypertarget{classHHMM}{}\section{H\+H\+MM$<$ n1, n2 $>$ Class Template Reference}
+\label{classHHMM}\index{H\+H\+M\+M$<$ n1, n2 $>$@{H\+H\+M\+M$<$ n1, n2 $>$}}
+
+
+A base-\/class for a 2 level Hierarchical Hidden Markov Model.  
+
+
+
+
+{\ttfamily \#include $<$hhmm.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classHHMM_a311532121776ef969a5ac11b2c1064c7}{H\+H\+MM} ()
+\begin{DoxyCompactList}\small\item\em Default constructor (need this for resampling function) \end{DoxyCompactList}\item 
+\hyperlink{classHHMM_aa83ea5e23b2d0639b0426442b0231814}{H\+H\+MM} (const Eigen\+::\+Matrix$<$ double, n1, 1 $>$ \&init\+State\+Distr\+Level1, const std\+::array$<$ Eigen\+::\+Matrix$<$ double, n2, 1 $>$, n1 $>$ \&init\+State\+Distr\+Level2, const Eigen\+::\+Matrix$<$ double, n1, n1 $>$ \&trans\+Mat1, const std\+::array$<$ Eigen\+::\+Matrix$<$ double, n2, n2 $>$, n1 $>$ \&trans\+Mats2)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classHHMM_a96429285ce9c928cc1c3018aa6572ae4}{$\sim$\+H\+H\+MM} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+double \hyperlink{classHHMM_a70295abc7a933d593badaf50912f84e3}{get\+Cond\+Like} () const 
+\begin{DoxyCompactList}\small\item\em Get the latest conditional likelihood. \end{DoxyCompactList}\item 
+void \hyperlink{classHHMM_a28931d06c5885e3b9b1cbe2aeb345417}{update} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&yt, const Eigen\+::\+Matrix$<$ double, n2, 1 $>$ \&cond\+Dens\+Vec)
+\begin{DoxyCompactList}\small\item\em Perform a H\+MM filter update. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$size\+\_\+t n1, size\+\_\+t n2$>$\\*
+class H\+H\+M\+M$<$ n1, n2 $>$}
+
+A base-\/class for a 2 level Hierarchical Hidden Markov Model. 
+
+Inherit from this if your model is a 2 level Hierarchical Hidden Markov Model. Note that this does not store the filtering distribution of one big container of probabilities (one for each configuration). Rather, it has one filtering distribution for the first autonomous component p(x\+\_\+t$^\wedge$1), then it has an array of vectors for the second p(x\+\_\+t$^\wedge$2 $\vert$ x\+\_\+t$^\wedge$1, y\+\_\+\{1\+:t\}). These are the production states\textquotesingle{} distributions conditioning on each value of the first component. 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em n1} & is the size of the first level state space. \\
+\hline
+{\em n2} & is the size of the second level state space. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{H\+H\+MM@{H\+H\+MM}!H\+H\+MM@{H\+H\+MM}}
+\index{H\+H\+MM@{H\+H\+MM}!H\+H\+MM@{H\+H\+MM}}
+\subsubsection[{\texorpdfstring{H\+H\+M\+M()}{HHMM()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\+\_\+t n1, size\+\_\+t n2$>$ {\bf H\+H\+MM}$<$ n1, n2 $>$\+::{\bf H\+H\+MM} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classHHMM_a311532121776ef969a5ac11b2c1064c7}{}\label{classHHMM_a311532121776ef969a5ac11b2c1064c7}
+
+
+Default constructor (need this for resampling function) 
+
+Default constructor (need this for resampling function) \index{H\+H\+MM@{H\+H\+MM}!H\+H\+MM@{H\+H\+MM}}
+\index{H\+H\+MM@{H\+H\+MM}!H\+H\+MM@{H\+H\+MM}}
+\subsubsection[{\texorpdfstring{H\+H\+M\+M(const Eigen\+::\+Matrix$<$ double, n1, 1 $>$ \&init\+State\+Distr\+Level1, const std\+::array$<$ Eigen\+::\+Matrix$<$ double, n2, 1 $>$, n1 $>$ \&init\+State\+Distr\+Level2, const Eigen\+::\+Matrix$<$ double, n1, n1 $>$ \&trans\+Mat1, const std\+::array$<$ Eigen\+::\+Matrix$<$ double, n2, n2 $>$, n1 $>$ \&trans\+Mats2)}{HHMM(const Eigen::Matrix< double, n1, 1 > &initStateDistrLevel1, const std::array< Eigen::Matrix< double, n2, 1 >, n1 > &initStateDistrLevel2, const Eigen::Matrix< double, n1, n1 > &transMat1, const std::array< Eigen::Matrix< double, n2, n2 >, n1 > &transMats2)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\+\_\+t n1, size\+\_\+t n2$>$ {\bf H\+H\+MM}$<$ n1, n2 $>$\+::{\bf H\+H\+MM} (
+\begin{DoxyParamCaption}
+\item[{const Eigen\+::\+Matrix$<$ double, n1, 1 $>$ \&}]{init\+State\+Distr\+Level1, }
+\item[{const std\+::array$<$ Eigen\+::\+Matrix$<$ double, n2, 1 $>$, n1 $>$ \&}]{init\+State\+Distr\+Level2, }
+\item[{const Eigen\+::\+Matrix$<$ double, n1, n1 $>$ \&}]{trans\+Mat1, }
+\item[{const std\+::array$<$ Eigen\+::\+Matrix$<$ double, n2, n2 $>$, n1 $>$ \&}]{trans\+Mats2}
+\end{DoxyParamCaption}
+)}\hypertarget{classHHMM_aa83ea5e23b2d0639b0426442b0231814}{}\label{classHHMM_aa83ea5e23b2d0639b0426442b0231814}
+
+
+Constructor. 
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em init\+State\+Distr\+Level1} & p(x\+\_\+1$^\wedge$1) \\
+\hline
+{\em init\+State\+Distr\+Level2} & p(x\+\_\+1$^\wedge$2 $\vert$ x\+\_\+1$^\wedge$1) \\
+\hline
+{\em trans\+Mat1} & p(x\+\_\+t$^\wedge$1 $\vert$ x\+\_\+\{t-\/1\}$^\wedge$1) \\
+\hline
+{\em trans\+Mats2} & p(x\+\_\+t$^\wedge$2 $\vert$ x\+\_\+t$^\wedge$2, x\+\_\+\{t-\/1\}$^\wedge$2) \\
+\hline
+\end{DoxyParams}
+\index{H\+H\+MM@{H\+H\+MM}!````~H\+H\+MM@{$\sim$\+H\+H\+MM}}
+\index{````~H\+H\+MM@{$\sim$\+H\+H\+MM}!H\+H\+MM@{H\+H\+MM}}
+\subsubsection[{\texorpdfstring{$\sim$\+H\+H\+M\+M()}{~HHMM()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\+\_\+t n1, size\+\_\+t n2$>$ {\bf H\+H\+MM}$<$ n1, n2 $>$\+::$\sim${\bf H\+H\+MM} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classHHMM_a96429285ce9c928cc1c3018aa6572ae4}{}\label{classHHMM_a96429285ce9c928cc1c3018aa6572ae4}
+
+
+Destructor. 
+
+destructs 
+
+\subsection{Member Function Documentation}
+\index{H\+H\+MM@{H\+H\+MM}!get\+Cond\+Like@{get\+Cond\+Like}}
+\index{get\+Cond\+Like@{get\+Cond\+Like}!H\+H\+MM@{H\+H\+MM}}
+\subsubsection[{\texorpdfstring{get\+Cond\+Like() const }{getCondLike() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\+\_\+t n1, size\+\_\+t n2$>$ double {\bf H\+H\+MM}$<$ n1, n2 $>$\+::get\+Cond\+Like (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classHHMM_a70295abc7a933d593badaf50912f84e3}{}\label{classHHMM_a70295abc7a933d593badaf50912f84e3}
+
+
+Get the latest conditional likelihood. 
+
+\begin{DoxyReturn}{Returns}
+the latest conditional likelihood. 
+\end{DoxyReturn}
+\index{H\+H\+MM@{H\+H\+MM}!update@{update}}
+\index{update@{update}!H\+H\+MM@{H\+H\+MM}}
+\subsubsection[{\texorpdfstring{update(const Vec \&yt, const Eigen\+::\+Matrix$<$ double, n2, 1 $>$ \&cond\+Dens\+Vec)}{update(const Vec &yt, const Eigen::Matrix< double, n2, 1 > &condDensVec)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\+\_\+t n1, size\+\_\+t n2$>$ void {\bf H\+H\+MM}$<$ n1, n2 $>$\+::update (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vec} \&}]{yt, }
+\item[{const Eigen\+::\+Matrix$<$ double, n2, 1 $>$ \&}]{cond\+Dens\+Vec}
+\end{DoxyParamCaption}
+)}\hypertarget{classHHMM_a28931d06c5885e3b9b1cbe2aeb345417}{}\label{classHHMM_a28931d06c5885e3b9b1cbe2aeb345417}
+
+
+Perform a H\+MM filter update. 
+
+Perform a H\+MM filter update. 
+\begin{DoxyParams}{Parameters}
+{\em yt} & the current datum. \\
+\hline
+{\em cond\+Dens\+Vec} & the vector (in x\+\_\+t) of p(y\+\_\+t$\vert$ time t production states) \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/hhmm.\+h\end{DoxyCompactItemize}

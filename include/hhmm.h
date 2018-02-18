@@ -15,6 +15,8 @@ typedef Eigen::Matrix< double, Eigen::Dynamic, Eigen::Dynamic > Mat;
  * (one for each configuration). Rather, it has one filtering distribution for the first autonomous
  * component p(x_t^1), then it has an array of vectors for the second p(x_t^2 | x_t^1, y_{1:t}). 
  * These are the production states' distributions conditioning on each value of the first component.
+ * @tparam n1 is the size of the first level state space.
+ * @tparam n2 is the size of the second level state space.
 */
 template<size_t n1, size_t n2>
 class HHMM
@@ -39,18 +41,25 @@ public:
 
 
     //! Constructor
-    /*!
-      \param initStateDistr first time state prior distribution.
-      \param transMat time homogeneous transition matrix.
-    */
+    /**
+     * @brief Constructor
+     * @param initStateDistrLevel1 p(x_1^1)
+     * @param initStateDistrLevel2 p(x_1^2 | x_1^1)
+     * @param transMat1 p(x_t^1 | x_{t-1}^1)
+     * @param transMats2 p(x_t^2 | x_t^2, x_{t-1}^2)
+     */
     HHMM(const Eigen::Matrix<double,n1 ,1> &initStateDistrLevel1, 
          const std::array<Eigen::Matrix<double, n2, 1>, n1> &initStateDistrLevel2, 
          const Eigen::Matrix<double,n1 ,n1> &transMat1, 
-         const std::array<Eigen::Matrix<double,n2 ,n2>, n1> transMats2);
+         const std::array<Eigen::Matrix<double,n2 ,n2>, n1> &transMats2);
     
-    
-    //! Destructor.
+
+    //! Destructor
+    /**
+     * @brief destructs
+     */
     ~HHMM();
+
 
     //! Get the latest conditional likelihood.
     /**
@@ -85,7 +94,7 @@ template<size_t n1, size_t n2>
 HHMM<n1,n2>::HHMM(const Eigen::Matrix<double,n1 ,1> &initStateDistrLevel1, 
                   const std::array<Eigen::Matrix<double, n2, 1>, n1> &initStateDistrLevel2, 
                   const Eigen::Matrix<double,n1 ,n1> &transMat1, 
-                  const std::array<Eigen::Matrix<double,n2 ,n2>, n1> transMats2) :
+                  const std::array<Eigen::Matrix<double,n2 ,n2>, n1> &transMats2) :
     m_filtVecLevel1(initStateDistrLevel1),
     m_filtVecsLevel2(initStateDistrLevel2),
     m_transMatTransposeLevel1(transMat1.transpose()), 

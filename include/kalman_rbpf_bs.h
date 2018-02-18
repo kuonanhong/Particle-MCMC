@@ -17,12 +17,11 @@ enum class RBPFResampStyle {everytime_multinomial, never, ess_multinomial};
 
 //TODO: IMPLEMENT LOG WEIGHTS
 
-
 //! A base-class for Kalman Rao-Blackwellized Particle Filtering.
 /*!
  * @class Kalman_RBPF_BS
  * @author taylor
- * @file kalman_rbpf.h
+ * @file kalman_rbpf_bs.h
  * @brief Rao-Blackwellized Particle Filter with Linear Gaussian submodel
  * @tparam np the number of particles
  */
@@ -43,20 +42,21 @@ private:
     MNResamp<np> m_resampler; // need for resampling method
 
     // methods
-    void ressampMultinomKRBPF(std::array<Lgssm, np> &oldMods, 
+    void resampMultinomKRBPF(std::array<Lgssm, np> &oldMods, 
                               std::array<Vec,np> &oldSamps, 
                               std::array<double,np> &oldLogUnNormWts);
 
 
 public:
+
     //! The constructor.
     /**
      \param resampTechnique the type of resampling you want to do.
      */
-    Kalman_RBPF(RBPFResampStyle resampTechnique = RBPFResampStyle::everytime_multinomial);
+    Kalman_RBPF_BS(RBPFResampStyle resampTechnique = RBPFResampStyle::everytime_multinomial);
     
     //! The desuctor.
-    ~Kalman_RBPF();
+    ~Kalman_RBPF_BS();
     
     //! Filter! 
     /**
@@ -125,7 +125,7 @@ public:
 ////////////////////////////////////////////////////////////////////
 
 template <size_t np>
-Kalman_RBPF_SISR<np>::Kalman_RBPF_SISR(RBPFResampStyle resampTechnique)
+Kalman_RBPF_BS<np>::Kalman_RBPF_BS(RBPFResampStyle resampTechnique)
     : m_lastCondLike(1.0), m_resampTechnique(resampTechnique), m_now(0)
 {
     std::fill(m_unNormWeights.begin(), m_unNormWeights.end(), 0.0);
@@ -133,20 +133,20 @@ Kalman_RBPF_SISR<np>::Kalman_RBPF_SISR(RBPFResampStyle resampTechnique)
 
 
 template <size_t np>
-Kalman_RBPF_SISR<np>::~Kalman_RBPF_SISR() 
+Kalman_RBPF_BS<np>::~Kalman_RBPF_BS() 
 {
 }
 
 
 template <size_t np>
-double Kalman_RBPF_SISR<np>::getLogCondLike() const
+double Kalman_RBPF_BS<np>::getLogCondLike() const
 {
     return m_lastLogCondLike;
 }
 
 
 template <size_t np>
-void Kalman_RBPF_SISR<np>::resampMultinomKRBPF(std::array<Lgssm,np> &oldMods, 
+void Kalman_RBPF_BS<np>::resampMultinomKRBPF(std::array<Lgssm,np> &oldMods, 
                                                std::array<Vec,np> &oldSamps, 
                                                std::array<double,np> &oldLogUnNormWts)
 {
@@ -155,7 +155,7 @@ void Kalman_RBPF_SISR<np>::resampMultinomKRBPF(std::array<Lgssm,np> &oldMods,
 
 
 template <size_t np>
-void Kalman_RBPF_SISR<np>::filter(const Vec &data)
+void Kalman_RBPF_BS<np>::filter(const Vec &data)
 {
 
     if( m_now == 0){ // first data point coming

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>ssm: Pmmh Class Reference</title>
+<title>ssm: Pmmh&lt; np, pchunks &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -107,7 +107,7 @@ $(document).ready(function(){initNavTree('classPmmh.html','');});
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classPmmh-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">Pmmh Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+<div class="title">Pmmh&lt; np, pchunks &gt; Class Template Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -118,42 +118,47 @@ $(document).ready(function(){initNavTree('classPmmh.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa4752fceaa1b278fcadb583865bfd0b5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh.html#aa4752fceaa1b278fcadb583865bfd0b5">Pmmh</a> (const std::vector&lt; <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &gt; &amp;startTheta, unsigned numMCMCIters, const std::string &amp;dataFile, unsigned numCols, bool mc)</td></tr>
-<tr class="memdesc:aa4752fceaa1b278fcadb583865bfd0b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The constructor.  <a href="#aa4752fceaa1b278fcadb583865bfd0b5">More...</a><br /></td></tr>
-<tr class="separator:aa4752fceaa1b278fcadb583865bfd0b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52b058761ac6ede77eb3d8c0099e0d93"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a52b058761ac6ede77eb3d8c0099e0d93"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh.html#a52b058761ac6ede77eb3d8c0099e0d93">~Pmmh</a> ()</td></tr>
-<tr class="memdesc:a52b058761ac6ede77eb3d8c0099e0d93"><td class="mdescLeft">&#160;</td><td class="mdescRight">The destructor. <br /></td></tr>
-<tr class="separator:a52b058761ac6ede77eb3d8c0099e0d93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac035560cb209fb5cade23e431b5e1fd3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh.html#ac035560cb209fb5cade23e431b5e1fd3">commenceSampling</a> (std::string samplesFile, std::string messagesFile)</td></tr>
-<tr class="memdesc:ac035560cb209fb5cade23e431b5e1fd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call this to begin sampling.  <a href="#ac035560cb209fb5cade23e431b5e1fd3">More...</a><br /></td></tr>
-<tr class="separator:ac035560cb209fb5cade23e431b5e1fd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ada4decd5df894376c74e3ddba5daa1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh.html#a7ada4decd5df894376c74e3ddba5daa1">qSample</a> (const std::vector&lt; <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &gt; &amp;oldParams, std::vector&lt; <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &gt; &amp;newParams)=0</td></tr>
-<tr class="memdesc:a7ada4decd5df894376c74e3ddba5daa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function that proposes new parameters. Tip: Make sure to declare your static RNG inside the implementation of this.  <a href="#a7ada4decd5df894376c74e3ddba5daa1">More...</a><br /></td></tr>
-<tr class="separator:a7ada4decd5df894376c74e3ddba5daa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8d3fdbc3f3c998670266a3032a53e80"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh.html#af8d3fdbc3f3c998670266a3032a53e80">logQEvaluate</a> (const std::vector&lt; <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &gt; &amp;oldParams, const std::vector&lt; <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &gt; &amp;newParams)=0</td></tr>
-<tr class="memdesc:af8d3fdbc3f3c998670266a3032a53e80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the logarithm of the proposal density.  <a href="#af8d3fdbc3f3c998670266a3032a53e80">More...</a><br /></td></tr>
-<tr class="separator:af8d3fdbc3f3c998670266a3032a53e80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a265ca1c1380d0ebc052be2c5424a0d3b"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh.html#a265ca1c1380d0ebc052be2c5424a0d3b">logPriorEvaluate</a> (const std::vector&lt; <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &gt; &amp;theta)=0</td></tr>
-<tr class="memdesc:a265ca1c1380d0ebc052be2c5424a0d3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the log of the model's prior distribution.  <a href="#a265ca1c1380d0ebc052be2c5424a0d3b">More...</a><br /></td></tr>
-<tr class="separator:a265ca1c1380d0ebc052be2c5424a0d3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a293931e138576f063aab7e46228f0266"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh.html#a293931e138576f063aab7e46228f0266">logLikeEvaluate</a> (const std::vector&lt; <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &gt; &amp;theta, const std::vector&lt; <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &gt; &amp;data, std::atomic_bool &amp;cancelled)=0</td></tr>
-<tr class="memdesc:a293931e138576f063aab7e46228f0266"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates (approximates) the log-likelihood with a particle filter.  <a href="#a293931e138576f063aab7e46228f0266">More...</a><br /></td></tr>
-<tr class="separator:a293931e138576f063aab7e46228f0266"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14c283402cf7caf2b9e77efdf7ba1371"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh.html#a14c283402cf7caf2b9e77efdf7ba1371">Pmmh</a> (const std::array&lt; <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>, pchunks &gt; &amp;startTheta, unsigned numMCMCIters, const std::string &amp;dataFile, unsigned numCols, bool mc)</td></tr>
+<tr class="memdesc:a14c283402cf7caf2b9e77efdf7ba1371"><td class="mdescLeft">&#160;</td><td class="mdescRight">The constructor.  <a href="#a14c283402cf7caf2b9e77efdf7ba1371">More...</a><br /></td></tr>
+<tr class="separator:a14c283402cf7caf2b9e77efdf7ba1371"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2c67a65abf01f4eaefc6b56e3bcb952"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae2c67a65abf01f4eaefc6b56e3bcb952"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh.html#ae2c67a65abf01f4eaefc6b56e3bcb952">~Pmmh</a> ()</td></tr>
+<tr class="memdesc:ae2c67a65abf01f4eaefc6b56e3bcb952"><td class="mdescLeft">&#160;</td><td class="mdescRight">The destructor. <br /></td></tr>
+<tr class="separator:ae2c67a65abf01f4eaefc6b56e3bcb952"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa1bca7b86289c35cf2be286c4372a2d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh.html#afa1bca7b86289c35cf2be286c4372a2d">commenceSampling</a> (std::string samplesFile, std::string messagesFile)</td></tr>
+<tr class="memdesc:afa1bca7b86289c35cf2be286c4372a2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call this to begin sampling.  <a href="#afa1bca7b86289c35cf2be286c4372a2d">More...</a><br /></td></tr>
+<tr class="separator:afa1bca7b86289c35cf2be286c4372a2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8825656a35923ee1228eed5a98f61f5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh.html#ae8825656a35923ee1228eed5a98f61f5">qSample</a> (const std::array&lt; <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>, pchunks &gt; &amp;oldParams, std::array&lt; <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>, pchunks &gt; &amp;newParams)=0</td></tr>
+<tr class="memdesc:ae8825656a35923ee1228eed5a98f61f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function that proposes new parameters. Tip: Make sure to declare your static RNG inside the implementation of this.  <a href="#ae8825656a35923ee1228eed5a98f61f5">More...</a><br /></td></tr>
+<tr class="separator:ae8825656a35923ee1228eed5a98f61f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accf63443ea773599b4195d7def98534a"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh.html#accf63443ea773599b4195d7def98534a">logQEvaluate</a> (const std::array&lt; <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>, pchunks &gt; &amp;oldParams, const std::array&lt; <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>, pchunks &gt; &amp;newParams)=0</td></tr>
+<tr class="memdesc:accf63443ea773599b4195d7def98534a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the logarithm of the proposal density.  <a href="#accf63443ea773599b4195d7def98534a">More...</a><br /></td></tr>
+<tr class="separator:accf63443ea773599b4195d7def98534a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2da524ce8dc4f7984bd2a84749862365"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh.html#a2da524ce8dc4f7984bd2a84749862365">logPriorEvaluate</a> (const std::array&lt; <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>, pchunks &gt; &amp;theta)=0</td></tr>
+<tr class="memdesc:a2da524ce8dc4f7984bd2a84749862365"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the log of the model's prior distribution.  <a href="#a2da524ce8dc4f7984bd2a84749862365">More...</a><br /></td></tr>
+<tr class="separator:a2da524ce8dc4f7984bd2a84749862365"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa521d90ee94e3ee8eea7dd33ed1603b3"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPmmh.html#aa521d90ee94e3ee8eea7dd33ed1603b3">logLikeEvaluate</a> (const std::array&lt; <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>, pchunks &gt; &amp;theta, const std::vector&lt; <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &gt; &amp;data, std::atomic_bool &amp;cancelled)=0</td></tr>
+<tr class="memdesc:aa521d90ee94e3ee8eea7dd33ed1603b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates (approximates) the log-likelihood with a particle filter.  <a href="#aa521d90ee94e3ee8eea7dd33ed1603b3">More...</a><br /></td></tr>
+<tr class="separator:aa521d90ee94e3ee8eea7dd33ed1603b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A base-class for particle marginal Metropolis-Hastings. </p>
+<div class="textblock"><h3>template&lt;size_t np, size_t pchunks&gt;<br />
+class Pmmh&lt; np, pchunks &gt;</h3>
+
+<p>A base-class for particle marginal Metropolis-Hastings. </p>
 <dl class="section author"><dt>Author</dt><dd>taylor </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>10/14/17 </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="aa4752fceaa1b278fcadb583865bfd0b5"></a>
+<a class="anchor" id="a14c283402cf7caf2b9e77efdf7ba1371"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;size_t np, size_t pchunks&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">Pmmh::Pmmh </td>
+          <td class="memname"><a class="el" href="classPmmh.html">Pmmh</a>&lt; np, pchunks &gt;::<a class="el" href="classPmmh.html">Pmmh</a> </td>
           <td>(</td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::array&lt; <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>, pchunks &gt; &amp;&#160;</td>
           <td class="paramname"><em>startTheta</em>, </td>
         </tr>
         <tr>
@@ -203,12 +208,14 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="ac035560cb209fb5cade23e431b5e1fd3"></a>
+<a class="anchor" id="afa1bca7b86289c35cf2be286c4372a2d"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;size_t np, size_t pchunks&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void Pmmh::commenceSampling </td>
+          <td class="memname">void <a class="el" href="classPmmh.html">Pmmh</a>&lt; np, pchunks &gt;::commenceSampling </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>samplesFile</em>, </td>
@@ -238,17 +245,19 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a293931e138576f063aab7e46228f0266"></a>
+<a class="anchor" id="aa521d90ee94e3ee8eea7dd33ed1603b3"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;size_t np, size_t pchunks&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual double Pmmh::logLikeEvaluate </td>
+          <td class="memname">virtual double <a class="el" href="classPmmh.html">Pmmh</a>&lt; np, pchunks &gt;::logLikeEvaluate </td>
           <td>(</td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::array&lt; <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>, pchunks &gt; &amp;&#160;</td>
           <td class="paramname"><em>theta</em>, </td>
         </tr>
         <tr>
@@ -289,17 +298,19 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a265ca1c1380d0ebc052be2c5424a0d3b"></a>
+<a class="anchor" id="a2da524ce8dc4f7984bd2a84749862365"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;size_t np, size_t pchunks&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual double Pmmh::logPriorEvaluate </td>
+          <td class="memname">virtual double <a class="el" href="classPmmh.html">Pmmh</a>&lt; np, pchunks &gt;::logPriorEvaluate </td>
           <td>(</td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::array&lt; <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>, pchunks &gt; &amp;&#160;</td>
           <td class="paramname"><em>theta</em></td><td>)</td>
           <td></td>
         </tr>
@@ -322,23 +333,25 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="af8d3fdbc3f3c998670266a3032a53e80"></a>
+<a class="anchor" id="accf63443ea773599b4195d7def98534a"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;size_t np, size_t pchunks&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual double Pmmh::logQEvaluate </td>
+          <td class="memname">virtual double <a class="el" href="classPmmh.html">Pmmh</a>&lt; np, pchunks &gt;::logQEvaluate </td>
           <td>(</td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::array&lt; <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>, pchunks &gt; &amp;&#160;</td>
           <td class="paramname"><em>oldParams</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::array&lt; <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>, pchunks &gt; &amp;&#160;</td>
           <td class="paramname"><em>newParams</em>&#160;</td>
         </tr>
         <tr>
@@ -366,23 +379,25 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a7ada4decd5df894376c74e3ddba5daa1"></a>
+<a class="anchor" id="ae8825656a35923ee1228eed5a98f61f5"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;size_t np, size_t pchunks&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void Pmmh::qSample </td>
+          <td class="memname">virtual void <a class="el" href="classPmmh.html">Pmmh</a>&lt; np, pchunks &gt;::qSample </td>
           <td>(</td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::array&lt; <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>, pchunks &gt; &amp;&#160;</td>
           <td class="paramname"><em>oldParams</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">std::array&lt; <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a>, pchunks &gt; &amp;&#160;</td>
           <td class="paramname"><em>newParams</em>&#160;</td>
         </tr>
         <tr>

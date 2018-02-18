@@ -22,7 +22,7 @@ enum class RBPFResampStyle {everytime_multinomial, never, ess_multinomial};
 /*!
  * @class Kalman_RBPF_SISR
  * @author taylor
- * @file kalman_rbpf.h
+ * @file kalman_rbpf_sisr.h
  * @brief Rao-Blackwellized Particle Filter with Linear Gaussian submodel
  * @tparam np the number of particles
  */
@@ -43,7 +43,7 @@ private:
     MNResamp<np> m_resampler; // need for resampling method
 
     // methods
-    void ressampMultinomKRBPF(std::array<Lgssm, np> &oldMods, 
+    void resampMultinomKRBPF(std::array<Lgssm, np> &oldMods, 
                               std::array<Vec,np> &oldSamps, 
                               std::array<double,np> &oldLogUnNormWts);
 
@@ -53,10 +53,10 @@ public:
     /**
      \param resampTechnique the type of resampling you want to do.
      */
-    Kalman_RBPF(RBPFResampStyle resampTechnique = RBPFResampStyle::everytime_multinomial);
+    Kalman_RBPF_SISR(RBPFResampStyle resampTechnique = RBPFResampStyle::everytime_multinomial);
     
     //! The desuctor.
-    ~Kalman_RBPF();
+    ~Kalman_RBPF_SISR();
     
     //! Filter! 
     /**

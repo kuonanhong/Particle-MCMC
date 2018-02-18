@@ -1,0 +1,298 @@
+\hypertarget{classKalman__RBPF__SISR}{}\section{Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR$<$ np $>$ Class Template Reference}
+\label{classKalman__RBPF__SISR}\index{Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+S\+R$<$ np $>$@{Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+S\+R$<$ np $>$}}
+
+
+A base-\/class for Kalman Rao-\/\+Blackwellized Particle Filtering.  
+
+
+
+
+{\ttfamily \#include $<$kalman\+\_\+rbpf\+\_\+sisr.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classKalman__RBPF__SISR_ae744655ada73d67c950c9f268dc3a171}{Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR} (\hyperlink{kalman__rbpf__bs_8h_ad3790b392be9413a27de33728aad31e2}{R\+B\+P\+F\+Resamp\+Style} resamp\+Technique=R\+B\+P\+F\+Resamp\+Style\+::everytime\+\_\+multinomial)
+\begin{DoxyCompactList}\small\item\em The constructor. \end{DoxyCompactList}\item 
+\hyperlink{classKalman__RBPF__SISR_a86983cc90205aa350fa42464f37654ff}{$\sim$\+Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR} ()\hypertarget{classKalman__RBPF__SISR_a86983cc90205aa350fa42464f37654ff}{}\label{classKalman__RBPF__SISR_a86983cc90205aa350fa42464f37654ff}
+
+\begin{DoxyCompactList}\small\item\em The desuctor. \end{DoxyCompactList}\item 
+void \hyperlink{classKalman__RBPF__SISR_a9bd231a07aaa7fe3cf322aa7e2eeb1af}{filter} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&data)
+\begin{DoxyCompactList}\small\item\em Filter! \end{DoxyCompactList}\item 
+double \hyperlink{classKalman__RBPF__SISR_a6c4384cd9e9f6122ce96b3878dbc4f4c}{get\+Log\+Cond\+Like} () const 
+\begin{DoxyCompactList}\small\item\em Get the latest log conditional likelihood. \end{DoxyCompactList}\item 
+virtual double \hyperlink{classKalman__RBPF__SISR_a803770c8dfe0d0bfca986e1110f196de}{log\+Mu\+Ev} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x21)=0
+\begin{DoxyCompactList}\small\item\em Evaluates the first time state density. \end{DoxyCompactList}\item 
+virtual \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \hyperlink{classKalman__RBPF__SISR_aa84b58ae30f92d7ee659ae2f2b45c263}{q1\+Samp} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&y1)=0
+\begin{DoxyCompactList}\small\item\em Sample from the first sampler. \end{DoxyCompactList}\item 
+virtual \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \hyperlink{classKalman__RBPF__SISR_afe95bb7f338dedf644fe13b7a5416841}{init\+Kalman\+Mean} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x21)=0
+\begin{DoxyCompactList}\small\item\em Provides the initial mean vector for each Kalman filter object. \end{DoxyCompactList}\item 
+virtual \hyperlink{apf__filter_8h_ae601f56a556993079f730483c574356f}{Mat} \hyperlink{classKalman__RBPF__SISR_ac8be6c3f22958fa47ba8b033059678b9}{init\+Kalman\+Var} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x21)=0
+\begin{DoxyCompactList}\small\item\em Provides the initial covariance matrix for each Kalman filter object. \end{DoxyCompactList}\item 
+virtual \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \hyperlink{classKalman__RBPF__SISR_aaf7a8d99e04ef6a4d0a86bcbf46c21f5}{q\+Samp} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x2tm1, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&yt)=0
+\begin{DoxyCompactList}\small\item\em Samples the time t second component. \end{DoxyCompactList}\item 
+virtual double \hyperlink{classKalman__RBPF__SISR_afaef322b375a4f01b216339e15b36db8}{log\+Q1\+Ev} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x21, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&y1)=0
+\begin{DoxyCompactList}\small\item\em Evaluates the proposal density of the second state component at time 1. \end{DoxyCompactList}\item 
+virtual double \hyperlink{classKalman__RBPF__SISR_a9aa5b265d3dd00da1768a23a5038ff80}{log\+F\+Ev} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x2t, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x2tm1)=0
+\begin{DoxyCompactList}\small\item\em Evaluates the state transition density for the second state component. \end{DoxyCompactList}\item 
+virtual double \hyperlink{classKalman__RBPF__SISR_afde7f3bf1457d7796725b7acb88b50c3}{log\+Q\+Ev} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x2t, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x2tm1, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&yt)=0
+\begin{DoxyCompactList}\small\item\em Evaluates the proposal density at time t $>$ 1. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classKalman__RBPF__SISR_ab8b1bde42a4354e7b0b5912c797ef838}{update\+Kalman} (\hyperlink{classLgssm}{Lgssm} \&a\+Model, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&yt, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x2t)=0
+\begin{DoxyCompactList}\small\item\em How to update your inner Kalman filter object at each time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$size\+\_\+t np$>$\\*
+class Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+S\+R$<$ np $>$}
+
+A base-\/class for Kalman Rao-\/\+Blackwellized Particle Filtering. 
+
+\begin{DoxyAuthor}{Author}
+taylor 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR@{Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR}!Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR@{Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR}}
+\index{Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR@{Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR}!Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR@{Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR}}
+\subsubsection[{\texorpdfstring{Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+S\+R(\+R\+B\+P\+F\+Resamp\+Style resamp\+Technique=\+R\+B\+P\+F\+Resamp\+Style\+::everytime\+\_\+multinomial)}{Kalman_RBPF_SISR(RBPFResampStyle resampTechnique=RBPFResampStyle::everytime_multinomial)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\+\_\+t np$>$ {\bf Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR}$<$ np $>$\+::{\bf Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR} (
+\begin{DoxyParamCaption}
+\item[{{\bf R\+B\+P\+F\+Resamp\+Style}}]{resamp\+Technique = {\ttfamily RBPFResampStyle\+:\+:everytime\+\_\+multinomial}}
+\end{DoxyParamCaption}
+)}\hypertarget{classKalman__RBPF__SISR_ae744655ada73d67c950c9f268dc3a171}{}\label{classKalman__RBPF__SISR_ae744655ada73d67c950c9f268dc3a171}
+
+
+The constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em resamp\+Technique} & the type of resampling you want to do. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR@{Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR}!filter@{filter}}
+\index{filter@{filter}!Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR@{Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR}}
+\subsubsection[{\texorpdfstring{filter(const Vec \&data)}{filter(const Vec &data)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\+\_\+t np$>$ void {\bf Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR}$<$ np $>$\+::filter (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vec} \&}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{classKalman__RBPF__SISR_a9bd231a07aaa7fe3cf322aa7e2eeb1af}{}\label{classKalman__RBPF__SISR_a9bd231a07aaa7fe3cf322aa7e2eeb1af}
+
+
+Filter! 
+
+The workhorse function 
+\begin{DoxyParams}{Parameters}
+{\em data} & the most recent observable portion of the time series. \\
+\hline
+\end{DoxyParams}
+\index{Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR@{Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR}!get\+Log\+Cond\+Like@{get\+Log\+Cond\+Like}}
+\index{get\+Log\+Cond\+Like@{get\+Log\+Cond\+Like}!Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR@{Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR}}
+\subsubsection[{\texorpdfstring{get\+Log\+Cond\+Like() const }{getLogCondLike() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\+\_\+t np$>$ double {\bf Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR}$<$ np $>$\+::get\+Log\+Cond\+Like (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classKalman__RBPF__SISR_a6c4384cd9e9f6122ce96b3878dbc4f4c}{}\label{classKalman__RBPF__SISR_a6c4384cd9e9f6122ce96b3878dbc4f4c}
+
+
+Get the latest log conditional likelihood. 
+
+\begin{DoxyReturn}{Returns}
+the latest log conditional likelihood. 
+\end{DoxyReturn}
+\index{Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR@{Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR}!init\+Kalman\+Mean@{init\+Kalman\+Mean}}
+\index{init\+Kalman\+Mean@{init\+Kalman\+Mean}!Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR@{Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR}}
+\subsubsection[{\texorpdfstring{init\+Kalman\+Mean(const Vec \&x21)=0}{initKalmanMean(const Vec &x21)=0}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\+\_\+t np$>$ virtual {\bf Vec} {\bf Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR}$<$ np $>$\+::init\+Kalman\+Mean (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vec} \&}]{x21}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classKalman__RBPF__SISR_afe95bb7f338dedf644fe13b7a5416841}{}\label{classKalman__RBPF__SISR_afe95bb7f338dedf644fe13b7a5416841}
+
+
+Provides the initial mean vector for each Kalman filter object. 
+
+provides the initial mean vector for each Kalman filter object. 
+\begin{DoxyParams}{Parameters}
+{\em x21} & the second state componenent at time 1. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a Vec representing the unconditional mean. 
+\end{DoxyReturn}
+\index{Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR@{Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR}!init\+Kalman\+Var@{init\+Kalman\+Var}}
+\index{init\+Kalman\+Var@{init\+Kalman\+Var}!Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR@{Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR}}
+\subsubsection[{\texorpdfstring{init\+Kalman\+Var(const Vec \&x21)=0}{initKalmanVar(const Vec &x21)=0}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\+\_\+t np$>$ virtual {\bf Mat} {\bf Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR}$<$ np $>$\+::init\+Kalman\+Var (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vec} \&}]{x21}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classKalman__RBPF__SISR_ac8be6c3f22958fa47ba8b033059678b9}{}\label{classKalman__RBPF__SISR_ac8be6c3f22958fa47ba8b033059678b9}
+
+
+Provides the initial covariance matrix for each Kalman filter object. 
+
+provides the initial covariance matrix for each Kalman filter object. 
+\begin{DoxyParams}{Parameters}
+{\em x21} & the second state component at time 1. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a covariance matrix. 
+\end{DoxyReturn}
+\index{Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR@{Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR}!log\+F\+Ev@{log\+F\+Ev}}
+\index{log\+F\+Ev@{log\+F\+Ev}!Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR@{Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR}}
+\subsubsection[{\texorpdfstring{log\+F\+Ev(const Vec \&x2t, const Vec \&x2tm1)=0}{logFEv(const Vec &x2t, const Vec &x2tm1)=0}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\+\_\+t np$>$ virtual double {\bf Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR}$<$ np $>$\+::log\+F\+Ev (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vec} \&}]{x2t, }
+\item[{const {\bf Vec} \&}]{x2tm1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classKalman__RBPF__SISR_a9aa5b265d3dd00da1768a23a5038ff80}{}\label{classKalman__RBPF__SISR_a9aa5b265d3dd00da1768a23a5038ff80}
+
+
+Evaluates the state transition density for the second state component. 
+
+Evaluates the state transition density for the second state component. 
+\begin{DoxyParams}{Parameters}
+{\em x2t} & the current second state component. \\
+\hline
+{\em x2tm1} & the previous second state component. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a double evaluation. 
+\end{DoxyReturn}
+\index{Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR@{Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR}!log\+Mu\+Ev@{log\+Mu\+Ev}}
+\index{log\+Mu\+Ev@{log\+Mu\+Ev}!Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR@{Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR}}
+\subsubsection[{\texorpdfstring{log\+Mu\+Ev(const Vec \&x21)=0}{logMuEv(const Vec &x21)=0}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\+\_\+t np$>$ virtual double {\bf Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR}$<$ np $>$\+::log\+Mu\+Ev (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vec} \&}]{x21}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classKalman__RBPF__SISR_a803770c8dfe0d0bfca986e1110f196de}{}\label{classKalman__RBPF__SISR_a803770c8dfe0d0bfca986e1110f196de}
+
+
+Evaluates the first time state density. 
+
+evaluates mu. 
+\begin{DoxyParams}{Parameters}
+{\em x21} & component two at time 1 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a double evaluation 
+\end{DoxyReturn}
+\index{Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR@{Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR}!log\+Q1\+Ev@{log\+Q1\+Ev}}
+\index{log\+Q1\+Ev@{log\+Q1\+Ev}!Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR@{Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR}}
+\subsubsection[{\texorpdfstring{log\+Q1\+Ev(const Vec \&x21, const Vec \&y1)=0}{logQ1Ev(const Vec &x21, const Vec &y1)=0}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\+\_\+t np$>$ virtual double {\bf Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR}$<$ np $>$\+::log\+Q1\+Ev (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vec} \&}]{x21, }
+\item[{const {\bf Vec} \&}]{y1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classKalman__RBPF__SISR_afaef322b375a4f01b216339e15b36db8}{}\label{classKalman__RBPF__SISR_afaef322b375a4f01b216339e15b36db8}
+
+
+Evaluates the proposal density of the second state component at time 1. 
+
+Evaluates the proposal density of the second state component at time 1. 
+\begin{DoxyParams}{Parameters}
+{\em x21} & the second state component at time 1 you sampled. \\
+\hline
+{\em y1} & time 1 observation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a double evaluation of the density. 
+\end{DoxyReturn}
+\index{Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR@{Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR}!log\+Q\+Ev@{log\+Q\+Ev}}
+\index{log\+Q\+Ev@{log\+Q\+Ev}!Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR@{Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR}}
+\subsubsection[{\texorpdfstring{log\+Q\+Ev(const Vec \&x2t, const Vec \&x2tm1, const Vec \&yt)=0}{logQEv(const Vec &x2t, const Vec &x2tm1, const Vec &yt)=0}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\+\_\+t np$>$ virtual double {\bf Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR}$<$ np $>$\+::log\+Q\+Ev (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vec} \&}]{x2t, }
+\item[{const {\bf Vec} \&}]{x2tm1, }
+\item[{const {\bf Vec} \&}]{yt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classKalman__RBPF__SISR_afde7f3bf1457d7796725b7acb88b50c3}{}\label{classKalman__RBPF__SISR_afde7f3bf1457d7796725b7acb88b50c3}
+
+
+Evaluates the proposal density at time t $>$ 1. 
+
+Evaluates the proposal density at time t $>$ 1. 
+\begin{DoxyParams}{Parameters}
+{\em x2t} & the current second state component. \\
+\hline
+{\em x2tm1} & the previous second state component. \\
+\hline
+{\em yt} & the current time series observation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a double evaluation. 
+\end{DoxyReturn}
+\index{Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR@{Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR}!q1\+Samp@{q1\+Samp}}
+\index{q1\+Samp@{q1\+Samp}!Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR@{Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR}}
+\subsubsection[{\texorpdfstring{q1\+Samp(const Vec \&y1)=0}{q1Samp(const Vec &y1)=0}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\+\_\+t np$>$ virtual {\bf Vec} {\bf Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR}$<$ np $>$\+::q1\+Samp (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vec} \&}]{y1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classKalman__RBPF__SISR_aa84b58ae30f92d7ee659ae2f2b45c263}{}\label{classKalman__RBPF__SISR_aa84b58ae30f92d7ee659ae2f2b45c263}
+
+
+Sample from the first sampler. 
+
+samples the second component of the state at time 1. 
+\begin{DoxyParams}{Parameters}
+{\em y1} & most recent datum. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a Vec sample for x21. 
+\end{DoxyReturn}
+\index{Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR@{Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR}!q\+Samp@{q\+Samp}}
+\index{q\+Samp@{q\+Samp}!Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR@{Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR}}
+\subsubsection[{\texorpdfstring{q\+Samp(const Vec \&x2tm1, const Vec \&yt)=0}{qSamp(const Vec &x2tm1, const Vec &yt)=0}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\+\_\+t np$>$ virtual {\bf Vec} {\bf Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR}$<$ np $>$\+::q\+Samp (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vec} \&}]{x2tm1, }
+\item[{const {\bf Vec} \&}]{yt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classKalman__RBPF__SISR_aaf7a8d99e04ef6a4d0a86bcbf46c21f5}{}\label{classKalman__RBPF__SISR_aaf7a8d99e04ef6a4d0a86bcbf46c21f5}
+
+
+Samples the time t second component. 
+
+Samples the time t second component. 
+\begin{DoxyParams}{Parameters}
+{\em x2tm1} & the previous time\textquotesingle{}s second state component. \\
+\hline
+{\em yt} & the current observation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a Vec sample of the second state component at the current time. 
+\end{DoxyReturn}
+\index{Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR@{Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR}!update\+Kalman@{update\+Kalman}}
+\index{update\+Kalman@{update\+Kalman}!Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR@{Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR}}
+\subsubsection[{\texorpdfstring{update\+Kalman(\+Lgssm \&a\+Model, const Vec \&yt, const Vec \&x2t)=0}{updateKalman(Lgssm &aModel, const Vec &yt, const Vec &x2t)=0}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\+\_\+t np$>$ virtual void {\bf Kalman\+\_\+\+R\+B\+P\+F\+\_\+\+S\+I\+SR}$<$ np $>$\+::update\+Kalman (
+\begin{DoxyParamCaption}
+\item[{{\bf Lgssm} \&}]{a\+Model, }
+\item[{const {\bf Vec} \&}]{yt, }
+\item[{const {\bf Vec} \&}]{x2t}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classKalman__RBPF__SISR_ab8b1bde42a4354e7b0b5912c797ef838}{}\label{classKalman__RBPF__SISR_ab8b1bde42a4354e7b0b5912c797ef838}
+
+
+How to update your inner Kalman filter object at each time. 
+
+How to update your inner Kalman filter object at each time. 
+\begin{DoxyParams}{Parameters}
+{\em a\+Model} & a Kalman filter object describing the conditional closed-\/form model. \\
+\hline
+{\em yt} & the current time series observation. \\
+\hline
+{\em x2t} & the current second state component. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{kalman__rbpf__sisr_8h}{kalman\+\_\+rbpf\+\_\+sisr.\+h}\end{DoxyCompactItemize}

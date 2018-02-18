@@ -151,7 +151,7 @@ $(document).ready(function(){initNavTree('functions.html','');});
 
 <h3><a class="anchor" id="index_c"></a>- c -</h3><ul>
 <li>commenceSampling()
-: <a class="el" href="classPmmh.html#ac035560cb209fb5cade23e431b5e1fd3">Pmmh</a>
+: <a class="el" href="classPmmh.html#afa1bca7b86289c35cf2be286c4372a2d">Pmmh&lt; np, pchunks &gt;</a>
 </li>
 </ul>
 
@@ -170,20 +170,21 @@ $(document).ready(function(){initNavTree('functions.html','');});
 
 
 <h3><a class="anchor" id="index_f"></a>- f -</h3><ul>
-<li>fEv()
-: <a class="el" href="classKalman__RBPF.html#a03bfc2e7f32a86ab4fe653958d2f7dd4">Kalman_RBPF</a>
-</li>
 <li>filter()
 : <a class="el" href="classAPFFilter.html#a0ce3e3d31a90ff06f6e62b66755f239b">APFFilter&lt; N &gt;</a>
 , <a class="el" href="classBSFilter.html#a38dbc8460036319a676926e5f0240249">BSFilter&lt; N &gt;</a>
-, <a class="el" href="classHmm__Rbpf.html#a74266bf4053458eb0be03d5849144375">Hmm_Rbpf</a>
-, <a class="el" href="classKalman__RBPF.html#a72d5ed61d0289a6977bf178145f5b969">Kalman_RBPF</a>
+, <a class="el" href="classHmm__Rbpf.html#a874a9cbd4cb5d6c3961624bb3e08fa4c">Hmm_Rbpf&lt; np &gt;</a>
+, <a class="el" href="classHmm__Rbpf__BS.html#a6bed7b232c521446c8ff17b227953b52">Hmm_Rbpf_BS&lt; np &gt;</a>
+, <a class="el" href="classKalman__RBPF__BS.html#a195efd6d06215aa66defda0bb5a958e4">Kalman_RBPF_BS&lt; np &gt;</a>
+, <a class="el" href="classKalman__RBPF__SISR.html#a9bd231a07aaa7fe3cf322aa7e2eeb1af">Kalman_RBPF_SISR&lt; np &gt;</a>
 , <a class="el" href="classSISRFilter.html#a3523d82ca4e53ce8b4e5d0cc5c252ca1">SISRFilter&lt; N &gt;</a>
 </li>
 <li>fSamp()
 : <a class="el" href="classAPFFilter.html#a3b2a7e9638bce587a9b81ada9da951d1">APFFilter&lt; N &gt;</a>
 , <a class="el" href="classAPFSmoother.html#a823b3f5d1d942f5305d05dfd318f4851">APFSmoother</a>
 , <a class="el" href="classBSFilter.html#a3d4caf998045f89a6887c3113c5c38f9">BSFilter&lt; N &gt;</a>
+, <a class="el" href="classHmm__Rbpf__BS.html#acc905cb6e7962d958586af494d0e953c">Hmm_Rbpf_BS&lt; np &gt;</a>
+, <a class="el" href="classKalman__RBPF__BS.html#ae18fefa813cfcb43c3c7faae859fb9a9">Kalman_RBPF_BS&lt; np &gt;</a>
 </li>
 <li>FSHMM()
 : <a class="el" href="classFSHMM.html#a7d9109a5f787b3842f84257b79791cb9">FSHMM</a>
@@ -194,7 +195,7 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <h3><a class="anchor" id="index_g"></a>- g -</h3><ul>
 <li>getCondLike()
 : <a class="el" href="classFSHMM.html#a38325b38c4f20521f50cc7891d44839d">FSHMM</a>
-, <a class="el" href="classKalman__RBPF.html#a2d65ffce3d115ecaf1c8e97b9222cdde">Kalman_RBPF</a>
+, <a class="el" href="classHHMM.html#a70295abc7a933d593badaf50912f84e3">HHMM&lt; n1, n2 &gt;</a>
 </li>
 <li>getESS()
 : <a class="el" href="classSISRSmoother.html#a9e6a9e4681075c1ea28a7476b261e1fc">SISRSmoother</a>
@@ -202,7 +203,8 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>getExpectations()
 : <a class="el" href="classAPFFilter.html#a103b23fb56c293eaa63e4312b050952f">APFFilter&lt; N &gt;</a>
 , <a class="el" href="classBSFilter.html#aad9844b6cf839b99db2b29556a225f75">BSFilter&lt; N &gt;</a>
-, <a class="el" href="classHmm__Rbpf.html#a56340163d1ed12c1454aea347ab34f6e">Hmm_Rbpf</a>
+, <a class="el" href="classHmm__Rbpf.html#a4e8cd1a8d1d56e70cf2eee2f24925953">Hmm_Rbpf&lt; np &gt;</a>
+, <a class="el" href="classHmm__Rbpf__BS.html#a91a69878e000492ce98ba270075ca0e2">Hmm_Rbpf_BS&lt; np &gt;</a>
 , <a class="el" href="classSISRFilter.html#a8025ce575c95fa0cc19790d15938ce84">SISRFilter&lt; N &gt;</a>
 </li>
 <li>getFilterVec()
@@ -222,7 +224,10 @@ $(document).ready(function(){initNavTree('functions.html','');});
 : <a class="el" href="classAPFFilter.html#ac2142078c81d660421ad2d98b80aee38">APFFilter&lt; N &gt;</a>
 , <a class="el" href="classAPFSmoother.html#af78387b6b79bb2d3c3b44663e7fc31f3">APFSmoother</a>
 , <a class="el" href="classBSFilter.html#a8db158adf8136ade250d243a289154a8">BSFilter&lt; N &gt;</a>
-, <a class="el" href="classHmm__Rbpf.html#a6938942431c84e73f4918eaf87446844">Hmm_Rbpf</a>
+, <a class="el" href="classHmm__Rbpf.html#a39ddb0a59bce678e13fc04f2b394c36d">Hmm_Rbpf&lt; np &gt;</a>
+, <a class="el" href="classHmm__Rbpf__BS.html#afe3431ed081092533c65ac55ae61c625">Hmm_Rbpf_BS&lt; np &gt;</a>
+, <a class="el" href="classKalman__RBPF__BS.html#a1c1e6a397dffee83dca8d98b4f174238">Kalman_RBPF_BS&lt; np &gt;</a>
+, <a class="el" href="classKalman__RBPF__SISR.html#a6c4384cd9e9f6122ce96b3878dbc4f4c">Kalman_RBPF_SISR&lt; np &gt;</a>
 , <a class="el" href="classLgssm.html#abf04a9c7501ab5fa91246963b57721c4">Lgssm</a>
 , <a class="el" href="classSISRFilter.html#a8746d574a3d6703f62400fd5075460eb">SISRFilter&lt; N &gt;</a>
 , <a class="el" href="classSISRSmoother.html#a6316bfec4e62d522e1fe32f8c4b18b0f">SISRSmoother</a>
@@ -238,31 +243,44 @@ $(document).ready(function(){initNavTree('functions.html','');});
 
 
 <h3><a class="anchor" id="index_h"></a>- h -</h3><ul>
+<li>HHMM()
+: <a class="el" href="classHHMM.html#a311532121776ef969a5ac11b2c1064c7">HHMM&lt; n1, n2 &gt;</a>
+</li>
 <li>Hmm_Rbpf()
-: <a class="el" href="classHmm__Rbpf.html#aedf2a5840e7bd0a558aaa89603eab76e">Hmm_Rbpf</a>
+: <a class="el" href="classHmm__Rbpf.html#a5f6b635ecde176edefd4709132a49f74">Hmm_Rbpf&lt; np &gt;</a>
+</li>
+<li>Hmm_Rbpf_BS()
+: <a class="el" href="classHmm__Rbpf__BS.html#a7485e9b843711f9918dab590f4a2a948">Hmm_Rbpf_BS&lt; np &gt;</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_i"></a>- i -</h3><ul>
 <li>initHMMProbVec()
-: <a class="el" href="classHmm__Rbpf.html#a33ab8bbb1a85fd06fa2d507fa5d48904">Hmm_Rbpf</a>
+: <a class="el" href="classHmm__Rbpf.html#a22bf131a47a9e96e39b6bbb5f60e597d">Hmm_Rbpf&lt; np &gt;</a>
+, <a class="el" href="classHmm__Rbpf__BS.html#a8eb90ceb79d049a20f9d919e54e42581">Hmm_Rbpf_BS&lt; np &gt;</a>
 </li>
 <li>initHMMTransMat()
-: <a class="el" href="classHmm__Rbpf.html#a752c2997aee03219fe3eb4fbe63ed3af">Hmm_Rbpf</a>
+: <a class="el" href="classHmm__Rbpf.html#a455f785b1283acce5e01a80c58dd350d">Hmm_Rbpf&lt; np &gt;</a>
+, <a class="el" href="classHmm__Rbpf__BS.html#a18dcd75f96604e26bd9935b3c08f78cd">Hmm_Rbpf_BS&lt; np &gt;</a>
 </li>
 <li>initKalmanMean()
-: <a class="el" href="classKalman__RBPF.html#a870a53fc149adf8042fa12eb5d9a8d30">Kalman_RBPF</a>
+: <a class="el" href="classKalman__RBPF__BS.html#aad62ee3220c93d14fa6983013f0a1524">Kalman_RBPF_BS&lt; np &gt;</a>
+, <a class="el" href="classKalman__RBPF__SISR.html#afe95bb7f338dedf644fe13b7a5416841">Kalman_RBPF_SISR&lt; np &gt;</a>
 </li>
 <li>initKalmanVar()
-: <a class="el" href="classKalman__RBPF.html#a4f7f37a90d9382ca2ad7dfef4acf1bc0">Kalman_RBPF</a>
+: <a class="el" href="classKalman__RBPF__BS.html#af7bde76f73af8af1b324d2da8fa7a652">Kalman_RBPF_BS&lt; np &gt;</a>
+, <a class="el" href="classKalman__RBPF__SISR.html#ac8be6c3f22958fa47ba8b033059678b9">Kalman_RBPF_SISR&lt; np &gt;</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_k"></a>- k -</h3><ul>
-<li>Kalman_RBPF()
-: <a class="el" href="classKalman__RBPF.html#aa7130565819b45f993100dbf7f048c37">Kalman_RBPF</a>
+<li>Kalman_RBPF_BS()
+: <a class="el" href="classKalman__RBPF__BS.html#aafe2ff44ff6a1b12f5843d4596e0fa13">Kalman_RBPF_BS&lt; np &gt;</a>
+</li>
+<li>Kalman_RBPF_SISR()
+: <a class="el" href="classKalman__RBPF__SISR.html#ae744655ada73d67c950c9f268dc3a171">Kalman_RBPF_SISR&lt; np &gt;</a>
 </li>
 <li>kGen()
 : <a class="el" href="classMNResamp.html#a152ee53e6df53587bea13bf8c9e74322">MNResamp&lt; N &gt;</a>
@@ -276,7 +294,8 @@ $(document).ready(function(){initNavTree('functions.html','');});
 : <a class="el" href="classLgssm.html#a8c729ab27738f29225847777b740877e">Lgssm</a>
 </li>
 <li>logFEv()
-: <a class="el" href="classHmm__Rbpf.html#a94fc0439184e6f4c49de5738a0f3bbed">Hmm_Rbpf</a>
+: <a class="el" href="classHmm__Rbpf.html#a2225a77385e1c741cd49e2f05e432ca9">Hmm_Rbpf&lt; np &gt;</a>
+, <a class="el" href="classKalman__RBPF__SISR.html#a9aa5b265d3dd00da1768a23a5038ff80">Kalman_RBPF_SISR&lt; np &gt;</a>
 , <a class="el" href="classSISRFilter.html#a49cf666cefd3f0dd3c85c445dd4cebb1">SISRFilter&lt; N &gt;</a>
 , <a class="el" href="classSISRSmoother.html#aa9bf9fcee0283b90984964e7a76f6096">SISRSmoother</a>
 </li>
@@ -288,34 +307,37 @@ $(document).ready(function(){initNavTree('functions.html','');});
 , <a class="el" href="classSISRSmoother.html#a15cafa515e345d7ea5b3afefcca27386">SISRSmoother</a>
 </li>
 <li>logLikeEvaluate()
-: <a class="el" href="classPmmh.html#a293931e138576f063aab7e46228f0266">Pmmh</a>
+: <a class="el" href="classPmmh.html#aa521d90ee94e3ee8eea7dd33ed1603b3">Pmmh&lt; np, pchunks &gt;</a>
 </li>
 <li>logMuEv()
 : <a class="el" href="classAPFFilter.html#a5a046e084b1eb982f743c180cc0b7c9f">APFFilter&lt; N &gt;</a>
 , <a class="el" href="classAPFSmoother.html#a6afc79350b182fe4083936d1abd2beda">APFSmoother</a>
 , <a class="el" href="classBSFilter.html#a9317b6253d10ee5b50f68515ae7a5cb7">BSFilter&lt; N &gt;</a>
-, <a class="el" href="classHmm__Rbpf.html#a0490747141865bdca060e4a49ca5430e">Hmm_Rbpf</a>
+, <a class="el" href="classHmm__Rbpf.html#aecfbf4f24599accbf2bbda77de8d1b99">Hmm_Rbpf&lt; np &gt;</a>
+, <a class="el" href="classKalman__RBPF__SISR.html#a803770c8dfe0d0bfca986e1110f196de">Kalman_RBPF_SISR&lt; np &gt;</a>
 , <a class="el" href="classSISRFilter.html#a793a791dca7b2c3a4d73365774613d27">SISRFilter&lt; N &gt;</a>
 , <a class="el" href="classSISRSmoother.html#a5498af2a7a572435f303a2238c252464">SISRSmoother</a>
 </li>
 <li>logPriorEvaluate()
-: <a class="el" href="classPmmh.html#a265ca1c1380d0ebc052be2c5424a0d3b">Pmmh</a>
+: <a class="el" href="classPmmh.html#a2da524ce8dc4f7984bd2a84749862365">Pmmh&lt; np, pchunks &gt;</a>
 </li>
 <li>logQ1Ev()
 : <a class="el" href="classAPFFilter.html#a149fdaf9f3479dd5044176eb369a99aa">APFFilter&lt; N &gt;</a>
 , <a class="el" href="classAPFSmoother.html#a4353091a34dac9dd072f407a593aea03">APFSmoother</a>
 , <a class="el" href="classBSFilter.html#a9a50ae948bee94114567ca798c8e6f1f">BSFilter&lt; N &gt;</a>
-, <a class="el" href="classHmm__Rbpf.html#a5feb153a18b40144844f343c2c1af7df">Hmm_Rbpf</a>
+, <a class="el" href="classHmm__Rbpf.html#a6b7d654499d59cff3333ff068fc05f00">Hmm_Rbpf&lt; np &gt;</a>
+, <a class="el" href="classKalman__RBPF__SISR.html#afaef322b375a4f01b216339e15b36db8">Kalman_RBPF_SISR&lt; np &gt;</a>
 , <a class="el" href="classSISRFilter.html#a156fcb8c2250e7c480c452d2937b1317">SISRFilter&lt; N &gt;</a>
 , <a class="el" href="classSISRSmoother.html#a316ce1b0f0e18d277b0687f727a00a0a">SISRSmoother</a>
 </li>
 <li>logQEv()
-: <a class="el" href="classHmm__Rbpf.html#ae01bb25063173899739b61236d5d7b15">Hmm_Rbpf</a>
+: <a class="el" href="classHmm__Rbpf.html#a60b56c34a56e3a9090fb4f705f0bdde1">Hmm_Rbpf&lt; np &gt;</a>
+, <a class="el" href="classKalman__RBPF__SISR.html#afde7f3bf1457d7796725b7acb88b50c3">Kalman_RBPF_SISR&lt; np &gt;</a>
 , <a class="el" href="classSISRFilter.html#ac489579a2d5b603bbd184357a6068142">SISRFilter&lt; N &gt;</a>
 , <a class="el" href="classSISRSmoother.html#a73f4cea772e649b791b66473408b9b61">SISRSmoother</a>
 </li>
 <li>logQEvaluate()
-: <a class="el" href="classPmmh.html#af8d3fdbc3f3c998670266a3032a53e80">Pmmh</a>
+: <a class="el" href="classPmmh.html#accf63443ea773599b4195d7def98534a">Pmmh&lt; np, pchunks &gt;</a>
 </li>
 </ul>
 
@@ -324,11 +346,12 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>MNResamp()
 : <a class="el" href="classMNResamp.html#a5b19989c7ebca4cf6d4cf5b5023714f9">MNResamp&lt; N &gt;</a>
 </li>
-<li>muEv()
-: <a class="el" href="classKalman__RBPF.html#a25e8682d13a04eb1075a4d30dfa6825a">Kalman_RBPF</a>
-</li>
 <li>MultinomResamp()
 : <a class="el" href="classMultinomResamp.html#a3134e22c0b7e0215045eb783bdc44669">MultinomResamp</a>
+</li>
+<li>muSamp()
+: <a class="el" href="classHmm__Rbpf__BS.html#ab34e043feed01165f4dbe82ed109c8b2">Hmm_Rbpf_BS&lt; np &gt;</a>
+, <a class="el" href="classKalman__RBPF__BS.html#a7bee94069af44372af5f862219a9d9bd">Kalman_RBPF_BS&lt; np &gt;</a>
 </li>
 <li>MVNSampler()
 : <a class="el" href="classdensities_1_1MVNSampler.html#abb1cac251d106e802ac99d70ae8a08fe">densities::MVNSampler</a>
@@ -338,7 +361,7 @@ $(document).ready(function(){initNavTree('functions.html','');});
 
 <h3><a class="anchor" id="index_p"></a>- p -</h3><ul>
 <li>Pmmh()
-: <a class="el" href="classPmmh.html#aa4752fceaa1b278fcadb583865bfd0b5">Pmmh</a>
+: <a class="el" href="classPmmh.html#a14c283402cf7caf2b9e77efdf7ba1371">Pmmh&lt; np, pchunks &gt;</a>
 </li>
 <li>propMu()
 : <a class="el" href="classAPFFilter.html#a7fe96c18e0e3206210295c12de883c39">APFFilter&lt; N &gt;</a>
@@ -348,39 +371,35 @@ $(document).ready(function(){initNavTree('functions.html','');});
 
 
 <h3><a class="anchor" id="index_q"></a>- q -</h3><ul>
-<li>q1Ev()
-: <a class="el" href="classKalman__RBPF.html#a36b66fd90b6d810d88e5ec9785cb0307">Kalman_RBPF</a>
-</li>
 <li>q1Samp()
 : <a class="el" href="classAPFFilter.html#a63b58cc57c9ebc33042a745262f72777">APFFilter&lt; N &gt;</a>
 , <a class="el" href="classAPFSmoother.html#ae1b444849e0e2882c00e928409d8fc4b">APFSmoother</a>
 , <a class="el" href="classBSFilter.html#a981b7de2820c496508f7fe23723add06">BSFilter&lt; N &gt;</a>
-, <a class="el" href="classHmm__Rbpf.html#a1517fdbdf37a4dab6e6c0bca229fd4a0">Hmm_Rbpf</a>
-, <a class="el" href="classKalman__RBPF.html#a71e394c093f606f80a92a3fc4fe087a3">Kalman_RBPF</a>
+, <a class="el" href="classHmm__Rbpf.html#a95f6f299b49e8c47993fab2772a517b4">Hmm_Rbpf&lt; np &gt;</a>
+, <a class="el" href="classKalman__RBPF__SISR.html#aa84b58ae30f92d7ee659ae2f2b45c263">Kalman_RBPF_SISR&lt; np &gt;</a>
 , <a class="el" href="classSISRFilter.html#a224499663b0412e7ab635828b260aca5">SISRFilter&lt; N &gt;</a>
 , <a class="el" href="classSISRSmoother.html#a1c7a32fa83f90fa6666bd0e739189275">SISRSmoother</a>
 </li>
-<li>qEv()
-: <a class="el" href="classKalman__RBPF.html#ad5b8e717c5d4c838b0d246b496971d16">Kalman_RBPF</a>
-</li>
 <li>qSamp()
-: <a class="el" href="classHmm__Rbpf.html#a3552390cea3b92ce312f4ebd14875f69">Hmm_Rbpf</a>
-, <a class="el" href="classKalman__RBPF.html#ad3ee89a06a18a287445e366230a6bd65">Kalman_RBPF</a>
+: <a class="el" href="classHmm__Rbpf.html#a2394e61d4b4c25b0f6956804625845d4">Hmm_Rbpf&lt; np &gt;</a>
+, <a class="el" href="classKalman__RBPF__SISR.html#aaf7a8d99e04ef6a4d0a86bcbf46c21f5">Kalman_RBPF_SISR&lt; np &gt;</a>
 , <a class="el" href="classSISRFilter.html#aa88835b857c73628e4cd013b299a3746">SISRFilter&lt; N &gt;</a>
 , <a class="el" href="classSISRSmoother.html#a15f1f84cfb370dfdbb27a6360c840c60">SISRSmoother</a>
 </li>
 <li>qSample()
-: <a class="el" href="classPmmh.html#a7ada4decd5df894376c74e3ddba5daa1">Pmmh</a>
+: <a class="el" href="classPmmh.html#ae8825656a35923ee1228eed5a98f61f5">Pmmh&lt; np, pchunks &gt;</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_r"></a>- r -</h3><ul>
 <li>resampHRBPF()
-: <a class="el" href="classMultinomResamp.html#afe270f582430874e2a45c63eb7e0fe04">MultinomResamp</a>
+: <a class="el" href="classMNResamp.html#a2cec5eaa8aa6dd8b8e228e324ad3e437">MNResamp&lt; N &gt;</a>
+, <a class="el" href="classMultinomResamp.html#afe270f582430874e2a45c63eb7e0fe04">MultinomResamp</a>
 </li>
 <li>resampKRBPF()
-: <a class="el" href="classMultinomResamp.html#a67ded8594a810950febe37a44e2a8a82">MultinomResamp</a>
+: <a class="el" href="classMNResamp.html#aefaf6ba9a6b993a530ae42413b878565">MNResamp&lt; N &gt;</a>
+, <a class="el" href="classMultinomResamp.html#a67ded8594a810950febe37a44e2a8a82">MultinomResamp</a>
 </li>
 <li>resampLogWts()
 : <a class="el" href="classMNResamp.html#a5c84e23bbe2f57984084835995dc41fd">MNResamp&lt; N &gt;</a>
@@ -429,13 +448,16 @@ $(document).ready(function(){initNavTree('functions.html','');});
 </li>
 <li>update()
 : <a class="el" href="classFSHMM.html#a6a9c239a6de129579cc659269c6bc03f">FSHMM</a>
+, <a class="el" href="classHHMM.html#a28931d06c5885e3b9b1cbe2aeb345417">HHMM&lt; n1, n2 &gt;</a>
 , <a class="el" href="classLgssm.html#a1f21af488dde504b4c01ccd53ef60e2f">Lgssm</a>
 </li>
 <li>updateFSHMM()
-: <a class="el" href="classHmm__Rbpf.html#aafd7e87c211684e8c4692646e46785ba">Hmm_Rbpf</a>
+: <a class="el" href="classHmm__Rbpf.html#a3ca8ae39c7d1c52ceaf300b6b2564edf">Hmm_Rbpf&lt; np &gt;</a>
+, <a class="el" href="classHmm__Rbpf__BS.html#ac7ebabf12ea866281193884ba6b6cf69">Hmm_Rbpf_BS&lt; np &gt;</a>
 </li>
 <li>updateKalman()
-: <a class="el" href="classKalman__RBPF.html#a67abffa6fe0510147037ed102aa30ed0">Kalman_RBPF</a>
+: <a class="el" href="classKalman__RBPF__BS.html#a5c16d09d4111c6b16f6ddf13df3a43f5">Kalman_RBPF_BS&lt; np &gt;</a>
+, <a class="el" href="classKalman__RBPF__SISR.html#ab8b1bde42a4354e7b0b5912c797ef838">Kalman_RBPF_SISR&lt; np &gt;</a>
 </li>
 </ul>
 
@@ -453,11 +475,20 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>~FSHMM()
 : <a class="el" href="classFSHMM.html#a0d011b77cf9541a312fffa43d24fa41f">FSHMM</a>
 </li>
-<li>~Hmm_Rbpf()
-: <a class="el" href="classHmm__Rbpf.html#a5bcc8f6c36cbbb6e7fabfe85bca9136f">Hmm_Rbpf</a>
+<li>~HHMM()
+: <a class="el" href="classHHMM.html#a96429285ce9c928cc1c3018aa6572ae4">HHMM&lt; n1, n2 &gt;</a>
 </li>
-<li>~Kalman_RBPF()
-: <a class="el" href="classKalman__RBPF.html#a454f1736e8889904f755ca904f6eebc0">Kalman_RBPF</a>
+<li>~Hmm_Rbpf()
+: <a class="el" href="classHmm__Rbpf.html#a6a5a602ca9be58ac12a4fb2545ebd2cc">Hmm_Rbpf&lt; np &gt;</a>
+</li>
+<li>~Hmm_Rbpf_BS()
+: <a class="el" href="classHmm__Rbpf__BS.html#ab6fd74f1fc21042153f9cf889e229c21">Hmm_Rbpf_BS&lt; np &gt;</a>
+</li>
+<li>~Kalman_RBPF_BS()
+: <a class="el" href="classKalman__RBPF__BS.html#addf3730ab56740f7247835aaa62c018c">Kalman_RBPF_BS&lt; np &gt;</a>
+</li>
+<li>~Kalman_RBPF_SISR()
+: <a class="el" href="classKalman__RBPF__SISR.html#a86983cc90205aa350fa42464f37654ff">Kalman_RBPF_SISR&lt; np &gt;</a>
 </li>
 <li>~Lgssm()
 : <a class="el" href="classLgssm.html#afdb5db740e12453879d8b985180426a4">Lgssm</a>
@@ -469,7 +500,7 @@ $(document).ready(function(){initNavTree('functions.html','');});
 : <a class="el" href="classMultinomResamp.html#a590495e677a522fa7863e3885631f777">MultinomResamp</a>
 </li>
 <li>~Pmmh()
-: <a class="el" href="classPmmh.html#a52b058761ac6ede77eb3d8c0099e0d93">Pmmh</a>
+: <a class="el" href="classPmmh.html#ae2c67a65abf01f4eaefc6b56e3bcb952">Pmmh&lt; np, pchunks &gt;</a>
 </li>
 <li>~SISRFilter()
 : <a class="el" href="classSISRFilter.html#af0ef8582352972c614720f0dea2fe15f">SISRFilter&lt; N &gt;</a>

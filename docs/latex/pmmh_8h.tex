@@ -10,6 +10,9 @@ A base class for particle marginal Metropolis-\/\+Hastings. Inherit from this if
 {\ttfamily \#include $<$mutex$>$}\\*
 {\ttfamily \#include $<$future$>$}\\*
 {\ttfamily \#include $<$Eigen/\+Dense$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include \char`\"{}densities.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}convenience\+\_\+funcs.\+h\char`\"{}}\\*
 Include dependency graph for pmmh.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -20,7 +23,7 @@ Include dependency graph for pmmh.\+h\+:\nopagebreak
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \hyperlink{classPmmh}{Pmmh}
+class \hyperlink{classPmmh}{Pmmh$<$ np, pchunks $>$}
 \begin{DoxyCompactList}\small\item\em A base-\/class for particle marginal Metropolis-\/\+Hastings. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Typedefs}
 \begin{DoxyCompactItemize}
@@ -34,6 +37,13 @@ typedef Eigen\+::\+Matrix$<$ double, Eigen\+::\+Dynamic, Eigen\+::\+Dynamic $>$ 
 \subsection{Detailed Description}
 A base class for particle marginal Metropolis-\/\+Hastings. Inherit from this if you want to use pmmh to estimate your S\+SM. The benefits are that doing so will force you to implement certain functions, and it will abstract away the threaded MH implementation. 
 
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em np} & the number of particles \\
+\hline
+{\em the} & number of chunks (Vecs) of parameters that are stored. \\
+\hline
+\end{DoxyTemplParams}
 
 
 \subsection{Typedef Documentation}

@@ -21,7 +21,11 @@ A class template for Multinomial Resampling.
 void \hyperlink{classMNResamp_a5c84e23bbe2f57984084835995dc41fd}{resamp\+Log\+Wts} (std\+::array$<$ \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec}, N $>$ \&old\+Parts, std\+::array$<$ double, N $>$ \&old\+Log\+Un\+Norm\+Wts)
 \begin{DoxyCompactList}\small\item\em Function to resample from log unnormalized weights. \end{DoxyCompactList}\item 
 void \hyperlink{classMNResamp_a152ee53e6df53587bea13bf8c9e74322}{k\+Gen} (const std\+::array$<$ double, N $>$ \&log\+First\+Stage\+Weights, std\+::array$<$ unsigned int, N $>$ \&ks)
-\begin{DoxyCompactList}\small\item\em Function to sample random indices. Used inside A\+P\+Fs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Function to sample random indices. Used inside A\+P\+Fs. \end{DoxyCompactList}\item 
+void \hyperlink{classMNResamp_aefaf6ba9a6b993a530ae42413b878565}{resamp\+K\+R\+B\+PF} (std\+::array$<$ \hyperlink{classLgssm}{Lgssm}, N $>$ \&old\+Mods, std\+::array$<$ \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec}, N $>$ \&old\+Samps, std\+::array$<$ double, N $>$ \&old\+Log\+Wts)
+\begin{DoxyCompactList}\small\item\em Function to resample R\+B\+P\+Fs--recall you have to resample the samples A\+ND models. \end{DoxyCompactList}\item 
+void \hyperlink{classMNResamp_a2cec5eaa8aa6dd8b8e228e324ad3e437}{resamp\+H\+R\+B\+PF} (std\+::array$<$ \hyperlink{classFSHMM}{F\+S\+H\+MM}, N $>$ \&old\+Mods, std\+::array$<$ \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec}, N $>$ \&old\+Samps, std\+::array$<$ double, N $>$ \&old\+Log\+Un\+Norm\+Wts)
+\begin{DoxyCompactList}\small\item\em Function to resample for R\+B\+P\+Fs--you have to resample the samples A\+ND models. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -56,6 +60,50 @@ Function to sample random indices. Used inside A\+P\+Fs.
 {\em log\+First\+Stage\+Weights} & first-\/stage weights for first stage of proposal distribution in A\+PF \\
 \hline
 {\em ks} & the \char`\"{}returned\char`\"{} indices of type std\+::array$<$unsigned int, N$>$ \\
+\hline
+\end{DoxyParams}
+\index{M\+N\+Resamp@{M\+N\+Resamp}!resamp\+H\+R\+B\+PF@{resamp\+H\+R\+B\+PF}}
+\index{resamp\+H\+R\+B\+PF@{resamp\+H\+R\+B\+PF}!M\+N\+Resamp@{M\+N\+Resamp}}
+\subsubsection[{\texorpdfstring{resamp\+H\+R\+B\+P\+F(std\+::array$<$ F\+S\+H\+M\+M, N $>$ \&old\+Mods, std\+::array$<$ Vec, N $>$ \&old\+Samps, std\+::array$<$ double, N $>$ \&old\+Log\+Un\+Norm\+Wts)}{resampHRBPF(std::array< FSHMM, N > &oldMods, std::array< Vec, N > &oldSamps, std::array< double, N > &oldLogUnNormWts)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\+\_\+t N$>$ void {\bf M\+N\+Resamp}$<$ N $>$\+::resamp\+H\+R\+B\+PF (
+\begin{DoxyParamCaption}
+\item[{std\+::array$<$ {\bf F\+S\+H\+MM}, N $>$ \&}]{old\+Mods, }
+\item[{std\+::array$<$ {\bf Vec}, N $>$ \&}]{old\+Samps, }
+\item[{std\+::array$<$ double, N $>$ \&}]{old\+Log\+Un\+Norm\+Wts}
+\end{DoxyParamCaption}
+)}\hypertarget{classMNResamp_a2cec5eaa8aa6dd8b8e228e324ad3e437}{}\label{classMNResamp_a2cec5eaa8aa6dd8b8e228e324ad3e437}
+
+
+Function to resample for R\+B\+P\+Fs--you have to resample the samples A\+ND models. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em old\+Mods} & embedded H\+MM filter objects. \\
+\hline
+{\em old\+Samps} & samples of each particle. \\
+\hline
+{\em old\+Log\+Un\+Norm\+Wts} & log un-\/normalized weights of each particle. \\
+\hline
+\end{DoxyParams}
+\index{M\+N\+Resamp@{M\+N\+Resamp}!resamp\+K\+R\+B\+PF@{resamp\+K\+R\+B\+PF}}
+\index{resamp\+K\+R\+B\+PF@{resamp\+K\+R\+B\+PF}!M\+N\+Resamp@{M\+N\+Resamp}}
+\subsubsection[{\texorpdfstring{resamp\+K\+R\+B\+P\+F(std\+::array$<$ Lgssm, N $>$ \&old\+Mods, std\+::array$<$ Vec, N $>$ \&old\+Samps, std\+::array$<$ double, N $>$ \&old\+Log\+Wts)}{resampKRBPF(std::array< Lgssm, N > &oldMods, std::array< Vec, N > &oldSamps, std::array< double, N > &oldLogWts)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\+\_\+t N$>$ void {\bf M\+N\+Resamp}$<$ N $>$\+::resamp\+K\+R\+B\+PF (
+\begin{DoxyParamCaption}
+\item[{std\+::array$<$ {\bf Lgssm}, N $>$ \&}]{old\+Mods, }
+\item[{std\+::array$<$ {\bf Vec}, N $>$ \&}]{old\+Samps, }
+\item[{std\+::array$<$ double, N $>$ \&}]{old\+Log\+Wts}
+\end{DoxyParamCaption}
+)}\hypertarget{classMNResamp_aefaf6ba9a6b993a530ae42413b878565}{}\label{classMNResamp_aefaf6ba9a6b993a530ae42413b878565}
+
+
+Function to resample R\+B\+P\+Fs--recall you have to resample the samples A\+ND models. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em old\+Mods} & embedded kalman filter objects. \\
+\hline
+{\em old\+Samps} & samples of each particle. \\
+\hline
+{\em old\+Log\+Wts} & log un-\/normalized weights of each particle. \\
 \hline
 \end{DoxyParams}
 \index{M\+N\+Resamp@{M\+N\+Resamp}!resamp\+Log\+Wts@{resamp\+Log\+Wts}}

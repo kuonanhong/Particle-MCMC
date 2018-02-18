@@ -23,7 +23,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 ".html",
-"sisr__filter_8h.html#a2486051fd2028dedca520d3e0f8fd92fac7561db7a418dd39b2201dfe110ab4a4"
+"hmm__rbpf__sisr_8h.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
