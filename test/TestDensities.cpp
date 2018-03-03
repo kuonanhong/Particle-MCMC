@@ -78,6 +78,36 @@ TEST_FIXTURE(DensFixture, univNormalTest)
 }
 
 
+TEST_FIXTURE(DensFixture, univNormCDFTest)
+{
+    // via R pnorm(.1)
+    CHECK_CLOSE(evalUnivStdNormCDF(.1), 0.5398278, 0.00001);
+    CHECK_CLOSE(evalUnivStdNormCDF(0.0), .5, .000001);
+    CHECK_CLOSE(evalUnivStdNormCDF(1.0/0.0), 1.0, .000001);
+    CHECK_CLOSE(evalUnivStdNormCDF(-1.0/0.0), 0.0, .000001);
+}
+
+
+TEST_FIXTURE(DensFixture, truncNormTest)
+{
+    // check bounds can be infinite
+    CHECK_CLOSE(evalUnivTruncNorm(0.0, 0.0, 1.0, -1.0/0.0, 1.0/0.0, true),
+                evalUnivNorm(0.0, 0.0, 1.0, true), .000001);
+    CHECK_CLOSE(evalUnivTruncNorm(0.0, 0.0, 1.0, -1.0/0.0, 1.0/0.0, false),
+                evalUnivNorm(0.0, 0.0, 1.0, false), .000001);
+    // check support is good
+    CHECK_CLOSE(evalUnivTruncNorm(0.0, 0.0, 1.0, .1, 20.0, false), 0.0, .000001);
+    CHECK_CLOSE(evalUnivTruncNorm(0.0, 0.0, 1.0, .1, 20.0, true), -1.0/0.0, .000001);
+    CHECK_CLOSE(evalUnivTruncNorm(0.0, 0.0, 1.0, -20.0, -.1, false), 0.0, .000001);
+    CHECK_CLOSE(evalUnivTruncNorm(0.0, 0.0, 1.0, -20.0, -.1, true), -1.0/0.0, .000001);
+    // check a real evaluation comparing it to R's truncnorm::dtruncnorm(0, -5, 5, 0, 2)
+    CHECK_CLOSE(evalUnivTruncNorm(0.0, 0.0, 2.0, -5.0, 5.0, false), 0.2019796, .000001);
+    CHECK_CLOSE(evalUnivTruncNorm(0.0, 0.0, 2.0, -5.0, 5.0, true), -1.599589, .000001);
+
+
+}
+
+
 TEST_FIXTURE(DensFixture, multivariateGaussianTest)
 {
     // via R dmvnorm(c(.02, -.01),sigma=matrix(c(3,1,1,3),nrow=2))

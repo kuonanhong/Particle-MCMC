@@ -28,6 +28,30 @@ double densities::evalUnivNorm(const double &x, const double &mu, const double &
 }
 
 
+double densities::evalUnivStdNormCDF(const double &x) // john cook code
+{
+    // constants
+    double a1 =  0.254829592;
+    double a2 = -0.284496736;
+    double a3 =  1.421413741;
+    double a4 = -1.453152027;
+    double a5 =  1.061405429;
+    double p  =  0.3275911;
+
+    // Save the sign of x
+    int sign = 1;
+    if (x < 0)
+        sign = -1;
+    double xt = std::fabs(x)/std::sqrt(2.0);
+
+    // A&S formula 7.1.26
+    double t = 1.0/(1.0 + p*xt);
+    double y = 1.0 - (((((a5*t + a4)*t) + a3)*t + a2)*t + a1)*t*std::exp(-xt*xt);
+
+    return 0.5*(1.0 + sign*y);
+}
+
+
 double densities::evalMultivNorm(const Vec &x, const Vec &meanVec, const Mat &covMat, bool log)
 {
     // from Eigen: Remember that Cholesky decompositions are not rank-revealing. 
@@ -35,9 +59,8 @@ double densities::evalMultivNorm(const Vec &x, const Vec &meanVec, const Mat &co
     // use LDLT instead for the semidefinite case. Also, do not use a Cholesky 
     // decomposition to determine whether a system of equations has a solution.
     Eigen::LLT<Mat> lltM(covMat);
-    Vec tmp = lltM.solve(x-meanVec); // tmp = Sigma^{-1}(x-meanVec)  iff Sigma tmp = (x-meanVec)
-    double quadform = ((x-meanVec).transpose() * tmp)(0,0);
-
+    double quadform = (lltM.matrixL().solve(x-meanVec)).squaredNorm();
+    size_t dim = x.rows();
     if (log){
 
         // calculate log-determinant using cholesky decomposition too
@@ -45,52 +68,49 @@ double densities::evalMultivNorm(const Vec &x, const Vec &meanVec, const Mat &co
         Mat L = lltM.matrixL(); // the lower diagonal L such that M = LL^T
 
         // add up log of diagnols of Cholesky L
-        for(size_t i = 0; i < covMat.rows(); ++i){
+        for(size_t i = 0; i < dim; ++i){
             ld += std::log(L(i,i));
         }
         ld *= 2; // covMat = LL^T
 
-        return -.5*log_two_pi * covMat.rows() - .5*ld - .5*quadform;
+        return -.5*log_two_pi * dim - .5*ld - .5*quadform;
 
 
     }else{  // not the log density
-        double normConst = std::pow(inv_sqrt_2pi, covMat.rows()) * std::pow(covMat.determinant(), -.5);
+        double normConst = std::pow(inv_sqrt_2pi, dim) / lltM.matrixL().determinant();
         return normConst * std::exp(-.5* quadform);
     }
 
 }
+
 
 double densities::evalMultivNormWBDA(const Vec &x, const Vec &meanVec, const Vec &A, const Mat &U, const Mat &C, bool log)
 {
     Mat Ainv = A.asDiagonal().inverse();
     Mat Cinv = C.inverse();
-    Mat invThing = (Cinv + U.transpose()*Ainv*U).inverse();
-    Mat SigInv = Ainv - Ainv*U*invThing*U.transpose()*Ainv;
-    double quadform = (x-meanVec).transpose() * SigInv * (x-meanVec);
-    
+    Mat I =  Cinv + U.transpose()*Ainv*U;
+    Mat SigInv = Ainv - Ainv * U * I.ldlt().solve(U.transpose() * Ainv);
+    Eigen::LLT<Mat> lltSigInv(SigInv);
+    Mat L = lltSigInv.matrixL(); // LL' = Sig^{-1}
+    double quadform = (L * (x-meanVec)).squaredNorm();    
+    unsigned int dim = x.rows();
     if (log){
 
         // calculate log-determinant using cholesky decomposition (assumes symmetric and positive definite)
         double halfld (0.0);
-        Eigen::LLT<Mat> lltSigInv(SigInv);
-
-  
-        Mat L = lltSigInv.matrixL(); // the lower diagonal L such that SigInv = LL^T
-
         // add up log of diagnols of Cholesky L
-        for(size_t i = 0; i < SigInv.rows(); ++i){
+        for(size_t i = 0; i < dim; ++i){
             halfld += std::log(L(i,i));
         }
 
-        return -.5*log_two_pi * SigInv.rows() + halfld - .5*quadform;
+        return -.5*log_two_pi * dim + halfld - .5*quadform;
 
 
     }else{  // not the log density
-        double normConst = std::pow(inv_sqrt_2pi, SigInv.rows()) * std::pow(SigInv.determinant(), .5);
+        double normConst = std::pow(inv_sqrt_2pi, dim) * L.determinant();
         return normConst * std::exp(-.5* quadform);
     }
 }
-
 
 
 double densities::evalUnivBeta(const double &x, const double &alpha, const double &beta, bool log)
@@ -129,6 +149,7 @@ double densities::evalUnivInvGamma(const double &x, const double &alpha, const d
     }
 }
 
+
 double densities::evalUnivHalfNorm(const double &x, const double &sigmaSqd, bool log)
 {
     if( (x >= 0.0) && (sigmaSqd > 0.0)){
@@ -137,6 +158,27 @@ double densities::evalUnivHalfNorm(const double &x, const double &sigmaSqd, bool
         }else{
             return std::exp(-.5*x*x/sigmaSqd) * sqrt_two_over_pi / std::sqrt(sigmaSqd);
         }
+    }else{
+        if (log){
+            return -1.0/0.0;
+        }else{
+            return 0.0;
+        }
+    }
+}
+
+
+double densities::evalUnivTruncNorm(const double &x, const double &mu, const double &sigma, const double &lower, const double &upper, bool log)
+{
+    if( (sigma > 0.0) && (lower <= x) & (x <= upper) ){
+        if(log){
+            return evalUnivNorm(x, mu, sigma, true) 
+                - std::log( evalUnivStdNormCDF((upper-mu)/sigma) - evalUnivStdNormCDF((lower-mu)/sigma));
+        }else{
+            return evalUnivNorm(x,mu,sigma,false)
+                / ( evalUnivStdNormCDF((upper-mu)/sigma) - evalUnivStdNormCDF((lower-mu)/sigma) );
+        }
+        
     }else{
         if (log){
             return -1.0/0.0;

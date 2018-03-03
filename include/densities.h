@@ -44,6 +44,15 @@ const double log_two_over_pi (-0.451582705289455);
  */
 double evalUnivNorm(const double &x, const double &mu, const double &sigma, bool log = false);
 
+
+/**
+ * @brief Evaluates the standard Normal CDF.
+ * @param x the quantile.
+ * @return the probability Z < x
+ */
+double evalUnivStdNormCDF(const double &x); 
+
+
 /**
  * @brief Evaluates the multivariate Normal density
  * @param x the point you're evaluating at.
@@ -96,6 +105,18 @@ double evalUnivInvGamma(const double &x, const double &alpha, const double &beta
  * @return double evaluation.
  */
 double evalUnivHalfNorm(const double &x, const double &sigmaSqd, bool log = false);
+
+
+/**
+ * @brief Evaluates a truncated Normal density.
+ * @param x the quantile
+ * @param mu the mode
+ * @param sigma the scale parameter.
+ * @param lower the lower truncation point (may be negative infinity)
+ * @param upper the upper truncation point (may be positive infinity).
+ * @return 
+ */
+double evalUnivTruncNorm(const double &x, const double &mu, const double &sigma, const double &lower, const double &upper, bool log = false);
 
 
 /**
