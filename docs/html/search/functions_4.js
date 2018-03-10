@@ -10,5 +10,7 @@ var searchData=
   ['evalunivbeta',['evalUnivBeta',['../densities_8h.html#a0c5bdd99b4d611a05cb2cf2615c4c07a',1,'densities']]],
   ['evalunivhalfnorm',['evalUnivHalfNorm',['../densities_8h.html#a7bdccb2414aa07d7d0710b459b5de9cd',1,'densities']]],
   ['evalunivinvgamma',['evalUnivInvGamma',['../densities_8h.html#a6a348ae64240f768da13e50a1d30eb69',1,'densities']]],
-  ['evalunivnorm',['evalUnivNorm',['../densities_8h.html#a1aa7759f20eabd016e3ae3e558b5824d',1,'densities']]]
+  ['evalunivnorm',['evalUnivNorm',['../densities_8h.html#a1aa7759f20eabd016e3ae3e558b5824d',1,'densities']]],
+  ['evalunivstdnormcdf',['evalUnivStdNormCDF',['../densities_8h.html#a1aaa2cf7ec05e682f27e2c6835d71a2d',1,'densities']]],
+  ['evalunivtruncnorm',['evalUnivTruncNorm',['../densities_8h.html#acfcc2cbc62022dd61589afc31901f06d',1,'densities']]]
 ];

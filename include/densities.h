@@ -114,6 +114,7 @@ double evalUnivHalfNorm(const double &x, const double &sigmaSqd, bool log = fals
  * @param sigma the scale parameter.
  * @param lower the lower truncation point (may be negative infinity)
  * @param upper the upper truncation point (may be positive infinity).
+ * @param log true if you want the log density.
  * @return 
  */
 double evalUnivTruncNorm(const double &x, const double &mu, const double &sigma, const double &lower, const double &upper, bool log = false);

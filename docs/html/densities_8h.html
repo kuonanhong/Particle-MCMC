@@ -166,6 +166,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a1aa7759f20eabd016e3ae3e558b5824d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="densities_8h.html#a1aa7759f20eabd016e3ae3e558b5824d">densities::evalUnivNorm</a> (const double &amp;x, const double &amp;mu, const double &amp;sigma, bool log=false)</td></tr>
 <tr class="memdesc:a1aa7759f20eabd016e3ae3e558b5824d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the univariate Normal density.  <a href="densities_8h.html#a1aa7759f20eabd016e3ae3e558b5824d">More...</a><br /></td></tr>
 <tr class="separator:a1aa7759f20eabd016e3ae3e558b5824d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1aaa2cf7ec05e682f27e2c6835d71a2d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="densities_8h.html#a1aaa2cf7ec05e682f27e2c6835d71a2d">densities::evalUnivStdNormCDF</a> (const double &amp;x)</td></tr>
+<tr class="memdesc:a1aaa2cf7ec05e682f27e2c6835d71a2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the standard Normal CDF.  <a href="densities_8h.html#a1aaa2cf7ec05e682f27e2c6835d71a2d">More...</a><br /></td></tr>
+<tr class="separator:a1aaa2cf7ec05e682f27e2c6835d71a2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e47ab78e9b67622852378c44b6ccc2d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="densities_8h.html#a9e47ab78e9b67622852378c44b6ccc2d">densities::evalMultivNorm</a> (const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;x, const <a class="el" href="apf__filter_8h.html#a4c7df05c6f5e8a0d15ae14bcdbc07152">Vec</a> &amp;meanVec, const <a class="el" href="apf__filter_8h.html#ae601f56a556993079f730483c574356f">Mat</a> &amp;covMat, bool log=false)</td></tr>
 <tr class="memdesc:a9e47ab78e9b67622852378c44b6ccc2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the multivariate Normal density.  <a href="densities_8h.html#a9e47ab78e9b67622852378c44b6ccc2d">More...</a><br /></td></tr>
 <tr class="separator:a9e47ab78e9b67622852378c44b6ccc2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -181,6 +184,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a7bdccb2414aa07d7d0710b459b5de9cd"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="densities_8h.html#a7bdccb2414aa07d7d0710b459b5de9cd">densities::evalUnivHalfNorm</a> (const double &amp;x, const double &amp;sigmaSqd, bool log=false)</td></tr>
 <tr class="memdesc:a7bdccb2414aa07d7d0710b459b5de9cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the half-normal density.  <a href="densities_8h.html#a7bdccb2414aa07d7d0710b459b5de9cd">More...</a><br /></td></tr>
 <tr class="separator:a7bdccb2414aa07d7d0710b459b5de9cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfcc2cbc62022dd61589afc31901f06d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="densities_8h.html#acfcc2cbc62022dd61589afc31901f06d">densities::evalUnivTruncNorm</a> (const double &amp;x, const double &amp;mu, const double &amp;sigma, const double &amp;lower, const double &amp;upper, bool log=false)</td></tr>
+<tr class="memdesc:acfcc2cbc62022dd61589afc31901f06d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates a truncated Normal density.  <a href="densities_8h.html#acfcc2cbc62022dd61589afc31901f06d">More...</a><br /></td></tr>
+<tr class="separator:acfcc2cbc62022dd61589afc31901f06d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8870f93803b6c442b9ed52b22466add9"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="densities_8h.html#a8870f93803b6c442b9ed52b22466add9">densities::evalLogitNormal</a> (const double &amp;x, const double &amp;mu, const double &amp;sigma, bool log=false)</td></tr>
 <tr class="memdesc:a8870f93803b6c442b9ed52b22466add9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the logit-Normal distribution (see Wiki for more info)  <a href="densities_8h.html#a8870f93803b6c442b9ed52b22466add9">More...</a><br /></td></tr>
 <tr class="separator:a8870f93803b6c442b9ed52b22466add9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -729,6 +735,95 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a double evaluation. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="file_a1aaa2cf7ec05e682f27e2c6835d71a2d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double densities::evalUnivStdNormCDF </td>
+          <td>(</td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Evaluates the standard Normal CDF. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>the quantile. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the probability Z &lt; x </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="file_acfcc2cbc62022dd61589afc31901f06d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double densities::evalUnivTruncNorm </td>
+          <td>(</td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>mu</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>sigma</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>lower</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>upper</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>log</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Evaluates a truncated Normal density. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>the quantile </td></tr>
+    <tr><td class="paramname">mu</td><td>the mode </td></tr>
+    <tr><td class="paramname">sigma</td><td>the scale parameter. </td></tr>
+    <tr><td class="paramname">lower</td><td>the lower truncation point (may be negative infinity) </td></tr>
+    <tr><td class="paramname">upper</td><td>the upper truncation point (may be positive infinity). </td></tr>
+    <tr><td class="paramname">log</td><td>true if you want the log density. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>

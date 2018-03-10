@@ -51,6 +51,8 @@ const double \hyperlink{densities_8h_a45b1879e50e22cb4ee16e2b9b86c3b14}{densitie
 \item 
 double \hyperlink{densities_8h_a1aa7759f20eabd016e3ae3e558b5824d}{densities\+::eval\+Univ\+Norm} (const double \&x, const double \&mu, const double \&sigma, bool log=false)
 \begin{DoxyCompactList}\small\item\em Evaluates the univariate Normal density. \end{DoxyCompactList}\item 
+double \hyperlink{densities_8h_a1aaa2cf7ec05e682f27e2c6835d71a2d}{densities\+::eval\+Univ\+Std\+Norm\+C\+DF} (const double \&x)
+\begin{DoxyCompactList}\small\item\em Evaluates the standard Normal C\+DF. \end{DoxyCompactList}\item 
 double \hyperlink{densities_8h_a9e47ab78e9b67622852378c44b6ccc2d}{densities\+::eval\+Multiv\+Norm} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&mean\+Vec, const \hyperlink{apf__filter_8h_ae601f56a556993079f730483c574356f}{Mat} \&cov\+Mat, bool log=false)
 \begin{DoxyCompactList}\small\item\em Evaluates the multivariate Normal density. \end{DoxyCompactList}\item 
 double \hyperlink{densities_8h_af239258a90eb6b592233c26f526e14d3}{densities\+::eval\+Multiv\+Norm\+W\+B\+DA} (const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&x, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&mean\+Vec, const \hyperlink{apf__filter_8h_a4c7df05c6f5e8a0d15ae14bcdbc07152}{Vec} \&A, const \hyperlink{apf__filter_8h_ae601f56a556993079f730483c574356f}{Mat} \&U, const \hyperlink{apf__filter_8h_ae601f56a556993079f730483c574356f}{Mat} \&C, bool log=false)
@@ -61,6 +63,8 @@ double \hyperlink{densities_8h_a6a348ae64240f768da13e50a1d30eb69}{densities\+::e
 \begin{DoxyCompactList}\small\item\em Evaluates the univariate Inverse Gamma density. \end{DoxyCompactList}\item 
 double \hyperlink{densities_8h_a7bdccb2414aa07d7d0710b459b5de9cd}{densities\+::eval\+Univ\+Half\+Norm} (const double \&x, const double \&sigma\+Sqd, bool log=false)
 \begin{DoxyCompactList}\small\item\em Evaluates the half-\/normal density. \end{DoxyCompactList}\item 
+double \hyperlink{densities_8h_acfcc2cbc62022dd61589afc31901f06d}{densities\+::eval\+Univ\+Trunc\+Norm} (const double \&x, const double \&mu, const double \&sigma, const double \&lower, const double \&upper, bool log=false)
+\begin{DoxyCompactList}\small\item\em Evaluates a truncated Normal density. \end{DoxyCompactList}\item 
 double \hyperlink{densities_8h_a8870f93803b6c442b9ed52b22466add9}{densities\+::eval\+Logit\+Normal} (const double \&x, const double \&mu, const double \&sigma, bool log=false)
 \begin{DoxyCompactList}\small\item\em Evaluates the logit-\/\+Normal distribution (see Wiki for more info) \end{DoxyCompactList}\item 
 double \hyperlink{densities_8h_a849b888256727957e74ca32fffeeb3bd}{densities\+::eval\+Twice\+Fisher\+Normal} (const double \&x, const double \&mu, const double \&sigma, bool log=false)
@@ -368,6 +372,59 @@ Evaluates the univariate Normal density.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 a double evaluation. 
+\end{DoxyReturn}
+\index{densities.\+h@{densities.\+h}!eval\+Univ\+Std\+Norm\+C\+DF@{eval\+Univ\+Std\+Norm\+C\+DF}}
+\index{eval\+Univ\+Std\+Norm\+C\+DF@{eval\+Univ\+Std\+Norm\+C\+DF}!densities.\+h@{densities.\+h}}
+\subsubsection[{\texorpdfstring{eval\+Univ\+Std\+Norm\+C\+D\+F(const double \&x)}{evalUnivStdNormCDF(const double &x)}}]{\setlength{\rightskip}{0pt plus 5cm}double densities\+::eval\+Univ\+Std\+Norm\+C\+DF (
+\begin{DoxyParamCaption}
+\item[{const double \&}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{densities_8h_file_a1aaa2cf7ec05e682f27e2c6835d71a2d}{}\label{densities_8h_file_a1aaa2cf7ec05e682f27e2c6835d71a2d}
+
+
+Evaluates the standard Normal C\+DF. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the quantile. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the probability Z $<$ x 
+\end{DoxyReturn}
+\index{densities.\+h@{densities.\+h}!eval\+Univ\+Trunc\+Norm@{eval\+Univ\+Trunc\+Norm}}
+\index{eval\+Univ\+Trunc\+Norm@{eval\+Univ\+Trunc\+Norm}!densities.\+h@{densities.\+h}}
+\subsubsection[{\texorpdfstring{eval\+Univ\+Trunc\+Norm(const double \&x, const double \&mu, const double \&sigma, const double \&lower, const double \&upper, bool log=false)}{evalUnivTruncNorm(const double &x, const double &mu, const double &sigma, const double &lower, const double &upper, bool log=false)}}]{\setlength{\rightskip}{0pt plus 5cm}double densities\+::eval\+Univ\+Trunc\+Norm (
+\begin{DoxyParamCaption}
+\item[{const double \&}]{x, }
+\item[{const double \&}]{mu, }
+\item[{const double \&}]{sigma, }
+\item[{const double \&}]{lower, }
+\item[{const double \&}]{upper, }
+\item[{bool}]{log = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\hypertarget{densities_8h_file_acfcc2cbc62022dd61589afc31901f06d}{}\label{densities_8h_file_acfcc2cbc62022dd61589afc31901f06d}
+
+
+Evaluates a truncated Normal density. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the quantile \\
+\hline
+{\em mu} & the mode \\
+\hline
+{\em sigma} & the scale parameter. \\
+\hline
+{\em lower} & the lower truncation point (may be negative infinity) \\
+\hline
+{\em upper} & the upper truncation point (may be positive infinity). \\
+\hline
+{\em log} & true if you want the log density. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
 \end{DoxyReturn}
 \index{densities.\+h@{densities.\+h}!inv\+\_\+sqrt\+\_\+2pi@{inv\+\_\+sqrt\+\_\+2pi}}
 \index{inv\+\_\+sqrt\+\_\+2pi@{inv\+\_\+sqrt\+\_\+2pi}!densities.\+h@{densities.\+h}}

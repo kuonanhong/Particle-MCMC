@@ -15,6 +15,8 @@ var densities_8h =
     [ "evalUnivHalfNorm", "densities_8h.html#a7bdccb2414aa07d7d0710b459b5de9cd", null ],
     [ "evalUnivInvGamma", "densities_8h.html#a6a348ae64240f768da13e50a1d30eb69", null ],
     [ "evalUnivNorm", "densities_8h.html#a1aa7759f20eabd016e3ae3e558b5824d", null ],
+    [ "evalUnivStdNormCDF", "densities_8h.html#a1aaa2cf7ec05e682f27e2c6835d71a2d", null ],
+    [ "evalUnivTruncNorm", "densities_8h.html#acfcc2cbc62022dd61589afc31901f06d", null ],
     [ "inv_sqrt_2pi", "densities_8h.html#a50fd069caa24dac797922e8af6ed68e2", null ],
     [ "log_two_over_pi", "densities_8h.html#a45b1879e50e22cb4ee16e2b9b86c3b14", null ],
     [ "log_two_pi", "densities_8h.html#ae55ae08fac65b33b193ed333538dd340", null ],

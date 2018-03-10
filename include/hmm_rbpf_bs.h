@@ -57,7 +57,7 @@ public:
     /**
      * @brief filters everything based on a new data point.
      * @param data the most recent time series observation.
-     * @param fs a vector of functions computing logE[h(x_1t, x_2t^i)| x_2t^i,y_1:t]. will access the probability vector of x_1t
+     * @param fs a vector of functions computing E[h(x_1t, x_2t^i)| x_2t^i,y_1:t]. will access the probability vector of x_1t
      */
     void filter(const Vec &data,
                 const std::vector<std::function<const Mat(const Vec &x1tProbs, const Vec &x2t)> >& fs 
