@@ -60,7 +60,7 @@ public:
     /**
      * @brief filters everything based on a new data point.
      * @param data the most recent time series observation.
-     * @param fs a vector of functions computing logE[h(x_1t, x_2t^i)| x_2t^i,y_1:t]. will access the probability vector of x_1t
+     * @param fs a vector of functions computing E[h(x_1t, x_2t^i)| x_2t^i,y_1:t]. Will access the probability vector of x_1t
      */
     void filter(const Vec &data,
                 const std::vector<std::function<const Mat(const Vec &x1tProbs, const Vec &x2t)> >& fs 
@@ -260,9 +260,7 @@ void Hmm_Rbpf<np>::filter(const Vec &data,
             double denom(0.0);
             Mat tmp;
             for(size_t prtcl = 0; prtcl < np; ++prtcl){ 
-                tmp = h(m_p_innerMods[prtcl].getFilterVec(), m_p_samps[prtcl]);
-                tmp = tmp.array().log().matrix() + (m_logUnNormWeights[prtcl] - m)*ones;
-                numer = numer + tmp.array().exp().matrix();
+                numer += h(m_p_innerMods[prtcl].getFilterVec(), m_p_samps[prtcl])* std::exp(m_logUnNormWeights[prtcl] -m);
                 denom += std::exp( m_logUnNormWeights[prtcl] - m );
             }
             m_expectations[fId] = numer/denom;
@@ -320,9 +318,7 @@ void Hmm_Rbpf<np>::filter(const Vec &data,
             Mat tmp;
             double denom(0.0);
             for(size_t prtcl = 0; prtcl < np; ++prtcl){ 
-                tmp = h(m_p_innerMods[prtcl].getFilterVec(), m_p_samps[prtcl]);
-                tmp = tmp.array().log().matrix() + (m_logUnNormWeights[prtcl] - m)*ones;
-                numer = numer + tmp.array().exp().matrix();
+                numer += h(m_p_innerMods[prtcl].getFilterVec(), m_p_samps[prtcl])*std::exp( m_logUnNormWeights[prtcl] - m );
                 denom += std::exp( m_logUnNormWeights[prtcl] - m );
             }
             m_expectations[fId] = numer/denom;
